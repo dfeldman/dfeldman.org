@@ -1,0 +1,49 @@
+<!-- layouts/_default/list.html -->
+{{ define "main" }}
+<div class="header">
+    <h1>{{ .Site.Title }}</h1>
+    <p class="description">{{ .Site.Params.description }}</p>
+    <div class="icon-links">
+        <a href="{{ .Site.Params.twitter }}" target="_blank" class="icon-link" title="Twitter">
+            <i class="fab fa-twitter"></i>
+        </a>
+        <a href="{{ .Site.Params.bluesky }}" target="_blank" class="icon-link" title="BlueSky">
+            <i class="fas fa-cloud"></i>
+        </a>
+        <a href="{{ .Site.Params.mastodon }}" target="_blank" class="icon-link" title="Mastodon">
+            <i class="fab fa-mastodon"></i>
+        </a>
+        <a href="mailto:{{ .Site.Params.email }}" class="icon-link" title="Email">
+            <i class="fas fa-envelope"></i>
+        </a>
+        <a href="{{ .Site.Params.calendly }}" target="_blank" class="icon-link" title="Schedule a Call">
+            <i class="fas fa-calendar-alt"></i>
+        </a>
+        <a href="{{ "index.xml" | absURL }}" target="_blank" class="icon-link" title="RSS Feed">
+            <i class="fas fa-rss"></i>
+        </a>
+    </div>
+    <div class="newsletter-signup">
+        <form action="{{ .Site.Params.newsletter_signup_url }}" method="post">
+            <input type="email" name="email" placeholder="Enter your email" required>
+            <button type="submit">Subscribe</button>
+        </form>
+    </div>
+</div>
+<div class="blog-content">
+    <table class="blog-table">
+        {{ range .Pages }}
+        <tr>
+            <td class="date">{{ .Date.Format "Jan 2006" }}</td>
+            <td class="content">
+                {{ if .Params.linkto }}
+                    <a href="{{ .Params.linkto }}" target="_blank">{{ .Title }}</a>
+                {{ else }}
+                    <a href="{{ .RelPermalink }}">{{ .Title }}</a>
+                {{ end }}
+            </td>
+        </tr>
+        {{ end }}
+    </table>
+</div>
+{{ end }}

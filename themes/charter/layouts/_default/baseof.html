@@ -1,0 +1,46 @@
+<!-- layouts/_default/baseof.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ .Title }}</title>
+    
+    {{ $style := resources.Get "css/main.css" }}
+    {{ $style = $style | resources.ExecuteAsTemplate "css/style.css" . | minify | fingerprint }}
+    <link rel="stylesheet" href="{{ $style.RelPermalink }}" integrity="{{ $style.Data.Integrity }}">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+  <div class="container">
+
+  <div class="header">
+    <h1>Daniel Feldman</h1>
+    <p class="description">A brief description of your blog and its purpose. </p>
+    <div class="icon-links">
+        <a href="https://twitter.com/yourusername" target="_blank" class="icon-link" title="Twitter">
+            <i class="fab fa-twitter"></i>
+        </a>
+        <a href="https://bsky.app/profile/yourusername.bsky.social" target="_blank" class="icon-link" title="BlueSky">
+            <i class="fas fa-cloud"></i>
+        </a>
+        <a href="https://mastodon.social/@yourusername" target="_blank" class="icon-link" title="Mastodon">
+            <i class="fab fa-mastodon"></i>
+        </a>
+        <a href="#" class="icon-link" id="email-link" title="Email">
+            <i class="fas fa-envelope"></i>
+        </a>
+        <a href="https://calendly.com/yourusername" target="_blank" class="icon-link" title="Schedule a Call">
+            <i class="fas fa-calendar-alt"></i>
+        </a>
+        <a href="/rss.xml" target="_blank" class="icon-link" title="RSS Feed">
+            <i class="fas fa-rss"></i>
+        </a>
+    </div>
+</div>
+        {{ block "main" . }}
+        {{ end }}
+    </div>
+</body>
+</html>

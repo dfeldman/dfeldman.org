@@ -1,0 +1,11 @@
+{{ define "main" }}
+{{ .Title }}
+{{ .Params.author | default .Site.Params.author }}
+{{ with .Params.margin_notes }}
+{{ range . }}
+<div class="margin-note">{{ . | markdownify }}</div>
+{{ end }}
+{{ end }}
+{{ .Params.margin_notes }}
+{{ .Content }}
+{{ end }}

@@ -1,0 +1,17 @@
+baseURL = 'https://example.org/'
+languageCode = 'en-us'
+title = 'My New Hugo Site'
+theme = 'charter'
+
+# Ignore content files inside the theme folder 
+ignoreFiles = ['themes/.*/content/.*']
+
+[params]
+  description = "Your blog description here"
+  twitter = "https://twitter.com/yourusername"
+  bluesky = "https://bsky.app/profile/yourusername.bsky.social"
+  mastodon = "https://mastodon.social/@yourusername"
+  email = "your.email@example.com"
+  calendly = "https://calendly.com/yourusername"
+  newsletter_signup_url = "https://your-newsletter-service.com/signup"
+  author = "Your Name"

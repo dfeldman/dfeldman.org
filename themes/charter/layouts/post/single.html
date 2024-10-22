@@ -1,0 +1,29 @@
+{{ define "main" }}
+<div class="post-content-wrapper">
+    <main class="post-main-content">
+        {{ with .Params.tags }}
+        <div class="post-tags">
+            {{ range . }}
+            <span class="post-tag">{{ . }}</span>
+            {{ end }}
+        </div>
+        {{ end }}
+        <h1 class="post-title">{{ .Title }}</h1>
+        {{ with .Params.subtitle }}
+        <p class="post-subhead">{{ . }}</p>
+        {{ end }}
+        <p class="post-date-line">Published on {{ .Date.Format "January 2, 2006" }}</p>
+
+        {{ with .TableOfContents }}
+        <details class="post-toc">
+            <summary>Table of Contents</summary>
+            {{ . }}
+        </details>
+        {{ end }}
+
+        <div class="post-content">
+            {{ .Content }}
+        </div>
+    </main>
+</div>
+{{ end }}

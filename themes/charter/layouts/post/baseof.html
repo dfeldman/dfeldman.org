@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ .Title }} | {{ .Site.Title }}</title>
+    {{ $style := resources.Get "css/post.css" | resources.Minify | resources.Fingerprint }}
+    <link rel="stylesheet" href="{{ $style.Permalink }}">
+</head>
+<body>
+    <button class="post-dark-mode-toggle" aria-label="Toggle dark mode">🌞</button>
+    <div class="post-container">
+        <header>
+            <a href="{{ .Site.BaseURL }}" class="post-home-link">{{ .Site.Title }}</a>
+        </header>
+        {{ block "main" . }}{{ end }}
+    </div>
+
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const marginalia = document.querySelector('.post-marginalia');
+        const mainContent = document.querySelector('.post-main-content');
+        const paragraphsWithNotes = mainContent.querySelectorAll('[data-margin-note]');
+        const toc = document.querySelector('.post-toc');
+
+        function positionNotes() {
+            paragraphsWithNotes.forEach((paragraph, index) => {
+                const note = marginalia.children[index];
+                const paragraphRect = paragraph.getBoundingClientRect();
+                const marginaliaRect = marginalia.getBoundingClientRect();
+                note.style.top = `${paragraphRect.top - marginaliaRect.top}px`;
+            });
+        }
+
+        paragraphsWithNotes.forEach((paragraph, index) => {
+            const note = document.createElement('div');
+            note.className = 'post-margin-note';
+            note.textContent = paragraph.dataset.marginNote;
+            marginalia.appendChild(note);
+        });
+
+        positionNotes();
+
+        window.addEventListener('resize', positionNotes);
+
+        if (toc) {
+            toc.addEventListener('toggle', positionNotes);
+        }
+
+        const observer = new MutationObserver(positionNotes);
+        observer.observe(mainContent, { 
+            childList: true, 
+            subtree: true, 
+            attributes: true, 
+            characterData: true 
+        });
+
+        function toggleDarkMode() {
+            document.body.classList.toggle('dark-mode');
+            const toggle = document.querySelector('.post-dark-mode-toggle');
+            if (document.body.classList.contains('dark-mode')) {
+                toggle.textContent = '🌜';
+                toggle.setAttribute('aria-label', 'Switch to light mode');
+            } else {
+                toggle.textContent = '🌞';
+                toggle.setAttribute('aria-label', 'Switch to dark mode');
+            }
+        }
+
+        document.querySelector('.post-dark-mode-toggle').addEventListener('click', toggleDarkMode);
+    });
+    </script>
+</body>
+</html>

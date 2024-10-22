@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My List of Items 9992 | My New Hugo Site</title>
+    
+    <link rel="stylesheet" href="http://localhost:1313/css/post.min.da829a985ec76fc163e6de3018167d13f358ff5b6cec81190c5e4d462aab06cf.css">
+</head>
+<body>
+    <button class="post-dark-mode-toggle" aria-label="Toggle dark mode">🌞</button>
+    <div class="post-container">
+        <header>
+            <a href="http://localhost:1313/" class="post-home-link">My New Hugo Site</a>
+        </header>
+        
+<div class="post-content-wrapper">
+    <main class="post-main-content">
+        
+        <h1 class="post-title">My List of Items 9992</h1>
+        
+        <p class="post-date-line">Published on January 1, 0001</p>
+
+        
+        <details class="post-toc">
+            <summary>Table of Contents</summary>
+            <nav id="TableOfContents"></nav>
+        </details>
+        
+
+        <div class="post-content">
+            <p>Welcome to my collection of items. Below you&rsquo;ll find a list of all items and their descriptions.</p>
+<p>Feel free to explore each item in detail!</p>
+
+        </div>
+    </main>
+</div>
+
+    </div>
+
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const marginalia = document.querySelector('.post-marginalia');
+        const mainContent = document.querySelector('.post-main-content');
+        const paragraphsWithNotes = mainContent.querySelectorAll('[data-margin-note]');
+        const toc = document.querySelector('.post-toc');
+
+        function positionNotes() {
+            paragraphsWithNotes.forEach((paragraph, index) => {
+                const note = marginalia.children[index];
+                const paragraphRect = paragraph.getBoundingClientRect();
+                const marginaliaRect = marginalia.getBoundingClientRect();
+                note.style.top = `${paragraphRect.top - marginaliaRect.top}px`;
+            });
+        }
+
+        paragraphsWithNotes.forEach((paragraph, index) => {
+            const note = document.createElement('div');
+            note.className = 'post-margin-note';
+            note.textContent = paragraph.dataset.marginNote;
+            marginalia.appendChild(note);
+        });
+
+        positionNotes();
+
+        window.addEventListener('resize', positionNotes);
+
+        if (toc) {
+            toc.addEventListener('toggle', positionNotes);
+        }
+
+        const observer = new MutationObserver(positionNotes);
+        observer.observe(mainContent, { 
+            childList: true, 
+            subtree: true, 
+            attributes: true, 
+            characterData: true 
+        });
+
+        function toggleDarkMode() {
+            document.body.classList.toggle('dark-mode');
+            const toggle = document.querySelector('.post-dark-mode-toggle');
+            if (document.body.classList.contains('dark-mode')) {
+                toggle.textContent = '🌜';
+                toggle.setAttribute('aria-label', 'Switch to light mode');
+            } else {
+                toggle.textContent = '🌞';
+                toggle.setAttribute('aria-label', 'Switch to dark mode');
+            }
+        }
+
+        document.querySelector('.post-dark-mode-toggle').addEventListener('click', toggleDarkMode);
+    });
+    </script>
+</body>
+</html>

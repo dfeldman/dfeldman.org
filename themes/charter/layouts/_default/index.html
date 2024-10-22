@@ -1,0 +1,20 @@
+
+
+{{ define "main"}}
+<div class="blog-content">
+    <table class="blog-table">
+      {{ range .Site.RegularPages }}
+        <tr>
+          <td class="date">{{ .Date.Format "Jan 2006" }}</td>
+          <td class="content">
+            {{ if .Params.linkto }}
+              <a href="{{ .Params.linkto }}" target="_blank">{{ .Title }}</a>
+            {{ else }}
+              <a href="{{ .RelPermalink }}">{{ .Title }}</a>
+            {{ end }}
+          </td>
+        </tr>
+      {{ end }}
+    </table>
+  </div>
+  {{ end }}
