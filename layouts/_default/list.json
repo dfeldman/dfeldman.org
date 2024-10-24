@@ -1,0 +1,9 @@
+{{- $pages := slice -}}
+{{- range .Site.AllPages -}}
+  {{- if .File }}
+  {{- $page := dict "URL" .Permalink "Source" .File.Path -}}
+  {{- $pages = $pages | append $page -}}
+  {{- end -}}
+{{- end -}}
+{{- dict "Pages" $pages | jsonify -}}
+

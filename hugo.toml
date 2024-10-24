@@ -8,6 +8,8 @@ ignoreFiles = ['themes/.*/content/.*']
 
 relativeURLs = true
 canonifyURLs = false
+[outputs]
+  home = ["HTML", "RSS", "JSON"]
 
 [params]
   description = "Your blog description here"
