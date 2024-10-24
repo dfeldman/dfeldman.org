@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{{ .Title }} | {{ .Site.Title }}</title>
     {{ $style := resources.Get "css/post.css" | resources.Minify | resources.Fingerprint }}
-    <link rel="stylesheet" href="{{ $style.Permalink }}">
+    <link rel="stylesheet" href="{{ $style.RelPermalink }}">
 </head>
 <body>
     <button class="post-dark-mode-toggle" aria-label="Toggle dark mode">🌞</button>
@@ -48,11 +48,11 @@
         }
 
         const observer = new MutationObserver(positionNotes);
-        observer.observe(mainContent, { 
-            childList: true, 
-            subtree: true, 
-            attributes: true, 
-            characterData: true 
+        observer.observe(mainContent, {
+            childList: true,
+            subtree: true,
+            attributes: true,
+            characterData: true
         });
 
         function toggleDarkMode() {
