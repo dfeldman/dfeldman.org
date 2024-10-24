@@ -3,8 +3,11 @@ languageCode = 'en-us'
 title = 'My New Hugo Site'
 theme = 'charter'
 
-# Ignore content files inside the theme folder 
+# Ignore content files inside the theme folder
 ignoreFiles = ['themes/.*/content/.*']
+
+relativeURLs = true
+canonifyURLs = false
 
 [params]
   description = "Your blog description here"
