@@ -1,0 +1,32 @@
+/* Charter Font Family Declarations */
+@font-face {
+    font-family: 'Charter';
+    src: url({{ (resources.Get "fonts/charter_regular.woff2").RelPermalink }}) format('woff2');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Charter';
+    src: url({{ (resources.Get "fonts/charter_italic.woff2").RelPermalink }}) format('woff2');
+    font-weight: 400;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Charter';
+    src: url({{ (resources.Get "fonts/charter_bold.woff2").RelPermalink }}) format('woff2');
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Charter';
+    src: url({{ (resources.Get "fonts/charter_bold_italic.woff2").RelPermalink }}) format('woff2');
+    font-weight: 700;
+    font-style: italic;
+    font-display: swap;
+}
