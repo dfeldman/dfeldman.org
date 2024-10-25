@@ -1,0 +1,3 @@
+{{ $count := resources.Get "js/count.js" }}
+<script data-goatcounter="https://dfeldman.goatcounter.com/count"
+        async src="{{ $count.RelPermalink }} "></script>
