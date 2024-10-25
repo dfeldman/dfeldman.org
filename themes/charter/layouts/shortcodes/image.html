@@ -1,0 +1,15 @@
+{{/* image shortcode */}}
+{{ $position := .Get "position" | default "center" }}
+{{ $src := .Get "src" }}
+{{ $alt := .Get "alt" | default "" }}
+{{ $caption := .Get "caption" }}
+
+<figure>
+    <img src="{{ $src }}" 
+         alt="{{ $alt }}" 
+         class="post-image post-image-{{ $position }}"
+    >
+    {{ with $caption }}
+    <figcaption class="post-image-caption">{{ . | markdownify }}</figcaption>
+    {{ end }}
+</figure>

@@ -1,0 +1,12 @@
+{{/* callout shortcode */}}
+{{ $position := .Get "position" | default "full" }}
+{{ $heading := .Get "heading" }}
+
+<div class="callout callout-{{ $position }}">
+    {{ with $heading }}
+    <h3 class="callout-heading">{{ . | markdownify }}</h3>
+    {{ end }}
+    <div class="callout-content">
+        {{ .Inner | markdownify }}
+    </div>
+</div>

@@ -1,0 +1,10 @@
+{{/* dropdown shortcode */}}
+{{ $position := .Get "position" | default "full" }}
+{{ $title := .Get "title" | default "Details" }}
+
+<details class="dropdown dropdown-{{ $position }}">
+    <summary>{{ $title }}</summary>
+    <div class="dropdown-content">
+        {{ .Inner | markdownify }}
+    </div>
+</details>
