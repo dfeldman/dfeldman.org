@@ -9,7 +9,7 @@ tags: ["Hugo", "Static Site Generator", "Web Development", "Markdown"]
 Welcome to this comprehensive guide on Hugo features. This post will demonstrate various Hugo capabilities, including margin notes, table of contents, and more.
 {{< /marginnote >}}
 
-## Testing if a change works 2
+## Testing if a change works 4
 
 ## Introduction
 

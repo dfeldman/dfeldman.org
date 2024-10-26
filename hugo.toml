@@ -1,6 +1,6 @@
 baseURL = 'https://example.org/'
 languageCode = 'en-us'
-title = 'My New Hugo Site'
+title = 'Daniel Feldman'
 theme = 'charter'
 
 # Ignore content files inside the theme folder
@@ -13,10 +13,10 @@ canonifyURLs = false
 
 [params]
   description = "Your blog description here"
-  twitter = "https://twitter.com/yourusername"
-  bluesky = "https://bsky.app/profile/yourusername.bsky.social"
-  mastodon = "https://mastodon.social/@yourusername"
-  email = "your.email@example.com"
-  calendly = "https://calendly.com/yourusername"
+  twitter = "https://twitter.com/d_feldman"
+  bluesky = "https://bsky.app/profile/dfeldman.bsky.social"
+  mastodon = "https://hachyderm.io/@dfeldman"
+  email = "dfeldman.mn@gmail.com"
+  calendly = "https://calendly.com/dfeldman"
   newsletter_signup_url = "https://your-newsletter-service.com/signup"
   author = "Your Name"

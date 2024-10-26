@@ -37,6 +37,41 @@ class DeploymentVerifier:
             print(f"❌ Error running command {' '.join(cmd)}: {e}")
             sys.exit(1)
 
+    def build_hugo(self) -> bool:
+        """Run Hugo build and check for errors"""
+        print("\n🔨 Building Hugo site...")
+
+        # Run hugo with verbose output
+        code, stdout, stderr = self.run_command(['hugo', '--verbose'])
+
+        # Check for common error indicators
+        error_indicators = [
+            'ERROR',
+            'FATAL',
+            'Failed to',
+            'failed to',
+            'Error:',
+            'error:'
+        ]
+
+        # Look for errors in both stdout and stderr
+        output = stdout + stderr
+        found_errors = []
+        for line in output.splitlines():
+            if any(indicator in line for indicator in error_indicators):
+                found_errors.append(line.strip())
+
+        if code != 0 or found_errors:
+            print("❌ Hugo build failed!")
+            if found_errors:
+                print("Errors found:")
+                for error in found_errors:
+                    print(f"  • {error}")
+            return False
+
+        print("✅ Hugo build completed successfully")
+        return True
+
     def get_git_status(self) -> Tuple[List[str], List[str], List[str]]:
         """Returns lists of added, modified, and deleted files"""
         print("\n🔍 Checking git status...")
@@ -57,8 +92,8 @@ class DeploymentVerifier:
             
             if status.startswith('??'):
                 added.append(filename)
-                if not self.first_changed_file:
-                    self.first_changed_file = filename
+                if not self.first_changed_file and filename.endswith('.md'):
+                    self.first_changed_file = filename[:-3] + '.html'
             elif status.startswith(' M') or status.startswith('M '):
                 modified.append(filename)
                 if not self.first_changed_file:
@@ -135,7 +170,7 @@ class DeploymentVerifier:
                 print("⚠️  Unexpected workflow run output format")
                 return False
 
-            status = run_info[2]
+            status = run_info[0]
             
             if status != last_status:
                 print(f"📊 Workflow status: {status}")
@@ -144,7 +179,7 @@ class DeploymentVerifier:
             if status == 'completed':
                 print("✅ Workflow completed successfully!")
                 return True
-            elif status in ['failed', 'cancelled']:
+            elif status not in ['in_progress', 'queued', 'waiting']:
                 print(f"❌ Workflow {status}!")
                 return False
                 
@@ -197,7 +232,11 @@ class DeploymentVerifier:
     def run(self) -> bool:
         """Run the complete verification process"""
         print("\n🚀 Starting deployment verification process...")
-        # 0. TODO do a preview build 
+
+        # 0. Build to check for errors 
+        if not self.build_hugo():
+            return False
+
         # 1. Check for changes and add new files
         added, modified, deleted = self.get_git_status()
         if added:
@@ -228,7 +267,8 @@ class DeploymentVerifier:
         time.sleep(CACHE_WAIT)
 
         # 7. Verify canary
-        canary_url = f"{self.repo_url}/{self.canary_path}"
+        canary_filename = self.canary_path.split('/')[-1]
+        canary_url = f"{self.repo_url}/{canary_filename}"
         success = self.verify_canary(canary_url)
 
         # 8. Open changed file in browser
@@ -239,7 +279,7 @@ class DeploymentVerifier:
 
 def main():
     # These should be configured for your repository
-    REPO_URL = "https://dfeldman.github.io/dfeldman"
+    REPO_URL = "https://dfeldman.github.io/dfeldman.org"
     CANARY_PATH = "content/canary.txt"  # Adjust based on your Hugo structure
 
     print("🔧 Deploy Verification Script")

@@ -168,8 +168,8 @@ body {
     color: var(--post-text-color);
     background-color: var(--post-bg-color);
     margin: 0;
-    padding-left: 10rem;
-    padding-right: 10rem;
+    padding-left: 10%;
+    padding-right: 10%;
     padding-top: 2rem;
 }
 
@@ -233,7 +233,7 @@ body {
 }
 
 .margin-note {
-    font-size: 0.9rem;
+    font-size: 0.7rem;
     color: var(--post-text-color);
     opacity: 0.8;
     padding: 0.5rem;
@@ -250,6 +250,76 @@ body {
     }
 
     .post-content {
+        padding-left: 220px;
+    }
+
+    .margin-note-container {
+        flex-direction: row;
+    }
+
+    .margin-note {
+        position: absolute;
+        left: 0;
+        width: 140px;
+        text-align: right;
+        padding-right: 1rem;
+        border-right: 2px solid var(--post-border-color);
+        border-left: none;
+        background-color: transparent;
+    }
+}
+
+/* New stuff, not sure how much this works */
+
+/* Image Classes */
+.post-image {
+    max-width: 100%;
+    height: auto;
+    margin-bottom: 0.5rem;
+    border-radius: 5px;
+    border: 1px solid var(--post-border-color);
+}
+
+.post-image-caption {
+    font-size: 0.9rem;
+    color: var(--post-text-color);
+    opacity: 0.8;
+    text-align: center;
+    margin-bottom: 1.5rem;
+    font-style: italic;
+}
+
+.post-image-centered {
+    display: block;
+    margin: 2rem auto;
+}
+
+.post-image-left {
+    float: left;
+    margin-right: 2rem;
+    margin-bottom: 1rem;
+}
+
+.post-image-right {
+    float: right;
+    margin-left: 2rem;
+    margin-bottom: 1rem;
+}
+
+/* Clear floats after image containers */
+.post-content::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+
+/* Media Queries */
+@media (min-width: 1024px) {
+    .post {
+        max-width: 1000px;
+    }
+
+    .post-content {
         padding-left: 200px;
     }
 
@@ -260,13 +330,329 @@ body {
     .margin-note {
         position: absolute;
         left: 0;
-        width: 160px;
+        width: 140px;
         text-align: right;
         padding-right: 1rem;
         border-right: 2px solid var(--post-border-color);
         border-left: none;
         background-color: transparent;
     }
+
+    /* Desktop image sizes */
+    .post-image-left, 
+    .post-image-right {
+        max-width: calc(50% + 110px); /* Extends into margin */
+        margin-left: -110px; /* For left-aligned images */
+    }
+
+    .post-image-right {
+        margin-left: 2rem; /* Reset left margin for right-aligned */
+        margin-right: -110px; /* Extend into right margin */
+    }
 }
 
-/* Other styles (headings, links, etc.) remain the same */
+/* Mobile Styles */
+@media (max-width: 1023px) {
+    body {
+        padding-left: 1rem;
+        padding-right: 1rem;
+        padding-top: 1rem;
+    }
+
+    .post {
+        padding: 1rem;
+    }
+
+    .post-content {
+        margin-left: 0;
+        padding-left: 0;
+    }
+
+    .post-title {
+        font-size: 2rem;
+    }
+
+    .post-subtitle {
+        font-size: 1.1rem;
+    }
+
+    /* Mobile image handling */
+    .post-image-left,
+    .post-image-right,
+    .post-image-centered {
+        float: none;
+        margin: 1rem auto;
+        max-width: 100%;
+        display: block;
+    }
+
+    .margin-note {
+        position: static;
+        width: auto;
+        text-align: left;
+        padding: 0.5rem 1rem;
+        margin: 1rem 0;
+        border-left: 2px solid var(--post-border-color);
+        background-color: var(--post-note-bg-color);
+    }
+}
+
+/* Small mobile devices */
+@media (max-width: 480px) {
+    body {
+        padding-left: 0.5rem;
+        padding-right: 0.5rem;
+    }
+
+    .post {
+        padding: 0.5rem;
+    }
+
+    .post-title {
+        font-size: 1.8rem;
+    }
+
+    .post-toc {
+        padding: 0.5rem;
+    }
+}
+
+/* Callout Base Styles */
+.callout {
+    background-color: var(--post-note-bg-color);
+    border: 1px solid var(--post-border-color);
+    border-left: 4px solid var(--post-link-color);
+    padding: 1.5rem;
+    margin: 2rem 0;
+    border-radius: 4px;
+}
+
+.callout-heading {
+    font-family: 'Charter', Georgia, serif;
+    font-size: 1.3rem;
+    font-weight: 600;
+    margin-top: 0;
+    margin-bottom: 1rem;
+    color: var(--post-text-color);
+    /* Slightly different from main headings */
+    letter-spacing: 0.02em;
+    line-height: 1.3;
+}
+
+.callout h3.callout-heading {
+    margin: 0;
+    padding: 0;
+}
+
+.callout-content {
+    font-size: 0.95rem;
+    line-height: 1.5;
+}
+
+/* Callout */
+.callout-full {
+    width: 100%;
+}
+
+/* Desktop Styles (≥1024px) */
+@media (min-width: 1024px) {
+    .callout-left {
+        float: left;
+        width: calc(50% + 110px); /* Extends into margin */
+        margin: 1rem 2rem 1rem -110px;
+    }
+
+    .callout-right {
+        float: right;
+        width: calc(50% + 110px); /* Extends into margin */
+        margin: 1rem -110px 1rem 2rem;
+    }
+    
+    /* Clear floats */
+    .callout-left + *,
+    .callout-right + * {
+        clear: both;
+    }
+}
+
+/* Mobile Styles (<1024px) */
+@media (max-width: 1023px) {
+    .callout-left,
+    .callout-right {
+        width: 100%;
+        float: none;
+        margin: 1.5rem 0;
+    }
+    
+    .callout {
+        padding: 1rem;
+    }
+    
+    .callout-heading {
+        font-size: 1.2rem;
+    }
+}
+
+/* Small Mobile Styles */
+@media (max-width: 480px) {
+    .callout {
+        margin: 1rem -0.5rem;
+        border-radius: 0;
+    }
+}
+
+/* Dropdowns -- not currently used */
+
+/* Dropdown Base Styles */
+.dropdown {
+    background-color: var(--post-note-bg-color);
+    border: 1px solid var(--post-border-color);
+    border-radius: 5px;
+    margin: 2rem 0;
+}
+
+.dropdown summary {
+    cursor: pointer;
+    padding: 1rem;
+    font-weight: bold;
+    color: var(--post-link-color);
+    position: relative;
+    list-style: none; /* Removes default triangle */
+}
+
+/* Custom dropdown arrow */
+.dropdown summary::after {
+    content: "▼";
+    position: absolute;
+    right: 1rem;
+    transition: transform 0.2s ease;
+    font-size: 0.8em;
+}
+
+.dropdown[open] summary::after {
+    transform: rotate(180deg);
+}
+
+/* Remove default arrow in Safari */
+.dropdown summary::-webkit-details-marker {
+    display: none;
+}
+
+/* Dropdown Content */
+.dropdown-content {
+    padding: 1rem;
+    border-top: 1px solid var(--post-border-color);
+}
+
+/* Animation for opening/closing */
+.dropdown-content {
+    animation: slideDown 0.2s ease-out;
+}
+
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Variations */
+.dropdown-full {
+    width: 100%;
+}
+
+/* Desktop Styles (≥1024px) */
+@media (min-width: 1024px) {
+    .dropdown-left {
+        float: left;
+        width: calc(50% + 110px);
+        margin: 1rem 2rem 1rem -110px;
+    }
+
+    .dropdown-right {
+        float: right;
+        width: calc(50% + 110px);
+        margin: 1rem -110px 1rem 2rem;
+    }
+    
+    /* Clear floats */
+    .dropdown-left + *,
+    .dropdown-right + * {
+        clear: both;
+    }
+}
+
+/* Mobile Styles (<1024px) */
+@media (max-width: 1023px) {
+    .dropdown {
+        margin: 1.5rem 0;
+    }
+    
+    .dropdown-left,
+    .dropdown-right {
+        width: 100%;
+        float: none;
+        margin: 1.5rem 0;
+    }
+    
+    .dropdown summary,
+    .dropdown-content {
+        padding: 0.8rem;
+    }
+}
+
+/* Small Mobile Styles */
+@media (max-width: 480px) {
+    .dropdown {
+        margin: 1rem -0.5rem;
+        border-radius: 0;
+    }
+}
+
+/* Font */
+
+body {
+    font-family: 'charter', Georgia, serif !important;
+    font-weight: 400;
+}
+
+strong, b {
+    font-weight: 700;
+}charter,Georgia,serif
+
+em, i {
+    font-style: italic;
+}
+
+strong em, strong i, b em, b i {
+    font-weight: 700;
+    font-style: italic;
+}
+
+/* Justification rules  -- turned off
+
+@media (min-width: 768px) {
+    .post-content p {
+        text-align: justify;
+        hyphens: auto;
+        -webkit-hyphens: auto;
+        -ms-hyphens: auto;
+
+    word-spacing: 0.05em;
+    
+    text-justify: inter-word;
+    
+    letter-spacing: 0.01em;
+    }
+}
+
+@media (max-width: 767px) {
+    .post-content p {
+        text-align: left;
+    }
+}
+*/
