@@ -483,6 +483,10 @@ body {
     .callout-heading {
         font-size: 1.2rem;
     }
+
+    .margin-note {
+        display: none; /* Hide margin notes on mobile. They look bad. */    
+    }
 }
 
 /* Small Mobile Styles */
