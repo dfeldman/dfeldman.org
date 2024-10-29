@@ -34,12 +34,13 @@ body {
 }
 
 h1 {
-  font-family: Montserrat, sans-serif;
+  font-family: "Charter", sans-serif;
   font-size: 1.8rem;
   font-weight: 700;
   margin-bottom: 0.5rem;
   padding-bottom: 0.5rem;
   border-bottom: 3px solid var(--accent-color);
+  line-height: 0.8;
 }
 
 .description {
@@ -172,6 +173,7 @@ h1 {
   color: var(--margin-note-color);
   text-align: right;
   margin-bottom: 1rem;
+  font-style: italic;
 }
 
 h1, h2, h3, h4, h5, h6 {
