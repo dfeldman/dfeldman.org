@@ -1,0 +1,69 @@
+
+<!-- Canonical Link -->
+{{ with .Permalink }}
+    <link rel="canonical" href="{{ . }}" />
+{{ end }}
+
+<!-- Open Graph Metadata -->
+<meta property="og:locale" content="{{ .Site.Params.og_locale | default "en_US" }}" />
+<meta property="og:type" content="article" />
+<meta property="og:title" content="{{ .Title }}" />
+{{ with .Params.description | default .Site.Params.description }}
+    <meta property="og:description" content="{{ . }}" />
+{{ else }}
+    <meta property="og:description" content="{{ .Summary }}" />
+{{ end }}
+<meta property="og:url" content="{{ .Permalink }}" />
+<meta property="og:site_name" content="{{ .Site.Title }}" />
+<meta property="og:image" content="{{ .Params.og_image | default .Site.Params.og_image }}" />
+<meta property="og:image:width" content="{{ .Params.og_image_width | default .Site.Params.og_image_width }}" />
+<meta property="og:image:height" content="{{ .Params.og_image_height | default .Site.Params.og_image_height }}" />
+<meta property="og:image:type" content="{{ .Params.og_image_type | default .Site.Params.og_image_type }}" />
+<meta property="article:publisher" content="{{ .Params.article_publisher | default .Site.Params.article_publisher }}" />
+<meta property="article:published_time" content="{{ .Params.published_time }}" />
+
+<!-- Twitter Card Metadata -->
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:creator" content="{{ .Params.twitter_creator | default .Site.Params.twitter_creator }}" />
+<meta name="twitter:site" content="{{ .Params.twitter_site | default .Site.Params.twitter_site }}" />
+<meta name="twitter:label1" content="Written by" />
+<meta name="twitter:data1" content="{{ .Params.author | default .Site.Params.author }}" />
+<meta name="twitter:label2" content="Est. reading time" />
+<meta name="twitter:data2" content="{{ .Params.reading_time | default "5 minutes" }}" />
+
+<!-- Author Metadata -->
+<meta name="author" content="{{ .Params.author | default .Site.Params.author }}" />
+
+<!-- JSON-LD Schema.org Metadata -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "{{ .Title }}",
+  "description": "{{ .Params.description | default .Site.Params.description }}",
+  "author": {
+    "@type": "Person",
+    "name": "{{ .Params.author | default .Site.Params.author }}"
+  },
+  "datePublished": "{{ .Params.published_time }}",
+  "dateModified": "{{ .Params.modified_time }}",
+  "publisher": {
+    "@type": "Organization",
+    "name": "{{ .Site.Title }}",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "{{ .Params.publisher_logo | default .Site.Params.publisher_logo }}"
+    }
+  },
+  "image": {
+    "@type": "ImageObject",
+    "url": "{{ .Params.og_image | default .Site.Params.og_image }}",
+    "width": "{{ .Params.og_image_width | default .Site.Params.og_image_width }}",
+    "height": "{{ .Params.og_image_height | default .Site.Params.og_image_height }}",
+    "type": "{{ .Params.og_image_type | default .Site.Params.og_image_type }}"
+  },
+  "keywords": [{{ delimit (.Params.keywords | default .Site.Params.keywords) ", " }}],
+  "articleSection": [{{ delimit (.Params.article_section | default .Site.Params.article_section) ", " }}],
+  "mainEntityOfPage": "{{ .Permalink }}"
+}
+</script>
