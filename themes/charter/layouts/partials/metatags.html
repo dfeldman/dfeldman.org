@@ -4,6 +4,13 @@
     <link rel="canonical" href="{{ . }}" />
 {{ end }}
 
+
+{{ $readingTime := math.Ceil (div .WordCount 200) }}
+{{ if gt $readingTime 1 }}
+    <meta name="reading_time" content="{{ $readingTime }} minutes" />
+{{ else }}
+    <meta name="reading_time" content="1 minute" />
+{{ end }}
 <!-- Open Graph Metadata -->
 <meta property="og:locale" content="{{ .Site.Params.og_locale | default "en_US" }}" />
 <meta property="og:type" content="article" />
@@ -29,7 +36,7 @@
 <meta name="twitter:label1" content="Written by" />
 <meta name="twitter:data1" content="{{ .Params.author | default .Site.Params.author }}" />
 <meta name="twitter:label2" content="Est. reading time" />
-<meta name="twitter:data2" content="{{ .Params.reading_time | default "5 minutes" }}" />
+<meta name="twitter:data2" content="{{ $readingTime | default "5 minutes" }}" />
 
 <!-- Author Metadata -->
 <meta name="author" content="{{ .Params.author | default .Site.Params.author }}" />

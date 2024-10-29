@@ -18,6 +18,8 @@
     {{ $style3 := resources.Get "css/hover.css" | resources.Minify | resources.Fingerprint }}
     <link rel="stylesheet" href="{{ $style3.RelPermalink }}">
     {{ partial "analytics.html" . }}
+    {{ partial "metatags.html" . }}
+
 </head>
 <body>
     <button class="post-dark-mode-toggle" aria-label="Toggle dark mode">🌞</button>

@@ -10,7 +10,9 @@
     {{ $style = $style | resources.ExecuteAsTemplate "css/style.css" . | minify | fingerprint }}
     <link rel="stylesheet" href="{{ $style.RelPermalink }}" integrity="{{ $style.Data.Integrity }}">
     {{ partial "analytics.html" . }}
+    {{ partial "metatags.html" . }}
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
 </head>
 <body>
   <div class="container">
