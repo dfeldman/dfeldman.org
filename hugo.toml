@@ -13,7 +13,7 @@ canonifyURLs = false
 
 [params]
 # Used for main page right now
-  description = "Security Musincs"
+  description = "Security Musings"
   twitter = "https://twitter.com/d_feldman"
   bluesky = "https://bsky.app/profile/dfeldman.bsky.social"
   mastodon = "https://hachyderm.io/@dfeldman"
