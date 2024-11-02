@@ -1,0 +1,1156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Enhanced Typography Playground</title>
+    <!-- Pre-load fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@300;400;700;900&family=Playfair+Display:wght@400;500;600;700;800;900&family=Lora:wght@400;500;600;700&family=PT+Serif:wght@400;700&family=Source+Serif+Pro:wght@400;700&family=Crimson+Text:wght@400;700&family=IBM+Plex+Serif:wght@400;700&family=Bitter:wght@400;700&family=Inter:wght@300;400;500;600;700&family=Source+Sans+Pro:wght@400;700&family=Open+Sans:wght@400;700&family=Roboto:wght@400;700&family=Nunito:wght@400;700&family=Work+Sans:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: system-ui, -apple-system, sans-serif;
+            line-height: 1.5;
+            margin: 0;
+            min-height: 100vh;
+            background: #f5f5f5;
+            overflow: hidden; /* Prevent body scroll */
+        }
+
+        .container {
+            display: flex;
+            gap: 1rem;
+            padding: 1rem;
+            height: 100vh;
+            overflow: hidden; /* Contain scrollable areas */
+        }
+
+        .controls {
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            padding: 1rem;
+            width: 350px;
+            height: calc(100vh - 2rem); /* Full height minus padding */
+            overflow-y: auto;
+            flex-shrink: 0;
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        /* Scrollbar styling for controls */
+        .controls::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        .controls::-webkit-scrollbar-track {
+            background: #f1f1f1;
+            border-radius: 4px;
+        }
+
+        .controls::-webkit-scrollbar-thumb {
+            background: #888;
+            border-radius: 4px;
+        }
+
+        .controls::-webkit-scrollbar-thumb:hover {
+            background: #666;
+        }
+
+        .control-section {
+            background: #f8f8f8;
+            border-radius: 6px;
+            padding: 1rem;
+            margin-bottom: 1rem;
+        }
+
+        .control-section:last-child {
+            margin-bottom: 0;
+        }
+
+        .control-group {
+            margin-bottom: 1rem;
+        }
+
+        .control-group:last-child {
+            margin-bottom: 0;
+        }
+
+        h3.control-title {
+            font-size: 1rem;
+            margin-bottom: 0.75rem;
+            color: #333;
+            border-bottom: 1px solid #ddd;
+            padding-bottom: 0.5rem;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+            font-size: 0.9rem;
+            color: #666;
+        }
+
+        select, input[type="range"], input[type="number"], input[type="color"] {
+            width: 100%;
+            padding: 0.5rem;
+            margin-bottom: 0.5rem;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            background: white;
+        }
+
+        input[type="color"] {
+            height: 40px;
+            padding: 2px;
+        }
+
+        input[type="range"] {
+            padding: 0.25rem 0;
+        }
+
+        .value-display {
+            float: right;
+            color: #666;
+            font-size: 0.85rem;
+        }
+
+        .switch-group {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 0.5rem;
+            background: white;
+            padding: 0.5rem;
+            border-radius: 4px;
+            border: 1px solid #ddd;
+        }
+
+        .css-output {
+            background: #1e1e1e;
+            color: #d4d4d4;
+            padding: 1rem;
+            border-radius: 4px;
+            font-family: monospace;
+            font-size: 0.85rem;
+            white-space: pre-wrap;
+            max-height: 300px;
+            overflow-y: auto;
+        }
+
+        .preview-container {
+            flex: 1;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            height: calc(100vh - 2rem); /* Full height minus padding */
+        }
+
+        .preview-header {
+            padding: 0.75rem;
+            background: #f8f8f8;
+            border-bottom: 1px solid #eee;
+            display: flex;
+            gap: 0.5rem;
+            align-items: center;
+        }
+
+        .preview-content {
+            flex: 1;
+            overflow-y: auto;
+            padding: 2rem;
+        }
+
+        .preview {
+            max-width: 65ch;
+            margin: 0 auto;
+        }
+
+        /* Device frame styles */
+        .preview-frame {
+            margin: 0 auto;
+            overflow-y: auto;
+            background: white;
+            transition: all 0.3s ease;
+        }
+
+        /* Color schemes */
+        .theme-light { background: white; color: #1a1a1a; }
+        .theme-sepia { background: #f4f1ea; color: #5c4b37; }
+        .theme-dark { background: #1a1a1a; color: #f0f0f0; }
+        .theme-forest { background: #1b4332; color: #b7e4c7; }
+        .theme-navy { background: #1e3a8a; color: #dbeafe; }
+
+        /* Tab styles for CSS output */
+        .tab-container {
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            overflow: hidden;
+        }
+
+        .tab-buttons {
+            display: flex;
+            background: #f5f5f5;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .tab-button {
+            padding: 0.5rem 1rem;
+            border: none;
+            background: none;
+            cursor: pointer;
+            font-size: 0.9rem;
+            color: #666;
+        }
+
+        .tab-button.active {
+            background: white;
+            color: #333;
+            border-bottom: 2px solid #333;
+        }
+
+        .tab-content {
+            display: none;
+            padding: 1rem;
+        }
+
+        .tab-content.active {
+            display: block;
+        }
+
+        /* Spacing indicator styles */
+        .spacing-indicator {
+            font-size: 0.8rem;
+            color: #666;
+            text-align: right;
+            margin-top: 0.25rem;
+        }
+
+        #ruleStyle option {
+             padding: 4px;
+         }
+
+
+             /* Override heading styles for control panel */
+    .control-section h3.control-title {
+        /* Reset all possible heading styles */
+        font-family: system-ui, -apple-system, sans-serif !important;
+        font-size: 1rem !important;
+        font-weight: 600 !important;
+        margin: 0 0 0.75rem 0 !important;
+        padding: 0 0 0.5rem 0 !important;
+        border: none !important;
+        border-bottom: 1px solid #ddd !important;
+        position: static !important;
+        line-height: 1.4 !important;
+        background: none !important;
+        color: #333 !important;
+    }
+
+    .control-section h3.control-title::before,
+    .control-section h3.control-title::after {
+        /* Remove any generated content from rules */
+        display: none !important;
+        content: none !important;
+    }
+
+    /* Ensure other headings in controls (if any) are also reset */
+    .controls h1, .controls h2, .controls h3,
+    .controls h4, .controls h5, .controls h6 {
+        font-family: system-ui, -apple-system, sans-serif !important;
+        font-size: 1rem !important;
+        font-weight: 600 !important;
+        margin: 0 0 0.75rem 0 !important;
+        padding: 0 !important;
+        border: none !important;
+        position: static !important;
+        line-height: 1.4 !important;
+        background: none !important;
+        color: #333 !important;
+    }
+
+    .controls h1::before, .controls h1::after,
+    .controls h2::before, .controls h2::after,
+    .controls h3::before, .controls h3::after,
+    .controls h4::before, .controls h4::after,
+    .controls h5::before, .controls h5::after,
+    .controls h6::before, .controls h6::after {
+        display: none !important;
+        content: none !important;
+    }
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="controls">
+        <!-- Typography Section -->
+        <div class="control-section">
+            <h3 class="control-title">Typography</h3>
+            <div class="control-group">
+                <label for="headingFont">Heading Font</label>
+                <select id="headingFont"></select>
+            </div>
+            <div class="control-group">
+                <label for="bodyFont">Body Font</label>
+                <select id="bodyFont"></select>
+            </div>
+            <div class="control-group">
+                <label>Heading Scale <span id="headingScaleValue" class="value-display">1</span></label>
+                <input type="range" id="headingScale" min="0.5" max="2" step="0.1" value="1">
+            </div>
+            <div class="control-group">
+                <label>Heading Weight <span id="headingWeightValue" class="value-display">700</span></label>
+                <input type="range" id="headingWeight" min="400" max="900" step="100" value="700">
+            </div>
+            <div class="control-group">
+                <label>Body Weight <span id="bodyWeightValue" class="value-display">400</span></label>
+                <input type="range" id="bodyWeight" min="300" max="700" step="100" value="400">
+            </div>
+        </div>
+
+        <!-- Spacing Section -->
+        <div class="control-section">
+            <h3 class="control-title">Spacing</h3>
+            <div class="control-group">
+                <label>Paragraph Spacing <span id="paragraphSpacingValue" class="value-display">1.5rem</span></label>
+                <input type="range" id="paragraphSpacing" min="0.5" max="4" step="0.25" value="1.5">
+            </div>
+            <div class="control-group">
+                <label>Line Height <span id="lineHeightValue" class="value-display">1.6</span></label>
+                <input type="range" id="lineHeight" min="1" max="2" step="0.1" value="1.6">
+            </div>
+            <div class="control-group">
+                <label>Space Before Heading <span id="headingBeforeSpacingValue" class="value-display">2rem</span></label>
+                <input type="range" id="headingBeforeSpacing" min="0" max="4" step="0.25" value="2">
+            </div>
+            <div class="control-group">
+                <label>Space After Heading <span id="headingAfterSpacingValue" class="value-display">1rem</span></label>
+                <input type="range" id="headingAfterSpacing" min="0" max="4" step="0.25" value="1">
+            </div>
+        </div>
+
+        <div class="control-section">
+            <h3 class="control-title">Rules</h3>
+            <div class="control-group">
+                <label for="headingRule">Heading Rule</label>
+                <select id="headingRule">
+                    <option value="none">None</option>
+                    <option value="above">Above</option>
+                    <option value="below">Below</option>
+                </select>
+            </div>
+            <div class="control-group">
+                <label for="ruleStyle">Rule Style</label>
+                <select id="ruleStyle">
+                    <option value="solid">Solid Line</option>
+                    <option value="double">Double Line</option>
+                    <option value="dotted">Dotted</option>
+                    <option value="dashed">Dashed</option>
+                    <option value="wavy">Wavy</option>
+                    <option value="gradient">Gradient Fade</option>
+                    <option value="thick">Thick Bar</option>
+                    <option value="accent">Accent Color</option>
+                    <option value="glow">Glowing Line</option>
+                    <option value="shadow">Shadow Line</option>
+                </select>
+            </div>
+            <div class="control-group">
+                <label>Rule Spacing <span id="ruleSpacingValue" class="value-display">0.5rem</span></label>
+                <input type="range" id="ruleSpacing" min="0.25" max="2" step="0.25" value="0.5">
+                <div class="spacing-indicator">Space between rule and heading</div>
+            </div>
+        </div>
+
+        <!-- Link Styles Section -->
+        <div class="control-section">
+            <h3 class="control-title">Links</h3>
+            <div class="control-group">
+                <label for="linkStyle">Link Style</label>
+                <select id="linkStyle">
+                    <option value="Simple">Simple</option>
+                    <option value="Dotted">Dotted</option>
+                    <option value="Dashed">Dashed</option>
+                    <option value="Wavy">Wavy</option>
+                    <option value="Highlight">Highlight</option>
+                    <option value="Modern">Modern</option>
+                </select>
+            </div>
+            <div class="control-group">
+                <label for="linkColor">Link Color</label>
+                <input type="color" id="linkColor" value="#0066cc">
+            </div>
+            <div class="control-group">
+                <label for="linkHoverColor">Link Hover Color</label>
+                <input type="color" id="linkHoverColor" value="#003366">
+            </div>
+        </div>
+
+        <!-- Color Scheme Section -->
+        <div class="control-section">
+            <h3 class="control-title">Theme</h3>
+            <div class="control-group">
+                <label for="colorScheme">Color Scheme</label>
+                <select id="colorScheme">
+                    <option value="light">Light</option>
+                    <option value="sepia">Sepia</option>
+                    <option value="dark">Dark</option>
+                    <option value="forest">Forest</option>
+                    <option value="navy">Navy</option>
+                </select>
+            </div>
+            <div class="control-group">
+                <label for="textColor">Text Color</label>
+                <input type="color" id="textColor" value="#000000">
+            </div>
+            <div class="control-group">
+                <label for="backgroundColor">Background Color</label>
+                <input type="color" id="backgroundColor" value="#ffffff">
+            </div>
+        </div>
+
+        <!-- Blockquote Styles Section -->
+        <div class="control-section">
+            <h3 class="control-title">Blockquotes</h3>
+            <div class="control-group">
+                <label for="blockquoteStyle">Style</label>
+                <select id="blockquoteStyle">
+                    <option value="Simple Border">Simple Border</option>
+                    <option value="Background">Background</option>
+                    <option value="Double Quote">Double Quote</option>
+                    <option value="Modern">Modern</option>
+                </select>
+            </div>
+        </div>
+
+        <!-- Image Styles Section -->
+        <div class="control-section">
+            <h3 class="control-title">Images</h3>
+            <div class="control-group">
+                <label>Border Radius <span id="imageRadiusValue" class="value-display">4px</span></label>
+                <input type="range" id="imageRadius" min="0" max="20" step="1" value="4">
+            </div>
+            <div class="control-group">
+                <label>Image Spacing <span id="imageSpacingValue" class="value-display">2rem</span></label>
+                <input type="range" id="imageSpacing" min="1" max="4" step="0.5" value="2">
+            </div>
+            <div class="control-group">
+                <label for="captionStyle">Caption Style</label>
+                <select id="captionStyle">
+                    <option value="normal">Normal</option>
+                    <option value="italic">Italic</option>
+                </select>
+            </div>
+        </div>
+
+        <!-- Layout Section -->
+        <div class="control-section">
+            <h3 class="control-title">Layout</h3>
+            <div class="control-group">
+                <label for="devicePreset">Device Size</label>
+                <select id="devicePreset">
+                    <option value="Custom">Custom</option>
+                    <option value="Mobile Portrait">Mobile Portrait</option>
+                    <option value="Mobile Landscape">Mobile Landscape</option>
+                    <option value="Tablet Portrait">Tablet Portrait</option>
+                    <option value="Tablet Landscape">Tablet Landscape</option>
+                    <option value="Laptop">Laptop</option>
+                    <option value="Desktop">Desktop</option>
+                </select>
+            </div>
+            <div class="switch-group">
+                <label for="justify">Justify Text</label>
+                <input type="checkbox" id="justify">
+            </div>
+        </div>
+
+        <!-- CSS Output -->
+        <div class="control-section">
+            <h3 class="control-title">Generated CSS</h3>
+            <div class="css-output" id="cssOutput"></div>
+        </div>
+    </div>
+
+    <div class="preview-container">
+        <div class="preview-header">
+            <select id="contentExample">
+                <option value="article">Article Example</option>
+                <option value="blog">Blog Post Example</option>
+                <option value="documentation">Documentation Example</option>
+            </select>
+        </div>
+        <div class="preview-content">
+            <div class="preview-frame">
+                <div class="preview">
+                    <!-- Preview content will be inserted here by JavaScript -->
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+    // Font Configuration
+    const FONTS = [
+        { name: "Merriweather", type: "serif", weights: [300, 400, 700, 900] },
+        { name: "Playfair Display", type: "serif", weights: [400, 500, 600, 700, 800, 900] },
+        { name: "Lora", type: "serif", weights: [400, 500, 600, 700] },
+        { name: "PT Serif", type: "serif", weights: [400, 700] },
+        { name: "Source Serif Pro", type: "serif", weights: [400, 700] },
+        { name: "Crimson Text", type: "serif", weights: [400, 700] },
+        { name: "IBM Plex Serif", type: "serif", weights: [400, 700] },
+        { name: "Bitter", type: "serif", weights: [400, 700] },
+        { name: "Inter", type: "sans-serif", weights: [300, 400, 500, 600, 700] },
+        { name: "Source Sans Pro", type: "sans-serif", weights: [400, 700] },
+        { name: "Open Sans", type: "sans-serif", weights: [400, 700] },
+        { name: "Roboto", type: "sans-serif", weights: [400, 700] },
+        { name: "Nunito", type: "sans-serif", weights: [400, 700] },
+        { name: "Work Sans", type: "sans-serif", weights: [400, 700] }
+    ];
+    
+    const SAMPLE_IMAGES = [
+        {
+            url: "https://via.placeholder.com/800x400",
+            alt: "A scenic landscape",
+            caption: "A beautiful mountain vista with snow-capped peaks"
+        },
+        {
+            url: "https://via.placeholder.com/600x400",
+            alt: "Urban architecture",
+            caption: "Modern architectural design in the heart of the city"
+        },
+        {
+            url: "https://via.placeholder.com/800x600",
+            alt: "Nature close-up",
+            caption: "Macro photography of morning dew on a leaf"
+        },
+        {
+            url: "https://via.placeholder.com/400x400",
+            alt: "Abstract art",
+            caption: "Contemporary abstract artwork exploring color and form"
+        },
+        {
+            url: "https://via.placeholder.com/800x300",
+            alt: "Technology",
+            caption: "The evolution of modern computing devices"
+        }
+    ];
+    
+    const DEVICE_PRESETS = {
+        "Mobile Portrait": { width: "375px", height: "667px" },
+        "Mobile Landscape": { width: "667px", height: "375px" },
+        "Tablet Portrait": { width: "768px", height: "1024px" },
+        "Tablet Landscape": { width: "1024px", height: "768px" },
+        "Laptop": { width: "1366px", height: "768px" },
+        "Desktop": { width: "1920px", height: "1080px" },
+        "Custom": { width: "100%", height: "auto" }
+    };
+    
+    const LINK_STYLES = {
+        "Simple": {
+            textDecoration: "underline",
+            textDecorationStyle: "solid"
+        },
+        "Dotted": {
+            textDecoration: "underline",
+            textDecorationStyle: "dotted"
+        },
+        "Dashed": {
+            textDecoration: "underline",
+            textDecorationStyle: "dashed"
+        },
+        "Wavy": {
+            textDecoration: "underline",
+            textDecorationStyle: "wavy"
+        },
+        "Highlight": {
+            textDecoration: "none",
+            backgroundColor: "rgba(255, 255, 0, 0.3)"
+        },
+        "Modern": {
+            textDecoration: "none",
+            borderBottom: "2px solid currentColor"
+        }
+    };
+    
+    const BLOCKQUOTE_STYLES = {
+        "Simple Border": {
+            borderLeft: "4px solid currentColor",
+            paddingLeft: "1em",
+            fontStyle: "italic",
+            margin: "1.5em 0"
+        },
+        "Background": {
+            backgroundColor: "rgba(0, 0, 0, 0.05)",
+            padding: "1.5em",
+            borderRadius: "4px",
+            margin: "1.5em 0"
+        },
+        "Double Quote": {
+            position: "relative",
+            padding: "2em",
+            fontStyle: "italic",
+            margin: "1.5em 0",
+            backgroundColor: "rgba(0, 0, 0, 0.02)"
+        },
+        "Modern": {
+            borderLeft: "none",
+            backgroundColor: "rgba(0, 0, 0, 0.05)",
+            padding: "2em",
+            borderRadius: "8px",
+            margin: "1.5em 0",
+            boxShadow: "0 2px 4px rgba(0,0,0,0.1)"
+        }
+    };
+
+    const RULE_STYLES = {
+    solid: {
+        css: `
+            content: '';
+            position: absolute;
+            left: 0;
+            right: 0;
+            height: 1px;
+            background-color: currentColor;
+        `
+    },
+    double: {
+        css: `
+            content: '';
+            position: absolute;
+            left: 0;
+            right: 0;
+            height: 3px;
+            border-top: 1px solid currentColor;
+            border-bottom: 1px solid currentColor;
+        `
+    },
+    thick: {
+        css: `
+            content: '';
+            position: absolute;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background-color: currentColor;
+            opacity: 0.8;
+        `
+    },
+    dotted: {
+        css: `
+            content: '';
+            position: absolute;
+            left: 0;
+            right: 0;
+            height: 1px;
+            background-image: linear-gradient(to right, currentColor 2px, transparent 2px);
+            background-size: 6px 1px;
+            background-repeat: repeat-x;
+        `
+    },
+    dashed: {
+        css: `
+            content: '';
+            position: absolute;
+            left: 0;
+            right: 0;
+            height: 1px;
+            background-image: linear-gradient(to right, currentColor 12px, transparent 12px);
+            background-size: 16px 1px;
+            background-repeat: repeat-x;
+        `
+    },
+    accent: {
+        css: `
+            content: '';
+            position: absolute;
+            left: 0;
+            right: 0;
+            height: 2px;
+            background: linear-gradient(to right, #ff3366, #ff6b3d);
+        `
+    },
+    gradient: {
+        css: `
+            content: '';
+            position: absolute;
+            left: 0;
+            right: 0;
+            height: 1px;
+            background: linear-gradient(to right, transparent, currentColor 20%, currentColor 80%, transparent);
+        `
+    },
+    dots: {
+        css: `
+            content: '';
+            position: absolute;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background-image: radial-gradient(circle, currentColor 1px, transparent 1.5px);
+            background-size: 8px 3px;
+            background-position: center;
+            background-repeat: repeat-x;
+        `
+    },
+    brackets: {
+        css: `
+            content: '';
+            position: absolute;
+            left: 10%;
+            right: 10%;
+            height: 1px;
+            background-color: currentColor;
+        
+            &::before, &::after {
+                content: '';
+                position: absolute;
+                width: 1px;
+                height: 8px;
+                background-color: currentColor;
+            }
+        
+            &::before {
+                left: 0;
+                ${props => props.position === 'top' ? 'bottom: 0' : 'top: 0'};
+            }
+        
+            &::after {
+                right: 0;
+                ${props => props.position === 'top' ? 'bottom: 0' : 'top: 0'};
+            }
+        `
+    },
+    shadow: {
+        css: `
+            content: '';
+            position: absolute;
+            left: 0;
+            right: 0;
+            height: 1px;
+            background-color: currentColor;
+            box-shadow: 0 0 4px rgba(0,0,0,0.2);
+        `
+    }
+};
+
+    // Updated CSS generation for rules
+    function generateHeadingRuleCSS(settings) {
+        if (settings.headingRule === 'none') return '';
+
+        const ruleStyle = RULE_STYLES[settings.ruleStyle];
+        const isTop = settings.headingRule === 'above';
+        
+        return `
+            h1, h2, h3, h4, h5, h6 {
+                position: relative;
+            }
+
+            h1::${isTop ? 'before' : 'after'},
+            h2::${isTop ? 'before' : 'after'},
+            h3::${isTop ? 'before' : 'after'},
+            h4::${isTop ? 'before' : 'after'},
+            h5::${isTop ? 'before' : 'after'},
+            h6::${isTop ? 'before' : 'after'} {
+                ${ruleStyle.css}
+                ${isTop ? `bottom: calc(100% + ${settings.ruleSpacing}rem);` : `top: calc(100% + ${settings.ruleSpacing}rem);`}
+            }
+        `;
+    }
+    // Sample content with enhanced examples
+    const SAMPLE_CONTENT = {
+        article: `
+            <h1>The Evolution of Web Typography</h1>
+            
+            <p>Typography on the web has come a long way since the early days of HTML. From the limited selection of <a href="#">web-safe fonts</a> to the rich typography we enjoy today, the journey has been remarkable.</p>
+            
+            <h2>The Rise of Web Fonts</h2>
+            <p>The introduction of @font-face in CSS opened up new possibilities for web designers. Suddenly, the <a href="#">creative constraints</a> of the past were lifted, allowing for more expressive and brand-appropriate typography.</p>
+            
+            <figure>
+                <img src="${SAMPLE_IMAGES[0].url}" alt="${SAMPLE_IMAGES[0].alt}">
+                <figcaption>${SAMPLE_IMAGES[0].caption}</figcaption>
+            </figure>
+    
+            <h3>Key Developments</h3>
+            <ul>
+                <li>Introduction of web fonts and the @font-face rule</li>
+                <li>Improved rendering engines across browsers</li>
+                <li>Variable fonts technology</li>
+                <li>Better cross-platform support</li>
+            </ul>
+    
+            <blockquote>
+                "Typography is not just about making words readable. It is about making words memorable." — Ellen Lupton
+            </blockquote>
+    
+            <p>The impact of good typography on user experience cannot be overstated. It affects readability, accessibility, and the overall aesthetic of a website.</p>
+    
+            <h2>Modern Considerations</h2>
+            <p>Today's web designers must consider various factors when choosing and implementing typography:</p>
+    
+            <figure>
+                <img src="${SAMPLE_IMAGES[1].url}" alt="${SAMPLE_IMAGES[1].alt}">
+                <figcaption>${SAMPLE_IMAGES[1].caption}</figcaption>
+            </figure>
+    
+            <ol>
+                <li>Performance implications of web fonts</li>
+                <li>Readability across devices and screen sizes</li>
+                <li>Accessibility requirements</li>
+                <li>Brand consistency across platforms</li>
+            </ol>
+    
+            <h3>Looking Forward</h3>
+            <p>The future of web typography looks promising, with new technologies emerging regularly. <a href="#">Variable fonts</a> and improved rendering engines are just the beginning.</p>
+    
+            <blockquote>
+                "Typography is what language looks like." — Ellen Lupton
+            </blockquote>
+    
+            <h2>Technical Implementation</h2>
+            <p>Implementing responsive typography requires careful consideration of various factors:</p>
+    
+            <figure>
+                <img src="${SAMPLE_IMAGES[2].url}" alt="${SAMPLE_IMAGES[2].alt}">
+                <figcaption>${SAMPLE_IMAGES[2].caption}</figcaption>
+            </figure>
+    
+            <ul>
+                <li>Font loading strategies</li>
+                <li>Fallback font stacks</li>
+                <li>Performance optimization</li>
+                <li>Browser compatibility</li>
+            </ul>
+        `
+    };
+    
+    // Helper function to generate CSS
+    function generateCSS(settings) {
+        css = `
+    /* Typography Settings */
+    :root {
+        --heading-font: "${settings.headingFont}", ${FONTS.find(f => f.name === settings.headingFont).type};
+        --body-font: "${settings.bodyFont}", ${FONTS.find(f => f.name === settings.bodyFont).type};
+        --line-height: ${settings.lineHeight};
+        --heading-scale: ${settings.headingScale};
+    }
+    
+    /* Base Typography */
+    body {
+        font-family: var(--body-font);
+        font-weight: ${settings.bodyWeight};
+        line-height: var(--line-height);
+        color: ${settings.textColor};
+        background-color: ${settings.backgroundColor};
+        ${settings.justify ? 'text-align: justify;' : ''}
+    }
+    
+    p {
+        margin-bottom: ${settings.paragraphSpacing}rem;
+    }
+    
+    /* Headings */
+    h1, h2, h3, h4, h5, h6 {
+        font-family: var(--heading-font);
+        font-weight: ${settings.headingWeight};
+        margin-top: ${settings.headingBeforeSpacing}rem;
+        margin-bottom: ${settings.headingAfterSpacing}rem;
+        line-height: 1.2;
+    }
+    
+    h1 { font-size: calc(2.5rem * var(--heading-scale)); }
+    h2 { font-size: calc(2rem * var(--heading-scale)); }
+    h3 { font-size: calc(1.75rem * var(--heading-scale)); }
+    h4 { font-size: calc(1.5rem * var(--heading-scale)); }
+    h5 { font-size: calc(1.25rem * var(--heading-scale)); }
+    h6 { font-size: calc(1rem * var(--heading-scale)); }
+
+    /* Links */
+
+    a {
+        color: ${settings.linkColor};
+        text-decoration: ${settings.linkStyleProperties.textDecoration || 'underline'};
+        text-decoration-style: ${settings.linkStyleProperties.textDecorationStyle || 'solid'};
+        ${settings.linkStyleProperties.backgroundColor ? 
+            `background-color: ${settings.linkStyleProperties.backgroundColor};` : ''}
+        ${settings.linkStyleProperties.borderBottom ? 
+            `border-bottom: ${settings.linkStyleProperties.borderBottom};` : ''}
+        transition: all 0.2s ease;
+    }
+
+    a:hover {
+        color: ${settings.linkHoverColor};
+    }
+
+    /* Lists */
+    ul, ol {
+        margin-bottom: ${settings.paragraphSpacing}rem;
+        padding-left: 1.5em;
+    }
+    
+    li {
+        margin-bottom: 0.5em;
+    }
+    
+    /* Blockquotes */
+    blockquote {
+        ${Object.entries(settings.blockquoteStyle).map(([key, value]) => `${key}: ${value};`).join('\n    ')}
+    }
+    
+    /* Images */
+    figure {
+        margin: ${settings.imageSpacing}rem 0;
+    }
+    
+    figure img {
+        max-width: 100%;
+        height: auto;
+        border-radius: ${settings.imageRadius}px;
+        display: block;
+    }
+    
+    figcaption {
+        font-size: 0.9rem;
+        margin-top: 0.5rem;
+        font-style: ${settings.captionStyle};
+        opacity: 0.8;
+    }`
+
+    if (settings.headingRule !== 'none') {
+       css += generateHeadingRuleCSS(settings);
+    }
+
+    return css.trim();
+    }
+    
+    // Initialize controls
+    function initializeControls() {
+        // Populate font selects
+        const headingFontSelect = document.getElementById('headingFont');
+        const bodyFontSelect = document.getElementById('bodyFont');
+    
+        FONTS.forEach(font => {
+            const option = new Option(font.name, font.name);
+            if (font.type === 'serif') {
+                headingFontSelect.add(option);
+            } else {
+                bodyFontSelect.add(option.cloneNode(true));
+            }
+        });
+    
+        // Set initial values
+        headingFontSelect.value = 'Merriweather';
+        bodyFontSelect.value = 'Inter';
+    }
+    
+    // Add event listeners
+    function addEventListeners() {
+        const controls = document.querySelectorAll('select, input');
+        controls.forEach(control => {
+            control.addEventListener('change', () => {
+                control.addEventListener('change', () => {
+                    updateValueDisplay(control);
+                    updatePreview();
+                });
+            });
+            if (control.type === 'range') {
+                control.addEventListener('input', () => {
+                    updateValueDisplay(control);
+                    updatePreview();
+                });
+            };
+        });
+
+    // Special handling for color scheme changes
+    document.getElementById('colorScheme').addEventListener('change', (e) => {
+        const scheme = e.target.value;
+        let textColor, bgColor;
+        
+        switch(scheme) {
+            case 'light':
+                textColor = '#1a1a1a';
+                bgColor = '#ffffff';
+                break;
+            case 'sepia':
+                textColor = '#5c4b37';
+                bgColor = '#f4f1ea';
+                break;
+            case 'dark':
+                textColor = '#f0f0f0';
+                bgColor = '#1a1a1a';
+                break;
+            case 'forest':
+                textColor = '#b7e4c7';
+                bgColor = '#1b4332';
+                break;
+            case 'navy':
+                textColor = '#dbeafe';
+                bgColor = '#1e3a8a';
+                break;
+        }
+        
+        document.getElementById('textColor').value = textColor;
+        document.getElementById('backgroundColor').value = bgColor;
+        updatePreview();
+    });
+
+    // Handle device preset changes
+    document.getElementById('devicePreset').addEventListener('change', (e) => {
+        const preset = DEVICE_PRESETS[e.target.value];
+        const previewFrame = document.querySelector('.preview-frame');
+        previewFrame.style.width = preset.width;
+        previewFrame.style.height = preset.height;
+        
+        // Add transition class for smooth size changes
+        previewFrame.classList.add('size-transition');
+        setTimeout(() => previewFrame.classList.remove('size-transition'), 300);
+    });
+}
+
+// Copy CSS to clipboard function
+function copyCSS() {
+    const cssText = document.getElementById('cssOutput').textContent;
+    navigator.clipboard.writeText(cssText).then(() => {
+        alert('CSS copied to clipboard!');
+    }).catch(err => {
+        console.error('Failed to copy CSS:', err);
+    });
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+    // Initialize controls first
+    initializeControls();
+
+    // Set initial values explicitly
+    const initialSettings = {
+        headingFont: 'Merriweather',
+        bodyFont: 'Inter',
+        headingWeight: 700,
+        bodyWeight: 400,
+        headingScale: 1,
+        lineHeight: 1.6,
+        paragraphSpacing: 1.5,
+        headingBeforeSpacing: 2,
+        headingAfterSpacing: 1,
+        ruleSpacing: 0.5,
+        headingRule: 'none',
+        ruleStyle: 'solid',
+        linkColor: '#0066cc',
+        linkHoverColor: '#003366',
+        textColor: '#1a1a1a',
+        backgroundColor: '#ffffff',
+        imageRadius: 4,
+        imageSpacing: 2,
+        captionStyle: 'normal',
+        justify: false
+    };
+
+    // Set all form elements to their initial values
+    Object.entries(initialSettings).forEach(([key, value]) => {
+        const element = document.getElementById(key);
+        if (element) {
+            element.value = value;
+            if (element.type === 'checkbox') {
+                element.checked = value;
+            }
+            // Update any associated value displays
+            updateValueDisplay(element);
+        }
+    });
+
+    // Add event listeners
+    addEventListeners();
+
+    // Force an initial update
+    requestAnimationFrame(() => {
+        updatePreview();
+    });
+});
+
+// Update the updateValueDisplay function to handle initial values better
+function updateValueDisplay(element) {
+    const displayElement = document.getElementById(element.id + 'Value');
+    if (displayElement) {
+        let value = element.type === 'checkbox' ? element.checked : element.value;
+        if (element.type === 'range') {
+            if (element.id.includes('Spacing')) {
+                value += 'rem';
+            } else if (element.id.includes('Radius')) {
+                value += 'px';
+            }
+        }
+        displayElement.textContent = value;
+    }
+}
+
+// Update the updatePreview function to ensure all values are read
+function updatePreview() {
+    const settings = {
+        headingFont: document.getElementById('headingFont').value,
+        bodyFont: document.getElementById('bodyFont').value,
+        headingWeight: document.getElementById('headingWeight').value,
+        bodyWeight: document.getElementById('bodyWeight').value,
+        headingScale: document.getElementById('headingScale').value,
+        lineHeight: document.getElementById('lineHeight').value,
+        paragraphSpacing: document.getElementById('paragraphSpacing').value,
+        headingBeforeSpacing: document.getElementById('headingBeforeSpacing').value,
+        headingAfterSpacing: document.getElementById('headingAfterSpacing').value,
+        ruleSpacing: document.getElementById('ruleSpacing').value,
+        headingRule: document.getElementById('headingRule').value,
+        ruleStyle: document.getElementById('ruleStyle').value,
+        linkColor: document.getElementById('linkColor').value,
+        linkStyle: 'Simple', 
+        linkStyleProperties: LINK_STYLES[document.getElementById('linkStyle').value] || LINK_STYLES['Simple'], // Get the actual style properties with fallback
+        linkHoverColor: document.getElementById('linkHoverColor').value,
+        blockquoteStyle: BLOCKQUOTE_STYLES[document.getElementById('blockquoteStyle').value],
+        imageRadius: document.getElementById('imageRadius').value,
+        imageSpacing: document.getElementById('imageSpacing').value,
+        captionStyle: document.getElementById('captionStyle').value,
+        justify: document.getElementById('justify').checked,
+        textColor: document.getElementById('textColor').value,
+        backgroundColor: document.getElementById('backgroundColor').value
+    };
+
+    // Ensure we have all required values before proceeding
+    if (Object.values(settings).some(value => value === undefined)) {
+        console.warn('Some settings are undefined:', 
+            Object.entries(settings)
+                .filter(([_, v]) => v === undefined)
+                .map(([k]) => k)
+        );
+        return;
+    }
+
+    // Generate and apply CSS
+    const css = generateCSS(settings);
+    document.getElementById('cssOutput').textContent = css;
+    
+    // Apply styles to preview
+    const styleElement = document.getElementById('previewStyles') || document.createElement('style');
+    styleElement.id = 'previewStyles';
+    styleElement.textContent = css;
+    document.head.appendChild(styleElement);
+
+    // Update preview content if needed
+    const previewContent = document.getElementById('contentExample').value;
+    document.querySelector('.preview').innerHTML = SAMPLE_CONTENT[previewContent];
+
+    // Update device size
+    const devicePreset = DEVICE_PRESETS[document.getElementById('devicePreset').value];
+    const previewFrame = document.querySelector('.preview-frame');
+    previewFrame.style.width = devicePreset.width;
+    previewFrame.style.height = devicePreset.height === 'auto' ? 'auto' : devicePreset.height;
+}
+
+</script>
+</body>
+</html>
