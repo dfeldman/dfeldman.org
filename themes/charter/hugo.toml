@@ -2,34 +2,6 @@ baseURL = 'https://example.org/'
 languageCode = 'en-us'
 title = 'Daniel Feldman'
 
-# These are used for the social previews
-# All can be overriden in the individual posts too
-[params]
-  # Author and Site Information
-  author = "Daniel Feldman"
-  description = "Security Musings"
-  
-  # Open Graph Metadata Defaults
-  og_locale = "en_US"  # Locale, e.g., en_US, en_GB, fr_FR
-  og_image = ""  # Add a default cover image URL here if available
-  og_image_width = "1200"  # Default Open Graph image width
-  og_image_height = "630"  # Default Open Graph image height
-  og_image_type = "image/jpeg"  # Default image type for Open Graph
-  
-  # Twitter Metadata Defaults
-  twitter_creator = "@d_feldman"  # Your site's default Twitter handle
-  twitter_site = "@d_feldman"  # Same as creator if you want
-
-  # Publisher Information
-  article_publisher = "https://dfeldman.org/"  # Link to your publisher's social page
-  publisher_logo = ""  # Add your organization logo URL here if available
-  
-  # SEO Keywords and Article Section (Categories)
-  keywords = ["Daniel Feldman", "AI", "Artificial Intelligence", "Machine Learning", "Cybersecurity", "Cloud Security", "Kubernetes", "AWS", "GCP", "Google Cloud Platform", "Amazon Web Services", "Cloud Computing", "DevOps", "Tech Insights", "Technology", "Security Best Practices", "AI in Security", "Cloud Architecture", "Container Orchestration"]
-  article_section = ["Default Section"]  # Default article section/category
-
-  # Estimated Reading Time Fallback
-  reading_time_default = "2 minutes"  # If no reading time is calculated, fallback to this value
 
 
 [[menus.main]]

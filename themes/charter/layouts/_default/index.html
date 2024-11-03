@@ -3,7 +3,7 @@
 {{ define "main"}}
 <div class="blog-content">
     <table class="blog-table">
-      {{ range .Site.RegularPages }}
+      {{ range where .Site.RegularPages ".Params.draft" false }}
         <tr>
           <td class="date">{{ .Date.Format "Jan 2006" }}</td>
           <td class="content">
