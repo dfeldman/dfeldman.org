@@ -1,6 +1,7 @@
 ---
 title: "Comprehensive Guide to Hugo Features"
 subtitle: "Exploring the power and flexibility of Hugo for static site generation"
+draft: true
 date: 2023-05-15T09:00:00-07:00
 tags: ["Hugo", "Static Site Generator", "Web Development", "Markdown"]
 ---
