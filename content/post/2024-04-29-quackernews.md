@@ -7,5 +7,5 @@ draft: false
 tags: ["mentions"]
 # Whether to show on the home view (highlights) or not
 showInHomeView: true
-linkTo: "https://www.youtube.com/watch?v=rHzXZvbF8nA"
+linkTo: "https://quackernews.com"
 ---
