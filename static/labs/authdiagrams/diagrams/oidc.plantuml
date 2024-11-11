@@ -1,0 +1,87 @@
+@startuml
+!theme plain
+skinparam backgroundColor #282828
+skinparam DefaultFontColor #E8E8E8
+skinparam ArrowColor #E8E8E8
+skinparam SequenceGroupBorderColor #E8E8E8
+
+skinparam ParticipantBackgroundColor #3C3F41
+skinparam ParticipantBorderColor #E8E8E8
+skinparam ParticipantFontColor #E8E8E8
+
+skinparam NoteBackgroundColor #3C3F41
+skinparam NoteBorderColor #E8E8E8
+skinparam NoteFontColor #E8E8E8
+
+skinparam GroupBackgroundColor #3C3F41
+skinparam GroupBodyBackgroundColor #282828
+skinparam GroupBorderColor #E8E8E8
+skinparam GroupFontColor #E8E8E8
+
+participant ServiceA as "Service A\n(Client)"
+participant Provider as "OIDC Provider\n(IDP)"
+participant ServiceB as "Service B\n(Resource)"
+
+== Initial Setup ==
+note over ServiceA, ServiceB #3C3F41
+  Services pre-registered with OIDC Provider
+  ServiceA has client_id and client_secret
+  ServiceB knows how to validate tokens
+end note
+
+== Discovery ==
+ServiceA -> Provider: GET /.well-known/openid-configuration
+Provider -> ServiceA: Discovery document
+note right #3C3F41
+  Endpoints & capabilities:
+  - Token endpoint
+  - JWKS URI
+  - Supported scopes
+  - Signing algorithms
+end note
+
+== Authentication ==
+ServiceA -> Provider: POST /token
+note right #3C3F41
+  grant_type=client_credentials
+  client_id=<id>
+  client_secret=<secret>
+  scope=openid <additional_scopes>
+end note
+
+Provider -> Provider: Authenticate client
+Provider -> ServiceA: ID Token + Access Token
+note right #3C3F41
+  ID Token = signed JWT with claims:
+  - iss (issuer)
+  - sub (client ID)
+  - aud (audience)
+  - exp (expiration)
+  - iat (issued at)
+  + custom claims
+end note
+
+== Resource Access ==
+ServiceA -> ServiceB: Request + Bearer Token
+ServiceB -> Provider: GET /jwks
+note right #3C3F41
+  Fetch public keys
+  (usually cached)
+end note
+
+ServiceB -> ServiceB: Validate token
+note right #3C3F41
+  Checks:
+  - Signature valid
+  - Not expired
+  - Audience correct
+  - Issuer trusted
+  - Required claims present
+end note
+
+ServiceB -> ServiceA: Response
+
+== Token Refresh (Optional) ==
+ServiceA -> Provider: Request new token\n(before expiry)
+@enduml
+

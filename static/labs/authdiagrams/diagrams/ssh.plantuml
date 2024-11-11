@@ -1,0 +1,107 @@
+@startuml
+!theme plain
+skinparam backgroundColor #282828
+skinparam DefaultFontColor #E8E8E8
+skinparam ArrowColor #E8E8E8
+skinparam SequenceGroupBorderColor #E8E8E8
+
+skinparam ParticipantBackgroundColor #3C3F41
+skinparam ParticipantBorderColor #E8E8E8
+skinparam ParticipantFontColor #E8E8E8
+
+skinparam NoteBackgroundColor #3C3F41
+skinparam NoteBorderColor #E8E8E8
+skinparam NoteFontColor #E8E8E8
+
+skinparam SequenceGroupBackgroundColor #3C3F41
+skinparam SequenceGroupBodyBackgroundColor #282828
+skinparam GroupBorderColor #E8E8E8
+skinparam GroupFontColor #E8E8E8
+
+skinparam SequenceGroupHeaderFontColor #E8E8E8
+skinparam SequenceGroupBackgroundColor #3C3F41
+skinparam SequenceGroupBodyBackgroundColor #282828
+skinparam SequenceLifelineBorderColor #cccccc
+
+skinparam SequenceDividerFontColor #000000
+skinparam SequenceGroupBackgroundColor #D3D3D3    // Sets background color for group boxes
+skinparam SequenceGroupBorderColor #333333        // Sets border color for group boxes
+skinparam SequenceGroupFontColor #0000FF          // Sets font color for group labels
+skinparam SequenceGroupFontSize 14                // Optional: Sets font size for group labels
+
+
+skinparam SequenceBoxBackgroundColor #D3D3D3    // Sets background color for group headers
+skinparam SequenceBoxBorderColor #333333        // Sets border color for group boxes
+skinparam SequenceBoxFontColor #0000FF          // Sets font color for group headers
+skinparam SequenceBoxFontSize 14                // Optional: Sets font size for group headers
+
+
+participant ServiceA as "Service A\n(Client)"
+participant CA as "SSH Certificate\nAuthority"
+participant ServiceB as "Service B\n(Target Host)"
+
+== Initial Setup ==
+ServiceB -> ServiceB: Generate host key pair
+ServiceB -> CA: Submit host public key
+CA -> ServiceB: Return signed host certificate
+note right #3C3F41
+  Host cert includes:
+  - Host public key
+  - Valid principals (hostnames)
+  - Validity period
+  - Serial number
+  - CA signature
+end note
+
+ServiceA -> ServiceA: Generate client key pair
+ServiceA -> CA: Submit client public key
+CA -> ServiceA: Return signed client certificate
+note right #3C3F41
+  Client cert includes:
+  - Client public key
+  - Valid principals (service names)
+  - Validity period
+  - Serial number
+  - CA signature
+end note
+
+== Trust Establishment ==
+ServiceB -> ServiceB: Configure trusted CA public key
+note right #3C3F41
+  In known_hosts or
+  TrustedUserCAKeys
+  One CA key trusts all
+  signed client certs
+end note
+
+ServiceA -> ServiceA: Configure trusted CA public key
+note right #3C3F41
+  In known_hosts or
+  globally via ssh_config
+  One CA key trusts all
+  signed host certs
+end note
+
+== Connection Authentication ==
+ServiceA -> ServiceB: SSH connection request
+ServiceB -> ServiceA: Present host certificate
+ServiceA -> ServiceA: Validate host cert\nusing CA public key
+ServiceA -> ServiceB: Present client certificate
+ServiceB -> ServiceB: Validate client cert\nusing CA public key
+note right #3C3F41
+  Checks:
+  - CA signature valid
+  - Cert not expired
+  - Principal names match
+  - Serial not revoked
+end note
+
+== Session Establishment ==
+ServiceA <-> ServiceB: Key exchange and session setup
+note right #3C3F41
+  Standard SSH key exchange
+  but trust is based on
+  CA-signed certificates
+end note
+
+@enduml

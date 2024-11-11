@@ -1,0 +1,85 @@
+@startuml
+!theme plain
+skinparam backgroundColor #282828
+skinparam DefaultFontColor #E8E8E8
+skinparam ArrowColor #E8E8E8
+skinparam SequenceGroupBorderColor #E8E8E8
+
+skinparam ParticipantBackgroundColor #3C3F41
+skinparam ParticipantBorderColor #E8E8E8
+skinparam ParticipantFontColor #E8E8E8
+
+skinparam NoteBackgroundColor #3C3F41
+skinparam NoteBorderColor #E8E8E8
+skinparam NoteFontColor #E8E8E8
+
+skinparam GroupBackgroundColor #3C3F41
+skinparam GroupBodyBackgroundColor #282828
+skinparam GroupBorderColor #E8E8E8
+skinparam GroupFontColor #E8E8E8
+
+participant Node as "Node\n(Machine)"
+participant Agent as "SPIRE\nAgent"
+participant Server as "SPIRE\nServer"
+participant Workload as "Service\n(Workload)"
+
+== Node Attestation ==
+Node -> Agent: Start agent
+Agent -> Server: Node attestation request
+note right #3C3F41
+  Provides platform-specific evidence:
+  - Cloud instance identity doc
+  - TPM quote
+  - Kubernetes ServiceAccount token
+  etc.
+end note
+
+Server -> Server: Validate node evidence
+Server -> Agent: Issue Node SVID
+note left #3C3F41
+  Node SVID allows agent to:
+  - Authenticate to server
+  - Receive workload registry
+  - Request workload SVIDs
+end note
+
+== Workload Attestation ==
+Workload -> Agent: Request identity\n(via Unix domain socket)
+note right #3C3F41
+  Workload makes no claims
+  Agent discovers workload
+  properties from OS
+end note
+
+Agent -> Agent: Workload attestation
+note right #3C3F41
+  Checks properties like:
+  - PID
+  - UID
+  - Unix groups
+  - Container ID
+  - Signing authorities
+  etc.
+end note
+
+Agent -> Server: Request workload SVID
+Server -> Agent: Issue workload SVID
+Agent -> Workload: Provide SVID + trust bundle
+note right #3C3F41
+  SVID contains:
+  - SPIFFE ID
+  - Public key
+  - TTL
+  Can be X.509 or JWT
+end note
+
+== Ongoing Operations ==
+Agent -> Server: Periodic check-in
+note right #3C3F41
+  - Renew Node SVID
+  - Update workload registry
+  - Fetch trust bundle changes
+end note
+
+Workload -> Agent: Request SVID refresh\n(before expiry)
+@enduml

@@ -1,0 +1,88 @@
+@startuml
+!theme plain
+skinparam backgroundColor #282828
+skinparam DefaultFontColor #E8E8E8
+skinparam ArrowColor #E8E8E8
+skinparam SequenceGroupBorderColor #E8E8E8
+
+skinparam ParticipantBackgroundColor #3C3F41
+skinparam ParticipantBorderColor #E8E8E8
+skinparam ParticipantFontColor #E8E8E8
+
+skinparam NoteBackgroundColor #3C3F41
+skinparam NoteBorderColor #E8E8E8
+skinparam NoteFontColor #E8E8E8
+
+skinparam SequenceGroupBackgroundColor #3C3F41
+skinparam SequenceGroupBodyBackgroundColor #282828
+skinparam GroupBorderColor #E8E8E8
+skinparam GroupFontColor #E8E8E8
+
+skinparam SequenceGroupHeaderFontColor #E8E8E8
+skinparam SequenceGroupBackgroundColor #3C3F41
+skinparam SequenceGroupBodyBackgroundColor #282828
+skinparam SequenceLifelineBorderColor #cccccc
+
+skinparam SequenceDividerFontColor #000000
+skinparam SequenceGroupBackgroundColor #D3D3D3    // Sets background color for group boxes
+skinparam SequenceGroupBorderColor #333333        // Sets border color for group boxes
+skinparam SequenceGroupFontColor #0000FF          // Sets font color for group labels
+skinparam SequenceGroupFontSize 14                // Optional: Sets font size for group labels
+
+
+skinparam SequenceBoxBackgroundColor #D3D3D3    // Sets background color for group headers
+skinparam SequenceBoxBorderColor #333333        // Sets border color for group boxes
+skinparam SequenceBoxFontColor #0000FF          // Sets font color for group headers
+skinparam SequenceBoxFontSize 14                // Optional: Sets font size for group headers
+
+
+participant Client as "Client\n(User Workstation)"
+participant AS as "Authentication\nService (AS)"
+participant TGS as "Ticket Granting\nService (TGS)"
+participant Service as "Service\n(e.g., File Server)"
+
+note over Client, Service #3C3F41
+  Initial Authentication and Service Access in Kerberos
+end note
+
+== Authentication Phase ==
+Client -> AS: 1. AuthRequest(User ID)
+note right #3C3F41
+  No password sent
+  Contains timestamp
+end note
+
+AS -> Client: 2. TGT + Session Key
+note right #3C3F41
+  TGT is encrypted with KDC key
+  Session key encrypted with
+  user's password-derived key
+end note
+
+== Service Ticket Phase ==
+Client -> TGS: 3. TGT + Service ID
+note right #3C3F41
+  Client presents TGT and
+  requests access to service
+end note
+
+TGS -> Client: 4. Service Ticket + Service Session Key
+note right #3C3F41
+  Service ticket encrypted
+  with service's key
+end note
+
+== Service Access Phase ==
+Client -> Service: 5. Service Ticket + Authenticator
+note right #3C3F41
+  Authenticator contains
+  timestamp, encrypted with
+  service session key
+end note
+
+Service -> Client: 6. Success (optional timestamp)
+note right #3C3F41
+  Service validates ticket
+  and authenticator
+end note
+@enduml

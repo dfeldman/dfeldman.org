@@ -1,0 +1,40 @@
+@startuml
+!theme plain
+skinparam backgroundColor #282828
+skinparam DefaultFontColor #E8E8E8
+skinparam ArrowColor #E8E8E8
+left to right direction 
+
+skinparam rectangle {
+    BackgroundColor #3C3F41
+    BorderColor #E8E8E8
+    FontColor #E8E8E8
+}
+
+rectangle "Keytab File" {
+    rectangle "Entry 1" {
+        rectangle "Principal: HTTP/webserver.example.com@REALM" {
+            rectangle "kvno: 4\nEnctype: aes256-cts-hmac-sha1-96\nKey: 0x..." as key1
+        }
+    }
+    
+    rectangle "Entry 2" {
+        rectangle "Principal: HTTP/webserver.example.com@REALM" {
+            rectangle "kvno: 4\nEnctype: aes128-cts-hmac-sha1-96\nKey: 0x..." as key2
+        }
+    }
+    
+    rectangle "Entry 3" {
+        rectangle "Principal: HTTP/webserver.example.com@REALM" {
+            rectangle "kvno: 4\nEnctype: rc4-hmac\nKey: 0x..." as key3
+        }
+    }
+    
+    rectangle "Entry 4" {
+        rectangle "Principal: HTTP/webserver.example.com@REALM" {
+            rectangle "kvno: 3\nEnctype: aes256-cts-hmac-sha1-96\nKey: 0x..." as key4
+        }
+    }
+}
+
+@enduml

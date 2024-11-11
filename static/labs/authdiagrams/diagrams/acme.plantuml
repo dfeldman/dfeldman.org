@@ -1,0 +1,85 @@
+@startuml
+!theme plain
+skinparam backgroundColor #282828
+skinparam DefaultFontColor #E8E8E8
+skinparam ArrowColor #E8E8E8
+skinparam SequenceGroupBorderColor #E8E8E8
+
+skinparam ParticipantBackgroundColor #3C3F41
+skinparam ParticipantBorderColor #E8E8E8
+skinparam ParticipantFontColor #E8E8E8
+
+skinparam NoteBackgroundColor #3C3F41
+skinparam NoteBorderColor #E8E8E8
+skinparam NoteFontColor #E8E8E8
+
+skinparam GroupBackgroundColor #3C3F41
+skinparam GroupBodyBackgroundColor #282828
+skinparam GroupBorderColor #E8E8E8
+skinparam GroupFontColor #E8E8E8
+
+participant Service as "ACME Client\n(Service)"
+participant ACME as "ACME Server\n(Let's Encrypt)"
+participant DNS as "DNS/HTTP\nEndpoint"
+
+== Account Setup ==
+Service -> Service: Generate account key pair
+Service -> ACME: New account request
+note right #3C3F41
+  Signed with account key:
+  - Contact info
+  - Terms of service agreement
+end note
+ACME -> Service: Account URL
+
+== Certificate Request ==
+Service -> Service: Generate CSR key pair
+Service -> ACME: New order
+note right #3C3F41
+  Request for certificate:
+  - Domain names
+  - Not Before/After
+end note
+ACME -> Service: Authorization URLs + Challenges
+
+== Domain Validation ==
+Service -> ACME: Request challenges
+ACME -> Service: Challenge details
+note right #3C3F41
+  Types:
+  - HTTP-01
+  - DNS-01
+  - TLS-ALPN-01
+end note
+
+Service -> Service: Prepare challenge response
+alt HTTP Challenge
+    Service -> Service: Place token at /.well-known/acme-challenge/
+else DNS Challenge
+    Service -> DNS: Add TXT record
+end
+
+Service -> ACME: Challenge ready
+ACME -> DNS: Verify challenge
+ACME -> Service: Challenge validated
+
+== Certificate Issuance ==
+Service -> ACME: Submit CSR
+note right #3C3F41
+  Certificate Signing Request:
+  - Public key
+  - Domain names
+  - Signed by CSR key
+end note
+
+ACME -> Service: Certificate
+note right #3C3F41
+  Valid for 90 days
+  Ready for auto-renewal
+  at 60 days
+end note
+
+== Renewal (60 days later) ==
+Service -> Service: Monitor cert expiry
+Service -> ACME: New order (same process)
+@enduml

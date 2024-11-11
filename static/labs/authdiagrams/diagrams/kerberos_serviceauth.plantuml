@@ -1,0 +1,87 @@
+@startuml
+!theme plain
+skinparam backgroundColor #282828
+skinparam DefaultFontColor #E8E8E8
+skinparam ArrowColor #E8E8E8
+skinparam SequenceGroupBorderColor #E8E8E8
+
+skinparam ParticipantBackgroundColor #3C3F41
+skinparam ParticipantBorderColor #E8E8E8
+skinparam ParticipantFontColor #E8E8E8
+
+skinparam NoteBackgroundColor #3C3F41
+skinparam NoteBorderColor #E8E8E8
+skinparam NoteFontColor #E8E8E8
+
+skinparam GroupBackgroundColor #3C3F41
+skinparam GroupBodyBackgroundColor #282828
+skinparam GroupBorderColor #E8E8E8
+skinparam GroupFontColor #E8E8E8
+
+skinparam SequenceGroupHeaderFontColor #E8E8E8
+skinparam SequenceGroupBackgroundColor #3C3F41
+skinparam SequenceGroupBodyBackgroundColor #282828
+
+participant ServiceA as "Service A\n(Client Service)"
+participant AS as "Authentication\nService (KDC)"
+participant TGS as "Ticket Granting\nService"
+participant ServiceB as "Service B\n(Target Service)"
+
+note over ServiceA, ServiceB #3C3F41
+  Service-to-Service Authentication using Keytabs
+end note
+
+== Initial Setup (Done at deployment) ==
+AS -> ServiceA: Service A Keytab File
+note right #3C3F41
+  Contains service principal name
+  and encrypted key for Service A
+end note
+
+AS -> ServiceB: Service B Keytab File
+note right #3C3F41
+  Contains service principal name
+  and encrypted key for Service B
+end note
+
+== Service Authentication ==
+ServiceA -> AS: 1. AS-REQ(Service A Principal Name)
+note right #3C3F41
+  Uses keytab to prove identity
+  (no password needed)
+end note
+
+AS -> ServiceA: 2. AS-REP(TGT + Session Key)
+note right #3C3F41
+  TGT encrypted with KDC key
+  Session key encrypted with
+  Service A's key from keytab
+end note
+
+== Service Ticket Request ==
+ServiceA -> TGS: 3. TGS-REQ(TGT + Service B SPN + Authenticator)
+note right #3C3F41
+  Requests ticket for Service B
+  using Service Principal Name (SPN)
+end note
+
+TGS -> ServiceA: 4. TGS-REP(Service Ticket + Service Session Key)
+note right #3C3F41
+  Service ticket encrypted with
+  Service B's key (from its keytab)
+end note
+
+== Service Access ==
+ServiceA -> ServiceB: 5. AP-REQ(Service Ticket + Authenticator)
+note right #3C3F41
+  Service B uses its keytab
+  to decrypt the ticket
+end note
+
+ServiceB -> ServiceA: 6. AP-REP(Success)
+note right #3C3F41
+  Mutual authentication possible
+  using session key
+end note
+
+@enduml
