@@ -1,0 +1,35 @@
+!theme plain
+skinparam backgroundColor #282828
+skinparam DefaultFontColor #E8E8E8
+skinparam ArrowColor #E8E8E8
+skinparam SequenceGroupBorderColor #E8E8E8
+
+skinparam ParticipantBackgroundColor #3C3F41
+skinparam ParticipantBorderColor #E8E8E8
+skinparam ParticipantFontColor #E8E8E8
+
+skinparam NoteBackgroundColor #3C3F41
+skinparam NoteBorderColor #E8E8E8
+skinparam NoteFontColor #E8E8E8
+
+skinparam SequenceGroupBackgroundColor #3C3F41
+skinparam SequenceGroupBodyBackgroundColor #282828
+skinparam GroupBorderColor #E8E8E8
+skinparam GroupFontColor #E8E8E8
+
+skinparam SequenceGroupHeaderFontColor #E8E8E8
+skinparam SequenceGroupBackgroundColor #3C3F41
+skinparam SequenceGroupBodyBackgroundColor #282828
+skinparam SequenceLifelineBorderColor #cccccc
+
+skinparam SequenceDividerFontColor #000000
+skinparam SequenceGroupBackgroundColor #D3D3D3    // Sets background color for group boxes
+skinparam SequenceGroupBorderColor #333333        // Sets border color for group boxes
+skinparam SequenceGroupFontColor #0000FF          // Sets font color for group labels
+skinparam SequenceGroupFontSize 14                // Optional: Sets font size for group labels
+
+
+skinparam SequenceBoxBackgroundColor #D3D3D3    // Sets background color for group headers
+skinparam SequenceBoxBorderColor #333333        // Sets border color for group boxes
+skinparam SequenceBoxFontColor #0000FF          // Sets font color for group headers
+skinparam SequenceBoxFontSize 14                // Optional: Sets font size for group headers

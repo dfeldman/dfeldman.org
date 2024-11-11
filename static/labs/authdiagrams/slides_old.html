@@ -1,0 +1,417 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- Core Reveal.js -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.5.0/reveal.min.css">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200;400;600&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+    
+    <!-- Additional Font for Icons -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+
+    <style>
+        :root {
+            /* Color Palette */
+            --bg-primary: #1a1a1a;
+            --bg-secondary: #2d2d2d;
+            --accent-primary: #61AFEF;
+            --accent-secondary: #98C379;
+            --text-primary: #E6E6E6;
+            --text-secondary: #ABABAB;
+            --code-bg: #282C34;
+        }
+
+        .reveal-viewport {
+            background: var(--bg-primary);
+        }
+
+        .reveal {
+            font-family: 'Inter', sans-serif;
+            font-size: 24px;
+            font-weight: normal;
+            color: var(--text-primary);
+        }
+
+        .reveal h1, .reveal h2, .reveal h3, .reveal h4 {
+            font-family: 'Inter', sans-serif;
+            font-weight: 600;
+            text-transform: none;
+            color: var(--text-primary);
+            margin: 0 0 20px 0;
+            line-height: 1.2;
+        }
+
+        .reveal h1 { font-size: 2.5em; }
+        .reveal h2 { font-size: 1.8em; }
+        .reveal h3 { font-size: 1.4em; }
+
+        .reveal code {
+            font-family: 'JetBrains Mono', monospace;
+            background: var(--code-bg);
+            padding: 2px 6px;
+            border-radius: 4px;
+        }
+
+        /* Custom Layouts */
+        .grid-2col {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            align-items: center;
+        }
+
+        .flex-center {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100%;
+        }
+
+        /* Custom Components */
+        .feature-box {
+            background: var(--bg-secondary);
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin: 1rem 0;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .accent-text {
+            color: var(--accent-primary);
+        }
+
+        .highlight-box {
+            border-left: 4px solid var(--accent-primary);
+            padding-left: 1rem;
+            margin: 1rem 0;
+            background: rgba(97, 175, 239, 0.1);
+        }
+
+        .comparison-table {
+            width: 100%;
+            border-collapse: separate;
+            border-spacing: 0;
+            margin: 1rem 0;
+        }
+
+        .comparison-table th,
+        .comparison-table td {
+            padding: 12px;
+            border: 1px solid var(--bg-secondary);
+            text-align: left;
+        }
+
+        .comparison-table th {
+            background: var(--bg-secondary);
+            color: var(--accent-primary);
+        }
+
+        /* Diagram Placeholder */
+        .diagram-placeholder {
+            background: var(--bg-secondary);
+            border: 2px dashed var(--text-secondary);
+            border-radius: 8px;
+            padding: 3rem;
+            text-align: center;
+            color: var(--text-secondary);
+            margin: 2rem 0;
+            position: relative;
+        }
+
+        .diagram-placeholder::before {
+            content: '\f03e';
+            font-family: 'Font Awesome 6 Free';
+            font-size: 2em;
+            display: block;
+            margin-bottom: 1rem;
+        }
+
+        /* Icon Styles */
+        .icon {
+            color: var(--accent-primary);
+            margin-right: 0.5rem;
+        }
+
+        /* List Styles */
+        .reveal ul {
+            list-style: none;
+            margin-left: 0;
+            padding-left: 0;
+        }
+
+        .reveal ul li {
+            padding-left: 1.5em;
+            position: relative;
+            margin-bottom: 0.5em;
+        }
+
+        .reveal ul li::before {
+            content: '•';
+            color: var(--accent-primary);
+            position: absolute;
+            left: 0;
+        }
+
+        /* Quote Styles */
+        blockquote {
+            border-left: 4px solid var(--accent-primary);
+            padding-left: 1rem;
+            font-style: italic;
+            margin: 2rem 0;
+            background: var(--bg-secondary);
+            padding: 1rem;
+            border-radius: 0 8px 8px 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="reveal">
+        <div class="slides">
+            <!-- Title Slide -->
+            <section data-background-gradient="radial-gradient(circle at center, #2d2d2d 0%, #1a1a1a 100%)">
+                <div class="flex-center">
+                    <div style="text-align: center;">
+                        <h1>SPIFFE & SPIRE</h1>
+                        <h3 class="accent-text">Secure Production Identity Framework for Everyone</h3>
+                        <div style="margin-top: 3em; color: var(--text-secondary);">
+                            <p>Your Name</p>
+                            <p style="font-size: 0.8em;">Your Organization</p>
+                            <p style="font-size: 0.7em; margin-top: 2em;">
+                                <i class="fab fa-github"></i> github.handle
+                                <span style="margin: 0 1em;">|</span>
+                                <i class="fab fa-twitter"></i> @handle
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Overview Slide -->
+            <section>
+                <h2>Journey to Zero Trust</h2>
+                <div class="grid-2col">
+                    <div class="feature-box">
+                        <h3><i class="fas fa-history icon"></i>Traditional Security</h3>
+                        <ul>
+                            <li>Network perimeters</li>
+                            <li>Static credentials</li>
+                            <li>IP-based trust</li>
+                            <li>Long-lived tokens</li>
+                        </ul>
+                    </div>
+                    <div class="feature-box">
+                        <h3><i class="fas fa-shield-alt icon"></i>Modern Requirements</h3>
+                        <ul>
+                            <li>Dynamic infrastructure</li>
+                            <li>Cloud-native architecture</li>
+                            <li>Zero trust principles</li>
+                            <li>Automated operations</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Core Concepts -->
+            <section>
+                <section>
+                    <h2>Core Concepts</h2>
+                    <div class="highlight-box">
+                        <h3><i class="fas fa-fingerprint icon"></i>Workload Identity</h3>
+                        <p>Beyond network location and static credentials</p>
+                    </div>
+                </section>
+
+                <section>
+                    <h3>SPIFFE Components</h3>
+                    <div class="grid-2col">
+                        <div>
+                            <div class="feature-box">
+                                <h4><i class="fas fa-id-card icon"></i>SPIFFE ID</h4>
+                                <p>Unique identifier for workloads</p>
+                                <code>spiffe://trust.domain/path/to/workload</code>
+                            </div>
+                            <div class="feature-box">
+                                <h4><i class="fas fa-certificate icon"></i>SVID</h4>
+                                <p>SPIFFE Verifiable Identity Document</p>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="feature-box">
+                                <h4><i class="fas fa-network-wired icon"></i>Trust Domain</h4>
+                                <p>Administrative boundary for identities</p>
+                            </div>
+                            <div class="feature-box">
+                                <h4><i class="fas fa-plug icon"></i>Workload API</h4>
+                                <p>Standard interface for identity retrieval</p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </section>
+
+            <!-- Architecture Overview -->
+            <section>
+                <h2><i class="fas fa-project-diagram icon"></i>SPIFFE Architecture</h2>
+                <div class="diagram-placeholder">
+                    [Architecture Diagram]
+                </div>
+                <div class="grid-2col">
+                    <div class="feature-box">
+                        <h4>Control Plane</h4>
+                        <ul>
+                            <li>Identity management</li>
+                            <li>Certificate authority</li>
+                            <li>Trust bundle distribution</li>
+                        </ul>
+                    </div>
+                    <div class="feature-box">
+                        <h4>Data Plane</h4>
+                        <ul>
+                            <li>Workload attestation</li>
+                            <li>Identity delivery</li>
+                            <li>Certificate rotation</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Implementation Details -->
+            <section data-background="var(--bg-secondary)">
+                <section>
+                    <h2><i class="fas fa-cogs icon"></i>Implementation</h2>
+                    <div class="diagram-placeholder">
+                        [Implementation Flow]
+                    </div>
+                </section>
+
+                <section>
+                    <h3>Key Components</h3>
+                    <div class="grid-2col">
+                        <div class="feature-box">
+                            <h4>SPIRE Server</h4>
+                            <ul>
+                                <li>Node attestation</li>
+                                <li>SVID generation</li>
+                                <li>Trust domain management</li>
+                            </ul>
+                        </div>
+                        <div class="feature-box">
+                            <h4>SPIRE Agent</h4>
+                            <ul>
+                                <li>Workload attestation</li>
+                                <li>SVID delivery</li>
+                                <li>Cache management</li>
+                            </ul>
+                        </div>
+                    </div>
+                </section>
+            </section>
+
+            <!-- Security Benefits -->
+            <section>
+                <h2><i class="fas fa-lock icon"></i>Security Benefits</h2>
+                <table class="comparison-table">
+                    <thead>
+                        <tr>
+                            <th>Before SPIFFE</th>
+                            <th>With SPIFFE</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Static network boundaries</td>
+                            <td>Dynamic identity-based security</td>
+                        </tr>
+                        <tr>
+                            <td>Long-lived credentials</td>
+                            <td>Automatic rotation & lifecycle</td>
+                        </tr>
+                        <tr>
+                            <td>Manual secret management</td>
+                            <td>Automated identity distribution</td>
+                        </tr>
+                        <tr>
+                            <td>Trust by network location</td>
+                            <td>Trust by cryptographic identity</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+
+            <!-- Case Study Placeholder -->
+            <section>
+                <h2><i class="fas fa-laptop-code icon"></i>Real World Implementation</h2>
+                <div class="diagram-placeholder">
+                    [Implementation Diagram]
+                </div>
+                <blockquote>
+                    "SPIFFE provides the foundation for our zero trust architecture"
+                </blockquote>
+            </section>
+
+            <!-- Future & Roadmap -->
+            <section data-background-gradient="linear-gradient(45deg, #2d2d2d 0%, #1a1a1a 100%)">
+                <h2><i class="fas fa-road icon"></i>Looking Ahead</h2>
+                <div class="grid-2col">
+                    <div class="feature-box">
+                        <h4>Near Term</h4>
+                        <ul>
+                            <li>Enhanced federation</li>
+                            <li>Improved attestation</li>
+                            <li>Cloud integration</li>
+                        </ul>
+                    </div>
+                    <div class="feature-box">
+                        <h4>Future Vision</h4>
+                        <ul>
+                            <li>Edge computing support</li>
+                            <li>Cross-cloud federation</li>
+                            <li>Standard evolution</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Q&A Slide -->
+            <section data-background-gradient="radial-gradient(circle at center, #2d2d2d 0%, #1a1a1a 100%)">
+                <div class="flex-center">
+                    <div style="text-align: center;">
+                        <h2>Thank You</h2>
+                        <p class="accent-text" style="font-size: 1.5em;">Questions?</p>
+                        <div style="margin-top: 3em; color: var(--text-secondary);">
+                            <p><i class="fas fa-envelope"></i> email@example.com</p>
+                            <p><i class="fab fa-github"></i> github.handle</p>
+                            <p><i class="fab fa-twitter"></i> @handle</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
+    <!-- Scripts - Modified order and initialization -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.5.0/reveal.min.js"></script>
+    <script>
+        let deck = new Reveal({
+            hash: true,
+            slideNumber: true,
+            transition: 'slide',
+            transitionSpeed: 'slow',
+            backgroundTransition: 'fade',
+            controls: true,
+            progress: true,
+            center: true,
+            width: 1200,
+            height: 800,
+            margin: 0.1,
+            // Remove plugins from initialization
+        });
+        deck.initialize();
+    </script>
+</body>
+</html>
