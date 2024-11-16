@@ -43,6 +43,34 @@ def extract_slides_url(soup):
     
     return None
 
+def extract_tags(soup):
+    """Extract tags from HTML content"""
+    tags = []
+    
+    # Get event type
+    event_type = soup.find('div', class_='sched-event-type')
+    if event_type:
+        # Find all type links and extract their text
+        type_links = event_type.find_all('a')
+        for link in type_links:
+            tag_text = link.get_text(strip=True)
+            if tag_text:
+                tags.append(tag_text)
+    
+    # Get experience level
+    custom_fields = soup.find('ul', class_='tip-custom-fields')
+    if custom_fields:
+        for field in custom_fields.find_all('li'):
+            if 'Content Experience Level' in field.get_text():
+                level = field.find('a')
+                if level:
+                    tags.append(level.get_text(strip=True))
+
+    seen = set()
+    tags = [tag for tag in tags if not (tag in seen or seen.add(tag))]
+     
+    return tags
+
 def extract_session_info(html_content):
     """Extract session information from HTML content"""
     try:
@@ -68,13 +96,8 @@ def extract_session_info(html_content):
                 speaker_details.append(speaker_info)
         
         # Tags - event type and any other relevant tags
-        tags = []
-        event_type = soup.find('div', class_='sched-event-type')
-        if event_type:
-            type_text = event_type.get_text(strip=True)
-            if type_text:
-                tags.append(type_text)
-        
+        tags = extract_tags(soup)
+ 
         # Slides URL - look for links containing 'slides'
         slides_url = extract_slides_url(soup)
         
