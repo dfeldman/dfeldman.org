@@ -1,0 +1,655 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conference Presentations Browser</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/6.6.2/fuse.basic.min.js"></script>
+    <style>
+        :root {
+            --gradient-start: #4f46e5;
+            --gradient-end: #2563eb;
+            --panel-bg: #ffffff;
+            --border-color: #e5e7eb;
+            --search-bg: #f3f4f6;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: system-ui, -apple-system, sans-serif;
+            line-height: 1.5;
+            color: #1a1a1a;
+            background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%);
+            height: 100vh;
+            overflow: hidden;
+        }
+
+        .container {
+            height: 100vh;
+            display: flex;
+        }
+
+        .main-content {
+            flex: 1;
+            display: grid;
+            grid-template-rows: 1fr 6px 1fr;
+            padding: 1rem;
+            position: relative;
+            min-width: 0;
+        }
+
+        .gutter {
+            background: linear-gradient(to right, var(--gradient-start), var(--gradient-end));
+            width: 6px;
+            cursor: col-resize;
+            position: relative;
+        }
+
+        .gutter::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 24px;
+            height: 50px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 12px;
+        }
+
+        .horizontal-gutter {
+            background: linear-gradient(to bottom, var(--gradient-start), var(--gradient-end));
+            height: 6px;
+            cursor: row-resize;
+            grid-column: 1 / -1;
+        }
+
+        .resize-overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: transparent;
+            z-index: 1000;
+        }
+
+        .resize-overlay.horizontal {
+            cursor: row-resize;
+        }
+
+        .resize-overlay.vertical {
+            cursor: col-resize;
+        }
+
+        .video-panel, .slides-panel {
+            background: var(--panel-bg);
+            border-radius: 1rem;
+            overflow: hidden;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            position: relative;
+            min-height: 0;
+            display: flex;
+        }
+
+        .iframe-container {
+            position: relative;
+            flex: 1;
+            display: flex;
+        }
+
+        .iframe-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+        .table-panel {
+            background: var(--panel-bg);
+            width: 400px;
+            display: flex;
+            flex-direction: column;
+            border-radius: 1rem;
+            margin: 1rem 1rem 1rem 0;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+        }
+
+        .search-container {
+            padding: 1rem;
+            background: linear-gradient(135deg, var(--gradient-start), var(--gradient-end));
+            border-radius: 1rem 1rem 0 0;
+        }
+
+        .search-bar {
+            width: 100%;
+            padding: 0.75rem;
+            border: none;
+            border-radius: 0.5rem;
+            font-size: 1rem;
+            background: var(--search-bg);
+            color: #1a1a1a;
+        }
+
+        .search-bar:focus {
+            outline: none;
+            box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.5);
+        }
+
+        .presentations-list {
+            flex: 1;
+            overflow-y: auto;
+            padding: 0.5rem;
+        }
+
+        .presentation-item {
+            border-bottom: 1px solid var(--border-color);
+            cursor: pointer;
+            transition: transform 0.2s;
+        }
+
+        .presentation-item:hover {
+            transform: translateX(4px);
+        }
+
+        .presentation-header {
+            padding: 1rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .presentation-title {
+            font-weight: 600;
+            margin-bottom: 0.25rem;
+            background: linear-gradient(to right, var(--gradient-start), var(--gradient-end));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .presentation-speakers {
+            color: #666;
+            font-size: 0.9rem;
+        }
+
+        .presentation-content {
+            padding: 1rem;
+            background: #f8fafc;
+            display: none;
+        }
+
+        .presentation-content.active {
+            display: block;
+        }
+
+        .presentation-header .arrow {
+            transition: transform 0.3s ease;
+        }
+
+        .presentation-header .arrow.active {
+            transform: rotate(180deg);
+        }
+
+        .tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-top: 0.5rem;
+        }
+
+        .tag {
+            background: linear-gradient(135deg, var(--gradient-start), var(--gradient-end));
+            color: white;
+            padding: 0.25rem 0.75rem;
+            border-radius: 1rem;
+            font-size: 0.875rem;
+        }
+
+        .toggle-sidebar {
+            display: none;
+            position: fixed;
+            right: 1rem;
+            bottom: 1rem;
+            background: linear-gradient(135deg, var(--gradient-start), var(--gradient-end));
+            color: white;
+            border: none;
+            border-radius: 50%;
+            width: 3rem;
+            height: 3rem;
+            cursor: pointer;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            z-index: 1000;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                flex-direction: column;
+            }
+
+            .main-content {
+                height: 100vh;
+                padding-bottom: 1rem;
+            }
+
+            .table-panel {
+                position: fixed;
+                right: -400px;
+                top: 0;
+                bottom: 0;
+                margin: 0;
+                transition: right 0.3s ease;
+                z-index: 100;
+            }
+
+            .table-panel.active {
+                right: 0;
+            }
+
+            .toggle-sidebar {
+                display: block;
+            }
+
+            .gutter {
+                display: none;
+            }
+        }
+.iframe-error {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    background: #f9fafb;
+    color: #666;
+    text-align: center;
+    padding: 1rem;
+}
+
+.video-panel, .slides-panel {
+    background: var(--panel-bg);
+    border-radius: 1rem;
+    overflow: hidden;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    position: relative;
+    min-height: 0;
+    display: flex;
+    transition: all 0.3s ease;
+}
+
+.horizontal-gutter {
+    background: linear-gradient(to bottom, var(--gradient-start), var(--gradient-end));
+    height: 6px;
+    cursor: row-resize;
+    grid-column: 1 / -1;
+    transition: all 0.3s ease;
+}
+
+.main-content {
+    flex: 1;
+    display: grid;
+    grid-template-rows: 1fr 6px 1fr;
+    padding: 1rem;
+    position: relative;
+    min-width: 0;
+    transition: grid-template-rows 0.3s ease;
+}	
+
+.no-results {
+    padding: 2rem;
+    text-align: center;
+    color: #666;
+    background: #f9fafb;
+    border-radius: 0.5rem;
+    margin: 1rem;
+}
+
+    </style>
+</head>
+<body>
+    <div class="resize-overlay" id="resizeOverlay"></div>
+    
+    <div class="container">
+        <div class="table-panel">
+            <div class="search-container">
+                <input type="text" class="search-bar" placeholder="Search presentations...">
+            </div>
+            <div class="presentations-list" id="presentationsList">
+                <!-- Presentations will be dynamically inserted here -->
+            </div>
+        </div>
+        <div class="gutter" id="dragHandle"></div>
+        <div class="main-content">
+            <div class="video-panel">
+                <div class="iframe-container">
+                    <iframe src="/api/placeholder/400/320" allowfullscreen 
+            onerror="this.style.display='none'; this.parentElement.innerHTML='<div class=\'iframe-error\'>Unable to load video</div>'"></iframe>
+                </div>
+            </div>
+            <div class="horizontal-gutter"></div>
+            <div class="slides-panel">
+                <div class="iframe-container">
+                    <iframe src="/api/placeholder/400/320" allowfullscreen
+            onerror="this.style.display='none'; this.parentElement.innerHTML='<div class=\'iframe-error\'>Unable to load slides</div>'"></iframe>
+                </div>
+            </div>
+        </div>
+    </div>
+    <button class="toggle-sidebar" onclick="toggleSidebar()">☰</button>
+
+    <script>
+let fuse;
+let presentations = []; // Initialize empty array
+
+function isValidUrl(url) {
+    return url && url.trim() !== '' && url !== 'about:blank';
+}
+
+
+// Load presentations data
+async function loadPresentations() {
+    try {
+        const response = await fetch('combined_data/data.json');
+        if (!response.ok) {
+            throw new Error(`HTTP error! status: ${response.status}`);
+        }
+        allPresentations = await response.json();
+
+        presentations = allPresentations.filter(presentation => {
+            return isValidUrl(presentation.videoUrl) || isValidUrl(presentation.slidesUrl);
+        }).sort((a, b) => {
+                return a.title.localeCompare(b.title, undefined, {
+                    numeric: true,        // So "Session 2" comes before "Session 10"
+                    sensitivity: 'base'   // Ignore case and accents
+                });
+            });
+
+
+        initializeSearch(allPresentations);
+        // Render the initial view
+        renderPresentations();
+	// Click first presentation shown (since it is guaranteed to have content)
+	const firstPresentation = document.querySelector('.presentation-header');
+        if (firstPresentation) {
+            firstPresentation.click();
+        }
+    } catch (error) {
+        console.error('Error loading presentations:', error);
+        document.getElementById('presentationsList').innerHTML = 
+            '<div class="error-message">Error loading presentations. Please try again later.</div>';
+    }
+}
+
+
+document.addEventListener('DOMContentLoaded', () => {
+    loadPresentations();
+    initializeResizing();
+});
+function getYouTubeEmbedUrl(url) {
+    // Return early if url is undefined or null
+    if (!url) {
+        console.warn('No URL provided to getYouTubeEmbedUrl');
+        return 'about:blank';
+    }
+
+    try {
+        // Handle different YouTube URL formats
+        let videoId;
+        
+        // Regular URL: https://www.youtube.com/watch?v=VIDEO_ID
+        if (url.includes('watch?v=')) {
+            videoId = url.split('watch?v=')[1].split('&')[0];
+        }
+        // Short URL: https://youtu.be/VIDEO_ID
+        else if (url.includes('youtu.be/')) {
+            videoId = url.split('youtu.be/')[1].split('?')[0];
+        }
+        // Already an embed URL
+        else if (url.includes('embed/')) {
+            return url;
+        }
+        // Just the ID
+        else if (url.match(/^[a-zA-Z0-9_-]{11}$/)) {
+            videoId = url;
+        }
+
+        return videoId ? `https://www.youtube.com/embed/${videoId}` : 'about:blank';
+    } catch (error) {
+        console.error('Error processing YouTube URL:', error);
+        return 'about:blank';
+    }
+}
+
+        function initializeResizing() {
+            const tablePanel = document.querySelector('.table-panel');
+            const dragHandle = document.getElementById('dragHandle');
+            const mainContent = document.querySelector('.main-content');
+            const overlay = document.getElementById('resizeOverlay');
+            let isResizing = false;
+            let isResizingVertical = false;
+
+            dragHandle.addEventListener('mousedown', (e) => {
+                isResizing = true;
+                overlay.style.display = 'block';
+                overlay.classList.add('vertical');
+                document.body.style.cursor = 'col-resize';
+                
+                function handleMouseMove(e) {
+                    if (!isResizing) return;
+                    const newWidth = e.clientX;
+                    if (newWidth > 200 && newWidth < window.innerWidth - 400) {
+                        tablePanel.style.width = newWidth + 'px';
+                        mainContent.style.width = `calc(100% - ${newWidth}px - 6px)`;
+                    }
+                }
+
+                function handleMouseUp() {
+                    isResizing = false;
+                    overlay.style.display = 'none';
+                    overlay.classList.remove('vertical');
+                    document.body.style.cursor = '';
+                    document.removeEventListener('mousemove', handleMouseMove);
+                    document.removeEventListener('mouseup', handleMouseUp);
+                }
+
+                document.addEventListener('mousemove', handleMouseMove);
+                document.addEventListener('mouseup', handleMouseUp);
+            });
+
+            const horizontalGutter = document.querySelector('.horizontal-gutter');
+            
+            horizontalGutter.addEventListener('mousedown', (e) => {
+                isResizingVertical = true;
+                overlay.style.display = 'block';
+                overlay.classList.add('horizontal');
+                document.body.style.cursor = 'row-resize';
+                
+                function handleVerticalResize(e) {
+                    if (!isResizingVertical) return;
+                    const container = document.querySelector('.main-content');
+                    const containerRect = container.getBoundingClientRect();
+                    const percentage = ((e.clientY - containerRect.top) / containerRect.height) * 100;
+                    
+                    if (percentage > 20 && percentage < 80) {
+                        container.style.gridTemplateRows = `${percentage}% 6px calc(100% - ${percentage}% - 6px)`;
+                    }
+                }
+
+                function handleMouseUp() {
+                    isResizingVertical = false;
+                    overlay.style.display = 'none';
+                    overlay.classList.remove('horizontal');
+                    document.body.style.cursor = '';
+                    document.removeEventListener('mousemove', handleVerticalResize);
+                    document.removeEventListener('mouseup', handleMouseUp);
+                }
+
+                document.addEventListener('mousemove', handleVerticalResize);
+                document.addEventListener('mouseup', handleMouseUp);
+            });
+        }
+
+        function toggleSidebar() {
+            const tablePanel = document.querySelector('.table-panel');
+            tablePanel.classList.toggle('active');
+        }
+
+let currentDisplayedPresentations = presentations;
+
+function renderPresentations(items = presentations) {
+    // Update our current displayed items
+    currentDisplayedPresentations = items;
+    
+    const container = document.getElementById('presentationsList');
+    container.innerHTML = items.map((presentation, displayIndex) => `
+        <div class="presentation-item">
+            <div class="presentation-header" onclick="togglePresentation(${displayIndex})">
+                <div>
+                    <div class="presentation-title">${presentation.title} ${presentation.videoUrl ? '<span class="content-icon">🎥</span>' : ''}
+                        ${presentation.slidesUrl ? '<span class="content-icon">📑</span>' : ''}</div>
+                    <div class="presentation-speakers">${presentation.speakers.join(', ')}</div>
+                </div>
+                <div class="arrow">▼</div>
+            </div>
+            <div class="presentation-content" data-index="${displayIndex}">
+                <div class="presentation-abstract">${presentation.abstract}</div>
+                <div class="tags">
+                    ${presentation.tags.map(tag => `
+                        <span class="tag">${tag}</span>
+                    `).join('')}
+                </div>
+            </div>
+        </div>
+    `).join('');
+}
+
+function togglePresentation(displayIndex) {
+    const content = document.querySelector(`.presentation-content[data-index="${displayIndex}"]`);
+    if (!content) {
+        console.error('Presentation content not found for index:', displayIndex);
+        return;
+    }
+
+    const header = content.previousElementSibling;
+    const arrow = header.querySelector('.arrow');
+    const mainContent = document.querySelector('.main-content');
+
+    content.classList.toggle('active');
+    arrow.classList.toggle('active');
+
+    if (content.classList.contains('active')) {
+        const presentation = currentDisplayedPresentations[displayIndex];
+        if (!presentation) {
+            console.error('Presentation not found for index:', displayIndex);
+            return;
+        }
+
+        const videoPanel = document.querySelector('.video-panel');
+        const slidesPanel = document.querySelector('.slides-panel');
+        const horizontalGutter = document.querySelector('.horizontal-gutter');
+
+        // Reset to default state first
+        videoPanel.style.display = 'flex';
+        slidesPanel.style.display = 'flex';
+        horizontalGutter.style.display = 'block';
+        mainContent.style.gridTemplateRows = '1fr 6px 1fr';
+
+        if (presentation.videoUrl && !presentation.slidesUrl) {
+            // Video only
+            slidesPanel.style.display = 'none';
+            horizontalGutter.style.display = 'none';
+            mainContent.style.gridTemplateRows = '1fr 0 0';
+
+            if (videoPanel.querySelector('iframe')) {
+                const embedUrl = getYouTubeEmbedUrl(presentation.videoUrl);
+                const youtubeUrl = `${embedUrl}?autoplay=0&rel=0&modestbranding=1`;
+                videoPanel.querySelector('iframe').src = youtubeUrl;
+            }
+        }
+        else if (!presentation.videoUrl && presentation.slidesUrl) {
+            // Slides only
+            videoPanel.style.display = 'none';
+            horizontalGutter.style.display = 'none';
+            mainContent.style.gridTemplateRows = '0 0 1fr';
+
+            if (slidesPanel.querySelector('iframe')) {
+                slidesPanel.querySelector('iframe').src = presentation.slidesUrl;
+            }
+        }
+        else if (presentation.videoUrl && presentation.slidesUrl) {
+            // Both video and slides
+            if (videoPanel.querySelector('iframe')) {
+                const embedUrl = getYouTubeEmbedUrl(presentation.videoUrl);
+                const youtubeUrl = `${embedUrl}?autoplay=0&rel=0&modestbranding=1`;
+                videoPanel.querySelector('iframe').src = youtubeUrl;
+            }
+            if (slidesPanel.querySelector('iframe')) {
+                slidesPanel.querySelector('iframe').src = presentation.slidesUrl;
+            }
+        }
+        else {
+            // Neither video nor slides
+            videoPanel.style.display = 'none';
+            slidesPanel.style.display = 'none';
+            horizontalGutter.style.display = 'none';
+            mainContent.style.gridTemplateRows = '0 0 0';
+        }
+    }
+}
+
+function initializeSearch(presentations) {
+    fuse = new Fuse(presentations, {
+        keys: [
+            { name: 'title', weight: 2 },     // Most important
+            { name: 'speakers', weight: 1.5 }, 
+            { name: 'tags', weight: 1 },
+            { name: 'abstract', weight: 0.5 }  // Least important
+        ],
+        threshold: 0.3,
+        distance: 100,         // How far to look for matches
+        minMatchCharLength: 2, // Minimum characters to match
+        shouldSort: true,      // Sort by relevance
+        findAllMatches: true,
+        includeScore: true     // Include match scores
+    });
+}
+
+document.querySelector('.search-bar').addEventListener('input', (e) => {
+    const searchTerm = e.target.value.trim();
+    
+    if (!searchTerm) {
+        renderPresentations(presentations);
+        return;
+    }
+
+    const searchResults = fuse.search(searchTerm);
+    
+    // Only show results with good match scores
+    const goodMatches = searchResults
+        .filter(result => result.score < 0.5)  // Lower score = better match
+        .map(result => result.item);
+
+    if (goodMatches.length === 0) {
+        // Show "no results" message
+        document.getElementById('presentationsList').innerHTML = `
+            <div class="no-results">
+                No presentations found matching "${searchTerm}"
+            </div>
+        `;
+    } else {
+        renderPresentations(goodMatches);
+    }
+});
+
+        renderPresentations();
+        initializeResizing();
+    </script>
+</body>
+</html>
+
