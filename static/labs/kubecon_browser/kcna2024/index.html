@@ -309,7 +309,24 @@
     border-radius: 0.5rem;
     margin: 1rem;
 }
+.source-link {
+    margin-top: 1rem;
+    padding-top: 0.5rem;
+    border-top: 1px solid var(--border-color);
+    font-size: 0.875rem;
+}
 
+.source-link a {
+    color: var(--gradient-start);
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.25rem;
+}
+
+.source-link a:hover {
+    text-decoration: underline;
+}
     </style>
 </head>
 <body>
@@ -527,6 +544,13 @@ function renderPresentations(items = presentations) {
                         <span class="tag">${tag}</span>
                     `).join('')}
                 </div>
+		${presentation.url ? `
+                    <div class="source-link">
+                        <a href="https://kccncna2024.sched.com/${presentation.url}" target="_blank" rel="noopener noreferrer">
+                            Original Source 🔗
+                        </a>
+                    </div>
+                ` : ''}
             </div>
         </div>
     `).join('');
