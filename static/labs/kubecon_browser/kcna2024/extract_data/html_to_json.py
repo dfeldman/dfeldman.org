@@ -79,7 +79,7 @@ def extract_session_info(html_content):
         # Title - from the name class anchor
         title_element = soup.find('a', class_='name')
         title = title_element.get_text(strip=True) if title_element else None
-        
+        title = "-".join(title.split("-")[:-1]) # Remove speakers as they are elsewhere     
         # Abstract - from tip-description div
         abstract_div = soup.find('div', class_='tip-description')
         abstract = abstract_div.get_text(strip=True) if abstract_div else None
