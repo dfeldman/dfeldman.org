@@ -361,8 +361,11 @@ async function loadPresentations() {
         }
         allPresentations = await response.json();
 
+	// Initially, either video URL or slides URL was fine
+	// However, apparently if there is no video, the slides URL is usually invalid
+	// Should double check
         presentations = allPresentations.filter(presentation => {
-            return isValidUrl(presentation.videoUrl) || isValidUrl(presentation.slidesUrl);
+            return isValidUrl(presentation.videoUrl) 
         }).sort((a, b) => {
                 return a.title.localeCompare(b.title, undefined, {
                     numeric: true,        // So "Session 2" comes before "Session 10"

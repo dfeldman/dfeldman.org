@@ -26,6 +26,23 @@ def extract_speaker_info(speaker_div):
         "bio": bio
     }
 
+def extract_slides_url(soup):
+    """Extract slides URL from HTML content"""
+    # Look for PDF files in sched-file divs
+    file_div = soup.find('div', class_='sched-file')
+    if file_div:
+        pdf_link = file_div.find('a', class_='file-uploaded-pdf')
+        if pdf_link:
+            return pdf_link.get('href')
+    
+    # Fallback to look for generic presentation/slides links
+    for link in soup.find_all('a', href=True):
+        href = link['href'].lower()
+        if any(x in href for x in ['.pdf', '.pptx', '.ppt', 'slides', 'presentation']):
+            return link['href']
+    
+    return None
+
 def extract_session_info(html_content):
     """Extract session information from HTML content"""
     try:
@@ -59,11 +76,7 @@ def extract_session_info(html_content):
                 tags.append(type_text)
         
         # Slides URL - look for links containing 'slides'
-        slides_url = None
-        for link in soup.find_all('a', href=True):
-            if 'slides' in link['href'].lower():
-                slides_url = link['href']
-                break
+        slides_url = extract_slides_url(soup)
         
         return {
             "title": title,
@@ -71,7 +84,7 @@ def extract_session_info(html_content):
             "speaker_details": speaker_details,
             "abstract": abstract,
             "tags": tags,
-            "slidesUrl": slides_url
+            "slidesUrl": slides_url,
         }
         
     except Exception as e:
