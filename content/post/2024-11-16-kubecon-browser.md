@@ -1,5 +1,5 @@
 ---
-title: "KubeCon Content Browsser"
+title: "KubeCon Content Browser"
 date: 2024-11-16T00:35:36-05:00
 # TURN THIS OFF TO PUBLISH
 draft: false
