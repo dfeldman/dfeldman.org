@@ -1,0 +1,1335 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alone: Survival Game</title>
+    <style>
+        @font-face {
+            font-family: 'PressStart2P';
+            src: url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+        }
+        body {
+            font-family: 'PressStart2P', cursive;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #3c2f2f;
+            color: #f0d9b5;
+            transition: background-color 0.5s ease;
+        }
+        body.night-mode {
+            background-color: #1c1717;
+            color: #a89984;
+        }
+        h1, h2 {
+            text-align: center;
+            color: #f9d71c;
+            text-shadow: 2px 2px 0px #000000;
+        }
+        #game-container {
+            background-color: #5a4d41;
+            border: 4px solid #8b7355;
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 0 20px rgba(0,0,0,0.5);
+        }
+        #status, #inventory, #actions {
+            margin-bottom: 20px;
+            border: 2px solid #8b7355;
+            padding: 10px;
+            border-radius: 5px;
+        }
+        .meter {
+            height: 20px;
+            background-color: #2c2c2c;
+            border: 2px solid #8b7355;
+            border-radius: 5px;
+            overflow: hidden;
+            margin-bottom: 10px;
+            position: relative;
+        }
+        .meter-fill {
+            height: 100%;
+            transition: width 0.5s ease-in-out;
+        }
+        .meter-label {
+            position: absolute;
+            top: 0;
+            left: 5px;
+            color: #f0d9b5;
+            text-shadow: 1px 1px 1px rgba(0,0,0,0.5);
+            line-height: 20px;
+            font-size: 10px;
+        }
+        .thirst-meter { background-color: #3498db; }
+        .cold-meter { background-color: #9b59b6; }
+        .health-meter { background-color: #2ecc71; }
+        .energy-meter { background-color: #f39c12; }
+        .day-progress-meter { background-color: #34495e; }
+        button {
+            font-family: 'PressStart2P', cursive;
+            margin: 5px;
+            padding: 8px 12px;
+            background-color: #8b7355;
+            color: #f0d9b5;
+            border: 2px solid #5a4d41;
+            border-radius: 0;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        button:hover {
+            background-color: #a89984;
+        }
+        button:disabled {
+            background-color: #5a4d41;
+            color: #8b7355;
+            cursor: not-allowed;
+        }
+        #game-log {
+            height: 200px;
+            overflow-y: scroll;
+            border: 2px solid #8b7355;
+            padding: 10px;
+            margin-top: 20px;
+            font-size: 12px;
+            line-height: 1.4;
+            background-color: #2c2c2c;
+        }
+        .weather-icon {
+            font-size: 24px;
+            margin-right: 10px;
+        }
+        .inventory-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 5px;
+        }
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0,0,0,0.7);
+        }
+        .modal-content {
+            background-color: #5a4d41;
+            margin: 15% auto;
+            padding: 20px;
+            border: 4px solid #8b7355;
+            width: 80%;
+            max-width: 600px;
+            border-radius: 10px;
+        }
+        .close {
+            color: #f0d9b5;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+        .close:hover,
+        .close:focus {
+            color: #f9d71c;
+            text-decoration: none;
+            cursor: pointer;
+        }
+        .weight-normal { color: #2ecc71; }
+        .weight-warning { color: #f39c12; }
+        .weight-danger { color: #e74c3c; }
+        #day-time {
+            font-size: 18px;
+            font-weight: bold;
+            margin-bottom: 10px;
+            text-align: center;
+        }
+        .submenu {
+            display: none;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1>🏕️ Alone: Survival Game</h1>
+    <div id="game-container">
+        <div id="day-time"></div>
+        <div id="status"></div>
+        <div id="inventory"></div>
+        <div id="actions"></div>
+        <div id="game-log"></div>
+    </div>
+    <div id="meatModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <div id="meat-details"></div>
+        </div>
+    </div>
+    <div id="gameOverModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <div id="game-over-details"></div>
+        </div>
+    </div>
+
+    <script>
+const ACTIONS = {
+    hunt: {
+        name: 'Hunt',
+        emoji: '🏹',
+        submenu: [
+            {
+                name: 'Hunt (Bow)', 
+                action: 'huntWithBow',
+                emoji: '🏹', 
+                time: 240, 
+                calories: 400, 
+                condition: (game) => game.player.tools.includes('bow_and_arrows') && game.player.inventory.arrows > 0 && game.isDaytime(),
+                perform: (game) => {
+                    const huntChance = Math.random() * (1 - Math.max(0, (32 - game.temperature) / 64));
+                    if (game.isLuckyHuntingDay && huntChance < 0.15) {
+                        const weight = Math.floor(Math.random() * 300) + 700;
+                        game.player.inventory.caughtMeat.push({weight, age: 0, type: 'moose'});
+                        game.log(`Incredible! I've taken down a moose weighing ${weight} lbs! This will feed me for weeks if I can preserve it properly.`);
+                    } else if (huntChance < 0.3) {
+                        const weight = Math.floor(Math.random() * 3) + 1;
+                        game.player.inventory.caughtMeat.push({weight, age: 0, type: 'small game'});
+                        game.log(`I've successfully hunted ${weight} lbs of small game. Not a big catch, but it's sustenance.`);
+                    } else {
+                        game.log("My hunt was unsuccessful. The wilderness can be unforgiving, but I must persist.");
+                        if (Math.random() < 0.1) {
+                            game.player.inventory.arrows--;
+                            game.log("I lost an arrow during the hunt. I need to be more careful with my limited resources.");
+                        }
+                    }
+                }
+            },
+            {
+                name: 'Hunt (Slingshot)', 
+                action: 'huntWithSlingshot',
+                emoji: '🔫', 
+                time: 180, 
+                calories: 300, 
+                condition: (game) => game.player.tools.includes('slingshot') && game.isDaytime(),
+                perform: (game) => {
+                    const huntChance = Math.random() * (1 - Math.max(0, (32 - game.temperature) / 64));
+                    if (game.isLuckyHuntingDay && huntChance < 0.3) {
+                        const weight = Math.floor(Math.random() * 3) + 2;
+                        game.player.inventory.caughtMeat.push({weight, age: 0, type: 'small game'});
+                        game.log(`I managed to take down ${weight} lbs of small game with my slingshot. It's a good day for hunting!`);
+                    } else if (huntChance < 0.2) {
+                        const weight = Math.floor(Math.random() * 2) + 1;
+                        game.player.inventory.caughtMeat.push({weight, age: 0, type: 'small game'});
+                        game.log(`I managed to take down ${weight} lbs of small game with my slingshot. It's not much, but every bit helps.`);
+                    } else {
+                        game.log("No luck with the slingshot today. It's a challenging weapon to master.");
+                    }
+                }
+            },
+            {
+                name: 'Set Snare', 
+                action: 'setSnare',
+                emoji: '🪤', 
+                time: 60, 
+                calories: 100, 
+                condition: (game) => game.player.tools.includes('snare_wire') && !game.player.traps.snare.set && game.isDaytime(),
+                perform: (game) => {
+                    game.player.traps.snare.set = true;
+                    game.player.traps.snare.luck = Math.random();
+                    game.player.traps.snare.contents = null;
+                    game.log("I've set up a snare. Now I wait and hope to catch some small game.");
+                }
+            },
+            {
+                name: 'Check Snare', 
+                action: 'checkSnare',
+                emoji: '🐇', 
+                time: 30, 
+                calories: 50, 
+                condition: (game) => game.player.tools.includes('snare_wire') && game.player.traps.snare.set && game.isDaytime(),
+                perform: (game) => {
+                    if (game.player.traps.snare.contents) {
+                        game.player.inventory.caughtMeat.push(game.player.traps.snare.contents);
+                        game.log(`My snare caught ${game.player.traps.snare.contents.weight} lbs of small game! Every bit of protein counts out here.`);
+                        game.player.traps.snare.contents = null;
+                    } else {
+                        game.log("The snare was empty. Small game can be elusive, but I'll keep trying.");
+                    }
+                    game.updateColdStatus(30);
+                }
+            },
+            {
+                name: 'Unset Snare', 
+                action: 'unsetSnare',
+                emoji: '🚫🪤', 
+                time: 30, 
+                calories: 50, 
+                condition: (game) => game.player.tools.includes('snare_wire') && game.player.traps.snare.set && game.isDaytime(),
+                perform: (game) => {
+                    game.player.traps.snare.set = false;
+                    game.log("I've taken down the snare. I can set it up again in a new location if needed.");
+                }
+            },
+            {
+                name: 'Set Gill Net', 
+                action: 'setGillNet',
+                emoji: '🕸️', 
+                time: 60, 
+                calories: 100, 
+                condition: (game) => game.player.tools.includes('gill_net') && !game.player.traps.gillNet.set && game.isDaytime(),
+                perform: (game) => {
+                    game.player.traps.gillNet.set = true;
+                    game.player.traps.gillNet.luck = Math.random();
+                    game.player.traps.gillNet.contents = [];
+                    game.log("I've set up the gill net. With some luck, I'll catch multiple fish over the next few days.");
+                }
+            },
+            {
+                name: 'Check Gill Net', 
+                action: 'checkGillNet',
+                emoji: '🐟', 
+                time: 60, 
+                calories: 80, 
+                condition: (game) => game.player.tools.includes('gill_net') && game.player.traps.gillNet.set && game.isDaytime(),
+                perform: (game) => {
+                    if (game.player.traps.gillNet.contents.length > 0) {
+                        const totalWeight = game.player.traps.gillNet.contents.reduce((sum, fish) => sum + fish.weight, 0);
+                        game.player.inventory.caughtMeat.push(...game.player.traps.gillNet.contents);
+                        game.log(`Success! I found ${totalWeight} lbs of fish in my gill net. A bountiful catch!`);
+                        game.player.traps.gillNet.contents = [];
+                    } else {
+                        game.log("The gill net was empty this time. Fishing can be unpredictable out here.");
+                    }
+                    game.updateColdStatus(60);
+                }
+            },
+            {
+                name: 'Unset Gill Net', 
+                action: 'unsetGillNet',
+                emoji: '🚫🕸️', 
+                time: 30, 
+                calories: 50, 
+                condition: (game) => game.player.tools.includes('gill_net') && game.player.traps.gillNet.set && game.isDaytime(),
+                perform: (game) => {
+                    game.player.traps.gillNet.set = false;
+                    game.log("I've taken down the gill net. I can set it up again in a new location if needed.");
+                }
+            },
+            {
+                name: 'Fish (Line)', 
+                action: 'fishWithLine',
+                emoji: '🎣', 
+                time: 180, 
+                calories: 150, 
+                condition: (game) => game.player.tools.includes('fishing_line') && game.isDaytime(),
+                perform: (game) => {
+                    const catchChance = Math.random() + (game.isLuckyFishingDay ? 0.2 : 0);
+                    if (catchChance < 0.4) {
+                        const weight = Math.floor(Math.random() * 3) + 1;
+                        game.player.inventory.caughtMeat.push({weight, age: 0, type: 'fish'});
+                        game.log(`I caught a ${weight} lb fish! This will make for a good meal once I prepare it.`);
+                    } else {
+                        game.log("No luck with fishing today. The fish just weren't biting.");
+                    }
+                    game.updateColdStatus(180);
+                }
+            },
+            {
+                name: 'Ice Fish', 
+                action: 'iceFish',
+                emoji: '🧊🎣', 
+                time: 180, 
+                calories: 250, 
+                condition: (game) => game.player.tools.includes('auger') && game.temperature < 32 && game.isDaytime(),
+                perform: (game) => {
+                    const catchChance = Math.random();
+                    if (catchChance < 0.4) {
+                        const weight = Math.floor(Math.random() * 4) + 1;
+                        game.player.inventory.caughtMeat.push({weight, age: 0, type: 'fish'});
+                        game.log(`I caught a ${weight} lb fish through the ice! It's harder work, but the cold preserves the catch.`);
+                    } else {
+                        game.log("No luck ice fishing today. The cold makes it challenging, but I'll keep trying.");
+                    }
+                    game.updateColdStatus(180);
+                }
+            }
+        ]
+    },
+    gather: {
+        name: 'Gather',
+        emoji: '🍎',
+        submenu: [
+            {
+                name: 'Collect Wood', 
+                action: 'collectWood',
+                emoji: '🪵', 
+                time: 120, 
+                calories: 250, 
+                condition: (game) => game.isDaytime(),
+                perform: (game) => {
+                    let woodCollected = game.player.tools.includes('ax') ? Math.floor(Math.random() * 5) + 3 : Math.floor(Math.random() * 2) + 1;
+                    game.player.inventory.wood += woodCollected;
+                    game.log(`I collected ${woodCollected} wood. ${game.player.tools.includes('ax') ? "The ax made this much easier." : "It's hard work without an ax, but every piece counts."}`);
+                }
+            },
+            {
+                name: 'Collect Kindling', 
+                action: 'collectKindling',
+                emoji: '🍂', 
+                time: 60, 
+                calories: 100, 
+                condition: (game) => game.isDaytime() && game.weather !== 'rain',
+                perform: (game) => {
+                    let kindlingCollected = Math.floor(Math.random() * 5) + 3;
+                    game.player.inventory.kindling += kindlingCollected;
+                    game.log(`I collected ${kindlingCollected} kindling. This will be useful for starting fires.`);
+                }
+            },
+            {
+                name: 'Forage', 
+                action: 'forage',
+                emoji: '🍄', 
+                time: 120, 
+                calories: 200, 
+                condition: (game) => game.player.tools.includes('foraging_bag') && game.isDaytime(),
+                perform: (game) => {
+                    const foragedAmount = Math.floor(Math.random() * 3) + 1;
+                    game.player.inventory.foragedItems += foragedAmount;
+                    game.log(`I foraged and found ${foragedAmount} items. Nature provides, if you know where to look.`);
+                }
+            },
+            {
+                name: 'Collect Water', 
+                action: 'collectWater',
+                emoji: '🚰', 
+                time: 60, 
+                calories: 100, 
+                condition: (game) => game.isDaytime(),
+                perform: (game) => {
+                    const waterCollected = Math.floor(Math.random() * 3) + 1;
+                    game.player.inventory.unboiledWater += waterCollected;
+                    game.log(`I collected ${waterCollected} L of water from a nearby source. I should boil it before drinking.`);
+                }
+            }
+        ]
+    },
+    camp: {
+        name: 'Camp',
+        emoji: '⛺',
+        submenu: [
+            {
+                name: 'Build Shelter', 
+                action: 'buildShelter',
+                emoji: '🏠', 
+                time: 180, 
+                calories: 300, 
+                condition: (game) => game.player.shelter < 10 && game.isDaytime() && game.player.inventory.wood >= 5,
+                perform: (game) => {
+                    game.player.shelter++;
+                    game.player.inventory.wood -= 5;
+                    game.log(`I worked on building my shelter. It's now ${game.player.shelter * 10}% complete. A good shelter is crucial for survival.`);
+                    if (game.player.shelter === 10) {
+                        game.log("Congratulations! I've completed building my shelter. This will greatly improve my chances of survival.");
+                    }
+                }
+            },
+            {
+                name: 'Boil Water', 
+                action: 'boilWater',
+                emoji: '🫕', 
+                time: 30, 
+                calories: 30, 
+                condition: (game) => game.player.fire && game.player.inventory.unboiledWater > 0,
+                perform: (game) => {
+                    const boiledAmount = Math.min(2, game.player.inventory.unboiledWater);
+                    game.player.inventory.unboiledWater -= boiledAmount;
+                    game.player.inventory.boiledWater += boiledAmount;
+                    game.log(`I boiled ${boiledAmount} L of water. Clean water is crucial for survival out here.`);
+                    game.updateStatus('cold', -5);
+                }
+            },
+            {
+                name: 'Start Fire', 
+                action: 'startFire',
+                emoji: '🔥', 
+                time: 30, 
+                calories: 50, 
+                condition: (game) => !game.player.fire && game.player.inventory.wood > 0 && game.player.inventory.kindling > 0,
+                perform: (game) => {
+                    game.player.fire = true;
+                    game.player.inventory.wood--;
+                    game.player.inventory.kindling--;
+                    game.log("I've started a fire. The warmth is comforting, and it will help with cooking and purifying water.");
+                    game.log("I've started a fire. The warmth is comforting, and it will help with cooking and purifying water.");
+                    if (game.player.tools.includes('flint')) {
+                        game.log("The flint made starting the fire much easier. It's a valuable tool out here.");
+                    }
+                }
+            },
+            {
+                name: 'Douse Fire', 
+                action: 'douseFire',
+                emoji: '💧', 
+                time: 10, 
+                calories: 20, 
+                condition: (game) => game.player.fire,
+                perform: (game) => {
+                    game.player.fire = false;
+                    game.log("I've doused the fire. It's important to be careful and not waste resources.");
+                }
+            },
+            {
+                name: 'Eat Meat', 
+                action: 'eatMeat',
+                emoji: '🍖', 
+                time: 30, 
+                calories: 10, 
+                condition: (game) => game.player.inventory.preservedMeat > 0 || game.player.inventory.cookedMeat.length > 0 || game.player.inventory.dressedMeat.length > 0,
+                perform: (game) => {
+                    let eatAmount = 0;
+                    let meatType = '';
+                    let weightGain = 0;
+
+                    if (game.player.inventory.preservedMeat > 0) {
+                        eatAmount = Math.min(2, game.player.inventory.preservedMeat);
+                        game.player.inventory.preservedMeat -= eatAmount;
+                        meatType = 'preserved';
+                        weightGain = eatAmount * 0.33;
+                    } else if (game.player.inventory.cookedMeat.length > 0) {
+                        const meat = game.player.inventory.cookedMeat[0];
+                        eatAmount = Math.min(2, meat.weight);
+                        meat.weight -= eatAmount;
+                        meatType = 'cooked';
+                        weightGain = eatAmount * 0.33;
+                        if (meat.weight <= 0) {
+                            game.player.inventory.cookedMeat.shift();
+                        }
+                    } else if (game.player.inventory.dressedMeat.length > 0) {
+                        const meat = game.player.inventory.dressedMeat[0];
+                        eatAmount = Math.min(2, meat.weight);
+                        meat.weight -= eatAmount;
+                        meatType = 'uncooked';
+                        weightGain = eatAmount * 0.25;
+                        if (meat.weight <= 0) {
+                            game.player.inventory.dressedMeat.shift();
+                        }
+                        if (Math.random() < 0.3) {
+                            game.player.sick = true;
+                            game.log("I'm not feeling well after eating that raw meat. I hope it doesn't get worse.");
+                        }
+                    }
+
+                    if (eatAmount > 0) {
+                        game.player.weight += weightGain;
+                        game.updateStatus('energy', eatAmount * 5);
+                        game.log(`I ate ${eatAmount} lbs of ${meatType} meat. ${meatType === 'cooked' ? "It was delicious and satisfying." : meatType === 'preserved' ? "It wasn't very tasty, but it filled me up." : "It was risky, but I was desperate."}`);
+                    } else {
+                        game.log("I don't have any meat to eat. I need to find food soon or I'll starve.");
+                    }
+                }
+            },
+            {
+                name: 'Preserve Meat', 
+                action: 'preserveMeat',
+                emoji: '🥓', 
+                time: 180, 
+                calories: 200, 
+                condition: (game) => game.player.inventory.cookedMeat.length > 0 && game.player.fire,
+                perform: (game) => {
+                    const meat = game.player.inventory.cookedMeat[0];
+                    const preserveAmount = Math.min(2, meat.weight);
+                    meat.weight -= preserveAmount;
+                    game.player.inventory.preservedMeat += preserveAmount;
+                    game.log(`I preserved ${preserveAmount} lbs of ${meat.type} meat. This will last much longer now.`);
+                    if (meat.weight <= 0) {
+                        game.player.inventory.cookedMeat.shift();
+                    }
+                    game.updateStatus('cold', -15);
+                }
+            },
+            {
+                name: 'Eat Dry Food', 
+                action: 'eatDryFood',
+                emoji: '🥫', 
+                time: 15, 
+                calories: 5, 
+                condition: (game) => game.player.inventory.dryFood > 0,
+                perform: (game) => {
+                    const eatAmount = 0.5;
+                    game.player.inventory.dryFood -= eatAmount;
+                    game.player.weight += eatAmount * 0.3;
+                    game.updateStatus('energy', 5);
+                    game.log(`I ate ${eatAmount} lbs of dry food. It's not very satisfying, but it keeps me going.`);
+                    if (game.player.inventory.dryFood <= 0) {
+                        delete game.player.inventory.dryFood;
+                        game.log("I've run out of dry food. I need to find other food sources.");
+                    }
+                }
+            },
+            {
+                name: 'Eat Foraged Items', 
+                action: 'eatForagedItems',
+                emoji: '🍎', 
+                time: 15, 
+                calories: 5, 
+                condition: (game) => game.player.inventory.foragedItems > 0,
+                perform: (game) => {
+                    game.player.inventory.foragedItems--;
+                    game.player.weight += 0.1;
+                    game.updateStatus('energy', 5);
+                    game.log("I ate some foraged items. It's not much, but every little bit helps stave off hunger.");
+                }
+            },
+            {
+                name: 'Cook Meat', 
+                action: 'cookMeat',
+                emoji: '🍳', 
+                time: 60, 
+                calories: 80, 
+                condition: (game) => game.player.inventory.dressedMeat.length > 0 && game.player.fire,
+                perform: (game) => {
+                    const meat = game.player.inventory.dressedMeat[0];
+                    const cookAmount = Math.min(3, meat.weight);
+                    meat.weight -= cookAmount;
+                    game.player.inventory.cookedMeat.push({weight: cookAmount, age: 0, type: meat.type});
+                    game.log(`I cooked ${cookAmount} lbs of ${meat.type} meat. The smell is making my mouth water.`);
+                    if (meat.weight <= 0) {
+                        game.player.inventory.dressedMeat.shift();
+                    }
+                    game.updateStatus('cold', -10);
+                }
+            },
+            {
+                name: 'Dress Meat', 
+                action: 'dressMeat',
+                emoji: '🔪', 
+                time: 60, 
+                calories: 100, 
+                condition: (game) => game.player.inventory.caughtMeat.length > 0,
+                perform: (game) => {
+                    const meat = game.player.inventory.caughtMeat[0];
+                    const dressingAmount = game.player.tools.includes('hunting_knife') ? Math.min(5, meat.weight) : Math.min(2, meat.weight);
+                    meat.weight -= dressingAmount;
+                    game.player.inventory.dressedMeat.push({weight: dressingAmount, age: meat.age, type: meat.type});
+                    game.log(`I dressed ${dressingAmount} lbs of ${meat.type} meat. ${game.player.tools.includes('hunting_knife') ? "The hunting knife made this much easier." : "It's slow going without proper tools, but I managed."}`);
+                    if (meat.weight <= 0) {
+                        game.player.inventory.caughtMeat.shift();
+                    }
+                    game.updateStatus('cold', -5);
+                }
+            }
+        ]
+    },
+    rest: {
+        name: 'Rest',
+        emoji: '😴',
+        time: 60,
+        calories: 30,
+        condition: (game) => true,
+        perform: (game) => {
+            const restAmount = 20;
+            game.updateStatus('energy', restAmount);
+            game.log(`I took some time to rest. My energy is now at ${Math.round(game.player.energy)}%. It's important to stay well-rested out here.`);
+            
+            if (game.player.fire) {
+                const warmthGained = 10;
+                game.updateStatus('cold', -warmthGained);
+                game.log(`The fire kept me warm while I rested. My cold level decreased to ${Math.round(game.player.cold)}%.`);
+            }
+        }
+    },
+    sleep: {
+        name: 'Sleep',
+        emoji: '💤',
+        time: 0,
+        calories: 0,
+        condition: (game) => true,
+        perform: (game) => game.sleep()
+    },
+    tapOut: {
+        name: 'Tap Out',
+        emoji: '🏳️',
+        time: 0,
+        calories: 0,
+        condition: (game) => true,
+        perform: (game) => game.endGame("I've decided to tap out. The wilderness has proven too challenging.", false)
+    }
+};
+        const game = {
+            day: 1,
+            date: new Date(2023, 8, 1), // September 1, 2023
+            time: 6 * 60, // 6:00 AM in minutes
+            daylightHours: 12 * 60, // 12 hours in minutes
+            player: {
+                startWeight: 0,
+                weight: 0,
+                thirst: 0,
+                cold: 0,
+                health: 100,
+                energy: 100,
+                sick: false,
+                inventory: {
+                    caughtMeat: [],
+                    dressedMeat: [],
+                    cookedMeat: [],
+                    preservedMeat: 0,
+                    boiledWater: 5,
+                    unboiledWater: 0,
+                    wood: 20,
+                    kindling: 10,
+                    foragedItems: 0,
+                    arrows: 0,
+                    dryFood: 0,
+                    cookedFood: 0
+                },
+                shelter: 0,
+                fire: false,
+                tools: [],
+                traps: {
+                    snare: { set: false, luck: Math.random(), contents: null },
+                    gillNet: { set: false, luck: Math.random(), contents: [] }
+                }
+            },
+            temperature: 50,
+            weather: 'clear',
+            isLuckyHuntingDay: false,
+            isLuckyFishingDay: false,
+            gameOver: false,
+            winDay: Math.floor(Math.random() * 30) + 45,
+
+            initialize() {
+                this.player.startWeight = Math.floor(Math.random() * (250 - 150 + 1)) + 150;
+                this.player.weight = this.player.startWeight;
+                this.updateStatusDisplay();
+                this.log("The boat drops me off at my new campground. This is where my survival journey begins.");
+                this.chooseTool();
+            },
+
+            chooseTool() {
+                const tools = [
+                    "bow_and_arrows",
+                    "gill_net",
+                    "snare_wire",
+                    "dry_food",
+                    "cooked_food",
+                    "ax",
+                    "flint",
+                    "hunting_knife",
+                    "foraging_bag",
+                    "auger",
+                    "slingshot"
+                ];
+                const toolButtons = tools.map(tool => 
+                    `<button onclick="game.selectTool('${tool}')" ${this.player.tools.length >= 5 ? 'disabled' : ''}>${this.getToolEmoji(tool)} ${tool.replace(/_/g, ' ')}</button>`
+                ).join('');
+                document.getElementById('game-container').innerHTML = `<h2>Choose your tools (${5 - this.player.tools.length} remaining):</h2>${toolButtons}`;
+            },
+
+            getToolEmoji(tool) {
+                const toolEmojis = {
+                    bow_and_arrows: '🏹',
+                    gill_net: '🕸️',
+                    snare_wire: '🪤',
+                    dry_food: '🥫',
+                    cooked_food: '🍲',
+                    ax: '🪓',
+                    flint: '🪨',
+                    hunting_knife: '🔪',
+                    foraging_bag: '🎒',
+                    auger: '🛠️',
+                    slingshot: '🔫'
+                };
+                return toolEmojis[tool] || '';
+            },
+
+            selectTool(tool) {
+                if (this.player.tools.length < 5) {
+                    this.player.tools.push(tool);
+                    if (tool === 'bow_and_arrows') {
+                        this.player.inventory.arrows = 9;
+                    } else if (tool === 'dry_food') {
+                        this.player.inventory.dryFood = 2;
+                    } else if (tool === 'cooked_food') {
+                        this.player.inventory.cookedFood = 2;
+                    }
+                    if (this.player.tools.length === 5) {
+                        this.startGame();
+                    } else {
+                        this.chooseTool();
+                    }
+                }
+            },
+
+            startGame() {
+                document.getElementById('game-container').innerHTML = `
+                    <div id="day-time"></div>
+                    <div id="status"></div>
+                    <div id="inventory"></div>
+                    <div id="actions"></div>
+                    <div id="game-log"></div>
+                `;
+                this.log("I've selected my tools. It's time to put my survival skills to the test.");
+                this.updateStatusDisplay();
+                this.gameLoop();
+            },
+
+            updateStatusDisplay() {
+                this.updateDayTime();
+                this.updateStatusMeters();
+                this.updateInventory();
+                this.updateActions();
+            },
+
+            updateDayTime() {
+                const hours = Math.floor(this.time / 60);
+                const minutes = this.time % 60;
+                const timeString = `${hours.toString().padStart(2, '0')}:${minutes.toString().padStart(2, '0')}`;
+                const dateString = this.date.toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' });
+                document.getElementById('day-time').innerHTML = `Day ${this.day} - ${dateString} - ${timeString}`;
+                document.body.classList.toggle('night-mode', !this.isDaytime());
+            },
+
+            updateStatusMeters() {
+                const weightPercentage = (this.player.weight / this.player.startWeight) * 100;
+                let weightClass = 'weight-normal';
+                if (weightPercentage <= 72) weightClass = 'weight-warning';
+                if (weightPercentage <= 66) weightClass = 'weight-danger';
+
+                const dayProgress = ((this.time - 6 * 60) / (18 * 60)) * 100;
+
+                const statusHtml = `
+                    <h2>Status</h2>
+                    <p class="${weightClass}">Weight: ${this.player.weight.toFixed(1)} lbs</p>
+                    <div class="meter">
+                        <div class="meter-fill thirst-meter" style="width: ${this.player.thirst}%;"></div>
+                        <span class="meter-label">Thirst: ${Math.round(this.player.thirst)}%</span>
+                    </div>
+                    <div class="meter">
+                        <div class="meter-fill cold-meter" style="width: ${this.player.cold}%;"></div>
+                        <span class="meter-label">Cold: ${Math.round(this.player.cold)}%</span>
+                    </div>
+                    <div class="meter">
+                        <div class="meter-fill health-meter" style="width: ${this.player.health}%;"></div>
+                        <span class="meter-label">Health: ${Math.round(this.player.health)}%</span>
+                    </div>
+                    <div class="meter">
+                        <div class="meter-fill energy-meter" style="width: ${this.player.energy}%;"></div>
+                        <span class="meter-label">Energy: ${Math.round(this.player.energy)}%</span>
+                    </div>
+                    <div class="meter">
+                        <div class="meter-fill day-progress-meter" style="width: ${dayProgress}%;"></div>
+                        <span class="meter-label">Day Progress</span>
+                    </div>
+                    <p>
+                        <span class="weather-icon">${this.getWeatherEmoji()}</span>
+                        Temperature: ${this.temperature}°F | 
+                        Weather: ${this.weather} | 
+                        Fire: ${this.player.fire ? '🔥 On' : '🧊 Off'} | 
+                        Shelter: ${this.player.shelter * 10}% complete |
+                        Sick: ${this.player.sick ? '🤒 Yes' : '😊 No'}
+                    </p>
+                `;
+                document.getElementById('status').innerHTML = statusHtml;
+            },
+
+            updateInventory() {
+                const totalMeat = this.player.inventory.caughtMeat.reduce((total, meat) => total + meat.weight, 0) +
+                                  this.player.inventory.dressedMeat.reduce((total, meat) => total + meat.weight, 0) +
+                                  this.player.inventory.cookedMeat.reduce((total, meat) => total + meat.weight, 0) +
+                                  this.player.inventory.preservedMeat;
+
+                const inventoryHtml = `
+                    <h2>Inventory</h2>
+                    <div class="inventory-item">
+                        <span>🍖 Food:</span>
+                        <span>${totalMeat.toFixed(1)} lbs</span>
+                        <button onclick="game.viewMeatDetails()">View</button>
+                    </div>
+                    <div class="inventory-item">
+                        <span>🪵 Wood:</span>
+                        <span>${this.player.inventory.wood}</span>
+                    </div>
+                    <div class="inventory-item">
+                        <span>🍂 Kindling:</span>
+                        <span>${this.player.inventory.kindling}</span>
+                    </div>
+                    <div class="inventory-item">
+                        <span>🍎 Foraged Items:</span>
+                        <span>${this.player.inventory.foragedItems}</span>
+                    </div>
+                    ${this.player.tools.includes('bow_and_arrows') ? `
+                    <div class="inventory-item">
+                        <span>🏹 Arrows:</span>
+                        <span>${this.player.inventory.arrows}</span>
+                    </div>
+                    ` : ''}
+                    <div class="inventory-item">
+                        <span>🛠️ Tools:</span>
+                        <span>${this.player.tools.map(tool => `${this.getToolEmoji(tool)} ${tool.replace(/_/g, ' ')}`).join(', ')}</span>
+                    </div>
+                `;
+                document.getElementById('inventory').innerHTML = inventoryHtml;
+            },
+
+            updateActions() {
+    const actionHtml = Object.entries(ACTIONS).map(([key, action]) => {
+        if (action.submenu) {
+            const submenuStyle = document.getElementById(`${key}-submenu`)?.style.display || 'none';
+            return `
+                <button onclick="game.toggleSubmenu('${key}')">${action.emoji} ${action.name}</button>
+                <div id="${key}-submenu" class="submenu" style="display: ${submenuStyle};">
+                    ${action.submenu.map(subaction => {
+                        const isEnabled = subaction.condition(this) && this.player.energy >= this.getEnergyCost(subaction);
+                        const timeMultiplier = this.weather === 'rain' ? 1.5 : 1;
+                        const calorieMultiplier = this.weather === 'rain' ? 1.2 : 1;
+                        const adjustedTime = Math.round(subaction.time * timeMultiplier);
+                        const adjustedCalories = Math.round(subaction.calories * calorieMultiplier);
+                        return `<button onclick="game.performAction('${subaction.action}')" ${isEnabled ? '' : 'disabled'}>${subaction.emoji} ${subaction.name} (${adjustedTime}m/${adjustedCalories}c)</button>`;
+                    }).join('')}
+                </div>
+            `;
+        } else {
+            const isEnabled = action.condition(this) && this.player.energy >= this.getEnergyCost(action);
+            const timeMultiplier = this.weather === 'rain' ? 1.5 : 1;
+            const calorieMultiplier = this.weather === 'rain' ? 1.2 : 1;
+            const adjustedTime = Math.round(action.time * timeMultiplier);
+            const adjustedCalories = Math.round(action.calories * calorieMultiplier);
+            return `<button onclick="game.performAction('${key}')" ${isEnabled ? '' : 'disabled'}>${action.emoji} ${action.name} (${adjustedTime}m/${adjustedCalories}c)</button>`;
+        }
+    }).join('');
+
+    document.getElementById('actions').innerHTML = `<h2>Actions</h2>${actionHtml}`;
+},
+
+
+            toggleSubmenu(key) {
+    const submenu = document.getElementById(`${key}-submenu`);
+    if (submenu) {
+        const isHidden = submenu.style.display === 'none' || submenu.style.display === '';
+        submenu.style.display = isHidden ? 'block' : 'none';
+    }
+},
+
+performAction(actionKey) {
+    let action;
+    for (const category of Object.values(ACTIONS)) {
+        if (category.submenu) {
+            action = category.submenu.find(a => a.action === actionKey);
+            if (action) break;
+        } else if (category.name.toLowerCase() === actionKey) {
+            action = category;
+            break;
+        }
+    }
+
+    if (action && action.condition(this) && this.player.energy >= this.getEnergyCost(action)) {
+        const timeMultiplier = this.weather === 'rain' ? 1.5 : 1;
+        const calorieMultiplier = this.weather === 'rain' ? 1.2 : 1;
+        const adjustedTime = Math.round(action.time * timeMultiplier);
+        const adjustedCalories = Math.round(action.calories * calorieMultiplier);
+
+        if (this.time + adjustedTime > 24 * 60) {
+            this.log("It's too late to perform this action. I need to sleep.");
+            return;
+        }
+
+        action.perform(this);
+
+        this.player.weight -= adjustedCalories / 3500;
+        this.player.energy -= this.getEnergyCost(action);
+        this.player.thirst += adjustedCalories / 50;
+        this.advanceTime(adjustedTime);
+        this.drinkWater();
+        this.updateStatusDisplay();
+        this.checkAutoTapOut();
+        if (this.player.energy <= 0 || this.time >= 24 * 60) {
+            this.sleep();
+        }
+        this.randomNarration();
+    } else {
+        this.log("I can't perform this action right now.");
+    }
+},
+
+
+
+
+            getEnergyCost(action) {
+                return action.energyCost ? action.energyCost(this) : action.calories / 10;
+            },
+
+            advanceTime(minutes) {
+                this.time += minutes;
+                if (this.time >= 24 * 60) {
+                    this.sleep();
+                }
+            },
+
+            isDaytime() {
+                return this.time >= 6 * 60 && this.time < (6 * 60 + this.daylightHours);
+            },
+
+            drinkWater() {
+                if (this.player.inventory.boiledWater > 0) {
+                    const drinkAmount = Math.min(2, this.player.inventory.boiledWater);
+                    this.player.inventory.boiledWater -= drinkAmount;
+                    this.updateStatus('thirst', -drinkAmount * 15);
+                    this.log(`I drank ${drinkAmount} L of boiled water. It's refreshing and safe.`);
+                } else if (this.player.thirst >= 100) {
+                    const drinkAmount = 2;
+                    this.updateStatus('thirst', -drinkAmount * 15);
+                    this.log("I'm out of boiled water and extremely thirsty. I had to drink from the lake. I hope I don't get sick.");
+                    if (Math.random() < 0.3) {
+                        this.player.sick = true;
+                        this.player.sick = true;
+                        this.log("I'm not feeling well after drinking that unboiled water. I should be more careful.");
+                    }
+                }
+            },
+
+            sleep() {
+                const sleepStart = this.time;
+                this.day++;
+                this.date.setDate(this.date.getDate() + 1);
+                this.time = 6 * 60; // Wake up at 6:00 AM
+                this.daylightHours = Math.max(8 * 60, this.daylightHours - 5); // Decrease daylight hours
+
+                const sleepDuration = (24 * 60 - sleepStart + this.time) % (24 * 60);
+                this.player.weight -= (400 / 3500) * (sleepDuration / 480); // Calories burned during sleep
+
+                let energyRecovered = 50; // Base recovery
+
+                if (sleepStart <= 22 * 60) { // Sleeping before or at 10 PM
+                    energyRecovered = 100;
+                } else if (sleepStart >= 24 * 60) { // Mandatory sleep at midnight
+                    energyRecovered = 25;
+                }
+
+                if (this.weather === 'rain' && this.player.shelter === 0) {
+                    energyRecovered *= 0.5;
+                    this.updateStatus('cold', 30);
+                    this.log("The rain made it difficult to sleep without shelter. I didn't recover much energy and got colder.");
+                } else if (this.temperature > 50 || (this.player.shelter > 0 && this.player.fire)) {
+                    this.log("I slept comfortably through the night, fully recovering my energy.");
+                } else if (this.player.shelter > 0) {
+                    energyRecovered *= 0.75;
+                    this.log("My shelter provided some protection, allowing me to recover most of my energy.");
+                } else {
+                    energyRecovered *= 0.5;
+                    this.log("Sleeping outside in these conditions was rough. I didn't recover as much energy as I'd hoped.");
+                }
+
+                this.player.energy = Math.min(100, this.player.energy + energyRecovered);
+
+                if (this.player.fire) {
+                    this.player.cold = 0;
+                    this.log("The fire kept me warm throughout the night.");
+                } else if (this.temperature < 50) {
+                    this.player.cold += 20;
+                    this.log("The cold night air chilled me to the bone. I need to prioritize staying warm.");
+                }
+
+                this.updateTemperature();
+                this.updateWeather();
+                this.burnFirewood();
+                this.updateTraps();
+                this.animalAttack();
+                this.spoilMeat();
+                this.checkPlayerStatus();
+                this.checkWinCondition();
+                this.dailyStatusReport();
+                this.medCheck();
+                this.updateStatusDisplay();
+            },
+
+            updateTemperature() {
+                const tempChange = Math.floor(Math.random() * 11) - 5;
+                this.temperature += tempChange;
+                this.temperature -= 0.2; // Gradual temperature decrease over time
+                if (this.weather === 'rain') {
+                    this.temperature -= 2;
+                }
+                this.log(`The temperature ${tempChange >= 0 ? 'rose' : 'dropped'} to ${this.temperature}°F. I can feel the change in the air.`);
+            },
+
+            updateWeather() {
+                const weatherChance = Math.random();
+                if (weatherChance < 0.15) {
+                    this.weather = 'rain';
+                    this.log("It started to rain. I'll need to be careful and stay dry.");
+                    this.player.inventory.boiledWater += Math.floor(Math.random() * 2) + 1;
+                    this.log("I collected some rainwater. It's already clean enough to drink.");
+                } else {
+                    this.weather = 'clear';
+                    this.log("The weather is clear. A good day for outdoor activities.");
+                }
+            },
+
+            burnFirewood() {
+                if (this.player.fire) {
+                    const woodNeeded = Math.floor(Math.random() * 3) + 1;
+                    if (this.player.inventory.wood >= woodNeeded) {
+                        this.player.inventory.wood -= woodNeeded;
+                        this.log(`My fire burned ${woodNeeded} wood overnight.`);
+                    } else {
+                        this.player.fire = false;
+                        this.log("My fire went out due to lack of wood. I should have been more prepared.");
+                    }
+                }
+            },
+
+            updateTraps() {
+                if (this.player.traps.gillNet.set) {
+                    const catchChance = Math.random() + this.player.traps.gillNet.luck + (this.isLuckyFishingDay ? 0.2 : 0);
+                    if (catchChance < 0.7) {
+                        const weight = Math.floor(Math.random() * 5) + 2;
+                        this.player.traps.gillNet.contents.push({weight, age: 0, type: 'fish'});
+                    }
+                }
+
+                if (this.player.traps.snare.set && !this.player.traps.snare.contents) {
+                    const catchChance = Math.random() + this.player.traps.snare.luck;
+                    if (catchChance < 0.5) {
+                        const weight = Math.floor(Math.random() * 2) + 1;
+                        this.player.traps.snare.contents = {weight, age: 0, type: 'small game'};
+                    }
+                }
+            },
+
+            animalAttack() {
+                if (Math.random() < 0.1 && this.player.inventory.preservedMeat > 0) {
+                    const stolenMeat = Math.floor(Math.random() * 3) + 1;
+                    this.player.inventory.preservedMeat = Math.max(0, this.player.inventory.preservedMeat - stolenMeat);
+                    this.log(`An animal stole ${stolenMeat} lbs of my preserved meat! I need to find a better way to store it.`);
+                }
+            },
+
+            spoilMeat() {
+                const spoilMeat = (meatArray) => {
+                    return meatArray.filter(meat => {
+                        meat.age++;
+                        if ((this.temperature > 40 && meat.age > 1) || meat.age > 5) {
+                            this.log(`${meat.weight} lbs of ${meat.type} meat has spoiled. I had to discard it.`);
+                            return false;
+                        }
+                        return true;
+                    });
+                };
+
+                this.player.inventory.caughtMeat = spoilMeat(this.player.inventory.caughtMeat);
+                this.player.inventory.dressedMeat = spoilMeat(this.player.inventory.dressedMeat);
+                this.player.inventory.cookedMeat = spoilMeat(this.player.inventory.cookedMeat);
+            },
+
+            checkPlayerStatus() {
+                const weightPercentage = (this.player.weight / this.player.startWeight) * 100;
+                if (weightPercentage <= 66) {
+                    this.endGame("I've lost too much weight. I'm too weak to continue.", false);
+                } else if (this.player.cold >= 100) {
+                    this.endGame("Hypothermia has set in. I can't risk my life any further.", false);
+                } else if (this.player.health <= 0) {
+                    this.endGame("My health has deteriorated too much. I can't continue.", false);
+                }
+
+                // Warnings
+                if (weightPercentage <= 72 && weightPercentage > 66) {
+                    this.log("WARNING: I've lost a significant amount of weight. I need to find more food soon.");
+                }
+                if (this.player.cold >= 80) {
+                    this.log("WARNING: I'm getting dangerously cold. I need to warm up quickly.");
+                }
+                if (this.player.health <= 20) {
+                    this.log("WARNING: My health is critically low. I need to take care of myself or I'll have to tap out.");
+                }
+            },
+
+            checkWinCondition() {
+                if (this.day > this.winDay) {
+                    this.endGame(`I've done it! I've survived for ${this.day} days and won the grand prize of $500,000!`, true);
+                }
+                if (this.date >= new Date(2024, 0, 31)) { // January 31, 2024
+                    this.endGame("I've survived until January 31st! I've won the challenge!", true);
+                }
+            },
+
+            dailyStatusReport() {
+                let report = `Day ${this.day} Report:\n`;
+                report += `Temperature: ${this.temperature}°F, Weather: ${this.weather}\n`;
+                report += `Weight: ${this.player.weight.toFixed(1)} lbs (${Math.round((this.player.weight / this.player.startWeight) * 100)}% of starting weight)\n`;
+                report += `Health: ${Math.round(this.player.health)}%, Energy: ${Math.round(this.player.energy)}%\n`;
+                report += `Thirst: ${Math.round(this.player.thirst)}%, Cold: ${Math.round(this.player.cold)}%\n`;
+                report += `Fire: ${this.player.fire ? 'Lit' : 'Out'}, Shelter: ${this.player.shelter * 10}% complete\n`;
+                report += `Traps: Snare ${this.player.traps.snare.set ? 'Set' : 'Not Set'}, Gill Net ${this.player.traps.gillNet.set ? 'Set' : 'Not Set'}\n`;
+                report += this.player.sick ? "I'm currently sick and need to focus on recovery.\n" : "";
+                this.log(report);
+            },
+
+            medCheck() {
+                if (this.day % 7 === 0) {
+                    this.log("It's time for my weekly medical check.");
+                    const weightPercentage = (this.player.weight / this.player.startWeight) * 100;
+                    if (weightPercentage <= 72 || this.player.sick || this.player.health <= 20) {
+                        this.endGame("The medical team has decided it's not safe for me to continue.", false);
+                    } else {
+                        this.log("I passed the medical check. I can continue the challenge.");
+                    }
+                }
+            },
+
+            updateColdStatus(minutes) {
+                if (this.temperature < 50 && !this.player.fire) {
+                    const coldIncrease = minutes / 60 * 5; // 5% increase per hour
+                    this.updateStatus('cold', coldIncrease);
+                }
+            },
+
+            updateStatus(stat, value) {
+                this.player[stat] = Math.max(0, Math.min(100, this.player[stat] + value));
+            },
+
+            checkAutoTapOut() {
+                const weightPercentage = (this.player.weight / this.player.startWeight) * 100;
+                if (weightPercentage <= 66 || this.player.cold >= 100 || this.player.health <= 0) {
+                    let reason = "";
+                    if (weightPercentage <= 66) reason = "extreme weight loss";
+                    else if (this.player.cold >= 100) reason = "hypothermia";
+                    else if (this.player.health <= 0) reason = "critical health condition";
+                    this.endGame(`I've been forced to tap out due to ${reason}.`, false);
+                }
+            },
+
+            endGame(reason, isWin) {
+                this.gameOver = true;
+                let message = `${reason} `;
+                if (!isWin) {
+                    message += "The team picked me up in a helicopter. I'm safe, warm, and fed, but I lost the game.";
+                }
+                message += `<br><br>Survival Summary:<br>
+                Days survived: ${this.day}<br>
+                Total meat caught: ${(this.player.inventory.caughtMeat.reduce((total, meat) => total + meat.weight, 0) + 
+                                    this.player.inventory.dressedMeat.reduce((total, meat) => total + meat.weight, 0) + 
+                                    this.player.inventory.cookedMeat.reduce((total, meat) => total + meat.weight, 0) + 
+                                    this.player.inventory.preservedMeat).toFixed(1)} lbs<br>
+                Wood chopped: ${this.player.inventory.wood}<br>
+                Water boiled: ${this.player.inventory.boiledWater.toFixed(1)} L<br>
+                Final weight: ${this.player.weight.toFixed(1)} lbs<br>
+                Final health: ${Math.round(this.player.health)}%`;
+                
+                document.getElementById('game-over-details').innerHTML = message;
+                document.getElementById('gameOverModal').style.display = 'block';
+            },
+
+            randomNarration() {
+                const narrations = [
+                    "I miss my family dearly. Their memories keep me going.",
+                    "I stubbed my toe on a rock. It's the little things that remind me I'm alive.",
+                    "I know I can do this. I've trained for this moment.",
+                    "The silence out here is both peaceful and unnerving.",
+                    "I'm a bit scared today, but I won't let fear control me.",
+                    "The beauty of this wilderness is breathtaking, even in its harshness.",
+                    "I wonder how the others are doing. Are they struggling like me?",
+                    "I saw a shooting star last night. I wished for strength to continue.",
+                    "The sound of a distant wolf howl sent chills down my spine.",
+                    "I found a pretty rock today. It's the small joys that matter out here."
+                ];
+                if (Math.random() < 0.2) { // 20% chance of a random narration after each action
+                    this.log(narrations[Math.floor(Math.random() * narrations.length)]);
+                }
+            },
+
+            log(message) {
+                const gameLog = document.getElementById('game-log');
+                if (gameLog) {
+                    gameLog.innerHTML += `<p>Day ${this.day}: ${message}</p>`;
+                    gameLog.scrollTop = gameLog.scrollHeight;
+                }
+            },
+
+            getWeatherEmoji() {
+                const weatherEmojis = {
+                    clear: '☀️',
+                    rain: '🌧️'
+                };
+                return weatherEmojis[this.weather] || '☀️';
+            },
+
+            viewMeatDetails() {
+                let detailsHtml = `<h3>Meat Details:</h3>`;
+                ['caughtMeat', 'dressedMeat', 'cookedMeat'].forEach(meatType => {
+                    if (this.player.inventory[meatType].length > 0) {
+                        detailsHtml += `<h4>${meatType.replace('Meat', '').charAt(0).toUpperCase() + meatType.replace('Meat', '').slice(1)} Meat:</h4>`;
+                        this.player.inventory[meatType].forEach((meat, index) => {
+                            detailsHtml += `
+                                <p>
+                                    ${index + 1}. ${meat.type} - ${meat.weight.toFixed(1)} lbs
+                                    (Age: ${meat.age} day${meat.age !== 1 ? 's' : ''})
+                                </p>
+                            `;
+                        });
+                    }
+                });
+                if (this.player.inventory.preservedMeat > 0) {
+                    detailsHtml += `<h4>Preserved Meat:</h4>
+                        <p>${this.player.inventory.preservedMeat.toFixed(1)} lbs</p>`;
+                }
+                document.getElementById('meat-details').innerHTML = detailsHtml;
+                document.getElementById('meatModal').style.display = 'block';
+            },
+
+            // Main game loop
+            gameLoop() {
+                if (!this.gameOver) {
+                    this.shelterBurnCheck();
+                    this.burnFirewood();
+                    this.updateStatusDisplay();
+                    this.isLuckyHuntingDay = Math.random() < 0.2 && this.weather !== 'rain';
+                    this.isLuckyFishingDay = Math.random() < 0.2;
+                    if (this.isLuckyHuntingDay) {
+                        this.log("I think I see some big game footprints... Today might be a lucky day for hunting.");
+                    }
+                    if (this.isLuckyFishingDay) {
+                        this.log("The water seems particularly active today. It might be a good day for fishing.");
+                    }
+                    setTimeout(() => this.gameLoop(), 1000); // Update every second
+                }
+            },
+
+            shelterBurnCheck() {
+                if (this.player.fire && this.player.shelter > 0 && Math.random() < 0.01) {
+                    this.player.shelter = 0;
+                    this.player.fire = false;
+                    this.log("Disaster! My shelter caught fire and burned down. I'll need to rebuild it from scratch.");
+                }
+            },
+
+            // Initialize the game
+            init() {
+                this.initialize();
+                this.gameLoop();
+            }
+        };
+
+        window.onload = () => game.init();
+
+        // Close the meat details modal when clicking the close button
+        document.querySelector('.close').onclick = function() {
+            document.getElementById('meatModal').style.display = 'none';
+            document.getElementById('gameOverModal').style.display = 'none';
+        }
+
+        // Close the meat details modal when clicking outside of it
+        window.onclick = function(event) {
+            if (event.target == document.getElementById('meatModal')) {
+                document.getElementById('meatModal').style.display = 'none';
+            }
+            if (event.target == document.getElementById('gameOverModal')) {
+                document.getElementById('gameOverModal').style.display = 'none';
+            }
+        }
+    </script>
+</body>
+</html>
