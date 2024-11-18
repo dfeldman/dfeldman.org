@@ -1,0 +1,1019 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Time Tracker</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
+
+    <style>
+
+:root {
+            --primary-color: #6C5CE7;
+            --secondary-color: #00CEC9;
+            --accent-color: #FD79A8;
+            --background-color: #F0F3F8;
+            --text-color: #2D3436;
+            --card-background: #FFFFFF;
+            --shadow-color: rgba(0, 0, 0, 0.1);
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: var(--background-color);
+            color: var(--text-color);
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+            transition: background-color 0.3s ease;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 2rem auto;
+            padding: 2rem;
+            background-color: var(--card-background);
+            border-radius: 20px;
+            box-shadow: 0 10px 30px var(--shadow-color);
+            transition: all 0.3s ease;
+        }
+
+        h1 {
+            font-family: 'Orbitron', sans-serif;
+            text-align: center;
+            color: var(--primary-color);
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .tab-container {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 2rem;
+        }
+
+        .tab-button {
+            background-color: var(--secondary-color);
+            color: var(--card-background);
+            border: none;
+            padding: 0.8rem 1.5rem;
+            margin: 0 0.5rem;
+            border-radius: 25px;
+            cursor: pointer;
+            font-size: 1rem;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+        }
+
+        .tab-button:hover {
+            background-color: var(--primary-color);
+            transform: translateY(-2px);
+        }
+
+        .tab-button.active {
+            background-color: var(--primary-color);
+            box-shadow: 0 4px 10px rgba(108, 92, 231, 0.3);
+        }
+
+        .overall-stats {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: var(--card-background);
+            padding: 1.5rem;
+            border-radius: 15px;
+            margin-bottom: 2rem;
+            font-size: 1.2rem;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        #taskInput, #categorySelect {
+            width: calc(50% - 0.5rem);
+            padding: 1rem;
+            font-size: 1rem;
+            border: 2px solid var(--secondary-color);
+            border-radius: 10px;
+            margin-bottom: 1rem;
+            transition: all 0.3s ease;
+            background-color: var(--card-background);
+            color: var(--text-color);
+        }
+
+        #taskInput:focus, #categorySelect:focus {
+            outline: none;
+            border-color: var(--primary-color);
+            box-shadow: 0 0 0 3px rgba(108, 92, 231, 0.3);
+        }
+
+        #taskList {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .task-item {
+            background-color: var(--card-background);
+            border: 1px solid var(--secondary-color);
+            border-radius: 10px;
+            margin-bottom: 1rem;
+            padding: 1rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: all 0.3s ease;
+            cursor: move;
+        }
+
+        .task-item:hover {
+            box-shadow: 0 5px 15px var(--shadow-color);
+            transform: translateY(-2px);
+        }
+
+        .task-item.completed {
+            opacity: 0.7;
+            text-decoration: line-through;
+        }
+
+        .task-item.dragging {
+            opacity: 0.5;
+            background-color: var(--secondary-color);
+        }
+
+        .task-buttons {
+            display: flex;
+            gap: 0.5rem;
+            align-items: center;
+        }
+
+        button {
+            background-color: var(--primary-color);
+            color: var(--card-background);
+            border: none;
+            padding: 0.5rem 1rem;
+            border-radius: 25px;
+            cursor: pointer;
+            font-size: 0.9rem;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        button:hover {
+            background-color: var(--secondary-color);
+            transform: translateY(-2px);
+        }
+
+        .timer {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 1.2rem;
+            font-weight: bold;
+            margin-right: 1rem;
+            color: var(--primary-color);
+        }
+
+        #pomodoroToggle, #darkModeToggle, .filter-toggle {
+            width: 100%;
+            padding: 1rem;
+            font-size: 1rem;
+            margin-top: 1rem;
+            text-transform: uppercase;
+            font-weight: 600;
+        }
+
+        .task-name {
+            flex-grow: 1;
+            margin-right: 1rem;
+            font-size: 1.1rem;
+            font-weight: 500;
+        }
+
+        .play-btn { background-color: #00B894; }
+        .pause-btn { background-color: #FDCB6E; }
+        .complete-btn { background-color: #55EFC4; }
+        .edit-btn { background-color: #74B9FF; }
+        .delete-btn { background-color: #FF7675; }
+
+        .break-container {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 1rem;
+        }
+
+        .break-btn {
+            flex-grow: 1;
+            margin: 0 0.25rem;
+            background-color: var(--accent-color);
+        }
+
+        #breakTimer {
+            text-align: center;
+            font-size: 2rem;
+            font-weight: bold;
+            margin-top: 1rem;
+            color: var(--accent-color);
+            font-family: 'Orbitron', sans-serif;
+        }
+
+        #stopBreak {
+            margin-top: 1rem;
+            background-color: var(--accent-color);
+        }
+
+        #soundSelect {
+            width: 100%;
+            padding: 1rem;
+            margin-top: 1rem;
+            border-radius: 10px;
+            border: 2px solid var(--secondary-color);
+            background-color: var(--card-background);
+            color: var(--text-color);
+            font-size: 1rem;
+        }
+
+        #summaryChart {
+            width: 100%;
+            height: 300px;
+            margin-top: 2rem;
+        }
+
+        .summary-controls {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 2rem;
+        }
+
+        .summary-controls button {
+            flex-grow: 1;
+            margin: 0 0.25rem;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .task-item {
+            animation: fadeIn 0.3s ease;
+        }
+
+        /* Dark mode styles */
+        body.dark-mode {
+            --background-color: #2D3436;
+            --text-color: #F0F3F8;
+            --card-background: #34495E;
+            --shadow-color: rgba(0, 0, 0, 0.3);
+        }
+
+        body.dark-mode .container {
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        }
+
+        body.dark-mode .task-item {
+            border-color: var(--primary-color);
+        }
+
+        body.dark-mode #taskInput,
+        body.dark-mode #categorySelect,
+        body.dark-mode #soundSelect {
+            background-color: #2D3436;
+            color: var(--text-color);
+            border-color: var(--primary-color);
+        }
+
+        .task-item {
+            animation: fadeIn 0.3s ease;
+        }
+
+        .task-item {
+            cursor: move;
+        }
+        .task-item.dragging {
+            opacity: 0.5;
+        }
+
+        .tab-content {
+            display: none;
+        }
+
+        .tab-content.active {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Chrono Master</h1>
+        <div class="tab-container">
+            <button class="tab-button active" data-tab="tasks">Tasks</button>
+            <button class="tab-button" data-tab="summary">Summary</button>
+        </div>
+        <div id="tasksTab" class="tab-content active">
+            <!-- Content for Tasks tab -->
+            <div class="overall-stats">
+                <div id="currentTime"></div>
+                <div id="totalTimeToday"></div>
+            </div>
+            <div style="display: flex; justify-content: space-between;">
+                <input type="text" id="taskInput" placeholder="Enter a new task">
+                <select id="categorySelect">
+
+                    <option value="All">All Categories</option>
+                    <option value="None">None</option>
+                    <option value="Work">Work</option>
+                    <option value="Chores">Chores</option>
+                    <option value="Study">Study</option>
+                    <option value="Exercise">Exercise</option>
+                    <option value="Read">Read</option>
+                    <option value="Play">Play</option>
+                    <option value="Rest">Rest</option>
+                </select>
+            </div>
+            <ul id="taskList"></ul>
+            <button id="pomodoroToggle">Toggle Pomodoro Mode: Off</button>
+            <div class="break-container">
+                <button class="break-btn" onclick="startBreak(5)">5 min break</button>
+                <button class="break-btn" onclick="startBreak(15)">15 min break</button>
+                <button class="break-btn" onclick="startBreak(30)">30 min break</button>
+            </div>
+            <div id="breakTimer"></div>
+            <button id="stopBreak" style="display: none;">Stop Break</button>
+            <select id="soundSelect">
+                <!-- Sound options -->
+            </select>
+            <button class="filter-toggle" onclick="toggleFilter('deleted')">Show Deleted Tasks</button>
+            <button class="filter-toggle" onclick="toggleFilter('archived')">Show Archived Tasks</button>
+            <button id="darkModeToggle">Toggle Dark Mode</button>
+        </div>
+        <div id="summaryTab" class="tab-content">
+            <!-- Content for Summary tab -->
+            <h2>Summary</h2>
+            <select id="categorySummarySelect">
+                <option value="All">All Categories</option>
+                <option value="None">None</option>
+                <option value="Work">Work</option>
+                <option value="Chores">Chores</option>
+                <option value="Study">Study</option>
+                <option value="Exercise">Exercise</option>
+                <option value="Read">Read</option>
+                <option value="Play">Play</option>
+                <option value="Rest">Rest</option>
+            </select>          
+            <canvas id="summaryChart"></canvas>
+            <div class="summary-controls">
+                <button onclick="copySummary()">Copy Summary</button>
+                <button onclick="exportData()">Export Data</button>
+                <button onclick="clearAllData()">Clear All Data</button>
+            </div>
+        </div>
+    </div>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <script>
+        let tasks = [];
+        let currentTimer = null;
+        let pomodoroMode = false;
+        let lastDate = new Date().toDateString();
+        let breakTimer = null;
+        let breakTimeLeft = 0;
+        let activeTaskId = null;
+        let darkMode = false;
+        let showDeleted = false;
+        let showArchived = false;
+
+        const taskInput = document.getElementById('taskInput');
+        const categorySelect = document.getElementById('categorySelect');
+        const taskList = document.getElementById('taskList');
+        const pomodoroToggle = document.getElementById('pomodoroToggle');
+        const currentTimeElement = document.getElementById('currentTime');
+        const totalTimeTodayElement = document.getElementById('totalTimeToday');
+        const breakTimerElement = document.getElementById('breakTimer');
+        const stopBreakButton = document.getElementById('stopBreak');
+        const soundSelect = document.getElementById('soundSelect');
+        const darkModeToggle = document.getElementById('darkModeToggle');
+        const summaryChart = document.getElementById('summaryChart');
+        const categorySummarySelect = document.getElementById('categorySummarySelect');
+
+        function formatTime(seconds) {
+            const hours = Math.floor(seconds / 3600);
+            const minutes = Math.floor((seconds % 3600) / 60);
+            const remainingSeconds = seconds % 60;
+            return `${pad(hours)}:${pad(minutes)}:${pad(remainingSeconds)}`;
+        }
+
+        function pad(num) {
+            return num.toString().padStart(2, '0');
+        }
+
+        function updateTotalTimeToday() {
+            const totalSeconds = tasks.reduce((total, task) => total + task.timeToday, 0);
+            totalTimeTodayElement.textContent = `Today: ${formatTime(totalSeconds)}`;
+        }
+
+        function getEmojiForCategory(category) {
+            const emojis = {
+                'Work': '💼',
+                'Chores': '🧹',
+                'Study': '📚',
+                'Exercise': '🏋️',
+                'Read': '📖',
+                'Play': '🎮',
+                'Rest': '😴',
+                'None': ''
+            };
+            return emojis[category] || '';
+        }
+
+        function updateTaskTimer(task) {
+            const taskElement = document.querySelector(`[data-task-id="${task.id}"]`);
+            if (taskElement) {
+                const timerElement = taskElement.querySelector('.timer');
+                if (timerElement) {
+                    timerElement.textContent = `${formatTime(task.timeToday)} / ${formatTime(task.timer)}`;
+                }
+            }
+        }
+
+        function renderTasks() {
+            taskList.innerHTML = '';
+            tasks.forEach((task, index) => {
+                if ((showDeleted || !task.deleted) && (showArchived || !task.archived)) {
+                    const li = document.createElement('li');
+                    li.className = 'task-item' + (task.completed ? ' completed' : '');
+                    li.setAttribute('data-task-id', task.id);
+                    li.draggable = true;
+                    const emoji = getEmojiForCategory(task.category);
+                    li.innerHTML = `
+                        <span class="task-name">${emoji} ${task.name}</span>
+                        <div class="task-buttons">
+                            <span class="timer">${formatTime(task.timeToday)} / ${formatTime(task.timer)}</span>
+                            <button class="${task.isRunning ? 'pause-btn' : 'play-btn'}" onclick="toggleTimer(${task.id})">
+                                ${task.isRunning ? '❚❚' : '▶'}
+                            </button>
+                            <button class="complete-btn" onclick="completeTask(${task.id})">✓</button>
+                            <button class="edit-btn" onclick="editTask(${task.id})">✎</button>
+                            <button class="delete-btn" onclick="deleteTask(${task.id})">×</button>
+                        </div>
+                    `;
+                    li.addEventListener('dragstart', handleDragStart);
+                    li.addEventListener('dragover', handleDragOver);
+                    li.addEventListener('drop', handleDrop);
+                    li.addEventListener('dragend', handleDragEnd);
+                    taskList.appendChild(li);
+                }
+            });
+            updateTotalTimeToday();
+        }
+
+        function handleDragStart(e) {
+            this.classList.add('dragging');
+            e.dataTransfer.effectAllowed = 'move';
+            e.dataTransfer.setData('text/plain', this.getAttribute('data-task-id'));
+        }
+
+        function handleDragOver(e) {
+            if (e.preventDefault) {
+                e.preventDefault();
+            }
+            e.dataTransfer.dropEffect = 'move';
+            return false;
+        }
+
+        function handleDrop(e) {
+            if (e.stopPropagation) {
+                e.stopPropagation();
+            }
+            const draggedTaskId = e.dataTransfer.getData('text');
+            const draggedTask = tasks.find(t => t.id.toString() === draggedTaskId);
+            const dropTarget = this;
+            
+            if (draggedTaskId !== dropTarget.getAttribute('data-task-id')) {
+                const dropTargetRect = dropTarget.getBoundingClientRect();
+                const dropTargetMiddle = dropTargetRect.top + (dropTargetRect.height / 2);
+                const draggedTaskIndex = tasks.findIndex(t => t.id.toString() === draggedTaskId);
+                const dropTargetIndex = tasks.findIndex(t => t.id.toString() === dropTarget.getAttribute('data-task-id'));
+                
+                tasks.splice(draggedTaskIndex, 1);
+                
+                if (e.clientY < dropTargetMiddle) {
+                    tasks.splice(dropTargetIndex, 0, draggedTask);
+                } else {
+                    tasks.splice(dropTargetIndex + 1, 0, draggedTask);
+                }
+                
+                saveTasks();
+                renderTasks();
+            }
+            return false;
+        }
+
+        function handleDragEnd() {
+            this.classList.remove('dragging');
+        }
+
+        function loadTasks() {
+            const storedTasks = localStorage.getItem('tasks');
+            const storedDate = localStorage.getItem('lastDate');
+            if (storedTasks) {
+                tasks = JSON.parse(storedTasks);
+                const now = new Date();
+                
+                tasks.forEach(task => {
+                    // Reset timeToday if it's a new day
+                    if (storedDate !== now.toDateString()) {
+                        task.timeToday = 0;
+                    }
+
+                    // Recreate timer status
+                    if (task.isRunning && task.sessions && task.sessions.length > 0) {
+                        const lastSession = task.sessions[task.sessions.length - 1];
+                        if (lastSession.startTime && !lastSession.endTime) {
+                            const startTime = new Date(lastSession.startTime);
+                            const elapsedTime = Math.floor((now - startTime) / 1000);
+                            task.timer += elapsedTime;
+                            task.timeToday += elapsedTime;
+                            
+                            // Start the timer for this task
+                            startTimer(task);
+                        } else {
+                            task.isRunning = false;
+                        }
+                    } else {
+                        task.isRunning = false;
+                    }
+                });
+
+                localStorage.setItem('lastDate', now.toDateString());
+                saveTasks();
+                renderTasks();
+            }
+        }
+
+        function saveTasks() {
+            localStorage.setItem('tasks', JSON.stringify(tasks));
+            localStorage.setItem('lastDate', lastDate);
+        }
+
+        function addTask(taskName, category) {
+            const newTask = {
+                id: Date.now(),
+                name: taskName,
+                category: category,
+                timer: 0,
+                timeToday: 0,
+                isRunning: false,
+                completed: false,
+                archived: false,
+                deleted: false,
+                sessions: []
+            };
+            tasks.unshift(newTask);
+            saveTasks();
+            renderTasks();
+        }
+
+
+        function startTimer(task) {
+            clearInterval(currentTimer);
+            currentTimer = setInterval(() => {
+                task.timer++;
+                task.timeToday++;
+                updateTaskTimer(task);
+                updateTotalTimeToday();
+                if (pomodoroMode && task.timer % 1500 === 0) { // 25 minutes
+                    playSound();
+                    alert("Time for a break!");
+                }
+            }, 1000);
+        }
+
+
+        function toggleTimer(taskId) {
+            if (breakTimer) {
+                alert("Cannot start a task while on break. Please finish or stop your break first.");
+                return;
+            }
+
+            const task = tasks.find(t => t.id === taskId);
+            if (!task) {
+                console.error(`Task with id ${taskId} not found`);
+                return;
+            }
+
+            if (task.isRunning) {
+                clearInterval(currentTimer);
+                task.isRunning = false;
+                activeTaskId = null;
+                endSession(task);
+            } else {
+                if (currentTimer) clearInterval(currentTimer);
+                if (activeTaskId) {
+                    const activeTask = tasks.find(t => t.id === activeTaskId);
+                    if (activeTask) {
+                        activeTask.isRunning = false;
+                        endSession(activeTask);
+                    }
+                }
+                task.isRunning = true;
+                activeTaskId = task.id;
+                startSession(task);
+                startTimer(task);
+            }
+            renderTasks();
+            saveTasks();
+        }
+
+        function startSession(task) {
+            if (!task.sessions) task.sessions = [];
+            task.sessions.push({
+                startTime: new Date(),
+                endTime: null
+            });
+        }
+
+        function endSession(task) {
+            if (task.sessions && task.sessions.length > 0) {
+                const lastSession = task.sessions[task.sessions.length - 1];
+                if (lastSession && !lastSession.endTime) {
+                    lastSession.endTime = new Date();
+                }
+            }
+        }
+
+        function completeTask(taskId) {
+            const task = tasks.find(t => t.id === taskId);
+            task.completed = !task.completed;
+            if (task.isRunning) {
+                clearInterval(currentTimer);
+                task.isRunning = false;
+                activeTaskId = null;
+                endSession(task);
+            }
+            saveTasks();
+            renderTasks();
+        }
+
+        function editTask(taskId) {
+            const task = tasks.find(t => t.id === taskId);
+            const newName = prompt("Edit task name:", task.name);
+            if (newName !== null) {
+                task.name = newName.trim();
+                saveTasks();
+                renderTasks();
+            }
+        }
+
+        function deleteTask(taskId) {
+            const task = tasks.find(t => t.id === taskId);
+            task.deleted = true;
+            if (task.isRunning) {
+                clearInterval(currentTimer);
+                task.isRunning = false;
+                activeTaskId = null;
+                endSession(task);
+            }
+            saveTasks();
+            renderTasks();
+        }
+
+        function toggleFilter(type) {
+            if (type === 'deleted') {
+                showDeleted = !showDeleted;
+            } else if (type === 'archived') {
+                showArchived = !showArchived;
+            }
+            renderTasks();
+        }
+
+
+        function updateSummaryChart() {
+            const summaryChartElement = document.getElementById('summaryChart');
+            if (!summaryChartElement) {
+                console.error('Summary chart element not found');
+                return;
+            }
+
+            const ctx = summaryChartElement.getContext('2d');
+            if (!ctx) {
+                console.error('Unable to get 2D context for chart');
+                return;
+            }
+
+            const selectedCategory = categorySummarySelect.value;
+            
+            const last7Days = [...Array(7)].map((_, i) => {
+                const d = new Date();
+                d.setDate(d.getDate() - i);
+                return d.toISOString().split('T')[0];
+            }).reverse();
+
+            const data = last7Days.map(date => {
+                const dayTasks = tasks.filter(task => 
+                    (selectedCategory === 'All' || task.category === selectedCategory) &&
+                    task.sessions.some(session => new Date(session.startTime).toISOString().startsWith(date))
+                );
+
+                const totalMinutes = dayTasks.reduce((sum, task) => {
+                    const daySessionsTime = task.sessions
+                        .filter(session => new Date(session.startTime).toISOString().startsWith(date))
+                        .reduce((sessionSum, session) => sessionSum + (new Date(session.endTime) - new Date(session.startTime)), 0);
+                    return sum + daySessionsTime / 60000; // Convert to minutes
+                }, 0);
+
+                const completedCount = dayTasks.filter(task => task.completed).length;
+
+                return {
+                    date: date,
+                    minutes: Math.round(totalMinutes),
+                    completed: completedCount
+                };
+            });
+
+            // If a chart already exists, destroy it before creating a new one
+            if (window.summaryChartInstance) {
+                window.summaryChartInstance.destroy();
+            }
+
+            window.summaryChartInstance = new Chart(ctx, {
+                type: 'bar',
+                data: {
+                    labels: data.map(d => d.date),
+                    datasets: [{
+                        label: 'Minutes Spent',
+                        data: data.map(d => d.minutes),
+                        backgroundColor: 'rgba(75, 192, 192, 0.6)',
+                        borderColor: 'rgba(75, 192, 192, 1)',
+                        borderWidth: 1
+                    }]
+                },
+                options: {
+                    scales: {
+                        y: {
+                            beginAtZero: true,
+                            title: {
+                                display: true,
+                                text: 'Minutes'
+                            }
+                        }
+                    },
+                    plugins: {
+                        tooltip: {
+                            callbacks: {
+                                afterBody: function(tooltipItems) {
+                                    const dataIndex = tooltipItems[0].dataIndex;
+                                    return `Completed Tasks: ${data[dataIndex].completed}`;
+                                }
+                            }
+                        }
+                    }
+                }
+            });
+        }
+
+        function copySummary() {
+            const selectedCategory = categorySummarySelect.value;
+            let summary = `Summary for ${selectedCategory === 'All' ? 'All Categories' : selectedCategory}\n\n`;
+            
+            const last7Days = [...Array(7)].map((_, i) => {
+                const d = new Date();
+                d.setDate(d.getDate() - i);
+                return d.toISOString().split('T')[0];
+            }).reverse();
+
+            last7Days.forEach(date => {
+                const dayTasks = tasks.filter(task => 
+                    (selectedCategory === 'All' || task.category === selectedCategory) &&
+                    task.sessions.some(session => new Date(session.startTime).toISOString().startsWith(date))
+                );
+
+                const totalMinutes = dayTasks.reduce((sum, task) => {
+                    const daySessionsTime = task.sessions
+                        .filter(session => new Date(session.startTime).toISOString().startsWith(date))
+                        .reduce((sessionSum, session) => sessionSum + (new Date(session.endTime) - new Date(session.startTime)), 0);
+                    return sum + daySessionsTime / 60000; // Convert to minutes
+                }, 0);
+
+                const completedCount = dayTasks.filter(task => task.completed).length;
+
+                summary += `${date}: ${Math.round(totalMinutes)} minutes, ${completedCount} completed tasks\n`;
+            });
+
+            navigator.clipboard.writeText(summary).then(() => {
+                alert("Summary copied to clipboard!");
+            }).catch(err => {
+                console.error('Failed to copy: ', err);
+            });
+        }
+
+        function exportData() {
+            let csv = "Task Name,Category,Start Time,End Time\n";
+            tasks.forEach(task => {
+                if (task.sessions) {
+                    task.sessions.forEach(session => {
+                        const taskName = task.name.replace(/,/g, "");  // Remove commas from task name
+                        const startTime = session.startTime ? new Date(session.startTime).toISOString() : '';
+                        const endTime = session.endTime ? new Date(session.endTime).toISOString() : '';
+                        csv += `"${taskName}",${task.category},${startTime},${endTime}\n`;
+                    });
+                }
+            });
+
+            const blob = new Blob([csv], { type: 'text/csv;charset=utf-8;' });
+            const link = document.createElement("a");
+            if (link.download !== undefined) {
+                const url = URL.createObjectURL(blob);
+                link.setAttribute("href", url);
+                link.setAttribute("download", "time_tracker_export.csv");
+                link.style.visibility = 'hidden';
+                document.body.appendChild(link);
+                link.click();
+                document.body.removeChild(link);
+            }
+        }
+
+
+        function clearAllData() {
+            if (confirm("Are you sure you want to clear all data? This action cannot be undone.")) {
+                tasks = [];
+                localStorage.removeItem('tasks');
+                localStorage.removeItem('lastDate');
+                renderTasks();
+                updateSummaryChart();
+            }
+        }
+
+        function toggleDarkMode() {
+            darkMode = !darkMode;
+            document.body.classList.toggle('dark-mode', darkMode);
+            localStorage.setItem('darkMode', darkMode);
+        }
+
+
+
+        function updateCurrentTime() {
+            const now = new Date();
+            const formattedTime = now.toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit' });
+            currentTimeElement.textContent = formattedTime;
+
+            // Check if date has changed
+            if (now.toDateString() !== lastDate) {
+                lastDate = now.toDateString();
+                tasks.forEach(task => {
+                    task.timeToday = 0;
+                    if (task.sessions && task.sessions.length > 0) {
+                        task.sessions.push({
+                            date: lastDate,
+                            totalTime: task.timer,
+                            completed: task.completed
+                        });
+                    }
+                });
+                saveTasks();
+                renderTasks();
+            }
+        }
+
+
+
+        function startBreak(minutes) {
+            if (breakTimer) {
+                clearInterval(breakTimer);
+            }
+            if (currentTimer) {
+                clearInterval(currentTimer);
+                const activeTask = tasks.find(t => t.id === activeTaskId);
+                if (activeTask) {
+                    activeTask.isRunning = false;
+                    endSession(activeTask);
+                }
+            }
+            breakTimeLeft = minutes * 60;
+            updateBreakTimer();
+            breakTimer = setInterval(() => {
+                breakTimeLeft--;
+                updateBreakTimer();
+                if (breakTimeLeft <= 0) {
+                    stopBreak();
+                    playSound();
+                    alert("Break time is over!");
+                }
+            }, 1000);
+            stopBreakButton.style.display = 'block';
+            renderTasks();
+        }
+
+        function stopBreak() {
+            if (breakTimer) {
+                clearInterval(breakTimer);
+                breakTimer = null;
+                breakTimeLeft = 0;
+                breakTimerElement.textContent = '';
+                stopBreakButton.style.display = 'none';
+            }
+        }
+
+        function updateBreakTimer() {
+            breakTimerElement.textContent = `Break: ${formatTime(breakTimeLeft)}`;
+        }
+
+        function playSound() {
+            const sound = new Audio(`/api/placeholder/audio/${soundSelect.value}`);
+            sound.play().catch(error => console.error('Error playing sound:', error));
+        }
+
+        // Make sure these elements are properly selected
+        // Add event listener for the stop break button
+        stopBreakButton.addEventListener('click', stopBreak);
+
+
+        // Event Listeners
+        taskInput.addEventListener('keypress', function(e) {
+            if (e.key === 'Enter' && this.value.trim() !== '') {
+                addTask(this.value.trim(), categorySelect.value);
+                this.value = '';
+            }
+        });
+
+        pomodoroToggle.addEventListener('click', function() {
+            pomodoroMode = !pomodoroMode;
+            this.textContent = `Toggle Pomodoro Mode: ${pomodoroMode ? 'On' : 'Off'}`;
+            this.style.backgroundColor = pomodoroMode ? 'var(--success-color)' : 'var(--secondary-color)';
+        });
+
+        darkModeToggle.addEventListener('click', toggleDarkMode);
+
+        categorySummarySelect.addEventListener('change', updateSummaryChart);
+
+        document.querySelectorAll('.tab-button').forEach(button => {
+            button.addEventListener('click', function() {
+                const tabName = this.getAttribute('data-tab');
+                document.querySelectorAll('.tab-content').forEach(content => {
+                    content.classList.remove('active');
+                });
+                document.getElementById(tabName + 'Tab').classList.add('active');
+                document.querySelectorAll('.tab-button').forEach(btn => {
+                    btn.classList.remove('active');
+                });
+                this.classList.add('active');
+
+                if (tabName === 'summary') {
+                    updateSummaryChart();
+                }
+            });
+        });
+
+        document.addEventListener('DOMContentLoaded', function() {
+            loadTasks();
+            updateCurrentTime();
+            setInterval(updateCurrentTime, 30000); // Update time every minute
+
+
+            // Load dark mode preference
+            if (localStorage.getItem('darkMode') === 'true') {
+                toggleDarkMode();
+            }
+
+            // Initialize Pomodoro mode
+            pomodoroToggle.style.backgroundColor = pomodoroMode ? 'var(--success-color)' : 'var(--secondary-color)';
+
+            // Initial summary chart update
+            updateSummaryChart();
+
+                 // Tab switching functionality
+                 const tabButtons = document.querySelectorAll('.tab-button');
+            const tabContents = document.querySelectorAll('.tab-content');
+
+            tabButtons.forEach(button => {
+                button.addEventListener('click', () => {
+                    const tabName = button.getAttribute('data-tab');
+                    
+                    // Deactivate all tabs
+                    tabButtons.forEach(btn => btn.classList.remove('active'));
+                    tabContents.forEach(content => content.classList.remove('active'));
+                    
+                    // Activate the clicked tab
+                    button.classList.add('active');
+                    document.getElementById(`${tabName}Tab`).classList.add('active');
+
+                    // If switching to summary tab, update the chart
+                    if (tabName === 'summary') {
+                        updateSummaryChart();
+                    }
+                });
+            });
+        });
+
+        // Initialize Pomodoro mode
+        pomodoroToggle.style.backgroundColor = pomodoroMode ? 'var(--success-color)' : 'var(--secondary-color)';
+
+        // Initial summary chart update
+        updateSummaryChart();
+
+    </script>
+</body>
+</html>
