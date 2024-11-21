@@ -34,6 +34,8 @@ All the data is in .json files, and processed and searched on the client side. T
 
 All of this is in a series of pretty hacky scripts.
 
+The (very messy) code is over [here](https://github.com/dfeldman/dfeldman.org/tree/main/static/labs/kubecon_browser/kcna2024).
+
 ## Copyright?
 All the data displayed is copyrighted by CNCF and its original owners. I'm just trying to make it easier to search and browse. Every session has a link to the original contents on Sched, YouTube, and slides download.
 
