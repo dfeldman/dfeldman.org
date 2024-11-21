@@ -1156,6 +1156,18 @@
             const index = presentations.findIndex(p => p.evtid === evtid);
             console.log("Switching to presentation", index);
             if (index !== -1) {
+                const presentationElement = document.querySelector(`.presentation-item[data-index="${index}"]`);
+                if (presentationElement) {
+                        // Scroll the list to show the item
+                        const listContainer = document.getElementById('presentationsList');
+                        presentationElement.scrollIntoView({ 
+                            behavior: 'smooth',
+                            block: 'center' // Center the item in the viewport
+                        });
+                
+                }
+            
+
                 togglePresentation(index);
 
                 // const presentationElement = document.querySelector(`.presentation-content[data-index="${index}"]`);
