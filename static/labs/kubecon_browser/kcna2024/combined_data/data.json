@@ -8,6 +8,7 @@
       "Experiences"
     ],
     "slidesUrl": null,
+    "evtid": "1oUEb",
     "url": "event/1oUEb/self-led-morning-run-sponsored-by-sonatype",
     "videoUrl": null
   },
@@ -20,6 +21,7 @@
       "Registration"
     ],
     "slidesUrl": null,
+    "evtid": "1kiwU",
     "url": "event/1kiwU/badge-pick-up",
     "videoUrl": null
   },
@@ -32,6 +34,7 @@
       "Registration"
     ],
     "slidesUrl": null,
+    "evtid": "1iGCv",
     "url": "event/1iGCv/badge-pick-up",
     "videoUrl": null
   },
@@ -45,6 +48,7 @@
       "Coat + Bag Check"
     ],
     "slidesUrl": null,
+    "evtid": "1nxnl",
     "url": "event/1nxnl/coat-bag-check",
     "videoUrl": null
   },
@@ -66,6 +70,7 @@
       "Keynote Sessions"
     ],
     "slidesUrl": null,
+    "evtid": "1iCUY",
     "url": "event/1iCUY/keynote-opening-remarks-chris-aniszczyk-cto-cloud-native-computing-foundation",
     "videoUrl": null
   },
@@ -108,6 +113,7 @@
       "Keynote Sessions"
     ],
     "slidesUrl": null,
+    "evtid": "1iG7A",
     "url": "event/1iG7A/keynote-a-decade-of-kubernetes-and-cloud-native-are-we-there-yet-joseph-sandoval-adobe-lachlan-evenson-microsoft-bailey-hayes-cosmonic-kelsey-hightower",
     "videoUrl": null
   },
@@ -129,6 +135,7 @@
       "Keynote Sessions"
     ],
     "slidesUrl": null,
+    "evtid": "1ndb8",
     "url": "event/1ndb8/keynote-honoring-the-past-to-forge-ahead-gail-frederick-cto-and-svp-heroku",
     "videoUrl": null
   },
@@ -150,6 +157,7 @@
       "Keynote Sessions"
     ],
     "slidesUrl": null,
+    "evtid": "1iCWa",
     "url": "event/1iCWa/sponsored-keynote-kubernetes-in-the-second-decade-balancing-innovation-with-stability-jago-macleod-engineering-director-kubernetes-gke-google",
     "videoUrl": null
   },
@@ -178,6 +186,7 @@
       "Keynote Sessions"
     ],
     "slidesUrl": null,
+    "evtid": "1iCTK",
     "url": "event/1iCTK/keynote-four-cloud-native-technology-areas-to-watch-for-lin-sun-head-of-open-source-soloio-karena-angell-chief-architect-red-hat",
     "videoUrl": null
   },
@@ -190,6 +199,7 @@
       "Keynote Sessions"
     ],
     "slidesUrl": null,
+    "evtid": "1iCSo",
     "url": "event/1iCSo/keynote-graduated-project-updates",
     "videoUrl": null
   },
@@ -218,6 +228,7 @@
       "Keynote Sessions"
     ],
     "slidesUrl": null,
+    "evtid": "1iCTr",
     "url": "event/1iCTr/keynote-kubernetes-family-feud-a-decade-of-architecture-and-evolution-hosted-by-tim-hockin-distinguished-engineer-google",
     "videoUrl": null
   },
@@ -230,6 +241,7 @@
       "Keynote Sessions"
     ],
     "slidesUrl": null,
+    "evtid": "1iCTo",
     "url": "event/1iCTo/keynote-closing-remarks",
     "videoUrl": null
   },
@@ -252,6 +264,7 @@
       "Learning Lounge"
     ],
     "slidesUrl": null,
+    "evtid": "1rFoD",
     "url": "event/1rFoD/learning-lounge-the-value-of-higher-ed-the-linux-foundation-together-justin-cappos-nyu",
     "videoUrl": null
   },
@@ -264,6 +277,7 @@
       "Breaks"
     ],
     "slidesUrl": null,
+    "evtid": "1iGB2",
     "url": "event/1iGB2/coffee-break",
     "videoUrl": null
   },
@@ -276,6 +290,7 @@
       "Diversity + Equity + Inclusion"
     ],
     "slidesUrl": null,
+    "evtid": "1pelG",
     "url": "event/1pelG/community-gathering-20",
     "videoUrl": null
   },
@@ -288,6 +303,7 @@
       "Project Opportunities"
     ],
     "slidesUrl": null,
+    "evtid": "1rh1Q",
     "url": "event/1rh1Q/project-pavilion-kiosks-friday-morning",
     "videoUrl": null
   },
@@ -300,6 +316,7 @@
       "Experiences"
     ],
     "slidesUrl": null,
+    "evtid": "1oUNA",
     "url": "event/1oUNA/relaxation-station",
     "videoUrl": null
   },
@@ -312,6 +329,7 @@
       "Solutions Showcase"
     ],
     "slidesUrl": "https://events.linuxfoundation.org/wp-content/uploads/2024/10/KubeCon_NA_24_PrintSignage_SS_Map_6x8_10_v2.pdf",
+    "evtid": "1iGWS",
     "url": "event/1iGWS/solutions-showcase",
     "videoUrl": null
   },
@@ -325,6 +343,7 @@
       "Project Pavilion Tour"
     ],
     "slidesUrl": null,
+    "evtid": "1lWcx",
     "url": "event/1lWcx/project-pavilion-tour-with-aditya-soni-cncf-ambassador",
     "videoUrl": null
   },
@@ -354,6 +373,7 @@
       "Intermediate"
     ],
     "slidesUrl": "https://static.sched.com/hosted_files/kccncna2024/b6/%5BPUBLIC%5D%202024%20KubeCon%20NA%20-%20Better%20Together%21%20GPU%2C%20TPU%20and%20NIC%20Topological%20Alignment%20with%20DRA.pdf",
+    "evtid": "1i7pv",
     "url": "event/1i7pv/better-together-gpu-tpu-and-nic-topological-alignment-with-dra-john-belamaric-google-patrick-ohly-intel",
     "videoUrl": "https://www.youtube.com/watch?v=9CiEw1K0SwM&list=PLj6h78yzYM2Pw4mRw4S-1p_xLARMqPkA7&index=243&pp=iAQB"
   },
@@ -383,6 +403,7 @@
       "Any"
     ],
     "slidesUrl": null,
+    "evtid": "1i7qY",
     "url": "event/1i7qY/can-you-put-a-price-tag-on-open-source-mario-fahlandt-kubermatic-bob-killen-cncf",
     "videoUrl": null
   },
@@ -433,8 +454,9 @@
       "Any"
     ],
     "slidesUrl": null,
+    "evtid": "1i7q3",
     "url": "event/1i7q3/open-source-20-the-maintainers-perspective-william-morgan-buoyant-ashley-davis-venafi-deepthi-sigireddi-planetscale-emily-omier-emily-omier-consulting-matt-bates-cofide",
-    "videoUrl": "https://www.youtube.com/watch?v=9IhV67Xwy0M&list=PLj6h78yzYM2Pw4mRw4S-1p_xLARMqPkA7&index=259&pp=iAQB"
+    "videoUrl": null
   },
   {
     "title": "Securing Outgoing Traffic: Building a Powerful Internet Egress Gateway for Reliable Connectivity ",
@@ -462,6 +484,7 @@
       "Intermediate"
     ],
     "slidesUrl": null,
+    "evtid": "1i7ps",
     "url": "event/1i7ps/securing-outgoing-traffic-building-a-powerful-internet-egress-gateway-for-reliable-connectivity-edie-yang-akshita-agarwal-airbnb",
     "videoUrl": null
   },
@@ -484,6 +507,7 @@
       "Intermediate"
     ],
     "slidesUrl": null,
+    "evtid": "1i7pi",
     "url": "event/1i7pi/how-we-scale-a-distributed-sql-database-to-1-pb-jinpeng-zhang-pingcap",
     "videoUrl": "https://www.youtube.com/watch?v=0xerw8hfbSA&list=PLj6h78yzYM2Pw4mRw4S-1p_xLARMqPkA7&index=224&pp=iAQB"
   },
@@ -520,6 +544,7 @@
       "Testing"
     ],
     "slidesUrl": null,
+    "evtid": "1hoxc",
     "url": "event/1hoxc/achieving-and-maintaining-a-healthy-ci-with-zero-test-flakes-antonio-ojea-michelle-shepardson-benjamin-elder-google",
     "videoUrl": "https://www.youtube.com/watch?v=hl3jjCTTL50&list=PLj6h78yzYM2Pw4mRw4S-1p_xLARMqPkA7&index=263&pp=iAQB"
   },
@@ -549,6 +574,7 @@
       "Karmada"
     ],
     "slidesUrl": "https://static.sched.com/hosted_files/kccncna2024/6b/Kubecon%20NA%202024%20Slides%20-%20Bloomberg%27s%20Journey%20to%20Manage%20Multi-Cluster%20Training%20Application%20with%20Karmada.pdf",
+    "evtid": "1hoyD",
     "url": "event/1hoyD/bloombergs-journey-to-manage-a-multi-cluster-training-application-with-karmada-yifan-zhang-wei-cheng-lai-bloomberg",
     "videoUrl": "https://www.youtube.com/watch?v=PmaiEKpM1-Q&list=PLj6h78yzYM2Pw4mRw4S-1p_xLARMqPkA7&index=283&pp=iAQB"
   },
@@ -578,6 +604,7 @@
       "cri-o"
     ],
     "slidesUrl": null,
+    "evtid": "1hoy9",
     "url": "event/1hoy9/cri-o-features-for-fun-and-profit-peter-hunt-sohan-kunkerkar-red-hat",
     "videoUrl": "https://www.youtube.com/watch?v=6-OTdYwhKQQ&list=PLj6h78yzYM2Pw4mRw4S-1p_xLARMqPkA7&index=272&pp=iAQB"
   },
@@ -621,6 +648,7 @@
       "Runtime"
     ],
     "slidesUrl": null,
+    "evtid": "1hoyM",
     "url": "event/1hoyM/discover-cncf-tag-runtime-from-ai-wasm-os-edge-to-workloads-in-the-heart-of-salt-lake-city-stephen-rust-akamai-rajas-kakodkar-broadcom-danielle-tal-microsoft-ricardo-aravena-snowflake",
     "videoUrl": "https://www.youtube.com/watch?v=pF2r6VfTXPU&list=PLj6h78yzYM2Pw4mRw4S-1p_xLARMqPkA7&index=267&pp=iAQB"
   },
@@ -643,8 +671,9 @@
       "Thanos"
     ],
     "slidesUrl": null,
+    "evtid": "1hoxi",
     "url": "event/1hoxi/thanos-intro-and-updates-ben-ye-amazon-web-services",
-    "videoUrl": "https://www.youtube.com/watch?v=SR2sG4wno-s&list=PLj6h78yzYM2Pw4mRw4S-1p_xLARMqPkA7&index=277&pp=iAQB"
+    "videoUrl": null
   },
   {
     "title": "Shopify’s Open Source Approach to Network Monitoring with eBPF, Vector and ClickHouse ",
@@ -672,6 +701,7 @@
       "Beginner"
     ],
     "slidesUrl": "https://static.sched.com/hosted_files/kccncna2024/18/Shopify%E2%80%99s%20Open%20Source%20Approach%20to%20Network%20Monitoring%20with%20eBPF%2C%20Vector%20and%20ClickHouse.pdf",
+    "evtid": "1i7pj",
     "url": "event/1i7pj/shopifys-open-source-approach-to-network-monitoring-with-ebpf-vector-and-clickhouse-sebastian-rabenhorst-matt-franklin-shopify",
     "videoUrl": "https://www.youtube.com/watch?v=FpVjdaRVmA4&list=PLj6h78yzYM2Pw4mRw4S-1p_xLARMqPkA7&index=230&pp=iAQB"
   },
@@ -722,6 +752,7 @@
       "Any"
     ],
     "slidesUrl": "https://static.sched.com/hosted_files/kccncna2024/25/nOps%20-%20KCNA24%20Template.pptx.pdf",
+    "evtid": "1i7s0",
     "url": "event/1i7s0/the-state-of-kubernetes-optimization-and-the-role-of-ai-james-wilson-nops-haoran-qiu-microsoft-katie-gamanji-apple-jasmine-james-square-josh-cypher-sonos",
     "videoUrl": null
   },
@@ -744,6 +775,7 @@
       "Intermediate"
     ],
     "slidesUrl": "https://static.sched.com/hosted_files/kccncna2024/08/KubeCon%20SLC_%20Upgrade%20Safely%20-%20Avoid%20the%20Pitfalls%20of%20Kubernetes%20Versioning.pdf",
+    "evtid": "1i7q1",
     "url": "event/1i7q1/upgrade-safely-avoid-the-pitfalls-of-kubernetes-versioning-rob-scott-google",
     "videoUrl": "https://www.youtube.com/watch?v=Xg0NWtSgmUE&list=PLj6h78yzYM2Pw4mRw4S-1p_xLARMqPkA7&index=254&pp=iAQB"
   },
@@ -794,6 +826,7 @@
       "Any"
     ],
     "slidesUrl": null,
+    "evtid": "1i7rP",
     "url": "event/1i7rP/platform-engineering-in-financial-institutions-the-practitioner-panel-paula-kennedy-syntasso-chris-plank-natwest-bank-suhail-patel-monzo-jinhong-brejnholt-saxo-bank-rachael-wonnacott-fidelity-international",
     "videoUrl": null
   },
@@ -823,6 +856,7 @@
       "Intermediate"
     ],
     "slidesUrl": "https://static.sched.com/hosted_files/kccncna2024/e9/KubeCon2024-MultiTenancy.pdf",
+    "evtid": "1i7qJ",
     "url": "event/1i7qJ/share-the-ride-robust-multi-tenancy-in-kubernetes-at-uber-sashank-appireddy-apoorva-jindal-uber",
     "videoUrl": "https://www.youtube.com/watch?v=ka5oMGh2EiU&list=PLj6h78yzYM2Pw4mRw4S-1p_xLARMqPkA7&index=249&pp=iAQB"
   },
@@ -845,6 +879,7 @@
       "Advanced"
     ],
     "slidesUrl": null,
+    "evtid": "1i7pm",
     "url": "event/1i7pm/powering-automatic-authorization-in-envoy-through-live-traffic-inspection-dom-del-nano-pixie-core-maintainer",
     "videoUrl": "https://www.youtube.com/watch?v=_d5ff8QTmX4&list=PLj6h78yzYM2Pw4mRw4S-1p_xLARMqPkA7&index=234&pp=iAQB"
   },
@@ -859,6 +894,7 @@
       "Any"
     ],
     "slidesUrl": null,
+    "evtid": "1pKwn",
     "url": "event/1pKwn/clbo-clashloopbackoff-attendee-edition",
     "videoUrl": null
   },
@@ -889,6 +925,7 @@
       "Beginner"
     ],
     "slidesUrl": "https://static.sched.com/hosted_files/kccncna2024/09/OtelLabPresentation.pdf",
+    "evtid": "1i7pd",
     "url": "event/1i7pd/tutorial-opentelemetry-hands-on-automatic-and-manual-instrumentation-for-java-and-python-apps-tobias-angerstein-novatec-consulting-gmbh-tiffany-jernigan-independent",
     "videoUrl": "https://www.youtube.com/watch?v=8CKgAyenEjo&list=PLj6h78yzYM2Pw4mRw4S-1p_xLARMqPkA7&index=215&pp=iAQB"
   },
@@ -917,6 +954,7 @@
       "🚨 Contribfest"
     ],
     "slidesUrl": "https://static.sched.com/hosted_files/kccncna2024/2f/KCNA24%20-%20Kyverno%20-%20Contribfest.pdf",
+    "evtid": "1hoxp",
     "url": "event/1hoxp/contribfest-kyverno-lets-build-together",
     "videoUrl": null
   },
@@ -938,6 +976,7 @@
       "🚨 Contribfest"
     ],
     "slidesUrl": null,
+    "evtid": "1hoxm",
     "url": "event/1hoxm/contribfest-making-slimtoolkit-xray-even-easier-to-use-building-a-terminal-ui",
     "videoUrl": null
   },
@@ -960,6 +999,7 @@
       "Any"
     ],
     "slidesUrl": "https://static.sched.com/hosted_files/kccncna2024/1b/Kubecon%2024%20-%20Building%20Massive-Scale%20Generative%20AI%20Services%20with%20Kubernetes%20and%20Open%20Source%20-%20John%20McBride%2C%20OpenSauced%20.pdf",
+    "evtid": "1i7qI",
     "url": "event/1i7qI/building-massive-scale-generative-ai-services-with-kubernetes-and-open-source-john-mcbride-opensauced",
     "videoUrl": "https://www.youtube.com/watch?v=wYzsPNfMF7A&list=PLj6h78yzYM2Pw4mRw4S-1p_xLARMqPkA7&index=244&pp=iAQB"
   },
@@ -990,6 +1030,7 @@
       "Yes"
     ],
     "slidesUrl": "https://static.sched.com/hosted_files/kccncna2024/15/Improving%20Service%20Availability_%20Scaling%20ahead.pdf",
+    "evtid": "1i7q4",
     "url": "event/1i7q4/improving-service-availability-scaling-ahead-with-machine-learning-for-hpa-optimization-avni-sharma-estela-ramirez-intuit",
     "videoUrl": null
   },
@@ -1041,6 +1082,7 @@
       "Any"
     ],
     "slidesUrl": null,
+    "evtid": "1i7qA",
     "url": "event/1i7qA/accessibility-at-kubecon-deaf-voices-in-cloud-native-alfonso-torres-deaftech-jay-jackson-callrevu-destiny-oconnor-women-blessing-women-travis-johnson-convo-communications-rob-koch-slalom-build",
     "videoUrl": null
   },
@@ -1062,6 +1104,7 @@
       "Cloud Native Experience"
     ],
     "slidesUrl": null,
+    "evtid": "1ksnV",
     "url": "event/1ksnV/public-technical-oversight-committee-toc-meeting-moderated-by-chris-aniszczyk-cto-the-linux-foundation",
     "videoUrl": "https://www.youtube.com/watch?v=d49Bld7c3Uw&list=PLj6h78yzYM2Pw4mRw4S-1p_xLARMqPkA7&index=273&pp=iAQB"
   },
@@ -1091,6 +1134,7 @@
       "Beginner"
     ],
     "slidesUrl": "https://static.sched.com/hosted_files/kccncna2024/2a/Introduction%20to%20Distributed%20workload%20with%20Ray%20on%20Kubernetes.pdf",
+    "evtid": "1i7qM",
     "url": "event/1i7qM/introduction-to-distributed-ml-workloads-with-ray-on-kubernetes-mofi-rahman-abdel-sghiouar-google",
     "videoUrl": "https://www.youtube.com/watch?v=M5FAI2kmcdE&list=PLj6h78yzYM2Pw4mRw4S-1p_xLARMqPkA7&index=260&pp=iAQB"
   },
@@ -1113,6 +1157,7 @@
       "Intermediate"
     ],
     "slidesUrl": "https://static.sched.com/hosted_files/kccncna2024/04/Seeing%20Double%3F%20Implementing%20Multicast%20with%20eBPF%20and%20Cilium.pdf",
+    "evtid": "1i7qG",
     "url": "event/1i7qG/seeing-double-implementing-multicast-with-ebpf-and-cilium-louis-delossantos-isovalent-at-cisco",
     "videoUrl": "https://www.youtube.com/watch?v=DAcJjbozXxU&list=PLj6h78yzYM2Pw4mRw4S-1p_xLARMqPkA7&index=239&pp=iAQB"
   },
@@ -1142,6 +1187,7 @@
       "Intermediate"
     ],
     "slidesUrl": "https://static.sched.com/hosted_files/kccncna2024/56/KCNA24%20-%20k8s%20on%20multisites.pdf",
+    "evtid": "1i7q7",
     "url": "event/1i7q7/kubernetes-on-multisites-a-story-about-stateful-app-hybrid-clouds-and-high-availability-florian-coulombel-dell-technologies-jan-safranek-red-hat",
     "videoUrl": "https://www.youtube.com/watch?v=BaLVmNYDxO8&list=PLj6h78yzYM2Pw4mRw4S-1p_xLARMqPkA7&index=225&pp=iAQB"
   },
@@ -1171,6 +1217,7 @@
       "Crossplane"
     ],
     "slidesUrl": "https://static.sched.com/hosted_files/kccncna2024/3d/Kubecon%20NA%202024%20Crossplane%20Intro%20%26%20Deep%20Dive.pdf",
+    "evtid": "1hoxu",
     "url": "event/1hoxu/crossplane-intro-and-deep-dive-the-cloud-native-control-plane-framework-jared-watts-mark-anderson-trocme-upbound",
     "videoUrl": "https://www.youtube.com/watch?v=9orgZBxCQhc&list=PLj6h78yzYM2Pw4mRw4S-1p_xLARMqPkA7&index=268&pp=iAQB"
   },
@@ -1200,6 +1247,7 @@
       "Serving"
     ],
     "slidesUrl": "https://static.sched.com/hosted_files/kccncna2024/67/%5BExternal%5D%20KubeCon%20NA%202024%20-%20Yuan%20and%20Eduardo%20-%20WG%20Serving.pptx.pdf",
+    "evtid": "1hoy0",
     "url": "event/1hoy0/wg-serving-accelerating-aiml-inference-workloads-on-kubernetes-eduardo-arango-gutierrez-nvidia-yuan-tang-red-hat",
     "videoUrl": null
   },
@@ -1243,8 +1291,9 @@
       "Operator Framework"
     ],
     "slidesUrl": "https://static.sched.com/hosted_files/kccncna2024/55/KubeCon%20NA%202024_%20Operator%20Framework%20Maintainer%20Track.pdf",
+    "evtid": "1hoxy",
     "url": "event/1hoxy/whats-new-in-operator-framework-bryce-palmer-rashmi-gottipati-lalatendu-mohanty-red-hat-attila-meszaros-apple",
-    "videoUrl": "https://www.youtube.com/watch?v=V0NYHt2yjcM&list=PLj6h78yzYM2Pw4mRw4S-1p_xLARMqPkA7&index=278&pp=iAQB"
+    "videoUrl": null
   },
   {
     "title": "Working Together to Improve Security Visibility in Kubernetes ",
@@ -1272,6 +1321,7 @@
       "Security"
     ],
     "slidesUrl": null,
+    "evtid": "1hoxr",
     "url": "event/1hoxr/working-together-to-improve-security-visibility-in-kubernetes-rita-zhang-jeremy-rickard-microsoft",
     "videoUrl": "https://www.youtube.com/watch?v=f-NJptXlp5I&list=PLj6h78yzYM2Pw4mRw4S-1p_xLARMqPkA7&index=264&pp=iAQB"
   },
@@ -1294,6 +1344,7 @@
       "Intermediate"
     ],
     "slidesUrl": "https://static.sched.com/hosted_files/kccncna2024/93/Slides_Kubecon%20NA%2724_%20Love%20thy%20%28Noisy%29%20Neighbor.pdf",
+    "evtid": "1i7qF",
     "url": "event/1i7qF/love-thy-noisy-neighbor-strategies-for-mitigating-performance-interference-in-cloud-native-systems-jonathan-perry-perfpod",
     "videoUrl": "https://www.youtube.com/watch?v=s4FVutL3t3o&list=PLj6h78yzYM2Pw4mRw4S-1p_xLARMqPkA7&index=240&pp=iAQB"
   },
@@ -1316,6 +1367,7 @@
       "Intermediate"
     ],
     "slidesUrl": null,
+    "evtid": "1i7qL",
     "url": "event/1i7qL/what-containerd-20-means-for-you-samuel-karp-google",
     "videoUrl": "https://www.youtube.com/watch?v=fDDSg2NVwO4&list=PLj6h78yzYM2Pw4mRw4S-1p_xLARMqPkA7&index=255&pp=iAQB"
   },
@@ -1338,6 +1390,7 @@
       "Any"
     ],
     "slidesUrl": "https://static.sched.com/hosted_files/kccncna2024/9b/KubeCon%20NA%202024_%20Kubernetes%20Upgrades.pptx",
+    "evtid": "1i7pg",
     "url": "event/1i7pg/kubernetes-upgrades-less-pain-more-gain-and-maybe-a-little-swearing-jago-macleod-google",
     "videoUrl": "https://www.youtube.com/watch?v=e-6NCccsfO8&list=PLj6h78yzYM2Pw4mRw4S-1p_xLARMqPkA7&index=219&pp=iAQB"
   },
@@ -1360,6 +1413,7 @@
       "Intermediate"
     ],
     "slidesUrl": "https://static.sched.com/hosted_files/kccncna2024/6e/Still%20Don%27t%20Do%20What%20Charlie%20Don%27t%20Does.pptx.pdf",
+    "evtid": "1i7py",
     "url": "event/1i7py/still-dont-do-what-charlie-dont-does-making-crd-changes-safer-nick-young-isovalent",
     "videoUrl": "https://www.youtube.com/watch?v=k8prMXQtfqY&list=PLj6h78yzYM2Pw4mRw4S-1p_xLARMqPkA7&index=250&pp=iAQB"
   },
@@ -1389,6 +1443,7 @@
       "Intermediate"
     ],
     "slidesUrl": "https://static.sched.com/hosted_files/kccncna2024/12/Rogue%20No%20More_%20Securing%20Kubernetes%20with%20Node-Specific%20Restrictions.pdf",
+    "evtid": "1i7qC",
     "url": "event/1i7qC/rogue-no-more-securing-kubernetes-with-node-specific-restrictions-anish-ramasekar-microsoft-james-munnelly-apple",
     "videoUrl": "https://www.youtube.com/watch?v=kznxInpGet4&list=PLj6h78yzYM2Pw4mRw4S-1p_xLARMqPkA7&index=235&pp=iAQB"
   },
@@ -1402,6 +1457,7 @@
       "Project Pavilion Tour"
     ],
     "slidesUrl": null,
+    "evtid": "1lWdC",
     "url": "event/1lWdC/project-pavilion-tour-with-seema-saharan-cncf-ambassador",
     "videoUrl": null
   },
@@ -1414,6 +1470,7 @@
       "Breaks"
     ],
     "slidesUrl": null,
+    "evtid": "1iGCR",
     "url": "event/1iGCR/lunch",
     "videoUrl": null
   },
@@ -1427,6 +1484,7 @@
       "Network Nook"
     ],
     "slidesUrl": null,
+    "evtid": "1oxtF",
     "url": "event/1oxtF/network-nook-table-talks-kubertenes",
     "videoUrl": null
   },
@@ -1439,6 +1497,7 @@
       "Project Opportunities"
     ],
     "slidesUrl": null,
+    "evtid": "1rhKN",
     "url": "event/1rhKN/project-pavilion-kiosks-friday-afternoon",
     "videoUrl": null
   },
@@ -1461,6 +1520,7 @@
       "Learning Lounge"
     ],
     "slidesUrl": null,
+    "evtid": "1rFoR",
     "url": "event/1rFoR/learning-lounge-observability-productivity-security-the-future-of-cloud-native-certifications-christophe-sauthier-cncf",
     "videoUrl": null
   },
@@ -1490,6 +1550,7 @@
       "Intermediate"
     ],
     "slidesUrl": "https://static.sched.com/hosted_files/kccncna2024/b2/_Kubecon%20NA%202024%20Slides%20-%20Bloomberg%27s%20Journey%20to%20Improve%20Resource%20Utilization%20in%20a%20Multi-Cluster%20Platform.pptx",
+    "evtid": "1i7qk",
     "url": "event/1i7qk/bloombergs-journey-to-improve-resource-utilization-in-a-multi-cluster-platform-yao-weng-leon-zhou-bloomberg",
     "videoUrl": "https://www.youtube.com/watch?v=lMtCSaHI9Uk&list=PLj6h78yzYM2Pw4mRw4S-1p_xLARMqPkA7&index=245&pp=iAQB"
   },
@@ -1519,6 +1580,7 @@
       "Any"
     ],
     "slidesUrl": "https://static.sched.com/hosted_files/kccncna2024/f3/Knative%20Eventing%20Game.pptx",
+    "evtid": "1i7rT",
     "url": "event/1i7rT/gamifying-cloud-native-how-to-design-and-build-an-educational-game-for-your-project-calum-murray-university-of-toronto-faculty-of-applied-science-and-engineering-zainab-husain-ocad-university",
     "videoUrl": "https://www.youtube.com/watch?v=TTBKh6F4v-g&list=PLj6h78yzYM2Pw4mRw4S-1p_xLARMqPkA7&index=231&pp=iAQB"
   },
@@ -1541,6 +1603,7 @@
       "Intermediate"
     ],
     "slidesUrl": "https://static.sched.com/hosted_files/kccncna2024/07/KubeCon%20NA%2024_%20Testing%20Kubernetes%20without%20Kubernetes.pdf",
+    "evtid": "1i7qh",
     "url": "event/1i7qh/testing-kubernetes-without-kubernetes-a-networking-deep-dive-john-howard-soloio",
     "videoUrl": null
   },
@@ -1563,6 +1626,7 @@
       "Intermediate"
     ],
     "slidesUrl": null,
+    "evtid": "1i7qV",
     "url": "event/1i7qV/object-storage-is-all-you-need-justin-cormack-docker",
     "videoUrl": "https://www.youtube.com/watch?v=ei0wwTy6_G4&list=PLj6h78yzYM2Pw4mRw4S-1p_xLARMqPkA7&index=226&pp=iAQB"
   },
@@ -1592,6 +1656,7 @@
       "Intermediate"
     ],
     "slidesUrl": "https://static.sched.com/hosted_files/kccncna2024/9d/KCNA24%20Talk%20Slides.pdf",
+    "evtid": "1i7qs",
     "url": "event/1i7qs/faster-containerized-llm-serving-via-knowledge-sharing-junchen-jiang-university-of-chicago-zhou-sun-mooncake-labs",
     "videoUrl": "https://www.youtube.com/watch?v=h6EieVrmPGw&list=PLj6h78yzYM2Pw4mRw4S-1p_xLARMqPkA7&index=261&pp=iAQB"
   },
@@ -1614,6 +1679,7 @@
       "TiKV"
     ],
     "slidesUrl": null,
+    "evtid": "1hoyC",
     "url": "event/1hoyC/are-your-microservices-truly-scaling-a-framework-for-unlocking-the-stateful-backend-matthew-penaroza-pingcap",
     "videoUrl": "https://www.youtube.com/watch?v=mm5lR0CqY8I&list=PLj6h78yzYM2Pw4mRw4S-1p_xLARMqPkA7&index=279&pp=iAQB"
   },
@@ -1657,6 +1723,7 @@
       "Contributor Experience"
     ],
     "slidesUrl": null,
+    "evtid": "1hoy3",
     "url": "event/1hoy3/contributing-to-kubernetes-in-its-second-decade-sig-contribex-style-kaslin-fields-google-priyanka-saggu-suse-madhav-jivrajani-uiuc-nabarun-pal-independent",
     "videoUrl": null
   },
@@ -1686,6 +1753,7 @@
       "KubeEdge"
     ],
     "slidesUrl": null,
+    "evtid": "1hoxl",
     "url": "event/1hoxl/exploring-kubeedge-architecture-use-cases-and-project-graduation-updates-yin-ding-google-hongbing-zhang-daocloud",
     "videoUrl": null
   },
@@ -1715,6 +1783,7 @@
       "KubeVirt"
     ],
     "slidesUrl": null,
+    "evtid": "1hoy6",
     "url": "event/1hoy6/kubevirt-enhancements-and-the-road-ahead-vladik-romanovsky-david-vossel-red-hat",
     "videoUrl": "https://www.youtube.com/watch?v=9xq-iHAiLlg&list=PLj6h78yzYM2Pw4mRw4S-1p_xLARMqPkA7&index=269&pp=iAQB"
   },
@@ -1751,6 +1820,7 @@
       "Vitess"
     ],
     "slidesUrl": "https://static.sched.com/hosted_files/kccncna2024/cf/Kubecon%20NA%202024%20Vitess.pdf",
+    "evtid": "1hoxf",
     "url": "event/1hoxf/vitess-introduction-new-features-and-running-in-production-deepthi-sigireddi-planetscale-derek-perkins-nozzle-sudhi-vijayakumar-backblaze",
     "videoUrl": "https://www.youtube.com/watch?v=MZXToqM8mds&list=PLj6h78yzYM2Pw4mRw4S-1p_xLARMqPkA7&index=274&pp=iAQB"
   },
@@ -1773,6 +1843,7 @@
       "Intermediate"
     ],
     "slidesUrl": null,
+    "evtid": "1i7qe",
     "url": "event/1i7qe/supercharge-your-kubernetes-autoscaling-with-custom-metrics-vamshi-krishna-samudrala-sravan-akinapally-american-airlines",
     "videoUrl": "https://www.youtube.com/watch?v=LrL9tRnAH0M&list=PLj6h78yzYM2Pw4mRw4S-1p_xLARMqPkA7&index=241&pp=iAQB"
   },
@@ -1802,6 +1873,7 @@
       "Intermediate"
     ],
     "slidesUrl": "https://static.sched.com/hosted_files/kccncna2024/9b/KCNA24%20-%20Brown%20M%26Ms%20of%20Platform%20Engineering%20%20-%20%20Nov%207%202024.pdf",
+    "evtid": "1i7qS",
     "url": "event/1i7qS/micro-segmentation-and-multi-tenancy-the-brown-mms-of-platform-engineering-jim-bugwadia-nirmata-rachael-wonnacott-fidelity-international",
     "videoUrl": "https://www.youtube.com/watch?v=FaFId0alto0&list=PLj6h78yzYM2Pw4mRw4S-1p_xLARMqPkA7&index=220&pp=iAQB"
   },
@@ -1831,6 +1903,7 @@
       "Intermediate"
     ],
     "slidesUrl": null,
+    "evtid": "1i7qn",
     "url": "event/1i7qn/the-missing-talk-about-api-versioning-evolution-in-your-developer-platform-stefan-schimanski-upbound-sergiusz-urbaniak-independent",
     "videoUrl": null
   },
@@ -1860,6 +1933,7 @@
       "Beginner"
     ],
     "slidesUrl": null,
+    "evtid": "1i7qb",
     "url": "event/1i7qb/seccomp-and-ebpf-whats-the-difference-why-do-i-need-to-know-natalia-reka-ivanko-duffie-cooley-isovalent-cisco",
     "videoUrl": "https://www.youtube.com/watch?v=UEdbaJpcxdY&list=PLj6h78yzYM2Pw4mRw4S-1p_xLARMqPkA7&index=236&pp=iAQB"
   },
@@ -1917,6 +1991,7 @@
       "Intermediate"
     ],
     "slidesUrl": "https://static.sched.com/hosted_files/kccncna2024/99/talk.pdf",
+    "evtid": "1i7qp",
     "url": "event/1i7qp/the-policy-engines-showdown-gabriel-l-manor-permitio-andres-aguiar-okta-omri-gazitt-aserto-pauline-jamin-agicap-tyler-schade-geico-joy-scharmen-strongdm",
     "videoUrl": null
   },
@@ -1940,6 +2015,7 @@
       "Intermediate"
     ],
     "slidesUrl": null,
+    "evtid": "1i7qP",
     "url": "event/1i7qP/tutorial-simplify-and-optimize-your-yaml-with-yamlscript-ingy-dot-net-yaml-llc",
     "videoUrl": "https://www.youtube.com/watch?v=Cdi3Q4Wrt48&list=PLj6h78yzYM2Pw4mRw4S-1p_xLARMqPkA7&index=216&pp=iAQB"
   },
@@ -1968,6 +2044,7 @@
       "🚨 Contribfest"
     ],
     "slidesUrl": null,
+    "evtid": "1hoxL",
     "url": "event/1hoxL/contribfest-hop-aboard-and-contribute-to-headlamp",
     "videoUrl": null
   },
@@ -1989,6 +2066,7 @@
       "🚨 Contribfest"
     ],
     "slidesUrl": "https://static.sched.com/hosted_files/kccncna2024/96/KCNA24IstioContributorWorkshop.pptx.pdf",
+    "evtid": "1hoyI",
     "url": "event/1hoyI/contribfest-sidecar-less-service-mesh-lets-work-together-on-istio-v2",
     "videoUrl": null
   },
@@ -2011,6 +2089,7 @@
       "Beginner"
     ],
     "slidesUrl": null,
+    "evtid": "1i7rB",
     "url": "event/1i7rB/cloud-native-ai-wasm-in-portable-secure-aiml-workloads-miley-fu-second-state",
     "videoUrl": "https://www.youtube.com/watch?v=fFATl6Tm-uY&list=PLj6h78yzYM2Pw4mRw4S-1p_xLARMqPkA7&index=246&pp=iAQB"
   },
@@ -2040,6 +2119,7 @@
       "Beginner"
     ],
     "slidesUrl": "https://static.sched.com/hosted_files/kccncna2024/f9/Fault_Tolerance_AI_workloads.pdf",
+    "evtid": "1i7qv",
     "url": "event/1i7qv/enabling-fault-tolerance-for-gpu-accelerated-ai-workloads-in-kubernetes-arpit-singh-abhijit-paithankar-nvidia",
     "videoUrl": null
   },
@@ -2090,8 +2170,9 @@
       "Any"
     ],
     "slidesUrl": null,
+    "evtid": "1i7nm",
     "url": "event/1i7nm/tick-tag-toc-keeping-cloud-native-running-karena-angell-red-hat-rajas-kakodkar-broadcom-alex-chircop-akamai-ricardo-aravena-snowflake-marina-moore-edera",
-    "videoUrl": "https://www.youtube.com/watch?v=rKTAZQhMSJI&list=PLj6h78yzYM2Pw4mRw4S-1p_xLARMqPkA7&index=232&pp=iAQB"
+    "videoUrl": null
   },
   {
     "title": "Thousands of Gamers, One Kubernetes Network ",
@@ -2119,6 +2200,7 @@
       "Intermediate"
     ],
     "slidesUrl": "https://static.sched.com/hosted_files/kccncna2024/ba/Thousands%20of%20Gamers%2C%20One%20Kubernetes%20Network.pdf",
+    "evtid": "1i7rA",
     "url": "event/1i7rA/thousands-of-gamers-one-kubernetes-network-surya-seetharaman-red-hat-girish-moodalbail-nvidia-inc",
     "videoUrl": null
   },
@@ -2148,6 +2230,7 @@
       "Intermediate"
     ],
     "slidesUrl": "https://static.sched.com/hosted_files/kccncna2024/98/Object%2C%20Block%2C%20or%20File%20Storage%20for%20K8s.pdf",
+    "evtid": "1i7r1",
     "url": "event/1i7r1/object-block-or-file-storage-choosing-the-right-cloud-storage-to-integrate-into-kubernetes-mitch-becker-tom-mcdonald-amazon-web-services-aws",
     "videoUrl": "https://www.youtube.com/watch?v=N6myBTCuhR0&list=PLj6h78yzYM2Pw4mRw4S-1p_xLARMqPkA7&index=227&pp=iAQB"
   },
@@ -2183,8 +2266,9 @@
       "Data Processing + Storage"
     ],
     "slidesUrl": null,
+    "evtid": "1kB4H",
     "url": "event/1kB4H/opensearch-navigating-innovation-and-community-collaboration-for-2025-and-beyond-anandhi-bumstead-anirudha-jadhav-pallavi-priyadarshini-amazon-web-services",
-    "videoUrl": "https://www.youtube.com/watch?v=tfz05JHNH6E&list=PLj6h78yzYM2Pw4mRw4S-1p_xLARMqPkA7&index=257&pp=iAQB"
+    "videoUrl": null
   },
   {
     "title": "Building a More Resilient Future with Advanced Cloud Provider Testing ",
@@ -2212,6 +2296,7 @@
       "Cloud Provider"
     ],
     "slidesUrl": null,
+    "evtid": "1hoyJ",
     "url": "event/1hoyJ/building-a-more-resilient-future-with-advanced-cloud-provider-testing-michael-mccune-red-hat-bridget-kromhout-microsoft",
     "videoUrl": null
   },
@@ -2241,6 +2326,7 @@
       "CoreDNS"
     ],
     "slidesUrl": "https://static.sched.com/hosted_files/kccncna2024/96/2024%20KubeCon%20NA%20-%20Utah%20-%20CoreDNS.pdf",
+    "evtid": "1hoyP",
     "url": "event/1hoyP/coredns-plugins-a-deep-dive-john-belamaric-google-yong-tang-ivanti",
     "videoUrl": "https://www.youtube.com/watch?v=av2duJhlaTw&list=PLj6h78yzYM2Pw4mRw4S-1p_xLARMqPkA7&index=275&pp=iAQB"
   },
@@ -2270,6 +2356,7 @@
       "NATS"
     ],
     "slidesUrl": "https://static.sched.com/hosted_files/kccncna2024/c6/KubeCon%202024%20-%20Nothing%20but%20NATS.pdf",
+    "evtid": "1hoyU",
     "url": "event/1hoyU/nothing-but-nats-going-beyond-cloud-native-byron-ruth-kevin-hoffman-synadia",
     "videoUrl": null
   },
@@ -2299,6 +2386,7 @@
       "Strimzi"
     ],
     "slidesUrl": "https://static.sched.com/hosted_files/kccncna2024/c9/Strimzi%20Data%20Streaming%20on%20Kubernetes%20with%20Apache%20Kafka.pdf",
+    "evtid": "1hoxd",
     "url": "event/1hoxd/strimzi-data-streaming-on-kubernetes-with-apache-kafka-jakub-scholz-red-hat-yaodong-yang-strimzi-kafka-contributor",
     "videoUrl": "https://www.youtube.com/watch?v=q6WYs8AEEDk&list=PLj6h78yzYM2Pw4mRw4S-1p_xLARMqPkA7&index=270&pp=iAQB"
   },
@@ -2349,6 +2437,7 @@
       "Containerd"
     ],
     "slidesUrl": "https://static.sched.com/hosted_files/kccncna2024/74/KCCNC-SLC-24-Containerd-session.pdf",
+    "evtid": "1hoyS",
     "url": "event/1hoyS/whats-going-on-in-the-containerd-neighborhood-phil-estes-aws-samuel-karp-google-akihiro-suda-ntt-michael-brown-ibm-kirtana-ashok-microsoft",
     "videoUrl": "https://www.youtube.com/watch?v=SDG6Um9JPxU&list=PLj6h78yzYM2Pw4mRw4S-1p_xLARMqPkA7&index=280&pp=iAQB"
   },
@@ -2371,6 +2460,7 @@
       "Any"
     ],
     "slidesUrl": null,
+    "evtid": "1i7r8",
     "url": "event/1i7r8/the-key-value-of-etcd-over-custom-resources-scalability-jef-spaleta-isovalent-at-cisco",
     "videoUrl": "https://www.youtube.com/watch?v=H3NYupSNMnA&list=PLj6h78yzYM2Pw4mRw4S-1p_xLARMqPkA7&index=242&pp=iAQB"
   },
@@ -2400,6 +2490,7 @@
       "Any"
     ],
     "slidesUrl": null,
+    "evtid": "1i7qy",
     "url": "event/1i7qy/modernization-of-intuit-payroll-enterprise-using-event-driven-architecture-hema-maarimuthu-vigith-maurice-intuit",
     "videoUrl": "https://www.youtube.com/watch?v=ukCLEYs2v5A&list=PLj6h78yzYM2Pw4mRw4S-1p_xLARMqPkA7&index=222&pp=iAQB"
   },
@@ -2422,6 +2513,7 @@
       "Intermediate"
     ],
     "slidesUrl": "https://static.sched.com/hosted_files/kccncna2024/5f/This%20Platform%20Goes%20to%2011_%20Boost%20Developer%20Productivity%20with%20Lessons%20from%20Salesforce.pptx",
+    "evtid": "1i7rD",
     "url": "event/1i7rD/this-platform-goes-to-11-boost-developer-productivity-with-lessons-from-salesforce-joe-kutner-salesforce",
     "videoUrl": "https://www.youtube.com/watch?v=97VCvHyHxGU&list=PLj6h78yzYM2Pw4mRw4S-1p_xLARMqPkA7&index=251&pp=iAQB"
   },
@@ -2444,6 +2536,7 @@
       "Beginner"
     ],
     "slidesUrl": "https://static.sched.com/hosted_files/kccncna2024/0b/Practical%20Supply%20Chain%20Security_%20Implementing%20SLSA%20Compliance%20from%20Build%20to%20Runtime.pdf.pdf",
+    "evtid": "1i7r7",
     "url": "event/1i7r7/practical-supply-chain-security-implementing-slsa-compliance-from-build-to-runtime-enguerrand-allamel-ledger",
     "videoUrl": "https://www.youtube.com/watch?v=0w_dBmvu5l8&list=PLj6h78yzYM2Pw4mRw4S-1p_xLARMqPkA7&index=237&pp=iAQB"
   },
@@ -2456,6 +2549,7 @@
       "Diversity + Equity + Inclusion"
     ],
     "slidesUrl": null,
+    "evtid": "1mSv1",
     "url": "event/1mSv1/peer-group-mentoring",
     "videoUrl": null
   },
@@ -2485,6 +2579,7 @@
       "Beginner"
     ],
     "slidesUrl": null,
+    "evtid": "1i7rc",
     "url": "event/1i7rc/best-practices-for-deploying-llm-inference-rag-and-fine-tuning-pipelines-on-k8s-meenakshi-kaushik-shiva-krishna-merla-nvidia",
     "videoUrl": "https://www.youtube.com/watch?v=EmGe_58524g&list=PLj6h78yzYM2Pw4mRw4S-1p_xLARMqPkA7&index=247&pp=iAQB"
   },
@@ -2514,6 +2609,7 @@
       "Intermediate"
     ],
     "slidesUrl": "https://static.sched.com/hosted_files/kccncna2024/ad/Divide%20and%20Conquer%20Master%20GPU%20Partitioning%20and%20Visualize%20Savings%20with%20OpenCost.pdf",
+    "evtid": "1i7rK",
     "url": "event/1i7rK/divide-and-conquer-master-gpu-partitioning-and-visualize-savings-with-opencost-kaysie-yu-ally-ford-microsoft",
     "videoUrl": null
   },
@@ -2536,6 +2632,7 @@
       "Beginner"
     ],
     "slidesUrl": null,
+    "evtid": "1i7nO",
     "url": "event/1i7nO/platform-engineering-for-software-developers-and-architects-daniel-bryant-syntasso",
     "videoUrl": "https://www.youtube.com/watch?v=qhfQfQmnNd4&list=PLj6h78yzYM2Pw4mRw4S-1p_xLARMqPkA7&index=252&pp=iAQB"
   },
@@ -2558,6 +2655,7 @@
       "Intermediate"
     ],
     "slidesUrl": "https://static.sched.com/hosted_files/kccncna2024/28/KubeCon%20SLC_%20Topology%20Aware%20Routing%20-%20Understanding%20the%20Tradeoffs.pdf",
+    "evtid": "1i7rZ",
     "url": "event/1i7rZ/topology-aware-routing-understanding-the-tradeoffs-rob-scott-google",
     "videoUrl": null
   },
@@ -2580,6 +2678,7 @@
       "Any"
     ],
     "slidesUrl": null,
+    "evtid": "1i7rQ",
     "url": "event/1i7rQ/privacy-in-the-age-of-big-compute-sal-kimmich-confidential-computing-consortium-linux-foundation",
     "videoUrl": "https://www.youtube.com/watch?v=r6zKVHBaz0w&list=PLj6h78yzYM2Pw4mRw4S-1p_xLARMqPkA7&index=228&pp=iAQB"
   },
@@ -2630,6 +2729,7 @@
       "Code of Conduct"
     ],
     "slidesUrl": null,
+    "evtid": "1hoyd",
     "url": "event/1hoyd/meet-the-cncf-code-of-conduct-committee-bill-mulligan-carla-gaggini-isovalent-at-cisco-josh-berkus-red-hat-jeremy-rickard-microsoft-tim-pepper-cisa",
     "videoUrl": "https://www.youtube.com/watch?v=Xq2_I-eHn3Q&list=PLj6h78yzYM2Pw4mRw4S-1p_xLARMqPkA7&index=281&pp=iAQB"
   },
@@ -2666,6 +2766,7 @@
       "Auth"
     ],
     "slidesUrl": "https://static.sched.com/hosted_files/kccncna2024/07/SIG-Auth%202024%20Deep%20Dive%20-%20Pushing%20Authorization%20Further.pdf",
+    "evtid": "1hoyX",
     "url": "event/1hoyX/pushing-authorization-further-cel-selectors-and-maybe-rbac-mo-khan-rita-zhang-microsoft-jordan-liggitt-google",
     "videoUrl": "https://www.youtube.com/watch?v=pIrJRPv-Wbg&list=PLj6h78yzYM2Pw4mRw4S-1p_xLARMqPkA7&index=265&pp=iAQB"
   },
@@ -2709,6 +2810,7 @@
       "Rook"
     ],
     "slidesUrl": "https://static.sched.com/hosted_files/kccncna2024/ac/KubeCon%20NA%202024%20Rook%20Session.pdf",
+    "evtid": "1hoyq",
     "url": "event/1hoyq/rook-intro-and-deep-dive-with-ceph-storage-travis-nielsen-annette-clewett-blaine-gardner-subham-rai-ibm",
     "videoUrl": "https://www.youtube.com/watch?v=qB5IQ9DOMbQ&list=PLj6h78yzYM2Pw4mRw4S-1p_xLARMqPkA7&index=276&pp=iAQB"
   },
@@ -2738,6 +2840,7 @@
       "Keycloak"
     ],
     "slidesUrl": "https://static.sched.com/hosted_files/kccncna2024/0f/HighlyAvailable_Keycloak_KubeCon_NA_2024.pdf",
+    "evtid": "1hoyn",
     "url": "event/1hoyn/running-a-highly-available-identity-and-access-management-with-keycloak-ryan-emerson-kameswararao-akella-red-hat",
     "videoUrl": "https://www.youtube.com/watch?v=gDFWBQO31M4&list=PLj6h78yzYM2Pw4mRw4S-1p_xLARMqPkA7&index=271&pp=iAQB"
   },
@@ -2767,6 +2870,7 @@
       "gRPC"
     ],
     "slidesUrl": null,
+    "evtid": "1hoyt",
     "url": "event/1hoyt/ten-years-of-grpc-looking-back-and-looking-forward-kevin-nilson-google-israel-shapiro-broadcom",
     "videoUrl": "https://www.youtube.com/watch?v=yIEvtdOjhBY&list=PLj6h78yzYM2Pw4mRw4S-1p_xLARMqPkA7&index=284&pp=iAQB"
   },
@@ -2789,6 +2893,7 @@
       "Intermediate"
     ],
     "slidesUrl": "https://static.sched.com/hosted_files/kccncna2024/72/node-tetris-rabbit-hole-kubecon-2024.pptx",
+    "evtid": "1i7rY",
     "url": "event/1i7rY/the-node-tetris-rabbit-hole-why-your-binpacking-might-be-underperforming-hannah-taub-adobe-inc",
     "videoUrl": null
   },
@@ -2811,6 +2916,7 @@
       "Beginner"
     ],
     "slidesUrl": "https://static.sched.com/hosted_files/kccncna2024/a0/KubeCon2024_ChRIS.pdf",
+    "evtid": "1i7q6",
     "url": "event/1i7q6/medical-research-computing-infrastructure-on-hybrid-kubernetes-jennings-zhang-boston-childrens-hospital",
     "videoUrl": "https://www.youtube.com/watch?v=vPtiZNkiEV0&list=PLj6h78yzYM2Pw4mRw4S-1p_xLARMqPkA7&index=223&pp=iAQB"
   },
@@ -2833,11 +2939,12 @@
       "Intermediate"
     ],
     "slidesUrl": null,
+    "evtid": "1i7rl",
     "url": "event/1i7rl/migratory-patterns-making-architectural-transitions-with-confidence-and-grace-pete-hodgson-partnerslate",
     "videoUrl": "https://www.youtube.com/watch?v=oOHnDhPH3YQ&list=PLj6h78yzYM2Pw4mRw4S-1p_xLARMqPkA7&index=262&pp=iAQB"
   },
   {
-    "title": "SPIFFE Deployments in Non-Kubernetes Environments - Nadin El",
+    "title": "SPIFFE Deployments in Non-Kubernetes Environments",
     "speakers": [
       "Nadin El-Yabroudi",
       "Eli Nesterov"
@@ -2862,6 +2969,7 @@
       "Advanced"
     ],
     "slidesUrl": "https://static.sched.com/hosted_files/kccncna2024/fc/SPIFFE%20Deployments%20in%20Non-K8s%20Environments.pdf",
+    "evtid": "1i7rW",
     "url": "event/1i7rW/spiffe-deployments-in-non-kubernetes-environments-nadin-el-yabroudi-eli-nesterov-spirl",
     "videoUrl": "https://www.youtube.com/watch?v=sflwuM_baG4&list=PLj6h78yzYM2Pw4mRw4S-1p_xLARMqPkA7&index=238&pp=iAQB"
   },
@@ -2891,6 +2999,7 @@
       "Intermediate"
     ],
     "slidesUrl": null,
+    "evtid": "1i7rz",
     "url": "event/1i7rz/spiffe-the-easy-way-universal-x509-and-jwt-identities-using-cert-manager-tim-ramlot-ashley-davis-venafi",
     "videoUrl": "https://www.youtube.com/watch?v=De2o-urGpQk&list=PLj6h78yzYM2Pw4mRw4S-1p_xLARMqPkA7&index=233&pp=iAQB"
   },
@@ -2913,6 +3022,7 @@
       "Intermediate"
     ],
     "slidesUrl": "https://static.sched.com/hosted_files/kccncna2024/24/KCNA24_perfect_compliance_enemy_good_k8s_security.pdf",
+    "evtid": "1i7ri",
     "url": "event/1i7ri/why-perfect-compliance-is-the-enemy-of-good-kubernetes-security-michele-chubirka-google",
     "videoUrl": "https://www.youtube.com/watch?v=TMZA4y9hslU&list=PLj6h78yzYM2Pw4mRw4S-1p_xLARMqPkA7&index=258&pp=iAQB"
   },
@@ -2950,6 +3060,7 @@
       "Beginner"
     ],
     "slidesUrl": null,
+    "evtid": "1i7rJ",
     "url": "event/1i7rJ/tutorial-stop-kubernetes-revolving-door-a-hands-on-tutorial-to-secure-a-kubernetes-cluster-savitha-raghunathan-rey-lejano-red-hat-mahe-tardy-isovalent-at-cisco",
     "videoUrl": "https://www.youtube.com/watch?v=j3kIxlQ4yH4&list=PLj6h78yzYM2Pw4mRw4S-1p_xLARMqPkA7&index=217&pp=iAQB"
   },
@@ -2978,6 +3089,7 @@
       "🚨 Contribfest"
     ],
     "slidesUrl": "https://static.sched.com/hosted_files/kccncna2024/9d/Contribfest%20NA%202024%20-%20Enhancing%20K8GB%20with%20Arbitrary%20Network%20Resource%20Integrations.pdf",
+    "evtid": "1hoyk",
     "url": "event/1hoyk/contribfest-k8gb-contribfest-enhancing-k8gb-project-with-arbitrary-network-resource-integration",
     "videoUrl": null
   },
@@ -3027,6 +3139,7 @@
       "🚨 Contribfest"
     ],
     "slidesUrl": null,
+    "evtid": "1hoyF",
     "url": "event/1hoyF/contribfest-opentelemetry-contribfest",
     "videoUrl": null
   },
@@ -3056,6 +3169,7 @@
       "Intermediate"
     ],
     "slidesUrl": null,
+    "evtid": "1i7s5",
     "url": "event/1i7s5/best-of-both-worlds-integrating-slurm-with-kubernetes-in-a-kubernetes-native-way-eduardo-arango-gutierrez-nvidia-angel-beltre-sandia-national-laboratories",
     "videoUrl": "https://www.youtube.com/watch?v=nmluCubbHY4&list=PLj6h78yzYM2Pw4mRw4S-1p_xLARMqPkA7&index=248&pp=iAQB"
   },
@@ -3085,6 +3199,7 @@
       "Intermediate"
     ],
     "slidesUrl": "https://static.sched.com/hosted_files/kccncna2024/dc/LeaderWorkerSet%20for%20distributed%20inference.pptx%20%281%29.pdf",
+    "evtid": "1i7rn",
     "url": "event/1i7rn/distributed-multi-node-model-inference-using-the-leaderworkerset-api-abdullah-gharaibeh-rupeng-liu-google",
     "videoUrl": null
   },
@@ -3114,6 +3229,7 @@
       "Beginner"
     ],
     "slidesUrl": "https://static.sched.com/hosted_files/kccncna2024/fa/Inspect%20Your%20Gateway%20API%20Configuration.pdf",
+    "evtid": "1i7s2",
     "url": "event/1i7s2/with-great-flexibility-comes-great-complexity-inspect-your-gateway-api-configuration-mattia-lavacca-kong-gaurav-ghildiyal-google",
     "videoUrl": null
   },
@@ -3136,6 +3252,7 @@
       "Any"
     ],
     "slidesUrl": null,
+    "evtid": "1i7rt",
     "url": "event/1i7rt/goodbye-etcd-running-kubernetes-on-distributed-postgresql-denis-magda-yugabyte",
     "videoUrl": "https://www.youtube.com/watch?v=rd12ozQPlZA&list=PLj6h78yzYM2Pw4mRw4S-1p_xLARMqPkA7&index=229&pp=iAQB"
   },
@@ -3165,6 +3282,7 @@
       "UI"
     ],
     "slidesUrl": "https://static.sched.com/hosted_files/kccncna2024/14/Kubecon%202024%20NA.pptx.pdf",
+    "evtid": "1hoym",
     "url": "event/1hoym/navigating-the-future-exploring-the-latest-in-kubernetes-dashboard-development-marcin-maciaszczyk-sebastian-florek-plural",
     "videoUrl": "https://www.youtube.com/watch?v=WMC8iiga26Q&list=PLj6h78yzYM2Pw4mRw4S-1p_xLARMqPkA7&index=266&pp=iAQB"
   },
@@ -3194,6 +3312,7 @@
       "Batch"
     ],
     "slidesUrl": null,
+    "evtid": "1hoys",
     "url": "event/1hoys/wg-batch-updates-whats-new-and-what-is-next-marcin-wielgus-google-kevin-hannon-red-hat",
     "videoUrl": "https://www.youtube.com/watch?v=C2ABOEzZTWg&list=PLj6h78yzYM2Pw4mRw4S-1p_xLARMqPkA7&index=282&pp=iAQB"
   },
@@ -3230,6 +3349,7 @@
       "Intermediate"
     ],
     "slidesUrl": null,
+    "evtid": "1i7pp",
     "url": "event/1i7pp/service-profiling-based-management-and-scheduling-in-k8s-jia-deng-cong-xu-mingmeng-luo-bytedance",
     "videoUrl": null
   },
@@ -3259,6 +3379,7 @@
       "Intermediate"
     ],
     "slidesUrl": "https://static.sched.com/hosted_files/kccncna2024/47/Zero%20Downtime%20Upgrades%20at%20Scale_%20How%20Okta%20Manages%20Hundres%20of%20Clusters%20Daily.pdf",
+    "evtid": "1i7s6",
     "url": "event/1i7s6/zero-downtime-upgrades-at-scale-how-okta-manages-hundreds-of-clusters-daily-jeremy-albuixech-kahou-lei-okta",
     "videoUrl": "https://www.youtube.com/watch?v=p5owrjrBm2w&list=PLj6h78yzYM2Pw4mRw4S-1p_xLARMqPkA7&index=253&pp=iAQB"
   },
@@ -3269,6 +3390,7 @@
     "abstract": null,
     "tags": [],
     "slidesUrl": null,
+    "evtid": "62f837e8",
     "url": "https://kccncna2024.sched.com/event/1iGUy/badge-pick-up",
     "videoUrl": null
   },
@@ -3279,6 +3401,7 @@
     "abstract": null,
     "tags": [],
     "slidesUrl": null,
+    "evtid": "edb6835d",
     "url": "https://kccncna2024.sched.com/event/1kiwE/badge-pick-up",
     "videoUrl": null
   },
@@ -3289,6 +3412,7 @@
     "abstract": null,
     "tags": [],
     "slidesUrl": null,
+    "evtid": "05638302",
     "url": "https://kccncna2024.sched.com/event/1nubT/coat-bag-check",
     "videoUrl": null
   },
@@ -3299,6 +3423,7 @@
     "abstract": null,
     "tags": [],
     "slidesUrl": null,
+    "evtid": "2c772554",
     "url": "https://kccncna2024.sched.com/event/1iCNZ/openshift-commons-gathering-hosted-by-red-hat-sold-out",
     "videoUrl": null
   },
@@ -3309,6 +3434,7 @@
     "abstract": null,
     "tags": [],
     "slidesUrl": null,
+    "evtid": "5f5a9802",
     "url": "https://kccncna2024.sched.com/event/1iW87/project-lightning-talk-opening-welcome-jorge-castro-cncf",
     "videoUrl": null
   },
@@ -3319,6 +3445,7 @@
     "abstract": null,
     "tags": [],
     "slidesUrl": null,
+    "evtid": "bcd46a56",
     "url": "https://kccncna2024.sched.com/event/1iVrf/cloud-native-university-hosted-by-cncf-half-day-event-all-access-pass-required",
     "videoUrl": null
   },
@@ -3329,6 +3456,7 @@
     "abstract": null,
     "tags": [],
     "slidesUrl": null,
+    "evtid": "d96a1348",
     "url": "https://kccncna2024.sched.com/event/1iVs2/data-on-kubernetes-day-hosted-by-cncf-half-day-event-all-access-pass-required",
     "videoUrl": null
   },
@@ -3339,6 +3467,7 @@
     "abstract": null,
     "tags": [],
     "slidesUrl": null,
+    "evtid": "22d196d2",
     "url": "https://kccncna2024.sched.com/event/1iVsm/envoycon-hosted-by-cncf-half-day-event-all-access-pass-required",
     "videoUrl": null
   },
@@ -3349,6 +3478,7 @@
     "abstract": null,
     "tags": [],
     "slidesUrl": null,
+    "evtid": "c1435be3",
     "url": "https://kccncna2024.sched.com/event/1iVvE/openfeature-summit-hosted-by-cncf-half-day-event-all-access-pass-required",
     "videoUrl": null
   },
@@ -3359,6 +3489,7 @@
     "abstract": null,
     "tags": [],
     "slidesUrl": null,
+    "evtid": "72c1ddff",
     "url": "https://kccncna2024.sched.com/event/1oWAL/kong-ai-gateway-insomnia-workshop-ai-success-through-api-heroics-hosted-by-kong-sold-out",
     "videoUrl": null
   },
@@ -3369,6 +3500,7 @@
     "abstract": null,
     "tags": [],
     "slidesUrl": null,
+    "evtid": "b1f17644",
     "url": "https://kccncna2024.sched.com/event/1iZOk/mastering-data-management-for-kubernetes-hosted-by-portworx-by-pure-storage",
     "videoUrl": null
   },
@@ -3379,6 +3511,7 @@
     "abstract": null,
     "tags": [],
     "slidesUrl": null,
+    "evtid": "46892667",
     "url": "https://kccncna2024.sched.com/event/1mGG5/azure-day-with-kubernetes-hosted-by-microsoft-azure",
     "videoUrl": null
   },
@@ -3389,6 +3522,7 @@
     "abstract": null,
     "tags": [],
     "slidesUrl": null,
+    "evtid": "bdfd6dd0",
     "url": "https://kccncna2024.sched.com/event/1iViQ/appdevelopercon-hosted-by-cncf-full-day-event-all-access-pass-required",
     "videoUrl": null
   },
@@ -3399,6 +3533,7 @@
     "abstract": null,
     "tags": [],
     "slidesUrl": null,
+    "evtid": "a23c0c36",
     "url": "https://kccncna2024.sched.com/event/1iVjy/argocon-hosted-by-cncf-full-day-event-all-access-pass-required",
     "videoUrl": null
   },
@@ -3409,6 +3544,7 @@
     "abstract": null,
     "tags": [],
     "slidesUrl": null,
+    "evtid": "fa523920",
     "url": "https://kccncna2024.sched.com/event/1iVkL/backstagecon-hosted-by-cncf-full-day-event-all-access-pass-required",
     "videoUrl": null
   },
@@ -3419,6 +3555,7 @@
     "abstract": null,
     "tags": [],
     "slidesUrl": null,
+    "evtid": "ccc78d55",
     "url": "https://kccncna2024.sched.com/event/1iVqX/cilium-ebpf-day-hosted-by-cncf-full-day-event-all-access-pass-required",
     "videoUrl": null
   },
@@ -3429,6 +3566,7 @@
     "abstract": null,
     "tags": [],
     "slidesUrl": null,
+    "evtid": "cc69927c",
     "url": "https://kccncna2024.sched.com/event/1iVr5/cloud-native-kubernetes-ai-day-hosted-by-cncf-full-day-event-all-access-pass-required",
     "videoUrl": null
   },
@@ -3439,6 +3577,7 @@
     "abstract": null,
     "tags": [],
     "slidesUrl": null,
+    "evtid": "78ee8982",
     "url": "https://kccncna2024.sched.com/event/1iVuP/observability-day-hosted-by-cncf-full-day-event-all-access-pass-required",
     "videoUrl": null
   },
@@ -3449,6 +3588,7 @@
     "abstract": null,
     "tags": [],
     "slidesUrl": null,
+    "evtid": "09210d86",
     "url": "https://kccncna2024.sched.com/event/1iVw7/platform-engineering-day-hosted-by-cncf-full-day-event-all-access-pass-required",
     "videoUrl": null
   },
@@ -3459,6 +3599,7 @@
     "abstract": null,
     "tags": [],
     "slidesUrl": null,
+    "evtid": "157cf844",
     "url": "https://kccncna2024.sched.com/event/1jUF3/sigstorecon-supply-chain-day-hosted-by-sigstore",
     "videoUrl": null
   },
@@ -3469,6 +3610,7 @@
     "abstract": null,
     "tags": [],
     "slidesUrl": null,
+    "evtid": "9ad58909",
     "url": "https://kccncna2024.sched.com/event/1nons/workload-identity-day-zero-hosted-by-venafi-a-cyberark-company-sold-out",
     "videoUrl": null
   },
@@ -3479,6 +3621,7 @@
     "abstract": null,
     "tags": [],
     "slidesUrl": null,
+    "evtid": "5f785ace",
     "url": "https://kccncna2024.sched.com/event/1iW8A/welcome-and-introduction-a-hitchhikers-guide-to-the-cncf-landscape-katherine-druckman-and-lori-lorusso-cncf-ambassador",
     "videoUrl": null
   },
@@ -3489,6 +3632,7 @@
     "abstract": null,
     "tags": [],
     "slidesUrl": null,
+    "evtid": "cfb945a7",
     "url": "https://kccncna2024.sched.com/event/1qE7d/tag-storage-cncf-storage-tag-and-the-cloud-native-storage-landscape-project-lightning-talk",
     "videoUrl": null
   },
@@ -3499,6 +3643,7 @@
     "abstract": null,
     "tags": [],
     "slidesUrl": null,
+    "evtid": "cd3656be",
     "url": "https://kccncna2024.sched.com/event/1qE6b/kubernetes-sig-storage-whats-coming-in-kubernetes-storage-project-lightning-talk",
     "videoUrl": null
   },
@@ -3509,6 +3654,7 @@
     "abstract": null,
     "tags": [],
     "slidesUrl": null,
+    "evtid": "73a5e13c",
     "url": "https://kccncna2024.sched.com/event/1iW8G/buildpacks-container-builds-at-scale-with-buildpacks-project-lightning-talk",
     "videoUrl": null
   },
@@ -3519,6 +3665,7 @@
     "abstract": null,
     "tags": [],
     "slidesUrl": null,
+    "evtid": "06fac06a",
     "url": "https://kccncna2024.sched.com/event/1iW8M/vitess-arewefastyet-benchmarking-vitess-and-mentorship-stories-project-lightning-talk",
     "videoUrl": null
   },
@@ -3529,6 +3676,7 @@
     "abstract": null,
     "tags": [],
     "slidesUrl": null,
+    "evtid": "9c913949",
     "url": "https://kccncna2024.sched.com/event/1iW8P/strimzi-strimzi-and-the-future-of-apache-kafka-on-kubernetes-project-lightning-talk",
     "videoUrl": null
   },
@@ -3539,6 +3687,7 @@
     "abstract": null,
     "tags": [],
     "slidesUrl": null,
+    "evtid": "bdce8817",
     "url": "https://kccncna2024.sched.com/event/1iW8S/jaeger-distributed-tracing-with-jaeger-and-opentelemetry-project-lightning-talk",
     "videoUrl": null
   },
@@ -3549,6 +3698,7 @@
     "abstract": null,
     "tags": [],
     "slidesUrl": null,
+    "evtid": "95645c13",
     "url": "https://kccncna2024.sched.com/event/1kqxZ/distributed-sql-summit-hosted-by-yugabytedb",
     "videoUrl": null
   },
@@ -3559,6 +3709,7 @@
     "abstract": null,
     "tags": [],
     "slidesUrl": null,
+    "evtid": "0dd6707e",
     "url": "https://kccncna2024.sched.com/event/1kjnh/rancher-day-2024-hosted-by-suse",
     "videoUrl": null
   },
@@ -3569,6 +3720,7 @@
     "abstract": null,
     "tags": [],
     "slidesUrl": null,
+    "evtid": "b490dfb7",
     "url": "https://kccncna2024.sched.com/event/1iW8V/kepler-hows-things-going-in-kepler-project-lightning-talk",
     "videoUrl": null
   },
@@ -3579,6 +3731,7 @@
     "abstract": null,
     "tags": [],
     "slidesUrl": null,
+    "evtid": "f8706418",
     "url": "https://kccncna2024.sched.com/event/1iW8Y/opentelemetry-opentelemetry-in-five-minutes-project-lightning-talk",
     "videoUrl": null
   },
@@ -3589,6 +3742,7 @@
     "abstract": null,
     "tags": [],
     "slidesUrl": null,
+    "evtid": "63640688",
     "url": "https://kccncna2024.sched.com/event/1iW8b/prometheus-celebrating-prometheus-30-all-you-need-to-know-project-lightning-talk",
     "videoUrl": null
   },
@@ -3599,6 +3753,7 @@
     "abstract": null,
     "tags": [],
     "slidesUrl": null,
+    "evtid": "20221be1",
     "url": "https://kccncna2024.sched.com/event/1iW8e/opentelemetry-the-opentelemetry-heros-journey-working-with-open-source-observability-project-lightning-talk",
     "videoUrl": null
   },
@@ -3609,6 +3764,7 @@
     "abstract": null,
     "tags": [],
     "slidesUrl": null,
+    "evtid": "08ca0079",
     "url": "https://kccncna2024.sched.com/event/1iW8h/inspektor-gadget-ebpf-for-observability-made-easy-and-approachable-project-lightning-talk",
     "videoUrl": null
   },
@@ -3619,6 +3775,7 @@
     "abstract": null,
     "tags": [],
     "slidesUrl": null,
+    "evtid": "63624acc",
     "url": "https://kccncna2024.sched.com/event/1iW8k/opentelemetry-the-future-of-network-monitoring-ebpf-for-low-level-insights-project-lightning-talk",
     "videoUrl": null
   },
@@ -3629,6 +3786,7 @@
     "abstract": null,
     "tags": [],
     "slidesUrl": null,
+    "evtid": "34e93fb7",
     "url": "https://kccncna2024.sched.com/event/1iW8n/fluentd-fluent-bit-whats-new-project-lightning-talk",
     "videoUrl": null
   },
@@ -3639,6 +3797,7 @@
     "abstract": null,
     "tags": [],
     "slidesUrl": null,
+    "evtid": "126b3e36",
     "url": "https://kccncna2024.sched.com/event/1iW8q/project-lightning-talk-break",
     "videoUrl": null
   },
@@ -3649,6 +3808,7 @@
     "abstract": null,
     "tags": [],
     "slidesUrl": null,
+    "evtid": "179ed71c",
     "url": "https://kccncna2024.sched.com/event/1nzk9/aws-immersion-day-securing-your-infrastructure-as-code-hosted-by-snyk-hashicorp-aws",
     "videoUrl": null
   },
@@ -3659,6 +3819,7 @@
     "abstract": null,
     "tags": [],
     "slidesUrl": null,
+    "evtid": "f9b72a0f",
     "url": "https://kccncna2024.sched.com/event/1iW8t/crossplane-the-many-layers-of-crossplane-a-lightning-tour-project-lightning-talk",
     "videoUrl": null
   },
@@ -3669,6 +3830,7 @@
     "abstract": null,
     "tags": [],
     "slidesUrl": null,
+    "evtid": "b08f7c79",
     "url": "https://kccncna2024.sched.com/event/1iW8w/k8gb-global-load-balancing-the-kubernetes-way-project-lightning-talk",
     "videoUrl": null
   },
@@ -3679,6 +3841,7 @@
     "abstract": null,
     "tags": [],
     "slidesUrl": null,
+    "evtid": "9c702d70",
     "url": "https://kccncna2024.sched.com/event/1iW8z/grpc-the-grpc-standard-library-project-lightning-talk",
     "videoUrl": null
   },
@@ -3689,6 +3852,7 @@
     "abstract": null,
     "tags": [],
     "slidesUrl": null,
+    "evtid": "5d9e4e2e",
     "url": "https://kccncna2024.sched.com/event/1iW92/kubestellar-multi-cluster-configuration-management-with-kubestellar-project-lightning-talk",
     "videoUrl": null
   },
@@ -3699,6 +3863,7 @@
     "abstract": null,
     "tags": [],
     "slidesUrl": null,
+    "evtid": "50f94311",
     "url": "https://kccncna2024.sched.com/event/1iW95/wasmcloud-declarative-webassembly-orchestration-for-cloud-native-applications-project-lightning-talk",
     "videoUrl": null
   },
@@ -3709,6 +3874,7 @@
     "abstract": null,
     "tags": [],
     "slidesUrl": null,
+    "evtid": "051269ba",
     "url": "https://kccncna2024.sched.com/event/1iW98/sig-auth-sig-storage-secret-guardians-secrets-store-csi-driver-and-sync-controller-project-lightning-talk",
     "videoUrl": null
   },
@@ -3719,6 +3885,7 @@
     "abstract": null,
     "tags": [],
     "slidesUrl": null,
+    "evtid": "27e0881e",
     "url": "https://kccncna2024.sched.com/event/1iW9B/open-cluster-management-scheduling-ai-workload-among-multiple-clusters-project-lightning-talk",
     "videoUrl": null
   },
@@ -3729,6 +3896,7 @@
     "abstract": null,
     "tags": [],
     "slidesUrl": null,
+    "evtid": "7fe4f23b",
     "url": "https://kccncna2024.sched.com/event/1iW9E/kubeslice-migrate-kubernetes-services-with-confidence-project-lightning-talk",
     "videoUrl": null
   },
@@ -3739,6 +3907,7 @@
     "abstract": null,
     "tags": [],
     "slidesUrl": null,
+    "evtid": "5bf5473f",
     "url": "https://kccncna2024.sched.com/event/1l0DW/google-container-day-2024-hosted-by-google-sold-out",
     "videoUrl": null
   },
@@ -3749,6 +3918,7 @@
     "abstract": null,
     "tags": [],
     "slidesUrl": null,
+    "evtid": "e8d344e7",
     "url": "https://kccncna2024.sched.com/event/1iW9K/eraser-cleaning-up-vulnerable-images-from-kubernetes-nodes-project-lightning-talk",
     "videoUrl": null
   },
@@ -3759,6 +3929,7 @@
     "abstract": null,
     "tags": [],
     "slidesUrl": null,
+    "evtid": "7ccf01b9",
     "url": "https://kccncna2024.sched.com/event/1iW9N/linkerd-adding-federated-services-to-linkerd-design-considerations-and-debates-project-lightning-talk",
     "videoUrl": null
   },
@@ -3769,6 +3940,7 @@
     "abstract": null,
     "tags": [],
     "slidesUrl": null,
+    "evtid": "020b4c60",
     "url": "https://kccncna2024.sched.com/event/1iW9Q/istio-why-choose-istio-in-2025-project-lightning-talk",
     "videoUrl": null
   },
@@ -3779,6 +3951,7 @@
     "abstract": null,
     "tags": [],
     "slidesUrl": null,
+    "evtid": "b40cd77f",
     "url": "https://kccncna2024.sched.com/event/1iW9T/kuma-whats-new-in-kuma-project-lightning-talk",
     "videoUrl": null
   },
@@ -3789,6 +3962,7 @@
     "abstract": null,
     "tags": [],
     "slidesUrl": null,
+    "evtid": "bdba4932",
     "url": "https://kccncna2024.sched.com/event/1iW9W/project-lightning-talk-break",
     "videoUrl": null
   },
@@ -3799,6 +3973,7 @@
     "abstract": null,
     "tags": [],
     "slidesUrl": null,
+    "evtid": "0a803d37",
     "url": "https://kccncna2024.sched.com/event/1iZQd/calicocon-hosted-by-tigera-the-creators-of-project-calico-sold-out",
     "videoUrl": null
   },
@@ -3809,6 +3984,7 @@
     "abstract": null,
     "tags": [],
     "slidesUrl": null,
+    "evtid": "f5c1dad2",
     "url": "https://kccncna2024.sched.com/event/1iVrM/cloud-native-startupfest-hosted-by-cncf-half-day-event-all-access-pass-required",
     "videoUrl": null
   },
@@ -3819,6 +3995,7 @@
     "abstract": null,
     "tags": [],
     "slidesUrl": null,
+    "evtid": "d93aae92",
     "url": "https://kccncna2024.sched.com/event/1iVt6/istio-day-hosted-by-cncf-half-day-event-all-access-pass-required",
     "videoUrl": null
   },
@@ -3829,6 +4006,7 @@
     "abstract": null,
     "tags": [],
     "slidesUrl": null,
+    "evtid": "78bb2a07",
     "url": "https://kccncna2024.sched.com/event/1iVtn/kubernetes-on-edge-day-hosted-by-cncf-half-day-event-all-access-pass-required",
     "videoUrl": null
   },
@@ -3839,6 +4017,7 @@
     "abstract": null,
     "tags": [],
     "slidesUrl": null,
+    "evtid": "9ee92f31",
     "url": "https://kccncna2024.sched.com/event/1iVvj/opentofu-day-hosted-by-cncf-half-day-event-all-access-pass-required",
     "videoUrl": null
   },
@@ -3849,6 +4028,7 @@
     "abstract": null,
     "tags": [],
     "slidesUrl": null,
+    "evtid": "97c4746b",
     "url": "https://kccncna2024.sched.com/event/1iW9Z/project-overview-a-hitchhikers-guide-to-the-cncf-landscape-katherine-druckman-and-lori-lorusso-cncf-ambassador",
     "videoUrl": null
   },
@@ -3859,6 +4039,7 @@
     "abstract": null,
     "tags": [],
     "slidesUrl": null,
+    "evtid": "41dfdcf7",
     "url": "https://kccncna2024.sched.com/event/1iW9c/accelerating-adoption-whats-new-in-envoy-gateway-and-why-it-matters-project-lightning-talk",
     "videoUrl": null
   },
@@ -3869,6 +4050,7 @@
     "abstract": null,
     "tags": [],
     "slidesUrl": null,
+    "evtid": "57997758",
     "url": "https://kccncna2024.sched.com/event/1iW9H/knative-eventing-advances-project-lightning-talk",
     "videoUrl": null
   },
@@ -3879,6 +4061,7 @@
     "abstract": null,
     "tags": [],
     "slidesUrl": null,
+    "evtid": "387b65cf",
     "url": "https://kccncna2024.sched.com/event/1mSm2/hands-on-cloud-native-security-workshop-hosted-by-sysdig-google",
     "videoUrl": null
   },
@@ -3889,6 +4072,7 @@
     "abstract": null,
     "tags": [],
     "slidesUrl": null,
+    "evtid": "c361f703",
     "url": "https://kccncna2024.sched.com/event/1iW9i/kubernetes-sig-cli-how-do-we-improve-kubectl-without-breaking-users-project-lightning-talk",
     "videoUrl": null
   },
@@ -3899,6 +4083,7 @@
     "abstract": null,
     "tags": [],
     "slidesUrl": null,
+    "evtid": "dd6ae341",
     "url": "https://kccncna2024.sched.com/event/1iW9l/metal3-metal3-magics-whats-new-and-exciting-project-lightning-talk",
     "videoUrl": null
   },
@@ -3909,6 +4094,7 @@
     "abstract": null,
     "tags": [],
     "slidesUrl": null,
+    "evtid": "12a1e116",
     "url": "https://kccncna2024.sched.com/event/1iW9o/harbor-harbor-and-the-world-of-sboms-project-lightning-talk",
     "videoUrl": null
   },
@@ -3919,6 +4105,7 @@
     "abstract": null,
     "tags": [],
     "slidesUrl": null,
+    "evtid": "5fb8e11a",
     "url": "https://kccncna2024.sched.com/event/1iW9r/slimtoolkit-improving-dx-with-containers-making-it-easy-to-understand-optimize-and-debug-your-containers-project-lightning-talk",
     "videoUrl": null
   },
@@ -3929,6 +4116,7 @@
     "abstract": null,
     "tags": [],
     "slidesUrl": null,
+    "evtid": "84e1fc9f",
     "url": "https://kccncna2024.sched.com/event/1iW9u/kyverno-level-up-your-cluster-5-kyverno-policies-you-need-now-project-lightning-talk",
     "videoUrl": null
   },
@@ -3939,6 +4127,7 @@
     "abstract": null,
     "tags": [],
     "slidesUrl": null,
+    "evtid": "8f74943e",
     "url": "https://kccncna2024.sched.com/event/1iW9x/open-policy-agent-opa-thats-one-small-bump-for-opa-but-one-giant-leap-for-policy-as-code-project-lightning-talk",
     "videoUrl": null
   },
@@ -3949,6 +4138,7 @@
     "abstract": null,
     "tags": [],
     "slidesUrl": null,
+    "evtid": "2d6d9c21",
     "url": "https://kccncna2024.sched.com/event/1iWA0/falco-evolution-of-real-time-cloud-security-with-falco-project-lightning-talk",
     "videoUrl": null
   },
@@ -3959,6 +4149,7 @@
     "abstract": null,
     "tags": [],
     "slidesUrl": null,
+    "evtid": "ca53b419",
     "url": "https://kccncna2024.sched.com/event/1iWA3/copa-project-copacetic-directly-patch-container-image-vulnerabilities-project-lightning-talk",
     "videoUrl": null
   },
@@ -3969,6 +4160,7 @@
     "abstract": null,
     "tags": [],
     "slidesUrl": null,
+    "evtid": "cc2024b6",
     "url": "https://kccncna2024.sched.com/event/1iWA6/openfga-the-cloud-native-way-to-implement-fine-grained-authorization-project-lightning-talk",
     "videoUrl": null
   },
@@ -3979,6 +4171,7 @@
     "abstract": null,
     "tags": [],
     "slidesUrl": null,
+    "evtid": "baac6612",
     "url": "https://kccncna2024.sched.com/event/1iWA9/meshery-visualizing-kubernetes-resource-relationships-with-meshery-project-lightning-talk",
     "videoUrl": null
   },
@@ -3989,6 +4182,7 @@
     "abstract": null,
     "tags": [],
     "slidesUrl": null,
+    "evtid": "7852ba8f",
     "url": "https://kccncna2024.sched.com/event/1iWAC/project-lightning-talk-break",
     "videoUrl": null
   },
@@ -3999,6 +4193,7 @@
     "abstract": null,
     "tags": [],
     "slidesUrl": null,
+    "evtid": "1691bbec",
     "url": "https://kccncna2024.sched.com/event/1iW8J/flux-whats-flux-and-whats-new-project-lightning-talk",
     "videoUrl": null
   },
@@ -4009,6 +4204,7 @@
     "abstract": null,
     "tags": [],
     "slidesUrl": null,
+    "evtid": "42bb4245",
     "url": "https://kccncna2024.sched.com/event/1iWAF/cncf-runtime-tag-cncf-runtime-tag-and-the-cloud-native-runtime-landspace-ai-wasm-os-edge-workloads-and-more-project-lightning-talk",
     "videoUrl": null
   },
@@ -4019,6 +4215,7 @@
     "abstract": null,
     "tags": [],
     "slidesUrl": null,
+    "evtid": "d1b84edf",
     "url": "https://kccncna2024.sched.com/event/1iWAI/cri-o-first-class-ai-model-teleportation-oci-volume-mounts-in-cri-o-and-kubernetes-project-lightning-talk",
     "videoUrl": null
   },
@@ -4029,6 +4226,7 @@
     "abstract": null,
     "tags": [],
     "slidesUrl": null,
+    "evtid": "cba37c57",
     "url": "https://kccncna2024.sched.com/event/1iWAL/wasmedge-cross-platform-high-performance-lightweight-embeddable-multi-modal-llm-runtime-project-lightning-talk",
     "videoUrl": null
   },
@@ -4039,6 +4237,7 @@
     "abstract": null,
     "tags": [],
     "slidesUrl": null,
+    "evtid": "9ddbf457",
     "url": "https://kccncna2024.sched.com/event/1iW8D/tag-contributor-strategy-beyond-the-checkbox-humanizing-accessibility-tag-lightning-talk",
     "videoUrl": null
   },
@@ -4049,6 +4248,7 @@
     "abstract": null,
     "tags": [],
     "slidesUrl": null,
+    "evtid": "cfee8ace",
     "url": "https://kccncna2024.sched.com/event/1iWAR/project-lightning-talk-closing-jorge-castro-cncf",
     "videoUrl": null
   },
@@ -4059,6 +4259,7 @@
     "abstract": null,
     "tags": [],
     "slidesUrl": null,
+    "evtid": "2116e9a6",
     "url": "https://kccncna2024.sched.com/event/1i7jv/cl-lightning-talk-kubectl-debug-lacks-an-ide-option-lets-fix-that-mario-loriedo-red-hat",
     "videoUrl": null
   },
@@ -4069,6 +4270,7 @@
     "abstract": null,
     "tags": [],
     "slidesUrl": null,
+    "evtid": "80963299",
     "url": "https://kccncna2024.sched.com/event/1i7jx/cl-lightning-talk-cloudevents-as-apis-evan-anderson-stacklok",
     "videoUrl": null
   },
@@ -4079,6 +4281,7 @@
     "abstract": null,
     "tags": [],
     "slidesUrl": null,
+    "evtid": "fd2b5cd7",
     "url": "https://kccncna2024.sched.com/event/1i7k0/cl-lightning-talk-effortless-sidecar-less-mutual-tls-and-rich-authorization-policies-up-and-running-in-5-minutes-lin-sun-soloio",
     "videoUrl": null
   },
@@ -4089,6 +4292,7 @@
     "abstract": null,
     "tags": [],
     "slidesUrl": null,
+    "evtid": "af6208ab",
     "url": "https://kccncna2024.sched.com/event/1i7k1/cl-lightning-talk-evaluating-scheduler-efficiency-for-aiml-jobs-using-custom-resource-metrics-dmitry-shmulevich-nvidia",
     "videoUrl": null
   },
@@ -4099,6 +4303,7 @@
     "abstract": null,
     "tags": [],
     "slidesUrl": null,
+    "evtid": "0a8094b2",
     "url": "https://kccncna2024.sched.com/event/1i7k4/cl-lightning-talk-future-proofing-kubernetes-impact-of-storage-version-migration-and-meaning-of-resource-version-rv-nilekh-chaudhari-microsoft",
     "videoUrl": null
   },
@@ -4109,6 +4314,7 @@
     "abstract": null,
     "tags": [],
     "slidesUrl": null,
+    "evtid": "b2ec005b",
     "url": "https://kccncna2024.sched.com/event/1i7k7/cl-lightning-talk-is-everyone-o-keda-exciting-lessons-learned-in-our-journey-to-use-keda-pod-autoscaling-brian-davis-red-canary",
     "videoUrl": null
   },
@@ -4119,6 +4325,7 @@
     "abstract": null,
     "tags": [],
     "slidesUrl": null,
+    "evtid": "2ed6762d",
     "url": "https://kccncna2024.sched.com/event/1i7kC/cl-lightning-talk-minimizing-data-loss-within-the-opentelemetry-otel-collector-alex-kats-capital-one",
     "videoUrl": null
   },
@@ -4129,6 +4336,7 @@
     "abstract": null,
     "tags": [],
     "slidesUrl": null,
+    "evtid": "497a21d3",
     "url": "https://kccncna2024.sched.com/event/1i7kD/cl-lightning-talk-running-kind-clusters-with-gpu-support-using-nvkind-evan-lezar-nvidia",
     "videoUrl": null
   },
@@ -4139,6 +4347,7 @@
     "abstract": null,
     "tags": [],
     "slidesUrl": null,
+    "evtid": "93817422",
     "url": "https://kccncna2024.sched.com/event/1i7kG/cl-lightning-talk-safer-cluster-upgrades-with-mixed-version-proxy-richa-banker-google",
     "videoUrl": null
   },
@@ -4149,6 +4358,7 @@
     "abstract": null,
     "tags": [],
     "slidesUrl": null,
+    "evtid": "4d3727f9",
     "url": "https://kccncna2024.sched.com/event/1owI3/kick-off-party-hosted-by-harness-sold-out",
     "videoUrl": null
   },
@@ -4159,6 +4369,7 @@
     "abstract": null,
     "tags": [],
     "slidesUrl": null,
+    "evtid": "84ac013c",
     "url": "https://kccncna2024.sched.com/event/1j7wg/house-of-kube-hosted-by-humanitec-dash0-and-cloudsmith",
     "videoUrl": null
   },
@@ -4171,6 +4382,7 @@
       "Experiences"
     ],
     "slidesUrl": null,
+    "evtid": "1oUEm",
     "url": "event/1oUEm/self-led-morning-run-sponsored-by-sonatype",
     "videoUrl": null
   },
@@ -4183,6 +4395,7 @@
       "Registration"
     ],
     "slidesUrl": null,
+    "evtid": "1iGVC",
     "url": "event/1iGVC/badge-pick-up",
     "videoUrl": null
   },
@@ -4195,6 +4408,7 @@
       "Registration"
     ],
     "slidesUrl": null,
+    "evtid": "1kiwN",
     "url": "event/1kiwN/badge-pick-up",
     "videoUrl": null
   },
@@ -4208,6 +4422,7 @@
       "Coat + Bag Check"
     ],
     "slidesUrl": null,
+    "evtid": "1nxnf",
     "url": "event/1nxnf/coat-bag-check",
     "videoUrl": null
   },
@@ -4220,6 +4435,7 @@
       "Diversity + Equity + Inclusion"
     ],
     "slidesUrl": null,
+    "evtid": "1mSqU",
     "url": "event/1mSqU/empowerus",
     "videoUrl": null
   },
@@ -4262,8 +4478,9 @@
       "Keynote Sessions"
     ],
     "slidesUrl": null,
+    "evtid": "1iCMn",
     "url": "event/1iCMn/keynote-welcome-opening-remarks-priyanka-sharma-executive-director-cncf-chris-aniszczyk-cto-cncf-joanna-lee-vp-of-legal-and-strategic-programs-cncf-jim-zemlin-executive-director-the-linux-foundation",
-    "videoUrl": "https://www.youtube.com/watch?v=WI7wp8xwgkk&list=PLj6h78yzYM2Pw4mRw4S-1p_xLARMqPkA7&index=188&pp=iAQB"
+    "videoUrl": null
   },
   {
     "title": "Keynote: Multicluster Batch Jobs Dispatching with Kueue at CERN ",
@@ -4290,6 +4507,7 @@
       "Keynote Sessions"
     ],
     "slidesUrl": null,
+    "evtid": "1iCOV",
     "url": "event/1iCOV/keynote-multicluster-batch-jobs-dispatching-with-kueue-at-cern-ricardo-rocha-lead-platforms-infrastructure-cern-marcin-wielgus-staff-software-engineer-google",
     "videoUrl": "https://www.youtube.com/watch?v=xMmskWIlktA&list=PLj6h78yzYM2Pw4mRw4S-1p_xLARMqPkA7&index=189&pp=iAQB"
   },
@@ -4311,6 +4529,7 @@
       "Keynote Sessions"
     ],
     "slidesUrl": null,
+    "evtid": "1iCOj",
     "url": "event/1iCOj/sponsored-keynote-open-source-powered-cloud-native-creates-the-future-dirk-peter-van-leeuwen-chief-executive-officer-suse",
     "videoUrl": "https://www.youtube.com/watch?v=X1ysPHEdfj4&list=PLj6h78yzYM2Pw4mRw4S-1p_xLARMqPkA7&index=190&pp=iAQB"
   },
@@ -4339,6 +4558,7 @@
       "Keynote Sessions"
     ],
     "slidesUrl": null,
+    "evtid": "1noNg",
     "url": "event/1noNg/keynote-take-a-peek-under-the-hood-of-cloud-native-ai-at-scale-chen-goldberg-senior-vice-president-of-engineering-coreweave-peter-salanki-chief-technology-officer-coreweave",
     "videoUrl": "https://www.youtube.com/watch?v=FvLvPiQ6zBc&list=PLj6h78yzYM2Pw4mRw4S-1p_xLARMqPkA7&index=191&pp=iAQB"
   },
@@ -4360,6 +4580,7 @@
       "Keynote Sessions"
     ],
     "slidesUrl": null,
+    "evtid": "1noNj",
     "url": "event/1noNj/sponsored-keynote-build-intelligent-applications-with-an-open-flexible-and-data-driven-ai-platform-sudha-raghavan-senior-vice-president-of-oracle-cloud-development-platform-oracle",
     "videoUrl": "https://www.youtube.com/watch?v=DccJSA3CcQs&list=PLj6h78yzYM2Pw4mRw4S-1p_xLARMqPkA7&index=185&pp=iAQB"
   },
@@ -4381,6 +4602,7 @@
       "Keynote Sessions"
     ],
     "slidesUrl": null,
+    "evtid": "1iCP1",
     "url": "event/1iCP1/keynote-paving-the-way-for-ai-through-platform-engineering-kasper-borg-nissen-staff-platform-engineer-lunar",
     "videoUrl": "https://www.youtube.com/watch?v=_E2Mkebe9Jg&list=PLj6h78yzYM2Pw4mRw4S-1p_xLARMqPkA7&index=192&pp=iAQB"
   },
@@ -4402,6 +4624,7 @@
       "Keynote Sessions"
     ],
     "slidesUrl": null,
+    "evtid": "1iCOy",
     "url": "event/1iCOy/sponsored-keynote-the-future-of-genai-cloud-native-blueprints-with-opea-shirley-bailes-director-of-software-ecosystem-strategy-intel",
     "videoUrl": "https://www.youtube.com/watch?v=ddrTvJFKtus&list=PLj6h78yzYM2Pw4mRw4S-1p_xLARMqPkA7&index=193&pp=iAQB"
   },
@@ -4423,6 +4646,7 @@
       "Keynote Sessions"
     ],
     "slidesUrl": null,
+    "evtid": "1noNm",
     "url": "event/1noNm/keynote-nvidia-case-study-the-many-facets-of-building-delivering-ai-in-the-cloud-native-ecosystem-chris-lamb-vice-president-computing-software-platforms-nvidia-corporation",
     "videoUrl": "https://www.youtube.com/watch?v=81A31kH6ZB4&list=PLj6h78yzYM2Pw4mRw4S-1p_xLARMqPkA7&index=194&pp=iAQB"
   },
@@ -4444,6 +4668,7 @@
       "Keynote Sessions"
     ],
     "slidesUrl": null,
+    "evtid": "1iCPY",
     "url": "event/1iCPY/keynote-engineering-the-future-of-generative-ai-platforms-on-kubernetes-aparna-sinha-svp-head-of-ai-product-capital-one",
     "videoUrl": "https://www.youtube.com/watch?v=atG5oJm6W-k&list=PLj6h78yzYM2Pw4mRw4S-1p_xLARMqPkA7&index=186&pp=iAQB"
   },
@@ -4456,6 +4681,7 @@
       "Diversity + Equity + Inclusion"
     ],
     "slidesUrl": null,
+    "evtid": "1peia",
     "url": "event/1peia/student-community-gathering",
     "videoUrl": null
   },
@@ -4468,6 +4694,7 @@
       "Keynote Sessions"
     ],
     "slidesUrl": null,
+    "evtid": "1noNp",
     "url": "event/1noNp/keynote-closing-remarks",
     "videoUrl": null
   },
@@ -4490,6 +4717,7 @@
       "Learning Lounge"
     ],
     "slidesUrl": null,
+    "evtid": "1rFnL",
     "url": "event/1rFnL/learning-lounge-take-the-cybersecurity-challenge-beat-the-1-minute-sql-injection-company-takeover-aleks-jones-linux-foundation-education",
     "videoUrl": null
   },
@@ -4502,6 +4730,7 @@
       "Breaks"
     ],
     "slidesUrl": null,
+    "evtid": "1iGAa",
     "url": "event/1iGAa/coffee-break",
     "videoUrl": null
   },
@@ -4514,6 +4743,7 @@
       "Experiences"
     ],
     "slidesUrl": null,
+    "evtid": "1oUNb",
     "url": "event/1oUNb/relaxation-station",
     "videoUrl": null
   },
@@ -4526,6 +4756,7 @@
       "Solutions Showcase"
     ],
     "slidesUrl": "https://events.linuxfoundation.org/wp-content/uploads/2024/10/KubeCon_NA_24_PrintSignage_SS_Map_6x8_10_v2.pdf",
+    "evtid": "1iGWJ",
     "url": "event/1iGWJ/solutions-showcase",
     "videoUrl": null
   },
@@ -4539,6 +4770,7 @@
       "Project Pavilion Tour"
     ],
     "slidesUrl": null,
+    "evtid": "1lWZh",
     "url": "event/1lWZh/project-pavilion-tour-with-jorge-castro",
     "videoUrl": null
   },
@@ -4568,6 +4800,7 @@
       "Advanced"
     ],
     "slidesUrl": "https://static.sched.com/hosted_files/kccncna2024/0c/KubeRay%20_%20Ray%20KCNA24.pdf",
+    "evtid": "1i7kg",
     "url": "event/1i7kg/advanced-model-serving-techniques-with-ray-on-kubernetes-andrew-sy-kim-google-kai-hsun-chen-anyscale",
     "videoUrl": "https://www.youtube.com/watch?v=mASxYpfWUNU&list=PLj6h78yzYM2Pw4mRw4S-1p_xLARMqPkA7&index=177&pp=iAQB"
   },
@@ -4590,6 +4823,7 @@
       "Beginner"
     ],
     "slidesUrl": "https://static.sched.com/hosted_files/kccncna2024/90/behind-schedule-kcna-2024-preview.pdf",
+    "evtid": "1i7kb",
     "url": "event/1i7kb/behind-schedule-pod-resource-configuration-from-beginning-to-huh-joe-thompson-independent",
     "videoUrl": "https://www.youtube.com/watch?v=Y8lmJvy8hJg&list=PLj6h78yzYM2Pw4mRw4S-1p_xLARMqPkA7&index=184&pp=iAQB"
   },
@@ -4612,6 +4846,7 @@
       "Beginner"
     ],
     "slidesUrl": "https://static.sched.com/hosted_files/kccncna2024/03/KubeCon%20NA%202024%20-%20All%20your%20routes%20are%20ready%2C%20more%20or%20less.pdf",
+    "evtid": "1i7kV",
     "url": "event/1i7kV/all-your-routes-are-ready-more-or-less-dave-protasowski",
     "videoUrl": "https://www.youtube.com/watch?v=6eMplLH3NIw&list=PLj6h78yzYM2Pw4mRw4S-1p_xLARMqPkA7&index=170&pp=iAQB"
   },
@@ -4655,6 +4890,7 @@
       "Any"
     ],
     "slidesUrl": null,
+    "evtid": "1i7kL",
     "url": "event/1i7kL/the-future-of-dbaas-on-kubernetes-melissa-logan-constantia-sergey-pronin-percona-deepthi-sigireddi-planetscale-gabriele-bartolini-edb",
     "videoUrl": "https://www.youtube.com/watch?v=BwKt97LY6aE&list=PLj6h78yzYM2Pw4mRw4S-1p_xLARMqPkA7&index=142&pp=iAQB"
   },
@@ -4677,6 +4913,7 @@
       "Intermediate"
     ],
     "slidesUrl": "https://static.sched.com/hosted_files/kccncna2024/24/NA2024%20-%20Architecting%20Tomorrow%20The%20Heterogeneous%20Compute%20Resources%20for%20New%20Types%20of%20Workloads.pdf",
+    "evtid": "1i7ke",
     "url": "event/1i7ke/architecting-tomorrow-the-heterogeneous-compute-resources-for-new-types-of-workloads-alexander-kanevskiy-intel-finland",
     "videoUrl": "https://www.youtube.com/watch?v=jyovyLafMOs&list=PLj6h78yzYM2Pw4mRw4S-1p_xLARMqPkA7&index=172&pp=iAQB"
   },
@@ -4727,6 +4964,7 @@
       "Network"
     ],
     "slidesUrl": "https://static.sched.com/hosted_files/kccncna2024/8e/SIG%20Network%20Intro%20and%20Updates%20-%20KCCNC%20NA%202024.pptx.pdf",
+    "evtid": "1hovJ",
     "url": "event/1hovJ/sig-network-intro-and-updates-daman-arora-vmware-by-broadcom-shaun-crampton-tigera-nadia-pinaeva-dan-winship-red-hat-antonio-ojea-google",
     "videoUrl": null
   },
@@ -4756,6 +4994,7 @@
       "Environmental Sustainability"
     ],
     "slidesUrl": null,
+    "evtid": "1hovS",
     "url": "event/1hovS/the-spice-must-flow-green-cncfs-environmental-sustainability-tag-marlow-warnicke-weston-schedmd-saiyam-pathak-loft-labs",
     "videoUrl": "https://www.youtube.com/watch?v=PfuSzPv7fSQ&list=PLj6h78yzYM2Pw4mRw4S-1p_xLARMqPkA7&index=114&pp=iAQB"
   },
@@ -4806,6 +5045,7 @@
       "Cartografos"
     ],
     "slidesUrl": null,
+    "evtid": "1hovP",
     "url": "event/1hovP/the-state-of-cloud-native-business-value-in-2024-danielle-cook-stackgen-simon-forster-stackegy-catherine-paganini-buoyant-colin-griffin-krumware-robbie-glenn-glennium",
     "videoUrl": "https://www.youtube.com/watch?v=9ckTT9F4mpI&list=PLj6h78yzYM2Pw4mRw4S-1p_xLARMqPkA7&index=100&pp=iAQB"
   },
@@ -4828,6 +5068,7 @@
       "The Update Framework (TUF)"
     ],
     "slidesUrl": null,
+    "evtid": "1hovM",
     "url": "event/1hovM/tuf-secure-distribution-beyond-software-marina-moore-independent",
     "videoUrl": "https://www.youtube.com/watch?v=8uv0OS57G3M&list=PLj6h78yzYM2Pw4mRw4S-1p_xLARMqPkA7&index=175&pp=iAQB"
   },
@@ -4857,6 +5098,7 @@
       "Notary"
     ],
     "slidesUrl": "https://static.sched.com/hosted_files/kccncna2024/5c/Using-Notary-Project-to-Ensure-Authenticity-and-Integrity-of-Artifacts-Within-the-Enterprise-KubeConNA24.pdf",
+    "evtid": "1hovU",
     "url": "event/1hovU/using-notary-project-to-ensure-authenticity-and-integrity-of-artifacts-within-the-enterprise-toddy-mladenov-microsoft-tjark-rasche-mercedes-benz-tech-innovation-gmbh",
     "videoUrl": "https://www.youtube.com/watch?v=pO3sZsths2s&list=PLj6h78yzYM2Pw4mRw4S-1p_xLARMqPkA7&index=106&pp=iAQB"
   },
@@ -4886,6 +5128,7 @@
       "Advanced"
     ],
     "slidesUrl": "https://static.sched.com/hosted_files/kccncna2024/7d/KubeCon%20NA%202024_%20Unlocking%20Cost%20Savings%20%26%20New%20Possibilities_%20Your%20Guide%20to%20Prometheus%20Remote%20Write%202.0.pdf",
+    "evtid": "1i7kO",
     "url": "event/1i7kO/unlocking-cost-savings-new-possibilities-your-guide-to-prometheus-remote-write-20-callum-styan-grafana-labs-bartlomiej-plotka-google",
     "videoUrl": "https://www.youtube.com/watch?v=o5HpeMtpsTg&list=PLj6h78yzYM2Pw4mRw4S-1p_xLARMqPkA7&index=137&pp=iAQB"
   },
@@ -4915,6 +5158,7 @@
       "Any"
     ],
     "slidesUrl": "https://static.sched.com/hosted_files/kccncna2024/76/KubeCon%20NA%202024%20-%20ARM-Wrestling.pdf",
+    "evtid": "1i7kU",
     "url": "event/1i7kU/arm-wrestling-overcoming-cpu-migration-challenges-to-reduce-costs-laurent-bernaille-eric-mountain-datadog",
     "videoUrl": null
   },
@@ -4944,6 +5188,7 @@
       "Beginner"
     ],
     "slidesUrl": null,
+    "evtid": "1i7kJ",
     "url": "event/1i7kJ/all-your-gpus-are-belong-to-us-an-inside-look-at-nvidias-self-healing-geforce-now-infrastructure-ryan-hallisey-piotr-prokop-pl-nvidia",
     "videoUrl": "https://www.youtube.com/watch?v=iLnHtKwmu2I&list=PLj6h78yzYM2Pw4mRw4S-1p_xLARMqPkA7&index=19&pp=iAQB"
   },
@@ -4966,6 +5211,7 @@
       "Any"
     ],
     "slidesUrl": "https://static.sched.com/hosted_files/kccncna2024/e4/AuthZEN%20OIDC%20of%20Authorization.pdf",
+    "evtid": "1i7kR",
     "url": "event/1i7kR/authzen-the-openid-connect-for-authorization-omri-gazitt-aserto",
     "videoUrl": "https://www.youtube.com/watch?v=MTAXC0ZaXcE&list=PLj6h78yzYM2Pw4mRw4S-1p_xLARMqPkA7&index=126&pp=iAQB"
   },
@@ -4995,6 +5241,7 @@
       "Any"
     ],
     "slidesUrl": null,
+    "evtid": "1i7nd",
     "url": "event/1i7nd/gitoops-i-did-it-again-protecting-your-gitops-system-from-being-used-for-privilege-escalation-oreen-livni-elad-pticha-cycode",
     "videoUrl": "https://www.youtube.com/watch?v=Pz_Oua4L_AE&list=PLj6h78yzYM2Pw4mRw4S-1p_xLARMqPkA7&index=179&pp=iAQB"
   },
@@ -5018,6 +5265,7 @@
       "Beginner"
     ],
     "slidesUrl": "https://static.sched.com/hosted_files/kccncna2024/cb/Kubecon%20US%202024_%20Mad%20scientists%20guide%20to%20automating%20CNI.pdf",
+    "evtid": "1i7kI",
     "url": "event/1i7kI/tutorial-a-mad-scientists-guide-to-automating-cni-with-generative-ai-doug-smith-red-hat-inc",
     "videoUrl": "https://www.youtube.com/watch?v=tEVoXKtymIA&list=PLj6h78yzYM2Pw4mRw4S-1p_xLARMqPkA7&index=171&pp=iAQB"
   },
@@ -5030,6 +5278,7 @@
       "Experiences"
     ],
     "slidesUrl": null,
+    "evtid": "1oUFl",
     "url": "event/1oUFl/pet-a-pup-sponsored-by-sonatype",
     "videoUrl": null
   },
@@ -5059,6 +5308,7 @@
       "Any"
     ],
     "slidesUrl": "https://static.sched.com/hosted_files/kccncna2024/e2/Version%202_%20AI%20and%20ML_%20the%20boring%20%28yet%20critical%29%20ops%20side.pdf",
+    "evtid": "1i7l4",
     "url": "event/1i7l4/ai-and-ml-lets-talk-about-the-boring-yet-critical-operational-side-rob-koch-slalom-build-milad-vafaeifard-epam",
     "videoUrl": "https://www.youtube.com/watch?v=5eQ1Kte-9Qw&list=PLj6h78yzYM2Pw4mRw4S-1p_xLARMqPkA7&index=176&pp=iAQB"
   },
@@ -5088,6 +5338,7 @@
       "Intermediate"
     ],
     "slidesUrl": "https://static.sched.com/hosted_files/kccncna2024/c8/Operationalizing%20High-Performance%20GPU%20Clusters%20in%20Kubernetes_%20Lessons%20Learned%20from%20Training%20Databricks%20DBRX%20.pdf",
+    "evtid": "1i7kj",
     "url": "event/1i7kj/operationalizing-high-performance-gpu-clusters-in-kubernetes-lessons-learned-from-training-databricks-dbrx-will-gleich-wai-wu-databricks",
     "videoUrl": "https://www.youtube.com/watch?v=DPVFqvkIo5M&list=PLj6h78yzYM2Pw4mRw4S-1p_xLARMqPkA7&index=168&pp=iAQB"
   },
@@ -5138,6 +5389,7 @@
       "Any"
     ],
     "slidesUrl": null,
+    "evtid": "1i7kz",
     "url": "event/1i7kz/beyond-can-you-mentor-me-crafting-the-contribution-ladder-nitish-kumar-akuity-wenjia-zhang-google-jared-watts-upbound-carol-valencia-elastic-nabarun-pal-broadcom",
     "videoUrl": "https://www.youtube.com/watch?v=oJBNV2XqIt8&list=PLj6h78yzYM2Pw4mRw4S-1p_xLARMqPkA7&index=183&pp=iAQB"
   },
@@ -5167,6 +5419,7 @@
       "Intermediate"
     ],
     "slidesUrl": "https://static.sched.com/hosted_files/kccncna2024/e1/Can%20Your%20Kubernetes%20Network%20Handle%20the%20Heat_%20Building_Resilience_with_AI_Chaos.pdf",
+    "evtid": "1i7kv",
     "url": "event/1i7kv/can-your-kubernetes-network-handle-the-heat-building-resilience-with-ai-chaos-lior-lieberman-google-surya-seetharaman-red-hat",
     "videoUrl": "https://www.youtube.com/watch?v=2oTtpRpv3M8&list=PLj6h78yzYM2Pw4mRw4S-1p_xLARMqPkA7&index=169&pp=iAQB"
   },
@@ -5189,6 +5442,7 @@
       "Beginner"
     ],
     "slidesUrl": null,
+    "evtid": "1i7kn",
     "url": "event/1i7kn/when-life-gives-you-containers-make-an-open-source-rds-a-kubernetes-love-story-sergey-pronin-percona",
     "videoUrl": "https://www.youtube.com/watch?v=0gSSmdNB-Zo&list=PLj6h78yzYM2Pw4mRw4S-1p_xLARMqPkA7&index=141&pp=iAQB"
   },
@@ -5211,6 +5465,7 @@
       "Advanced"
     ],
     "slidesUrl": "https://static.sched.com/hosted_files/kccncna2024/21/slides.pdf",
+    "evtid": "1i7l2",
     "url": "event/1i7l2/building-reliable-cross-cloud-kubernetes-clusters-on-spot-instances-with-drafter-and-pvm-felicitas-pojtinger-loophole-labs",
     "videoUrl": "https://www.youtube.com/watch?v=kGUN7aUBGTU&list=PLj6h78yzYM2Pw4mRw4S-1p_xLARMqPkA7&index=173&pp=iAQB"
   },
@@ -5261,6 +5516,7 @@
       "Policy"
     ],
     "slidesUrl": null,
+    "evtid": "1hovX",
     "url": "event/1hovX/ai-for-policy-and-policy-for-ai-poonam-lamba-google-boris-kurktchiev-nirmata-andy-suderman-fairwinds-ronald-petty-rx-m-jimmy-ray-capital-one",
     "videoUrl": "https://www.youtube.com/watch?v=8NevGwP8NrY&list=PLj6h78yzYM2Pw4mRw4S-1p_xLARMqPkA7&index=174&pp=iAQB"
   },
@@ -5290,6 +5546,7 @@
       "cert-manager"
     ],
     "slidesUrl": null,
+    "evtid": "1hovY",
     "url": "event/1hovY/best-friends-keep-no-secrets-going-secretless-with-cert-manager-ashley-davis-tim-ramlot-venafi",
     "videoUrl": "https://www.youtube.com/watch?v=VbCtDF8qlWA&list=PLj6h78yzYM2Pw4mRw4S-1p_xLARMqPkA7&index=99&pp=iAQB"
   },
@@ -5312,6 +5569,7 @@
       "Dapr"
     ],
     "slidesUrl": null,
+    "evtid": "1hova",
     "url": "event/1hova/daprs-road-ahead-genai-apis-distributed-scheduling-at-scale-and-what-it-means-for-your-platform-yaron-schneider-diagrid",
     "videoUrl": "https://www.youtube.com/watch?v=OcqXXfyIfgE&list=PLj6h78yzYM2Pw4mRw4S-1p_xLARMqPkA7&index=113&pp=iAQB"
   },
@@ -5334,6 +5592,7 @@
       "Emissary-ingress"
     ],
     "slidesUrl": null,
+    "evtid": "1hovd",
     "url": "event/1hovd/emissary-ingress-version-4-and-the-road-ahead-flynn-buoyant",
     "videoUrl": "https://www.youtube.com/watch?v=aQLKdGqdrgw&list=PLj6h78yzYM2Pw4mRw4S-1p_xLARMqPkA7&index=105&pp=iAQB"
   },
@@ -5363,8 +5622,9 @@
       "Scheduling"
     ],
     "slidesUrl": "https://static.sched.com/hosted_files/kccncna2024/6f/Kubecon%20NA%202024_%20SIG%20Scheduling.pdf",
+    "evtid": "1hovV",
     "url": "event/1hovV/sig-scheduling-intro-updates-aldo-culquicondor-google-kensei-nakada-tetrateio",
-    "videoUrl": "https://www.youtube.com/watch?v=mvxC2zsbd3c&list=PLj6h78yzYM2Pw4mRw4S-1p_xLARMqPkA7&index=119&pp=iAQB"
+    "videoUrl": null
   },
   {
     "title": "Towards Zero Change Incidents: Intuit's Strategy for Implementing AI-Driven Progressive Delivery ",
@@ -5392,6 +5652,7 @@
       "Beginner"
     ],
     "slidesUrl": "https://static.sched.com/hosted_files/kccncna2024/8b/AIOps%20Kubecon%202024.pdf",
+    "evtid": "1i7kp",
     "url": "event/1i7kp/towards-zero-change-incidents-intuits-strategy-for-implementing-ai-driven-progressive-delivery-avik-basu-saravanan-balasubramanian-intuit",
     "videoUrl": "https://www.youtube.com/watch?v=5k8Djsjt8eA&list=PLj6h78yzYM2Pw4mRw4S-1p_xLARMqPkA7&index=136&pp=iAQB"
   },
@@ -5415,6 +5676,7 @@
       "Yes"
     ],
     "slidesUrl": "https://static.sched.com/hosted_files/kccncna2024/41/Automated%20Multi-Cloud%2C%20Multi-Flavor%20Kubernetes%20Cluster%20Upgrades%20Using%20Operators.pptx",
+    "evtid": "1i7kt",
     "url": "event/1i7kt/automated-multi-cloud-multi-flavor-kubernetes-cluster-upgrades-using-operators-ziyuan-chen-databricks",
     "videoUrl": "https://www.youtube.com/watch?v=LldZE-nNNj0&list=PLj6h78yzYM2Pw4mRw4S-1p_xLARMqPkA7&index=131&pp=iAQB"
   },
@@ -5437,6 +5699,7 @@
       "Intermediate"
     ],
     "slidesUrl": "https://static.sched.com/hosted_files/kccncna2024/44/Automated%20Multi-Cloud%20Large%20Scale%20K8s%20Cluster%20Lifecycle%20Management.pdf",
+    "evtid": "1i7km",
     "url": "event/1i7km/automated-multi-cloud-large-scale-k8s-cluster-lifecycle-management-sourav-khandelwal-databricks",
     "videoUrl": "https://www.youtube.com/watch?v=9E7lenP6pFc&list=PLj6h78yzYM2Pw4mRw4S-1p_xLARMqPkA7&index=33&pp=iAQB"
   },
@@ -5459,6 +5722,7 @@
       "Intermediate"
     ],
     "slidesUrl": null,
+    "evtid": "1i7kw",
     "url": "event/1i7kw/the-hard-truth-about-gitops-and-database-rollbacks-rotem-tamir-ariga",
     "videoUrl": "https://www.youtube.com/watch?v=jMJ0JSSUmd8&list=PLj6h78yzYM2Pw4mRw4S-1p_xLARMqPkA7&index=178&pp=iAQB"
   },
@@ -5481,6 +5745,7 @@
       "Any"
     ],
     "slidesUrl": "https://static.sched.com/hosted_files/kccncna2024/27/slides.pdf",
+    "evtid": "1i7ks",
     "url": "event/1i7ks/breaking-free-from-vulnerability-scanning-noise-automated-vex-aggregation-for-accuracy-teppei-fukuda-aqua-security-software-ltd",
     "videoUrl": "https://www.youtube.com/watch?v=-9_r-Cg4A6Y&list=PLj6h78yzYM2Pw4mRw4S-1p_xLARMqPkA7&index=125&pp=iAQB"
   },
@@ -5509,6 +5774,7 @@
       "Security"
     ],
     "slidesUrl": null,
+    "evtid": "1kGDV",
     "url": "event/1kGDV/an-introduction-to-capture-the-flag-andy-martin-kevin-ward-controlplane",
     "videoUrl": null
   },
@@ -5521,6 +5787,7 @@
       "Breaks"
     ],
     "slidesUrl": null,
+    "evtid": "1iGB5",
     "url": "event/1iGB5/lunch",
     "videoUrl": null
   },
@@ -5534,6 +5801,7 @@
       "Network Nook"
     ],
     "slidesUrl": null,
+    "evtid": "1oxss",
     "url": "event/1oxss/network-nook-table-talks-platform-engineering-ai-platforms",
     "videoUrl": null
   },
@@ -5546,6 +5814,7 @@
       "Diversity + Equity + Inclusion"
     ],
     "slidesUrl": null,
+    "evtid": "1qKKF",
     "url": "event/1qKKF/bipoc-community-gathering",
     "videoUrl": null
   },
@@ -5559,6 +5828,7 @@
       "Project Pavilion Tour"
     ],
     "slidesUrl": null,
+    "evtid": "1lWa9",
     "url": "event/1lWa9/project-pavilion-tour-with-orlin-vasilev-cncf-ambassador",
     "videoUrl": null
   },
@@ -5581,6 +5851,7 @@
       "Learning Lounge"
     ],
     "slidesUrl": null,
+    "evtid": "1rFnT",
     "url": "event/1rFnT/learning-lounge-the-quantum-shift-how-quantum-is-reshaping-cybersecurity-tim-serewicz-linux-foundation-education",
     "videoUrl": null
   },
@@ -5603,6 +5874,7 @@
       "Learning Lounge"
     ],
     "slidesUrl": null,
+    "evtid": "1rFnU",
     "url": "event/1rFnU/learning-lounge-3-2-1-certify-everything-you-want-to-know-about-exams-but-are-afraid-to-ask-caitriona-mulholland-linux-foundation-education",
     "videoUrl": null
   },
@@ -5625,6 +5897,7 @@
       "Any"
     ],
     "slidesUrl": null,
+    "evtid": "1i7lY",
     "url": "event/1i7lY/architecting-the-future-of-ai-from-cloud-native-orchestration-to-advanced-llmops-lily-xiaoxuan-liu-anyscale",
     "videoUrl": "https://www.youtube.com/watch?v=vhvv5DQwo0s&list=PLj6h78yzYM2Pw4mRw4S-1p_xLARMqPkA7&index=159&pp=iAQB"
   },
@@ -5667,6 +5940,7 @@
       "AI + ML"
     ],
     "slidesUrl": null,
+    "evtid": "1qKHp",
     "url": "event/1qKHp/bof-ai-training-in-kubernetes-bof-marlow-weston-schedmd-ricardo-rocha-cern-alex-scammon-g-research-frederick-kautz-testifysec",
     "videoUrl": null
   },
@@ -5696,6 +5970,7 @@
       "Intermediate"
     ],
     "slidesUrl": "https://static.sched.com/hosted_files/kccncna2024/a5/optimizing-llm-performance.pdf",
+    "evtid": "1i7lA",
     "url": "event/1i7lA/optimizing-llm-performance-in-kubernetes-with-opentelemetry-ashok-chandrasekar-google-liudmila-molkova-microsoft",
     "videoUrl": "https://www.youtube.com/watch?v=6rdeFACyyYg&list=PLj6h78yzYM2Pw4mRw4S-1p_xLARMqPkA7&index=150&pp=iAQB"
   },
@@ -5725,6 +6000,7 @@
       "Any"
     ],
     "slidesUrl": null,
+    "evtid": "1i7lV",
     "url": "event/1i7lV/choose-your-own-adventure-the-observability-odyssey-whitney-lee-cncf-ambassador-viktor-farcic-upbound",
     "videoUrl": "https://www.youtube.com/watch?v=R3CFETvCBFU&list=PLj6h78yzYM2Pw4mRw4S-1p_xLARMqPkA7&index=182&pp=iAQB"
   },
@@ -5754,6 +6030,7 @@
       "Advanced"
     ],
     "slidesUrl": "https://static.sched.com/hosted_files/kccncna2024/08/kubecon_cilium_wireguard.pdf",
+    "evtid": "1i7lP",
     "url": "event/1i7lP/cilium-ebpf-wireguard-can-we-tame-the-network-encryption-performance-gap-daniel-borkmann-anton-protopopov-isovalent",
     "videoUrl": "https://www.youtube.com/watch?v=oXhNVj80Z8A&list=PLj6h78yzYM2Pw4mRw4S-1p_xLARMqPkA7&index=146&pp=iAQB"
   },
@@ -5783,6 +6060,7 @@
       "Intermediate"
     ],
     "slidesUrl": "https://static.sched.com/hosted_files/kccncna2024/ed/KCNA24%20-%20AIStore.pptx.pdf",
+    "evtid": "1i7lG",
     "url": "event/1i7lG/aistore-as-a-fast-tier-storage-solution-enhancing-petascale-deep-learning-across-cloud-backends-abhishek-gaikwad-aaron-wilson-nvidia",
     "videoUrl": "https://www.youtube.com/watch?v=N-d9cbROndg&list=PLj6h78yzYM2Pw4mRw4S-1p_xLARMqPkA7&index=140&pp=iAQB"
   },
@@ -5812,6 +6090,7 @@
       "Advanced"
     ],
     "slidesUrl": null,
+    "evtid": "1i7lW",
     "url": "event/1i7lW/cloud-native-sustainability-speedrun-tools-from-infrastructure-to-application-level-saiyam-pathak-loft-labs-saloni-narang-kubesimplify",
     "videoUrl": "https://www.youtube.com/watch?v=X-0zyyWRkiM&list=PLj6h78yzYM2Pw4mRw4S-1p_xLARMqPkA7&index=164&pp=iAQB"
   },
@@ -5834,6 +6113,7 @@
       "Steering"
     ],
     "slidesUrl": null,
+    "evtid": "1hovk",
     "url": "event/1hovk/guiding-kubernetes-the-steering-committees-role-in-project-evolution-maciej-szulik-defense-unicorns",
     "videoUrl": "https://www.youtube.com/watch?v=qZNnA562sJY&list=PLj6h78yzYM2Pw4mRw4S-1p_xLARMqPkA7&index=98&pp=iAQB"
   },
@@ -5863,6 +6143,7 @@
       "Harbor"
     ],
     "slidesUrl": "https://static.sched.com/hosted_files/kccncna2024/49/KCNA24-Harbor-Maintainers-track.pptx.pdf",
+    "evtid": "1hovh",
     "url": "event/1hovh/harbor-project-the-maintainers-session-what-we-have-accomplished-orlin-vasilev-suse-vadim-bauer-8gears-container-registry",
     "videoUrl": "https://www.youtube.com/watch?v=4wD6f4M-1Xs&list=PLj6h78yzYM2Pw4mRw4S-1p_xLARMqPkA7&index=154&pp=iAQB"
   },
@@ -5885,6 +6166,7 @@
       "Data Protection"
     ],
     "slidesUrl": null,
+    "evtid": "1hovn",
     "url": "event/1hovn/kubernetes-data-protection-wg-deep-dive-dave-smith-uchida-veeam",
     "videoUrl": "https://www.youtube.com/watch?v=eCwtL86vXak&list=PLj6h78yzYM2Pw4mRw4S-1p_xLARMqPkA7&index=112&pp=iAQB"
   },
@@ -5921,6 +6203,7 @@
       "Device Management"
     ],
     "slidesUrl": "https://static.sched.com/hosted_files/kccncna2024/1e/%5BPUBLIC%5D%202024%20KubeCon%20NA%20-%20WG%20Dev%20Mgmt%20Updates.pdf",
+    "evtid": "1hovp",
     "url": "event/1hovp/kubernetes-wg-device-management-advancing-k8s-support-for-gpus-john-belamaric-google-patrick-ohly-intel-kevin-klues-nvidia",
     "videoUrl": "https://www.youtube.com/watch?v=zpFj7ZA6E14&list=PLj6h78yzYM2Pw4mRw4S-1p_xLARMqPkA7&index=104&pp=iAQB"
   },
@@ -5964,8 +6247,9 @@
       "Multicluster"
     ],
     "slidesUrl": "https://static.sched.com/hosted_files/kccncna2024/d4/SIG-Multicluster%20intro%20%26%20deep%20dive%20KCNA24.pdf",
+    "evtid": "1hove",
     "url": "event/1hove/sig-multicluster-intro-and-deep-dive-jeremy-olmsted-thompson-laura-lorenz-google-ryan-zhang-microsoft-stephen-kitt-red-hat",
-    "videoUrl": "https://www.youtube.com/watch?v=6nuCNCK_sdA&list=PLj6h78yzYM2Pw4mRw4S-1p_xLARMqPkA7&index=118&pp=iAQB"
+    "videoUrl": null
   },
   {
     "title": "Unifying Observability: Correlating Metrics, Traces, and Logs with Exemplars and OpenTelemetry ",
@@ -5993,6 +6277,7 @@
       "Intermediate"
     ],
     "slidesUrl": null,
+    "evtid": "1i7lJ",
     "url": "event/1i7lJ/unifying-observability-correlating-metrics-traces-and-logs-with-exemplars-and-opentelemetry-kruthika-prasanna-simha-charlie-le-apple",
     "videoUrl": "https://www.youtube.com/watch?v=zYF1JIZmpI4&list=PLj6h78yzYM2Pw4mRw4S-1p_xLARMqPkA7&index=135&pp=iAQB"
   },
@@ -6022,6 +6307,7 @@
       "Intermediate"
     ],
     "slidesUrl": "https://static.sched.com/hosted_files/kccncna2024/94/KCNA24-KS-Braulio-Ezra.pdf",
+    "evtid": "1i7lN",
     "url": "event/1i7lN/does-my-k8s-application-need-cpr-performance-evaluation-of-a-multi-cluster-workload-management-app-braulio-dumba-ezra-silvera-ibm",
     "videoUrl": "https://www.youtube.com/watch?v=PEMo5WVNzJg&list=PLj6h78yzYM2Pw4mRw4S-1p_xLARMqPkA7&index=130&pp=iAQB"
   },
@@ -6044,6 +6330,7 @@
       "Intermediate"
     ],
     "slidesUrl": "https://static.sched.com/hosted_files/kccncna2024/8e/KCNA24-Better%20Pod%20Availability.pdf",
+    "evtid": "1i7lD",
     "url": "event/1i7lD/better-pod-availability-a-survey-of-the-many-ways-to-manage-workload-disruptions-zach-loafman-google",
     "videoUrl": "https://www.youtube.com/watch?v=XN1vJmrdhpA&list=PLj6h78yzYM2Pw4mRw4S-1p_xLARMqPkA7&index=20&pp=iAQB"
   },
@@ -6073,6 +6360,7 @@
       "Any"
     ],
     "slidesUrl": "https://static.sched.com/hosted_files/kccncna2024/06/KCNA24%20Secure%20by%20Design%20CI_CD_%20Practical%20Insights%20from%20Adobe%20and%20Autodesk.pdf",
+    "evtid": "1i7lS",
     "url": "event/1i7lS/secure-by-design-cicd-practical-insights-from-adobe-and-autodesk-vikram-sethi-adobe-inc-jesse-sanford-autodesk",
     "videoUrl": "https://www.youtube.com/watch?v=gIkCVKTnCZw&list=PLj6h78yzYM2Pw4mRw4S-1p_xLARMqPkA7&index=167&pp=iAQB"
   },
@@ -6095,6 +6383,7 @@
       "Advanced"
     ],
     "slidesUrl": null,
+    "evtid": "1i7lM",
     "url": "event/1i7lM/bridging-clouds-tiktoks-blueprint-for-unified-oidc-access-on-multi-cloud-kubernetes-naveen-mogulla-tiktok",
     "videoUrl": "https://www.youtube.com/watch?v=3flO98UANDU&list=PLj6h78yzYM2Pw4mRw4S-1p_xLARMqPkA7&index=124&pp=iAQB"
   },
@@ -6123,6 +6412,7 @@
       "Security"
     ],
     "slidesUrl": null,
+    "evtid": "1kGCI",
     "url": "event/1kGCI/an-introduction-to-capture-the-flag-andy-martin-kevin-ward-controlplane",
     "videoUrl": null
   },
@@ -6145,6 +6435,7 @@
       "Learning Lounge"
     ],
     "slidesUrl": null,
+    "evtid": "1rFnc",
     "url": "event/1rFnc/learning-lounge-ask-it-certification-exams-caitriona-mulholland-linux-foundation-education",
     "videoUrl": null
   },
@@ -6175,6 +6466,7 @@
       "Intermediate"
     ],
     "slidesUrl": "https://static.sched.com/hosted_files/kccncna2024/f6/Kubecon%20NA%202024%20Confidential%20Containers%20101.pptx",
+    "evtid": "1i7l7",
     "url": "event/1i7l7/tutorial-confidential-containers-101-a-hands-on-workshop-archana-choudhary-suraj-deshmukh-microsoft",
     "videoUrl": "https://www.youtube.com/watch?v=n2M_vvUGO4U&list=PLj6h78yzYM2Pw4mRw4S-1p_xLARMqPkA7&index=108&pp=iAQB"
   },
@@ -6187,6 +6479,7 @@
       "Diversity + Equity + Inclusion"
     ],
     "slidesUrl": null,
+    "evtid": "1qKKw",
     "url": "event/1qKKw/lgbtqia-advocacy-discussion",
     "videoUrl": null
   },
@@ -6216,6 +6509,7 @@
       "Intermediate"
     ],
     "slidesUrl": "https://static.sched.com/hosted_files/kccncna2024/7b/KCNA24_%20A%20Tale%20of%202%20Drivers_%20GPU%20Configuration%20on%20the%20Fly%20Using%20DRA%20%282%29.pdf",
+    "evtid": "1i7lw",
     "url": "event/1i7lw/a-tale-of-2-drivers-gpu-configuration-on-the-fly-using-dra-alay-patel-varun-ramachandra-sekar-us-nvidia",
     "videoUrl": "https://www.youtube.com/watch?v=xE_no5_6Ie0&list=PLj6h78yzYM2Pw4mRw4S-1p_xLARMqPkA7&index=157&pp=iAQB"
   },
@@ -6238,6 +6532,7 @@
       "Any"
     ],
     "slidesUrl": "https://static.sched.com/hosted_files/kccncna2024/e1/David%20Gray%20-%20KCNA24%20-%20LLM%20Inference%20load%20balancing%20and%20autoscaling.pdf",
+    "evtid": "1i7lb",
     "url": "event/1i7lb/optimizing-load-balancing-and-autoscaling-for-large-language-model-llm-inference-on-kubernetes-david-gray-red-hat",
     "videoUrl": "https://www.youtube.com/watch?v=TSEGAh1bs4A&list=PLj6h78yzYM2Pw4mRw4S-1p_xLARMqPkA7&index=147&pp=iAQB"
   },
@@ -6267,6 +6562,7 @@
       "Beginner"
     ],
     "slidesUrl": null,
+    "evtid": "1i7lr",
     "url": "event/1i7lr/create-distribute-a-plugin-for-kubernetes-kubectl-in-few-minutes-easy-aurelie-vache-ovhcloud-gaelle-acas-doctolib",
     "videoUrl": "https://www.youtube.com/watch?v=RoYnJtlbxE4&list=PLj6h78yzYM2Pw4mRw4S-1p_xLARMqPkA7&index=181&pp=iAQB"
   },
@@ -6289,6 +6585,7 @@
       "Beginner"
     ],
     "slidesUrl": "https://static.sched.com/hosted_files/kccncna2024/31/ExtendingGatewayAPI_Policy.pdf",
+    "evtid": "1i7ln",
     "url": "event/1i7ln/extending-the-gateway-api-the-power-and-challenges-of-policies-kate-osborn-nginx",
     "videoUrl": "https://www.youtube.com/watch?v=haeVAmhihT4&list=PLj6h78yzYM2Pw4mRw4S-1p_xLARMqPkA7&index=145&pp=iAQB"
   },
@@ -6311,6 +6608,7 @@
       "Advanced"
     ],
     "slidesUrl": "https://static.sched.com/hosted_files/kccncna2024/6b/Effective%20Data%20Platforming.pdf",
+    "evtid": "1i7lf",
     "url": "event/1i7lf/effective-data-platforming-with-open-source-tools-for-faster-insights-priyanka-j-naik-palo-alto-networks-inc",
     "videoUrl": "https://www.youtube.com/watch?v=4X-Y1ziWGbc&list=PLj6h78yzYM2Pw4mRw4S-1p_xLARMqPkA7&index=139&pp=iAQB"
   },
@@ -6340,6 +6638,7 @@
       "Advanced"
     ],
     "slidesUrl": "https://static.sched.com/hosted_files/kccncna2024/82/Deep%20dive%20into%20Generic%20Control%20Planes%20%20and%20kcp.pdf",
+    "evtid": "1i7lu",
     "url": "event/1i7lu/deep-dive-into-generic-control-planes-and-kcp-stefan-schimanski-upbound-mangirdas-judeikis-cast-ai",
     "videoUrl": "https://www.youtube.com/watch?v=R9YUOo0MwqY&list=PLj6h78yzYM2Pw4mRw4S-1p_xLARMqPkA7&index=162&pp=iAQB"
   },
@@ -6369,6 +6668,7 @@
       "Contributor Strategy"
     ],
     "slidesUrl": null,
+    "evtid": "1hovv",
     "url": "event/1hovv/how-to-get-started-contributing-in-the-cncf-destiny-oconnor-women-blessing-women-riaan-kleinhans-linux-foundation",
     "videoUrl": "https://www.youtube.com/watch?v=8qnSMnWqifg&list=PLj6h78yzYM2Pw4mRw4S-1p_xLARMqPkA7&index=97&pp=iAQB"
   },
@@ -6398,6 +6698,7 @@
       "Istio"
     ],
     "slidesUrl": "https://static.sched.com/hosted_files/kccncna2024/f8/KubeCon%20NA%2024_%20Life%20of%20a%20Packet_%20Ambient%20Edition.pdf",
+    "evtid": "1hovw",
     "url": "event/1hovw/life-of-a-packet-ambient-edition-john-howard-soloio-keith-mattix-microsoft",
     "videoUrl": "https://www.youtube.com/watch?v=5IJwd9X5Yk8&list=PLj6h78yzYM2Pw4mRw4S-1p_xLARMqPkA7&index=111&pp=iAQB"
   },
@@ -6420,6 +6721,7 @@
       "Argo"
     ],
     "slidesUrl": "https://static.sched.com/hosted_files/kccncna2024/f2/Mastering%20ApplicationSet_%20Advanced%20Argo%20CD%20Automation.pptx.pdf",
+    "evtid": "1hovt",
     "url": "event/1hovt/mastering-applicationset-advanced-argo-cd-automation-alexander-matyushentsev-akuity",
     "videoUrl": "https://www.youtube.com/watch?v=9RvDczVIiS0&list=PLj6h78yzYM2Pw4mRw4S-1p_xLARMqPkA7&index=153&pp=iAQB"
   },
@@ -6470,6 +6772,7 @@
       "OpenTelemetry"
     ],
     "slidesUrl": null,
+    "evtid": "1hovy",
     "url": "event/1hovy/opentelemetry-project-update-alolita-sharma-apple-juraci-paixao-krohling-grafana-labs-ted-young-servicenow-morgan-mclean-splunk-daniel-dyla-dynatrace",
     "videoUrl": null
   },
@@ -6506,6 +6809,7 @@
       "Node"
     ],
     "slidesUrl": "https://static.sched.com/hosted_files/kccncna2024/4a/SIG%20Node%20maintainers%20track%20NA%202024.pptx.pdf",
+    "evtid": "1hovs",
     "url": "event/1hovs/sig-node-intro-and-deep-dive-sergey-kanzhelev-dawn-chen-google-mrunal-patel-red-hat",
     "videoUrl": "https://www.youtube.com/watch?v=k0rWZl8f9l0&list=PLj6h78yzYM2Pw4mRw4S-1p_xLARMqPkA7&index=117&pp=iAQB"
   },
@@ -6535,6 +6839,7 @@
       "Intermediate"
     ],
     "slidesUrl": "https://static.sched.com/hosted_files/kccncna2024/6c/Using%20OTel%20for%20Deep%20observability%20within%20messaging%20queue.pdf",
+    "evtid": "1i7li",
     "url": "event/1i7li/using-opentelemetry-for-deep-observability-within-messaging-queues-shivanshu-raj-shrivastava-ekansh-gupta-signoz",
     "videoUrl": "https://www.youtube.com/watch?v=4_gpoS1s_F8&list=PLj6h78yzYM2Pw4mRw4S-1p_xLARMqPkA7&index=134&pp=iAQB"
   },
@@ -6564,6 +6869,7 @@
       "Intermediate"
     ],
     "slidesUrl": "https://static.sched.com/hosted_files/kccncna2024/ef/KCNA24%20-%20GP_%20Setting%20New%20Standards%20for%20Reliability%20in%20Cloud-Native%20Applications.pdf",
+    "evtid": "1i7ll",
     "url": "event/1i7ll/setting-new-standards-for-reliability-in-cloud-native-multi-region-applications-trey-caliva-global-payments",
     "videoUrl": "https://www.youtube.com/watch?v=rLxsIEy20So&list=PLj6h78yzYM2Pw4mRw4S-1p_xLARMqPkA7&index=129&pp=iAQB"
   },
@@ -6586,6 +6892,7 @@
       "Any"
     ],
     "slidesUrl": "https://static.sched.com/hosted_files/kccncna2024/b2/KubeCon%202024%20talk.pptx",
+    "evtid": "1i7lc",
     "url": "event/1i7lc/cash-apps-journey-into-a-multi-cluster-ecosystem-rachel-sheikh-cash-app",
     "videoUrl": "https://www.youtube.com/watch?v=9TSNOVJ6BEY&list=PLj6h78yzYM2Pw4mRw4S-1p_xLARMqPkA7&index=31&pp=iAQB"
   },
@@ -6615,6 +6922,7 @@
       "Intermediate"
     ],
     "slidesUrl": "https://static.sched.com/hosted_files/kccncna2024/fd/ScaleJobTriggeringWithADistributedScheduler.pdf",
+    "evtid": "1i7lq",
     "url": "event/1i7lq/scale-job-triggering-with-a-distributed-scheduler-cassie-coyle-artur-souza-diagrid",
     "videoUrl": "https://www.youtube.com/watch?v=rMv4wbHhnxc&list=PLj6h78yzYM2Pw4mRw4S-1p_xLARMqPkA7&index=166&pp=iAQB"
   },
@@ -6644,6 +6952,7 @@
       "Intermediate"
     ],
     "slidesUrl": "https://static.sched.com/hosted_files/kccncna2024/ff/CEL-Ebrating%20Simplicity_%20Mastering%20Kubernetes%20Policy%20Enforcement.pdf",
+    "evtid": "1i7lk",
     "url": "event/1i7lk/cel-ebrating-simplicity-mastering-kubernetes-policy-enforcement-kevin-conner-getup-cloud-anish-ramasekar-microsoft",
     "videoUrl": "https://www.youtube.com/watch?v=7NO8HXzjLAk&list=PLj6h78yzYM2Pw4mRw4S-1p_xLARMqPkA7&index=123&pp=iAQB"
   },
@@ -6666,6 +6975,7 @@
       "Learning Lounge"
     ],
     "slidesUrl": null,
+    "evtid": "1rFng",
     "url": "event/1rFng/learning-lounge-become-a-kubestronaut-engineering-for-the-cloud-native-world-pedro-celestin-cldf",
     "videoUrl": null
   },
@@ -6678,6 +6988,7 @@
       "Breaks"
     ],
     "slidesUrl": null,
+    "evtid": "1iGAd",
     "url": "event/1iGAd/coffee-break",
     "videoUrl": null
   },
@@ -6690,6 +7001,7 @@
       "Diversity + Equity + Inclusion"
     ],
     "slidesUrl": null,
+    "evtid": "1pedK",
     "url": "event/1pedK/lgbtqia-community-gathering",
     "videoUrl": null
   },
@@ -6712,6 +7024,7 @@
       "Learning Lounge"
     ],
     "slidesUrl": null,
+    "evtid": "1rFnl",
     "url": "event/1rFnl/learning-lounge-ask-it-any-cncf-course-or-certification-christophe-sauthier-cncf",
     "videoUrl": null
   },
@@ -6762,6 +7075,7 @@
       "Intermediate"
     ],
     "slidesUrl": null,
+    "evtid": "1i7mO",
     "url": "event/1i7mO/making-kubernetes-simpler-for-accelerated-workloads-susan-wu-google-lucy-sweet-uber-mitch-mckenzie-weave-aditya-shanker-crusoe-rebecca-weekly-geico",
     "videoUrl": "https://www.youtube.com/watch?v=HlDj-obxxwQ&list=PLj6h78yzYM2Pw4mRw4S-1p_xLARMqPkA7&index=158&pp=iAQB"
   },
@@ -6791,6 +7105,7 @@
       "Intermediate"
     ],
     "slidesUrl": "https://static.sched.com/hosted_files/kccncna2024/b6/kubecon-2024na-platform-performance.pdf",
+    "evtid": "1i7m0",
     "url": "event/1i7m0/platform-performance-optimization-for-ai-a-resource-management-perspective-antti-kervinen-intel-dixita-narang-google",
     "videoUrl": "https://www.youtube.com/watch?v=__mh4txajIM&list=PLj6h78yzYM2Pw4mRw4S-1p_xLARMqPkA7&index=148&pp=iAQB"
   },
@@ -6812,6 +7127,7 @@
       "Cloud Native Experience"
     ],
     "slidesUrl": null,
+    "evtid": "1q7ze",
     "url": "event/1q7ze/end-user-tab-town-hall-moderated-by-taylor-dolezal-head-of-ecosystem-cloud-native-computing-foundation",
     "videoUrl": "https://www.youtube.com/watch?v=Ab6EQoOuIVY&list=PLj6h78yzYM2Pw4mRw4S-1p_xLARMqPkA7&index=34&pp=iAQB"
   },
@@ -6834,6 +7150,7 @@
       "Any"
     ],
     "slidesUrl": "https://static.sched.com/hosted_files/kccncna2024/6b/DNS%20Deep%20Dive%20in%20Kubernetes%20with%20CoreDNS%20%40kubecon%202024.pdf",
+    "evtid": "1i7mK",
     "url": "event/1i7mK/dns-deep-dive-in-kubernetes-with-coredns-jingming-guo-airbnb",
     "videoUrl": "https://www.youtube.com/watch?v=lAUmdIGP_fE&list=PLj6h78yzYM2Pw4mRw4S-1p_xLARMqPkA7&index=180&pp=iAQB"
   },
@@ -6863,8 +7180,9 @@
       "Intermediate"
     ],
     "slidesUrl": "https://static.sched.com/hosted_files/kccncna2024/6c/From_Observability_to_Performance_.pdf",
+    "evtid": "1i7mE",
     "url": "event/1i7mE/from-observability-to-performance-nadia-pinaeva-red-hat-antonio-ojea-google",
-    "videoUrl": "https://www.youtube.com/watch?v=uYo2O3jbJLk&list=PLj6h78yzYM2Pw4mRw4S-1p_xLARMqPkA7&index=144&pp=iAQB"
+    "videoUrl": null
   },
   {
     "title": "Building Resilience: Effective Backup and Disaster Recovery for Vector Databases on Kubernetes ",
@@ -6892,6 +7210,7 @@
       "Any"
     ],
     "slidesUrl": "https://static.sched.com/hosted_files/kccncna2024/0e/KCNA2024.pdf",
+    "evtid": "1i7m3",
     "url": "event/1i7m3/building-resilience-effective-backup-and-disaster-recovery-for-vector-databases-on-kubernetes-pavan-navarathna-shwetha-subramanian-veeam",
     "videoUrl": "https://www.youtube.com/watch?v=kl32-01tXE4&list=PLj6h78yzYM2Pw4mRw4S-1p_xLARMqPkA7&index=138&pp=iAQB"
   },
@@ -6921,6 +7240,7 @@
       "Intermediate"
     ],
     "slidesUrl": "https://static.sched.com/hosted_files/kccncna2024/1f/KCNA24%20KS%20SDF%20Braulio%20Gloire%2011102024.pdf",
+    "evtid": "1i7mL",
     "url": "event/1i7mL/experience-in-designing-implementing-a-cloud-native-framework-for-farm-data-analytics-braulio-dumba-ibm-gloire-rubambiza-cornell-university",
     "videoUrl": "https://www.youtube.com/watch?v=YR_f6tIA1QY&list=PLj6h78yzYM2Pw4mRw4S-1p_xLARMqPkA7&index=161&pp=iAQB"
   },
@@ -6950,8 +7270,9 @@
       "Container Network Interface"
     ],
     "slidesUrl": null,
+    "evtid": "1how8",
     "url": "event/1how8/cni-updates-and-direction-michael-zappa-microsoft-lionel-jouin-ericcson",
-    "videoUrl": "https://www.youtube.com/watch?v=Iq3_nOHVnyM&list=PLj6h78yzYM2Pw4mRw4S-1p_xLARMqPkA7&index=102&pp=iAQB"
+    "videoUrl": null
   },
   {
     "title": "Distributed Tracing with Jaeger and OpenTelemetry ",
@@ -6979,6 +7300,7 @@
       "Jaeger"
     ],
     "slidesUrl": "https://static.sched.com/hosted_files/kccncna2024/e9/Kubecon%20US%202024_%20Jaeger.pdf",
+    "evtid": "1hoyb",
     "url": "event/1hoyb/distributed-tracing-with-jaeger-and-opentelemetry-jonah-kowall-paessler-pavol-loffay-red-hat",
     "videoUrl": "https://www.youtube.com/watch?v=J2mXmwK3uss&list=PLj6h78yzYM2Pw4mRw4S-1p_xLARMqPkA7&index=110&pp=iAQB"
   },
@@ -7008,6 +7330,7 @@
       "Backstage"
     ],
     "slidesUrl": null,
+    "evtid": "1how4",
     "url": "event/1how4/how-to-expand-your-idp-the-new-building-blocks-of-backstage-ben-lambert-patrik-oldsberg-spotify",
     "videoUrl": "https://www.youtube.com/watch?v=BzPCJMQH8tg&list=PLj6h78yzYM2Pw4mRw4S-1p_xLARMqPkA7&index=96&pp=iAQB"
   },
@@ -7030,6 +7353,7 @@
       "Linkerd"
     ],
     "slidesUrl": null,
+    "evtid": "1how2",
     "url": "event/1how2/linkerd-update-ingress-egress-ipv6-enhanced-multicluster-rust-and-more-william-morgan-buoyant",
     "videoUrl": "https://www.youtube.com/watch?v=6Q35q0dlJoc&list=PLj6h78yzYM2Pw4mRw4S-1p_xLARMqPkA7&index=152&pp=iAQB"
   },
@@ -7073,6 +7397,7 @@
       "Instrumentation"
     ],
     "slidesUrl": null,
+    "evtid": "1how1",
     "url": "event/1how1/sig-instrumentation-introduction-and-deep-dive-han-kang-david-ashpole-richa-banker-google-damien-grisonnet-red-hat",
     "videoUrl": "https://www.youtube.com/watch?v=IAGjj4s3F_M&list=PLj6h78yzYM2Pw4mRw4S-1p_xLARMqPkA7&index=116&pp=iAQB"
   },
@@ -7095,6 +7420,7 @@
       "Any"
     ],
     "slidesUrl": null,
+    "evtid": "1i7m6",
     "url": "event/1i7m6/watching-the-watchers-how-we-do-continuous-reliability-at-grafana-labs-nicole-van-der-hoeven-grafana-labs",
     "videoUrl": "https://www.youtube.com/watch?v=pCxmwvqTklo&list=PLj6h78yzYM2Pw4mRw4S-1p_xLARMqPkA7&index=133&pp=iAQB"
   },
@@ -7124,6 +7450,7 @@
       "Advanced"
     ],
     "slidesUrl": "https://static.sched.com/hosted_files/kccncna2024/86/KCNA24%20-%20Kubernetes%20at%20Scale.pdf",
+    "evtid": "1i7mB",
     "url": "event/1i7mB/kubernetes-at-scale-practical-solutions-for-enhanced-cni-and-kubelet-performance-henrique-santana-amazon-web-services-bruno-gabriel-da-silva-sysdig",
     "videoUrl": "https://www.youtube.com/watch?v=1CpPc5hZ8AU&list=PLj6h78yzYM2Pw4mRw4S-1p_xLARMqPkA7&index=128&pp=iAQB"
   },
@@ -7146,6 +7473,7 @@
       "Intermediate"
     ],
     "slidesUrl": "https://static.sched.com/hosted_files/kccncna2024/c5/Laser%20focused%20deployments.pdf",
+    "evtid": "1i7mH",
     "url": "event/1i7mH/perform-laser-focused-deployments-by-deciding-in-advance-the-blast-radius-kostis-kapelonis-octopus-deploy",
     "videoUrl": "https://www.youtube.com/watch?v=95OFqU4UjiE&list=PLj6h78yzYM2Pw4mRw4S-1p_xLARMqPkA7&index=165&pp=iAQB"
   },
@@ -7175,6 +7503,7 @@
       "Intermediate"
     ],
     "slidesUrl": null,
+    "evtid": "1i7m9",
     "url": "event/1i7m9/expanding-the-capabilities-of-kubernetes-access-control-jimmy-zelinskie-authzed-lucas-kaldstrom-upbound",
     "videoUrl": "https://www.youtube.com/watch?v=IXHCSSQeXBg&list=PLj6h78yzYM2Pw4mRw4S-1p_xLARMqPkA7&index=122&pp=iAQB"
   },
@@ -7226,6 +7555,7 @@
       "Intermediate"
     ],
     "slidesUrl": null,
+    "evtid": "1i7lz",
     "url": "event/1i7lz/tutorial-get-the-most-out-of-your-gpus-on-kubernetes-with-the-gpu-operator-eduardo-arango-gutierrez-tariq-ibrahim-amanda-moran-christopher-desiniotis-nvidia-david-porter-google",
     "videoUrl": null
   },
@@ -7239,6 +7569,7 @@
       "Project Pavilion Tour"
     ],
     "slidesUrl": null,
+    "evtid": "1lWai",
     "url": "event/1lWai/end-user-project-pavilion-tour-with-jorge-castro-bob-killen-cncf",
     "videoUrl": null
   },
@@ -7268,6 +7599,7 @@
       "Intermediate"
     ],
     "slidesUrl": "https://static.sched.com/hosted_files/kccncna2024/36/Upload%20Kubecon%20Resilience%20for%20AI%20Training.pdf",
+    "evtid": "1i7mf",
     "url": "event/1i7mf/building-resilience-for-large-scale-ai-training-gpu-management-failure-detection-and-beyond-ganeshkumar-ashokavardhanan-microsoft-ace-eldeib-cohere",
     "videoUrl": "https://www.youtube.com/watch?v=iam7A5peA5U&list=PLj6h78yzYM2Pw4mRw4S-1p_xLARMqPkA7&index=143&pp=iAQB"
   },
@@ -7297,6 +7629,7 @@
       "Intermediate"
     ],
     "slidesUrl": "https://static.sched.com/hosted_files/kccncna2024/39/production-ai-at-scale.pptx.pdf",
+    "evtid": "1i7mR",
     "url": "event/1i7mR/production-ai-at-scale-clouderas-journey-in-building-a-robust-inference-platform-zoram-thanga-peter-ableda-cloudera",
     "videoUrl": "https://www.youtube.com/watch?v=VnTHlo56AI4&list=PLj6h78yzYM2Pw4mRw4S-1p_xLARMqPkA7&index=149&pp=iAQB"
   },
@@ -7326,6 +7659,7 @@
       "Buildpacks"
     ],
     "slidesUrl": "https://static.sched.com/hosted_files/kccncna2024/b3/Container%20Image%20Workflows%20at%20Scale%20with%20Buildpacks%20-%20Kubecon%20NA%202024%20%281%29.pdf",
+    "evtid": "1howD",
     "url": "event/1howD/container-image-workflows-at-scale-with-buildpacks-jesse-brown-terence-lee-heroku",
     "videoUrl": "https://www.youtube.com/watch?v=lT4ULcmhVT8&list=PLj6h78yzYM2Pw4mRw4S-1p_xLARMqPkA7&index=151&pp=iAQB"
   },
@@ -7355,6 +7689,7 @@
       "Observability"
     ],
     "slidesUrl": null,
+    "evtid": "1hoyY",
     "url": "event/1hoyY/observability-tag-round-up-and-whats-new-for-ai-observability-alolita-sharma-apple-chris-larsen-netflix",
     "videoUrl": "https://www.youtube.com/watch?v=xFrB0HHQZms&list=PLj6h78yzYM2Pw4mRw4S-1p_xLARMqPkA7&index=101&pp=iAQB"
   },
@@ -7384,6 +7719,7 @@
       "API Machinery"
     ],
     "slidesUrl": "https://static.sched.com/hosted_files/kccncna2024/94/Squashing%20Trampoline%20Pods.pdf",
+    "evtid": "1howB",
     "url": "event/1howB/squashing-trampoline-pods-the-future-of-securely-enabling-hardware-extensions-joe-betz-google-david-eads-red-hat",
     "videoUrl": "https://www.youtube.com/watch?v=qRo1Qw_Hr2A&list=PLj6h78yzYM2Pw4mRw4S-1p_xLARMqPkA7&index=115&pp=iAQB"
   },
@@ -7413,6 +7749,7 @@
       "OpenTelemetry"
     ],
     "slidesUrl": "https://static.sched.com/hosted_files/kccncna2024/d6/OTEL%20Network.pdf",
+    "evtid": "1how7",
     "url": "event/1how7/understanding-how-opentelemetry-network-uses-ebpf-for-network-observability-shivanshu-raj-shrivastava-signoz-jonathan-perry-perfpod",
     "videoUrl": "https://www.youtube.com/watch?v=Ljf671BSu2g&list=PLj6h78yzYM2Pw4mRw4S-1p_xLARMqPkA7&index=109&pp=iAQB"
   },
@@ -7435,6 +7772,7 @@
       "Cloudevents"
     ],
     "slidesUrl": null,
+    "evtid": "1hoxx",
     "url": "event/1hoxx/xregistry-looking-beyond-cloudevents-calum-murray-university-of-toronto",
     "videoUrl": "https://www.youtube.com/watch?v=FW-yBJNgPaw&list=PLj6h78yzYM2Pw4mRw4S-1p_xLARMqPkA7&index=95&pp=iAQB"
   },
@@ -7464,6 +7802,7 @@
       "Any"
     ],
     "slidesUrl": "https://static.sched.com/hosted_files/kccncna2024/5f/OTTL%20Cookbook.pdf",
+    "evtid": "1i7mZ",
     "url": "event/1i7mZ/the-ottl-cookbook-a-collection-of-solutions-to-common-problems-tyler-helmuth-honeycomb-evan-bradley-dynatrace",
     "videoUrl": "https://www.youtube.com/watch?v=UGTU0-KT_60&list=PLj6h78yzYM2Pw4mRw4S-1p_xLARMqPkA7&index=132&pp=iAQB"
   },
@@ -7493,6 +7832,7 @@
       "Advanced"
     ],
     "slidesUrl": "https://static.sched.com/hosted_files/kccncna2024/9a/largeScalePerformance.pdf",
+    "evtid": "1i7md",
     "url": "event/1i7md/misadventures-in-large-scale-cluster-performance-shane-corbett-aws-dima-ilchenko-lacework",
     "videoUrl": "https://www.youtube.com/watch?v=wvpWmWzOPiQ&list=PLj6h78yzYM2Pw4mRw4S-1p_xLARMqPkA7&index=127&pp=iAQB"
   },
@@ -7543,6 +7883,7 @@
       "Intermediate"
     ],
     "slidesUrl": null,
+    "evtid": "1i7mT",
     "url": "event/1i7mT/creating-paved-paths-for-platform-engineers-ritesh-patel-nirmata-abby-bangser-syntasso-viktor-farcic-upbound-nicholas-morey-akuity-praseeda-sathaye-amazon",
     "videoUrl": null
   },
@@ -7572,8 +7913,9 @@
       "Intermediate"
     ],
     "slidesUrl": null,
+    "evtid": "1i7kY",
     "url": "event/1i7kY/taming-your-applications-environments-marcos-lilljedahl-dagger-mauricio-salaboy-salatino-diagrid",
-    "videoUrl": "https://www.youtube.com/watch?v=PSenmCMU5mQ&list=PLj6h78yzYM2Pw4mRw4S-1p_xLARMqPkA7&index=163&pp=iAQB"
+    "videoUrl": null
   },
   {
     "title": "From Observability to Enforcement: Lessons Learned Implementing eBPF Runtime Security ",
@@ -7601,6 +7943,7 @@
       "Intermediate"
     ],
     "slidesUrl": "https://static.sched.com/hosted_files/kccncna2024/f0/Kubecon%202024%20NA_%20From%20Observability%20to%20Enforcement_%20Lessons%20Learned%20Implementing%20eBPF%20Runtime%20Security.pdf",
+    "evtid": "1i7ma",
     "url": "event/1i7ma/from-observability-to-enforcement-lessons-learned-implementing-ebpf-runtime-security-anna-kapuscinska-kornilios-kourtis-isovalent",
     "videoUrl": "https://www.youtube.com/watch?v=Hw469I5GKmY&list=PLj6h78yzYM2Pw4mRw4S-1p_xLARMqPkA7&index=121&pp=iAQB"
   },
@@ -7630,6 +7973,7 @@
       "Any"
     ],
     "slidesUrl": "https://static.sched.com/hosted_files/kccncna2024/b7/Stop%20Using%20Long%20Lived%20Credentials%20-%20Workload%20Identiy%20Federation.pptx.pdf",
+    "evtid": "1i7s8",
     "url": "event/1i7s8/workload-identity-federation-stop-using-long-lived-credentials-benjamin-dronen-ford-motor-company-anjali-telang-red-hat",
     "videoUrl": "https://www.youtube.com/watch?v=qqayHSkiNXU&list=PLj6h78yzYM2Pw4mRw4S-1p_xLARMqPkA7&index=160&pp=iAQB"
   },
@@ -7642,6 +7986,7 @@
       "Experiences"
     ],
     "slidesUrl": null,
+    "evtid": "1mu9A",
     "url": "event/1mu9A/cncf-end-user-reception",
     "videoUrl": null
   },
@@ -7654,6 +7999,7 @@
       "Experiences"
     ],
     "slidesUrl": null,
+    "evtid": "1icVN",
     "url": "event/1icVN/kubecrawl-cloudnativefest-sponsored-by-cdw",
     "videoUrl": null
   },
@@ -7684,6 +8030,7 @@
       "Intermediate"
     ],
     "slidesUrl": null,
+    "evtid": "1i7mv",
     "url": "event/1i7mv/poster-session-ps01-climatik-cloud-native-sustainable-llm-via-power-capping-chen-wang-ibm-vincent-hou-bloomberg-lp",
     "videoUrl": null
   },
@@ -7707,6 +8054,7 @@
       "Intermediate"
     ],
     "slidesUrl": "https://static.sched.com/hosted_files/kccncna2024/71/_Poster%20slide%20-%20Kubecon%20%28Mic%29.pdf",
+    "evtid": "1i7ml",
     "url": "event/1i7ml/poster-session-ps02-0000-day-exploiting-localhost-apis-from-the-browser-mic-mccully-oligo",
     "videoUrl": null
   },
@@ -7737,6 +8085,7 @@
       "Intermediate"
     ],
     "slidesUrl": "https://static.sched.com/hosted_files/kccncna2024/25/Poster%20Unleashing%20the%20Power%20of%20Init%20and%20Sidecar%20Containers%20-%20KubeCon%20NA%202024.pdf",
+    "evtid": "1i7mx",
     "url": "event/1i7mx/poster-session-ps03-unleashing-the-power-of-init-and-sidecar-containers-in-kubernetes-carlos-sanchez-natalia-angulo-adobe",
     "videoUrl": null
   },
@@ -7760,6 +8109,7 @@
       "Intermediate"
     ],
     "slidesUrl": null,
+    "evtid": "1i7my",
     "url": "event/1i7my/poster-session-ps04-optimizing-pod-affinity-in-kubernetes-a-mathematical-approach-to-workload-placement-jack-xue-microsoft",
     "videoUrl": null
   },
@@ -7790,6 +8140,7 @@
       "Beginner"
     ],
     "slidesUrl": null,
+    "evtid": "1i7n1",
     "url": "event/1i7n1/poster-session-ps05-revolutionizing-windows-container-startup-performance-tina-wu-taylor-hope-microsoft",
     "videoUrl": null
   },
@@ -7813,6 +8164,7 @@
       "Intermediate"
     ],
     "slidesUrl": null,
+    "evtid": "1i7n0",
     "url": "event/1i7n0/poster-session-ps06-whats-happening-with-spiffe-and-wimse-daniel-feldman-qusaic",
     "videoUrl": null
   },
@@ -7843,6 +8195,7 @@
       "Intermediate"
     ],
     "slidesUrl": "https://static.sched.com/hosted_files/kccncna2024/38/Kubecon%20-%20IstioD%20Predictor.pdf",
+    "evtid": "1i7mr",
     "url": "event/1i7mr/poster-session-ps07-unleashing-the-power-of-prediction-to-proactively-scale-control-plane-components-anubhav-aeron-ryan-tay-intuit",
     "videoUrl": null
   },
@@ -7866,6 +8219,7 @@
       "Any"
     ],
     "slidesUrl": null,
+    "evtid": "1i7ms",
     "url": "event/1i7ms/poster-session-ps08-unveiling-anomalies-ebpf-based-detection-in-high-volume-encrypted-network-traffic-ben-smith-foley-rensselaer-center-for-open-source",
     "videoUrl": null
   },
@@ -7889,6 +8243,7 @@
       "Intermediate"
     ],
     "slidesUrl": null,
+    "evtid": "1i7mi",
     "url": "event/1i7mi/poster-session-ps09-kubernetes-as-a-geographically-distributed-system-chris-friesen-wind-river-systems",
     "videoUrl": null
   },
@@ -7919,6 +8274,7 @@
       "Intermediate"
     ],
     "slidesUrl": "https://static.sched.com/hosted_files/kccncna2024/c1/PS10-Accepting-Mortality.pdf",
+    "evtid": "1i7mo",
     "url": "event/1i7mo/poster-session-ps10-accepting-mortality-strategies-for-ultra-long-running-stateful-workloads-in-k8s-sebastian-beyvers-maria-hansen-giessen-university",
     "videoUrl": null
   },
@@ -7932,6 +8288,7 @@
       "Project Pavilion Tour"
     ],
     "slidesUrl": null,
+    "evtid": "1lWb7",
     "url": "event/1lWb7/project-pavilion-tour-with-aditya-soni-cncf-ambassador",
     "videoUrl": null
   },
@@ -7946,6 +8303,7 @@
       "Any"
     ],
     "slidesUrl": null,
+    "evtid": "1nx31",
     "url": "event/1nx31/clbo-clashloopbackoff",
     "videoUrl": null
   },
@@ -7958,6 +8316,7 @@
       "Sponsor-hosted Co-located Event"
     ],
     "slidesUrl": null,
+    "evtid": "1o9at",
     "url": "event/1o9at/heroku-aws-evening-social-hosted-by-heroku",
     "videoUrl": null
   },
@@ -7970,6 +8329,7 @@
       "Registration"
     ],
     "slidesUrl": null,
+    "evtid": "1iGVF",
     "url": "event/1iGVF/badge-pick-up",
     "videoUrl": null
   },
@@ -7982,6 +8342,7 @@
       "Registration"
     ],
     "slidesUrl": null,
+    "evtid": "1kiwR",
     "url": "event/1kiwR/badge-pick-up",
     "videoUrl": null
   },
@@ -7995,6 +8356,7 @@
       "Coat + Bag Check"
     ],
     "slidesUrl": null,
+    "evtid": "1nxni",
     "url": "event/1nxni/coat-bag-check",
     "videoUrl": null
   },
@@ -8016,6 +8378,7 @@
       "Keynote Sessions"
     ],
     "slidesUrl": null,
+    "evtid": "1iCRv",
     "url": "event/1iCRv/keynote-opening-remarks-kasper-borg-nissen-staff-platform-engineer-lunar",
     "videoUrl": null
   },
@@ -8051,6 +8414,7 @@
       "Keynote Sessions"
     ],
     "slidesUrl": null,
+    "evtid": "1iCRy",
     "url": "event/1iCRy/keynote-above-the-clouds-mountainous-achievements-with-end-users-taylor-dolezal-head-of-ecosystem-cncf",
     "videoUrl": "https://www.youtube.com/watch?v=TnYupUh6OIg&list=PLj6h78yzYM2Pw4mRw4S-1p_xLARMqPkA7&index=9&pp=iAQB"
   },
@@ -8072,6 +8436,7 @@
       "Keynote Sessions"
     ],
     "slidesUrl": "https://static.sched.com/hosted_files/kccncna2024/5c/LLM_gateway_11_12.pptx",
+    "evtid": "1iCSN",
     "url": "event/1iCSN/keynote-centralizing-simplifying-enterprise-ai-workflows-with-envoy-ai-gateway-alexa-griffith-senior-software-engineer-bloomberg",
     "videoUrl": "https://www.youtube.com/watch?v=do1viOk8nok&list=PLj6h78yzYM2Pw4mRw4S-1p_xLARMqPkA7&index=8&pp=iAQB"
   },
@@ -8084,6 +8449,7 @@
       "Keynote Sessions"
     ],
     "slidesUrl": null,
+    "evtid": "1iCSQ",
     "url": "event/1iCSQ/keynote-awards-ceremony",
     "videoUrl": null
   },
@@ -8112,6 +8478,7 @@
       "Keynote Sessions"
     ],
     "slidesUrl": null,
+    "evtid": "1noNv",
     "url": "event/1noNv/sponsored-keynote-a-new-frontier-for-kubernetes-network-security-idit-levine-founder-and-ceo-soloio-keith-babo-vp-of-product-soloio",
     "videoUrl": "https://www.youtube.com/watch?v=psZi_T1np4U&list=PLj6h78yzYM2Pw4mRw4S-1p_xLARMqPkA7&index=6&pp=iAQB"
   },
@@ -8133,6 +8500,7 @@
       "Keynote Sessions"
     ],
     "slidesUrl": null,
+    "evtid": "1iG6x",
     "url": "event/1iG6x/keynote-cloud-natives-next-decade-stable-secure-andready-for-disruption-nikhita-raghunath-principal-engineer-broadcom",
     "videoUrl": "https://www.youtube.com/watch?v=gMIhdUiHPps&list=PLj6h78yzYM2Pw4mRw4S-1p_xLARMqPkA7&index=5&pp=iAQB"
   },
@@ -8154,6 +8522,7 @@
       "Keynote Sessions"
     ],
     "slidesUrl": null,
+    "evtid": "1iCSh",
     "url": "event/1iCSh/sponsored-keynote-a-developers-guide-to-securing-your-software-supply-chain-toddy-mladenov-principal-product-manager-microsoft",
     "videoUrl": "https://www.youtube.com/watch?v=YQuzhSGGPNk&list=PLj6h78yzYM2Pw4mRw4S-1p_xLARMqPkA7&index=4&pp=iAQB"
   },
@@ -8182,6 +8551,7 @@
       "Keynote Sessions"
     ],
     "slidesUrl": null,
+    "evtid": "1noNs",
     "url": "event/1noNs/sponsored-keynote-application-developments-great-cloud-native-disruption-colin-walters-senior-principal-software-engineer-red-hat-preethi-thomas-senior-manager-engineering-red-hat",
     "videoUrl": "https://www.youtube.com/watch?v=wpXl_8RckB8&list=PLj6h78yzYM2Pw4mRw4S-1p_xLARMqPkA7&index=3&pp=iAQB"
   },
@@ -8210,6 +8580,7 @@
       "Keynote Sessions"
     ],
     "slidesUrl": null,
+    "evtid": "1iG7V",
     "url": "event/1iG7V/keynote-open-source-security-is-not-a-spectator-sport-justin-cappos-professor-nyu-santiago-torres-arias-assistant-professor-purdue-university",
     "videoUrl": "https://www.youtube.com/watch?v=tqvjzsNmJZ8&list=PLj6h78yzYM2Pw4mRw4S-1p_xLARMqPkA7&index=2&pp=iAQB"
   },
@@ -8222,6 +8593,7 @@
       "Keynote Sessions"
     ],
     "slidesUrl": null,
+    "evtid": "1iG7Y",
     "url": "event/1iG7Y/keynote-closing-remarks",
     "videoUrl": null
   },
@@ -8244,6 +8616,7 @@
       "Learning Lounge"
     ],
     "slidesUrl": null,
+    "evtid": "1rFo1",
     "url": "event/1rFo1/learning-lounge-rag-meets-quantum-just-say-yes-tim-serewicz-linux-foundation-education",
     "videoUrl": null
   },
@@ -8256,6 +8629,7 @@
       "Breaks"
     ],
     "slidesUrl": null,
+    "evtid": "1iGAg",
     "url": "event/1iGAg/coffee-break",
     "videoUrl": null
   },
@@ -8268,6 +8642,7 @@
       "Diversity + Equity + Inclusion"
     ],
     "slidesUrl": null,
+    "evtid": "1pee5",
     "url": "event/1pee5/be-part-of-the-solution-cultivating-inclusion-in-open-source-allyship-workshop",
     "videoUrl": null
   },
@@ -8280,6 +8655,7 @@
       "Project Opportunities"
     ],
     "slidesUrl": null,
+    "evtid": "1rh0m",
     "url": "event/1rh0m/project-pavilion-kiosks-thursday-morning",
     "videoUrl": null
   },
@@ -8292,6 +8668,7 @@
       "Experiences"
     ],
     "slidesUrl": null,
+    "evtid": "1oUNY",
     "url": "event/1oUNY/relaxation-station",
     "videoUrl": null
   },
@@ -8304,6 +8681,7 @@
       "Solutions Showcase"
     ],
     "slidesUrl": "https://events.linuxfoundation.org/wp-content/uploads/2024/10/KubeCon_NA_24_PrintSignage_SS_Map_6x8_10_v2.pdf",
+    "evtid": "1iGWn",
     "url": "event/1iGWn/solutions-showcase",
     "videoUrl": null
   },
@@ -8317,6 +8695,7 @@
       "Project Pavilion Tour"
     ],
     "slidesUrl": null,
+    "evtid": "1lWbS",
     "url": "event/1lWbS/cancelled-project-pavilion-tour-with-julia-furst-morgado-cncf-ambassador",
     "videoUrl": null
   },
@@ -8367,6 +8746,7 @@
       "Any"
     ],
     "slidesUrl": null,
+    "evtid": "1i7qR",
     "url": "event/1i7qR/from-vectors-to-pods-integrating-ai-with-cloud-native-rajas-kakodkar-broadcom-kevin-klues-nvidia-joseph-sandoval-adobe-ricardo-rocha-cern-dawn-chen-google",
     "videoUrl": null
   },
@@ -8396,6 +8776,7 @@
       "Any"
     ],
     "slidesUrl": "https://static.sched.com/hosted_files/kccncna2024/d0/KCNA24-Shifting-Gears-PDF.pdf",
+    "evtid": "1i7oE",
     "url": "event/1i7oE/shifting-gears-leveraging-cncf-tools-to-streamline-operations-at-toyota-connected-benson-phillips-rob-heckel-toyota-connected",
     "videoUrl": "https://www.youtube.com/watch?v=4w_AC81_GZM&list=PLj6h78yzYM2Pw4mRw4S-1p_xLARMqPkA7&index=199&pp=iAQB"
   },
@@ -8418,6 +8799,7 @@
       "Intermediate"
     ],
     "slidesUrl": null,
+    "evtid": "1i7nJ",
     "url": "event/1i7nJ/harnessing-the-power-of-envoy-proxy-for-building-an-llm-gateway-idit-levine-soloio",
     "videoUrl": "https://www.youtube.com/watch?v=b1C7nt8Mv4I&list=PLj6h78yzYM2Pw4mRw4S-1p_xLARMqPkA7&index=49&pp=iAQB"
   },
@@ -8447,6 +8829,7 @@
       "Intermediate"
     ],
     "slidesUrl": "https://static.sched.com/hosted_files/kccncna2024/a5/LI%20Kubecon%20-%20Cooperative%20Scheduling%20for%20Stateful%20Systems.pptx.pdf",
+    "evtid": "1i7n9",
     "url": "event/1i7n9/cooperative-scheduling-for-stateful-systems-michael-youssef-zhantong-shang-linkedin",
     "videoUrl": "https://www.youtube.com/watch?v=jB2MI7ZKw40&list=PLj6h78yzYM2Pw4mRw4S-1p_xLARMqPkA7&index=26&pp=iAQB"
   },
@@ -8476,6 +8859,7 @@
       "Intermediate"
     ],
     "slidesUrl": null,
+    "evtid": "1i7nS",
     "url": "event/1i7nS/kubernetes-workspaces-enhancing-multi-tenancy-with-intelligent-apiserver-proxying-james-munnelly-andrea-tosatto-apple",
     "videoUrl": "https://www.youtube.com/watch?v=9otBF7iQJfI&list=PLj6h78yzYM2Pw4mRw4S-1p_xLARMqPkA7&index=204&pp=iAQB"
   },
@@ -8498,6 +8882,7 @@
       "ArtifactHub"
     ],
     "slidesUrl": "https://static.sched.com/hosted_files/kccncna2024/6e/Artifact%20Hub.pdf",
+    "evtid": "1howN",
     "url": "event/1howN/artifact-hub-discover-analyze-and-share-cloud-native-artifacts-matt-farina-suse",
     "videoUrl": "https://www.youtube.com/watch?v=027rAkswODw&list=PLj6h78yzYM2Pw4mRw4S-1p_xLARMqPkA7&index=89&pp=iAQB"
   },
@@ -8527,6 +8912,7 @@
       "Flux"
     ],
     "slidesUrl": "https://static.sched.com/hosted_files/kccncna2024/96/KubeCon%202024%20NA%20-%20Flux.pdf",
+    "evtid": "1howJ",
     "url": "event/1howJ/gitops-at-production-scale-with-flux-leigh-capili-flox-priyanka-ravi-g-research",
     "videoUrl": "https://www.youtube.com/watch?v=lTyX3rRakHA&list=PLj6h78yzYM2Pw4mRw4S-1p_xLARMqPkA7&index=68&pp=iAQB"
   },
@@ -8556,6 +8942,7 @@
       "Apps"
     ],
     "slidesUrl": null,
+    "evtid": "1howE",
     "url": "event/1howE/sig-apps-powering-applications-with-high-volume-data-and-apis-maciej-szulik-defense-unicorns-janet-kuo-google",
     "videoUrl": "https://www.youtube.com/watch?v=NWZhAs69heA&list=PLj6h78yzYM2Pw4mRw4S-1p_xLARMqPkA7&index=65&pp=iAQB"
   },
@@ -8585,6 +8972,7 @@
       "SPIRE"
     ],
     "slidesUrl": "https://static.sched.com/hosted_files/kccncna2024/bc/SPIRE_%20Intro%20%26%20Forced%20Rotation%20and%20Revocation.pdf",
+    "evtid": "1howH",
     "url": "event/1howH/spire-intro-in-depth-exploration-of-the-upcoming-forced-rotation-and-revocation-feature-agustin-martinez-fayo-marcos-yacob-hewlett-packard-enterprise",
     "videoUrl": "https://www.youtube.com/watch?v=VWmBc1mexYo&list=PLj6h78yzYM2Pw4mRw4S-1p_xLARMqPkA7&index=77&pp=iAQB"
   },
@@ -8614,6 +9002,7 @@
       "CLI"
     ],
     "slidesUrl": null,
+    "evtid": "1howK",
     "url": "event/1howK/whats-new-with-kubectl-and-kustomize-and-how-you-can-help-eddie-zaneski-defense-unicorns-arda-guclu-red-hat",
     "videoUrl": "https://www.youtube.com/watch?v=EL2mx5Ukho8&list=PLj6h78yzYM2Pw4mRw4S-1p_xLARMqPkA7&index=93&pp=iAQB"
   },
@@ -8636,6 +9025,7 @@
       "Any"
     ],
     "slidesUrl": "https://static.sched.com/hosted_files/kccncna2024/8b/Adopting%20OTel%20-%20KCNA24.pptx.pdf",
+    "evtid": "1i7nC",
     "url": "event/1i7nC/lessons-learned-adopting-opentelemetry-at-scale-alex-arnell-heroku-salesforce",
     "videoUrl": "https://www.youtube.com/watch?v=5iM8n3uCo_U&list=PLj6h78yzYM2Pw4mRw4S-1p_xLARMqPkA7&index=32&pp=iAQB"
   },
@@ -8658,6 +9048,7 @@
       "Intermediate"
     ],
     "slidesUrl": "https://static.sched.com/hosted_files/kccncna2024/b8/Navigating%20the%20Cgroup%20Transition.pdf",
+    "evtid": "1i7nI",
     "url": "event/1i7nI/navigating-the-cgroup-transition-bridging-the-gap-between-kubernetes-and-user-expectations-sohan-kunkerkar-red-hat-inc",
     "videoUrl": "https://www.youtube.com/watch?v=I7LKKa2nARY&list=PLj6h78yzYM2Pw4mRw4S-1p_xLARMqPkA7&index=56&pp=iAQB"
   },
@@ -8680,6 +9071,7 @@
       "Any"
     ],
     "slidesUrl": "https://static.sched.com/hosted_files/kccncna2024/cd/Engineering_A_Kubernetes_Operator_FINAL.pdf",
+    "evtid": "1i7n6",
     "url": "event/1i7n6/engineering-a-kubernetes-operator-lessons-learned-from-versions-1-to-5-andrew-lecuyer-crunchy-data",
     "videoUrl": "https://www.youtube.com/watch?v=p2v7bPJkrVU&list=PLj6h78yzYM2Pw4mRw4S-1p_xLARMqPkA7&index=12&pp=iAQB"
   },
@@ -8709,6 +9101,7 @@
       "Any"
     ],
     "slidesUrl": "https://static.sched.com/hosted_files/kccncna2024/ac/Yahoo%E2%80%99s%20Kubernetes%20Journey%20from%20On-prem%20to%20Multi-cloud%20at%20Scale.pdf",
+    "evtid": "1i7rf",
     "url": "event/1i7rf/yahoos-kubernetes-journey-from-on-prem-to-multi-cloud-at-scale-nandhakumar-venkatachalam-payal-patel-yahoo",
     "videoUrl": "https://www.youtube.com/watch?v=vySVIZuLRcg&list=PLj6h78yzYM2Pw4mRw4S-1p_xLARMqPkA7&index=44&pp=iAQB"
   },
@@ -8738,6 +9131,7 @@
       "Intermediate"
     ],
     "slidesUrl": "https://static.sched.com/hosted_files/kccncna2024/86/Kubecon-NA-2024-Gitlab-CICD-Pipelines-Otel.pdf",
+    "evtid": "1i7nM",
     "url": "event/1i7nM/how-we-made-opentelemetry-be-our-fitness-tracker-for-your-cicd-pipelines-nicolas-woerner-clario-andreas-grabner-dynatrace",
     "videoUrl": "https://www.youtube.com/watch?v=IRNyf_MLHDw&list=PLj6h78yzYM2Pw4mRw4S-1p_xLARMqPkA7&index=59&pp=iAQB"
   },
@@ -8760,6 +9154,7 @@
       "Advanced"
     ],
     "slidesUrl": null,
+    "evtid": "1i7nF",
     "url": "event/1i7nF/from-silicon-to-service-ensuring-confidentiality-in-serverless-gpu-cloud-functions-zvonko-kaiser-nvidia",
     "videoUrl": "https://www.youtube.com/watch?v=nkZdNRXm3jY&list=PLj6h78yzYM2Pw4mRw4S-1p_xLARMqPkA7&index=18&pp=iAQB"
   },
@@ -8782,6 +9177,7 @@
       "Learning Lounge"
     ],
     "slidesUrl": null,
+    "evtid": "1rFns",
     "url": "event/1rFns/learning-lounge-ask-it-istio-certified-associate-ica-certification-peter-jausovec-soloio",
     "videoUrl": null
   },
@@ -8833,6 +9229,7 @@
       "Beginner"
     ],
     "slidesUrl": "https://static.sched.com/hosted_files/kccncna2024/79/Kubecon%20SLC%202024%20_%20Karpenter%20Workshop_1113_T2228.pdf",
+    "evtid": "1i7n3",
     "url": "event/1i7n3/tutorial-kubernetes-smart-scaling-getting-started-with-karpenter-changsu-lee-raj-saha-aws-wilson-darko-charlie-mcbride-microsoft-praseeda-sathaye-amazon",
     "videoUrl": null
   },
@@ -8882,6 +9279,7 @@
       "🚨 Contribfest"
     ],
     "slidesUrl": "https://static.sched.com/hosted_files/kccncna2024/53/KubeCon-ContribFest-Backstage-NA-2024.pdf",
+    "evtid": "1howP",
     "url": "event/1howP/contribfest-backstage-onboarding-your-journey-to-community-contribution",
     "videoUrl": null
   },
@@ -8917,6 +9315,7 @@
       "🚨 Contribfest"
     ],
     "slidesUrl": null,
+    "evtid": "1howS",
     "url": "event/1howS/contribfest-collaborative-webassembly-creation-with-wasmcloud",
     "videoUrl": null
   },
@@ -8929,6 +9328,7 @@
       "Security"
     ],
     "slidesUrl": null,
+    "evtid": "1kHKR",
     "url": "event/1kHKR/capture-the-flag-experience",
     "videoUrl": null
   },
@@ -8941,6 +9341,7 @@
       "Experiences"
     ],
     "slidesUrl": null,
+    "evtid": "1rg0f",
     "url": "event/1rg0f/project-pavilion-unconference-sessions",
     "videoUrl": null
   },
@@ -8970,6 +9371,7 @@
       "Any"
     ],
     "slidesUrl": "https://static.sched.com/hosted_files/kccncna2024/f4/KubeCon%20NA%202024.%20Democratizing%20AI%20Model%20Training%20on%20Kubernetes%20with%20Kubeflow%20TrainJob%20and%20JobSet.%20Andrey%20Velichkevich%20and%20Yuki%20Iwai.pdf",
+    "evtid": "1i7nV",
     "url": "event/1i7nV/democratizing-ai-model-training-on-kubernetes-with-kubeflow-trainjob-and-jobset-andrey-velichkevich-apple-yuki-iwai-cyberagent-inc",
     "videoUrl": "https://www.youtube.com/watch?v=Lgy4ir1AhYw&list=PLj6h78yzYM2Pw4mRw4S-1p_xLARMqPkA7&index=210&pp=iAQB"
   },
@@ -8999,6 +9401,7 @@
       "Beginner"
     ],
     "slidesUrl": "https://static.sched.com/hosted_files/kccncna2024/b1/Scratching%20the%20Surface.pptx.pdf",
+    "evtid": "1i7nk",
     "url": "event/1i7nk/scratching-the-surface-simulating-k8s-in-mit-scratch-mitch-connors-microsoft-jude-connors-independent",
     "videoUrl": "https://www.youtube.com/watch?v=yTXVvY7gTR8&list=PLj6h78yzYM2Pw4mRw4S-1p_xLARMqPkA7&index=45&pp=iAQB"
   },
@@ -9021,6 +9424,7 @@
       "Intermediate"
     ],
     "slidesUrl": "https://static.sched.com/hosted_files/kccncna2024/7e/How%20to%20Move%20from%20Ingress%20to%20Gateway%20API%20with%20Minimal%20Hassle%E2%80%8B.pptx",
+    "evtid": "1i7ng",
     "url": "event/1i7ng/how-to-move-from-ingress-to-gateway-api-with-minimal-hassle-keith-mattix-microsoft",
     "videoUrl": "https://www.youtube.com/watch?v=dyye6L6aKkA&list=PLj6h78yzYM2Pw4mRw4S-1p_xLARMqPkA7&index=50&pp=iAQB"
   },
@@ -9050,6 +9454,7 @@
       "Intermediate"
     ],
     "slidesUrl": "https://static.sched.com/hosted_files/kccncna2024/86/Harness-Portworx%20Kubecon%202024.pdf",
+    "evtid": "1i7na",
     "url": "event/1i7na/database-devops-cd-for-stateful-applications-stephen-atwell-harnessio-christopher-crow-pure-storage",
     "videoUrl": "https://www.youtube.com/watch?v=oXrHyOrUwB8&list=PLj6h78yzYM2Pw4mRw4S-1p_xLARMqPkA7&index=11&pp=iAQB"
   },
@@ -9079,6 +9484,7 @@
       "Any"
     ],
     "slidesUrl": "https://static.sched.com/hosted_files/kccncna2024/cd/running-quantum-safe-applications.pdf",
+    "evtid": "1i7nn",
     "url": "event/1i7nn/running-quantum-safe-applications-on-kubernetes-paul-schweigert-michael-maximilien-ibm-quantum",
     "videoUrl": "https://www.youtube.com/watch?v=6eQA15r6IHY&list=PLj6h78yzYM2Pw4mRw4S-1p_xLARMqPkA7&index=205&pp=iAQB"
   },
@@ -9108,6 +9514,7 @@
       "Knative"
     ],
     "slidesUrl": null,
+    "evtid": "1howe",
     "url": "event/1howe/01-to-116-how-has-knative-fulfilled-its-vision-calum-murray-university-of-toronto-evan-anderson-stacklok",
     "videoUrl": "https://www.youtube.com/watch?v=hjuRKV4yD-k&list=PLj6h78yzYM2Pw4mRw4S-1p_xLARMqPkA7&index=73&pp=iAQB"
   },
@@ -9151,8 +9558,9 @@
       "Cilium"
     ],
     "slidesUrl": "https://static.sched.com/hosted_files/kccncna2024/48/Cilium%20Project%20Update%20-%20KubeCon%20NA%2024.pdf",
+    "evtid": "1howZ",
     "url": "event/1howZ/cilium-connecting-observing-and-securing-kubernetes-and-beyond-with-ebpf-ahmed-bebars-the-new-york-times-joe-stevens-ascendio-bill-mulligan-anna-kapuscinska-isovalent-at-cisco",
-    "videoUrl": "https://www.youtube.com/watch?v=xJ_Jiv7y6N0&list=PLj6h78yzYM2Pw4mRw4S-1p_xLARMqPkA7&index=74&pp=iAQB"
+    "videoUrl": null
   },
   {
     "title": "Cluster API Deep Dive - Roadmap to API Graduation ",
@@ -9180,6 +9588,7 @@
       "Cluster Lifecycle"
     ],
     "slidesUrl": "https://static.sched.com/hosted_files/kccncna2024/90/KubeCon24%20%E2%80%94%20Cluster%20API%20Deep%20Dive.pdf",
+    "evtid": "1howc",
     "url": "event/1howc/cluster-api-deep-dive-roadmap-to-api-graduation-christian-schlotter-broadcom-vince-prignano-apple",
     "videoUrl": "https://www.youtube.com/watch?v=F2iO_cKKPuI&list=PLj6h78yzYM2Pw4mRw4S-1p_xLARMqPkA7&index=94&pp=iAQB"
   },
@@ -9202,6 +9611,7 @@
       "Network"
     ],
     "slidesUrl": null,
+    "evtid": "1howx",
     "url": "event/1howx/cncf-tag-network-intro-deep-dive-lee-calcote-layer5",
     "videoUrl": "https://www.youtube.com/watch?v=SlSX1H5ttAk&list=PLj6h78yzYM2Pw4mRw4S-1p_xLARMqPkA7&index=78&pp=iAQB"
   },
@@ -9224,8 +9634,9 @@
       "Autoscaling"
     ],
     "slidesUrl": null,
+    "evtid": "1howV",
     "url": "event/1howV/sig-autoscaling-projects-update-jack-francis-microsoft",
-    "videoUrl": "https://www.youtube.com/watch?v=3fr2J3G1s1U&list=PLj6h78yzYM2Pw4mRw4S-1p_xLARMqPkA7&index=85&pp=iAQB"
+    "videoUrl": null
   },
   {
     "title": "Cognitive and Self-Adaptive System for Effective Distributed-Tracing in Applications ",
@@ -9253,6 +9664,7 @@
       "Any"
     ],
     "slidesUrl": "https://static.sched.com/hosted_files/kccncna2024/9f/KubeCon2024.pdf",
+    "evtid": "1i7nb",
     "url": "event/1i7nb/cognitive-and-self-adaptive-system-for-effective-distributed-tracing-in-applications-mitul-tandon-akash-gusain",
     "videoUrl": "https://www.youtube.com/watch?v=9V_iLfYsScY&list=PLj6h78yzYM2Pw4mRw4S-1p_xLARMqPkA7&index=35&pp=iAQB"
   },
@@ -9282,6 +9694,7 @@
       "Intermediate"
     ],
     "slidesUrl": null,
+    "evtid": "1i7ne",
     "url": "event/1i7ne/multi-zone-clusters-inside-and-out-tom-dean-phil-henderson-buoyant",
     "videoUrl": "https://www.youtube.com/watch?v=drZJn3JHnXU&list=PLj6h78yzYM2Pw4mRw4S-1p_xLARMqPkA7&index=47&pp=iAQB"
   },
@@ -9311,6 +9724,7 @@
       "Any"
     ],
     "slidesUrl": "https://static.sched.com/hosted_files/kccncna2024/dc/Achilles%20Kubecon%20Talk%202024.pdf",
+    "evtid": "1i7nY",
     "url": "event/1i7nY/evolving-reddits-infrastructure-via-principled-platform-abstractions-karan-thukral-harvey-xia-reddit",
     "videoUrl": "https://www.youtube.com/watch?v=ruto5Sak-jI&list=PLj6h78yzYM2Pw4mRw4S-1p_xLARMqPkA7&index=13&pp=iAQB"
   },
@@ -9333,6 +9747,7 @@
       "Intermediate"
     ],
     "slidesUrl": "https://static.sched.com/hosted_files/kccncna2024/7f/From%20Chaos%20to%20Calm_%20Building%20a%20Unified%20and%20Scalable%20CI_CD%20Pipeline%20at%20Akamai.pdf",
+    "evtid": "1i7nh",
     "url": "event/1i7nh/from-chaos-to-calm-building-a-unified-and-scalable-cicd-pipeline-at-akamai-tomer-patel-akamai-technologies-inc",
     "videoUrl": "https://www.youtube.com/watch?v=RFVB9CEEn1I&list=PLj6h78yzYM2Pw4mRw4S-1p_xLARMqPkA7&index=60&pp=iAQB"
   },
@@ -9355,6 +9770,7 @@
       "Intermediate"
     ],
     "slidesUrl": "https://static.sched.com/hosted_files/kccncna2024/50/falcovstetragonvskubearmor.pdf",
+    "evtid": "1i7rE",
     "url": "event/1i7rE/what-agent-to-trust-with-your-k8s-falco-tetragon-or-kubearmor-henrik-rexed-dynatrace",
     "videoUrl": "https://www.youtube.com/watch?v=QKE8WMv-6qw&list=PLj6h78yzYM2Pw4mRw4S-1p_xLARMqPkA7&index=27&pp=iAQB"
   },
@@ -9367,6 +9783,7 @@
       "Experiences"
     ],
     "slidesUrl": null,
+    "evtid": "1oUFx",
     "url": "event/1oUFx/pet-a-pup-sponsored-by-sonatype",
     "videoUrl": null
   },
@@ -9379,6 +9796,7 @@
       "Breaks"
     ],
     "slidesUrl": null,
+    "evtid": "1iGCO",
     "url": "event/1iGCO/lunch",
     "videoUrl": null
   },
@@ -9391,6 +9809,7 @@
       "Diversity + Equity + Inclusion"
     ],
     "slidesUrl": null,
+    "evtid": "1mStN",
     "url": "event/1mStN/an-equitable-approach-to-higher-team-performance-dei-lunch-workshop-sponsored-by-intel",
     "videoUrl": null
   },
@@ -9403,6 +9822,7 @@
       "Experiences"
     ],
     "slidesUrl": null,
+    "evtid": "1oUD0",
     "url": "event/1oUD0/kubernetes-sig-meet-and-greet-lunch-learn",
     "videoUrl": null
   },
@@ -9416,6 +9836,7 @@
       "Network Nook"
     ],
     "slidesUrl": null,
+    "evtid": "1oxt1",
     "url": "event/1oxt1/network-nook-table-talks-security",
     "videoUrl": null
   },
@@ -9429,6 +9850,7 @@
       "Project Pavilion Tour"
     ],
     "slidesUrl": null,
+    "evtid": "1lWcM",
     "url": "event/1lWcM/project-pavilion-tour-with-orlin-vasilev-cncf-ambassador",
     "videoUrl": null
   },
@@ -9451,6 +9873,7 @@
       "Learning Lounge"
     ],
     "slidesUrl": null,
+    "evtid": "1rFnx",
     "url": "event/1rFnx/learning-lounge-webassemblys-moment-past-skepticism-future-ambitions-aleks-jones-linux-foundation-education",
     "videoUrl": null
   },
@@ -9463,6 +9886,7 @@
       "Project Opportunities"
     ],
     "slidesUrl": null,
+    "evtid": "1rhJH",
     "url": "event/1rhJH/project-pavilion-kiosks-thursday-afternoon",
     "videoUrl": null
   },
@@ -9492,6 +9916,7 @@
       "Learning Lounge"
     ],
     "slidesUrl": null,
+    "evtid": "1rFo4",
     "url": "event/1rFo4/learning-lounge-your-cloud-career-cncf-certifications-james-spurin-diveinto-chad-m-crowell-civo",
     "videoUrl": null
   },
@@ -9520,6 +9945,7 @@
       "Experiences"
     ],
     "slidesUrl": null,
+    "evtid": "1rFoC",
     "url": "event/1rFoC/learning-lounge-ask-it-kubernetes-and-cloud-native-associate-kcna-kubernetes-and-cloud-native-security-associate-kcsa-james-spurin-diveinto-chad-m-crowell-civo",
     "videoUrl": null
   },
@@ -9532,6 +9958,7 @@
       "Experiences"
     ],
     "slidesUrl": null,
+    "evtid": "1rg10",
     "url": "event/1rg10/project-pavilion-unconference-sessions",
     "videoUrl": null
   },
@@ -9561,6 +9988,7 @@
       "Intermediate"
     ],
     "slidesUrl": "https://static.sched.com/hosted_files/kccncna2024/33/KubeCon%20NA%202024%20-%20Yuan%20and%20Adam%20-%20Unlocking%20Potential%20of%20Large%20Models%20in%20Production.pptx.pdf",
+    "evtid": "1i7ns",
     "url": "event/1i7ns/unlocking-potential-of-large-models-in-production-yuan-tang-red-hat-adam-tetelman-nvidia",
     "videoUrl": "https://www.youtube.com/watch?v=-xEpzaIvor4&list=PLj6h78yzYM2Pw4mRw4S-1p_xLARMqPkA7&index=211&pp=iAQB"
   },
@@ -9590,6 +10018,7 @@
       "Any"
     ],
     "slidesUrl": null,
+    "evtid": "1i7nP",
     "url": "event/1i7nP/what-istio-got-wrong-learnings-from-the-last-seven-years-of-service-mesh-christian-posta-louis-ryan-soloio",
     "videoUrl": "https://www.youtube.com/watch?v=XW10IpsTmH8&list=PLj6h78yzYM2Pw4mRw4S-1p_xLARMqPkA7&index=200&pp=iAQB"
   },
@@ -9633,6 +10062,7 @@
       "Beginner"
     ],
     "slidesUrl": "https://static.sched.com/hosted_files/kccncna2024/ac/Solving%20the%20Kubernetes%20Networking%20API%20Rubik%27s%20Cube.pdf",
+    "evtid": "1i7oD",
     "url": "event/1i7oD/solving-the-kubernetes-networking-api-rubiks-cube-doug-smith-surya-seetharaman-red-hat-shane-utt-kong-lior-lieberman-google",
     "videoUrl": "https://www.youtube.com/watch?v=S5QsqEb8wec&list=PLj6h78yzYM2Pw4mRw4S-1p_xLARMqPkA7&index=54&pp=iAQB"
   },
@@ -9662,6 +10092,7 @@
       "Intermediate"
     ],
     "slidesUrl": "https://static.sched.com/hosted_files/kccncna2024/00/how-the-tables-have-turned.pptx.pdf",
+    "evtid": "1i7o7",
     "url": "event/1i7o7/how-the-tables-have-turned-kubernetes-says-goodbye-to-iptables-casey-davenport-tigera-dan-winship-red-hat",
     "videoUrl": "https://www.youtube.com/watch?v=yOGHb2HjslY&list=PLj6h78yzYM2Pw4mRw4S-1p_xLARMqPkA7&index=41&pp=iAQB"
   },
@@ -9691,6 +10122,7 @@
       "Intermediate"
     ],
     "slidesUrl": "https://static.sched.com/hosted_files/kccncna2024/84/KubeCon%20NA%202024_%20Distributed%20Cache%20Empowers%20AI_ML%20Workloads%20on%20Kubernetes%20Cluster.pdf",
+    "evtid": "1i7nw",
     "url": "event/1i7nw/distributed-cache-empowers-aiml-workloads-on-kubernetes-cluster-yuichiro-ueno-toru-komatsu-preferred-networks-inc",
     "videoUrl": "https://www.youtube.com/watch?v=bjiFFSRyXmo&list=PLj6h78yzYM2Pw4mRw4S-1p_xLARMqPkA7&index=21&pp=iAQB"
   },
@@ -9713,6 +10145,7 @@
       "Advanced"
     ],
     "slidesUrl": "https://static.sched.com/hosted_files/kccncna2024/33/KubeCon%2024%20Running%20Wasm%20side-by-side%20with%20Containers%20%281%29.pdf",
+    "evtid": "1i7oH",
     "url": "event/1i7oH/running-webassembly-wasm-workloads-side-by-side-with-container-workloads-jiaxiao-zhou-microsoft",
     "videoUrl": "https://www.youtube.com/watch?v=Bq5aTYyRBH0&list=PLj6h78yzYM2Pw4mRw4S-1p_xLARMqPkA7&index=206&pp=iAQB"
   },
@@ -9756,8 +10189,9 @@
       "App Delivery"
     ],
     "slidesUrl": null,
+    "evtid": "1howi",
     "url": "event/1howi/applications-platforms-and-infrastructure-oh-my-what-is-the-tag-app-delivery-doing-to-support-you-daniel-oh-red-hat-roberth-strand-sopra-steria-ryan-nowak-microsoft-abby-bangser-syntasso",
-    "videoUrl": "https://www.youtube.com/watch?v=9kbCT5CFmP4&list=PLj6h78yzYM2Pw4mRw4S-1p_xLARMqPkA7&index=88&pp=iAQB"
+    "videoUrl": null
   },
   {
     "title": "Bare Metal Kubernetes with KOps: Gathering Community Wisdom ",
@@ -9785,6 +10219,7 @@
       "Cluster Lifecycle"
     ],
     "slidesUrl": null,
+    "evtid": "1howo",
     "url": "event/1howo/bare-metal-kubernetes-with-kops-gathering-community-wisdom-justin-santa-barbara-google-ciprian-hacman-microsoft",
     "videoUrl": "https://www.youtube.com/watch?v=UIO3duG-AXs&list=PLj6h78yzYM2Pw4mRw4S-1p_xLARMqPkA7&index=82&pp=iAQB"
   },
@@ -9814,6 +10249,7 @@
       "Prometheus"
     ],
     "slidesUrl": null,
+    "evtid": "1howl",
     "url": "event/1howl/celebrating-prometheus-30-a-deep-dive-with-the-maintainers-richard-hartman-josh-abreu-grafana-labs",
     "videoUrl": "https://www.youtube.com/watch?v=9ROvfBqpdu4&list=PLj6h78yzYM2Pw4mRw4S-1p_xLARMqPkA7&index=92&pp=iAQB"
   },
@@ -9843,6 +10279,7 @@
       "Cortex"
     ],
     "slidesUrl": "https://static.sched.com/hosted_files/kccncna2024/6a/Cortex%20Talk%20KubeCon%20US%202024.pptx.pdf",
+    "evtid": "1howq",
     "url": "event/1howq/cortex-intro-multi-tenant-scalable-prometheus-charlie-le-apple-daniel-blando-amazon",
     "videoUrl": "https://www.youtube.com/watch?v=OGAEWCoM6Tw&list=PLj6h78yzYM2Pw4mRw4S-1p_xLARMqPkA7&index=79&pp=iAQB"
   },
@@ -9886,6 +10323,7 @@
       "Storage"
     ],
     "slidesUrl": null,
+    "evtid": "1howh",
     "url": "event/1howh/kubernetes-sig-storage-intro-deep-dive-michelle-au-google-xing-yang-vmware-by-broadcom-hemant-kumar-red-hat",
     "videoUrl": "https://www.youtube.com/watch?v=vQbIhKFfdX8&list=PLj6h78yzYM2Pw4mRw4S-1p_xLARMqPkA7&index=71&pp=iAQB"
   },
@@ -9908,6 +10346,7 @@
       "Intermediate"
     ],
     "slidesUrl": "https://static.sched.com/hosted_files/kccncna2024/46/Continuous%20Profiling%20OTel%20-%20Christos%20Kalkanis.pdf",
+    "evtid": "1i7nz",
     "url": "event/1i7nz/low-overhead-zero-instrumentation-continuous-profiling-for-opentelemetry-christos-kalkanis-elastic",
     "videoUrl": "https://www.youtube.com/watch?v=WtNDLgdIn24&list=PLj6h78yzYM2Pw4mRw4S-1p_xLARMqPkA7&index=23&pp=iAQB"
   },
@@ -9937,6 +10376,7 @@
       "Intermediate"
     ],
     "slidesUrl": "https://static.sched.com/hosted_files/kccncna2024/f2/KubeconNA24%20-%20One%20Inventory%20to%20Rule%20Them%20All.pptx.pdf",
+    "evtid": "1i7o5",
     "url": "event/1i7o5/one-inventory-to-rule-them-all-standardizing-multicluster-management-corentin-debains-google-ryan-zhang-microsoft",
     "videoUrl": "https://www.youtube.com/watch?v=nxrAxI1dRcE&list=PLj6h78yzYM2Pw4mRw4S-1p_xLARMqPkA7&index=48&pp=iAQB"
   },
@@ -9959,6 +10399,7 @@
       "Advanced"
     ],
     "slidesUrl": "https://static.sched.com/hosted_files/kccncna2024/7b/Exceeded%20Your%20Validation%20Cost%20Budget_%20Now%20What_.pdf",
+    "evtid": "1i7nv",
     "url": "event/1i7nv/exceeded-your-validation-cost-budget-now-what-joel-speed-red-hat",
     "videoUrl": "https://www.youtube.com/watch?v=IfaPAqDfJHk&list=PLj6h78yzYM2Pw4mRw4S-1p_xLARMqPkA7&index=36&pp=iAQB"
   },
@@ -9988,6 +10429,7 @@
       "Intermediate"
     ],
     "slidesUrl": "https://static.sched.com/hosted_files/kccncna2024/79/CBA_KubeConNA_2024_V1.0.pdf",
+    "evtid": "1i7oA",
     "url": "event/1i7oA/mastering-cell-based-architecture-practical-solutions-and-best-practices-shweta-vohra-bookingcom-asanka-abeysinghe-wso2",
     "videoUrl": "https://www.youtube.com/watch?v=Mn1b438uR8s&list=PLj6h78yzYM2Pw4mRw4S-1p_xLARMqPkA7&index=61&pp=iAQB"
   },
@@ -10017,6 +10459,7 @@
       "Intermediate"
     ],
     "slidesUrl": "https://static.sched.com/hosted_files/kccncna2024/29/Journey%20to%20Container%20Maturity%20.pdf",
+    "evtid": "1i7o2",
     "url": "event/1i7o2/from-standards-to-practice-the-journey-to-container-maturity-carmen-chow-thomas-robinson-yelp",
     "videoUrl": "https://www.youtube.com/watch?v=QeR3jeLs_l0&list=PLj6h78yzYM2Pw4mRw4S-1p_xLARMqPkA7&index=25&pp=iAQB"
   },
@@ -10047,6 +10490,7 @@
       "Any"
     ],
     "slidesUrl": "https://static.sched.com/hosted_files/kccncna2024/ff/Gateway%20API%20Workshop.pptx",
+    "evtid": "1i7np",
     "url": "event/1i7np/tutorial-live-with-gateway-api-v12-flynn-buoyant-mike-morris-microsoft",
     "videoUrl": "https://www.youtube.com/watch?v=asbtOWQosxI&list=PLj6h78yzYM2Pw4mRw4S-1p_xLARMqPkA7&index=198&pp=iAQB"
   },
@@ -10075,6 +10519,7 @@
       "🚨 Contribfest"
     ],
     "slidesUrl": null,
+    "evtid": "1howr",
     "url": "event/1howr/contribfest-enhancing-kubernetes-debugging-and-observability-with-inspektor-gadget",
     "videoUrl": null
   },
@@ -10103,6 +10548,7 @@
       "🚨 Contribfest"
     ],
     "slidesUrl": "https://static.sched.com/hosted_files/kccncna2024/19/2024%20-%20Helm%20Contribfest%20-%20KubeCon%20NA.pdf",
+    "evtid": "1howt",
     "url": "event/1howt/contribfest-helm-4-the-next-generation-of-the-kubernetes-package-manager",
     "videoUrl": null
   },
@@ -10117,6 +10563,7 @@
       "Any"
     ],
     "slidesUrl": null,
+    "evtid": "1pKwq",
     "url": "event/1pKwq/clbo-clashloopbackoff-attendee-edition",
     "videoUrl": null
   },
@@ -10146,6 +10593,7 @@
       "Beginner"
     ],
     "slidesUrl": "https://static.sched.com/hosted_files/kccncna2024/3d/K8RLAditiNikunj.pdf",
+    "evtid": "1i7oK",
     "url": "event/1i7oK/unlocking-the-future-of-gpu-scheduling-in-kubernetes-with-reinforcement-learning-nikunj-goyal-adobe-systems-aditi-gupta-disney-plus-hotstar",
     "videoUrl": "https://www.youtube.com/watch?v=Bbg8Uujo6h4&list=PLj6h78yzYM2Pw4mRw4S-1p_xLARMqPkA7&index=212&pp=iAQB"
   },
@@ -10175,6 +10623,7 @@
       "Beginner"
     ],
     "slidesUrl": "https://static.sched.com/hosted_files/kccncna2024/4c/Hybrid_k3s_gpu_cluster.pdf",
+    "evtid": "1i7oe",
     "url": "event/1i7oe/tackling-gpu-shortages-and-high-costs-by-harnessing-hybrid-kubernetes-clusters-xiaoman-dong-alex-pucher-parasail",
     "videoUrl": "https://www.youtube.com/watch?v=sxv7XqhPVhE&list=PLj6h78yzYM2Pw4mRw4S-1p_xLARMqPkA7&index=201&pp=iAQB"
   },
@@ -10204,6 +10653,7 @@
       "Any"
     ],
     "slidesUrl": null,
+    "evtid": "1i7ob",
     "url": "event/1i7ob/tls-and-mtls-introduction-to-modern-security-andrew-davis-independent-sandeep-kanabar-gen-formerly-nortonlifelock",
     "videoUrl": "https://www.youtube.com/watch?v=N2x58qHHtiM&list=PLj6h78yzYM2Pw4mRw4S-1p_xLARMqPkA7&index=63&pp=iAQB"
   },
@@ -10233,8 +10683,9 @@
       "Intermediate"
     ],
     "slidesUrl": "https://static.sched.com/hosted_files/kccncna2024/22/Kubernetes%20Multi-Cluster%20Networking%20101.pdf",
+    "evtid": "1i7oW",
     "url": "event/1i7oW/kubernetes-multi-cluster-networking-101-niranjan-shankar-microsoft-ram-vennam-soloio",
-    "videoUrl": "https://www.youtube.com/watch?v=cpkKinqdwqA&list=PLj6h78yzYM2Pw4mRw4S-1p_xLARMqPkA7&index=51&pp=iAQB"
+    "videoUrl": null
   },
   {
     "title": "Elastic Data Streaming: Autoscaling Apache Kafka ",
@@ -10255,6 +10706,7 @@
       "Intermediate"
     ],
     "slidesUrl": "https://static.sched.com/hosted_files/kccncna2024/d5/Elastic%20Data%20Streaming%20-%20Autoscaling%20Apache%20Kafka.pdf",
+    "evtid": "1i7oP",
     "url": "event/1i7oP/elastic-data-streaming-autoscaling-apache-kafka-jakub-scholz-red-hat",
     "videoUrl": "https://www.youtube.com/watch?v=pj6eLTC2tv8&list=PLj6h78yzYM2Pw4mRw4S-1p_xLARMqPkA7&index=16&pp=iAQB"
   },
@@ -10284,6 +10736,7 @@
       "Intermediate"
     ],
     "slidesUrl": "https://static.sched.com/hosted_files/kccncna2024/33/AutoFit.pdf",
+    "evtid": "1i7oh",
     "url": "event/1i7oh/load-aware-gpu-fractioning-for-llm-inference-on-kubernetes-olivier-tardieu-yue-zhu-ibm",
     "videoUrl": "https://www.youtube.com/watch?v=HwWYb15wpOc&list=PLj6h78yzYM2Pw4mRw4S-1p_xLARMqPkA7&index=207&pp=iAQB"
   },
@@ -10313,6 +10766,7 @@
       "Storage"
     ],
     "slidesUrl": null,
+    "evtid": "1howW",
     "url": "event/1howW/cloud-native-storage-the-cncf-storage-tag-projects-technology-landscape-alex-chircop-akamai-raffaele-spazzoli-red-hat",
     "videoUrl": "https://www.youtube.com/watch?v=ZQOfLObHmzA&list=PLj6h78yzYM2Pw4mRw4S-1p_xLARMqPkA7&index=72&pp=iAQB"
   },
@@ -10349,6 +10803,7 @@
       "Kyverno"
     ],
     "slidesUrl": null,
+    "evtid": "1hox5",
     "url": "event/1hox5/elevate-your-kubernetes-policy-game-with-kyverno-charles-edouard-breteche-nirmata-lanting-chiang-karen-tu-robinhood-markets-inc",
     "videoUrl": "https://www.youtube.com/watch?v=CuW9Hszlnis&list=PLj6h78yzYM2Pw4mRw4S-1p_xLARMqPkA7&index=90&pp=iAQB"
   },
@@ -10378,6 +10833,7 @@
       "K8s Infra"
     ],
     "slidesUrl": null,
+    "evtid": "1hox2",
     "url": "event/1hox2/intro-deep-dive-kubernetes-infrastructure-arnaud-meukam-independent-mahamed-ali-cisco",
     "videoUrl": "https://www.youtube.com/watch?v=XZlalBACTSg&list=PLj6h78yzYM2Pw4mRw4S-1p_xLARMqPkA7&index=83&pp=iAQB"
   },
@@ -10407,6 +10863,7 @@
       "Architecture"
     ],
     "slidesUrl": "https://static.sched.com/hosted_files/kccncna2024/cb/2024%20KubeCon%20NA%20-%20Kubernetes%20SIG%20Architecture%20Intro%20and%20Update.pdf",
+    "evtid": "1howw",
     "url": "event/1howw/kubernetes-sig-architecture-intro-and-updates-john-belamaric-google-david-eads-red-hat",
     "videoUrl": "https://www.youtube.com/watch?v=B2ejDh3xI60&list=PLj6h78yzYM2Pw4mRw4S-1p_xLARMqPkA7&index=86&pp=iAQB"
   },
@@ -10457,6 +10914,7 @@
       "Falco"
     ],
     "slidesUrl": "https://static.sched.com/hosted_files/kccncna2024/42/KubeCon%20NA%202024%20-%20Falco%20Maintainers%20Track.pdf",
+    "evtid": "1howz",
     "url": "event/1howz/peak-innovation-and-cloud-tweaks-falcos-ongoing-runtime-security-development-jason-dellaluce-leonardo-grasso-luca-guerra-sysdig-carlos-tadeu-panato-junior-chainguard-melissa-kilby-apple",
     "videoUrl": null
   },
@@ -10479,6 +10937,7 @@
       "Intermediate"
     ],
     "slidesUrl": "https://static.sched.com/hosted_files/kccncna2024/44/Measuring%20All%20The%20Costs%20w%20OC%20Plugins.pdf",
+    "evtid": "1i7oQ",
     "url": "event/1i7oQ/measuring-all-the-costs-with-opencost-plugins-alex-meijer-stackwatch",
     "videoUrl": "https://www.youtube.com/watch?v=yLAx2z4FqSk&list=PLj6h78yzYM2Pw4mRw4S-1p_xLARMqPkA7&index=15&pp=iAQB"
   },
@@ -10501,6 +10960,7 @@
       "Advanced"
     ],
     "slidesUrl": "https://static.sched.com/hosted_files/kccncna2024/59/K8s-ATLAS.pdf",
+    "evtid": "1i7oV",
     "url": "event/1i7oV/orchestrating-quasi-real-time-data-processing-in-the-computing-farm-of-the-atlas-experiment-at-cern-giuseppe-avolio-cern",
     "videoUrl": "https://www.youtube.com/watch?v=vUB3NzqMAzo&list=PLj6h78yzYM2Pw4mRw4S-1p_xLARMqPkA7&index=40&pp=iAQB"
   },
@@ -10523,6 +10983,7 @@
       "Intermediate"
     ],
     "slidesUrl": "https://static.sched.com/hosted_files/kccncna2024/4c/From%20Chaos%20to%20Harmony%2C%20Transforming%20ML%20Engineering%20-%20A%20Kubernetes%20Adoption%20Journey.pdf",
+    "evtid": "1i7oM",
     "url": "event/1i7oM/from-chaos-to-harmony-transforming-ml-engineering-a-kubernetes-adoption-journey-paris-nakita-kejser-jp-politikens-hus",
     "videoUrl": "https://www.youtube.com/watch?v=yqobcMJ_1as&list=PLj6h78yzYM2Pw4mRw4S-1p_xLARMqPkA7&index=14&pp=iAQB"
   },
@@ -10545,8 +11006,9 @@
       "Any"
     ],
     "slidesUrl": null,
+    "evtid": "1i7oY",
     "url": "event/1i7oY/youre-overpaying-for-ci-kyle-penfound-dagger",
-    "videoUrl": "https://www.youtube.com/watch?v=tsH3eTo2GLI&list=PLj6h78yzYM2Pw4mRw4S-1p_xLARMqPkA7&index=43&pp=iAQB"
+    "videoUrl": null
   },
   {
     "title": "It's Dangerous to Build It Alone, Take This. ",
@@ -10574,6 +11036,7 @@
       "Any"
     ],
     "slidesUrl": "https://static.sched.com/hosted_files/kccncna2024/8f/KubeCon-North-America-It%27s-Dangerous-To-Build-It-Alone.pdf",
+    "evtid": "1i7oS",
     "url": "event/1i7oS/its-dangerous-to-build-it-alone-take-this-jeremy-rickard-ashna-mehrotra-microsoft",
     "videoUrl": "https://www.youtube.com/watch?v=UsHBGZ7np2Q&list=PLj6h78yzYM2Pw4mRw4S-1p_xLARMqPkA7&index=28&pp=iAQB"
   },
@@ -10596,6 +11059,7 @@
       "Learning Lounge"
     ],
     "slidesUrl": null,
+    "evtid": "1rFo9",
     "url": "event/1rFo9/learning-lounge-securing-your-cloud-native-career-the-certified-kubernetes-security-specialist-cks-simon-forster-independent",
     "videoUrl": null
   },
@@ -10608,6 +11072,7 @@
       "Breaks"
     ],
     "slidesUrl": null,
+    "evtid": "1iGAw",
     "url": "event/1iGAw/coffee-break",
     "videoUrl": null
   },
@@ -10620,6 +11085,7 @@
       "Experiences"
     ],
     "slidesUrl": null,
+    "evtid": "1qAlE",
     "url": "event/1qAlE/graduated-projects-celebration",
     "videoUrl": null
   },
@@ -10632,6 +11098,7 @@
       "Diversity + Equity + Inclusion"
     ],
     "slidesUrl": null,
+    "evtid": "1peg2",
     "url": "event/1peg2/deaf-and-hard-of-hearing-advocacy-discussion",
     "videoUrl": null
   },
@@ -10654,6 +11121,7 @@
       "Learning Lounge"
     ],
     "slidesUrl": null,
+    "evtid": "1rFoJ",
     "url": "event/1rFoJ/learning-lounge-ask-it-cilium-certified-associate-cca-certification-raphael-pinson-isovalent",
     "videoUrl": null
   },
@@ -10667,6 +11135,7 @@
       "Project Pavilion Tour"
     ],
     "slidesUrl": null,
+    "evtid": "1lWcb",
     "url": "event/1lWcb/project-pavilion-tour-with-annie-talvasto-cncf-ambassador",
     "videoUrl": null
   },
@@ -10696,6 +11165,7 @@
       "Any"
     ],
     "slidesUrl": "https://static.sched.com/hosted_files/kccncna2024/fd/KCNA24-DRA-Benchmarking.pdf",
+    "evtid": "1i7ol",
     "url": "event/1i7ol/which-gpu-sharing-strategy-is-right-for-you-a-comprehensive-benchmark-study-using-dra-kevin-klues-yuan-chen-nvidia",
     "videoUrl": "https://www.youtube.com/watch?v=nOgxv_R13Dg&list=PLj6h78yzYM2Pw4mRw4S-1p_xLARMqPkA7&index=213&pp=iAQB"
   },
@@ -10746,6 +11216,7 @@
       "Any"
     ],
     "slidesUrl": null,
+    "evtid": "1i7p6",
     "url": "event/1i7p6/the-maintainer-monologues-sarah-christoff-defense-unicorns-jason-hall-chainguard-scott-rigby-karen-chu-independent-ryan-nowak-microsoft",
     "videoUrl": null
   },
@@ -10775,6 +11246,7 @@
       "Beginner"
     ],
     "slidesUrl": "https://static.sched.com/hosted_files/kccncna2024/60/Understanding%20Kubernetes%20Networking%20in%2030%20minutes.pdf",
+    "evtid": "1i7p5",
     "url": "event/1i7p5/understanding-kubernetes-networking-in-30-minutes-ricardo-katz-broadcom-james-strong-isovalent-at-cisco",
     "videoUrl": "https://www.youtube.com/watch?v=Mj04QOqAaJ8&list=PLj6h78yzYM2Pw4mRw4S-1p_xLARMqPkA7&index=64&pp=iAQB"
   },
@@ -10811,6 +11283,7 @@
       "Intermediate"
     ],
     "slidesUrl": "https://static.sched.com/hosted_files/kccncna2024/43/Microsegment%20Your%20Network%20Like%20Mastercard%20with%20AdminNetworkPolicy.pdf",
+    "evtid": "1i7p0",
     "url": "event/1i7p0/microsegment-your-network-like-mastercard-with-adminnetworkpolicy-john-zaiss-daniel-ruggeri-mastercard-surya-seetharaman-red-hat",
     "videoUrl": "https://www.youtube.com/watch?v=ptNWbJS7hiY&list=PLj6h78yzYM2Pw4mRw4S-1p_xLARMqPkA7&index=52&pp=iAQB"
   },
@@ -10840,6 +11313,7 @@
       "Any"
     ],
     "slidesUrl": "https://static.sched.com/hosted_files/kccncna2024/38/Elevating%20Kubeflow%20Spark%20Operator_%20%0BBest%20Practices%20and%20Enhancements.pptx",
+    "evtid": "1i7oq",
     "url": "event/1i7oq/elevating-kubeflow-spark-operators-future-best-practices-and-enhancements-vara-bonthu-aws-chaoran-yu-apple-inc",
     "videoUrl": "https://www.youtube.com/watch?v=5m05fOVajto&list=PLj6h78yzYM2Pw4mRw4S-1p_xLARMqPkA7&index=30&pp=iAQB"
   },
@@ -10869,6 +11343,7 @@
       "Advanced"
     ],
     "slidesUrl": "https://static.sched.com/hosted_files/kccncna2024/dd/KCNA24%20-%20WASM%20KWOK%20Wizardry.pdf",
+    "evtid": "1i7p8",
     "url": "event/1i7p8/wasm-kwok-wizardry-writing-and-testing-scheduler-plugins-at-scale-dejan-pejchev-jonathan-giannuzzi-g-research",
     "videoUrl": "https://www.youtube.com/watch?v=O-cFJJYZkcs&list=PLj6h78yzYM2Pw4mRw4S-1p_xLARMqPkA7&index=208&pp=iAQB"
   },
@@ -10911,6 +11386,7 @@
       "Experiences"
     ],
     "slidesUrl": null,
+    "evtid": "1nBx4",
     "url": "event/1nBx4/cncf-public-sector-user-group-bof",
     "videoUrl": null
   },
@@ -10933,6 +11409,7 @@
       "Fluentd"
     ],
     "slidesUrl": null,
+    "evtid": "1hoxB",
     "url": "event/1hoxB/fluent-bit-better-pipelines-for-observability-eduardo-silva-chronosphere",
     "videoUrl": "https://www.youtube.com/watch?v=XCaA6eXsztE&list=PLj6h78yzYM2Pw4mRw4S-1p_xLARMqPkA7&index=75&pp=iAQB"
   },
@@ -10976,6 +11453,7 @@
       "Network"
     ],
     "slidesUrl": "https://static.sched.com/hosted_files/kccncna2024/96/Gateway%20API.pdf",
+    "evtid": "1hoxF",
     "url": "event/1hoxF/gateway-api-whats-new-whats-next-christine-kim-nick-young-isovalent-at-cisco-mattia-lavacca-kong-guilherme-cassolato-red-hat",
     "videoUrl": "https://www.youtube.com/watch?v=reGxuaM7XBs&list=PLj6h78yzYM2Pw4mRw4S-1p_xLARMqPkA7&index=196&pp=iAQB"
   },
@@ -11019,6 +11497,7 @@
       "Docs"
     ],
     "slidesUrl": "https://static.sched.com/hosted_files/kccncna2024/dc/Navigating%20Cross%20SIG%20Collaborations%20with%20SIG%20Docs.pdf",
+    "evtid": "1hox8",
     "url": "event/1hox8/navigate-cross-sig-collaborations-with-sig-docs-rey-lejano-savitha-raghunathan-red-hat-divya-mohan-suse-xander-grzywinski-defense-unicorns",
     "videoUrl": null
   },
@@ -11041,6 +11520,7 @@
       "Open Policy Agent (OPA)"
     ],
     "slidesUrl": "https://static.sched.com/hosted_files/kccncna2024/81/OPA%20Maintainer%20Track%20KubeCon%20NA%202024.pptx.pdf",
+    "evtid": "1hoxC",
     "url": "event/1hoxC/open-policy-agent-opa-intro-deep-dive-v10-update-charlie-egan-styra",
     "videoUrl": "https://www.youtube.com/watch?v=lK4whfB4UWM&list=PLj6h78yzYM2Pw4mRw4S-1p_xLARMqPkA7&index=70&pp=iAQB"
   },
@@ -11070,6 +11550,7 @@
       "in-toto"
     ],
     "slidesUrl": null,
+    "evtid": "1hoxI",
     "url": "event/1hoxI/secure-release-processes-with-in-toto-policy-verification-john-kjell-testifysec-aditya-sirish-a-yelgundhalli-new-york-university",
     "videoUrl": "https://www.youtube.com/watch?v=-tGn0kEeA4M&list=PLj6h78yzYM2Pw4mRw4S-1p_xLARMqPkA7&index=91&pp=iAQB"
   },
@@ -11092,8 +11573,9 @@
       "Any"
     ],
     "slidesUrl": "https://static.sched.com/hosted_files/kccncna2024/06/KubeCon%20NA%202024_%20Mastering%20OpenTelemetry%20Collector%20Configuration.pdf",
+    "evtid": "1i7ot",
     "url": "event/1i7ot/mastering-opentelemetry-collector-configuration-steve-flanders-cisco",
-    "videoUrl": "https://www.youtube.com/watch?v=vzJpDNfA5xU&list=PLj6h78yzYM2Pw4mRw4S-1p_xLARMqPkA7&index=17&pp=iAQB"
+    "videoUrl": null
   },
   {
     "title": "Per-Node Api-Server Proxy: Expand the Cluster's Scale and Stability ",
@@ -11121,6 +11603,7 @@
       "Intermediate"
     ],
     "slidesUrl": "https://static.sched.com/hosted_files/kccncna2024/18/Per-Node_Api-Server_Proxy_Expand_The_Cluster_Scale_And_Stability.pdf",
+    "evtid": "1i7ox",
     "url": "event/1i7ox/per-node-api-server-proxy-expand-the-clusters-scale-and-stability-weizhou-lan-iceber-gu-daocloud",
     "videoUrl": "https://www.youtube.com/watch?v=O7w7e2iA7lA&list=PLj6h78yzYM2Pw4mRw4S-1p_xLARMqPkA7&index=57&pp=iAQB"
   },
@@ -11157,6 +11640,7 @@
       "Advanced"
     ],
     "slidesUrl": "https://static.sched.com/hosted_files/kccncna2024/cd/KCNA24%20-%20Godel%20Scheduler.pdf",
+    "evtid": "1i7oo",
     "url": "event/1i7oo/godel-scheduler-a-unified-scheduler-for-online-and-offline-workloads-bing-li-yue-yin-lintong-jiang-bytedance",
     "videoUrl": "https://www.youtube.com/watch?v=PiUAdclow_4&list=PLj6h78yzYM2Pw4mRw4S-1p_xLARMqPkA7&index=37&pp=iAQB"
   },
@@ -11186,6 +11670,7 @@
       "Beginner"
     ],
     "slidesUrl": "https://static.sched.com/hosted_files/kccncna2024/75/Bring%20Joy%20to%20Your%20Deployments%20-%20Murriel%20%26%20Elizabeth.pdf",
+    "evtid": "1i7p3",
     "url": "event/1i7p3/bring-the-joy-back-to-deployments-murriel-mccabe-google-cloud-elizabeth-ponce-airbnb",
     "videoUrl": "https://www.youtube.com/watch?v=t3dTw6t9xXk&list=PLj6h78yzYM2Pw4mRw4S-1p_xLARMqPkA7&index=53&pp=iAQB"
   },
@@ -11215,6 +11700,7 @@
       "Intermediate"
     ],
     "slidesUrl": null,
+    "evtid": "1i7ow",
     "url": "event/1i7ow/mish-mesh-abusing-the-service-mesh-to-compromise-kubernetes-environments-hillai-ben-sasson-nir-ohfeld-wiz",
     "videoUrl": "https://www.youtube.com/watch?v=wJGKVQmeDns&list=PLj6h78yzYM2Pw4mRw4S-1p_xLARMqPkA7&index=39&pp=iAQB"
   },
@@ -11227,6 +11713,7 @@
       "Experiences"
     ],
     "slidesUrl": null,
+    "evtid": "1oUFf",
     "url": "event/1oUFf/pet-a-pup-sponsored-by-sonatype",
     "videoUrl": null
   },
@@ -11257,6 +11744,7 @@
       "Any"
     ],
     "slidesUrl": "https://static.sched.com/hosted_files/kccncna2024/84/KCNA24%20-%20No%20Mess%20Rollouts.pdf",
+    "evtid": "1i7ok",
     "url": "event/1i7ok/tutorial-no-mess-rollouts-with-gateway-api-leveraging-gateway-api-and-argo-rollouts-for-progressive-delivery-nina-polshakova-lawrence-gadban-soloio",
     "videoUrl": "https://www.youtube.com/watch?v=H67jKACtPHs&list=PLj6h78yzYM2Pw4mRw4S-1p_xLARMqPkA7&index=84&pp=iAQB"
   },
@@ -11299,6 +11787,7 @@
       "🚨 Contribfest"
     ],
     "slidesUrl": null,
+    "evtid": "1hoyj",
     "url": "event/1hoyj/contribfest-kickstart-your-ebpf-journey-with-tetragon",
     "videoUrl": null
   },
@@ -11327,6 +11816,7 @@
       "🚨 Contribfest"
     ],
     "slidesUrl": null,
+    "evtid": "1hoxN",
     "url": "event/1hoxN/contribfest-meshery-contribfest-extending-the-cloud-native-manager",
     "videoUrl": null
   },
@@ -11339,6 +11829,7 @@
       "Diversity + Equity + Inclusion"
     ],
     "slidesUrl": null,
+    "evtid": "1pegV",
     "url": "event/1pegV/sign-language-crash-course",
     "videoUrl": null
   },
@@ -11368,6 +11859,7 @@
       "Any"
     ],
     "slidesUrl": "https://static.sched.com/hosted_files/kccncna2024/57/Managing%20and%20Distributing%20AI%20Models%20Using%20OCI%20Standards%20and%20Harbor.pptx%20%282%29.pdf",
+    "evtid": "1i7pB",
     "url": "event/1i7pB/managing-and-distributing-ai-models-using-oci-standards-and-harbor-steven-zou-steven-ren-vmware-by-broadcom",
     "videoUrl": "https://www.youtube.com/watch?v=Dhkb-gDn6NU&list=PLj6h78yzYM2Pw4mRw4S-1p_xLARMqPkA7&index=214&pp=iAQB"
   },
@@ -11397,6 +11889,7 @@
       "Any"
     ],
     "slidesUrl": "https://static.sched.com/hosted_files/kccncna2024/b9/KubeCon%20NA%202024_%20Navigating%20Failures%20in%20Pods%20With%20Devices_%20Challenges%20and%20Solutions.pptx.pdf",
+    "evtid": "1i7pT",
     "url": "event/1i7pT/navigating-failures-in-pods-with-devices-challenges-and-solutions-sergey-kanzhelev-google-mrunal-patel-red-hat",
     "videoUrl": "https://www.youtube.com/watch?v=-YCnOYTtVO8&list=PLj6h78yzYM2Pw4mRw4S-1p_xLARMqPkA7&index=62&pp=iAQB"
   },
@@ -11447,6 +11940,7 @@
       "Any"
     ],
     "slidesUrl": "https://static.sched.com/hosted_files/kccncna2024/5e/Engaging%20the%20KServe%20Community%2C%20The%20Impact%20of%20Integrating%20a%20Solutions%20with%20Standardized%20CNCF%20Projects.pptx.pdf",
+    "evtid": "1i7r4",
     "url": "event/1i7r4/engaging-the-kserve-community-the-impact-of-integrating-a-solutions-with-standardized-cncf-projects-adam-tetelman-nvidia-taneem-ibrahim-red-hat-johnu-george-nutanix-tessa-pham-bloomberg-andreea-munteanu-canonical",
     "videoUrl": null
   },
@@ -11476,6 +11970,7 @@
       "Any"
     ],
     "slidesUrl": "https://static.sched.com/hosted_files/kccncna2024/3c/Pick%20My%20Project%21.pdf",
+    "evtid": "1i7pZ",
     "url": "event/1i7pZ/pick-my-project-lessons-learned-from-interviewing-20-end-users-for-cloud-native-case-studies-shedrack-akintayo-bill-mulligan-isovalent-at-cisco",
     "videoUrl": "https://www.youtube.com/watch?v=4EHJIkJbzCg&list=PLj6h78yzYM2Pw4mRw4S-1p_xLARMqPkA7&index=203&pp=iAQB"
   },
@@ -11505,6 +12000,7 @@
       "Any"
     ],
     "slidesUrl": null,
+    "evtid": "1i7pW",
     "url": "event/1i7pW/why-serverless-is-trending-again-matt-butcher-fermyon-jay-jenkins-akamai",
     "videoUrl": "https://www.youtube.com/watch?v=pDoTdTNxDVE&list=PLj6h78yzYM2Pw4mRw4S-1p_xLARMqPkA7&index=55&pp=iAQB"
   },
@@ -11527,6 +12023,7 @@
       "Any"
     ],
     "slidesUrl": null,
+    "evtid": "1i7pQ",
     "url": "event/1i7pQ/one-gateway-api-to-rule-them-all-and-in-the-cluster-configure-them-flynn-buoyant",
     "videoUrl": "https://www.youtube.com/watch?v=xfv6AT7om4s&list=PLj6h78yzYM2Pw4mRw4S-1p_xLARMqPkA7&index=42&pp=iAQB"
   },
@@ -11556,6 +12053,7 @@
       "Advanced"
     ],
     "slidesUrl": "https://static.sched.com/hosted_files/kccncna2024/1b/What%20if%20Kubernetes%20was%20a%20compiler%20target_.pdf",
+    "evtid": "1i7pc",
     "url": "event/1i7pc/what-if-kubernetes-was-a-compiler-target-david-morrison-applied-computing-research-labs-tim-goodwin-uc-santa-cruz",
     "videoUrl": "https://www.youtube.com/watch?v=QcYsGytNBe8&list=PLj6h78yzYM2Pw4mRw4S-1p_xLARMqPkA7&index=209&pp=iAQB"
   },
@@ -11578,6 +12076,7 @@
       "Longhorn"
     ],
     "slidesUrl": "https://static.sched.com/hosted_files/kccncna2024/e9/KCNA24%20Longhorn%20Introduction%20%2B%20Deep%20Dive.pdf",
+    "evtid": "1hoxZ",
     "url": "event/1hoxZ/longhorn-intro-deep-dive-and-qa-phan-le-suse",
     "videoUrl": "https://www.youtube.com/watch?v=NPRij3LsYUM&list=PLj6h78yzYM2Pw4mRw4S-1p_xLARMqPkA7&index=80&pp=iAQB"
   },
@@ -11628,6 +12127,7 @@
       "etcd"
     ],
     "slidesUrl": null,
+    "evtid": "1hoxR",
     "url": "event/1hoxR/scaling-and-safeguarding-the-heart-of-kubernetes-deep-dive-into-etcd-wenjia-zhang-marek-siarkowicz-google-james-blair-red-hat-ivan-valdes-castillo-independent-wei-fu-microsoft",
     "videoUrl": null
   },
@@ -11657,6 +12157,7 @@
       "Network"
     ],
     "slidesUrl": null,
+    "evtid": "1hoxW",
     "url": "event/1hoxW/securing-the-future-of-ingress-nginx-james-strong-isovalent-marco-ebert-giant-swarm",
     "videoUrl": "https://www.youtube.com/watch?v=KLwsV6_DntA&list=PLj6h78yzYM2Pw4mRw4S-1p_xLARMqPkA7&index=76&pp=iAQB"
   },
@@ -11686,6 +12187,7 @@
       "Helm"
     ],
     "slidesUrl": "https://static.sched.com/hosted_files/kccncna2024/f3/2024%20-%20Helm%20-%20KubeCon%20NA.pdf",
+    "evtid": "1hoxU",
     "url": "event/1hoxU/the-path-to-helm-4-matt-farina-suse-andrew-block-red-hat",
     "videoUrl": "https://www.youtube.com/watch?v=UWfaUgB6MJc&list=PLj6h78yzYM2Pw4mRw4S-1p_xLARMqPkA7&index=81&pp=iAQB"
   },
@@ -11715,8 +12217,9 @@
       "Windows"
     ],
     "slidesUrl": "https://static.sched.com/hosted_files/kccncna2024/3a/SIG-windows%20KCNA24.pdf",
+    "evtid": "1hoxQ",
     "url": "event/1hoxQ/whats-new-in-sig-windows-mark-rossetti-microsoft-aravindh-puthiyaparambil-softdrive",
-    "videoUrl": "https://www.youtube.com/watch?v=sro9bGd86tA&list=PLj6h78yzYM2Pw4mRw4S-1p_xLARMqPkA7&index=66&pp=iAQB"
+    "videoUrl": null
   },
   {
     "title": "Now You See Me: Tame MTTR with Real-Time Anomaly Detection ",
@@ -11744,6 +12247,7 @@
       "Any"
     ],
     "slidesUrl": null,
+    "evtid": "1i7pF",
     "url": "event/1i7pF/now-you-see-me-tame-mttr-with-real-time-anomaly-detection-kruthika-prasanna-simha-raj-bhensadadia-apple-inc",
     "videoUrl": "https://www.youtube.com/watch?v=b3YiI5JKZbc&list=PLj6h78yzYM2Pw4mRw4S-1p_xLARMqPkA7&index=24&pp=iAQB"
   },
@@ -11773,6 +12277,7 @@
       "Advanced"
     ],
     "slidesUrl": "https://static.sched.com/hosted_files/kccncna2024/e6/Kubecon%20NA%202024%20Pod%20Resources.pdf",
+    "evtid": "1i7pN",
     "url": "event/1i7pN/pod-power-liberating-kubernetes-users-from-container-resource-micromanagement-dixita-narang-google-peter-hunt-red-hat",
     "videoUrl": "https://www.youtube.com/watch?v=-yyLsXTrrSY&list=PLj6h78yzYM2Pw4mRw4S-1p_xLARMqPkA7&index=58&pp=iAQB"
   },
@@ -11802,6 +12307,7 @@
       "Any"
     ],
     "slidesUrl": "https://static.sched.com/hosted_files/kccncna2024/25/Kubecon%20SLC%202024%20-%20_How%20Google%20Built%20a%20New%20Cloud%20on%20Top%20of%20Kubernetes_.pdf",
+    "evtid": "1i7pE",
     "url": "event/1i7pE/how-google-built-a-new-cloud-on-top-of-kubernetes-jie-yu-prashanth-venugopal-google",
     "videoUrl": "https://www.youtube.com/watch?v=6OnZrBY_nFM&list=PLj6h78yzYM2Pw4mRw4S-1p_xLARMqPkA7&index=38&pp=iAQB"
   },
@@ -11824,6 +12330,7 @@
       "Beginner"
     ],
     "slidesUrl": "https://static.sched.com/hosted_files/kccncna2024/de/Multi-Tier%20Security%20in%20WasmCloud.pdf",
+    "evtid": "1i7pL",
     "url": "event/1i7pL/multi-tier-security-in-wasmcloud-from-developer-constraints-to-platform-extensibility-brooks-townsend-cosmonic",
     "videoUrl": "https://www.youtube.com/watch?v=tdr_daxJd28&list=PLj6h78yzYM2Pw4mRw4S-1p_xLARMqPkA7&index=46&pp=iAQB"
   },
@@ -11836,6 +12343,7 @@
       "Sponsor-hosted Co-located Event"
     ],
     "slidesUrl": null,
+    "evtid": "1mMsP",
     "url": "event/1mMsP/countdown-to-graduation-bash-for-dapr-crossplane-hosted-by-diagrid-upbound",
     "videoUrl": null
   },
@@ -11871,6 +12379,7 @@
       "Experiences"
     ],
     "slidesUrl": null,
+    "evtid": "1mWb4",
     "url": "event/1mWb4/inside-argo-a-documentary-film-world-premiere",
     "videoUrl": null
   },
@@ -11883,6 +12392,7 @@
       "Sponsor-hosted Co-located Event"
     ],
     "slidesUrl": null,
+    "evtid": "1mMok",
     "url": "event/1mMok/apreskube-party-hosted-by-cloudsmith-chainguard-docker-github-sysdig-tailscale",
     "videoUrl": null
   }

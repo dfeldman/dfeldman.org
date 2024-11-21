@@ -42,7 +42,7 @@ def synthesize_presentation(title: str, abstract: str, outline_points: str) -> D
     
     Create:
     1. 1-4 technical tags. These should only be things that are directly related to the presentation - especially key technologies or pieces of software.
-    2. 2-3 sentence description. This should capture the gist of the presentation for browsing quickly. This should be plain text. Do not include the names of the speakers. 
+    2. 2-3 sentence description. This should capture the gist of the presentation for browsing quickly, and be a bit intriguing while being clear and easy to skim. It should start with an imperative, and not include buzzwords like innovative, cutting-edge, or revolutionary but instead softer words like enables, automates, in action, focus, and similar. This should be text format, but use html bolding for any product names. Do not include the names of the speakers or the title as they are already included. Example: Explore <b>SPIRE's</b> approach to workload identity with a focus on automated key recovery and recovery from compromises. Includes a live demo of this new feature in action. Second example: See how live traffic inspection with <b>Pixie</b> and <b>OPA</b> enables dynamic, automated authorization policies for Envoy. A hands-on demo shows the approach in evolving microservices setups. 
     3. Coherent HTML-formatted outline from the auto-generated transcript. Use HTML format. Do not use nested JSON output. Focus on making each point discussed clearly readable and easy to understand. Start with <ul> and end with </ul>. Use nested lists to structure the presentation outline. Do not include things that are only relevant in the actual conference hall, like asking for questions or scanning QR codes. Make the outline high-quality and professional, as if it were taken by a professional note-taker. If something doesn't make sense (looks like corrupted text), ignore it. The presentation is about 30 minutes, so a typical outline should have around 10 major topics with more bullet points under each topic. Do not include the names of the speakers.
     4. Search keywords. This should contain any technical terms that are mentioned, plus the general area of the presentation. These will be searched (not the entire outline or transcript), so be sure to include anything that seems relevant. 
     
@@ -224,6 +224,9 @@ def main():
         outline_points = ''.join(extract_outline(transcripts[evtid], pres['title'], pres['abstract'], speakers))
         result = synthesize_presentation(pres['title'], pres['abstract'], outline_points)
         result["outline"] = "".join(result["outline"])        
+        # There is already a field called "tags". Rename the ai-generated tags to aitags.
+        result["aitags"] = result["tags"]
+        del result["tags"]
         output.append({
             'evtid': evtid,
             'title': pres['title'],
