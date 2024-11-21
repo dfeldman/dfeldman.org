@@ -21,6 +21,7 @@
             box-sizing: border-box;
             margin: 0;
             padding: 0;
+            width: 100%;
         }
 
         body {
@@ -222,6 +223,7 @@
         .presentation-item:not(.active):hover {
             background: #eeeeee;
         }
+
         /* .presentation-header .arrow {
             transition: transform 0.3s ease;
         }
@@ -245,6 +247,7 @@
             padding: 0.25rem 0.75rem;
             border-radius: 1rem;
             font-size: 0.875rem;
+            width: auto;
         }
 
 
@@ -297,7 +300,6 @@
             height: 6px;
             cursor: row-resize;
             grid-column: 1 / -1;
-            transition: all 0.3s ease;
         }
 
         .main-content {
@@ -407,12 +409,8 @@
             /* Take full space of parent */
             display: none;
             min-height: 0;
+            overflow-x: scroll;
             /* Allow content to shrink */
-        }
-
-        .tab-panel.active {
-            display: flex;
-            flex-direction: column;
         }
 
         #video-tab {
@@ -488,9 +486,21 @@
             display: none !important;
         }
 
+        /* Tab emoji shown on mobile only */
+        .tab-emoji {
+            display: none;
+        }
+
+        .tab-text {
+            display: inline;
+        }
 
         /* Mobile specific styles */
         @media (max-width: 1000px) {
+            .main-content {
+                margin: 0;
+            }
+
             .desktop-only {
                 display: none !important;
             }
@@ -522,8 +532,6 @@
             }
 
             #video-tab .iframe-container {
-                /* position: absolute;
-        top: 5rem; // This is a hack to  */
                 left: 0;
                 width: 100%;
                 height: 80%;
@@ -544,12 +552,19 @@
                 top: 0;
                 bottom: 0;
                 margin: 0;
-                transition: right 0.3s ease;
+                /* transition: right 0.3s ease; */
                 z-index: 100;
             }
 
             .table-panel.active {
                 right: 0;
+            }
+
+
+            .tab-button {
+                margin-left: 0;
+                margin-right: 0;
+                padding: 0.5rem;
             }
 
             .toggle-sidebar {
@@ -559,10 +574,33 @@
             .gutter {
                 display: none;
             }
+
+            .tab-emoji {
+                display: inline;
+                font-size: 1.2rem;
+                /* Make emojis a bit larger */
+            }
+
+            .tab-text {
+                display: none;
+            }
+
+
+            .session-content,
+            .outline-content,
+            .transcript-content {
+                padding: 0;
+
+            }
+
         }
 
         /* Mobile specific styles - LANDSCAPE */
         @media (max-height: 768px) {
+            .main-content {
+                margin: 0;
+            }
+
             .desktop-only {
                 display: none !important;
             }
@@ -616,12 +654,18 @@
                 top: 0;
                 bottom: 0;
                 margin: 0;
-                transition: right 0.3s ease;
+                /* transition: right 0.3s ease; */
                 z-index: 100;
             }
 
             .table-panel.active {
                 right: 0;
+            }
+
+            .tab-button {
+                margin-left: 0;
+                margin-right: 0;
+                padding: 0.5rem;
             }
 
             .toggle-sidebar {
@@ -631,6 +675,17 @@
             .gutter {
                 display: none;
             }
+
+            .tab-emoji {
+                display: inline;
+                font-size: 1.2rem;
+                /* Make emojis a bit larger */
+            }
+
+            .tab-text {
+                display: none;
+            }
+
         }
 
 
@@ -920,6 +975,100 @@
             color: #666;
             margin-top: 0.5rem;
         }
+
+        /* New simple slides view */
+        .slides-scroll {
+            padding: 2rem;
+            overflow-y: auto;
+            height: 100%;
+            background: #f3f4f6;
+            /* Light grey background */
+        }
+
+        .slide-page {
+            margin-bottom: 2rem;
+            display: flex;
+            justify-content: center;
+        }
+
+        .slide-page img {
+            max-width: 100%;
+            height: auto;
+            border: 2px solid #000;
+            /* Black outline */
+            background: white;
+            /* White background */
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Keep the download button styling */
+        .slides-download-button {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 2rem;
+            margin: auto;
+        }
+
+        .slides-download-button a {
+            padding: 1rem 2rem;
+            background: linear-gradient(135deg, var(--gradient-start), var(--gradient-end));
+            color: white;
+            text-decoration: none;
+            border-radius: 0.5rem;
+            font-weight: 500;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            transition: transform 0.2s;
+        }
+
+        .slides-download-button a:hover {
+            transform: scale(1.05);
+        }
+
+        .clickable-name {
+            color: var(--gradient-start);
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+
+        .clickable-name:hover {
+            text-decoration: underline;
+            opacity: 0.8;
+        }
+
+        .slide-modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.9);
+            z-index: 2000;
+            cursor: pointer;
+        }
+
+        .slide-modal-content {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            max-width: 95%;
+            max-height: 95vh;
+        }
+
+        .slide-modal-content img {
+            max-width: 100%;
+            max-height: 95vh;
+            object-fit: contain;
+        }
+
+        /* Add pointer cursor to slides */
+        .slide-page img {
+            cursor: zoom-in;
+        }
     </style>
 </head>
 
@@ -930,10 +1079,15 @@
 
 
 
-
+    <div id="slide-modal" class="slide-modal">
+        <div class="slide-modal-content">
+            <img src="" alt="Full screen slide">
+        </div>
+    </div>
 
     <div class="container">
-        <div class="table-panel">
+
+        <div class="table-panel active">
             <div class="search-container">
                 <input type="text" class="search-bar" placeholder="Search presentations...">
             </div>
@@ -946,19 +1100,39 @@
         <div class="main-content">
             <div class="video-panel">
                 <div class="iframe-container">
-                    <iframe src="/api/placeholder/400/320" allowfullscreen></iframe>
+                    <iframe allowfullscreen></iframe>
                 </div>
             </div>
             <div class="horizontal-gutter"></div>
             <div class="bottom-panel"> <!-- Add this wrapper -->
+
                 <div class="content-tabs">
-                    <button class="tab-button mobile-only" data-tab="video">Video</button>
-                    <button class="tab-button active" data-tab="session">Session</button>
-                    <button class="tab-button" data-tab="slides">Slides</button>
-                    <button class="tab-button outline-tab" data-tab="outline">Outline</button>
-                    <button class="tab-button transcript-tab" data-tab="transcript">Notes</button>
-                    <button class="tab-button" data-tab="related">Related</button>
+                    <button class="tab-button mobile-only" data-tab="video">
+                        <span class="tab-text">Video</span>
+                        <span class="tab-emoji">🎥</span>
+                    </button>
+                    <button class="tab-button active" data-tab="session">
+                        <span class="tab-text">Session</span>
+                        <span class="tab-emoji">📝</span>
+                    </button>
+                    <button class="tab-button" data-tab="slides">
+                        <span class="tab-text">Slides</span>
+                        <span class="tab-emoji">📊</span>
+                    </button>
+                    <button class="tab-button outline-tab" data-tab="outline">
+                        <span class="tab-text">Outline</span>
+                        <span class="tab-emoji">📋</span>
+                    </button>
+                    <button class="tab-button transcript-tab" data-tab="transcript">
+                        <span class="tab-text">Notes</span>
+                        <span class="tab-emoji">📄</span>
+                    </button>
+                    <button class="tab-button" data-tab="related">
+                        <span class="tab-text">Related</span>
+                        <span class="tab-emoji">🔗</span>
+                    </button>
                 </div>
+
                 <div class="tab-content">
                     <div id="video-tab" class="tab-panel">
                         <div class="iframe-container">
@@ -995,6 +1169,9 @@
         let aiData = [];
         let slidesData = [];
         const assetsBaseUrl = 'https://webassets.dfeldman.org/labs/kubecon_browser/kcna2024/';
+
+        let currentPresentation = null;
+        let currentSlideIndex = 0;
 
         function isValidUrl(url) {
             return url && url.trim() !== '' && url !== 'about:blank';
@@ -1063,8 +1240,17 @@
                 initializeTabs();
                 renderPresentations();
 
-                const firstPresentation = document.querySelector('.presentation-header');
-                if (firstPresentation) firstPresentation.click();
+                if (!window.location.hash) {
+                    console.log("NO HASH", window.location);
+                    const firstPresentation = document.querySelector('.presentation-header');
+                    firstPresentation.click();
+                } else {
+                    console.log(" HASH");
+
+                    // Hide sidebar if shown
+                    document.querySelector('.table-panel').classList.remove('active');
+                    processHash();
+                }
 
             } catch (error) {
                 console.error('Error loading presentations:', error);
@@ -1073,10 +1259,48 @@
             }
         }
 
-        document.addEventListener('DOMContentLoaded', () => {
+        // ONLY call this when the search bar is empty! For initial load 
+        function getDisplayIndexFromEvtId(evtId) {
+            // Remember that currentDisplayedPresentations is what's currently shown after any filtering
+            return currentDisplayedPresentations.findIndex(p => p.evtid === evtId);
+        }
+
+        function processHash() {
+            const hash = window.location.hash.substring(1);
+            // TODO clear search
+            if (hash) {
+                console.log("Load presentation from hash", hash, "index", getDisplayIndexFromEvtId(hash));
+                idx = getDisplayIndexFromEvtId(hash);
+                togglePresentation(idx, true);
+                const presentationElement = document.querySelector(`.presentation-item[data-index="${idx}"]`);
+                presentationElement.scrollIntoView({
+                    block: 'center' // Center the item in the viewport
+                });
+            }
+        };
+
+        document.addEventListener('DOMContentLoaded', async () => {
             loadPresentations();
             initializeResizing();
+        })
+
+        // Handle browser back/forward
+        window.addEventListener('popstate', () => {
+            console.log("POPSTATE", window.location.hash);
+            processHash();
         });
+
+        //  window.addEventListener('pushstate', processHash); // Forward button
+
+        // // However, browsers don't actually fire 'pushstate' events natively, 
+        // // so we need to wrap history.pushState to make it work:
+        // const originalPushState = history.pushState;
+        // history.pushState = function(state, title, url) {
+        //     originalPushState.call(this, state, title, url);
+        //     console.log("PUSHSTATE", url);
+        //     const event = new Event('pushstate');
+        //     window.dispatchEvent(event);
+        // };
 
         // function findRelatedPresentations(presentation, allPresentations, maxResults = 5) {
         //     // Create a temporary Fuse instance for this search
@@ -1125,7 +1349,7 @@
                     // Calculate Jaccard similarity coefficient
                     const intersection = new Set([...presentationTags].filter(x => otherTags.has(x)));
                     const union = new Set([...presentationTags, ...otherTags]);
-                    
+
                     const score = intersection.size / union.size;
 
                     // Add bonus for exact tag matches (especially for rare/specific tags)
@@ -1151,25 +1375,26 @@
             // Kill the current search because this will interfere with togglePresentation
             const searchBar = document.querySelector('.search-bar');
             searchBar.value = "";
-            // Trigger the search
+
+            // Make the presentation appear in sidebar
             searchBar.dispatchEvent(new Event('input'));
             const index = presentations.findIndex(p => p.evtid === evtid);
             console.log("Switching to presentation", index);
             if (index !== -1) {
                 const presentationElement = document.querySelector(`.presentation-item[data-index="${index}"]`);
                 if (presentationElement) {
-                        // Scroll the list to show the item
-                        const listContainer = document.getElementById('presentationsList');
-                        presentationElement.scrollIntoView({ 
-                            behavior: 'smooth',
-                            block: 'center' // Center the item in the viewport
-                        });
-                
+                    // Scroll the list to show the item
+                    const listContainer = document.getElementById('presentationsList');
+                    presentationElement.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'center' // Center the item in the viewport
+                    });
+
                 }
-            
+
 
                 togglePresentation(index);
-
+                switchToTab("session");
                 // const presentationElement = document.querySelector(`.presentation-content[data-index="${index}"]`);
                 // console.log('1');
                 // if (presentationElement) {
@@ -1346,131 +1571,192 @@
         // a bit tricky; it is only displayed on mobile. On desktop the video tab is hidden because it's in a big 
         // split-screen frame.
         // Then it calls updateTextTabs to do the other tabs.
-        function togglePresentation(displayIndex) {
+        function togglePresentation(displayIndex, isInitialLoad = false) {
+            // On mobile, hide the sidebar
+            document.querySelector('.table-panel').classList.remove('active');
+            console.log("hide sidebar?");
+            // Remove active class from all presentations
             document.querySelectorAll('.presentation-item').forEach(item => {
                 item.classList.remove('active');
             });
 
+            // Highlight current presetnation
             const item = document.querySelector(`.presentation-item[data-index="${displayIndex}"]`);
             item.classList.add('active');
 
-            // if (item) {
-            //     const presentationItem = item.closest('.presentation-item');
-            //     presentationItem.classList.add('active');
-            // }
-
-            // Get references to header elements for showing/hiding content
-            //const header = content.previousElementSibling;
-
-            // Only proceed with updating content if we're expanding (not collapsing)
-            //if (item.classList.contains('active')) {
-                // Get the presentation data from our current filtered/searched list
-                const presentation = currentDisplayedPresentations[displayIndex];
-                if (!presentation) {
-                    console.error('Presentation not found for index:', displayIndex);
-                    return;
-                }
-
-                // Get references to all the main content elements
-                const videoPanel = document.querySelector('.video-panel');
-                const slidesPanel = document.querySelector('.slides-panel');
-                const horizontalGutter = document.querySelector('.horizontal-gutter');
-                const mainContent = document.querySelector('.main-content');
-                const videoTab = document.getElementById('video-tab');
-                const videoTabButton = document.querySelector('.tab-button[data-tab="video"]');
-                const slidesTabButton = document.querySelector('.tab-button[data-tab="slides"]');
-
-                // Get references to the iframes themselves
-                const videoIframe = videoPanel.querySelector('iframe');
-
-                // First, reset everything to default state
-                videoPanel.style.display = 'flex';
-                slidesPanel.style.display = 'flex';
-                horizontalGutter.style.display = 'block';
-                mainContent.style.gridTemplateRows = '1fr 6px 1fr';  // Equal space for video and slides
-
-                // This global is used for the Slides and Related tabs
-                currentPresentation = currentDisplayedPresentations[displayIndex];
 
 
-                // If we don't have any slides, hide the slides panel completely
-                if (!presentation.slidesUrl && !presentation.slides) {
-                    // hide slides button
-                    slidesTabButton.style.display = 'none';
-                    console.log("no slides");
+            // Get the presentation data from our current filtered/searched list
+            const presentation = currentDisplayedPresentations[displayIndex];
+            if (!presentation) {
+                console.error('Presentation not found for index:', displayIndex);
+                return;
+            }
+            // Update URL and history
+            if (window.location.hash !== `${presentation.evtid}`) {
+                if (isInitialLoad) {
+                    window.history.replaceState(null, "KubeCon Browser: " + presentation.title, "#" + `${presentation.evtid}`);
                 } else {
-                    // Set up slides 
-                    slidesTabButton.style.display = 'inline-block';
-                    currentSlideIndex = 0;
-                    updateSlidesTab(currentPresentation);
+                    // Originally, I thought we should push a new state when clicking a presentation. 
+                    // However something in the browser's default click handler is already doing that? 
+                    // So we just replace the state.
+                    window.history.replaceState(null, "KubeCon Browser: " + presentation.title, "#" + `${presentation.evtid}`);
+                    document.title = "KubeCon Browser: " + presentation.title;
+                }
+            }
+
+            // Get references to all the main content elements
+            const videoPanel = document.querySelector('.video-panel');
+            const slidesPanel = document.querySelector('.slides-panel');
+            const horizontalGutter = document.querySelector('.horizontal-gutter');
+            const mainContent = document.querySelector('.main-content');
+            const videoTab = document.getElementById('video-tab');
+            const videoTabButton = document.querySelector('.tab-button[data-tab="video"]');
+            const slidesTabButton = document.querySelector('.tab-button[data-tab="slides"]');
+
+            // Get references to the iframes themselves
+            const videoIframe = videoPanel.querySelector('iframe');
+
+            // First, reset everything to default state
+            videoPanel.style.display = 'flex';
+            slidesPanel.style.display = 'flex';
+            horizontalGutter.style.display = 'block';
+            mainContent.style.gridTemplateRows = '1fr 6px 1fr';  // Equal space for video and slides
+
+            // This global is used for the Slides and Related tabs
+            currentPresentation = currentDisplayedPresentations[displayIndex];
+
+
+            // If we don't have any slides, hide the slides panel completely
+            if (!presentation.slidesUrl && !presentation.slides) {
+                // hide slides button
+                slidesTabButton.style.display = 'none';
+                console.log("no slides");
+            } else {
+                // Set up slides 
+                slidesTabButton.style.display = 'inline-block';
+                currentSlideIndex = 0;
+                updateSlidesTab(currentPresentation);
+            }
+
+
+            // Now handle different content combinations
+            // This is all wrong right now. Ideally, display tabs on mobile, and open up the video 
+            // display and sidebar if there is enough room (on desktop). On mobile, video should be a tab,
+            // while on desktop that is unneeded. 
+            if (isMobile()) {
+                // Mobile layout: only show video if available
+
+                if (presentation.videoUrl) {
+                    const embedUrl = getYouTubeEmbedUrl(presentation.videoUrl);
+                    const youtubeUrl = `${embedUrl}?autoplay=0&rel=0&modestbranding=1`;
+                    if (!videoTab) { console.log("no video tab"); return; }
+                    // Update video tab iframe
+                    const videoTabIframe = videoTab.querySelector('iframe');
+                    if (videoTabIframe) {
+                        videoTabIframe.src = youtubeUrl;
+                    }
+
+                    // Show video tab button
+                    videoTabButton.style.display = 'inline-block';
+                    horizontalGutter.style.display = 'none';
+                } else {
+                    // Hide video tab button if no video
+                    videoTabButton.style.display = 'none';
                 }
 
+                // Disable main video panel
+                videoPanel.style.display = 'none';
+                console.log(presentation);
 
-                // Now handle different content combinations
-                // This is all wrong right now. Ideally, display tabs on mobile, and open up the video 
-                // display and sidebar if there is enough room (on desktop). On mobile, video should be a tab,
-                // while on desktop that is unneeded. 
-                if (isMobile()) {
-                    // Mobile layout: only show video if available
+            } else {
+                // Desktop layout: handle all combinations
+                if (presentation.videoUrl && !presentation.slidesUrl) {
+                    // Video only
+                    slidesPanel.style.display = 'none';
+                    //mainContent.style.gridTemplateRows = '1fr 0 0';  // All space to video
 
-                    if (presentation.videoUrl) {
+                    if (videoIframe) {
                         const embedUrl = getYouTubeEmbedUrl(presentation.videoUrl);
                         const youtubeUrl = `${embedUrl}?autoplay=0&rel=0&modestbranding=1`;
-                        if (!videoTab) { console.log("no video tab"); return; }
-                        // Update video tab iframe
-                        const videoTabIframe = videoTab.querySelector('iframe');
-                        if (videoTabIframe) {
-                            videoTabIframe.src = youtubeUrl;
-                        }
-
-                        // Show video tab button
-                        videoTabButton.style.display = 'inline-block';
-                        horizontalGutter.style.display = 'none';
-                    } else {
-                        // Hide video tab button if no video
-                        videoTabButton.style.display = 'none';
-                    }
-
-                    // Disable main video panel
-                    videoPanel.style.display = 'none';
-                    console.log(presentation);
-
-                } else {
-                    // Desktop layout: handle all combinations
-                    if (presentation.videoUrl && !presentation.slidesUrl) {
-                        // Video only
-                        slidesPanel.style.display = 'none';
-                        //mainContent.style.gridTemplateRows = '1fr 0 0';  // All space to video
-
-                        if (videoIframe) {
-                            const embedUrl = getYouTubeEmbedUrl(presentation.videoUrl);
-                            const youtubeUrl = `${embedUrl}?autoplay=0&rel=0&modestbranding=1`;
-                            videoIframe.src = youtubeUrl;
-                        }
-                    }
-                    else if (!presentation.videoUrl && presentation.slidesUrl) {
-                        // This should be unreachable with current data, but handle it just in case
-                    }
-                    else if (presentation.videoUrl && presentation.slidesUrl) {
-                        // Both video and slides
-                        if (videoIframe) {
-                            const embedUrl = getYouTubeEmbedUrl(presentation.videoUrl);
-                            const youtubeUrl = `${embedUrl}?autoplay=0&rel=0&modestbranding=1`;
-                            videoIframe.src = youtubeUrl;
-                        }
-
-                        // Grid stays at default 1fr 6px 1fr
-                    }
-                    else {
-                        // Neither video nor slides
-                        // This won't happen with current data, but handle it just in case
+                        videoIframe.src = youtubeUrl;
                     }
                 }
+                else if (!presentation.videoUrl && presentation.slidesUrl) {
+                    // This should be unreachable with current data, but handle it just in case
+                }
+                else if (presentation.videoUrl && presentation.slidesUrl) {
+                    // Both video and slides
+                    if (videoIframe) {
+                        const embedUrl = getYouTubeEmbedUrl(presentation.videoUrl);
+                        const youtubeUrl = `${embedUrl}?autoplay=0&rel=0&modestbranding=1`;
+                        videoIframe.src = youtubeUrl;
+                    }
 
-                updateTextTabs(presentation);
-            
+                    // Grid stays at default 1fr 6px 1fr
+                }
+                else {
+                    // Neither video nor slides
+                    // This won't happen with current data, but handle it just in case
+                }
+            }
+
+            updateTextTabs(presentation);
+
         }
 
+        // This was my first attempt at a slide panel. It looks a bit like PowerPoint, with one current slide and many thumbnails. However, 
+        // it is not very usable. 
+        // function updateSlidesTab(presentation) {
+        //     const slidesPanel = document.getElementById('slides-panel');
+
+        //     if (!presentation.slidesUrl) {
+        //         slidesPanel.innerHTML = `<div class="slides-browser">No slides available</div>`;
+        //         return;
+        //     }
+        //     if (!presentation.slides) {
+        //         // Show download button if only URL is available
+        //         slidesPanel.innerHTML = `
+        //             <div class="slides-browser">
+        //                 <div class="slides-download-button">
+        //                     <a href="${presentation.slidesUrl}" target="_blank">
+        //                         📥 Download Slides
+        //                     </a>
+        //                 </div>
+        //             </div>
+        //         `;
+        //         return;
+        //     }
+
+        //     // Show slides viewer if we have slide data
+        //     const currentSlideIndex = 0;  // Start with first slide
+        //     slidesPanel.innerHTML = `
+        //         <div class="slides-browser">
+        //             <div class="slides-viewer">
+        //                 <div class="current-slide">
+        //                     <img src="${assetsBaseUrl}${presentation.slides[currentSlideIndex].image_path}" alt="Slide ${currentSlideIndex + 1}">
+        //                     <div class="slide-nav-buttons">
+        //                         <button class="slide-nav-button prev-slide" onclick="changeSlide(-1)">←</button>
+        //                         <button class="slide-nav-button next-slide" onclick="changeSlide(1)">→</button>
+        //                     </div>
+        //                 </div>
+        //                 <div class="slides-thumbnails-wrapper">
+
+        //                 <div class="slides-thumbnails">
+        //                     ${presentation.slides.map((slide, index) => `
+        //                         <div class="slide-thumbnail ${index === currentSlideIndex ? 'active' : ''}" 
+        //                             onclick="jumpToSlide(${index})">
+        //                             <img src="${assetsBaseUrl}${slide.thumbnail_path}" alt="Thumbnail ${index + 1}">
+        //                         </div>
+        //                     `).join('')}
+        //                 </div>
+        //                 </div>
+        //             </div>
+        //         </div>
+        //     `;
+        // }
+
+        // Much simpler, more readable slides tab
         function updateSlidesTab(presentation) {
             const slidesPanel = document.getElementById('slides-panel');
 
@@ -1493,32 +1779,57 @@
                 return;
             }
 
-            // Show slides viewer if we have slide data
-            const currentSlideIndex = 0;  // Start with first slide
+            // Simple scrollable slides view
+            // Simple scrollable slides view with click handlers
             slidesPanel.innerHTML = `
-                <div class="slides-browser">
-                    <div class="slides-viewer">
-                        <div class="current-slide">
-                            <img src="${assetsBaseUrl}${presentation.slides[currentSlideIndex].image_path}" alt="Slide ${currentSlideIndex + 1}">
-                            <div class="slide-nav-buttons">
-                                <button class="slide-nav-button prev-slide" onclick="changeSlide(-1)">←</button>
-                                <button class="slide-nav-button next-slide" onclick="changeSlide(1)">→</button>
-                            </div>
+                <div class="slides-scroll">
+                    ${presentation.slides.map((slide, index) => `
+                        <div class="slide-page">
+                            <img src="${assetsBaseUrl}${slide.image_path}" 
+                                alt="Slide ${index + 1}"
+                                loading="lazy"
+                                onclick="showSlideModal('${assetsBaseUrl}${slide.image_path}')">
                         </div>
-                        <div class="slides-thumbnails-wrapper">
-
-                        <div class="slides-thumbnails">
-                            ${presentation.slides.map((slide, index) => `
-                                <div class="slide-thumbnail ${index === currentSlideIndex ? 'active' : ''}" 
-                                    onclick="jumpToSlide(${index})">
-                                    <img src="${assetsBaseUrl}${slide.thumbnail_path}" alt="Thumbnail ${index + 1}">
-                                </div>
-                            `).join('')}
-                        </div>
-                        </div>
-                    </div>
+                    `).join('')}
                 </div>
             `;
+        }
+
+
+        // Add modal handling functions
+        function showSlideModal(imgSrc) {
+            const modal = document.getElementById('slide-modal');
+            const modalImg = modal.querySelector('img');
+
+            modalImg.src = imgSrc;
+            modal.style.display = 'block';
+
+            // Prevent scrolling of the background
+            document.body.style.overflow = 'hidden';
+        }
+
+        // Add click handler to close modal
+        document.getElementById('slide-modal').addEventListener('click', function () {
+            this.style.display = 'none';
+            document.body.style.overflow = '';
+        });
+
+        // Optional: Add keyboard handler to close with Escape key
+        document.addEventListener('keydown', function (e) {
+            if (e.key === 'Escape') {
+                const modal = document.getElementById('slide-modal');
+                if (modal.style.display === 'block') {
+                    modal.style.display = 'none';
+                    document.body.style.overflow = '';
+                }
+            }
+        });
+
+
+        function searchForName(name) {
+            const searchBar = document.querySelector('.search-bar');
+            searchBar.value = name;
+            searchBar.dispatchEvent(new Event('input'));
         }
 
         function updateTextTabs(presentation) {
@@ -1530,7 +1841,7 @@
                     ${presentation.speaker_details ?
                     presentation.speaker_details.map(speaker => `
                             <div class="speaker">
-                                <div class="speaker-name">${speaker.name}</div>
+                                <span class="clickable-name" onclick="searchForName('${speaker.name.replace(/'/g, "\\'")}')">${speaker.name}</span>
                                 <div class="speaker-role">${speaker.role}</div>
                             </div>
                         `).join('') :
@@ -1619,7 +1930,7 @@
                 //                         `<span >${tag}</span>`
                 //                     ).join(', ')}
                 //                     </div>
-                                // ${related.presentation.tags.map(tag => 
+                // ${related.presentation.tags.map(tag => 
                 //     `<span >${tag}</span>`
                 // ).join(', ')}
                 // ${related.presentation.aitags.map(tag => 
@@ -1686,6 +1997,13 @@
             // });
         }
 
+        function switchToTab(tabName) {
+            const tabButton = document.querySelector(`.tab-button[data-tab="${tabName}"]`);
+            if (tabButton) {
+                tabButton.click();
+            }
+        }
+
         function initializeTabs() {
             const tabButtons = document.querySelectorAll('.tab-button');
             const panels = document.querySelectorAll('.tab-panel');
@@ -1707,7 +2025,7 @@
                             updateRelatedTab(currentPresentation);
                         }
                     }
-                    
+
                 });
             });
         }
@@ -1736,11 +2054,12 @@
         `;
             } else {
                 renderPresentations(goodMatches);
+                firstPresentation = document.querySelector('.presentation-item');
+                firstPresentation.scrollIntoView({
+                    block: 'center' // Center the item in the viewport
+                });
             }
         });
-
-        let currentPresentation = null;
-        let currentSlideIndex = 0;
 
         function changeSlide(delta) {
             if (!currentPresentation?.slides) return;
