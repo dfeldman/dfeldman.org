@@ -479,28 +479,43 @@
     flex: 1;       /* Take available space */
 }
 
+.mobile-only {
+    display: none !important;
+}
+
+
 /* Mobile specific styles */
 @media (max-width: 768px) {
     .desktop-only {
         display: none !important;
     }
 
-    #session-tab {
-        grid-template-rows: 1fr !important;
-        gap: 0;
-    }
-
     .horizontal-gutter {
         display: none;
     }
 
-    .video-panel {
-        height: 0;
-        /*padding-bottom: 56.25%; /* 16:9 aspect ratio */
-        position: relative;
+    .mobile-only {
+        display: block !important;
+    }
+    
+    .tab-button.mobile-only {
+        display: inline-block !important;
     }
 
-    .video-panel .iframe-container {
+    /* Hide main video panel on mobile when using tabs */
+    .main-content > .video-panel {
+        display: none !important;
+    }
+
+    /* Style the video tab */
+    #video-tab .video-container {
+        position: relative;
+        padding-bottom: 56.25%; /* 16:9 aspect ratio */
+        height: 0;
+        overflow: hidden;
+    }
+
+    #video-tab .iframe-container {
         position: absolute;
         top: 0;
         left: 0;
@@ -553,6 +568,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    overflow: visible;
 }
 
 
@@ -562,21 +578,16 @@
     object-fit: contain;
 }
 
-
 .slide-nav-buttons {
     position: absolute;
     top: 0;
     bottom: 0;
-    left: 0;
-    right: 0;
-    /* Make the buttons container match the image size */
-    width: fit-content;
-    height: fit-content;
-    margin: auto;
+    left: -3rem;  /* Move buttons outside the slide */
+    right: -3rem;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    pointer-events: none;  /* Let clicks pass through to the image */
+    pointer-events: none;
 }
 
 .slide-nav-button {
@@ -592,17 +603,15 @@
     justify-content: center;
     font-size: 1.5rem;
     transition: background 0.2s;
-    margin: 0 1rem;  /* Add some space between buttons */
-    pointer-events: auto;  /* Re-enable clicks on the buttons */
-    position: relative;  /* Ensure buttons stay above image */
-    z-index: 2;      /* Ensure buttons stay above image */
+    pointer-events: auto;
+    z-index: 2;
 }
 
-
-.slide-nav-button:hover {
-    background: rgba(0, 0, 0, 0.7);
+/* Add some padding to the slides-viewer to make room for buttons */
+.slides-viewer {
+    padding: 0 3rem;
+    box-sizing: border-box;
 }
-
 
 .slides-thumbnails-wrapper {
     height: 15rem;  /* Fixed height */
@@ -617,6 +626,7 @@
     background: #f8fafc;
     border-radius: 0.5rem;
     overflow-x: auto;
+    text-align: center;;
 }
 
 
@@ -676,6 +686,7 @@
                     <button class="tab-button active" data-tab="session">Session</button>
                     <button class="tab-button" data-tab="details">Details</button>
                     <button class="tab-button" data-tab="slides">Slides</button>
+                    <button class="tab-button mobile-only" data-tab="video">Video</button>
                 </div>
                 <div class="tab-content">
                     <div id="session-tab" class="tab-panel active">
@@ -963,6 +974,8 @@ function togglePresentation(displayIndex) {
         const slidesPanel = document.querySelector('.slides-panel');
         const horizontalGutter = document.querySelector('.horizontal-gutter');
         const mainContent = document.querySelector('.main-content');
+        const videoTab = document.getElementById('video-tab');
+        const videoTabButton = document.querySelector('.tab-button[data-tab="video"]');
         
         // Get references to the iframes themselves
         const videoIframe = videoPanel.querySelector('iframe');
@@ -980,18 +993,27 @@ function togglePresentation(displayIndex) {
         // while on desktop that is unneeded. 
         if (window.matchMedia('(max-width: 768px)').matches) {
             // Mobile layout: only show video if available
-            slidesPanel.style.display = 'none';
-            horizontalGutter.style.display = 'none';
-            mainContent.style.gridTemplateRows = '1fr';
-
-            if (presentation.videoUrl && videoIframe) {
+ 
+            if (presentation.videoUrl) {
                 const embedUrl = getYouTubeEmbedUrl(presentation.videoUrl);
                 const youtubeUrl = `${embedUrl}?autoplay=0&rel=0&modestbranding=1`;
-                videoIframe.src = youtubeUrl;
-                videoPanel.style.display = 'flex';
+                
+                // Update video tab iframe
+                const videoTabIframe = videoTab.querySelector('iframe');
+                if (videoTabIframe) {
+                    videoTabIframe.src = youtubeUrl;
+                }
+                
+                // Show video tab button
+                videoTabButton.style.display = 'inline-block';
+                horizontalGutter.style.display = 'none';
             } else {
-                videoPanel.style.display = 'none';
+                // Hide video tab button if no video
+                videoTabButton.style.display = 'none';
             }
+            
+            // Disable main video panel
+            videoPanel.style.display = 'none';
         } else {
             // Desktop layout: handle all combinations
             if (presentation.videoUrl && !presentation.slidesUrl) {
@@ -1192,6 +1214,22 @@ function jumpToSlide(index) {
         thumb.classList.toggle('active', i === index);
     });
 }
+
+
+// If the window is resized, hide or show the video panel as needed.
+window.addEventListener('resize', () => {
+    const isMobile = window.matchMedia('(max-width: 768px)').matches;
+    const videoTabButton = document.querySelector('.tab-button[data-tab="video"]');
+    const videoPanel = document.querySelector('.video-panel');
+    
+    if (!isMobile) {
+        videoTabButton.style.display = 'none';
+        // Switch to session tab if we're currently on video tab
+        if (videoTabButton.classList.contains('active')) {
+            document.querySelector('.tab-button[data-tab="session"]').click();
+        }
+    }
+});
 
 
         renderPresentations();
