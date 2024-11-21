@@ -240,38 +240,7 @@
             z-index: 1000;
         }
 
-        @media (max-width: 768px) {
-            .container {
-                flex-direction: column;
-            }
 
-            .main-content {
-                height: 100vh;
-                padding-bottom: 1rem;
-            }
-
-            .table-panel {
-                position: fixed;
-                right: -400px;
-                top: 0;
-                bottom: 0;
-                margin: 0;
-                transition: right 0.3s ease;
-                z-index: 100;
-            }
-
-            .table-panel.active {
-                right: 0;
-            }
-
-            .toggle-sidebar {
-                display: block;
-            }
-
-            .gutter {
-                display: none;
-            }
-        }
 .iframe-error {
     display: flex;
     align-items: center;
@@ -372,64 +341,57 @@
 }
 
 /* Update these CSS rules */
-.tab-content {
+/* Ensure full height flows through the container hierarchy */
+.container {
+    height: 100vh;
+    display: flex;
+}
+
+.main-content {
     flex: 1;
     display: flex;
-    overflow: hidden;
-    min-height: 0; /* This is crucial for nested flex items */
+    flex-direction: column;
+    min-height: 0;  /* Allow flex children to shrink */
+}
+
+.bottom-panel {
+    flex: 1;        /* Take remaining space */
+    display: flex;
+    flex-direction: column;
+    min-height: 0;  /* Allow children to shrink */
+}
+
+.tab-content {
+    flex: 1;        /* Take remaining space */
+    display: flex;
+    min-height: 0;  /* Critical for nested flex items */
 }
 
 .tab-panel {
+    flex: 1;        /* Take full space of parent */
     display: none;
-    width: 100%;
-    height: 100%;
-    min-height: 0; /* Also crucial */
+    min-height: 0;  /* Allow content to shrink */
 }
 
 .tab-panel.active {
     display: flex;
     flex-direction: column;
-    flex: 1;  /* Take up all available space */
 }
 
-/* Main content should also use flex */
-.main-content {
+#video-tab {
     flex: 1;
-    display: grid;
-    grid-template-rows: 1fr 6px 1fr;  /* This divides space between video and bottom-panel */
-    padding: 1rem;
-    position: relative;
-    min-width: 0;
+    display: none;
     min-height: 0;
 }
 
-.bottom-panel {
+#video-tab.active {
     display: flex;
     flex-direction: column;
-    min-height: 0;
 }
 
-.tab-content {
-    flex: 1;
-    display: flex;
-    overflow: hidden;
-    min-height: 0;
-}
-
-
-
-.tab-content {
-    flex: 1;
-    display: flex;
-    overflow: hidden;
-    min-height: 0;
-}
-
-.tab-panel {
-    display: none;  /* Hidden by default */
-    width: 100%;
-    height: 100%;
-    min-height: 0;
+.video-container {
+    flex: 1;        /* Take remaining space */
+    position: relative;
 }
 
 .tab-panel.active {
@@ -485,7 +447,7 @@
 
 
 /* Mobile specific styles */
-@media (max-width: 768px) {
+@media (max-width: 1000px) {
     .desktop-only {
         display: none !important;
     }
@@ -516,15 +478,118 @@
     }
 
     #video-tab .iframe-container {
-        position: absolute;
-        top: 0;
+        /* position: absolute;
+        top: 5rem; // This is a hack to  */
         left: 0;
         width: 100%;
-        height: 100%;
+        height: 80%;
+    }
+
+    .container {
+        flex-direction: column;
+    }
+
+    .main-content {
+        height: 100vh;
+        padding-bottom: 1rem;
+    }
+
+    .table-panel {
+        position: fixed;
+        right: -400px;
+        top: 0;
+        bottom: 0;
+        margin: 0;
+        transition: right 0.3s ease;
+        z-index: 100;
+    }
+
+    .table-panel.active {
+        right: 0;
+    }
+
+    .toggle-sidebar {
+        display: block;
+    }
+
+    .gutter {
+        display: none;
     }
 }
+
+/* Mobile specific styles - LANDSCAPE */
+@media (max-height: 768px) {
+    .desktop-only {
+        display: none !important;
+    }
+
+    .horizontal-gutter {
+        display: none;
+    }
+
+    .mobile-only {
+        display: block !important;
+    }
+    
+    .tab-button.mobile-only {
+        display: inline-block !important;
+    }
+
+    /* Hide main video panel on mobile when using tabs */
+    .main-content > .video-panel {
+        display: none !important;
+    }
+
+    /* Style the video tab */
+    #video-tab .video-container {
+        position: relative;
+        padding-bottom: 56.25%; /* 16:9 aspect ratio */
+        height: 0;
+        overflow: hidden;
+    }
+
+    #video-tab .iframe-container {
+        /* position: absolute;
+        top: 5rem; // This is a hack to  */
+        left: 0;
+        width: 100%;
+        height: 80%;
+    }
+    .container {
+        flex-direction: column;
+    }
+
+    .main-content {
+        height: 100vh;
+        padding-bottom: 1rem;
+    }
+
+    .table-panel {
+        position: fixed;
+        right: -400px;
+        top: 0;
+        bottom: 0;
+        margin: 0;
+        transition: right 0.3s ease;
+        z-index: 100;
+    }
+
+    .table-panel.active {
+        right: 0;
+    }
+
+    .toggle-sidebar {
+        display: block;
+    }
+
+    .gutter {
+        display: none;
+    }
+}
+
+
 /* This feature doesn't just need a desktop, it needs a BIG desktop */
-@media(max-width: 1300px) {
+@media(max-width: 1400px) {
     .slides-thumbnails-wrapper {
         display: none;
     }
@@ -619,7 +684,7 @@
 }
 
 .slides-thumbnails {
-    height: 120%;
+    height: 140px;
     display: block;
     gap: 0.5rem;
     padding: 0.5rem;
@@ -634,7 +699,7 @@
 .slide-thumbnail {
     /*flex: 0 0 auto;  /* Don't allow thumbnails to grow or shrink */
     display: inline;
-    height: 80px;    /* Fixed height */
+    height: 120px;    /* Fixed height */
     width: auto;     /* Maintain aspect ratio */
     cursor: pointer;
     border: 2px solid transparent;
@@ -690,7 +755,7 @@
                 </div>
                 <div class="tab-content">
                     <div id="session-tab" class="tab-panel active">
-                        <div class="slides-panel desktop-only">
+                        <div class="slides-panel">
                             <div class="iframe-container">
                                 <iframe src="/api/placeholder/400/320"></iframe>
                             </div>
@@ -701,6 +766,11 @@
                     </div>
                     <div id="slides-tab" class="tab-panel">
                         <div class="slides-browser">    
+                        </div>
+                    </div>
+                    <div id="video-tab" class="tab-panel">
+                        <div class="iframe-container">
+                            <iframe src="/api/placeholder/400/320" allowfullscreen></iframe>
                         </div>
                     </div>
                 </div>
@@ -943,6 +1013,11 @@ function renderPresentations(items = presentations) {
         //         ` : ''}
         //     </div>
 
+// Be sure to update CSS if these change
+function isMobile() {
+    return window.matchMedia('(max-width: 1000px)').matches || window.matchMedia('(max-height: 768px)').matches;
+}
+
 // This is quite messy, needs refactor
 function togglePresentation(displayIndex) {
     // Find the content div for this presentation using the display index
@@ -976,7 +1051,8 @@ function togglePresentation(displayIndex) {
         const mainContent = document.querySelector('.main-content');
         const videoTab = document.getElementById('video-tab');
         const videoTabButton = document.querySelector('.tab-button[data-tab="video"]');
-        
+        const slidesTabButton = document.querySelector('.tab-button[data-tab="slides"]');
+
         // Get references to the iframes themselves
         const videoIframe = videoPanel.querySelector('iframe');
         const slidesIframe = slidesPanel.querySelector('iframe');
@@ -987,17 +1063,31 @@ function togglePresentation(displayIndex) {
         horizontalGutter.style.display = 'block';
         mainContent.style.gridTemplateRows = '1fr 6px 1fr';  // Equal space for video and slides
 
+        // If we don't have any slides, hide the slides panel completely
+        if (!presentation.slidesUrl && !presentation.slides) {
+            // hide slides button
+            slidesTabButton.style.display = 'none';
+            console.log("no slides");
+        } else {
+            // Set up slides 
+            slidesTabButton.style.display = 'inline-block';
+            currentPresentation = currentDisplayedPresentations[displayIndex];
+            currentSlideIndex = 0;
+            updateSlidesTab(currentPresentation);
+        }
+        
+
         // Now handle different content combinations
         // This is all wrong right now. Ideally, display tabs on mobile, and open up the video 
         // display and sidebar if there is enough room (on desktop). On mobile, video should be a tab,
         // while on desktop that is unneeded. 
-        if (window.matchMedia('(max-width: 768px)').matches) {
+        if (isMobile()) {
             // Mobile layout: only show video if available
  
             if (presentation.videoUrl) {
                 const embedUrl = getYouTubeEmbedUrl(presentation.videoUrl);
                 const youtubeUrl = `${embedUrl}?autoplay=0&rel=0&modestbranding=1`;
-                
+                if (!videoTab) { console.log("no video tab"); return; }
                 // Update video tab iframe
                 const videoTabIframe = videoTab.querySelector('iframe');
                 if (videoTabIframe) {
@@ -1014,6 +1104,8 @@ function togglePresentation(displayIndex) {
             
             // Disable main video panel
             videoPanel.style.display = 'none';
+            console.log(presentation);
+
         } else {
             // Desktop layout: handle all combinations
             if (presentation.videoUrl && !presentation.slidesUrl) {
@@ -1052,10 +1144,7 @@ function togglePresentation(displayIndex) {
             }
             else {
                 // Neither video nor slides
-                videoPanel.style.display = 'none';
-                slidesPanel.style.display = 'none';
-                horizontalGutter.style.display = 'none';
-                mainContent.style.gridTemplateRows = '0 0 0';
+                // This won't happen with current data, but handle it just in case
             }
             if (content.classList.contains('active')) {
                 currentPresentation = currentDisplayedPresentations[displayIndex];
