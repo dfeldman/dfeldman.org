@@ -1,0 +1,1526 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Complete Rust Reference</title>
+    <style>
+        :root {
+            --rust-orange: #f74c00;
+            --rust-dark: #2b2b2b;
+            --code-bg: #f6f8fa;
+            --shadow: rgba(0,0,0,0.1);
+        }
+        body {
+            font-family: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 20px;
+            line-height: 1.5;
+            color: var(--rust-dark);
+            font-size: 13px;
+            background: #fafafa;
+        }
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(650px, 1fr));
+            gap: 1.5rem;
+            margin-top: 1rem;
+        }
+        .section {
+            background: #fff;
+            padding: 1.5rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px var(--shadow);
+        }
+        h1 {
+            color: var(--rust-orange);
+            font-size: 2.5rem;
+            margin: 0;
+            padding-bottom: 0.5rem;
+            border-bottom: 3px solid var(--rust-orange);
+        }
+        h2 {
+            color: var(--rust-dark);
+            font-size: 1.4rem;
+            margin-top: 1rem;
+            margin-bottom: 0.5rem;
+            border-bottom: 2px solid #eee;
+        }
+        pre {
+            background: var(--code-bg);
+            padding: 1rem;
+            border-radius: 4px;
+            overflow-x: auto;
+            font-family: 'JetBrains Mono', 'Fira Code', Consolas, Monaco, monospace;
+            font-size: 12px;
+            line-height: 1.4;
+        }
+        .comment { color: #6a737d; }
+        .keyword { color: #d73a49; }
+        .string { color: #032f62; }
+        .function { color: #6f42c1; }
+        .type { color: #22863a; }
+        .navigation {
+            position: sticky;
+            top: 0;
+            background: #fff;
+            padding: 1rem;
+            margin-bottom: 1rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px var(--shadow);
+        }
+        .navigation ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+        .navigation a {
+            color: var(--rust-dark);
+            text-decoration: none;
+            padding: 0.25rem 0.5rem;
+            border-radius: 4px;
+            background: var(--code-bg);
+        }
+        .navigation a:hover {
+            background: var(--rust-orange);
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <h1>🦀 Complete Rust Reference</h1>
+    
+    <nav class="navigation">
+        <ul>
+            <li><a href="#basics">Core Basics</a></li>
+            <li><a href="#control">Control Flow</a></li>
+            <li><a href="#types">Types & Traits</a></li>
+            <li><a href="#memory">Memory Management</a></li>
+            <li><a href="#io">I/O Operations</a></li>
+            <li><a href="#error">Error Handling</a></li>
+            <li><a href="#async">Async</a></li>
+            <li><a href="#testing">Testing</a></li>
+        </ul>
+    </nav>
+
+    <div class="grid">
+        <div id="basics" class="section">
+            <h2>Core Language Basics</h2>
+            <pre>
+<span class="comment">// Variables & Types</span>
+<span class="keyword">let</span> x = 5;                    <span class="comment">// Immutable</span>
+<span class="keyword">let mut</span> y = 5;               <span class="comment">// Mutable</span>
+<span class="keyword">const</span> MAX_POINTS: u32 = 100; <span class="comment">// Constant</span>
+<span class="keyword">static</span> LANGUAGE: &str = "Rust"; <span class="comment">// Static variable</span>
+
+<span class="comment">// Primitive Types</span>
+<span class="keyword">let</span> i: i32 = -42;            <span class="comment">// Integers: i8, i16, i32, i64, i128</span>
+<span class="keyword">let</span> u: u32 = 42;             <span class="comment">// Unsigned: u8, u16, u32, u64, u128</span>
+<span class="keyword">let</span> f: f64 = 4.2;            <span class="comment">// Floats: f32, f64</span>
+<span class="keyword">let</span> b: bool = true;          
+<span class="keyword">let</span> c: char = 'c';           <span class="comment">// Unicode character</span>
+<span class="keyword">let</span> unit: () = ();           <span class="comment">// Unit type</span>
+
+<span class="comment">// Compound Types</span>
+<span class="keyword">let</span> tup: (i32, f64) = (1, 2.0);
+<span class="keyword">let</span> (x, y) = tup;            <span class="comment">// Destructuring</span>
+<span class="keyword">let</span> arr: [i32; 5] = [1, 2, 3, 4, 5];
+<span class="keyword">let</span> first = arr[0];
+
+<span class="comment">// Strings</span>
+<span class="keyword">let</span> s1: &str = "Hello";      <span class="comment">// String slice</span>
+<span class="keyword">let</span> s2: String = String::from("World");
+<span class="keyword">let</span> s3 = s1.to_string();
+<span class="keyword">let</span> s4 = format!("{} {}", s1, s2);
+
+<span class="comment">// Functions</span>
+<span class="keyword">fn</span> <span class="function">add</span>(x: i32, y: i32) -> i32 {
+    x + y  <span class="comment">// Implicit return</span>
+}
+
+<span class="comment">// Closures</span>
+<span class="keyword">let</span> add_one = |x: i32| x + 1;
+<span class="keyword">let</span> add_two = |x| {
+    <span class="keyword">let</span> y = 2;
+    x + y
+};</pre>
+        </div>
+
+        <div id="control" class="section">
+            <h2>Control Flow & Pattern Matching</h2>
+            <pre>
+<span class="comment">// If expressions</span>
+<span class="keyword">let</span> number = if condition { 5 } else { 6 };
+
+<span class="comment">// Match expressions</span>
+<span class="keyword">match</span> number {
+    0 => println!("zero"),
+    1..=5 => println!("one through five"),
+    n if n < 0 => println!("negative"),
+    _ => println!("something else"),
+}
+
+<span class="comment">// Loops</span>
+<span class="keyword">loop</span> {
+    <span class="keyword">break</span> 5; <span class="comment">// Returns value</span>
+}
+
+<span class="keyword">while</span> condition {
+    <span class="comment">// do something</span>
+}
+
+<span class="keyword">for</span> element in iterator {
+    <span class="comment">// do something</span>
+}
+
+<span class="comment">// Pattern matching with if let</span>
+<span class="keyword">if let</span> Some(x) = optional {
+    println!("{}", x);
+}
+
+<span class="comment">// While let</span>
+<span class="keyword">while let</span> Some(x) = stack.pop() {
+    println!("{}", x);
+}
+
+<span class="comment">// Advanced match patterns</span>
+<span class="keyword">match</span> complex_value {
+    Person { name: "Steve", age: 20..=30 } => {},
+    Point { x: 0, y } => {},
+    Some(Value::Integer(5..=10)) => {},
+    [first, .., last] => {},
+    (x, _) if x > 0 => {},
+    _ => {},
+}</pre>
+        </div>
+
+        <div id="types" class="section">
+            <h2>Types, Traits & Implementations</h2>
+            <pre>
+<span class="comment">// Structs</span>
+<span class="keyword">struct</span> <span class="type">Point</span>&lt;T&gt; {
+    x: T,
+    y: T,
+}
+
+<span class="keyword">impl</span>&lt;T&gt; Point&lt;T&gt; {
+    <span class="keyword">fn</span> <span class="function">new</span>(x: T, y: T) -> Self {
+        Point { x, y }
+    }
+}
+
+<span class="comment">// Enums</span>
+<span class="keyword">enum</span> <span class="type">Option</span>&lt;T&gt; {
+    Some(T),
+    None,
+}
+
+<span class="keyword">enum</span> <span class="type">Result</span>&lt;T, E&gt; {
+    Ok(T),
+    Err(E),
+}
+
+<span class="comment">// Traits</span>
+<span class="keyword">trait</span> <span class="type">Display</span> {
+    <span class="keyword">fn</span> <span class="function">fmt</span>(&self, f: &mut Formatter) -> Result;
+    
+    <span class="keyword">fn</span> <span class="function">to_string</span>(&self) -> String {
+        <span class="comment">// Default implementation</span>
+    }
+}
+
+<span class="comment">// Trait implementations</span>
+<span class="keyword">impl</span> Display <span class="keyword">for</span> Point&lt;i32&gt; {
+    <span class="keyword">fn</span> <span class="function">fmt</span>(&self, f: &mut Formatter) -> Result {
+        write!(f, "({}, {})", self.x, self.y)
+    }
+}
+
+<span class="comment">// Trait bounds</span>
+<span class="keyword">fn</span> <span class="function">print_type</span>&lt;T: Display + Clone&gt;(t: T) {
+    println!("{}", t);
+}
+
+<span class="comment">// Where clauses</span>
+<span class="keyword">fn</span> <span class="function">complex_function</span>&lt;T, U&gt;(t: T, u: U) -> i32
+<span class="keyword">where</span>
+    T: Display + Clone,
+    U: Clone + Debug,
+{
+    <span class="comment">// Implementation</span>
+}
+
+<span class="comment">// Associated types</span>
+<span class="keyword">trait</span> <span class="type">Container</span> {
+    <span class="keyword">type</span> A;
+    <span class="keyword">fn</span> <span class="function">get</span>(&self) -> &Self::A;
+}
+
+<span class="comment">// Generic type aliases</span>
+<span class="keyword">type</span> Result&lt;T&gt; = std::result::Result&lt;T, Error&gt;;</pre>
+        </div>
+
+        <div id="memory" class="section">
+            <h2>Memory Management & References</h2>
+            <pre>
+<span class="comment">// Ownership</span>
+<span class="keyword">let</span> s1 = String::from("hello");
+<span class="keyword">let</span> s2 = s1;                <span class="comment">// s1 is moved to s2</span>
+
+<span class="comment">// References & Borrowing</span>
+<span class="keyword">fn</span> <span class="function">calculate_length</span>(s: &String) -> usize {
+    s.len()
+}
+
+<span class="keyword">fn</span> <span class="function">change</span>(s: &mut String) {
+    s.push_str(" world");
+}
+
+<span class="comment">// Lifetimes</span>
+<span class="keyword">struct</span> <span class="type">Reference</span>&lt;'a, T&gt; {
+    r: &'a T,
+}
+
+<span class="keyword">impl</span>&lt;'a, T&gt; Reference&lt;'a, T&gt; {
+    <span class="keyword">fn</span> <span class="function">get_ref</span>(&self) -> &'a T {
+        self.r
+    }
+}
+
+<span class="comment">// Multiple lifetime parameters</span>
+<span class="keyword">fn</span> <span class="function">longest</span>&lt;'a, 'b&gt;(x: &'a str, y: &'b str) -> &'a str {
+    if x.len() > y.len() { x } else { x }
+}
+
+<span class="comment">// Smart pointers</span>
+<span class="keyword">use</span> std::rc::Rc;
+<span class="keyword">use</span> std::cell::RefCell;
+
+<span class="keyword">let</span> data = Rc::new(5);
+<span class="keyword">let</span> reference = Rc::clone(&data);
+
+<span class="keyword">let</span> cell = RefCell::new(5);
+*cell.borrow_mut() += 1;</pre>
+        </div>
+
+        <div id="io" class="section">
+            <h2>Input/Output Operations</h2>
+            <pre>
+<span class="comment">// Standard I/O</span>
+<span class="keyword">use</span> std::io::{self, Write, Read, BufRead};
+
+<span class="comment">// Read line from stdin</span>
+<span class="keyword">let mut</span> input = String::new();
+io::stdin().read_line(&mut input)?;
+
+<span class="comment">// Write to stdout</span>
+println!("Hello, {}!", name);
+io::stdout().write_all(b"Hello\n")?;
+
+<span class="comment">// File operations</span>
+<span class="keyword">use</span> std::fs::{self, File};
+<span class="keyword">use</span> std::path::Path;
+
+<span class="comment">// Read entire file</span>
+<span class="keyword">let</span> contents = fs::read_to_string("file.txt")?;
+
+<span class="comment">// Read file in chunks</span>
+<span class="keyword">let</span> file = File::open("file.txt")?;
+<span class="keyword">let</span> reader = io::BufReader::new(file);
+
+<span class="keyword">for</span> line in reader
+<span class="keyword">for</span> line in reader.lines() {
+    println!("{}", line?);
+}
+
+<span class="comment">// Write to file</span>
+<span class="keyword">let mut</span> file = File::create("output.txt")?;
+file.write_all(b"Hello, world!")?;
+
+<span class="comment">// File operations with paths</span>
+<span class="keyword">let</span> path = Path::new("directory/file.txt");
+fs::create_dir_all(path.parent().unwrap())?;
+
+<span class="comment">// Directory operations</span>
+<span class="keyword">for</span> entry in fs::read_dir(".")? {
+    <span class="keyword">let</span> entry = entry?;
+    println!("{}", entry.path().display());
+}
+
+<span class="comment">// Buffered operations</span>
+<span class="keyword">let</span> file = File::open("file.txt")?;
+<span class="keyword">let mut</span> reader = io::BufReader::new(file);
+<span class="keyword">let mut</span> buffer = Vec::new();
+reader.read_to_end(&mut buffer)?;</pre>
+        </div>
+
+        <div id="error" class="section">
+            <h2>Error Handling</h2>
+            <pre>
+<span class="comment">// Result type</span>
+<span class="keyword">enum</span> <span class="type">Result</span>&lt;T, E&gt; {
+    Ok(T),
+    Err(E),
+}
+
+<span class="comment">// Custom error type</span>
+#[derive(Debug)]
+<span class="keyword">enum</span> <span class="type">AppError</span> {
+    IoError(std::io::Error),
+    ParseError(std::num::ParseIntError),
+    Custom(String),
+}
+
+<span class="comment">// Error conversion</span>
+<span class="keyword">impl</span> From&lt;std::io::Error&gt; <span class="keyword">for</span> AppError {
+    <span class="keyword">fn</span> <span class="function">from</span>(err: std::io::Error) -> Self {
+        AppError::IoError(err)
+    }
+}
+
+<span class="comment">// Error handling methods</span>
+<span class="keyword">fn</span> <span class="function">process_data</span>() -> Result&lt;(), AppError&gt; {
+    <span class="keyword">let</span> file = File::open("data.txt")?;  <span class="comment">// ? operator</span>
+    <span class="keyword">let</span> parsed = "123".parse::&lt;i32&gt;()
+        .map_err(AppError::ParseError)?;
+    
+    <span class="comment">// Different ways to handle errors</span>
+    file.read_to_string(&mut s)
+        .unwrap();                    <span class="comment">// Panics on error</span>
+        .expect("Failed to read");    <span class="comment">// Panics with message</span>
+        .unwrap_or(default);          <span class="comment">// Returns default on error</span>
+        .unwrap_or_else(|_| default); <span class="comment">// Calls closure on error</span>
+
+    <span class="comment">// Pattern matching on Result</span>
+    <span class="keyword">match</span> operation() {
+        Ok(value) => println!("Success: {}", value),
+        Err(e) => eprintln!("Error: {}", e),
+    }
+
+    Ok(())
+}</pre>
+        </div>
+
+        <div id="async" class="section">
+            <h2>Async Programming</h2>
+            <pre>
+<span class="comment">// Async function</span>
+<span class="keyword">async fn</span> <span class="function">fetch_data</span>() -> Result&lt;String, Error&gt; {
+    <span class="keyword">let</span> response = client
+        .get("https://api.example.com")
+        .send()
+        .await?;
+    
+    Ok(response.text().await?)
+}
+
+<span class="comment">// Async/await syntax</span>
+<span class="keyword">async fn</span> <span class="function">process</span>() {
+    <span class="keyword">let</span> data = fetch_data().await?;
+    <span class="keyword">let</span> result = process_data(data).await?;
+}
+
+<span class="comment">// Futures</span>
+<span class="keyword">use</span> futures::{
+    future::{self, Future},
+    stream::{self, Stream},
+};
+
+<span class="comment">// Concurrent operations</span>
+<span class="keyword">let</span> results = future::join_all(vec![
+    fetch_data(),
+    fetch_other_data(),
+]).await;
+
+<span class="comment">// Tokio runtime</span>
+#[tokio::main]
+<span class="keyword">async fn</span> <span class="function">main</span>() {
+    <span class="keyword">let</span> handle = tokio::spawn(<span class="keyword">async</span> {
+        process_data().await
+    });
+    
+    handle.await?;
+}</pre>
+        </div>
+
+        <div id="testing" class="section">
+            <h2>Testing</h2>
+            <pre>
+<span class="comment">// Unit tests</span>
+#[cfg(test)]
+<span class="keyword">mod</span> tests {
+    <span class="keyword">use super</span>::*;
+
+    #[test]
+    <span class="keyword">fn</span> <span class="function">test_addition</span>() {
+        assert_eq!(add(2, 2), 4);
+        assert_ne!(add(2, 2), 5);
+        assert!(value > 0);
+    }
+
+    #[test]
+    #[should_panic(expected = "panic message")]
+    <span class="keyword">fn</span> <span class="function">test_panic</span>() {
+        panic!("panic message");
+    }
+
+    #[test]
+    <span class="keyword">fn</span> <span class="function">test_result</span>() -> Result&lt;(), String&gt; {
+        if 2 + 2 == 4 {
+            Ok(())
+        } else {
+            Err(String::from("two plus two does not equal four"))
+        }
+    }
+}
+
+<span class="comment">// Integration tests</span>
+<span class="comment">// in tests/integration_test.rs</span>
+<span class="keyword">use</span> my_crate;
+
+#[test]
+<span class="keyword">fn</span> <span class="function">test_external_api</span>() {
+    my_crate::public_api();
+}
+
+<span class="comment">// Test attributes</span>
+#[test]
+#[ignore]               <span class="comment">// Skip this test</span>
+#[should_panic]        <span class="comment">// Test should panic</span>
+#[timeout(1000)]      <span class="comment">// Test should complete within 1000ms</span>
+
+<span class="comment">// Benchmark tests</span>
+#[bench]
+<span class="keyword">fn</span> <span class="function">bench_addition</span>(b: &mut Bencher) {
+    b.iter(|| add(2, 2));
+}</pre>
+        </div>
+
+        <div class="section">
+            <h2>Standard Library Features</h2>
+            <pre>
+<span class="comment">// Collections</span>
+<span class="keyword">use</span> std::collections::{HashMap, HashSet, VecDeque, BinaryHeap};
+
+<span class="keyword">let mut</span> map = HashMap::new();
+map.insert("key", "value");
+
+<span class="keyword">let mut</span> set: HashSet&lt;i32&gt; = [1, 2, 3].iter().cloned().collect();
+
+<span class="comment">// Iterators</span>
+<span class="keyword">let</span> sum: i32 = (0..5)
+    .filter(|x| x % 2 == 0)
+    .map(|x| x * x)
+    .sum();
+
+<span class="comment">// Smart pointers</span>
+<span class="keyword">use</span> std::sync::{Arc, Mutex};
+<span class="keyword">let</span> shared = Arc::new(Mutex::new(vec![]));
+
+<span class="comment">// Threading</span>
+<span class="keyword">use</span> std::thread;
+<span class="keyword">let</span> handle = thread::spawn(|| {
+    <span class="comment">// Thread code</span>
+});
+handle.join().unwrap();
+
+<span class="comment">// Channels</span>
+<span class="keyword">use</span> std::sync::mpsc;
+<span class="keyword">let</span> (tx, rx) = mpsc::channel();
+tx.send(42).unwrap();
+<span class="keyword">let</span> received = rx.recv().unwrap();</pre>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2>Macros & Meta-programming</h2>
+        <pre>
+<span class="comment">// Declarative macros</span>
+<span class="keyword">macro_rules!</span> vec_of_squares {
+($($x:expr),*) => {
+    <span class="keyword">vec!</span>[$($x * $x),*]
+};
+}
+
+<span class="comment">// Procedural macros</span>
+#[derive(Debug, Clone)]           <span class="comment">// Derive macro</span>
+#[serde(rename_all = "camelCase")] <span class="comment">// Attribute macro</span>
+<span class="keyword">struct</span> <span class="type">Point</span> {
+x: f64,
+y: f64,
+}
+
+<span class="comment">// Custom derive macro</span>
+#[proc_macro_derive(MyTrait)]
+<span class="keyword">pub fn</span> <span class="function">my_trait_derive</span>(input: TokenStream) -> TokenStream {
+<span class="comment">// Implementation</span>
+}
+
+<span class="comment">// Common standard macros</span>
+println!("Formatted {}", string);
+format!("Format without printing {}", string);
+vec![1, 2, 3];
+assert!(condition);
+assert_eq!(left, right);
+include_str!("file.txt");</pre>
+    </div>
+
+    <div class="section">
+        <h2>Common Design Patterns</h2>
+        <pre>
+<span class="comment">// Builder Pattern</span>
+<span class="keyword">struct</span> <span class="type">RequestBuilder</span> {
+url: String,
+method: String,
+headers: HashMap&lt;String, String&gt;,
+}
+
+<span class="keyword">impl</span> RequestBuilder {
+<span class="keyword">fn</span> <span class="function">new</span>(url: &str) -> Self {
+    <span class="comment">// Implementation</span>
+}
+
+<span class="keyword">fn</span> <span class="function">method</span>(<span class="keyword">mut</span> self, method: &str) -> Self {
+    self.method = method.to_string();
+    self
+}
+}
+
+<span class="comment">// Type-State Pattern</span>
+<span class="keyword">struct</span> <span class="type">Connection</span>&lt;State&gt; {
+state: PhantomData&lt;State&gt;,
+}
+
+<span class="keyword">impl</span>&lt;State&gt; Connection&lt;State&gt; {
+<span class="keyword">fn</span> <span class="function">connect</span>(self) -> Connection&lt;Connected&gt; {
+    <span class="comment">// Implementation</span>
+}
+}
+
+<span class="comment">// RAII Pattern</span>
+<span class="keyword">struct</span> <span class="type">ResourceGuard</span>&lt;T&gt; {
+resource: T,
+}
+
+<span class="keyword">impl</span>&lt;T&gt; Drop <span class="keyword">for</span> ResourceGuard&lt;T&gt; {
+<span class="keyword">fn</span> <span class="function">drop</span>(&mut self) {
+    <span class="comment">// Cleanup</span>
+}
+}</pre>
+    </div>
+
+    <div class="section">
+        <h2>Concurrency Patterns</h2>
+        <pre>
+<span class="comment">// Message Passing</span>
+<span class="keyword">use</span> std::sync::mpsc;
+<span class="keyword">let</span> (tx, rx) = mpsc::channel();
+
+crossbeam::scope(|scope| {
+scope.spawn(move |_| {
+    tx.send(42).unwrap();
+});
+});
+
+<span class="comment">// Mutex Pool</span>
+<span class="keyword">let</span> data = Arc::new(Mutex::new(vec![]));
+<span class="keyword">let</span> data_clone = Arc::clone(&data);
+
+<span class="comment">// Async Actor Pattern</span>
+<span class="keyword">struct</span> <span class="type">Actor</span> {
+receiver: mpsc::Receiver&lt;Message&gt;,
+state: ActorState,
+}
+
+<span class="keyword">impl</span> Actor {
+<span class="keyword">async fn</span> <span class="function">run</span>(&mut self) {
+    <span class="keyword">while let</span> Some(msg) = self.receiver.recv().await {
+        self.handle_message(msg).await;
+    }
+}
+}</pre>
+    </div>
+
+    <div class="section">
+        <h2>FFI & Unsafe Code</h2>
+        <pre>
+<span class="comment">// Foreign Function Interface</span>
+#[link(name = "my_c_lib")]
+<span class="keyword">extern</span> "C" {
+<span class="keyword">fn</span> <span class="function">c_function</span>(x: i32) -> i32;
+}
+
+<span class="comment">// Unsafe block</span>
+<span class="keyword">unsafe</span> {
+<span class="keyword">let</span> ptr = &num as *const i32;
+println!("Location: {:?}", ptr);
+}
+
+<span class="comment">// Raw pointers</span>
+<span class="keyword">let</span> mut num = 5;
+<span class="keyword">let</span> r1 = &num as *const i32;
+<span class="keyword">let</span> r2 = &mut num as *mut i32;
+
+<span class="comment">// Unsafe trait</span>
+<span class="keyword">unsafe trait</span> <span class="type">Scary</span> { }
+<span class="keyword">unsafe impl</span> Scary <span class="keyword">for</span> i32 { }</pre>
+    </div>
+
+    <div class="section">
+        <h2>Web & Network Programming</h2>
+        <pre>
+<span class="comment">// HTTP Client with reqwest</span>
+<span class="keyword">let</span> response = reqwest::Client::new()
+.get("https://api.example.com")
+.header("Authorization", "Bearer token")
+.send()
+.await?;
+
+<span class="comment">// TCP Server</span>
+<span class="keyword">use</span> tokio::net::TcpListener;
+
+#[tokio::main]
+<span class="keyword">async fn</span> <span class="function">main</span>() -> Result&lt;()&gt; {
+<span class="keyword">let</span> listener = TcpListener::bind("127.0.0.1:8080").await?;
+
+<span class="keyword">while let</span> Ok((socket, _)) = listener.accept().await {
+    tokio::spawn(<span class="keyword">async move</span> {
+        process_socket(socket).await
+    });
+}
+}
+
+<span class="comment">// WebSocket Client</span>
+<span class="keyword">use</span> tokio_tungstenite;
+
+<span class="keyword">let</span> (ws_stream, _) = connect_async("ws://localhost:8080")
+.await?;</pre>
+    </div>
+
+    <div class="section">
+        <h2>Database Access</h2>
+        <pre>
+<span class="comment">// SQLx with PostgreSQL</span>
+<span class="keyword">let</span> pool = PgPoolOptions::new()
+.max_connections(5)
+.connect("postgres://user:pass@localhost/db").await?;
+
+<span class="keyword">let</span> row: (i64,) = sqlx::query_as(
+"SELECT $1"
+)
+.bind(150_i64)
+.fetch_one(&pool).await?;
+
+<span class="comment">// Diesel ORM</span>
+#[derive(Queryable)]
+<span class="keyword">struct</span> <span class="type">Post</span> {
+id: i32,
+title: String,
+body: String,
+}
+
+diesel::insert_into(posts::table)
+.values(&new_post)
+.execute(&mut conn)?;</pre>
+    </div>
+
+    <div class="section">
+        <h2>Tooling & Development</h2>
+        <pre>
+<span class="comment">// Cargo commands</span>
+cargo new project_name
+cargo build --release
+cargo test -- --nocapture
+cargo bench
+cargo doc --open
+cargo clippy
+cargo fmt
+
+<span class="comment">// Workspace setup</span>
+<span class="comment">// Cargo.toml</span>
+[workspace]
+members = [
+"core",
+"cli",
+"web",
+]
+
+<span class="comment">// Features</span>
+[features]
+default = ["std"]
+std = []
+alloc = []
+
+<span class="comment">// Development dependencies</span>
+[dev-dependencies]
+criterion = "0.3"
+mockall = "0.11"
+tokio-test = "0.4"</pre>
+    </div>
+
+    <div class="section">
+        <h2>Command Line Applications with Clap</h2>
+        <pre>
+<span class="comment">// Modern derive-based approach with Clap</span>
+<span class="keyword">use</span> clap::Parser;
+
+#[derive(Parser)]
+#[command(author, version, about)]
+<span class="keyword">struct</span> <span class="type">Cli</span> {
+<span class="comment">// Optional parameter with default</span>
+#[arg(short, long, default_value = "default")]
+name: String,
+
+<span class="comment">// Required parameter</span>
+#[arg(short, long)]
+count: usize,
+
+<span class="comment">// Flag (boolean)</span>
+#[arg(short, long)]
+verbose: bool,
+
+<span class="comment">// Multiple values</span>
+#[arg(short, long, num_args = 1..)]
+files: Vec&lt;PathBuf&gt;,
+
+<span class="comment">// Subcommand</span>
+#[command(subcommand)]
+command: Option&lt;Commands&gt;,
+}
+
+#[derive(Subcommand)]
+<span class="keyword">enum</span> <span class="type">Commands</span> {
+Add {
+    name: String,
+},
+Remove {
+    #[arg(short, long)]
+    force: bool,
+},
+}
+
+<span class="comment">// Usage example</span>
+<span class="keyword">fn</span> <span class="function">main</span>() {
+<span class="keyword">let</span> cli = Cli::parse();
+
+<span class="keyword">match</span> cli.command {
+    Some(Commands::Add { name }) => {
+        println!("Adding {}", name);
+    }
+    Some(Commands::Remove { force }) => {
+        println!("Removing with force = {}", force);
+    }
+    None => {}
+}
+}</pre>
+    </div>
+
+    <div class="section">
+        <h2>Serialization with Serde & JSON Processing</h2>
+        <pre>
+<span class="comment">// Define serializable structures</span>
+<span class="keyword">use</span> serde::{Serialize, Deserialize};
+
+#[derive(Serialize, Deserialize, Debug)]
+#[serde(rename_all = "camelCase")]
+<span class="keyword">struct</span> <span class="type">User</span> {
+user_id: u64,
+#[serde(rename = "displayName")]
+name: String,
+#[serde(default)]
+active: bool,
+#[serde(skip_serializing_if = "Option::is_none")]
+email: Option&lt;String&gt;,
+#[serde(flatten)]
+metadata: HashMap&lt;String, Value&gt;,
+}
+
+<span class="comment">// JSON processing</span>
+<span class="keyword">fn</span> <span class="function">process_json</span>() -> Result&lt;()&gt; {
+<span class="comment">// Parse JSON string</span>
+<span class="keyword">let</span> json_str = r#"{"userId": 1, "name": "John"}"#;
+<span class="keyword">let</span> user: User = serde_json::from_str(json_str)?;
+
+<span class="comment">// Work with dynamic JSON</span>
+<span class="keyword">let</span> value: Value = serde_json::from_str(json_str)?;
+println!("Name: {}", value["name"]);
+
+<span class="comment">// Serialize to string</span>
+<span class="keyword">let</span> json = serde_json::to_string_pretty(&user)?;
+
+<span class="comment">// Stream JSON processing</span>
+<span class="keyword">use</span> serde_json::Deserializer;
+<span class="keyword">let</span> stream = Deserializer::from_str(json_str)
+    .into_iter::<Value>();
+
+<span class="comment">// Custom serialization</span>
+#[derive(Serialize)]
+<span class="keyword">struct</span> <span class="type">Custom</span>&lt;T&gt; {
+    data: T,
+    #[serde(serialize_with = "serialize_datetime")]
+    timestamp: DateTime&lt;Utc&gt;,
+}
+
+Ok(())
+}</pre>
+    </div>
+
+    <div class="section">
+        <h2>Advanced Error Handling Patterns</h2>
+        <pre>
+<span class="comment">// Comprehensive error type</span>
+#[derive(Debug, thiserror::Error)]
+<span class="keyword">enum</span> <span class="type">AppError</span> {
+#[error("IO error: {0}")]
+Io(#[from] std::io::Error),
+
+#[error("Parse error: {0}")]
+Parse(#[from] std::num::ParseIntError),
+
+#[error("Database error: {0}")]
+Database(#[from] sqlx::Error),
+
+#[error("Validation error: {msg}")]
+Validation { msg: String, code: u32 },
+}
+
+<span class="comment">// Error context with anyhow</span>
+<span class="keyword">use</span> anyhow::{Context, Result};
+
+<span class="keyword">fn</span> <span class="function">read_config</span>() -> Result&lt;Config&gt; {
+std::fs::read_to_string("config.json")
+    .context("Failed to read config file")?
+    .parse()
+    .context("Failed to parse config file")
+}
+
+<span class="comment">// Error handling middleware</span>
+<span class="keyword">impl</span> From&lt;AppError&gt; <span class="keyword">for</span> HttpResponse {
+<span class="keyword">fn</span> <span class="function">from</span>(error: AppError) -> Self {
+    <span class="keyword">match</span> error {
+        AppError::Validation { msg, code } => 
+            HttpResponse::BadRequest()
+                .json(json!({ "error": msg, "code": code })),
+        _ => HttpResponse::InternalServerError()
+                .json(json!({ "error": "Internal server error" }))
+    }
+}
+}
+
+<span class="comment">// Result combination patterns</span>
+<span class="keyword">fn</span> <span class="function">process_data</span>() -> Result&lt;(), AppError&gt; {
+<span class="keyword">let</span> results: Result<Vec<_>, _> = items
+    .into_iter()
+    .map(process_item)
+    .collect();
+
+results?
+    .into_iter()
+    .try_for_each(validate_item)?;
+    
+Ok(())
+}</pre>
+    </div>
+
+    <div class="section">
+        <h2>Advanced Async Patterns</h2>
+        <pre>
+<span class="comment">// Async streams</span>
+<span class="keyword">use</span> futures::stream::{self, StreamExt};
+
+<span class="keyword">async fn</span> <span class="function">process_stream</span>() {
+stream::iter(0..100)
+    .chunks(10)
+    .for_each_concurrent(4, |chunk| <span class="keyword">async move</span> {
+        process_chunk(chunk).await
+    })
+    .await;
+}
+
+<span class="comment">// Resource pool with deadlock prevention</span>
+<span class="keyword">struct</span> <span class="type">Pool</span>&lt;T&gt; {
+resources: Arc&lt;Sempahore&gt;,
+items: Arc&lt;Mutex&lt;Vec&lt;T&gt;&gt;&gt;,
+}
+
+<span class="comment">// Cancellation and timeouts</span>
+<span class="keyword">use</span> tokio::time::{timeout, Duration};
+
+<span class="keyword">async fn</span> <span class="function">with_timeout</span>&lt;F, T&gt;(
+duration: Duration,
+future: F
+) -> Result&lt;T&gt;
+<span class="keyword">where</span>
+F: Future&lt;Output = T&gt;,
+{
+timeout(duration, future).await?
+}
+
+<span class="comment">// Backoff and retry</span>
+<span class="keyword">async fn</span> <span class="function">with_retry</span>&lt;F, Fut, T&gt;(
+f: F,
+max_retries: u32,
+) -> Result&lt;T&gt;
+<span class="keyword">where</span>
+F: Fn() -> Fut,
+Fut: Future&lt;Output = Result&lt;T&gt;&gt;,
+{
+<span class="keyword">let mut</span> retries = 0;
+<span class="keyword">let mut</span> delay = Duration::from_millis(100);
+
+<span class="keyword">loop</span> {
+    <span class="keyword">match</span> f().await {
+        Ok(value) => <span class="keyword">return</span> Ok(value),
+        Err(e) if retries < max_retries => {
+            retries += 1;
+            sleep(delay).await;
+            delay *= 2;
+        }
+        Err(e) => <span class="keyword">return</span> Err(e),
+    }
+}
+}
+
+<span class="comment">// Actor pattern with channels</span>
+<span class="keyword">struct</span> <span class="type">Actor</span> {
+receiver: mpsc::Receiver&lt;Message&gt;,
+state: ActorState,
+}
+
+<span class="keyword">impl</span> Actor {
+<span class="keyword">async fn</span> <span class="function">run</span>(&mut self) {
+    <span class="keyword">while let</span> Some(msg) = self.receiver
+        .recv()
+        .await
+    {
+        self.handle_message(msg).await;
+    }
+}
+}</pre>
+    </div>
+
+    <div class="section">
+        <h2>Advanced Testing Patterns</h2>
+        <pre>
+<span class="comment">// Property-based testing with proptest</span>
+<span class="keyword">use</span> proptest::prelude::*;
+
+proptest! {
+#[test]
+<span class="keyword">fn</span> <span class="function">test_parse_never_crashes</span>(s: String) {
+    <span class="keyword">let</span> _ = parse_input(&s);
+}
+}
+
+<span class="comment">// Parameterized tests</span>
+#[rstest]
+#[case(2, 2, 4)]
+#[case(3, 3, 9)]
+#[case(4, 4, 16)]
+<span class="keyword">fn</span> <span class="function">test_multiply</span>(
+#[case] a: i32,
+#[case] b: i32,
+#[case] expected: i32,
+) {
+assert_eq!(multiply(a, b), expected);
+}
+
+<span class="comment">// Mock objects</span>
+#[automock]
+<span class="keyword">trait</span> <span class="type">Database</span> {
+<span class="keyword">async fn</span> <span class="function">get_user</span>(&self, id: u64) -> Result&lt;User&gt;;
+}
+
+#[tokio::test]
+<span class="keyword">async fn</span> <span class="function">test_with_mock</span>() {
+<span class="keyword">let mut</span> mock = MockDatabase::new();
+mock.expect_get_user()
+    .returning(|_| Ok(User::default()));
+}
+
+<span class="comment">// Snapshot testing</span>
+#[test]
+<span class="keyword">fn</span> <span class="function">test_snapshot</span>() {
+<span class="keyword">let</span> data = process_complex_data();
+insta::assert_yaml_snapshot!(data);
+}
+
+<span class="comment">// Async test utilities</span>
+#[tokio::test]
+<span class="keyword">async fn</span> <span class="function">test_concurrent</span>() {
+<span class="keyword">let</span> (tx, rx) = mpsc::channel(10);
+
+tokio::spawn(<span class="keyword">async move</span> {
+    process_messages(rx).await
+});
+
+tx.send(Message::new()).await?;
+}
+
+<span class="comment">// Integration testing with test containers</span>
+#[tokio::test]
+<span class="keyword">async fn</span> <span class="function">test_with_postgres</span>() {
+<span class="keyword">let</span> container = PostgresContainer::new();
+<span class="keyword">let</span> pool = create_connection_pool(
+    container.connection_string()
+).await?;
+
+<span class="comment">// Run tests against real Postgres</span>
+}
+
+<span class="comment">// Benchmarking</span>
+<span class="keyword">use</span> criterion::{criterion_group, criterion_main, Criterion};
+
+<span class="keyword">fn</span> <span class="function">benchmark</span>(c: &mut Criterion) {
+c.bench_function("process_data", |b| {
+    b.iter(|| process_data(black_box(input)))
+});
+}</pre>
+    </div>
+
+    <div class="section">
+        <h2>Tokio Runtime & Async Primitives</h2>
+        <pre>
+<span class="comment">// Basic Tokio setup</span>
+#[tokio::main]
+<span class="keyword">async fn</span> <span class="function">main</span>() {
+<span class="comment">// Multi-threaded runtime</span>
+<span class="keyword">let</span> runtime = Runtime::new()
+    .worker_threads(4)
+    .enable_all()
+    .build()
+    .unwrap();
+
+<span class="comment">// Single-threaded runtime</span>
+<span class="keyword">let</span> runtime = Runtime::new()
+    .basic_scheduler()
+    .enable_all()
+    .build()
+    .unwrap();
+}
+
+<span class="comment">// Task spawning and management</span>
+<span class="keyword">let</span> handle = tokio::spawn(<span class="keyword">async</span> {
+process_data().await
+});
+
+<span class="comment">// Join multiple tasks</span>
+<span class="keyword">let</span> (result1, result2) = tokio::join!(
+async_operation1(),
+async_operation2()
+);
+
+<span class="comment">// Select first completed future</span>
+tokio::select! {
+result = async_operation1() => {
+    println!("Operation 1 completed first");
+}
+result = async_operation2() => {
+    println!("Operation 2 completed first");
+}
+}
+
+<span class="comment">// Time utilities</span>
+<span class="keyword">use</span> tokio::time::{sleep, timeout, Duration};
+
+<span class="comment">// Delay execution</span>
+sleep(Duration::from_secs(1)).await;
+
+<span class="comment">// Add timeout to operation</span>
+<span class="keyword">let</span> result = timeout(
+Duration::from_secs(5),
+async_operation()
+).await??;
+
+<span class="comment">// Interval-based execution</span>
+<span class="keyword">let mut</span> interval = tokio::time::interval(
+Duration::from_secs(1)
+);
+
+<span class="keyword">loop</span> {
+interval.tick().await;
+perform_periodic_task().await;
+}
+
+<span class="comment">// Channels</span>
+<span class="keyword">use</span> tokio::sync::{mpsc, oneshot, broadcast, watch};
+
+<span class="comment">// Multi-producer, single-consumer</span>
+<span class="keyword">let</span> (tx, mut rx) = mpsc::channel(32);
+
+<span class="comment">// Broadcast channel</span>
+<span class="keyword">let</span> (tx, mut rx1) = broadcast::channel(16);
+<span class="keyword">let mut</span> rx2 = tx.subscribe();
+
+<span class="comment">// Watch channel (single producer, multi-consumer)</span>
+<span class="keyword">let</span> (tx, mut rx) = watch::channel("initial value");
+
+<span class="comment">// One-shot channel</span>
+<span class="keyword">let</span> (tx, rx) = oneshot::channel();
+
+<span class="comment">// Synchronization primitives</span>
+<span class="keyword">use</span> tokio::sync::{Mutex, RwLock, Semaphore};
+
+<span class="comment">// Async mutex</span>
+<span class="keyword">let</span> mutex = Arc::new(Mutex::new(0));
+{
+<span class="keyword">let mut</span> lock = mutex.lock().await;
+*lock += 1;
+}
+
+<span class="comment">// Async read-write lock</span>
+<span class="keyword">let</span> rwlock = Arc::new(RwLock::new(vec![]));
+{
+<span class="keyword">let mut</span> write = rwlock.write().await;
+write.push(1);
+}
+
+<span class="comment">// Semaphore for resource limiting</span>
+<span class="keyword">let</span> semaphore = Arc::new(Semaphore::new(3));
+{
+<span class="keyword">let</span> permit = semaphore.acquire().await?;
+perform_limited_task().await;
+}
+
+<span class="comment">// I/O utilities</span>
+<span class="keyword">use</span> tokio::io::{AsyncReadExt, AsyncWriteExt};
+
+<span class="comment">// Async file operations</span>
+<span class="keyword">let mut</span> file = tokio::fs::File::create("file.txt").await?;
+file.write_all(b"Hello").await?;
+
+<span class="comment">// TCP connections</span>
+<span class="keyword">let</span> listener = TcpListener::bind("127.0.0.1:8080").await?;
+
+<span class="keyword">while let</span> Ok((socket, addr)) = listener.accept().await {
+tokio::spawn(<span class="keyword">async move</span> {
+    process_socket(socket).await
+});
+}</pre>
+    </div>
+
+    <div class="section">
+        <h2>Standard Library Collections & Data Structures</h2>
+        <pre>
+<span class="comment">// Vec - Dynamic array</span>
+<span class="keyword">let mut</span> vec: Vec&lt;i32&gt; = Vec::new();
+vec.push(1);
+vec.extend([2, 3, 4]);
+vec.insert(1, 5);
+vec.remove(0);
+vec.drain(1..3);
+vec.retain(|&x| x % 2 == 0);
+
+<span class="comment">// Advanced Vec operations</span>
+vec.chunks(2)
+.filter(|chunk| chunk.len() == 2)
+.for_each(|chunk| println!("{:?}", chunk));
+
+vec.windows(2)
+.map(|window| window[0] + window[1])
+.collect::&lt;Vec&lt;_&gt;&gt;();
+
+<span class="comment">// VecDeque - Double-ended queue</span>
+<span class="keyword">let mut</span> deque = VecDeque::new();
+deque.push_front(1);
+deque.push_back(2);
+deque.pop_front();
+deque.pop_back();
+
+<span class="comment">// LinkedList - Doubly-linked list</span>
+<span class="keyword">let mut</span> list = LinkedList::new();
+list.push_back(1);
+list.push_front(0);
+list.append(&mut other_list);
+list.splice(1..3, some_iter);
+
+<span class="comment">// HashMap - Key-value store</span>
+<span class="keyword">let mut</span> map = HashMap::new();
+map.insert("key", "value");
+map.entry("key")
+.or_insert("default");
+map.entry("key")
+.and_modify(|v| *v = "new value")
+.or_insert("default");
+
+<span class="comment">// Advanced HashMap operations</span>
+map.retain(|&k, &mut v| k.len() > 3);
+map.get_key_value("key");
+map.remove_entry("key");
+
+<span class="comment">// HashSet - Unique elements</span>
+<span class="keyword">let mut</span> set = HashSet::new();
+set.insert(1);
+set.remove(&1);
+set.contains(&1);
+
+<span class="comment">// Set operations</span>
+<span class="keyword">let</span> union: HashSet<_> = set1.union(&set2).collect();
+<span class="keyword">let</span> intersection = set1.intersection(&set2);
+<span class="keyword">let</span> difference = set1.difference(&set2);
+<span class="keyword">let</span> symmetric_difference = set1.symmetric_difference(&set2);
+
+<span class="comment">// BTreeMap - Ordered key-value store</span>
+<span class="keyword">let mut</span> btree = BTreeMap::new();
+btree.insert(1, "one");
+btree.range(1..3);
+btree.first_key_value();
+btree.last_key_value();
+
+<span class="comment">// BinaryHeap - Priority queue</span>
+<span class="keyword">let mut</span> heap = BinaryHeap::new();
+heap.push(1);
+heap.pop();
+heap.peek();
+heap.into_sorted_vec();
+
+<span class="comment">// String - UTF-8 encoded text</span>
+<span class="keyword">let mut</span> string = String::from("hello");
+string.push_str(" world");
+string.replace("hello", "hi");
+string.split_whitespace()
+  .map(str::to_uppercase)
+  .collect::&lt;Vec&lt;_&gt;&gt;();
+
+<span class="comment">// Advanced String operations</span>
+string.chars().rev().collect::&lt;String&gt;();
+string.lines()
+  .filter(|line| !line.is_empty())
+  .collect::&lt;Vec&lt;_&gt;&gt;();
+
+<span class="comment">// Specialized containers</span>
+<span class="keyword">use</span> std::collections::{BTreeSet, HashMap};
+
+<span class="comment">// BTreeSet - Ordered unique elements</span>
+<span class="keyword">let mut</span> btree_set = BTreeSet::new();
+btree_set.insert(1);
+btree_set.range(1..3);
+
+<span class="comment">// SmallVec (from smallvec crate) - Stack-first vector</span>
+<span class="keyword">use</span> smallvec::{SmallVec, smallvec};
+<span class="keyword">let mut</span> small_vec: SmallVec<[u8; 4]> = smallvec![1, 2, 3];
+
+<span class="comment">// Performance considerations</span>
+<span class="comment">// Vec: O(1) push/pop at end, O(n) insert/remove</span>
+<span class="comment">// VecDeque: O(1) push/pop at both ends</span>
+<span class="comment">// HashMap: O(1) average case operations</span>
+<span class="comment">// BTreeMap: O(log n) operations, ordered</span>
+<span class="comment">// LinkedList: O(1) push/pop, O(n) random access</span>
+<span class="comment">// BinaryHeap: O(log n) push/pop, ordered by priority</span></pre>
+    </div>
+    
+    <div class="section">
+        <h2>Common Programming Tasks</h2>
+        <pre>
+<span class="comment">// Reading and writing files - basic operations</span>
+<span class="keyword">use</span> std::fs;
+<span class="keyword">use</span> std::io::{self, Read, Write, BufRead, BufReader};
+
+<span class="comment">// Read entire file to string - good for small files</span>
+<span class="keyword">fn</span> <span class="function">read_file</span>(path: &str) -> io::Result&lt;String&gt; {
+fs::read_to_string(path)
+}
+
+<span class="comment">// Read file line by line - better for large files</span>
+<span class="keyword">fn</span> <span class="function">process_lines</span>(path: &str) -> io::Result&lt;()&gt; {
+<span class="keyword">let</span> file = File::open(path)?;
+<span class="keyword">let</span> reader = BufReader::new(file);
+
+<span class="keyword">for</span> line in reader.lines() {
+    <span class="keyword">let</span> line = line?;
+    <span class="comment">// Process each line here</span>
+}
+Ok(())
+}
+
+<span class="comment">// Write data to file</span>
+<span class="keyword">fn</span> <span class="function">save_data</span>(path: &str, data: &str) -> io::Result&lt;()&gt; {
+fs::write(path, data)
+}
+
+<span class="comment">// Append to file</span>
+<span class="keyword">fn</span> <span class="function">append_to_file</span>(path: &str, data: &str) -> io::Result&lt;()&gt; {
+<span class="keyword">let mut</span> file = OpenOptions::new()
+    .append(true)
+    .create(true)
+    .open(path)?;
+
+writeln!(file, "{}", data)
+}
+
+<span class="comment">// Common file operations</span>
+<span class="keyword">fn</span> <span class="function">file_operations</span>() -> io::Result&lt;()&gt; {
+<span class="comment">// Check if file exists</span>
+if Path::new("file.txt").exists() {
+    <span class="comment">// Copy file</span>
+    fs::copy("file.txt", "backup.txt")?;
+    
+    <span class="comment">// Rename file</span>
+    fs::rename("file.txt", "new_name.txt")?;
+    
+    <span class="comment">// Delete file</span>
+    fs::remove_file("old_file.txt")?;
+}
+
+<span class="comment">// Create directory</span>
+fs::create_dir_all("nested/dirs")?;
+
+<span class="comment">// List directory contents</span>
+<span class="keyword">for</span> entry in fs::read_dir(".")? {
+    <span class="keyword">let</span> entry = entry?;
+    println!("{}", entry.path().display());
+}
+
+Ok(())
+}
+
+<span class="comment">// Simple command line app template</span>
+<span class="keyword">use</span> clap::Parser;
+
+#[derive(Parser)]
+#[command(name = "myapp")]
+#[command(about = "A simple utility program")]
+<span class="keyword">struct</span> <span class="type">Args</span> {
+<span class="comment">// Required input file</span>
+#[arg(short, long)]
+input: PathBuf,
+
+<span class="comment">// Optional output file</span>
+#[arg(short, long)]
+output: Option&lt;PathBuf&gt;,
+
+<span class="comment">// Flag for verbose output</span>
+#[arg(short, long)]
+verbose: bool,
+}
+
+<span class="comment">// Example main function with error handling</span>
+<span class="keyword">fn</span> <span class="function">main</span>() -> Result&lt;(), Box&lt;dyn Error&gt;&gt; {
+<span class="comment">// Parse command line arguments</span>
+<span class="keyword">let</span> args = Args::parse();
+
+<span class="comment">// Read input file</span>
+<span class="keyword">let</span> content = fs::read_to_string(&args.input)
+    .with_context(|| format!("Failed to read {}", args.input.display()))?;
+
+<span class="comment">// Process the content</span>
+<span class="keyword">let</span> processed = process_content(&content)?;
+
+<span class="comment">// Write to output file or stdout</span>
+<span class="keyword">match</span> args.output {
+    Some(path) => fs::write(path, processed)?,
+    None => println!("{}", processed),
+}
+
+Ok(())
+}
+
+<span class="comment">// Working with environment variables</span>
+<span class="keyword">use</span> std::env;
+
+<span class="keyword">fn</span> <span class="function">env_operations</span>() {
+<span class="comment">// Get environment variable</span>
+<span class="keyword">let</span> key = env::var("HOME").unwrap_or_default();
+
+<span class="comment">// Set environment variable</span>
+env::set_var("MY_VAR", "value");
+
+<span class="comment">// Get all environment variables</span>
+<span class="keyword">for</span> (key, value) in env::vars() {
+    println!("{}: {}", key, value);
+}
+}
+
+<span class="comment">// Text processing utilities</span>
+<span class="keyword">fn</span> <span class="function">text_processing</span>(text: &str) -> String {
+<span class="comment">// Split and process lines</span>
+text.lines()
+    .filter(|line| !line.trim().is_empty())
+    .map(|line| line.trim().to_uppercase())
+    .collect::&lt;Vec&lt;_&gt;&gt;()
+    .join("\n")
+}
+
+<span class="comment">// Simple logging setup</span>
+<span class="keyword">fn</span> <span class="function">setup_logging</span>() -> Result&lt;(), fern::InitError&gt; {
+fern::Dispatch::new()
+    .format(|out, message, record| {
+        out.finish(format_args!(
+            "[{}][{}] {}",
+            record.level(),
+            record.target(),
+            message
+        ))
+    })
+    .level(log::LevelFilter::Info)
+    .chain(std::io::stdout())
+    .chain(fern::log_file("program.log")?)
+    .apply()?;
+
+Ok(())
+}
+
+<span class="comment">// Configuration file handling</span>
+<span class="keyword">use</span> serde::{Serialize, Deserialize};
+
+#[derive(Serialize, Deserialize)]
+<span class="keyword">struct</span> <span class="type">Config</span> {
+api_key: String,
+max_retries: u32,
+timeout: u64,
+}
+
+<span class="keyword">fn</span> <span class="function">load_config</span>() -> Result&lt;Config, Box&lt;dyn Error&gt;&gt; {
+<span class="keyword">let</span> config_path = get_config_path()?;
+<span class="keyword">let</span> contents = fs::read_to_string(config_path)?;
+Ok(toml::from_str(&contents)?)
+}
+
+<span class="comment">// Progress indication for long operations</span>
+<span class="keyword">use</span> indicatif::{ProgressBar, ProgressStyle};
+
+<span class="keyword">fn</span> <span class="function">process_with_progress</span>&lt;T&gt;(items: Vec&lt;T&gt;) {
+<span class="keyword">let</span> pb = ProgressBar::new(items.len() as u64);
+pb.set_style(ProgressStyle::default_bar()
+    .template("[{elapsed_precise}] {bar:40.cyan/blue} {pos}/{len}")
+    .unwrap());
+
+<span class="keyword">for</span> item in items {
+    <span class="comment">// Process item</span>
+    pb.inc(1);
+}
+pb.finish_with_message("done");
+}
+
+<span class="comment">// Common string manipulations</span>
+<span class="keyword">fn</span> <span class="function">string_operations</span>(text: &str) -> String {
+<span class="comment">// Remove whitespace</span>
+<span class="keyword">let</span> trimmed = text.trim();
+
+<span class="comment">// Split by delimiter</span>
+<span class="keyword">let</span> parts: Vec&lt;&str&gt; = text.split(',').collect();
+
+<span class="comment">// Replace text</span>
+<span class="keyword">let</span> replaced = text.replace("old", "new");
+
+<span class="comment">// Convert case</span>
+<span class="keyword">let</span> upper = text.to_uppercase();
+<span class="keyword">let</span> lower = text.to_lowercase();
+
+<span class="comment">// Find and extract</span>
+if <span class="keyword">let</span> Some(start) = text.find("start") {
+    if <span class="keyword">let</span> Some(end) = text.find("end") {
+        <span class="keyword">return</span> text[start..end].to_string();
+    }
+}
+
+String::new()
+}</pre>
+    </div>
+
+
+</body>
+</html>
+
