@@ -34,6 +34,7 @@
 
         .tabs {
             display: flex;
+            flex-wrap: wrap;
             margin-bottom: 20px;
             gap: 10px;
             background: var(--light);
@@ -51,7 +52,8 @@
             color: var(--dark);
             border-radius: 10px;
             transition: all 0.3s ease;
-            flex: 1;
+            flex: 1 1 auto;
+            min-width: 100px;
             text-align: center;
         }
 
@@ -314,6 +316,139 @@
             line-height: 1.4;
             color: var(--dark);
         }
+
+        .timer-container {
+            background-color: rgba(255, 255, 255, 0.95);
+            padding: 30px;
+            border-radius: 20px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            width: 90%;
+            max-width: 500px;
+        }
+
+        .time-display {
+            font-size: 72px;
+            text-align: center;
+            font-weight: bold;
+            margin: 20px 0;
+            font-variant-numeric: tabular-nums;
+        }
+
+        .interval-info {
+            text-align: center;
+            margin: 20px 0;
+            padding: 15px;
+            border-radius: 10px;
+            background-color: var(--light);
+        }
+
+        .current-activity {
+            font-size: 24px;
+            font-weight: bold;
+            margin: 10px 0;
+        }
+
+        .next-up {
+            font-size: 16px;
+            color: #666;
+            margin: 5px 0;
+        }
+
+        .progress-bar {
+            width: 100%;
+            height: 10px;
+            background-color: #ddd;
+            border-radius: 5px;
+            margin: 20px 0;
+            overflow: hidden;
+        }
+
+        .progress-fill {
+            height: 100%;
+            background-color: var(--secondary);
+            transition: width 1s linear;
+        }
+
+        .controls {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 30px;
+        }
+
+        button {
+            padding: 12px 24px;
+            border: none;
+            border-radius: 8px;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: transform 0.1s;
+        }
+
+        button:active {
+            transform: scale(0.95);
+        }
+
+        .play-pause {
+            background-color: var(--success);
+            color: white;
+        }
+
+        .reset {
+            background-color: var(--secondary);
+            color: white;
+        }
+
+        .exit {
+            background-color: var(--primary);
+            color: white;
+        }
+
+        .workout-progress {
+            text-align: center;
+            margin-top: 20px;
+            font-size: 14px;
+            color: #666;
+        }
+
+        @media (max-width: 480px) {
+            .time-display {
+                font-size: 48px;
+            }
+            
+            .current-activity {
+                font-size: 20px;
+            }
+        }
+
+        .timer-view {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, #1a2a6c, #b21f1f, #fdbb2d);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+        }
+
+        /* Add a Start Timer button style */
+        .start-timer-btn {
+            display: block;
+            width: 100%;
+            padding: 12px;
+            margin-top: 15px;
+            background-color: var(--success);
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+        }
     </style>
 </head>
 
@@ -368,6 +503,27 @@
         </div>
     </div>
 
+    <div class="timer-view" style="display: none;">
+        <div class="timer-container">
+            <div class="time-display">00:00</div>
+            <div class="interval-info">
+                <div class="current-activity">Get Ready!</div>
+                <div class="next-up">Starting soon...</div>
+            </div>
+            <div class="progress-bar">
+                <div class="progress-fill" style="width: 0%"></div>
+            </div>
+            <div class="workout-progress">
+                Set 1 of 3
+            </div>
+            <div class="controls">
+                <button class="play-pause">Start</button>
+                <button class="reset">Reset</button>
+                <button class="exit">Exit</button>
+            </div>
+        </div>
+    </div>
+
     <script>
         let levels = {
             cardio: parseInt(localStorage.getItem('cardioLevel')) || 1,
@@ -384,6 +540,133 @@
         document.getElementById('cardioLevelDisplay').textContent = levels.cardio;
         document.getElementById('strengthLevelDisplay').textContent = levels.strength;
         document.getElementById('flexLevelDisplay').textContent = levels.flex;
+
+        class IntervalTimer {
+            constructor() {
+                this.intervals = [];
+                this.currentInterval = 0;
+                this.currentSet = 0;
+                this.timeRemaining = 0;
+                this.isRunning = false;
+                this.timer = null;
+                this.totalSets = 0;
+
+                // DOM elements
+                this.timeDisplay = document.querySelector('.time-display');
+                this.currentActivityDisplay = document.querySelector('.current-activity');
+                this.nextUpDisplay = document.querySelector('.next-up');
+                this.progressBar = document.querySelector('.progress-fill');
+                this.workoutProgress = document.querySelector('.workout-progress');
+                this.playPauseButton = document.querySelector('.play-pause');
+                this.resetButton = document.querySelector('.reset');
+                this.exitButton = document.querySelector('.exit');
+
+                // Bind event listeners
+                this.playPauseButton.addEventListener('click', () => this.togglePlayPause());
+                this.resetButton.addEventListener('click', () => this.reset());
+                this.exitButton.addEventListener('click', () => this.exit());
+            }
+
+            setWorkout(workout) {
+                // Workout should be an array of interval sets
+                this.intervals = workout;
+                this.totalSets = workout.length;
+                this.reset();
+            }
+
+            formatTime(seconds) {
+                const mins = Math.floor(seconds / 60);
+                const secs = seconds % 60;
+                return `${mins.toString().padStart(2, '0')}:${secs.toString().padStart(2, '0')}`;
+            }
+
+            updateDisplay() {
+                if (this.currentSet >= this.totalSets) {
+                    this.complete();
+                    return;
+                }
+
+                const currentInterval = this.intervals[this.currentSet];
+                this.timeDisplay.textContent = this.formatTime(this.timeRemaining);
+                
+                const totalIntervalTime = currentInterval.duration;
+                const progress = ((totalIntervalTime - this.timeRemaining) / totalIntervalTime) * 100;
+                this.progressBar.style.width = `${progress}%`;
+
+                this.currentActivityDisplay.textContent = currentInterval.activity;
+                
+                // Show next activity
+                const nextSet = this.currentSet + 1;
+                if (nextSet < this.totalSets) {
+                    this.nextUpDisplay.textContent = `Next: ${this.intervals[nextSet].activity}`;
+                } else {
+                    this.nextUpDisplay.textContent = 'Final interval!';
+                }
+
+                this.workoutProgress.textContent = `Set ${this.currentSet + 1} of ${this.totalSets}`;
+            }
+
+            start() {
+                if (!this.isRunning) {
+                    this.isRunning = true;
+                    this.playPauseButton.textContent = 'Pause';
+                    this.timer = setInterval(() => this.tick(), 1000);
+                }
+            }
+
+            pause() {
+                if (this.isRunning) {
+                    this.isRunning = false;
+                    this.playPauseButton.textContent = 'Resume';
+                    clearInterval(this.timer);
+                }
+            }
+
+            togglePlayPause() {
+                if (this.isRunning) {
+                    this.pause();
+                } else {
+                    this.start();
+                }
+            }
+
+            tick() {
+                if (this.timeRemaining > 0) {
+                    this.timeRemaining--;
+                    this.updateDisplay();
+                } else {
+                    // Play sound or notification here
+                    this.currentSet++;
+                    if (this.currentSet < this.totalSets) {
+                        this.timeRemaining = this.intervals[this.currentSet].duration;
+                        this.updateDisplay();
+                    } else {
+                        this.complete();
+                    }
+                }
+            }
+
+            reset() {
+                this.pause();
+                this.currentSet = 0;
+                this.timeRemaining = this.intervals[0]?.duration || 0;
+                this.playPauseButton.textContent = 'Start';
+                this.updateDisplay();
+            }
+
+            complete() {
+                this.pause();
+                this.currentActivityDisplay.textContent = 'Workout Complete!';
+                this.nextUpDisplay.textContent = 'Great job!';
+                this.timeDisplay.textContent = '00:00';
+                this.progressBar.style.width = '100%';
+            }
+
+            exit() {
+                // This will be implemented when integrated with main app
+                console.log('Exit timer');
+            }
+        }
 
         function formatPace(pace, type) {
             switch (type) {
@@ -489,10 +772,12 @@
         <div class="workout-header">
             <h4>${workout.title}</h4>
             <div class="metrics-grid">
+                ${workout.time ? `
                 <div class="metric">
                     <span class="metric-label">Time</span>
                     <span class="metric-value">${workout.time} minutes</span>
                 </div>
+                ` : ''}
                 ${workout.distance ? `
                     <div class="metric">
                         <span class="metric-label">Distance</span>
@@ -565,7 +850,7 @@
             <span class="value">${calories}</span>
         </div>`;
         }
-
+// old don't use
         function formatIntervalSet(intervals) {
             if (!intervals) return '';
             return `
@@ -609,6 +894,375 @@
                 };
             }
             return null;
+        }
+
+        function generateBeginnerRunningIntervals(level) {
+    // This function handles levels 10-20, where we transition from walking to running
+    if (level < 10 || level > 20) {
+        throw new Error("This generator is designed for levels 10-20 only");
+    }
+
+    // First, let's define what characterizes good beginner running intervals:
+    // - Start with more walking than running
+    // - Gradually increase running time while decreasing walking time
+    // - Keep total workout time around 30 minutes
+    // - Begin with very short running intervals (30-60 seconds)
+    // - Progress to longer running segments (3-5 minutes)
+    // - Include proper warm-up and cool-down
+
+    if (level === 10) {
+        // Level 10 is a transition level - introducing very short running segments
+        return {
+            type: "interval",
+            sets: [{
+                repeat: 1,
+                intervals: [{
+                    activity: "Warm-up Walk",
+                    duration: 300,  // 5 minutes
+                    intensity: "comfortable pace"
+                }]
+            }, {
+                repeat: 6,         // Main workout: 6 sets of run/walk
+                intervals: [
+                    {
+                        activity: "Very Light Jog",
+                        duration: 30,  // 30 seconds
+                        intensity: "just faster than walking",
+                        targetMetrics: { pace: 13 }  // 13:00 min/mile
+                    },
+                    {
+                        activity: "Walk",
+                        duration: 120,  // 2 minutes
+                        intensity: "brisk pace",
+                        targetMetrics: { pace: 18 }  // 18:00 min/mile
+                    }
+                ]
+            }, {
+                repeat: 1,
+                intervals: [{
+                    activity: "Cool-down Walk",
+                    duration: 300,  // 5 minutes
+                    intensity: "easy pace"
+                }]
+            }],
+            totalDuration: 1500,  // 25 minutes total
+            description: "Introduction to Running Intervals"
+        };
+    }
+
+    // Levels 11-15: Gradually increase running duration, decrease walking duration
+    if (level <= 15) {
+        const runDuration = 30 + (level - 10) * 15;  // Increases from 30s to 120s
+        const walkDuration = 120 - (level - 10) * 10; // Decreases from 120s to 70s
+        const sets = 7 - Math.floor((level - 10) / 2); // Decreases from 7 to 5 sets
+
+        return {
+            type: "interval",
+            sets: [{
+                repeat: 1,
+                intervals: [{
+                    activity: "Warm-up Walk",
+                    duration: 300,
+                    intensity: "comfortable pace"
+                }]
+            }, {
+                repeat: sets,
+                intervals: [
+                    {
+                        activity: "Run",
+                        duration: runDuration,
+                        intensity: "conversational pace",
+                        targetMetrics: { pace: 12.5 - (level - 10) * 0.1 }
+                    },
+                    {
+                        activity: "Walk",
+                        duration: walkDuration,
+                        intensity: "brisk pace",
+                        targetMetrics: { pace: 18 }
+                    }
+                ]
+            }, {
+                repeat: 1,
+                intervals: [{
+                    activity: "Cool-down Walk",
+                    duration: 300,
+                    intensity: "easy pace"
+                }]
+            }],
+            totalDuration: 300 + (runDuration + walkDuration) * sets + 300,
+            description: `Running Builder - Level ${level}`
+        };
+    }
+
+    // Levels 16-20: Transition to longer running segments with shorter recovery
+    if (level <= 20) {
+        const baseRunDuration = 180 + (level - 15) * 60;  // 3 minutes to 8 minutes
+        const walkDuration = Math.max(60, 90 - (level - 15) * 10);  // 90s down to 60s
+        const sets = 4 - Math.floor((level - 15) / 2);  // 4 down to 2 sets
+
+        return {
+            type: "interval",
+            sets: [{
+                repeat: 1,
+                intervals: [{
+                    activity: "Warm-up Walk/Light Jog",
+                    duration: 300,
+                    intensity: "easy pace building to light jog"
+                }]
+            }, {
+                repeat: sets,
+                intervals: [
+                    {
+                        activity: "Run",
+                        duration: baseRunDuration,
+                        intensity: "steady, conversational pace",
+                        targetMetrics: { pace: 11.5 - (level - 15) * 0.1 }
+                    },
+                    {
+                        activity: "Walk",
+                        duration: walkDuration,
+                        intensity: "brisk recovery",
+                        targetMetrics: { pace: 17 }
+                    }
+                ]
+            }, {
+                repeat: 1,
+                intervals: [{
+                    activity: "Cool-down Walk",
+                    duration: 300,
+                    intensity: "easy pace"
+                }]
+            }],
+            totalDuration: 300 + (baseRunDuration + walkDuration) * sets + 300,
+            description: `Endurance Builder - Level ${level}`
+        };
+    }
+}
+
+function generateBeginnerBikingIntervals(level) {
+    if (level < 10 || level > 20) {
+        throw new Error("This generator is designed for levels 10-20 only");
+    }
+
+    // Level 10 introduces the concept of varying effort on the bike
+    if (level === 10) {
+        return {
+            type: "interval",
+            sets: [{
+                repeat: 1,
+                intervals: [{
+                    activity: "Warm-up Spin",
+                    duration: 300,  // 5 minutes
+                    intensity: "light resistance",
+                    targetMetrics: { 
+                        speed: 10,  // mph
+                        cadence: 60, // RPM
+                        watts: 50
+                    }
+                }]
+            }, {
+                repeat: 5,         // Main workout: 5 sets of push/recover
+                intervals: [
+                    {
+                        activity: "Light Push",
+                        duration: 60,  // 1 minute
+                        intensity: "medium resistance, steady spin",
+                        targetMetrics: { 
+                            speed: 12,
+                            cadence: 70,
+                            watts: 75
+                        }
+                    },
+                    {
+                        activity: "Easy Spin",
+                        duration: 120,  // 2 minutes
+                        intensity: "light resistance",
+                        targetMetrics: { 
+                            speed: 10,
+                            cadence: 65,
+                            watts: 50
+                        }
+                    }
+                ]
+            }, {
+                repeat: 1,
+                intervals: [{
+                    activity: "Cool-down",
+                    duration: 300,
+                    intensity: "very light resistance"
+                }]
+            }],
+            totalDuration: 1500,  // 25 minutes total
+            description: "Introduction to Cycling Intervals"
+        };
+    }
+
+    // Levels 11-15: Build endurance with longer efforts
+    if (level <= 15) {
+        const pushDuration = 60 + (level - 10) * 15;  // Increases from 60s to 135s
+        const recoveryDuration = Math.max(60, 120 - (level - 10) * 10); // Decreases from 120s to 60s
+        const sets = 6 - Math.floor((level - 10) / 2); // Decreases from 6 to 4 sets
+        
+        // We gradually increase intensity through speed and resistance
+        const pushSpeed = 12 + (level - 10) * 0.5;  // 12 mph to 14.5 mph
+        const pushWatts = 75 + (level - 10) * 10;   // 75W to 125W
+
+        return {
+            type: "interval",
+            sets: [{
+                repeat: 1,
+                intervals: [{
+                    activity: "Warm-up Spin",
+                    duration: 300,
+                    intensity: "gradually increasing resistance",
+                    targetMetrics: {
+                        speed: 10,
+                        cadence: 70,
+                        watts: 60
+                    }
+                }]
+            }, {
+                repeat: sets,
+                intervals: [
+                    {
+                        activity: "Push Interval",
+                        duration: pushDuration,
+                        intensity: "medium-high resistance",
+                        targetMetrics: {
+                            speed: pushSpeed,
+                            cadence: 75,
+                            watts: pushWatts
+                        }
+                    },
+                    {
+                        activity: "Recovery Spin",
+                        duration: recoveryDuration,
+                        intensity: "light resistance",
+                        targetMetrics: {
+                            speed: 10,
+                            cadence: 70,
+                            watts: 60
+                        }
+                    }
+                ]
+            }, {
+                repeat: 1,
+                intervals: [{
+                    activity: "Cool-down",
+                    duration: 300,
+                    intensity: "decreasing to very light resistance"
+                }]
+            }],
+            totalDuration: 300 + (pushDuration + recoveryDuration) * sets + 300,
+            description: `Cycling Power Builder - Level ${level}`
+        };
+    }
+
+    // Levels 16-20: Introduction to sustained power intervals
+    if (level <= 20) {
+        const pushDuration = 180 + (level - 15) * 30;  // 3 minutes to 5 minutes
+        const recoveryDuration = 60;  // Consistent 1-minute recovery
+        const sets = 4 - Math.floor((level - 15) / 2);  // 4 down to 2 longer sets
+        
+        // Continue progressing intensity
+        const pushSpeed = 15 + (level - 15) * 0.5;  // 15 mph to 17.5 mph
+        const pushWatts = 125 + (level - 15) * 15;  // 125W to 200W
+
+        return {
+            type: "interval",
+            sets: [{
+                repeat: 1,
+                intervals: [{
+                    activity: "Progressive Warm-up",
+                    duration: 300,
+                    intensity: "building from light to moderate resistance",
+                    targetMetrics: {
+                        speed: "10-12",
+                        cadence: "70-80",
+                        watts: "60-90"
+                    }
+                }]
+            }, {
+                repeat: sets,
+                intervals: [
+                    {
+                        activity: "Sustained Power Interval",
+                        duration: pushDuration,
+                        intensity: "medium-high resistance, steady cadence",
+                        targetMetrics: {
+                            speed: pushSpeed,
+                            cadence: 80,
+                            watts: pushWatts
+                        }
+                    },
+                    {
+                        activity: "Active Recovery",
+                        duration: recoveryDuration,
+                        intensity: "light resistance, keep legs moving",
+                        targetMetrics: {
+                            speed: 11,
+                            cadence: 75,
+                            watts: 70
+                        }
+                    }
+                ]
+            }, {
+                repeat: 1,
+                intervals: [{
+                    activity: "Cool-down",
+                    duration: 300,
+                    intensity: "gradual reduction in resistance",
+                    targetMetrics: {
+                        speed: "10-8",
+                        cadence: "70-60",
+                        watts: "60-40"
+                    }
+                }]
+            }],
+            totalDuration: 300 + (pushDuration + recoveryDuration) * sets + 300,
+            description: `Sustained Power Development - Level ${level}`
+        };
+    }
+}
+
+function formatIntervalWorkout(workout) {
+    return `
+        <div class="workout-header">
+            <h4>${workout.description}</h4>
+            <div class="metrics-grid">
+                <div class="metric">
+                    <span class="metric-label">Total Time</span>
+                    <span class="metric-value">${Math.round(workout.totalDuration/60)} minutes</span>
+                </div>
+                <div class="metric">
+                    <span class="metric-label">Intervals</span>
+                    <span class="metric-value">${workout.sets.map(set => 
+                        `${set.repeat}x (${set.intervals.map(int => 
+                            `${int.duration}s ${int.activity}`).join(" + ")})`
+                    ).join("<br>")}</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="workout-structure">
+            <h5>Interval Structure</h5>
+            ${workout.sets.map(set => `
+                <div class="interval-set">
+                    <p class="set-header">Repeat ${set.repeat} times:</p>
+                    <ul class="interval-list">
+                        ${set.intervals.map(interval => `
+                            <li>${interval.duration} seconds ${interval.activity} at ${interval.intensity}</li>
+                        `).join('')}
+                    </ul>
+                </div>
+                
+            `).join('')}
+        </div>
+        ${workout.type === 'interval' ? `
+            <button class="start-timer-btn" onclick="startWorkoutTimer()">
+                Start Timer
+            </button>
+        ` : ''}`;
         }
 
         // Main workout generation function
@@ -671,8 +1325,8 @@
             ${formatCalories('150-300')}`;
             } else if (level <= 20) {
                 // Run/Walk Intervals phase
-                const intervals = generateIntervals(level, 'run');
-                workout.time = Math.round((intervals.activeTime + intervals.restTime) * intervals.sets / 60);
+                // These are much more complicated so they're split out into generateBeginnerRunningIntervals
+                const intervals = generateBeginnerRunningIntervals(level, 'run');
                 workout.title = 'Run/Walk Interval Workout';
 
                 const formCues = [
@@ -691,7 +1345,7 @@
 
                 workout.html = `
             ${formatWorkoutHeader(workout)}
-            ${formatIntervalSet(intervals)}
+            ${formatIntervalWorkout(intervals)}
             ${formatFormCues(formCues)}
             ${formatNotes(notes)}
             ${formatCalories('200-400')}`;
@@ -1762,6 +2416,69 @@
 
             return workout;
         }
+
+        // Add these functions to handle the timer integration
+function workoutToTimerIntervals(workout) {
+    let timerIntervals = [];
+    
+    // Add warm-up if present
+    if (workout.sets[0]?.intervals[0]?.activity === "Warm-up Walk") {
+        timerIntervals.push({
+            activity: "Warm-up Walk",
+            duration: workout.sets[0].intervals[0].duration,
+        });
+    }
+    
+    // Add main workout intervals
+    const mainSet = workout.sets.find(set => set.repeat > 1);
+    if (mainSet) {
+        for (let i = 0; i < mainSet.repeat; i++) {
+            mainSet.intervals.forEach(interval => {
+                timerIntervals.push({
+                    activity: interval.activity,
+                    duration: interval.duration,
+                });
+            });
+        }
+    }
+    
+    // Add cool-down if present
+    const lastSet = workout.sets[workout.sets.length - 1];
+    if (lastSet?.intervals[0]?.activity === "Cool-down Walk") {
+        timerIntervals.push({
+            activity: "Cool-down Walk",
+            duration: lastSet.intervals[0].duration,
+        });
+    }
+    
+    return timerIntervals;
+}
+
+function startWorkoutTimer() {
+    // Get the current workout
+    const workout = generateBeginnerRunningIntervals(levels.cardio);
+    
+    // Convert workout to timer intervals
+    const timerIntervals = workoutToTimerIntervals(workout);
+    
+    // Hide main app and show timer
+    document.querySelector('.container').style.display = 'none';
+    document.querySelector('.timer-view').style.display = 'flex';
+    
+    // Initialize and start timer
+    const timer = new IntervalTimer();
+    timer.setWorkout(timerIntervals);
+    
+    // Set up exit handler
+    document.querySelector('.exit').onclick = () => {
+        // Hide timer and show main app
+        document.querySelector('.timer-view').style.display = 'none';
+        document.querySelector('.container').style.display = 'block';
+        
+        // Reset timer
+        timer.reset();
+    };
+}
 
         function updateFlexContent() {
             const workout = generateFlexWorkout(levels.flex);
