@@ -1251,7 +1251,7 @@ function formatIntervalWorkout(workout) {
                     <p class="set-header">Repeat ${set.repeat} times:</p>
                     <ul class="interval-list">
                         ${set.intervals.map(interval => `
-                            <li>${interval.duration} seconds ${interval.activity} at ${interval.intensity}</li>
+                            <li>${interval.duration} seconds: ${interval.activity}, ${interval.intensity}</li>
                         `).join('')}
                     </ul>
                 </div>
@@ -1446,15 +1446,8 @@ function formatIntervalWorkout(workout) {
 
             } else if (level <= 20) {
                 // Interval phase
-                const intervals = generateIntervals(level, 'bike');
-                workout.time = Math.round((intervals.activeTime + intervals.restTime) * intervals.sets / 60);
-                const fastSpeed = 14 + (level - 11) * 0.2; // 14-16 mph
-                const watts = Math.round(100 + (level - 11) * 5); // 100-145 watts
-                workout.title = 'Cycling Intervals';
-
-                intervals.fastSpeed = fastSpeed;
-                intervals.slowSpeed = 10; // Recovery pace
-                intervals.watts = watts;
+                const intervals = generateBeginnerBikingIntervals(level, 'bike');
+                workout.title = 'Interval Cycling';
 
                 const formCues = [
                     'Maintain form during high-intensity periods',
@@ -1469,14 +1462,12 @@ function formatIntervalWorkout(workout) {
                     `Target cadence: 80-90 RPM during work, 60-70 RPM recovery`,
                     'Adjust resistance to hit target watts/speed'
                 ];
-
                 workout.html = `
             ${formatWorkoutHeader(workout)}
-            ${formatIntervalSet(intervals)}
+            ${formatIntervalWorkout(intervals)}
             ${formatFormCues(formCues)}
             ${formatNotes(notes)}
-            ${formatCalories('150-300')}`;
-
+            ${formatCalories('200-400')}`;
             } else {
                 // Continuous phases
                 const configs = {
