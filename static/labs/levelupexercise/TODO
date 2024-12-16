@@ -1,0 +1,13 @@
+- Interval timer - add back intensity and pace information
+   -  add a intervalHtml element and use it in both workoutHtml and timer
+   - use styling from Swimming (looks nicest)
+- Add history tracking and export
+- Interval timer - add easy/medium/hard at end of workout
+- Flexibility - Add timer support
+- Add switch between km and mph (including pace and speed)
+- Change level selector. Make it so you can either Level Up! if you are ready,
+or select level manually
+- Interval timer - add sounds for warmup/start/rest/cooldown/complete
+- Make HTML between cardio workout types consistent. Swimming looks the nicest right now
+- Add back simple calorie estimate
+- Keep seeing 0-minute rests. Oops
