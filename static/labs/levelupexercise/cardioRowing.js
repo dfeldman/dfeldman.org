@@ -69,7 +69,7 @@ function generateRowWorkout(level) {
         'Control the recovery phase - it should take twice as long as the drive',
         'Keep shoulders relaxed and low'
     ];
-    workout.level = level;s
+    workout.level = level;
 
     if (level <= 10) {
         // Beginner phase - technique focus

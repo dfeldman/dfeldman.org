@@ -15,12 +15,11 @@ class LevelWidget {
     // Dummy functions to be implemented
     getCurrentLevel() {
         // TODO: Implement this to get level from userData
-        return 15; // Dummy value
+        return userData.getLevel(this.activityType);
     }
 
     getWorkoutsAtCurrentLevel() {
-        // TODO: Implement this to get number of workouts completed at current level
-        return 2; // Dummy value
+        return userData.getWorkoutsAtCurrentLevel(this.activityType);
     }
 
     canLevelUp() {
@@ -28,8 +27,11 @@ class LevelWidget {
     }
 
     createWidget() {
-        this.element = document.createElement('div');
+        this.element = this.container;
         this.element.className = 'level-widget fun-widget';
+        console.log("SLIDER", this.isSliderVisible);
+        console.log("Current level: " + this.getCurrentLevel());
+        console.log(this.getWorkoutsAtCurrentLevel());
         this.element.innerHTML = `
             <div class="content">
                 <div class="level-circle">${this.getCurrentLevel()}</div>
@@ -53,7 +55,7 @@ class LevelWidget {
         `;
 
         // Add to container
-        this.container.appendChild(this.element);
+        //this.container.appendChild(this.element);
 
         // Store references to elements we'll need to update
         this.levelCircle = this.element.querySelector('.level-circle');
@@ -106,6 +108,7 @@ class LevelWidget {
     setLevel(level) {
         // TODO: Implement this to update level in userData
         console.log(`Setting level to ${level}`);
+        userData.setLevel(this.activityType, level);
         this.render();
     }
 
@@ -142,25 +145,40 @@ class LevelWidget {
         const currentLevel = this.getCurrentLevel();
         const workoutsCompleted = this.getWorkoutsAtCurrentLevel();
         const workoutsRemaining = this.workoutsNeededToLevelUp - workoutsCompleted;
-
-        // Update level display
-        this.levelCircle.textContent = currentLevel;
-
-        // Update progress text
-        if (this.canLevelUp()) {
-            this.progressText.textContent = 'Ready to Level Up! 🎉';
-            this.element.classList.add('can-level-up');
-        } else {
-            this.progressText.textContent = `${workoutsRemaining} more workout${workoutsRemaining !== 1 ? 's' : ''} to level up!`;
-            this.element.classList.remove('can-level-up');
-        }
-
-        // Update dots
-        this.dots.forEach((dot, index) => {
-            dot.classList.toggle('filled', index < workoutsCompleted);
+    
+        // Debug logging
+        console.log('Rendering level widget:', {
+            currentLevel,
+            workoutsCompleted,
+            workoutsRemaining
         });
-
+    
+        // Update level display
+        if (this.levelCircle) {
+            this.levelCircle.textContent = currentLevel;
+        }
+    
+        // Update progress text
+        if (this.progressText) {
+            if (this.canLevelUp()) {
+                this.progressText.textContent = 'Ready to Level Up! 🎉';
+                this.element.classList.add('can-level-up');
+            } else {
+                this.progressText.textContent = `${workoutsRemaining} more workout${workoutsRemaining !== 1 ? 's' : ''} to level up!`;
+                this.element.classList.remove('can-level-up');
+            }
+        }
+    
+        // Update dots
+        if (this.dots) {
+            this.dots.forEach((dot, index) => {
+                dot.classList.toggle('filled', index < workoutsCompleted);
+            });
+        }
+    
         // Update slider value
-        this.slider.value = currentLevel;
+        if (this.slider) {
+            this.slider.value = currentLevel;
+        }
     }
 }

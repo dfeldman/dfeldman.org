@@ -918,7 +918,6 @@
         #dashboard {
             padding-bottom: 80px;
             background: white;
-            width: 100%;
             height: 100%;
         }
 
@@ -1051,28 +1050,109 @@
             background: #374151;
         }
 
-        /* Level Widget Styles */
+
+        /* Update these styles to fix the vertical alignment */
         .level-widget {
             background: rgba(255, 255, 255, 0.95);
             border-radius: 20px;
             padding: 20px;
-            margin: 20px 0;
+            margin: 20px auto;
             box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
             max-width: 600px;
             touch-action: manipulation;
             position: relative;
-            overflow: hidden;
+            overflow: visible;
+            /* Allow elements to overflow for proper positioning */
         }
 
         .fun-widget .content {
             display: flex;
             align-items: center;
+            /* Keep elements centered vertically */
             gap: 16px;
             position: relative;
             z-index: 2;
+            min-height: 72px;
+            /* Match height of level circle */
+            padding: 0%;
+            /* Remove any padding that might affect alignment */
         }
 
         .fun-widget .level-circle {
+            position: relative;
+            z-index: 2;
+            min-width: 72px;
+            width: 72px;
+            height: 72px;
+            margin: 0;
+            /* Remove any margin that might affect positioning */
+            background: linear-gradient(135deg, #FF6B6B, #FFE66D);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 32px;
+            font-weight: 800;
+            color: white;
+            box-shadow: 0 4px 12px rgba(255, 107, 107, 0.3);
+            transition: transform 0.2s ease;
+            flex-shrink: 0;
+        }
+
+        .fun-widget .progress-container {
+            flex: 1;
+            min-width: 0;
+            margin-right: 48px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            /* Center content vertically */
+        }
+
+        .level-slider-panel {
+            position: relative;
+            z-index: 1;
+            margin-top: 20px;
+            padding-top: 20px;
+            border-top: 2px dashed rgba(0, 0, 0, 0.1);
+            width: 100%;
+            /* Ensure full width */
+        }
+
+        .slider-controls {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            padding: 0;
+            /* Remove any padding that might affect positioning */
+        }
+
+
+        .fun-widget .more-btn {
+            position: absolute;
+            right: 8px;
+            /* Adjust position */
+            top: 50%;
+            transform: translateY(-50%);
+            width: 40px;
+            height: 40px;
+            background: none;
+            border: none;
+            color: #95A5A6;
+            font-size: 24px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            transition: background-color 0.2s;
+            z-index: 3;
+            /* Ensure it's above other elements */
+        }
+
+        .fun-widget .level-circle {
+            position: relative;
+            z-index: 2;
+            min-width: 72px;
             width: 72px;
             height: 72px;
             background: linear-gradient(135deg, #FF6B6B, #FFE66D);
@@ -1085,7 +1165,18 @@
             color: white;
             box-shadow: 0 4px 12px rgba(255, 107, 107, 0.3);
             transition: transform 0.2s ease;
+            flex-shrink: 0;
         }
+
+        /* Ensure slider panel appears below the main content */
+        .level-slider-panel {
+            position: relative;
+            z-index: 1;
+            margin-top: 20px;
+            padding-top: 20px;
+            border-top: 2px dashed rgba(0, 0, 0, 0.1);
+        }
+
 
         .fun-widget .level-circle:active {
             transform: scale(0.95);
@@ -1146,11 +1237,6 @@
             animation: pulse 2s infinite;
         }
 
-        .level-slider-panel {
-            margin-top: 20px;
-            padding-top: 20px;
-            border-top: 2px dashed rgba(0, 0, 0, 0.1);
-        }
 
         .slider-controls {
             display: flex;
@@ -1251,38 +1337,22 @@
                 <button onclick="switchCardio('swim')">Swimming</button>
                 <button onclick="switchCardio('row')">Rowing</button>
             </div>
-            <div class="level-selector">
-                <div class="level-control">
-                    <button class="level-btn" onclick="adjustLevel('cardio', -1)">-</button>
+            <div id="level-selector">
+                <!-- <div class="level-control"> -->
+                <!-- <button class="level-btn" onclick="adjustLevel('cardio', -1)">-</button>
                     <input type="range" min="1" max="100" value="1" id="cardioLevel">
                     <button class="level-btn" onclick="adjustLevel('cardio', 1)">+</button>
                 </div>
-                <span class="level-display" id="cardioLevelDisplay">1</span>
+                <span class="level-display" id="cardioLevelDisplay">1</span> -->
             </div>
             <div id="cardioContent"></div>
         </div>
 
         <div id="strength" class="content">
-            <div class="level-selector">
-                <div class="level-control">
-                    <button class="level-btn" onclick="adjustLevel('strength', -1)">-</button>
-                    <input type="range" min="1" max="100" value="1" id="strengthLevel">
-                    <button class="level-btn" onclick="adjustLevel('strength', 1)">+</button>
-                </div>
-                <span class="level-display" id="strengthLevelDisplay">1</span>
-            </div>
             <div id="strengthContent"></div>
         </div>
 
         <div id="flexibility" class="content">
-            <div class="level-selector">
-                <div class="level-control">
-                    <button class="level-btn" onclick="adjustLevel('flex', -1)">-</button>
-                    <input type="range" min="1" max="100" value="1" id="flexLevel">
-                    <button class="level-btn" onclick="adjustLevel('flex', 1)">+</button>
-                </div>
-                <span class="level-display" id="flexLevelDisplay">1</span>
-            </div>
             <div id="flexContent"></div>
         </div>
         <div id="dashboard" class="content">
@@ -1330,17 +1400,17 @@
         let currentCardioType = 'run';
         let currentWorkout = {};
 
-        // Initialize ranges for all activities
-        document.getElementById('strengthLevel').value = userData.getLevel('strength') || 1;
-        document.getElementById('strengthLevelDisplay').textContent = userData.getLevel('strength') || 1;
-        document.getElementById('flexLevel').value = userData.getLevel('flexibility') || 1;
-        document.getElementById('flexLevelDisplay').textContent = userData.getLevel('flexibility') || 1;
+        // // Initialize ranges for all activities
+        // document.getElementById('strengthLevel').value = userData.getLevel('strength') || 1;
+        // document.getElementById('strengthLevelDisplay').textContent = userData.getLevel('strength') || 1;
+        // document.getElementById('flexLevel').value = userData.getLevel('flexibility') || 1;
+        // document.getElementById('flexLevelDisplay').textContent = userData.getLevel('flexibility') || 1;
 
         // Handle cardio level display based on current type
         function updateCardioLevelDisplay() {
             const currentLevel = userData.getLevel(currentCardioType) || 1;
-            document.getElementById('cardioLevel').value = currentLevel;
-            document.getElementById('cardioLevelDisplay').textContent = currentLevel;
+            // document.getElementById('cardioLevel').value = currentLevel;
+            // document.getElementById('cardioLevelDisplay').textContent = currentLevel;
         }
 
         // Initial cardio display
@@ -1391,26 +1461,26 @@
         }
 
         // Remove all references to the "levels" object and rely only on userData
-        document.getElementById('cardioLevel').addEventListener('input', (e) => {
-            const newLevel = parseInt(e.target.value);
-            userData.setLevel(currentCardioType, newLevel);
-            document.getElementById('cardioLevelDisplay').textContent = newLevel;
-            updateCardioContent();
-        });
+        // document.getElementById('cardioLevel').addEventListener('input', (e) => {
+        //     const newLevel = parseInt(e.target.value);
+        //     userData.setLevel(currentCardioType, newLevel);
+        //     document.getElementById('cardioLevelDisplay').textContent = newLevel;
+        //     updateCardioContent();
+        // });
 
-        document.getElementById('strengthLevel').addEventListener('input', (e) => {
-            const newLevel = parseInt(e.target.value);
-            userData.setLevel('strength', newLevel);
-            document.getElementById('strengthLevelDisplay').textContent = newLevel;
-            updateStrengthContent();
-        });
+        // document.getElementById('strengthLevel').addEventListener('input', (e) => {
+        //     const newLevel = parseInt(e.target.value);
+        //     userData.setLevel('strength', newLevel);
+        //     document.getElementById('strengthLevelDisplay').textContent = newLevel;
+        //     updateStrengthContent();
+        // });
 
-        document.getElementById('flexLevel').addEventListener('input', (e) => {
-            const newLevel = parseInt(e.target.value);
-            userData.setLevel('flexibility', newLevel);
-            document.getElementById('flexLevelDisplay').textContent = newLevel;
-            updateFlexContent();
-        });
+        // document.getElementById('flexLevel').addEventListener('input', (e) => {
+        //     const newLevel = parseInt(e.target.value);
+        //     userData.setLevel('flexibility', newLevel);
+        //     document.getElementById('flexLevelDisplay').textContent = newLevel;
+        //     updateFlexContent();
+        // });
 
 
         function roundTo10Seconds(seconds) {
@@ -1609,26 +1679,86 @@
                     throw new Error('Unsupported workout type');
             }
         }
+
         function updateStrengthContent() {
-            const level = userData.getLevel('strength');
-            const workout = generateStrengthWorkout(level);
-            currentWorkout = workout;
-            const content = document.getElementById('strengthContent');
+    const level = userData.getLevel('strength');
+    const workout = generateStrengthWorkout(level);
+    currentWorkout = workout;
+    const content = document.getElementById('strengthContent');
+    content.innerHTML = ''; // Clear existing content
 
-            const workoutDisplay = new WorkoutDisplay(
-                content,
-                workout,
-                { unitSystem: 'imperial' }
-            );
+    // Create and add widget container
+    const widgetContainer = document.createElement('div');
+    widgetContainer.className = 'level-widget-container';
+    content.appendChild(widgetContainer);
 
-            workoutDisplay.render();
-        }
+    // Create and add workout container
+    const workoutContainer = document.createElement('div');
+    workoutContainer.className = 'workout-container';
+    content.appendChild(workoutContainer);
+
+    // Create new level widget
+    new LevelWidget(widgetContainer, 'strength');
+
+    // Create workout display in the workout container
+    const workoutDisplay = new WorkoutDisplay(
+        workoutContainer,
+        workout,
+        { unitSystem: 'imperial' }
+    );
+
+    workoutDisplay.render();
+}
+
+function updateFlexContent() {
+    const level = userData.getLevel('flexibility');
+    const workout = generateFlexWorkout(level);
+    currentWorkout = workout;
+    const content = document.getElementById('flexContent');
+    content.innerHTML = ''; // Clear existing content
+
+    // Create and add widget container
+    const widgetContainer = document.createElement('div');
+    widgetContainer.className = 'level-widget-container';
+    content.appendChild(widgetContainer);
+
+    // Create and add workout container
+    const workoutContainer = document.createElement('div');
+    workoutContainer.className = 'workout-container';
+    content.appendChild(workoutContainer);
+
+    // Create new level widget
+    new LevelWidget(widgetContainer, 'flexibility');
+
+    // Create workout display in the workout container
+    const workoutDisplay = new WorkoutDisplay(
+        workoutContainer,
+        workout,
+        { unitSystem: 'imperial' }
+    );
+
+    workoutDisplay.render();
+}
 
         function updateCardioContent() {
             const level = userData.getLevel(currentCardioType);
             const workout = generateCardioWorkout(level, currentCardioType);
             currentWorkout = workout;
             const content = document.getElementById('cardioContent');
+
+            // Create or update level widget container
+            let widgetContainer = document.getElementById('level-selector');
+            if (!widgetContainer) {
+                widgetContainer = document.createElement('div');
+                widgetContainer.className = 'level-widget-container';
+                content.insertBefore(widgetContainer, content.firstChild);
+            } else {
+                widgetContainer.className = 'level-widget-container';
+            }
+
+            // Create new level widget
+            new LevelWidget(widgetContainer, currentCardioType);
+
             const workoutDisplay = new WorkoutDisplay(
                 content,
                 workout,
@@ -1638,20 +1768,23 @@
             workoutDisplay.render();
         }
 
-        function updateFlexContent() {
-            const level = userData.getLevel('flexibility');
-            const workout = generateFlexWorkout(level);
-            const content = document.getElementById('flexContent');
-            currentWorkout = workout;
+        // function updateFlexContent() {
+        //     const level = userData.getLevel('flexibility');
+        //     const workout = generateFlexWorkout(level);
+        //     const content = document.getElementById('flexContent');
+        //     currentWorkout = workout;
 
-            const workoutDisplay = new WorkoutDisplay(
-                content,
-                workout,
-                { unitSystem: 'imperial' }
-            );
+        //     const workoutDisplay = new WorkoutDisplay(
+        //         content,
+        //         workout,
+        //         { unitSystem: 'imperial' }
+        //     );
 
-            workoutDisplay.render();
-        }
+
+        //     levelWidgetContainer = document.getElementById('level-selector')
+        //     const levelWidget = new LevelWidget(levelWidgetContainer, 'flexibility'); 
+        //     workoutDisplay.render();
+        // }
 
 
         function updateContent() {
@@ -1663,7 +1796,6 @@
 
             const tabName = activeTab.getAttribute('onclick').match(/switchTab\('(.+)'\)/)[1];
             console.log('Updating content for active tab:', tabName);
-
             switch (tabName) {
                 case 'cardio':
                     updateCardioContent();

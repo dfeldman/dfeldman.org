@@ -36,6 +36,21 @@ class UserData {
         return this.activityLevels[activity];
     }
 
+    getWorkoutsAtCurrentLevel(activity) {
+        if (!this.VALID_ACTIVITIES.includes(activity)) {
+            throw new Error(`Invalid activity: ${activity}`);
+        }
+    
+        const currentLevel = this.getLevel(activity);
+        
+        // Filter workouts by activity and level, and ensure they were completed (100%)
+        return this.workoutHistory.filter(workout => 
+            workout.activity === activity && 
+            workout.level === currentLevel &&
+            workout.percentCompleted === 100
+        ).length;
+    }
+
     setLevel(activity, level) {
         if (!this.VALID_ACTIVITIES.includes(activity)) {
             throw new Error(`Invalid activity: ${activity}`);
