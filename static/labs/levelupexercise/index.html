@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>Fitness Journey</title>
+    <title>Level Up!</title>
     <style>
         :root {
             --primary: #FF5733;
@@ -402,6 +402,11 @@
             /* Inherits other button styles */
         }
 
+        .skip.next-style {
+            background-color: #4338CA;
+            /* Different color for Next */
+        }
+
         .reset {
             background-color: var(--secondary);
             color: white;
@@ -512,356 +517,720 @@
             font-style: italic;
         }
 
-/* NEW Workout Overview HTML */
-.workout-overview {
-  max-width: 800px;
-  margin: 0 auto;
-  padding: 16px;
-}
+        /* NEW Workout Overview HTML */
+        .workout-overview {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 16px;
+        }
 
-.overview-header {
-  color: white;
-  padding: 24px;
-  border-radius: 16px;
-  margin-bottom: 24px;
-}
+        .overview-header {
+            color: white;
+            padding: 24px;
+            border-radius: 16px;
+            margin-bottom: 24px;
+        }
 
-.workout-title {
-  font-size: clamp(24px, 8vw, 36px);
-  font-weight: 800;
-  margin: 0 0 8px 0;
-}
+        .workout-title {
+            font-size: clamp(24px, 8vw, 36px);
+            font-weight: 800;
+            margin: 0 0 8px 0;
+        }
 
-.workout-meta {
-  font-size: clamp(14px, 4vw, 18px);
-  font-weight: 600;
-  opacity: 0.9;
-}
+        .workout-meta {
+            font-size: clamp(14px, 4vw, 18px);
+            font-weight: 600;
+            opacity: 0.9;
+        }
 
-.set-container {
-  margin-bottom: 32px;
-}
+        .set-container {
+            margin-bottom: 32px;
+        }
 
-.repeat-container {
-  border-left: 4px solid currentColor;
-  margin-left: 12px;
-  padding-left: 20px;
-  margin-bottom: 32px;
-}
+        .repeat-container {
+            border-left: 4px solid currentColor;
+            margin-left: 12px;
+            padding-left: 20px;
+            margin-bottom: 32px;
+        }
 
-.repeat-header {
-  font-weight: 800;
-  font-size: clamp(16px, 5vw, 20px);
-  margin: -4px 0 16px -24px;
-  padding: 8px 16px;
-  border-radius: 0 8px 8px 0;
-  display: inline-block;
-}
+        .repeat-header {
+            font-weight: 800;
+            font-size: clamp(16px, 5vw, 20px);
+            margin: -4px 0 16px -24px;
+            padding: 8px 16px;
+            border-radius: 0 8px 8px 0;
+            display: inline-block;
+        }
 
-.interval-card {
-  background: white;
-  border-radius: 16px;
-  padding: 20px;
-  margin-bottom: 16px;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
-}
+        .interval-card {
+            background: white;
+            border-radius: 16px;
+            padding: 20px;
+            margin-bottom: 16px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+        }
 
-.interval-title {
-  font-weight: 800;
-  font-size: clamp(18px, 5vw, 24px);
-  margin: 0 0 8px 0;
-}
+        .interval-title {
+            font-weight: 800;
+            font-size: clamp(18px, 5vw, 24px);
+            margin: 0 0 8px 0;
+        }
 
-.machine-type {
-  font-size: clamp(12px, 3.5vw, 14px);
-  color: #6B7280;
-  margin-top: 4px;
-}
+        .machine-type {
+            font-size: clamp(12px, 3.5vw, 14px);
+            color: #6B7280;
+            margin-top: 4px;
+        }
 
-.interval-intensity {
-  font-size: clamp(14px, 4vw, 18px);
-  font-weight: 600;
-  margin-bottom: 12px;
-}
+        .interval-intensity {
+            font-size: clamp(14px, 4vw, 18px);
+            font-weight: 600;
+            margin-bottom: 12px;
+        }
 
-.interval-metrics {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 8px;
-  margin-top: 12px;
-}
+        .interval-metrics {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-top: 12px;
+        }
 
-.metric-pill {
-  padding: 8px 12px;
-  border-radius: 8px;
-  font-size: clamp(13px, 3.5vw, 16px);
-  font-weight: 600;
-  color: #111827;
-}
+        .metric-pill {
+            padding: 8px 12px;
+            border-radius: 8px;
+            font-size: clamp(13px, 3.5vw, 16px);
+            font-weight: 600;
+            color: #111827;
+        }
 
-/* Metric type colors */
-.metric-time { background: #E0E7FF; }    /* Light indigo */
-.metric-weight { background: #FEE2E2; }  /* Light red */
-.metric-reps { background: #F3E8FF; }    /* Light purple */
-.metric-rest { background: #D1FAE5; }    /* Light green */
-.metric-distance { background: #D1FAE5; } /* Light green */
-.metric-pace { background: #FEF3C7; }    /* Light yellow */
-.metric-power { background: #FEE2E2; }   /* Light red */
-.metric-rate { background: #F3E8FF; }    /* Light purple */
+        /* Metric type colors */
+        .metric-time {
+            background: #E0E7FF;
+        }
 
-/* Error state */
-.error {
-  color: #DC2626;
-  padding: 16px;
-  text-align: center;
-  font-weight: 600;
-}
+        /* Light indigo */
+        .metric-weight {
+            background: #FEE2E2;
+        }
 
-.notes-section {
-  margin-top: 32px;
-  padding-top: 32px;
-  border-top: 1px solid #E5E7EB;
-}
+        /* Light red */
+        .metric-reps {
+            background: #F3E8FF;
+        }
 
-.notes-block {
-  margin-bottom: 24px;
-}
+        /* Light purple */
+        .metric-rest {
+            background: #D1FAE5;
+        }
 
-.notes-block:last-child {
-  margin-bottom: 0;
-}
+        /* Light green */
+        .metric-distance {
+            background: #D1FAE5;
+        }
 
-.notes-title {
-  font-size: clamp(16px, 5vw, 20px);
-  font-weight: 800;
-  color: #111827;
-  margin: 0 0 16px 0;
-}
+        /* Light green */
+        .metric-pace {
+            background: #FEF3C7;
+        }
 
-.notes-list {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
+        /* Light yellow */
+        .metric-power {
+            background: #FEE2E2;
+        }
 
-.note-item {
-  display: flex;
-  align-items: flex-start;
-  margin-bottom: 12px;
-  font-size: clamp(14px, 4vw, 16px);
-  color: #374151;
-}
+        /* Light red */
+        .metric-rate {
+            background: #F3E8FF;
+        }
 
-.note-item:last-child {
-  margin-bottom: 0;
-}
+        /* Light purple */
 
-.note-bullet {
-  width: 6px;
-  height: 6px;
-  background: currentColor;
-  border-radius: 50%;
-  margin: 8px 12px 0 0;
-  flex-shrink: 0;
-}
+        /* Error state */
+        .error {
+            color: #DC2626;
+            padding: 16px;
+            text-align: center;
+            font-weight: 600;
+        }
 
+        .notes-section {
+            margin-top: 32px;
+            padding-top: 32px;
+            border-top: 1px solid #E5E7EB;
+        }
 
-.go-button {
-    width: 100%;
-    padding: 20px;
-    font-size: 24px;
-    font-weight: bold;
-    background-color: var(--success);
-    color: white;
-    border: none;
-    border-radius: 12px;
-    margin-bottom: 20px;
-    cursor: pointer;
-    transition: transform 0.1s, background-color 0.2s;
-}
+        .notes-block {
+            margin-bottom: 24px;
+        }
 
-.go-button:hover {
-    background-color: #3d8b40;
-}
+        .notes-block:last-child {
+            margin-bottom: 0;
+        }
 
-.go-button:active {
-    transform: scale(0.98);
-}
+        .notes-title {
+            font-size: clamp(16px, 5vw, 20px);
+            font-weight: 800;
+            color: #111827;
+            margin: 0 0 16px 0;
+        }
 
-.timer-interval {
-    text-align: center;
-    padding: 32px;
-    background: rgba(255, 255, 255, 0.95);
-    border-radius: 24px;
-    margin: 20px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-}
+        .notes-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
 
-.timer-activity {
-    font-size: min(12vw, 48px);
-    font-weight: 800;
-    margin: 0 0 16px 0;
-    color: #1a1a1a;
-    line-height: 1.1;
-}
+        .note-item {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 12px;
+            font-size: clamp(14px, 4vw, 16px);
+            color: #374151;
+        }
 
-.timer-intensity {
-    font-size: min(6vw, 24px);
-    color: #4338CA;
-    margin-bottom: 24px;
-    font-weight: 600;
-}
+        .note-item:last-child {
+            margin-bottom: 0;
+        }
 
-.timer-metrics {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 16px;
-    justify-content: center;
-    margin: 24px 0;
-}
-
-.timer-metric {
-    font-size: min(5vw, 20px);
-    font-weight: 600;
-    padding: 16px 24px;
-    border-radius: 16px;
-    color: #111827;
-}
-
-/* Specific metric types */
-.timer-metric-time { 
-    background: #E0E7FF;
-    display: none; /* Hide the time for now since it is displayed elsewhere and messes up layout */
-    /* /border-left: 4px solid #4338CA; */
-}
-
-.timer-metric-pace { 
-    background: #FEF3C7;
-    /* border-left: 4px solid #D97706; */
-}
-
-.timer-metric-distance { 
-    background: #D1FAE5;
-    /* border-left: 4px solid #059669; */
-}
-
-.timer-metric-power { 
-    background: #FEE2E2;
-    /* border-left: 4px solid #DC2626; */
-}
-
-.timer-metric-rate { 
-    background: #F3E8FF;
-    /* border-left: 4px solid #7C3AED; */
-}
-
-.timer-metric-reps,
-.timer-metric-sets { 
-    background: #F3E8FF;
-    /* border-left: 4px solid #7C3AED; */
-}
-
-.timer-metric-weight { 
-    background: #FEE2E2;
-    /* border-left: 4px solid #DC2626; */
-}
-
-.timer-description {
-    font-size: min(4vw, 18px);
-    color: #4B5563;
-    margin-top: 16px;
-    line-height: 1.4;
-}
+        .note-bullet {
+            width: 6px;
+            height: 6px;
+            background: currentColor;
+            border-radius: 50%;
+            margin: 8px 12px 0 0;
+            flex-shrink: 0;
+        }
 
 
-.rating-modal {
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    z-index: 2000;
-    background: rgba(0, 0, 0, 0.8);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
+        .go-button {
+            width: 100%;
+            padding: 20px;
+            font-size: 24px;
+            font-weight: bold;
+            background-color: var(--success);
+            color: white;
+            border: none;
+            border-radius: 12px;
+            margin-bottom: 20px;
+            cursor: pointer;
+            transition: transform 0.1s, background-color 0.2s;
+        }
 
-.rating-modal .rating-bold-gradient {
-    width: 90%;
-    max-width: 500px;
-    margin: 20px;
-    border-radius: 24px;
-    padding: 32px 24px;
-    background: linear-gradient(135deg, #4f46e5, #7c3aed);
-}
+        .go-button:hover {
+            background-color: #3d8b40;
+        }
 
-.rating-modal h2 {
-    color: white;
-    font-size: 32px;
-    font-weight: 800;
-    text-align: center;
-    margin-bottom: 32px;
-}
+        .go-button:active {
+            transform: scale(0.98);
+        }
 
-.rating-modal .gradient-options {
-    display: flex;
-    flex-direction: column;
-    gap: 16px;
-}
+        .timer-interval {
+            text-align: center;
+            padding: 32px;
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 24px;
+            margin: 20px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+        }
 
-.rating-modal .gradient-option {
-    background: rgba(255, 255, 255, 0.98);
-    padding: 24px;
-    border-radius: 16px;
-    cursor: pointer;
-    transition: transform 0.2s;
-    display: flex;
-    align-items: center;
-    gap: 20px;
-}
+        .timer-activity {
+            font-size: min(12vw, 48px);
+            font-weight: 800;
+            margin: 0 0 16px 0;
+            color: #1a1a1a;
+            line-height: 1.1;
+        }
 
-.rating-modal .gradient-option:hover {
-    transform: scale(1.02);
-    background: white;
-}
+        .timer-intensity {
+            font-size: min(6vw, 24px);
+            color: #4338CA;
+            margin-bottom: 24px;
+            font-weight: 600;
+        }
 
-.rating-modal .gradient-option:active {
-    transform: scale(0.98);
-}
+        .timer-metrics {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 16px;
+            justify-content: center;
+            margin: 24px 0;
+        }
 
-.rating-modal .emoji {
-    font-size: 48px;
-}
+        .timer-metric {
+            font-size: min(5vw, 20px);
+            font-weight: 600;
+            padding: 16px 24px;
+            border-radius: 16px;
+            color: #111827;
+        }
 
-.rating-modal .rating-label {
-    font-size: 24px;
-    font-weight: 700;
-    color: #1f2937;
-}
+        /* Specific metric types */
+        .timer-metric-time {
+            background: #E0E7FF;
+            display: none;
+            /* Hide the time for now since it is displayed elsewhere and messes up layout */
+            /* /border-left: 4px solid #4338CA; */
+        }
+
+        .timer-metric-pace {
+            background: #FEF3C7;
+            /* border-left: 4px solid #D97706; */
+        }
+
+        .timer-metric-distance {
+            background: #D1FAE5;
+            /* border-left: 4px solid #059669; */
+        }
+
+        .timer-metric-power {
+            background: #FEE2E2;
+            /* border-left: 4px solid #DC2626; */
+        }
+
+        .timer-metric-rate {
+            background: #F3E8FF;
+            /* border-left: 4px solid #7C3AED; */
+        }
+
+        .timer-metric-reps,
+        .timer-metric-sets {
+            background: #F3E8FF;
+            /* border-left: 4px solid #7C3AED; */
+        }
+
+        .timer-metric-weight {
+            background: #FEE2E2;
+            /* border-left: 4px solid #DC2626; */
+        }
+
+        .timer-description {
+            font-size: min(4vw, 18px);
+            color: #4B5563;
+            margin-top: 16px;
+            line-height: 1.4;
+        }
 
 
-.complete-button {
-    width: 100%;
-    padding: 20px;
-    font-size: 24px;
-    font-weight: bold;
-    background-color: #4338CA;
-    color: white;
-    border: none;
-    border-radius: 12px;
-    margin-top: 20px;
-    cursor: pointer;
-    transition: transform 0.1s, background-color 0.2s;
-}
+        .rating-modal {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            z-index: 2000;
+            background: rgba(0, 0, 0, 0.8);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
 
-.complete-button:hover {
-    background-color: #3730a3;
-}
+        .rating-modal .rating-bold-gradient {
+            width: 90%;
+            max-width: 500px;
+            margin: 20px;
+            border-radius: 24px;
+            padding: 32px 24px;
+            background: linear-gradient(135deg, #4f46e5, #7c3aed);
+        }
 
-.complete-button:active {
-    transform: scale(0.98);
-}
+        .rating-modal h2 {
+            color: white;
+            font-size: 32px;
+            font-weight: 800;
+            text-align: center;
+            margin-bottom: 32px;
+        }
+
+        .rating-modal .gradient-options {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+
+        .rating-modal .gradient-option {
+            background: rgba(255, 255, 255, 0.98);
+            padding: 24px;
+            border-radius: 16px;
+            cursor: pointer;
+            transition: transform 0.2s;
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .rating-modal .gradient-option:hover {
+            transform: scale(1.02);
+            background: white;
+        }
+
+        .rating-modal .gradient-option:active {
+            transform: scale(0.98);
+        }
+
+        .rating-modal .emoji {
+            font-size: 48px;
+        }
+
+        .rating-modal .rating-label {
+            font-size: 24px;
+            font-weight: 700;
+            color: #1f2937;
+        }
+
+
+        .complete-button {
+            width: 100%;
+            padding: 20px;
+            font-size: 24px;
+            font-weight: bold;
+            background-color: #4338CA;
+            color: white;
+            border: none;
+            border-radius: 12px;
+            margin-top: 20px;
+            cursor: pointer;
+            transition: transform 0.1s, background-color 0.2s;
+        }
+
+        .complete-button:hover {
+            background-color: #3730a3;
+        }
+
+        .complete-button:active {
+            transform: scale(0.98);
+        }
+
+
+        .dashboard-header {
+            margin-bottom: 2rem;
+            text-align: center;
+        }
+
+        .dashboard-title {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #1f2937;
+            margin-bottom: 0.5rem;
+        }
+
+        /* Ensure the export bar doesn't overlap with content */
+        #dashboard {
+            padding-bottom: 80px;
+            background: white;
+            width: 100%;
+            height: 100%;
+        }
+
+        .month-group {
+            margin-bottom: 2rem;
+        }
+
+        .month-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 0.5rem;
+        }
+
+        .month-title {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #1f2937;
+        }
+
+        .workout-count {
+            font-size: 1.125rem;
+            font-weight: 600;
+            color: #4b5563;
+        }
+
+        .workout-card {
+            position: relative;
+            padding: 1rem;
+            border-radius: 0.5rem;
+            color: white;
+            margin-bottom: 0.75rem;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+        }
+
+        .workout-card.type-run {
+            background-color: #2563eb;
+        }
+
+        .workout-card.type-strength {
+            background-color: #7c3aed;
+        }
+
+        .workout-card.type-bike {
+            background-color: #16a34a;
+        }
+
+        .workout-card.type-swim {
+            background-color: #0891b2;
+        }
+
+        .level-circle {
+            position: absolute;
+            right: 1rem;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 4rem;
+            height: 4rem;
+            background: white;
+            border-radius: 50%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .level-number {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #111827;
+            line-height: 1;
+        }
+
+        .level-label {
+            font-size: 0.75rem;
+            font-weight: 600;
+            color: #6b7280;
+        }
+
+        .workout-content {
+            padding-right: 5rem;
+        }
+
+        .workout-date {
+            font-size: 1.25rem;
+            font-weight: bold;
+            margin-bottom: 0.25rem;
+        }
+
+        .workout-description {
+            font-size: 1.125rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        .workout-duration {
+            font-size: 0.875rem;
+            opacity: 0.9;
+        }
+
+        .export-bar {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: white;
+            padding: 1rem;
+            box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.1);
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+        }
+
+        .export-button {
+            background: #111827;
+            color: white;
+            border: none;
+            padding: 0.75rem 1.5rem;
+            border-radius: 0.5rem;
+            font-weight: 600;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .export-button:hover {
+            background: #374151;
+        }
+
+        /* Level Widget Styles */
+        .level-widget {
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 20px;
+            padding: 20px;
+            margin: 20px 0;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            max-width: 600px;
+            touch-action: manipulation;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .fun-widget .content {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .fun-widget .level-circle {
+            width: 72px;
+            height: 72px;
+            background: linear-gradient(135deg, #FF6B6B, #FFE66D);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 32px;
+            font-weight: 800;
+            color: white;
+            box-shadow: 0 4px 12px rgba(255, 107, 107, 0.3);
+            transition: transform 0.2s ease;
+        }
+
+        .fun-widget .level-circle:active {
+            transform: scale(0.95);
+        }
+
+        .fun-widget .progress-container {
+            flex: 1;
+            min-width: 0;
+        }
+
+        .fun-widget .progress-dots {
+            display: flex;
+            gap: 8px;
+            margin-top: 12px;
+        }
+
+        .fun-widget .dot {
+            width: 16px;
+            height: 16px;
+            border-radius: 50%;
+            background: #E5E7EB;
+            position: relative;
+            transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+        }
+
+        .fun-widget .dot.filled {
+            background: linear-gradient(135deg, #FF6B6B, #FFE66D);
+            transform: scale(1.2);
+        }
+
+        .fun-widget .progress-text {
+            font-size: 18px;
+            font-weight: 700;
+            color: #2C3E50;
+            margin-bottom: 8px;
+        }
+
+        .fun-widget .more-btn {
+            width: 48px;
+            height: 48px;
+            background: none;
+            border: none;
+            color: #95A5A6;
+            font-size: 24px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            transition: background-color 0.2s;
+        }
+
+        .fun-widget .more-btn:active {
+            background: rgba(0, 0, 0, 0.1);
+        }
+
+        .fun-widget.can-level-up .level-circle {
+            background: linear-gradient(135deg, #4ECDC4, #45B7AF);
+            animation: pulse 2s infinite;
+        }
+
+        .level-slider-panel {
+            margin-top: 20px;
+            padding-top: 20px;
+            border-top: 2px dashed rgba(0, 0, 0, 0.1);
+        }
+
+        .slider-controls {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+        }
+
+        .level-btn {
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            border: none;
+            background: linear-gradient(135deg, #FF6B6B, #FFE66D);
+            color: white;
+            font-size: 28px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 2px 8px rgba(255, 107, 107, 0.3);
+        }
+
+        .level-btn:active {
+            transform: scale(0.95);
+        }
+
+        input[type="range"] {
+            flex: 1;
+            height: 12px;
+            -webkit-appearance: none;
+            background: #E5E7EB;
+            border-radius: 6px;
+        }
+
+        input[type="range"]::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #FF6B6B, #FFE66D);
+            border: 3px solid white;
+            box-shadow: 0 2px 8px rgba(255, 107, 107, 0.3);
+        }
+
+        .celebration-emoji {
+            position: absolute;
+            font-size: 40px;
+            pointer-events: none;
+            animation: celebrate 0.8s ease-out forwards;
+        }
+
+        @keyframes celebrate {
+            0% {
+                transform: scale(0) rotate(0deg);
+                opacity: 0;
+            }
+
+            50% {
+                transform: scale(1.2) rotate(180deg);
+                opacity: 1;
+            }
+
+            100% {
+                transform: scale(1) rotate(360deg);
+                opacity: 0;
+            }
+        }
+
+        @keyframes pulse {
+            0% {
+                transform: scale(1);
+            }
+
+            50% {
+                transform: scale(1.05);
+            }
+
+            100% {
+                transform: scale(1);
+            }
+        }
     </style>
 </head>
 
@@ -871,6 +1240,8 @@
             <button class="tab active" onclick="switchTab('cardio')">Cardio</button>
             <button class="tab" onclick="switchTab('strength')">Strength</button>
             <button class="tab" onclick="switchTab('flexibility')">Flexibility</button>
+            <button class="tab" onclick="switchTab('dashboard')">Dashboard</button>
+
         </div>
 
         <div id="cardio" class="content active">
@@ -914,6 +1285,9 @@
             </div>
             <div id="flexContent"></div>
         </div>
+        <div id="dashboard" class="content">
+            <div id="workout-history"></div>
+        </div>
     </div>
 
     <div class="timer-view" style="display: none;">
@@ -947,32 +1321,51 @@
     <script src="intervalTimer.js"></script>
     <script src="workoutDisplay.js"></script>
     <script src="workoutRating.js"></script>
-
+    <script src="userData.js"></script>
+    <script src="userDashboard.js"></script>
+    <script src="levelWidget.js"></script>
     <script>
-        let levels = {
-            cardio: parseInt(localStorage.getItem('cardioLevel')) || 1,
-            strength: parseInt(localStorage.getItem('strengthLevel')) || 1,
-            flex: parseInt(localStorage.getItem('flexLevel')) || 1
-        };
 
+        const userData = new UserData();
         let currentCardioType = 'run';
-
         let currentWorkout = {};
 
-        // Initialize ranges
-        document.getElementById('cardioLevel').value = levels.cardio;
-        document.getElementById('strengthLevel').value = levels.strength;
-        document.getElementById('flexLevel').value = levels.flex;
-        document.getElementById('cardioLevelDisplay').textContent = levels.cardio;
-        document.getElementById('strengthLevelDisplay').textContent = levels.strength;
-        document.getElementById('flexLevelDisplay').textContent = levels.flex;
+        // Initialize ranges for all activities
+        document.getElementById('strengthLevel').value = userData.getLevel('strength') || 1;
+        document.getElementById('strengthLevelDisplay').textContent = userData.getLevel('strength') || 1;
+        document.getElementById('flexLevel').value = userData.getLevel('flexibility') || 1;
+        document.getElementById('flexLevelDisplay').textContent = userData.getLevel('flexibility') || 1;
+
+        // Handle cardio level display based on current type
+        function updateCardioLevelDisplay() {
+            const currentLevel = userData.getLevel(currentCardioType) || 1;
+            document.getElementById('cardioLevel').value = currentLevel;
+            document.getElementById('cardioLevelDisplay').textContent = currentLevel;
+        }
+
+        // Initial cardio display
+        updateCardioLevelDisplay();
 
         function adjustLevel(type, change) {
-            const newLevel = Math.max(1, Math.min(100, levels[type] + change));
-            levels[type] = newLevel;
-            document.getElementById(`${type}Level`).value = newLevel;
-            document.getElementById(`${type}LevelDisplay`).textContent = newLevel;
-            localStorage.setItem(`${type}Level`, newLevel);
+            // For cardio activities, use the current cardio type
+            const activity = type === 'cardio' ? currentCardioType :
+                type === 'flex' ? 'flexibility' : type;
+
+            const currentLevel = userData.getLevel(activity) || 1;
+            const newLevel = Math.max(1, Math.min(100, currentLevel + change));
+
+            // Update the data store
+            userData.setLevel(activity, newLevel);
+
+            // Update the UI
+            if (type === 'cardio') {
+                document.getElementById('cardioLevel').value = newLevel;
+                document.getElementById('cardioLevelDisplay').textContent = newLevel;
+            } else {
+                document.getElementById(`${type}Level`).value = newLevel;
+                document.getElementById(`${type}LevelDisplay`).textContent = newLevel;
+            }
+
             updateContent();
         }
 
@@ -981,36 +1374,44 @@
             document.querySelectorAll('.content').forEach(content => content.classList.remove('active'));
             event.target.classList.add('active');
             document.getElementById(tabName).classList.add('active');
-            updateContent();
+
+            if (tabName === 'dashboard') {
+                updateDashboard();
+            } else {
+                updateContent();
+            }
         }
 
         function switchCardio(type) {
             currentCardioType = type;
             document.querySelectorAll('.cardio-nav button').forEach(btn => btn.classList.remove('active'));
             event.target.classList.add('active');
+            updateCardioLevelDisplay();
             updateCardioContent();
         }
 
+        // Remove all references to the "levels" object and rely only on userData
         document.getElementById('cardioLevel').addEventListener('input', (e) => {
-            levels.cardio = parseInt(e.target.value);
-            document.getElementById('cardioLevelDisplay').textContent = levels.cardio;
-            localStorage.setItem('cardioLevel', levels.cardio);
+            const newLevel = parseInt(e.target.value);
+            userData.setLevel(currentCardioType, newLevel);
+            document.getElementById('cardioLevelDisplay').textContent = newLevel;
             updateCardioContent();
         });
 
         document.getElementById('strengthLevel').addEventListener('input', (e) => {
-            levels.strength = parseInt(e.target.value);
-            document.getElementById('strengthLevelDisplay').textContent = levels.strength;
-            localStorage.setItem('strengthLevel', levels.strength);
+            const newLevel = parseInt(e.target.value);
+            userData.setLevel('strength', newLevel);
+            document.getElementById('strengthLevelDisplay').textContent = newLevel;
             updateStrengthContent();
         });
 
         document.getElementById('flexLevel').addEventListener('input', (e) => {
-            levels.flex = parseInt(e.target.value);
-            document.getElementById('flexLevelDisplay').textContent = levels.flex;
-            localStorage.setItem('flexLevel', levels.flex);
+            const newLevel = parseInt(e.target.value);
+            userData.setLevel('flexibility', newLevel);
+            document.getElementById('flexLevelDisplay').textContent = newLevel;
             updateFlexContent();
         });
+
 
         function roundTo10Seconds(seconds) {
             return Math.round(seconds / 10) * 10;
@@ -1026,39 +1427,39 @@
         }
 
         function formatPace(minutesPerMile, unit = 'imperial') {
-    console.log('Raw pace value received:', minutesPerMile);
-    
-    if (typeof minutesPerMile !== 'number') {
-        console.error('Invalid pace value:', minutesPerMile);
-        return '--:--/mi';
-    }
+            console.log('Raw pace value received:', minutesPerMile);
 
-    // Log the intermediate calculations
-    const totalMinutes = unit === 'metric' ? 
-        minutesPerMile / 1.60934 : 
-        minutesPerMile;
-    console.log('Total minutes:', totalMinutes);
-    
-    const minutes = Math.floor(totalMinutes);
-    console.log('Minutes part:', minutes);
-    
-    const seconds = Math.round((totalMinutes - minutes) * 60);
-    console.log('Seconds part:', seconds);
+            if (typeof minutesPerMile !== 'number') {
+                console.error('Invalid pace value:', minutesPerMile);
+                return '--:--/mi';
+            }
 
-    const unit_label = unit === 'metric' ? '/km' : '/mi';
-    
-    // If it's a round minute
-    if (seconds === 0) {
-        const result = `${minutes} min${unit_label}`;
-        console.log('Final result (round minutes):', result);
-        return result;
-    }
-    
-    // Otherwise show MM:SS format
-    const result = `${minutes}:${seconds.toString().padStart(2, '0')}${unit_label}`;
-    console.log('Final result (with seconds):', result);
-    return result;
-}
+            // Log the intermediate calculations
+            const totalMinutes = unit === 'metric' ?
+                minutesPerMile / 1.60934 :
+                minutesPerMile;
+            console.log('Total minutes:', totalMinutes);
+
+            const minutes = Math.floor(totalMinutes);
+            console.log('Minutes part:', minutes);
+
+            const seconds = Math.round((totalMinutes - minutes) * 60);
+            console.log('Seconds part:', seconds);
+
+            const unit_label = unit === 'metric' ? '/km' : '/mi';
+
+            // If it's a round minute
+            if (seconds === 0) {
+                const result = `${minutes} min${unit_label}`;
+                console.log('Final result (round minutes):', result);
+                return result;
+            }
+
+            // Otherwise show MM:SS format
+            const result = `${minutes}:${seconds.toString().padStart(2, '0')}${unit_label}`;
+            console.log('Final result (with seconds):', result);
+            return result;
+        }
 
         // HTML Formatting helper functions
         // TODO These are not currently used, but should probably be brought back
@@ -1162,22 +1563,22 @@
         }
 
 
-    
-// todo this is miles only, needs km
-function calculateDistance(durationSeconds, paceMinutesPerMile) {
-    const hours = durationSeconds / 3600;
-    const milesPerHour = 60 / paceMinutesPerMile;
-    return +(hours * milesPerHour).toFixed(2);
-}
 
-// Modify the interval creation to include distance
-function addDistanceToInterval(interval) {
-    if (interval.duration && interval.targetPace) {
-        interval.distance = calculateDistance(interval.duration, interval.targetPace);
-        interval.pace = interval.targetPace; // Make sure pace is accessible to the display
-    }
-    return interval;
-}
+        // todo this is miles only, needs km
+        function calculateDistance(durationSeconds, paceMinutesPerMile) {
+            const hours = durationSeconds / 3600;
+            const milesPerHour = 60 / paceMinutesPerMile;
+            return +(hours * milesPerHour).toFixed(2);
+        }
+
+        // Modify the interval creation to include distance
+        function addDistanceToInterval(interval) {
+            if (interval.duration && interval.targetPace) {
+                interval.distance = calculateDistance(interval.duration, interval.targetPace);
+                interval.pace = interval.targetPace; // Make sure pace is accessible to the display
+            }
+            return interval;
+        }
 
         // Main workout generation function
         function generateCardioWorkout(level, type) {
@@ -1208,10 +1609,10 @@ function addDistanceToInterval(interval) {
                     throw new Error('Unsupported workout type');
             }
         }
-
         function updateStrengthContent() {
-            const workout = generateStrengthWorkout(levels.strength);
-            currentWorkout = workout;  // Make sure we set the current workout
+            const level = userData.getLevel('strength');
+            const workout = generateStrengthWorkout(level);
+            currentWorkout = workout;
             const content = document.getElementById('strengthContent');
 
             const workoutDisplay = new WorkoutDisplay(
@@ -1220,16 +1621,13 @@ function addDistanceToInterval(interval) {
                 { unitSystem: 'imperial' }
             );
 
-            // Render workout
             workoutDisplay.render();
-            //content.innerHTML = workout.html;
         }
 
-
-
         function updateCardioContent() {
-            const workout = generateCardioWorkout(levels.cardio, currentCardioType);
-            currentWorkout = workout;  
+            const level = userData.getLevel(currentCardioType);
+            const workout = generateCardioWorkout(level, currentCardioType);
+            currentWorkout = workout;
             const content = document.getElementById('cardioContent');
             const workoutDisplay = new WorkoutDisplay(
                 content,
@@ -1237,32 +1635,35 @@ function addDistanceToInterval(interval) {
                 { unitSystem: 'imperial' }
             );
 
-            // Render workout
+            workoutDisplay.render();
+        }
+
+        function updateFlexContent() {
+            const level = userData.getLevel('flexibility');
+            const workout = generateFlexWorkout(level);
+            const content = document.getElementById('flexContent');
+            currentWorkout = workout;
+
+            const workoutDisplay = new WorkoutDisplay(
+                content,
+                workout,
+                { unitSystem: 'imperial' }
+            );
+
             workoutDisplay.render();
         }
 
 
-
-        function updateFlexContent() {
-            const workout = generateFlexWorkout(levels.flex);
-            const content = document.getElementById('flexContent');
-            currentWorkout = workout;  // Make sure we set the current workout
-            content.innerHTML = workout.html;
-        }
-
         function updateContent() {
-            // Get the currently active tab
             const activeTab = document.querySelector('.tab.active');
             if (!activeTab) {
                 console.error('No active tab found');
                 return;
             }
 
-            // Get the tab name from the onclick handler
             const tabName = activeTab.getAttribute('onclick').match(/switchTab\('(.+)'\)/)[1];
             console.log('Updating content for active tab:', tabName);
 
-            // Only update the active tab's content
             switch (tabName) {
                 case 'cardio':
                     updateCardioContent();
@@ -1273,10 +1674,19 @@ function addDistanceToInterval(interval) {
                 case 'flexibility':
                     updateFlexContent();
                     break;
+                case 'dashboard':
+                    // Don't try to update currentWorkout for dashboard
+                    return;
                 default:
                     console.error('Unknown tab type:', tabName);
             }
         }
+
+        function updateDashboard() {
+            const workouts = userData.getWorkoutHistory();
+            const workoutHistoryViewer = new WorkoutHistoryViewer('workout-history', workouts);
+        }
+
 
 
         // Initial content update

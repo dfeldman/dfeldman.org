@@ -245,7 +245,7 @@ class WorkoutDisplay {
 
   validateWorkout() {
     const required = ["type", "level", "description", "totalDuration", "sets"];
-    const missing = required.filter((prop) => !this.workout[prop]);
+    const missing = required.filter((prop) => !currentWorkout[prop]);
 
     if (missing.length > 0) {
       console.error("Missing required workout properties:", missing);
@@ -404,6 +404,39 @@ class WorkoutDisplay {
   // }
 
   renderInterval(interval) {
+    console.log("workout type", currentWorkout.type);
+    if (currentWorkout.type === 'flexibility') {
+      console.log("Rendering flexibility interval:", interval);
+        return `
+            <div class="interval-card flexibility-card">
+                <h3 class="interval-title">${interval.activity}</h3>
+                <div class="flexibility-description">
+                    <h4>Setup</h4>
+                    <p>${interval.description}</p>
+                    
+                    <h4>Target</h4>
+                    <p>${interval.target}</p>
+                    
+                    <h4>Goal</h4>
+                    <p>${interval.goal}</p>
+                    
+                    ${interval.textDuration ? `
+                        <div class="interval-metrics">
+                            <span class="metric-pill metric-time">Hold ${interval.textDuration}</span>
+                        </div>
+                    ` : ''}
+                </div>
+            </div>
+        `;
+    }
+
+    
+    // Regular interval rendering for other types
+    return this.regularRenderInterval(interval);
+  }
+
+
+  regularRenderInterval(interval) {
     if (!interval.activity) {
       console.error("Interval missing activity:", interval);
       return "";
@@ -508,6 +541,32 @@ class WorkoutDisplay {
         this.workout.type, 
         this.options.unitSystem
     );
+
+    console.log("workout type", currentWorkout.type);
+    if (currentWorkout.type === 'flexibility') {
+      console.log("Rendering flexibility interval:", interval);
+        return `
+            <div class="interval-card flexibility-card">
+                <h3 class="interval-title">${interval.activity}</h3>
+                <div class="flexibility-description">
+                    <h4>Setup</h4>
+                    <p>${interval.description}</p>
+                    
+                    <h4>Target</h4>
+                    <p>${interval.target}</p>
+                    
+                    <h4>Goal</h4>
+                    <p>${interval.goal}</p>
+                    
+                    ${interval.textDuration ? `
+                        <div class="interval-metrics">
+                            <span class="metric-pill metric-time">Hold ${interval.textDuration}</span>
+                        </div>
+                    ` : ''}
+                </div>
+            </div>
+        `;
+    }
 
     return `
         <div class="timer-interval">

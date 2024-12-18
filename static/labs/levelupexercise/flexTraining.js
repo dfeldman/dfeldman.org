@@ -91,8 +91,11 @@ function generateFlexWorkout(level) {
         title: level <= 20 ? 'Basic Flexibility Training' :
             level <= 50 ? 'Intermediate Stretching' :
                 'Advanced Flexibility Work',
-        description: "Hold each stretch until you feel a gentle pull - never stretch to the point of pain. Breathe slowly and deeply while stretching.",
-        stretches: []
+        description: "Flexibility Workoout",
+        stretches: [],
+        type: 'flexibility',
+        totalDuration: 1800,
+        level: level
     };
 
     // Define the current goal based on level
@@ -127,11 +130,11 @@ function generateFlexWorkout(level) {
     // Basic stretches that everyone starts with
     // Beginner level (1-20) with highly detailed progression and guidance
     if (level <= 20) {
-        workout.stretches = [
+        intervals = [
             {
-                name: "Standing Forward Reach",
+                activity: "Standing Forward Reach",
                 description: "Stand with feet hip-width apart. Keeping your legs mostly straight but not locked, slowly bend forward and reach down toward your feet. Only go as far as comfortable - you might only reach your thighs at first, and that's perfectly fine.",
-                duration: level <= 5 ? "15 seconds" :
+                textDuration: level <= 5 ? "15 seconds" :
                     level <= 10 ? "20 seconds" : "30 seconds",
                 target: "Back of legs (hamstrings) and lower back",
                 goal: level <= 5 ? "Reach fingertips to mid-thigh while keeping back straight - focus on feeling a gentle stretch in the backs of your legs" :
@@ -142,9 +145,9 @@ function generateFlexWorkout(level) {
                                     "Reach for your ankles. Remember - it's not about touching them yet, just reaching toward them with control"
             },
             {
-                name: "Gentle Seated Twist",
+                activity: "Gentle Seated Twist",
                 description: "Sit in a chair with feet flat on floor. Keep your back straight and shoulders relaxed. Slowly turn to look over one shoulder, using the chair back or your hands on your legs to help.",
-                duration: level <= 7 ? "10 seconds each side" :
+                textDuration: level <= 7 ? "10 seconds each side" :
                     level <= 15 ? "15 seconds each side" :
                         "20 seconds each side",
                 target: "Upper back and spine mobility",
@@ -154,9 +157,9 @@ function generateFlexWorkout(level) {
                             "Turn far enough to grasp the chair back with both hands, keeping your spine tall"
             },
             {
-                name: "Wall Calf Stretch",
+                activity: "Wall Calf Stretch",
                 description: "Stand facing a wall, place hands flat on wall at shoulder height. Step one foot back and press heel down. Keep back leg straight but not locked. If this is too intense, bend your back leg slightly.",
-                duration: level <= 8 ? "15 seconds each leg" :
+                textDuration: level <= 8 ? "15 seconds each leg" :
                     level <= 15 ? "20 seconds each leg" :
                         "30 seconds each leg",
                 target: "Lower leg muscles (calves)",
@@ -166,9 +169,9 @@ function generateFlexWorkout(level) {
                             "Hold with foot farther from wall while keeping heel flat and leg straight"
             },
             {
-                name: "Assisted Knee Hug",
+                activity: "Assisted Knee Hug",
                 description: "Lie on your back with legs extended. Bend one knee and bring it toward your chest, using your hands clasped behind your thigh to help. Keep your other leg straight on the ground.",
-                duration: level <= 6 ? "15 seconds each leg" :
+                textDuration: level <= 6 ? "15 seconds each leg" :
                     level <= 12 ? "20 seconds each leg" :
                         "30 seconds each leg",
                 target: "Lower back and hip mobility",
@@ -179,9 +182,9 @@ function generateFlexWorkout(level) {
                                 "Hold knee to chest while completely relaxing hip muscles"
             },
             {
-                name: "Shoulder Circles",
+                activity: "Shoulder Circles",
                 description: "Stand or sit tall. Slowly roll shoulders forward, up, back, and down in a circular motion. Then reverse the direction. Keep the movements slow and controlled.",
-                duration: level <= 10 ? "5 circles each direction" :
+                textDuration: level <= 10 ? "5 circles each direction" :
                     level <= 15 ? "8 circles each direction" :
                         "10 circles each direction",
                 target: "Shoulder mobility and tension relief",
@@ -196,41 +199,41 @@ function generateFlexWorkout(level) {
 
     // Intermediate level (21-50) now has more targeted goals
     else if (level <= 50) {
-        workout.stretches = [
+        intervals = [
             {
-                name: "Seated Forward Reach",
+                activity: "Seated Forward Reach",
                 description: "Sit on floor with legs straight out front. Keeping back straight, reach forward toward your toes. Let your head hang relaxed. Again, reaching your toes isn't necessary - go only as far as comfortable.",
-                duration: "45 seconds",
+                textDuration: "45 seconds",
                 target: "Back of legs and lower back",
                 goal: "Hold position without rounding your lower back"
             },
             {
-                name: "Floor Twist",
+                activity: "Floor Twist",
                 description: "Sit on floor with one leg straight, other leg bent with foot flat on floor outside opposite knee. Twist torso toward bent knee, using arm to help hold the twist. Keep back straight.",
-                duration: "30 seconds each side",
+                textDuration: "30 seconds each side",
                 target: "Back and hips",
                 goal: "Look completely behind you while keeping hips grounded"
             },
             {
-                name: "Extended Kneeling Hip Stretch",
+                activity: "Extended Kneeling Hip Stretch",
                 description: "Kneel on one knee (put a cushion under knee if needed). Push hips forward slightly while keeping torso upright. For more stretch, raise arm on same side as back leg.",
-                duration: "30 seconds each side",
+                textDuration: "30 seconds each side",
                 target: "Hip flexors, quads, and shoulders",
                 goal: "Maintain upright posture without leaning forward"
             },
             {
-                name: "Wide-Legged Seated Forward Fold",
+                activity: "Wide-Legged Seated Forward Fold",
                 description: "Sit with legs spread wide. Keeping legs straight but not locked, walk hands forward between legs. Let head hang relaxed.",
-                duration: "45 seconds",
+                textDuration: "45 seconds",
                 target: "Inner thighs and hamstrings",
                 goal: level <= 35 ? "Keep back flat while reaching forward" :
                     level <= 45 ? "Touch elbows to ground" :
                         "Bring chest closer to ground"
             },
             {
-                name: "Figure-Four Hip Stretch",
+                activity: "Figure-Four Hip Stretch",
                 description: "Lie on back, cross right ankle over left thigh. Thread hands behind left thigh and gently pull leg toward chest. Keep head and shoulders relaxed on floor.",
-                duration: "40 seconds each side",
+                textDuration: "40 seconds each side",
                 target: "Deep hip muscles and glutes",
                 goal: "Keep bottom foot flexed and hips relaxed"
             }
@@ -238,20 +241,20 @@ function generateFlexWorkout(level) {
     }
     // Advanced level (51-100) with progressive goals
     else {
-        workout.stretches = [
+        intervals = [
             {
-                name: "Advanced Forward Fold",
+                activity: "Advanced Forward Fold",
                 description: "Stand with feet hip-width apart. Bend forward, reaching for the ground. Bend knees only if needed for comfort.",
-                duration: "60 seconds",
+                textDuration: "60 seconds",
                 target: "Entire back of body",
                 goal: level <= 70 ? "Place full palms on floor beside feet" :
                     level <= 85 ? "Hold palms flat while straightening legs" :
                         "Bring forehead toward knees with straight legs"
             },
             {
-                name: "Front Split Preparation",
+                activity: "Front Split Preparation",
                 description: "Starting in a low lunge, gradually slide front leg forward and back leg back. Use yoga blocks or cushions under hands for support if needed.",
-                duration: "60 seconds each side",
+                textDuration: "60 seconds each side",
                 target: "Hip flexors and hamstrings",
                 goal: level <= 65 ? "Lower hips with both legs straight" :
                     level <= 80 ? "Get hips 6 inches from ground with support" :
@@ -259,9 +262,9 @@ function generateFlexWorkout(level) {
                             "Hold full split without support"
             },
             {
-                name: "Middle Split Preparation",
+                activity: "Middle Split Preparation",
                 description: "Stand with feet wide, toes pointing forward. Gradually lower hips while sliding feet wider. Keep hands on floor in front for support.",
-                duration: "45 seconds",
+                textDuration: "45 seconds",
                 target: "Inner thighs and hips",
                 goal: level <= 60 ? "Keep pelvis tucked while lowering" :
                     level <= 75 ? "Thighs parallel to ground" :
@@ -269,18 +272,18 @@ function generateFlexWorkout(level) {
                             "Work toward full middle split"
             },
             {
-                name: "Bridge Position",
+                activity: "Bridge Position",
                 description: "Lie on back, bend knees with feet flat on floor. Press hips up, then bring hands by ears and press up into a backbend if comfortable.",
-                duration: "45 seconds",
+                textDuration: "45 seconds",
                 target: "Spine, shoulders, and hip flexors",
                 goal: level <= 70 ? "Lift hips with straight arms" :
                     level <= 85 ? "Straighten arms in bridge" :
                         "Work on walking hands closer to feet"
             },
             {
-                name: "Advanced Hip Opener",
+                activity: "Advanced Hip Opener",
                 description: "From seated position, bend knees and bring soles of feet together. Let knees fall out to sides. Slowly fold forward while keeping back straight.",
-                duration: "60 seconds",
+                textDuration: "60 seconds",
                 target: "Inner thighs and hips",
                 goal: level <= 65 ? "Keep back straight while folding" :
                     level <= 80 ? "Bring forehead toward feet" :
@@ -289,6 +292,7 @@ function generateFlexWorkout(level) {
         ];
     }
 
+    workout.sets = [{intervals: intervals, repeat: 1}];
     workout.specialNotes = getSpecialNotes(level);
     const goal = getCurrentGoal(level);
 

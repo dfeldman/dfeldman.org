@@ -1,7 +1,9 @@
 class IntervalTimer {
     constructor(workoutDisplay) {
-        this.workoutDisplay = workoutDisplay;
-
+        this.workoutDisplay = workoutDisplay;    
+        this.totalDuration = 0;
+        this.elapsedDuration = 0;
+        
         this.intervals = [];
         this.currentInterval = 0;
         this.currentSet = 0;
@@ -32,6 +34,12 @@ class IntervalTimer {
         // Workout should be an array of interval objects
         this.intervals = workout;
         this.totalSets = workout.length;
+
+
+    // Calculate total duration of timed intervals
+    this.totalDuration = workout.reduce((total, interval) => 
+        total + (interval.duration || 0), 0);
+        
         this.reset();
     }
 
@@ -93,29 +101,39 @@ class IntervalTimer {
     //     this.workoutProgress.textContent = `Exercise ${this.currentSet + 1} of ${this.totalSets}`;
     // }
 
-    updateDisplay() {
-        if (this.currentSet >= this.totalSets) {
-            this.complete();
-            return;
-        }
-
-        const currentInterval = this.intervals[this.currentSet];
-        
-        // Update the timer display
-        if (currentInterval.duration) {
-            this.timeDisplay.textContent = this.formatTime(this.timeRemaining);
-            const totalIntervalTime = currentInterval.duration;
-            const progress = ((totalIntervalTime - this.timeRemaining) / totalIntervalTime) * 100;
-            this.progressBar.style.width = `${progress}%`;
-        }
-
-        // Use the new workout display render method
-        const intervalDisplay = document.querySelector('.interval-info');
-        intervalDisplay.innerHTML = this.workoutDisplay.renderTimerInterval(currentInterval);
-
-        // Update progress text
-        this.workoutProgress.textContent = `Exercise ${this.currentSet + 1} of ${this.totalSets}`;
+updateDisplay() {
+    if (this.currentSet >= this.totalSets) {
+        this.complete();
+        return;
     }
+
+    const currentInterval = this.intervals[this.currentSet];
+    
+    // Handle timed vs untimed intervals
+    if (currentInterval.duration) {
+        this.timeDisplay.style.display = 'block';
+        this.playPauseButton.style.display = 'block';
+        this.timeDisplay.textContent = this.formatTime(this.timeRemaining);
+        const totalIntervalTime = currentInterval.duration;
+        const progress = ((totalIntervalTime - this.timeRemaining) / totalIntervalTime) * 100;
+        this.progressBar.style.width = `${progress}%`;
+        this.skipButton.textContent = 'Skip';
+        this.skipButton.className = 'skip';
+    } else {
+        this.timeDisplay.style.display = 'none';
+        this.playPauseButton.style.display = 'none';
+        this.progressBar.style.width = '0%';
+        this.skipButton.textContent = 'Next';
+        this.skipButton.className = 'skip next-style'; // Add CSS for this
+    }
+
+    // Use the workout display render method
+    const intervalDisplay = document.querySelector('.interval-info');
+    intervalDisplay.innerHTML = this.workoutDisplay.renderTimerInterval(currentInterval);
+
+    // Update progress text
+    this.workoutProgress.textContent = `Exercise ${this.currentSet + 1} of ${this.totalSets}`;
+}
 
     start() {
         const currentInterval = this.intervals[this.currentSet];
@@ -161,10 +179,11 @@ class IntervalTimer {
             this.complete();
         }
     }
-
     tick() {
         if (this.timeRemaining > 0) {
             this.timeRemaining--;
+            this.elapsedDuration++;
+            this.updateProgress();
             this.updateDisplay();
         } else {
             this.currentSet++;
@@ -177,12 +196,22 @@ class IntervalTimer {
             }
         }
     }
+    
+
+    updateProgress() {
+        if (this.totalDuration > 0) {
+            const progress = (this.elapsedDuration / this.totalDuration) * 100;
+            this.progressBar.style.width = `${progress}%`;
+        }
+    }
 
     reset() {
         this.pause();
         this.currentSet = 0;
+        this.elapsedDuration = 0;
         this.timeRemaining = this.intervals[0]?.duration || 0;
         this.playPauseButton.textContent = 'Start';
+        this.updateProgress();
         this.updateDisplay();
     }
 

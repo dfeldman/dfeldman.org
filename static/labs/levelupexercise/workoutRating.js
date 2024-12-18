@@ -38,7 +38,13 @@ class WorkoutRating {
     handleRating(rating) {
         // TODO: Store the rating
         console.log('Workout rated as:', rating);
-        
+        userData.recordWorkout({
+            activity: currentWorkout.type,
+            level: currentWorkout.level,
+            duration: currentWorkout.totalDuration,
+            difficulty: rating,
+            timestamp: new Date().toISOString()
+        });
         // Hide rating screen and return to main view
         this.modal.remove();
         document.querySelector('.container').style.display = 'block';
