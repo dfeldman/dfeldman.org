@@ -494,6 +494,7 @@ class WorkoutDisplay {
             .join("")}
 
           ${this.renderNotes()}
+            <button onclick="markWorkoutCompleted()" class="complete-button">Mark Completed</button>
 
         </div>
       `;

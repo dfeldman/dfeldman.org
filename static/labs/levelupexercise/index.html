@@ -690,48 +690,178 @@
 
 .timer-interval {
     text-align: center;
-    padding: 20px;
-    background: rgba(0, 0, 0, 0.8);
-    border-radius: 16px;
-    margin: 0 20px;
+    padding: 32px;
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 24px;
+    margin: 20px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
 }
 
 .timer-activity {
     font-size: min(12vw, 48px);
     font-weight: 800;
     margin: 0 0 16px 0;
-    color: white;
+    color: #1a1a1a;
+    line-height: 1.1;
 }
 
 .timer-intensity {
     font-size: min(6vw, 24px);
-    color: rgba(255, 255, 255, 0.9);
+    color: #4338CA;
     margin-bottom: 24px;
+    font-weight: 600;
 }
 
 .timer-metrics {
     display: flex;
     flex-wrap: wrap;
-    gap: 12px;
+    gap: 16px;
     justify-content: center;
-    margin-bottom: 24px;
+    margin: 24px 0;
 }
 
 .timer-metric {
     font-size: min(5vw, 20px);
     font-weight: 600;
-    padding: 12px 20px;
-    border-radius: 12px;
-    background: white;
+    padding: 16px 24px;
+    border-radius: 16px;
     color: #111827;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Specific metric types */
+.timer-metric-time { 
+    background: #E0E7FF;
+    display: none; /* Hide the time for now since it is displayed elsewhere and messes up layout */
+    /* /border-left: 4px solid #4338CA; */
+}
+
+.timer-metric-pace { 
+    background: #FEF3C7;
+    /* border-left: 4px solid #D97706; */
+}
+
+.timer-metric-distance { 
+    background: #D1FAE5;
+    /* border-left: 4px solid #059669; */
+}
+
+.timer-metric-power { 
+    background: #FEE2E2;
+    /* border-left: 4px solid #DC2626; */
+}
+
+.timer-metric-rate { 
+    background: #F3E8FF;
+    /* border-left: 4px solid #7C3AED; */
+}
+
+.timer-metric-reps,
+.timer-metric-sets { 
+    background: #F3E8FF;
+    /* border-left: 4px solid #7C3AED; */
+}
+
+.timer-metric-weight { 
+    background: #FEE2E2;
+    /* border-left: 4px solid #DC2626; */
 }
 
 .timer-description {
     font-size: min(4vw, 18px);
-    color: rgba(255, 255, 255, 0.9);
+    color: #4B5563;
+    margin-top: 16px;
+    line-height: 1.4;
 }
 
+
+.rating-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 2000;
+    background: rgba(0, 0, 0, 0.8);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.rating-modal .rating-bold-gradient {
+    width: 90%;
+    max-width: 500px;
+    margin: 20px;
+    border-radius: 24px;
+    padding: 32px 24px;
+    background: linear-gradient(135deg, #4f46e5, #7c3aed);
+}
+
+.rating-modal h2 {
+    color: white;
+    font-size: 32px;
+    font-weight: 800;
+    text-align: center;
+    margin-bottom: 32px;
+}
+
+.rating-modal .gradient-options {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.rating-modal .gradient-option {
+    background: rgba(255, 255, 255, 0.98);
+    padding: 24px;
+    border-radius: 16px;
+    cursor: pointer;
+    transition: transform 0.2s;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.rating-modal .gradient-option:hover {
+    transform: scale(1.02);
+    background: white;
+}
+
+.rating-modal .gradient-option:active {
+    transform: scale(0.98);
+}
+
+.rating-modal .emoji {
+    font-size: 48px;
+}
+
+.rating-modal .rating-label {
+    font-size: 24px;
+    font-weight: 700;
+    color: #1f2937;
+}
+
+
+.complete-button {
+    width: 100%;
+    padding: 20px;
+    font-size: 24px;
+    font-weight: bold;
+    background-color: #4338CA;
+    color: white;
+    border: none;
+    border-radius: 12px;
+    margin-top: 20px;
+    cursor: pointer;
+    transition: transform 0.1s, background-color 0.2s;
+}
+
+.complete-button:hover {
+    background-color: #3730a3;
+}
+
+.complete-button:active {
+    transform: scale(0.98);
+}
     </style>
 </head>
 
@@ -816,6 +946,7 @@
     <script src="flexTraining.js"></script>
     <script src="intervalTimer.js"></script>
     <script src="workoutDisplay.js"></script>
+    <script src="workoutRating.js"></script>
 
     <script>
         let levels = {

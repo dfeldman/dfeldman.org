@@ -187,11 +187,15 @@ class IntervalTimer {
     }
 
     complete() {
+        // Ideally there should be a congratulations screen and fill the progress bar. 
+        // TODO 
         this.pause();
-        this.currentActivityDisplay.textContent = 'Workout Complete!';
-        this.nextUpDisplay.textContent = 'Great job!';
-        this.timeDisplay.textContent = '';
-        this.progressBar.style.width = '100%';
+        // Exit timer view
+        document.querySelector('.timer-view').style.display = 'none';
+        
+        // Show rating modal
+        const ratingModal = new WorkoutRating();
+        ratingModal.show();
     }
 
     exit() {
