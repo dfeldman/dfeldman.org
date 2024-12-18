@@ -58,6 +58,8 @@ const RUN_CONFIGS = {
     }
 };
 
+
+
 function generateRunHTML(workout) {
     // Helper function for formatting metrics
     function formatMetric(value, type) {
@@ -162,7 +164,8 @@ function generateRunWorkout(level, workout) {
         // Basic walking phase
         const baseSpeed = 2.5 + (level - 1) * 0.1;
         const pace = 60 / baseSpeed;
-        
+        workout.level = level;
+        workout.description = "Beginner Walking Workout";
         workout.totalDuration = 1800;  // 30 minutes
         workout.distance = +(workout.time * baseSpeed / 60).toFixed(2);
         workout.pace = pace;
@@ -188,7 +191,8 @@ function generateRunWorkout(level, workout) {
                     activity: "Warm-up Walk",
                     duration: 300,
                     intensity: "Easy pace to warm up",
-                    targetPace: pace + 1
+                    pace: pace + 1,
+                    distance: calculateDistance(300, pace + 1)
                 }]
             },
             {
@@ -197,7 +201,8 @@ function generateRunWorkout(level, workout) {
                     activity: "Brisk Walk",
                     duration: 1200,
                     intensity: "Steady, brisk pace",
-                    targetPace: pace
+                    pace: pace,
+                    distance: calculateDistance(1200, pace)
                 }]
             },
             {
@@ -206,13 +211,16 @@ function generateRunWorkout(level, workout) {
                     activity: "Cool-down Walk",
                     duration: 300,
                     intensity: "Easy pace",
-                    targetPace: pace + 1
+                    pace: pace + 1,
+                    distance: calculateDistance(300, pace + 1)
                 }]
             }
         ];
     } 
     else if (level <= 20) {
         // Run/Walk Intervals phase
+        workout.level = level;
+        workout.description = "Running Intervals Workout";
         const runPace = 12 - (level - 10) * 0.2;  // Starts at 12:00/mile, improves by 0.2 min/mile per level
         workout.phase = 'intervals';
         workout.formCues = [
@@ -242,7 +250,8 @@ function generateRunWorkout(level, workout) {
                     activity: "Warm-up Walk",
                     duration: 300,
                     intensity: "Easy pace",
-                    targetPace: 18  // 18:00/mile pace for warm-up
+                    pace: 18,  // 18:00/mile pace for warm-up
+                    distance: calculateDistance(300, 18)
                 }]
             },
             {
@@ -252,13 +261,15 @@ function generateRunWorkout(level, workout) {
                         activity: "Run",
                         duration: pattern.run,
                         intensity: "Conversational pace",
-                        targetPace: runPace
+                        pace: runPace,
+                        distance: calculateDistance(pattern.run, runPace)
                     },
                     {
                         activity: "Walk",
                         duration: pattern.walk,
                         intensity: "Recovery",
-                        targetPace: 16  // 16:00/mile pace for walking
+                        pace: 16,  // 16:00/mile pace for walking
+                        distance: calculateDistance(pattern.walk, 16)
                     }
                 ]
             },
@@ -268,13 +279,18 @@ function generateRunWorkout(level, workout) {
                     activity: "Cool-down Walk",
                     duration: 300,
                     intensity: "Easy pace",
-                    targetPace: 18
+                    pace: 18,
+                    distance: calculateDistance(300, 18)
                 }]
             }
         ];
     } 
     else {
-        // Continuous running phases
+        // Continuous running 
+        
+
+        workout.level = level;
+        workout.description = "Running Workout";
         const phase = Object.entries(RUN_CONFIGS.continuous.phases)
             .find(([_, config]) => 
                 level >= config.levelRange[0] && level <= config.levelRange[1]
@@ -317,7 +333,8 @@ function generateRunWorkout(level, workout) {
                     activity: "Warm-up Walk/Jog",
                     duration: 600,  // 10 minute warm-up
                     intensity: "Easy pace building to light jog",
-                    targetPace: targetPace + 2
+                    pace: targetPace + 2,
+                    distance: calculateDistance(600, targetPace + 2)
                 }]
             },
             {
@@ -326,7 +343,8 @@ function generateRunWorkout(level, workout) {
                     activity: "Main Run",
                     duration: (phase.time - 15) * 60,  // Main portion minus warm-up/cooldown
                     intensity: "Steady pace",
-                    targetPace: targetPace
+                    pace: targetPace,
+                    distance: calculateDistance((phase.time - 15) * 60, targetPace)
                 }]
             },
             {
@@ -335,7 +353,8 @@ function generateRunWorkout(level, workout) {
                     activity: "Cool-down Walk",
                     duration: 300,
                     intensity: "Easy pace",
-                    targetPace: targetPace + 2
+                    pace: targetPace + 2,
+                    distance: calculateDistance(300, targetPace + 2)
                 }]
             }
         ];

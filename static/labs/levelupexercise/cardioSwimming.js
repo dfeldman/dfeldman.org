@@ -136,60 +136,14 @@ function generateSwimHTML(workout) {
             </ul>
         </div>` : '';
 
-    // Add timer button - though less relevant for swimming
-    const timerButton = `
-        <button class="start-timer-btn" onclick="startWorkoutTimer()">
-            Start Timer
-        </button>`;
-
-    // Add swimming-specific CSS
-    const styles = `
-        <style>
-            .swim-sets {
-                margin: 20px 0;
-            }
-            .repeat-header {
-                font-weight: bold;
-                color: var(--primary);
-                margin: 15px 0 10px 0;
-            }
-            .swim-interval {
-                background: var(--light);
-                padding: 15px;
-                margin: 10px 0;
-                border-radius: 8px;
-                border-left: 4px solid var(--primary);
-            }
-            .interval-main {
-                font-size: 1.1em;
-                margin-bottom: 8px;
-            }
-            .interval-intensity {
-                color: var(--secondary);
-                font-weight: 500;
-            }
-            .interval-description {
-                font-size: 0.9em;
-                color: #666;
-                margin-top: 5px;
-                font-style: italic;
-            }
-            @media print {
-                .start-timer-btn {
-                    display: none;
-                }
-            }
-        </style>
-    `;
-
     // Combine all sections
+    // no timer button for swimming
     return `
         ${styles}
         ${header}
         ${structure}
         ${formCues}
         ${notes}
-        ${timerButton}
     `;
 }
 
@@ -248,6 +202,7 @@ function generateSwimWorkout(level) {
         workout.totalLaps = totalLaps;
         workout.lapDistance = 25;
         workout.totalDistance = totalLaps * 25;
+        workout.totalDuration = totalLaps * 120;  // 90 seconds
     }
     else if (level <= 20) {
         // Interval phase
@@ -309,6 +264,7 @@ function generateSwimWorkout(level) {
         workout.totalLaps = mainSetLaps + 4;  // Including warm-up and cool-down
         workout.lapDistance = 25;
         workout.totalDistance = workout.totalLaps * 25;
+        workout.totalDuration = mainSetLaps * targetPace;
     }
     else {
         // Find appropriate endurance phase
@@ -369,10 +325,11 @@ function generateSwimWorkout(level) {
         workout.totalLaps = phase.warmupLaps + mainLaps + phase.cooldownLaps;
         workout.lapDistance = 25;
         workout.totalDistance = workout.totalLaps * 25;
+        workout.totalDuration = workout.totalLaps * targetPace;
     }
 
     // Generate HTML display
-    workout.html = generateSwimHTML(workout);
+    //workout.html = generateSwimHTML(workout);
     
     return workout;
 }

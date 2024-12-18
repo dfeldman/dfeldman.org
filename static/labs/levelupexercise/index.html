@@ -456,60 +456,282 @@
             font-weight: bold;
             cursor: pointer;
         }
-/* USED FOR ROWING - TODO duplicate names i think */
+
+        /* USED FOR ROWING - TODO duplicate names i think */
         .target-metrics {
-        color: #666;
-        font-size: 0.9em;
-        font-style: italic;
-    }
+            color: #666;
+            font-size: 0.9em;
+            font-style: italic;
+        }
 
-    .interval-list li {
-        margin-bottom: 15px;
-    }
+        .interval-list li {
+            margin-bottom: 15px;
+        }
 
-    .description {
-        display: block;
-        margin-top: 5px;
-        color: #666;
-        font-size: 0.9em;
-    }
+        .description {
+            display: block;
+            margin-top: 5px;
+            color: #666;
+            font-size: 0.9em;
+        }
 
 
 
-            .swim-sets {
-                margin: 20px 0;
-            }
-            .repeat-header {
-                font-weight: bold;
-                color: var(--primary);
-                margin: 15px 0 10px 0;
-            }
-            .swim-interval {
-                background: var(--light);
-                padding: 15px;
-                margin: 10px 0;
-                border-radius: 8px;
-                border-left: 4px solid var(--primary);
-            }
-            .interval-main {
-                font-size: 1.1em;
-                margin-bottom: 8px;
-            }
-            .interval-intensity {
-                color: var(--secondary);
-                font-weight: 500;
-            }
-            .interval-description {
-                font-size: 0.9em;
-                color: #666;
-                margin-top: 5px;
-                font-style: italic;
-            }
-            @media print {
-                .start-timer-btn {
-                    display: none;
-                }
-            }
+        .swim-sets {
+            margin: 20px 0;
+        }
+
+        .repeat-header {
+            font-weight: bold;
+            color: var(--primary);
+            margin: 15px 0 10px 0;
+        }
+
+        .swim-interval {
+            background: var(--light);
+            padding: 15px;
+            margin: 10px 0;
+            border-radius: 8px;
+            border-left: 4px solid var(--primary);
+        }
+
+        .interval-main {
+            font-size: 1.1em;
+            margin-bottom: 8px;
+        }
+
+        .interval-intensity {
+            color: var(--secondary);
+            font-weight: 500;
+        }
+
+        .interval-description {
+            font-size: 0.9em;
+            color: #666;
+            margin-top: 5px;
+            font-style: italic;
+        }
+
+/* NEW Workout Overview HTML */
+.workout-overview {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 16px;
+}
+
+.overview-header {
+  color: white;
+  padding: 24px;
+  border-radius: 16px;
+  margin-bottom: 24px;
+}
+
+.workout-title {
+  font-size: clamp(24px, 8vw, 36px);
+  font-weight: 800;
+  margin: 0 0 8px 0;
+}
+
+.workout-meta {
+  font-size: clamp(14px, 4vw, 18px);
+  font-weight: 600;
+  opacity: 0.9;
+}
+
+.set-container {
+  margin-bottom: 32px;
+}
+
+.repeat-container {
+  border-left: 4px solid currentColor;
+  margin-left: 12px;
+  padding-left: 20px;
+  margin-bottom: 32px;
+}
+
+.repeat-header {
+  font-weight: 800;
+  font-size: clamp(16px, 5vw, 20px);
+  margin: -4px 0 16px -24px;
+  padding: 8px 16px;
+  border-radius: 0 8px 8px 0;
+  display: inline-block;
+}
+
+.interval-card {
+  background: white;
+  border-radius: 16px;
+  padding: 20px;
+  margin-bottom: 16px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+
+.interval-title {
+  font-weight: 800;
+  font-size: clamp(18px, 5vw, 24px);
+  margin: 0 0 8px 0;
+}
+
+.machine-type {
+  font-size: clamp(12px, 3.5vw, 14px);
+  color: #6B7280;
+  margin-top: 4px;
+}
+
+.interval-intensity {
+  font-size: clamp(14px, 4vw, 18px);
+  font-weight: 600;
+  margin-bottom: 12px;
+}
+
+.interval-metrics {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 12px;
+}
+
+.metric-pill {
+  padding: 8px 12px;
+  border-radius: 8px;
+  font-size: clamp(13px, 3.5vw, 16px);
+  font-weight: 600;
+  color: #111827;
+}
+
+/* Metric type colors */
+.metric-time { background: #E0E7FF; }    /* Light indigo */
+.metric-weight { background: #FEE2E2; }  /* Light red */
+.metric-reps { background: #F3E8FF; }    /* Light purple */
+.metric-rest { background: #D1FAE5; }    /* Light green */
+.metric-distance { background: #D1FAE5; } /* Light green */
+.metric-pace { background: #FEF3C7; }    /* Light yellow */
+.metric-power { background: #FEE2E2; }   /* Light red */
+.metric-rate { background: #F3E8FF; }    /* Light purple */
+
+/* Error state */
+.error {
+  color: #DC2626;
+  padding: 16px;
+  text-align: center;
+  font-weight: 600;
+}
+
+.notes-section {
+  margin-top: 32px;
+  padding-top: 32px;
+  border-top: 1px solid #E5E7EB;
+}
+
+.notes-block {
+  margin-bottom: 24px;
+}
+
+.notes-block:last-child {
+  margin-bottom: 0;
+}
+
+.notes-title {
+  font-size: clamp(16px, 5vw, 20px);
+  font-weight: 800;
+  color: #111827;
+  margin: 0 0 16px 0;
+}
+
+.notes-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.note-item {
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 12px;
+  font-size: clamp(14px, 4vw, 16px);
+  color: #374151;
+}
+
+.note-item:last-child {
+  margin-bottom: 0;
+}
+
+.note-bullet {
+  width: 6px;
+  height: 6px;
+  background: currentColor;
+  border-radius: 50%;
+  margin: 8px 12px 0 0;
+  flex-shrink: 0;
+}
+
+
+.go-button {
+    width: 100%;
+    padding: 20px;
+    font-size: 24px;
+    font-weight: bold;
+    background-color: var(--success);
+    color: white;
+    border: none;
+    border-radius: 12px;
+    margin-bottom: 20px;
+    cursor: pointer;
+    transition: transform 0.1s, background-color 0.2s;
+}
+
+.go-button:hover {
+    background-color: #3d8b40;
+}
+
+.go-button:active {
+    transform: scale(0.98);
+}
+
+.timer-interval {
+    text-align: center;
+    padding: 20px;
+    background: rgba(0, 0, 0, 0.8);
+    border-radius: 16px;
+    margin: 0 20px;
+}
+
+.timer-activity {
+    font-size: min(12vw, 48px);
+    font-weight: 800;
+    margin: 0 0 16px 0;
+    color: white;
+}
+
+.timer-intensity {
+    font-size: min(6vw, 24px);
+    color: rgba(255, 255, 255, 0.9);
+    margin-bottom: 24px;
+}
+
+.timer-metrics {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    justify-content: center;
+    margin-bottom: 24px;
+}
+
+.timer-metric {
+    font-size: min(5vw, 20px);
+    font-weight: 600;
+    padding: 12px 20px;
+    border-radius: 12px;
+    background: white;
+    color: #111827;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.timer-description {
+    font-size: min(4vw, 18px);
+    color: rgba(255, 255, 255, 0.9);
+}
+
     </style>
 </head>
 
@@ -593,6 +815,7 @@
     <script src="cardioSwimming.js"></script>
     <script src="flexTraining.js"></script>
     <script src="intervalTimer.js"></script>
+    <script src="workoutDisplay.js"></script>
 
     <script>
         let levels = {
@@ -612,31 +835,6 @@
         document.getElementById('cardioLevelDisplay').textContent = levels.cardio;
         document.getElementById('strengthLevelDisplay').textContent = levels.strength;
         document.getElementById('flexLevelDisplay').textContent = levels.flex;
-
-
-        function formatPace(pace, type) {
-            switch (type) {
-                case 'run':
-                    // pace in minutes per mile
-                    const minutes = Math.floor(pace);
-                    const seconds = Math.round((pace - minutes) * 60);
-                    return `${minutes}:${seconds.toString().padStart(2, '0')}/mile (${(60 / pace).toFixed(1)} mph)`;
-                case 'bike':
-                    // pace in mph
-                    return `${pace.toFixed(1)} mph`;
-                case 'swim':
-                    // pace in seconds per lap
-                    const min = Math.floor(pace / 60);
-                    const sec = Math.round(pace % 60);
-                    return `${min}:${sec.toString().padStart(2, '0')}/lap`;
-                case 'row':
-                    // pace in seconds per 500m
-                    const paceMin = Math.floor(pace / 60);
-                    const paceSec = Math.round(pace % 60);
-                    return `${paceMin}:${paceSec.toString().padStart(2, '0')}/500m`;
-            }
-        }
-
 
         function adjustLevel(type, change) {
             const newLevel = Math.max(1, Math.min(100, levels[type] + change));
@@ -689,28 +887,47 @@
 
 
         // Helper functions for formatting and calculations
+        //NOT USED
         function formatTime(seconds) {
             const mins = Math.floor(seconds / 60);
             const secs = Math.round(seconds % 60);
             return `${mins}:${secs.toString().padStart(2, '0')}`;
         }
 
-        function formatPace(pace, type) {
-            switch (type) {
-                case 'run':
-                    const minutes = Math.floor(pace);
-                    const seconds = Math.round((pace - minutes) * 60);
-                    return `${minutes}:${seconds.toString().padStart(2, '0')}/mile (${(60 / pace).toFixed(1)} mph)`;
-                case 'bike':
-                    return `${pace.toFixed(1)} mph`;
-                case 'swim':
-                    return `${formatTime(pace)}/lap`;
-                case 'row':
-                    return `${formatTime(pace)}/500m`;
-                default:
-                    return pace.toString();
-            }
-        }
+        function formatPace(minutesPerMile, unit = 'imperial') {
+    console.log('Raw pace value received:', minutesPerMile);
+    
+    if (typeof minutesPerMile !== 'number') {
+        console.error('Invalid pace value:', minutesPerMile);
+        return '--:--/mi';
+    }
+
+    // Log the intermediate calculations
+    const totalMinutes = unit === 'metric' ? 
+        minutesPerMile / 1.60934 : 
+        minutesPerMile;
+    console.log('Total minutes:', totalMinutes);
+    
+    const minutes = Math.floor(totalMinutes);
+    console.log('Minutes part:', minutes);
+    
+    const seconds = Math.round((totalMinutes - minutes) * 60);
+    console.log('Seconds part:', seconds);
+
+    const unit_label = unit === 'metric' ? '/km' : '/mi';
+    
+    // If it's a round minute
+    if (seconds === 0) {
+        const result = `${minutes} min${unit_label}`;
+        console.log('Final result (round minutes):', result);
+        return result;
+    }
+    
+    // Otherwise show MM:SS format
+    const result = `${minutes}:${seconds.toString().padStart(2, '0')}${unit_label}`;
+    console.log('Final result (with seconds):', result);
+    return result;
+}
 
         // HTML Formatting helper functions
         // TODO These are not currently used, but should probably be brought back
@@ -813,261 +1030,23 @@
         </div>`;
         }
 
-        // // Main workout generation helpers
-        // function generateIntervals(level, type) {
-        //     const patterns = [
-        //         [30, 120, 6],    // Level 11: 30s run/120s walk × 6
-        //         [30, 90, 7],     // Level 12
-        //         [45, 90, 6],     // Level 13
-        //         [60, 90, 6],     // Level 14
-        //         [60, 60, 7],     // Level 15
-        //         [90, 60, 5],     // Level 16
-        //         [120, 60, 4],    // Level 17
-        //         [180, 60, 3],    // Level 18
-        //         [300, 120, 2],   // Level 19
-        //         [480, 120, 1]    // Level 20: 8min run/2min walk × 1
-        //     ];
 
-        //     const idx = level - 11;
-        //     if (idx >= 0 && idx < patterns.length) {
-        //         const [activeTime, restTime, sets] = patterns[idx];
-        //         return {
-        //             activeTime,
-        //             restTime,
-        //             sets,
-        //             type: type === 'run' ?
-        //                 { active: 'Run', rest: 'Walk' } :
-        //                 { active: 'Fast bike', rest: 'Easy bike' }
-        //         };
-        //     }
-        //     return null;
-        // }
+    
+// todo this is miles only, needs km
+function calculateDistance(durationSeconds, paceMinutesPerMile) {
+    const hours = durationSeconds / 3600;
+    const milesPerHour = 60 / paceMinutesPerMile;
+    return +(hours * milesPerHour).toFixed(2);
+}
 
-        // function generateBeginnerBikingIntervals(level) {
-        //     if (level < 10 || level > 20) {
-        //         throw new Error("This generator is designed for levels 10-20 only");
-        //     }
-
-        //     // Level 10 introduces the concept of varying effort on the bike
-        //     if (level === 10) {
-        //         return {
-        //             type: "interval",
-        //             sets: [{
-        //                 repeat: 1,
-        //                 intervals: [{
-        //                     activity: "Warm-up Spin",
-        //                     duration: 300,  // 5 minutes
-        //                     intensity: "light resistance",
-        //                     targetMetrics: {
-        //                         speed: 10,  // mph
-        //                         cadence: 60, // RPM
-        //                         watts: 50
-        //                     }
-        //                 }]
-        //             }, {
-        //                 repeat: 5,         // Main workout: 5 sets of push/recover
-        //                 intervals: [
-        //                     {
-        //                         activity: "Light Push",
-        //                         duration: 60,  // 1 minute
-        //                         intensity: "medium resistance, steady spin",
-        //                         targetMetrics: {
-        //                             speed: 12,
-        //                             cadence: 70,
-        //                             watts: 75
-        //                         }
-        //                     },
-        //                     {
-        //                         activity: "Easy Spin",
-        //                         duration: 120,  // 2 minutes
-        //                         intensity: "light resistance",
-        //                         targetMetrics: {
-        //                             speed: 10,
-        //                             cadence: 65,
-        //                             watts: 50
-        //                         }
-        //                     }
-        //                 ]
-        //             }, {
-        //                 repeat: 1,
-        //                 intervals: [{
-        //                     activity: "Cool-down",
-        //                     duration: 300,
-        //                     intensity: "very light resistance"
-        //                 }]
-        //             }],
-        //             totalDuration: 1500,  // 25 minutes total
-        //             description: "Introduction to Cycling Intervals"
-        //         };
-        //     }
-
-        //     // Levels 11-15: Build endurance with longer efforts
-        //     if (level <= 15) {
-        //         const pushDuration = 60 + (level - 10) * 15;  // Increases from 60s to 135s
-        //         const recoveryDuration = Math.max(60, 120 - (level - 10) * 10); // Decreases from 120s to 60s
-        //         const sets = 6 - Math.floor((level - 10) / 2); // Decreases from 6 to 4 sets
-
-        //         // We gradually increase intensity through speed and resistance
-        //         const pushSpeed = 12 + (level - 10) * 0.5;  // 12 mph to 14.5 mph
-        //         const pushWatts = 75 + (level - 10) * 10;   // 75W to 125W
-
-        //         return {
-        //             type: "interval",
-        //             sets: [{
-        //                 repeat: 1,
-        //                 intervals: [{
-        //                     activity: "Warm-up Spin",
-        //                     duration: 300,
-        //                     intensity: "gradually increasing resistance",
-        //                     targetMetrics: {
-        //                         speed: 10,
-        //                         cadence: 70,
-        //                         watts: 60
-        //                     }
-        //                 }]
-        //             }, {
-        //                 repeat: sets,
-        //                 intervals: [
-        //                     {
-        //                         activity: "Push Interval",
-        //                         duration: pushDuration,
-        //                         intensity: "medium-high resistance",
-        //                         targetMetrics: {
-        //                             speed: pushSpeed,
-        //                             cadence: 75,
-        //                             watts: pushWatts
-        //                         }
-        //                     },
-        //                     {
-        //                         activity: "Recovery Spin",
-        //                         duration: recoveryDuration,
-        //                         intensity: "light resistance",
-        //                         targetMetrics: {
-        //                             speed: 10,
-        //                             cadence: 70,
-        //                             watts: 60
-        //                         }
-        //                     }
-        //                 ]
-        //             }, {
-        //                 repeat: 1,
-        //                 intervals: [{
-        //                     activity: "Cool-down",
-        //                     duration: 300,
-        //                     intensity: "decreasing to very light resistance"
-        //                 }]
-        //             }],
-        //             totalDuration: 300 + (pushDuration + recoveryDuration) * sets + 300,
-        //             description: `Cycling Power Builder - Level ${level}`
-        //         };
-        //     }
-
-        //     // Levels 16-20: Introduction to sustained power intervals
-        //     if (level <= 20) {
-        //         const pushDuration = 180 + (level - 15) * 30;  // 3 minutes to 5 minutes
-        //         const recoveryDuration = 60;  // Consistent 1-minute recovery
-        //         const sets = 4 - Math.floor((level - 15) / 2);  // 4 down to 2 longer sets
-
-        //         // Continue progressing intensity
-        //         const pushSpeed = 15 + (level - 15) * 0.5;  // 15 mph to 17.5 mph
-        //         const pushWatts = 125 + (level - 15) * 15;  // 125W to 200W
-
-        //         return {
-        //             type: "interval",
-        //             sets: [{
-        //                 repeat: 1,
-        //                 intervals: [{
-        //                     activity: "Progressive Warm-up",
-        //                     duration: 300,
-        //                     intensity: "building from light to moderate resistance",
-        //                     targetMetrics: {
-        //                         speed: "10-12",
-        //                         cadence: "70-80",
-        //                         watts: "60-90"
-        //                     }
-        //                 }]
-        //             }, {
-        //                 repeat: sets,
-        //                 intervals: [
-        //                     {
-        //                         activity: "Sustained Power Interval",
-        //                         duration: pushDuration,
-        //                         intensity: "medium-high resistance, steady cadence",
-        //                         targetMetrics: {
-        //                             speed: pushSpeed,
-        //                             cadence: 80,
-        //                             watts: pushWatts
-        //                         }
-        //                     },
-        //                     {
-        //                         activity: "Active Recovery",
-        //                         duration: recoveryDuration,
-        //                         intensity: "light resistance, keep legs moving",
-        //                         targetMetrics: {
-        //                             speed: 11,
-        //                             cadence: 75,
-        //                             watts: 70
-        //                         }
-        //                     }
-        //                 ]
-        //             }, {
-        //                 repeat: 1,
-        //                 intervals: [{
-        //                     activity: "Cool-down",
-        //                     duration: 300,
-        //                     intensity: "gradual reduction in resistance",
-        //                     targetMetrics: {
-        //                         speed: "10-8",
-        //                         cadence: "70-60",
-        //                         watts: "60-40"
-        //                     }
-        //                 }]
-        //             }],
-        //             totalDuration: 300 + (pushDuration + recoveryDuration) * sets + 300,
-        //             description: `Sustained Power Development - Level ${level}`
-        //         };
-        //     }
-        // }
-
-        // function formatIntervalWorkout(workout) {
-        //     return `
-        // <div class="workout-header">
-        //     <h4>${workout.description}</h4>
-        //     <div class="metrics-grid">
-        //         <div class="metric">
-        //             <span class="metric-label">Total Time</span>
-        //             <span class="metric-value">${Math.round(workout.totalDuration / 60)} minutes</span>
-        //         </div>
-        //         <div class="metric">
-        //             <span class="metric-label">Intervals</span>
-        //             <span class="metric-value">${workout.sets.map(set =>
-        //         `${set.repeat}x (${set.intervals.map(int =>
-        //             `${int.duration}s ${int.activity}`).join(" + ")})`
-        //     ).join("<br>")}</span>
-        //         </div>
-        //     </div>
-        // </div>
-
-        // <div class="workout-structure">
-        //     <h5>Interval Structure</h5>
-        //     ${workout.sets.map(set => `
-        //         <div class="interval-set">
-        //             <p class="set-header">Repeat ${set.repeat} times:</p>
-        //             <ul class="interval-list">
-        //                 ${set.intervals.map(interval => `
-        //                     <li>${interval.duration} seconds: ${interval.activity}, ${interval.intensity}</li>
-        //                 `).join('')}
-        //             </ul>
-        //         </div>
-                
-        //     `).join('')}
-        // </div>
-        // ${workout.type === 'interval' ? `
-        //     <button class="start-timer-btn" onclick="startWorkoutTimer()">
-        //         Start Timer
-        //     </button>
-        // ` : ''}`;
-        // }
+// Modify the interval creation to include distance
+function addDistanceToInterval(interval) {
+    if (interval.duration && interval.targetPace) {
+        interval.distance = calculateDistance(interval.duration, interval.targetPace);
+        interval.pace = interval.targetPace; // Make sure pace is accessible to the display
+    }
+    return interval;
+}
 
         // Main workout generation function
         function generateCardioWorkout(level, type) {
@@ -1099,529 +1078,36 @@
             }
         }
 
-        // // Individual workout type generators
-        // function generateRunWorkout(level, workout) {
-        //     if (level <= 10) {
-        //         // Basic walking phase
-        //         workout.time = 30;
-        //         const baseSpeed = 2.5 + (level - 1) * 0.1;
-        //         workout.distance = +(workout.time * baseSpeed / 60).toFixed(2);
-        //         workout.pace = 60 / baseSpeed;
-        //         workout.title = 'Walking Workout';
-
-        //         const formCues = [
-        //             'Stand tall, shoulders relaxed',
-        //             'Look ahead, not down',
-        //             'Arms swing naturally',
-        //             'Push off with your toes'
-        //         ];
-
-        //         const notes = [
-        //             'Walk at a brisk but comfortable pace',
-        //             'Focus on maintaining good posture',
-        //             'Breathe naturally'
-        //         ];
-
-        //         workout.html = `
-        //     ${formatWorkoutHeader(workout)}
-        //     ${formatFormCues(formCues)}
-        //     ${formatNotes(notes)}
-        //     ${formatCalories('150-300')}`;
-        //         return intervals;
-        //     } else if (level <= 20) {
-        //         // Run/Walk Intervals phase
-        //         // These are much more complicated so they're split out into generateBeginnerRunningIntervals
-        //         const intervals = generateBeginnerRunningIntervals(level, 'run');
-        //         workout.title = 'Run/Walk Interval Workout';
-        //         const formCues = [
-        //             'Keep your head level',
-        //             'Land midfoot, not heel',
-        //             'Elbows at 90 degrees',
-        //             'Relax your shoulders'
-        //         ];
-
-        //         const notes = [
-        //             'Maintain conversational pace during run intervals',
-        //             'Walk briskly during recovery',
-        //             'Focus on breathing rhythm',
-        //             'You should be able to speak in short sentences while running'
-        //         ];
-
-        //         workout.html = `
-        //     ${formatWorkoutHeader(workout)}
-        //     ${formatIntervalWorkout(intervals)}
-        //     ${formatFormCues(formCues)}
-        //     ${formatNotes(notes)}
-        //     ${formatCalories('200-400')}`;
-        //         return intervals;
-        //     } else {
-        //         // Continuous running phases
-
-        //         intervals = generateContinuousRunIntervals(level);
-        //         intervals.title = `${workout.phase === 'long' ? 'Long' : 'Continuous'} Run`;
-
-        //         const notes = [
-        //             'Stay hydrated throughout',
-        //             'Maintain steady breathing rhythm',
-        //             'Focus on form, especially as fatigue sets in',
-        //             workout.phase === 'long' ? 'Take walking breaks if needed' : 'Maintain consistent effort'
-        //         ];
-
-        //         workout.html = `
-        //     ${formatWorkoutHeader(intervals)}
-        //     ${formatIntervalWorkout(intervals)}
-        //     ${formatNotes(notes)}
-        //     ${formatCalories(intervals.calories)}`;
-        //         return intervals;
-        //     }
-
-        //     return intervals; // not sure if this should be workout?
-        // }
-
-
-        // function generateBikeWorkout(level, workout) {
-        //     if (level <= 10) {
-        //         // Basic cycling phase
-        //         workout.time = 30;
-        //         workout.pace = 10 + (level - 1) * 0.2; // 10-12 mph
-        //         workout.distance = +(workout.time * workout.pace / 60).toFixed(2);
-        //         workout.watts = Math.round(60 + (level - 1) * 4); // 60-96 watts
-        //         workout.title = 'Foundation Cycling';
-
-        //         const formCues = [
-        //             'Maintain proper seat height - slight bend in knee at bottom of pedal stroke',
-        //             'Keep shoulders relaxed and elbows slightly bent',
-        //             'Look ahead, not down',
-        //             'Pedal in smooth circles'
-        //         ];
-
-        //         const notes = [
-        //             `Target cadence: 60-70 RPM`,
-        //             'Focus on form over speed',
-        //             'Adjust resistance to maintain steady effort',
-        //             'Stay well-hydrated throughout'
-        //         ];
-
-        //         workout.html = `
-        //     ${formatWorkoutHeader(workout)}
-        //     ${formatFormCues(formCues)}
-        //     ${formatNotes(notes)}
-        //     ${formatCalories('100-200')}`;
-
-        //     } else if (level <= 20) {
-        //         // Interval phase
-        //         const intervals = generateBeginnerBikingIntervals(level, 'bike');
-        //         workout.title = 'Interval Cycling';
-        //         currentWorkout = intervals;
-
-        //         const formCues = [
-        //             'Maintain form during high-intensity periods',
-        //             'Keep core engaged throughout',
-        //             'Use full pedal stroke, both push and pull',
-        //             'Stay seated during recovery intervals'
-        //         ];
-
-        //         const notes = [
-        //             'Effort level: Hard but controlled during work intervals',
-        //             'Recovery should feel easy',
-        //             `Target cadence: 80-90 RPM during work, 60-70 RPM recovery`,
-        //             'Adjust resistance to hit target watts/speed'
-        //         ];
-        //         workout.html = `
-        //     ${formatWorkoutHeader(workout)}
-        //     ${formatIntervalWorkout(intervals)}
-        //     ${formatFormCues(formCues)}
-        //     ${formatNotes(notes)}
-        //     ${formatCalories('200-400')}`;
-        //     } else {
-        //         // Continuous phases
-        //         const configs = {
-        //             build: {
-        //                 time: 30,
-        //                 basePace: 14,
-        //                 paceIncrease: 0.3,
-        //                 baseWatts: 120,
-        //                 wattsIncrease: 5,
-        //                 calories: '200-400'
-        //             },
-        //             endurance: {
-        //                 time: 45,
-        //                 basePace: 15,
-        //                 paceIncrease: 0.05,
-        //                 baseWatts: 150,
-        //                 wattsIncrease: 0.75,
-        //                 calories: '300-600'
-        //             },
-        //             long: {
-        //                 time: 60,
-        //                 basePace: 16,
-        //                 paceIncrease: 0.067,
-        //                 baseWatts: 170,
-        //                 wattsIncrease: 1,
-        //                 calories: '400-800'
-        //             }
-        //         };
-
-        //         const config = level <= 30 ? configs.build :
-        //             level <= 70 ? configs.endurance :
-        //                 configs.long;
-
-        //         workout.time = config.time;
-        //         workout.pace = config.basePace +
-        //             (level - (level <= 30 ? 21 : level <= 70 ? 31 : 71)) * config.paceIncrease;
-        //         workout.distance = +(workout.time * workout.pace / 60).toFixed(2);
-        //         workout.watts = Math.round(config.baseWatts +
-        //             (level - (level <= 30 ? 21 : level <= 70 ? 31 : 71)) * config.wattsIncrease);
-        //         workout.title = workout.phase === 'long' ? 'Long Endurance Ride' : 'Sustained Power Ride';
-
-        //         const structure = workout.phase === 'build' ? [
-        //             `Warm-up: 5 minutes easy spinning (60-70 RPM)`,
-        //             `Main set: ${workout.time - 10} minutes at ${workout.pace.toFixed(1)} mph (${workout.watts} watts)`,
-        //             `Cool-down: 5 minutes easy spinning`
-        //         ] : workout.phase === 'endurance' ? [
-        //             `Warm-up: 8 minutes progressive build`,
-        //             `Main set: ${workout.time - 13} minutes at ${workout.pace.toFixed(1)} mph (${workout.watts} watts)`,
-        //             `Cool-down: 5 minutes easy spin`
-        //         ] : [
-        //             `Warm-up: 10 minutes progressive build`,
-        //             `Main set: 45 minutes at ${workout.pace.toFixed(1)} mph (${workout.watts} watts)`,
-        //             `Cool-down: 5 minutes easy spin`
-        //         ];
-
-        //         const notes = [
-        //             `Target cadence: ${workout.phase === 'build' ? '75-85' : '85-95'} RPM`,
-        //             'Maintain steady power output',
-        //             'Stay well-hydrated throughout',
-        //             'Focus on smooth pedaling technique'
-        //         ];
-
-        //         workout.html = `
-        //     ${formatWorkoutHeader(workout)}
-        //     ${formatWorkoutStructure(structure)}
-        //     ${formatNotes(notes)}
-        //     ${formatCalories(config.calories)}`;
-        //     }
-
-        //     return workout;
-        // }
-
-        // function generateSwimWorkout(level, workout) {
-        //     if (level <= 10) {
-        //         // Basic swimming phase
-        //         workout.time = 15 + Math.floor((level - 1) * 0.5) * 5; // 15-20 minutes
-        //         workout.title = 'Swimming Fundamentals';
-        //         workout.restEvery = Math.max(1, 3 - Math.floor((level - 1) / 3)); // Rest after every 1-3 laps
-
-        //         const formCues = [
-        //             'Focus on steady breathing pattern',
-        //             'Keep your head aligned with your spine',
-        //             'Long, smooth strokes',
-        //             'Kick from your hips, not knees'
-        //         ];
-
-        //         const notes = [
-        //             `Swim ${workout.restEvery} lap(s) at a time`,
-        //             'Rest 30-60 seconds between sets',
-        //             'Focus on form over speed',
-        //             'Take longer breaks if needed for proper form'
-        //         ];
-
-        //         workout.html = `
-        //     ${formatWorkoutHeader(workout)}
-        //     ${formatFormCues(formCues)}
-        //     ${formatNotes(notes)}
-        //     ${formatCalories('150-300')}`;
-
-        //     } else if (level <= 20) {
-        //         // Structured intervals
-        //         workout.time = 20 + Math.floor((level - 11) * 0.5) * 5;
-        //         workout.title = 'Interval Swimming';
-        //         const activeLaps = Math.floor(2 + (level - 11) / 2);
-        //         const restSeconds = Math.max(45, 90 - (level - 11) * 5);
-        //         workout.laps = activeLaps * 3;
-        //         workout.distance = workout.laps * 25;
-        //         workout.pace = Math.max(60, 90 - (level - 11) * 3);
-
-        //         const structure = [
-        //             `3 sets of ${activeLaps} continuous laps`,
-        //             `Rest ${formatTime(restSeconds)} between sets`,
-        //             `Target pace: ${formatTime(workout.pace)} per lap`
-        //         ];
-
-        //         const formCues = [
-        //             'Maintain streamline position off walls',
-        //             'Focus on bilateral breathing',
-        //             'Keep steady stroke count per lap',
-        //             'Strong but controlled kicks'
-        //         ];
-
-        //         workout.html = `
-        //     ${formatWorkoutHeader(workout)}
-        //     ${formatWorkoutStructure(structure)}
-        //     ${formatFormCues(formCues)}
-        //     ${formatCalories('200-400')}`;
-
-        //     } else {
-        //         // Continuous swimming phases
-        //         const configs = {
-        //             build: {
-        //                 time: 30,
-        //                 baseLaps: 20,
-        //                 lapIncrease: 1,
-        //                 basePace: 60,
-        //                 paceReduction: 1,
-        //                 calories: '300-600'
-        //             },
-        //             endurance: {
-        //                 time: 45,
-        //                 baseLaps: 40,
-        //                 lapIncrease: 0.5,
-        //                 basePace: 45,
-        //                 paceReduction: 0.125,
-        //                 calories: '400-800'
-        //             },
-        //             long: {
-        //                 time: 60,
-        //                 baseLaps: 60,
-        //                 lapIncrease: 0.5,
-        //                 basePace: 40,
-        //                 paceReduction: 0.167,
-        //                 calories: '500-1000'
-        //             }
-        //         };
-
-        //         const config = level <= 30 ? configs.build :
-        //             level <= 70 ? configs.endurance :
-        //                 configs.long;
-
-        //         workout.time = config.time;
-        //         workout.laps = Math.floor(config.baseLaps +
-        //             (level - (level <= 30 ? 21 : level <= 70 ? 31 : 71)) * config.lapIncrease);
-        //         workout.distance = workout.laps * 25;
-        //         workout.pace = Math.max(35, config.basePace -
-        //             Math.floor((level - (level <= 30 ? 21 : level <= 70 ? 31 : 71)) * config.paceReduction));
-        //         workout.title = workout.phase === 'long' ? 'Distance Swimming' : 'Endurance Swimming';
-
-        //         const structure = workout.phase === 'build' ? [
-        //             `Warm-up: 4 laps easy`,
-        //             `Main set: ${workout.laps - 8} laps at ${formatTime(workout.pace)} per lap`,
-        //             `Cool-down: 4 laps easy`
-        //         ] : workout.phase === 'endurance' ? [
-        //             `Warm-up: 6 laps easy`,
-        //             `Main set: ${workout.laps - 10} laps at ${formatTime(workout.pace)} per lap`,
-        //             `Cool-down: 4 laps easy`
-        //         ] : [
-        //             `Warm-up: 8 laps easy`,
-        //             `Main set: ${workout.laps - 12} laps at ${formatTime(workout.pace)} per lap`,
-        //             `Cool-down: 4 laps easy`
-        //         ];
-
-        //         const notes = [
-        //             'Maintain consistent stroke count',
-        //             'Focus on efficient turns',
-        //             'Breathe every 2-3 strokes as needed',
-        //             'Take short breaks if form deteriorates'
-        //         ];
-
-        //         workout.html = `
-        //     ${formatWorkoutHeader(workout)}
-        //     ${formatWorkoutStructure(structure)}
-        //     ${formatNotes(notes)}
-        //     ${formatCalories(config.calories)}`;
-        //     }
-
-        //     return workout;
-        // }
-
-        // function generateRowWorkout(level, workout) {
-        //     if (level <= 10) {
-        //         // Foundation phase focusing on technique
-        //         workout.time = 15 + Math.floor((level - 1) * 0.5) * 5; // Progressive build from 15-20 minutes
-        //         workout.title = 'Rowing Technique Foundation';
-
-        //         // Calculate interval structure that allows focus on form
-        //         const activeMinutes = Math.min(3, 1 + Math.floor((level - 1) / 2));
-        //         const restMinutes = Math.max(1, 3 - Math.floor((level - 1) / 3));
-        //         workout.spm = 18 + Math.floor((level - 1) / 2); // Stroke rate progresses from 18-22 SPM
-
-        //         const formCues = [
-        //             'Sequence: legs-back-arms for drive, arms-back-legs for recovery',
-        //             'Keep arms straight during the initial drive',
-        //             'Core engaged throughout the stroke',
-        //             `Maintain ${workout.spm} strokes per minute for control`
-        //         ];
-
-        //         const structure = [
-        //             `Row for ${activeMinutes} minutes`,
-        //             'Rest and stretch for ${restMinutes} minutes',
-        //             'Repeat until time complete'
-        //         ];
-
-        //         const notes = [
-        //             'Focus on perfect form over power',
-        //             'Watch the force curve on the monitor',
-        //             'Keep shoulders relaxed and low',
-        //             'Take extra rest if form deteriorates'
-        //         ];
-
-        //         workout.html = `
-        //     ${formatWorkoutHeader(workout)}
-        //     ${formatWorkoutStructure(structure)}
-        //     ${formatFormCues(formCues)}
-        //     ${formatNotes(notes)}
-        //     ${formatCalories('100-250')}`;
-
-        //     } else if (level <= 20) {
-        //         // Interval phase introducing split times
-        //         workout.time = 20 + (level - 11);
-        //         workout.title = 'Power Development Intervals';
-
-        //         // Calculate progressive targets
-        //         workout.pace = Math.max(150, 180 - (level - 11) * 3); // Split time progresses from 3:00 to 2:30 /500m
-        //         const activeMinutes = Math.floor(2 + (level - 11) / 2);
-        //         const restSeconds = Math.max(60, 120 - (level - 11) * 6);
-        //         workout.spm = 20 + Math.floor((level - 11) / 2); // SPM progresses from 20-24
-
-        //         // Calculate total distance based on split time
-        //         const timeInSeconds = workout.time * 60;
-        //         workout.distance = Math.round((timeInSeconds / workout.pace) * 500 * 0.6); // Accounting for rest periods
-
-        //         const structure = [
-        //             `${Math.floor(workout.time / (activeMinutes + restSeconds / 60))} sets of:`,
-        //             `${activeMinutes} minutes at ${formatTime(workout.pace)}/500m`,
-        //             `${formatTime(restSeconds)} rest between sets`
-        //         ];
-
-        //         const formCues = [
-        //             `Hold ${workout.spm} SPM during work intervals`,
-        //             'Drive through the heels',
-        //             'Quick hands away from finish',
-        //             'Control the slide during recovery'
-        //         ];
-
-        //         const notes = [
-        //             'Focus on power application during drive',
-        //             'Use rest periods for light stretching',
-        //             'Monitor split time consistency',
-        //             'Stay relaxed during recovery phase'
-        //         ];
-
-        //         workout.html = `
-        //     ${formatWorkoutHeader(workout)}
-        //     ${formatWorkoutStructure(structure)}
-        //     ${formatFormCues(formCues)}
-        //     ${formatNotes(notes)}
-        //     ${formatCalories('150-350')}`;
-
-        //     } else {
-        //         // Endurance and long-distance phases
-        //         const configs = {
-        //             build: {
-        //                 time: 30,
-        //                 basePace: 150,
-        //                 paceReduction: 3,
-        //                 baseSPM: 22,
-        //                 spmIncrease: 0.5,
-        //                 calories: '250-500'
-        //             },
-        //             endurance: {
-        //                 time: 45,
-        //                 basePace: 120,
-        //                 paceReduction: 0.25,
-        //                 baseSPM: 24,
-        //                 spmIncrease: 0.2,
-        //                 calories: '350-700'
-        //             },
-        //             long: {
-        //                 time: 60,
-        //                 basePace: 105,
-        //                 paceReduction: 0.33,
-        //                 baseSPM: 26,
-        //                 spmIncrease: 0.15,
-        //                 calories: '450-900'
-        //             }
-        //         };
-
-        //         const config = level <= 30 ? configs.build :
-        //             level <= 70 ? configs.endurance :
-        //                 configs.long;
-
-        //         workout.time = config.time;
-        //         workout.pace = Math.max(90, config.basePace -
-        //             Math.floor((level - (level <= 30 ? 21 : level <= 70 ? 31 : 71)) * config.paceReduction));
-        //         workout.spm = Math.min(32, Math.floor(config.baseSPM +
-        //             (level - (level <= 30 ? 21 : level <= 70 ? 31 : 71)) * config.spmIncrease));
-
-        //         // Calculate distance based on split time
-        //         workout.distance = Math.round((workout.time * 60 / workout.pace) * 500);
-        //         workout.title = workout.phase === 'long' ? 'Long Distance Row' : 'Endurance Development';
-
-        //         // Create pyramid structure for advanced workouts
-        //         const baseSplit = workout.pace;
-        //         const hardSplit = Math.max(baseSplit - 10, baseSplit * 0.9);
-        //         const easySplit = baseSplit + 15;
-
-        //         let structure;
-        //         if (workout.phase === 'build') {
-        //             structure = [
-        //                 `Warm-up: 5 minutes at ${formatTime(easySplit)}/500m`,
-        //                 `Main set: ${workout.time - 10} minutes at ${formatTime(baseSplit)}/500m`,
-        //                 `Cool-down: 5 minutes at ${formatTime(easySplit)}/500m`
-        //             ];
-        //         } else if (workout.phase === 'endurance') {
-        //             structure = [
-        //                 `Warm-up: 5 minutes at ${formatTime(easySplit)}/500m`,
-        //                 `3 x 10 minutes at ${formatTime(baseSplit)}/500m`,
-        //                 `2 x 5 minutes at ${formatTime(hardSplit)}/500m`,
-        //                 `Cool-down: 5 minutes at ${formatTime(easySplit)}/500m`
-        //             ];
-        //         } else {
-        //             structure = [
-        //                 `Warm-up: 5 minutes at ${formatTime(easySplit)}/500m`,
-        //                 `4 x 10 minutes at ${formatTime(baseSplit)}/500m`,
-        //                 `3 x 3 minutes at ${formatTime(hardSplit)}/500m`,
-        //                 `1 minute easy between hard intervals`,
-        //                 `Cool-down: 5 minutes at ${formatTime(easySplit)}/500m`
-        //             ];
-        //         }
-
-        //         const notes = [
-        //             `Maintain ${workout.spm} SPM during main sets`,
-        //             'Focus on efficiency at higher rates',
-        //             'Stay relaxed through the upper body',
-        //             'Monitor heart rate and adjust intensity if needed'
-        //         ];
-
-        //         workout.html = `
-        //     ${formatWorkoutHeader(workout)}
-        //     ${formatWorkoutStructure(structure)}
-        //     ${formatNotes(notes)}
-        //     ${formatCalories(config.calories)}`;
-        //     }
-
-        //     return workout;
-        // }
-
         function updateStrengthContent() {
             const workout = generateStrengthWorkout(levels.strength);
             currentWorkout = workout;  // Make sure we set the current workout
             const content = document.getElementById('strengthContent');
-            content.innerHTML = workout.html;
+
+            const workoutDisplay = new WorkoutDisplay(
+                content,
+                workout,
+                { unitSystem: 'imperial' }
+            );
+
+            // Render workout
+            workoutDisplay.render();
+            //content.innerHTML = workout.html;
         }
 
 
 
         function updateCardioContent() {
             const workout = generateCardioWorkout(levels.cardio, currentCardioType);
-            currentWorkout = workout;  // Make sure we set the current workout
+            currentWorkout = workout;  
             const content = document.getElementById('cardioContent');
+            const workoutDisplay = new WorkoutDisplay(
+                content,
+                workout,
+                { unitSystem: 'imperial' }
+            );
 
-            // The workout generators store the formatted HTML in workout.html
-            content.innerHTML = `
-        <div class="exercise-card">
-            ${workout.html}
-        </div>
-    `;
+            // Render workout
+            workoutDisplay.render();
         }
 
 

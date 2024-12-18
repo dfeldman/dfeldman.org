@@ -175,131 +175,156 @@ function roundWeight(weight) {
     return Math.round(weight / 5) * 5;
   }
 
-function generateStrengthWorkout(level) { 
 
-  // Initialize workout
-  const workout = {
-    type: "strength",
-    level: level, // Add level for rest period calculations
-    description:
-      level <= 10
-        ? "Foundation Strength Training"
-        : level <= 20
-        ? "Basic Machine Circuit"
-        : "Advanced Strength Program",
-    sets: [],
-  };
-
-  // Get exercises for current level
-  let exercises;
-  if (level <= 10) {
-    exercises = Object.values(EXERCISES.beginnerMoves).map((ex) => ({
-      ...ex,
-      baseReps:
-        ex.baseReps &&
-        Math.min(ex.baseReps + Math.floor(level / 2), ex.baseReps + 5),
-      baseWeight: ex.baseWeight && ex.baseWeight + level * 2.5,
-      baseDuration: ex.baseDuration && ex.baseDuration + level * 5,
-    }));
-  } else if (level <= 20) {
-    exercises = Object.values(EXERCISES.intermediateMoves).map((ex) => ({
-      ...ex,
-      baseWeight: ex.baseWeight && ex.baseWeight + (level - 10) * 5,
-      baseDuration: ex.baseDuration && ex.baseDuration + (level - 10) * 10,
-    }));
-  } else {
-    exercises = Object.values(EXERCISES.advancedMoves).map((ex) => ({
-      ...ex,
-      baseWeight:
-        ex.baseWeight &&
-        ex.baseWeight +
-          (level - 20) *
-            (ex.name.includes("Leg Press")
-              ? 7.5
-              : ex.name.includes("Triceps")
-              ? 2.5
-              : 5),
-      baseDuration: ex.baseDuration && ex.baseDuration + (level - 20) * 5,
-    }));
-  }
-  // ... other level ranges ...
-
-  // Convert exercises to properly formatted intervals
-  const exerciseIntervals = exercises.map((ex) => {
-    // Convert exercise to proper interval format
-    const interval = {
-      activity: ex.name, // Use activity instead of name
-      description: ex.description,
-      type: ex.type,
-      intensity: "Focus on form",
-      formCues: ex.formCues,
+  function generateStrengthWorkout(level) { 
+    // Initialize workout
+    const workout = {
+        type: "strength",
+        level: level,
+        description: level <= 10 
+            ? "Foundation Strength Training"
+            : level <= 20 
+            ? "Basic Machine Circuit"
+            : "Advanced Strength Program",
+        formCues: [
+            "Breathe steadily throughout each exercise",
+            "Keep core engaged for stability",
+            "Control both lifting and lowering phases",
+            "Maintain proper posture",
+            "Stop if you feel any sharp pain"
+        ],
+        notes: [
+            "Start with a lighter weight to warm up",
+            "Focus on form over weight",
+            "Rest as needed between exercises",
+            "Stay hydrated throughout workout",
+            level <= 10 ? "Take time to learn each movement" :
+            level <= 20 ? "Maintain form during circuits" :
+                         "Challenge yourself while maintaining control"
+        ],
+        sets: []
     };
 
-    // Add either duration or reps/weight
-    if (ex.duration) {
-      interval.duration = ex.duration;
+    // Get exercises for current level
+    let exercises;
+    if (level <= 10) {
+        exercises = Object.values(EXERCISES.beginnerMoves).map(ex => ({
+            ...ex,
+            baseReps: ex.baseReps && Math.min(ex.baseReps + Math.floor(level / 2), ex.baseReps + 5),
+            baseWeight: ex.baseWeight && ex.baseWeight + level * 2.5,
+            baseDuration: ex.baseDuration && ex.baseDuration + level * 5
+        }));
+    } else if (level <= 20) {
+        exercises = Object.values(EXERCISES.intermediateMoves).map(ex => ({
+            ...ex,
+            baseWeight: ex.baseWeight && ex.baseWeight + (level - 10) * 5,
+            baseDuration: ex.baseDuration && ex.baseDuration + (level - 10) * 10
+        }));
     } else {
-      interval.reps = ex.baseReps;
-      if (ex.baseWeight) {
-        interval.weight = roundWeight(ex.baseWeight + level * 2.5);
-      }
+        exercises = Object.values(EXERCISES.advancedMoves).map(ex => ({
+            ...ex,
+            baseWeight: ex.baseWeight && ex.baseWeight + (level - 20) * 
+                (ex.name.includes("Leg Press") ? 7.5 : 
+                 ex.name.includes("Triceps") ? 2.5 : 5),
+            baseDuration: ex.baseDuration && ex.baseDuration + (level - 20) * 5
+        }));
     }
 
-    return interval;
-  });
+    // Convert exercises to properly formatted intervals
+    const exerciseIntervals = exercises.map(ex => {
+        const interval = {
+            activity: ex.name,
+            description: ex.description,
+            type: ex.type,
+            intensity: "Focus on form",
+            formCues: ex.formCues,
+            sets: ex.baseSets
+        };
 
-  // Add warm-up set
-  workout.sets.push({
-    repeat: 1,
-    intervals: [
-      {
-        activity: "Dynamic Warm-up",
-        duration: 300,
-        intensity: "Light movement",
-        description: "Light cardio and mobility work",
-      },
-    ],
-  });
+        // For timed exercises (like planks)
+        if (ex.baseDuration) {
+            interval.duration = ex.baseDuration;
+        } else {
+            // For regular strength exercises
+            interval.reps = ex.baseReps;
+            if (ex.baseWeight) {
+                interval.weight = roundWeight(ex.baseWeight);
+            }
+        }
 
-  // Create main workout set with exercises and rest periods
-  const mainSet = {
-    repeat: 1,
-    intervals: [],
-  };
+        return interval;
+    });
 
-  // Add exercises with rest periods
-  exerciseIntervals.forEach((exercise, index) => {
-    mainSet.intervals.push(exercise);
+    // Add warm-up set
+    workout.sets.push({
+        repeat: 1,
+        intervals: [{
+            activity: "Dynamic Warm-up",
+            duration: 300,
+            type: "warmup",
+            intensity: "Light movement",
+            description: "Light cardio and mobility work"
+        }]
+    });
 
-    // Add rest period after each exercise except the last one
-    if (index < exerciseIntervals.length - 1) {
-      mainSet.intervals.push({
-        activity: "Rest",
-        duration: calculateRestPeriod(level, false),
-        intensity: "Active Recovery",
-      });
+    // Create main workout set
+    const mainSet = {
+        repeat: level > 10 && level <= 20 ? 3 : 1, // 3 circuits for intermediate
+        type: level > 10 && level <= 20 ? 'circuit' : 'regular',
+        intervals: []
+    };
+
+    // Add exercises with rest periods
+    exerciseIntervals.forEach((exercise, index) => {
+        mainSet.intervals.push(exercise);
+
+        // Add rest period after each exercise except the last one
+        if (index < exerciseIntervals.length - 1) {
+            mainSet.intervals.push({
+                activity: "Rest",
+                type: "rest",
+                duration: calculateRestPeriod(level, false),
+                intensity: "Active Recovery"
+            });
+        }
+    });
+
+    // Add circuit rest if it's a circuit workout
+    if (level > 10 && level <= 20 && mainSet.intervals.length > 0) {
+        mainSet.intervals.push({
+            activity: "Circuit Rest",
+            type: "circuit_rest",
+            duration: calculateRestPeriod(level, true),
+            intensity: "Recovery between circuits"
+        });
     }
-  });
 
-  workout.sets.push(mainSet);
+    workout.sets.push(mainSet);
 
-  // Add cool-down set
-  workout.sets.push({
-    repeat: 1,
-    intervals: [
-      {
-        activity: "Cool-down",
-        duration: 300,
-        intensity: "Light stretching",
-      },
-    ],
-  });
+    // Add cool-down set
+    workout.sets.push({
+        repeat: 1,
+        intervals: [{
+            activity: "Cool-down",
+            type: "cooldown",
+            duration: 300,
+            intensity: "Light stretching"
+        }]
+    });
 
-  // Generate HTML display
-  workout.html = generateStrengthWorkoutHTML(workout);
+    // Calculate total duration
+    workout.totalDuration = workout.sets.reduce((total, set) => {
+        const setDuration = set.intervals.reduce((setTotal, interval) => {
+            return setTotal + (interval.duration || 0);
+        }, 0);
+        return total + (setDuration * (set.repeat || 1));
+    }, 0);
 
-  return workout;
+    return workout;
 }
+
+
+
 
 function generateStrengthWorkoutHTML(workout) {
   // Get main exercises (excluding warm-up/cooldown/rest)

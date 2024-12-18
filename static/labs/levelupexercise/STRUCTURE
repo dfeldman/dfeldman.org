@@ -1,0 +1,249 @@
+Workout Data Structure Specification
+Overview
+A Workout represents a complete exercise session. It contains metadata about the workout and a series of exercise intervals. The structure supports all workout types (cardio, strength, flexibility) and both timed and untimed exercises.
+Base Workout Properties
+
+type: string (required) - One of: "run", "bike", "swim", "row", "strength", "flexibility"
+level: number (required) - Workout level (1-100)
+description: string (required) - Human-readable title/description (e.g., "Power Running Intervals", "Upper Body Strength")
+units: string (required) - Either "imperial" or "metric"
+phase: string (required) - Training phase (e.g., "basic", "intervals", "endurance", "build", "power")
+totalDuration: number (required) - Total workout time in seconds
+notes: string[] (optional) - Array of form cues or important reminders
+formCues: string[] (optional) - Array of form-related instructions
+
+Intervals Structure
+The workout contains a sets array. Each set can be repeated and contains intervals:
+[
+    {
+        repeat: number,  // How many times to repeat this set
+        intervals: [     // Array of intervals within this set
+            // ... intervals (see below for types)
+        ]
+    }
+]
+Interval Types
+Base Interval Properties (all intervals have these)
+
+activity: string (required) - Name of activity (e.g., "Run", "Chest Press", "Rest")
+intensity: string (required) - Descriptive intensity (e.g., "Easy", "Moderate", "Hard")
+description: string (optional) - Additional instructions
+
+Timed Cardio Interval
+Used for running, biking, etc.
+Additional properties:
+
+duration: number (required) - Time in seconds
+distance: number (optional) - Distance in miles/km
+pace: number (optional) - Pace in relevant units (min/mile, min/km, etc.)
+targetMetrics: object (optional) - Additional metrics like:
+
+watts: number - For biking/rowing
+spm: number - Strokes per minute for rowing
+rpm: number - Revolutions per minute for biking
+
+
+
+Strength Exercise Interval
+Used for weight training
+Additional properties:
+
+sets: number (required) - Number of sets
+reps: number (required) - Reps per set
+weight: number (optional) - Weight in lbs/kg (omitted for bodyweight exercises)
+type: string (required) - "machine", "free_weight", or "bodyweight"
+
+Timed Exercise Interval
+Used for planks, holds, etc.
+Additional properties:
+
+duration: number (required) - Hold time in seconds
+type: string (required) - Usually "bodyweight"
+
+Rest Interval
+Used between exercises
+Additional properties:
+
+duration: number (required) - Rest time in seconds
+type: string (required) - Either "rest" or "circuit_rest"
+
+Flexibility Interval
+Used for stretches
+Additional properties:
+
+duration: number (optional) - Hold time in seconds if applicable
+perSide: boolean (optional) - Whether to repeat on both sides
+targetArea: string (required) - Body part being stretched
+
+Examples
+Running Interval Workout
+{
+    type: "run",
+    level: 15,
+    description: "Running Intervals",
+    units: "imperial",
+    phase: "intervals",
+    totalDuration: 1800,  // 30 minutes
+    sets: [
+        {
+            repeat: 1,
+            intervals: [{
+                activity: "Warm-up Walk",
+                duration: 300,
+                intensity: "Easy",
+                distance: 0.25,  // miles
+                pace: 20        // min/mile
+            }]
+        },
+        {
+            repeat: 3,
+            intervals: [
+                {
+                    activity: "Run",
+                    duration: 180,
+                    intensity: "Hard",
+                    distance: 0.25,
+                    pace: 12
+                },
+                {
+                    activity: "Walk",
+                    duration: 120,
+                    intensity: "Easy",
+                    distance: 0.1,
+                    pace: 20
+                }
+            ]
+        },
+        {
+            repeat: 1,
+            intervals: [{
+                activity: "Cool-down",
+                duration: 300,
+                intensity: "Easy"
+            }]
+        }
+    ]
+}
+Strength Circuit Workout
+{
+    type: "strength",
+    level: 12,
+    description: "Upper Body Circuit",
+    units: "imperial",
+    phase: "basic",
+    totalDuration: 2700,  // 45 minutes
+    sets: [
+        {
+            repeat: 1,
+            intervals: [{
+                activity: "Warm-up",
+                duration: 300,
+                intensity: "Light",
+                description: "Light cardio and mobility work"
+            }]
+        },
+        {
+            repeat: 3,  // 3 circuits
+            intervals: [
+                {
+                    activity: "Chest Press",
+                    type: "machine",
+                    sets: 3,
+                    reps: 12,
+                    weight: 100,
+                    intensity: "Moderate"
+                },
+                {
+                    activity: "Rest",
+                    duration: 60,
+                    type: "rest"
+                },
+                {
+                    activity: "Push-ups",
+                    type: "bodyweight",
+                    sets: 3,
+                    reps: 10,
+                    intensity: "Hard"
+                },
+                {
+                    activity: "Circuit Rest",
+                    duration: 120,
+                    type: "circuit_rest"
+                }
+            ]
+        }
+    ],
+    notes: [
+        "Keep core engaged throughout",
+        "Focus on form over weight"
+    ]
+}
+This structure allows for:
+
+Consistent representation across workout types
+Support for both timed and untimed exercises
+Clear progression through workout phases
+Easy conversion between unit systems
+Flexible display options
+Timer compatibility
+Circuit training support
+
+Unit Handling Notes:
+
+Distances stored in miles or kilometers based on units property
+Weights stored in pounds or kilograms based on units property
+Paces stored in time per mile or time per kilometer
+Durations always in seconds regardless of units system
+
+
+ISSUES:
+Missing Base Properties:
+
+
+None consistently set the 'units' property
+Most don't explicitly set 'phase'
+'totalDuration' isn't consistently calculated or set
+
+
+Structure Issues:
+
+
+Swimming generator doesn't use proper sets/intervals structure - it's using an older format with array of laps
+Biking uses targetMetrics inconsistently
+Running generator sometimes puts pace/distance info at workout level instead of interval level
+Strength doesn't properly handle circuit vs regular rest periods
+
+
+Interval Type Issues:
+
+
+Strength workouts aren't properly setting 'type' ("machine", "free_weight", "bodyweight")
+Rest intervals don't specify type ("rest" vs "circuit_rest")
+Flexibility intervals missing 'targetArea' property
+Some intervals missing 'description' property
+'intensity' isn't consistently set across all intervals
+
+
+Unit Handling:
+
+
+None of the generators handle the unit system conversion
+Paces and distances aren't being adjusted based on unit system
+Weight values aren't being converted between lb/kg
+
+
+Data Organization:
+
+
+Some workout properties are being stored at top level that should be in intervals
+Inconsistent handling of sets/repeats structure
+Some generators still using old array formats instead of nested sets/intervals
+
+To fix this, we should:
+
+Create a standardized workout object creator
+Add unit system handling
+Properly structure all intervals within sets
+Add missing required properties
+Convert existing generators to use the new structure
+
