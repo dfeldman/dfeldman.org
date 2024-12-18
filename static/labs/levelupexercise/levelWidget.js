@@ -15,7 +15,9 @@ class LevelWidget {
     // Dummy functions to be implemented
     getCurrentLevel() {
         // TODO: Implement this to get level from userData
-        return userData.getLevel(this.activityType);
+        let level = userData.getLevel(this.activityType);
+        if (level==0) return 1; // TODO fix this
+        else return level; 
     }
 
     getWorkoutsAtCurrentLevel() {
