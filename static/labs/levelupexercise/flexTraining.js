@@ -91,10 +91,10 @@ function generateFlexWorkout(level) {
         title: level <= 20 ? 'Basic Flexibility Training' :
             level <= 50 ? 'Intermediate Stretching' :
                 'Advanced Flexibility Work',
-        description: "Flexibility Workoout",
+        description: "Flexibility Workout",
         stretches: [],
         type: 'flexibility',
-        totalDuration: 1800,
+        totalDuration: 900,
         level: level
     };
 
