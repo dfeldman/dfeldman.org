@@ -1408,7 +1408,7 @@
 
         // Handle cardio level display based on current type
         function updateCardioLevelDisplay() {
-            const currentLevel = userData.getLevel(currentCardioType) || 1;
+            const currentLevel = userData.getLevel(currentCardioType) + 1;
             // document.getElementById('cardioLevel').value = currentLevel;
             // document.getElementById('cardioLevelDisplay').textContent = currentLevel;
         }
@@ -1681,7 +1681,7 @@
         }
 
         function updateStrengthContent() {
-    const level = userData.getLevel('strength');
+    const level = userData.getLevel('strength')+1;
     const workout = generateStrengthWorkout(level);
     currentWorkout = workout;
     const content = document.getElementById('strengthContent');
@@ -1711,7 +1711,7 @@
 }
 
 function updateFlexContent() {
-    const level = userData.getLevel('flexibility');
+    const level = userData.getLevel('flexibility')+1;
     const workout = generateFlexWorkout(level);
     currentWorkout = workout;
     const content = document.getElementById('flexContent');
@@ -1741,7 +1741,7 @@ function updateFlexContent() {
 }
 
         function updateCardioContent() {
-            const level = userData.getLevel(currentCardioType);
+            const level = userData.getLevel(currentCardioType)+1;
             const workout = generateCardioWorkout(level, currentCardioType);
             currentWorkout = workout;
             const content = document.getElementById('cardioContent');
