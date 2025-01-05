@@ -220,7 +220,7 @@ updateDisplay() {
         // TODO 
         this.pause();
         // Exit timer view
-        document.querySelector('.timer-view').style.display = 'none';
+        document.querySelector('#timer-view').style.display = 'none';
         
         // Show rating modal
         const ratingModal = new WorkoutRating();
@@ -228,7 +228,7 @@ updateDisplay() {
     }
 
     exit() {
-        document.querySelector('.timer-view').style.display = 'none';
+        document.querySelector('#timer-view').style.display = 'none';
         document.querySelector('.container').style.display = 'block';
         this.reset();
     }
@@ -267,153 +267,6 @@ function workoutToTimerIntervals(workout) {
     return [];
 }
 
-
-// Old version HANDLES STRETCHES (which wasn't actually used)
-// function workoutToTimerIntervals(workout) {
-//     // Check what type of workout we have
-//     if (workout.sets) {
-//         // Handle strength/cardio workouts 
-//         let timerIntervals = [];
-
-//         workout.sets.forEach(set => {
-//             for (let i = 0; i < (set.repeat || 1); i++) {
-//                 set.intervals.forEach(interval => {
-//                     if (interval.duration) {
-//                         timerIntervals.push({
-//                             activity: interval.activity,
-//                             duration: interval.duration,
-//                             intensity: interval.intensity,
-//                             description: interval.description
-//                         });
-//                     } else if (interval.reps) {
-//                         timerIntervals.push({
-//                             activity: `${interval.activity}${interval.setNumber ?
-//                                 ` (Set ${interval.setNumber}/${interval.totalSets})` :
-//                                 ''}`,
-//                             sets: interval.sets,
-//                             reps: interval.reps,
-//                             weight: interval.weight,
-//                             intensity: interval.intensity,
-//                             description: interval.description,
-//                             formCues: interval.formCues,
-//                             type: interval.type
-//                         });
-//                     }
-//                 });
-//             }
-//         });
-
-//         return timerIntervals;
-//     }
-//     // Stretches don't currently have a Start Timer button so this is never invoked
-//     else if (workout.stretches) {
-//         // Handle flexibility workouts
-//         let timerIntervals = [];
-
-//         // Add a warm-up period
-//         timerIntervals.push({
-//             activity: "Warm-up",
-//             duration: 300,  // 5 minutes
-//             intensity: "Light movement",
-//             description: "Gentle movement to prepare for stretching"
-//         });
-
-//         // Convert stretches to intervals
-//         workout.stretches.forEach(stretch => {
-//             // Parse duration string to seconds
-//             let durationInSeconds;
-//             if (typeof stretch.duration === 'string') {
-//                 if (stretch.duration.includes('seconds')) {
-//                     durationInSeconds = parseInt(stretch.duration);
-//                 } else if (stretch.duration.includes('minutes')) {
-//                     durationInSeconds = parseInt(stretch.duration) * 60;
-//                 } else {
-//                     // Default to 30 seconds if we can't parse
-//                     durationInSeconds = 30;
-//                 }
-//             }
-
-//             timerIntervals.push({
-//                 activity: stretch.name,
-//                 duration: durationInSeconds,
-//                 intensity: "Gentle stretch",
-//                 description: stretch.description,
-//                 target: stretch.target,
-//                 goal: stretch.goal
-//             });
-
-//             // Add a short transition period between stretches
-//             if (stretch.duration.includes('each side')) {
-//                 // For stretches that need to be done on both sides
-//                 timerIntervals.push({
-//                     activity: `${stretch.name} (Second Side)`,
-//                     duration: durationInSeconds,
-//                     intensity: "Gentle stretch",
-//                     description: stretch.description,
-//                     target: stretch.target,
-//                     goal: stretch.goal
-//                 });
-//             }
-
-//             // Add transition time between stretches
-//             timerIntervals.push({
-//                 activity: "Transition",
-//                 duration: 10,  // 10 seconds to transition
-//                 intensity: "Rest",
-//                 description: "Move to next position"
-//             });
-//         });
-
-//         // Add a cool-down period
-//         timerIntervals.push({
-//             activity: "Cool-down",
-//             duration: 120,  // 2 minutes
-//             intensity: "Light stretching",
-//             description: "Gentle movement to finish session"
-//         });
-
-//         return timerIntervals;
-//     }
-
-//     console.error('Unknown workout format:', workout);
-//     return [];
-// }
-
-// function startWorkoutTimer() {
-//     console.log('Current workout:', currentWorkout); // Add this debug line
-
-//     if (!currentWorkout) {
-//         console.error('No workout selected');
-//         return;
-//     }
-
-//     // Add validation for the workout structure
-//     if (!currentWorkout.sets || !Array.isArray(currentWorkout.sets)) {
-//         console.error('Invalid workout format - missing sets array:', currentWorkout);
-//         return;
-//     }
-
-//     const timerIntervals = workoutToTimerIntervals(currentWorkout);
-
-//     // Hide main app and show timer
-//     document.querySelector('.container').style.display = 'none';
-//     document.querySelector('.timer-view').style.display = 'flex';
-
-//     // Initialize and start timer
-//     const timer = new IntervalTimer();
-//     timer.setWorkout(timerIntervals);
-
-//     // Set up exit handler
-//     document.querySelector('.exit').onclick = () => {
-//         // Hide timer and show main app
-//         document.querySelector('.timer-view').style.display = 'none';
-//         document.querySelector('.container').style.display = 'block';
-
-//         // Reset timer
-//         timer.reset();
-//     };
-// }
-
 function startWorkoutTimer() {
     if (!currentWorkout) {
         console.error('No workout selected');
@@ -427,7 +280,7 @@ function startWorkoutTimer() {
 
     // Hide main app and show timer
     document.querySelector('.container').style.display = 'none';
-    document.querySelector('.timer-view').style.display = 'flex';
+    document.querySelector('#timer-view').style.display = 'flex';
 
     // Initialize and start timer with workout display
     const timer = new IntervalTimer(workoutDisplay);
@@ -436,8 +289,8 @@ function startWorkoutTimer() {
         // Set up exit handler
         document.querySelector('.exit').onclick = () => {
             // Hide timer and show main app
-            document.querySelector('.timer-view').style.display = 'none';
-            document.querySelector('.container').style.display = 'block';
+            document.querySelector('#timer-view').style.display = 'none';
+           document.querySelector('.container').style.display = 'block';
     
             // Reset timer
             timer.reset();
