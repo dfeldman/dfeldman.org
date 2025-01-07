@@ -63,9 +63,9 @@
             background: var(--primary);
             color: white;
             transform: scale(1.05);
-        } 
+        }
 
-         .content {
+        .content {
             display: none;
             animation: fadeIn 0.3s ease;
         }
@@ -328,7 +328,7 @@
             width: 90%;
             max-width: 500px;
         } */
-/* 
+        /* 
         .time-display {
             font-size: 72px;
             text-align: center;
@@ -1388,276 +1388,350 @@
 
     </div>
 
-        <!-- Timer modal -->
-        <div id="timer-view" class="content screen">
-            <div class="timer-container">
-                <div class="time-display">00:00</div>
-                
-                <div class="interval-info">
-                    <!-- This will be populated by the timer -->
-                </div>
-        
-                <div class="progress-container">
-                    <div class="progress-bar">
-                        <div class="progress-fill"></div>
-                    </div>
-                    <div class="workout-progress">Set 1 of 3</div>
-                </div>
-        
-                <div class="timer-controls">
-                    <button class="timer-btn play-pause">Start</button>
-                    <button class="timer-btn skip">Skip</button>
-                    <button class="timer-btn reset">Reset</button>
-                    <button class="timer-btn exit">Exit</button>
+    <!-- Timer modal -->
+    <div id="timer-view" class="screen" style="display: none;">
+        <!-- Timer Header -->
+        <div class="timer-header">
+            <div class="timer-display">00:00</div>
+            <div class="timer-badge">
+                <div class="timer-badge__content">
+                    <span class="text-3xl mr-2">🏃</span>
+                    <span class="interval-badge-text">Run Interval #1</span>
                 </div>
             </div>
         </div>
 
-    <!-- Bottom tab bar -->
-    <div class="tab-bar">
-        <a class="tab-item" onclick="switchTab('workouts')">
-            <span class="tab-item__icon">🏃‍♂️</span>
-            <span class="tab-item__label">Workouts</span>
-        </a>
-        <a class="tab-item active" onclick="switchTab('overview')">
-            <span class="tab-item__icon">📋</span>
-            <span class="tab-item__label">Overview</span>
-        </a>
-        <a class="tab-item" onclick="switchTab('trophies')">
-            <span class="tab-item__icon">🏆</span>
-            <span class="tab-item__label">Trophies</span>
-        </a>
-        <a class="tab-item" onclick="switchTab('dashboard')">
-            <span class="tab-item__icon">📊</span>
-            <span class="tab-item__label">Dashboard</span>
-        </a>
-    </div>
+        <!-- Stats Bar -->
+        <div class="stats-bar">
+            <div class="stats-grid">
+                <div class="stat-box">
+                    <div class="stat-box__label">PACE</div>
+                    <div class="stat-box__value">10:24/mi</div>
+                </div>
+                <div class="stat-box">
+                    <div class="stat-box__label">DISTANCE</div>
+                    <div class="stat-box__value">0.29 mi</div>
+                </div>
+                <div class="stat-box">
+                    <div class="stat-box__label">CALORIES</div>
+                    <div class="stat-box__value">127</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Progress Track -->
+        <div class="card">
+            <div class="card__header">
+                QUEST PROGRESS
+            </div>
+            <div class="card__content progress-section">
+                <!-- Progress items will be inserted here by JS -->
+            </div>
+        </div>
+
+        <!-- Power-ups -->
+        <div class="card">
+            <div class="card__header">
+                POWER-UPS EARNED!
+            </div>
+            <div class="card__content">
+                <div class="powerups-grid">
+                    <!-- Power-ups will be inserted here by JS -->
+                </div>
+            </div>
+        </div>
+
+        <!-- Controls -->
+        <div class="controls">
+            <div class="controls__grid">
+              <button class="button button--danger btn-pause">PAUSE</button>
+              <button class="button button--primary btn-skip">SKIP →</button>
+              <button class="button button--danger exit">EXIT</button>  <!-- This must be here -->
+            </div>
+          </div>
+        </div>
+
+        <!-- Victory Screen (Hidden initially) -->
+        <div id="victory-view" class="screen" style="display: none;">
+            <div class="victory-header">
+                <div class="victory-header__emoji">🏆</div>
+                <h1 class="victory-header__title">VICTORY!</h1>
+                <div class="victory-header__badge">
+                    <span class="text-3xl mr-2">⭐️</span>
+                    LEVEL COMPLETE
+                </div>
+            </div>
+
+            <div class="victory-stats">
+                <div class="victory-stat">
+                    <span class="victory-stat__emoji">⚡️</span>
+                    <div class="victory-stat__value" id="total-time">22:00</div>
+                    <div class="victory-stat__label">Total Time</div>
+                </div>
+                <div class="victory-stat">
+                    <span class="victory-stat__emoji">🔥</span>
+                    <div class="victory-stat__value" id="power-ups">3</div>
+                    <div class="victory-stat__label">Power-ups</div>
+                </div>
+                <div class="victory-stat">
+                    <span class="victory-stat__emoji">💪</span>
+                    <div class="victory-stat__value" id="xp-earned">850</div>
+                    <div class="victory-stat__label">XP Earned</div>
+                </div>
+            </div>
+            <div class="controls">
+                <div class="controls__grid">
+                    <button class="button button--primary  controls__grid--single victory-exit">BACK TO HOME</button>
+                </div>
+            </div>
+        </div>
+        <!-- Bottom tab bar -->
+        <div class="tab-bar">
+            <a class="tab-item" onclick="switchTab('workouts')">
+                <span class="tab-item__icon">🏃‍♂️</span>
+                <span class="tab-item__label">Workouts</span>
+            </a>
+            <a class="tab-item active" onclick="switchTab('overview')">
+                <span class="tab-item__icon">📋</span>
+                <span class="tab-item__label">Overview</span>
+            </a>
+            <a class="tab-item" onclick="switchTab('trophies')">
+                <span class="tab-item__icon">🏆</span>
+                <span class="tab-item__label">Trophies</span>
+            </a>
+            <a class="tab-item" onclick="switchTab('dashboard')">
+                <span class="tab-item__icon">📊</span>
+                <span class="tab-item__label">Dashboard</span>
+            </a>
+        </div>
 
 
 
-    <script data-goatcounter="https://dfeldman.goatcounter.com/count" async src="/js/count.js"></script>
-    <script src="strengthTraining.js"></script>
-    <script src="cardioRunning.js"></script>
-    <script src="cardioBiking.js"></script>
-    <script src="cardioRowing.js"></script>
-    <script src="cardioSwimming.js"></script>
-    <script src="flexTraining.js"></script>
-    <script src="intervalTimer.js"></script>
-    <script src="workoutDisplay.js"></script>
-    <script src="workoutRating.js"></script>
-    <script src="userData.js"></script>
-    <script src="userDashboard.js"></script>
-    <script src="levelWidget.js"></script>
-    <script src="workoutsList.js"></script>
-    <script src="trophiesDisplay.js"></script>
-    <script>
+        <script data-goatcounter="https://dfeldman.goatcounter.com/count" async src="/js/count.js"></script>
+        <script src="strengthTraining.js"></script>
+        <script src="cardioRunning.js"></script>
+        <script src="cardioBiking.js"></script>
+        <script src="cardioRowing.js"></script>
+        <script src="cardioSwimming.js"></script>
+        <script src="flexTraining.js"></script>
+        <script src="intervalTimer.js"></script>
+        <script src="workoutDisplay.js"></script>
+        <script src="workoutRating.js"></script>
+        <script src="userData.js"></script>
+        <script src="userDashboard.js"></script>
+        <script src="levelWidget.js"></script>
+        <script src="workoutsList.js"></script>
+        <script src="trophiesDisplay.js"></script>
+        <script src="powerUpSystem.js"></script>
 
-        const userData = new UserData();
-        let currentCardioType = 'run';
-  //      let currentWorkoutType = 'run';
+        <script>
 
-        let currentWorkout = {};
+            const userData = new UserData();
+            let currentCardioType = 'run';
+            //      let currentWorkoutType = 'run';
 
-        // // Initialize ranges for all activities
-        // document.getElementById('strengthLevel').value = userData.getLevel('strength') || 1;
-        // document.getElementById('strengthLevelDisplay').textContent = userData.getLevel('strength') || 1;
-        // document.getElementById('flexLevel').value = userData.getLevel('flexibility') || 1;
-        // document.getElementById('flexLevelDisplay').textContent = userData.getLevel('flexibility') || 1;
+            let currentWorkout = {};
 
-        // Handle cardio level display based on current type
-        function updateCardioLevelDisplay() {
-            const currentLevel = userData.getLevel(currentCardioType) + 1;
-            // document.getElementById('cardioLevel').value = currentLevel;
-            // document.getElementById('cardioLevelDisplay').textContent = currentLevel;
-        }
+            // // Initialize ranges for all activities
+            // document.getElementById('strengthLevel').value = userData.getLevel('strength') || 1;
+            // document.getElementById('strengthLevelDisplay').textContent = userData.getLevel('strength') || 1;
+            // document.getElementById('flexLevel').value = userData.getLevel('flexibility') || 1;
+            // document.getElementById('flexLevelDisplay').textContent = userData.getLevel('flexibility') || 1;
 
-        // Initial cardio display
-        updateCardioLevelDisplay();
-
-        function adjustLevel(type, change) {
-            // For cardio activities, use the current cardio type
-            const activity = type === 'cardio' ? currentCardioType :
-                type === 'flex' ? 'flexibility' : type;
-
-            const currentLevel = userData.getLevel(activity) || 1;
-            const newLevel = Math.max(1, Math.min(100, currentLevel + change));
-
-            // Update the data store
-            userData.setLevel(activity, newLevel);
-
-            // Update the UI
-            if (type === 'cardio') {
-                document.getElementById('cardioLevel').value = newLevel;
-                document.getElementById('cardioLevelDisplay').textContent = newLevel;
-            } else {
-                document.getElementById(`${type}Level`).value = newLevel;
-                document.getElementById(`${type}LevelDisplay`).textContent = newLevel;
+            // Handle cardio level display based on current type
+            function updateCardioLevelDisplay() {
+                const currentLevel = userData.getLevel(currentCardioType) + 1;
+                // document.getElementById('cardioLevel').value = currentLevel;
+                // document.getElementById('cardioLevelDisplay').textContent = currentLevel;
             }
 
-            updateContent();
-        }
+            // Initial cardio display
+            updateCardioLevelDisplay();
 
-        function switchTab(tabName) {
-    // Update tab-item active states
-    document.querySelectorAll('.tab-item').forEach(tab => {
-        tab.classList.remove('active');
-        if (tab.querySelector('.tab-item__label').textContent.toLowerCase() === tabName) {
-            tab.classList.add('active');
-        }
-    });
+            function adjustLevel(type, change) {
+                // For cardio activities, use the current cardio type
+                const activity = type === 'cardio' ? currentCardioType :
+                    type === 'flex' ? 'flexibility' : type;
 
-    // Update content visibility
-    document.querySelectorAll('.content').forEach(content => {
-        content.classList.remove('active');
-    });
-    document.getElementById(tabName).classList.add('active');
+                const currentLevel = userData.getLevel(activity) || 1;
+                const newLevel = Math.max(1, Math.min(100, currentLevel + change));
 
-    // Handle specific tab content updates
-    if (tabName === 'dashboard') {
-        updateDashboard();
-    } else if (tabName === 'overview') {
-        updateWorkoutContent();
-    } else if (tabName === 'workouts') {
-            updateWorkoutsList();
-    }
-}
+                // Update the data store
+                userData.setLevel(activity, newLevel);
 
+                // Update the UI
+                if (type === 'cardio') {
+                    document.getElementById('cardioLevel').value = newLevel;
+                    document.getElementById('cardioLevelDisplay').textContent = newLevel;
+                } else {
+                    document.getElementById(`${type}Level`).value = newLevel;
+                    document.getElementById(`${type}LevelDisplay`).textContent = newLevel;
+                }
 
-// Handle workout type switching in the overview tab
-function switchCardio(type) {
-    // Update active state in the stats grid
-    document.querySelectorAll('.stats-grid .stat-box').forEach(box => {
-        box.classList.remove('active');
-        // Match by the label text since that contains the workout type
-        if (box.querySelector('.stat-box__label').textContent.toLowerCase() === type) {
-            box.classList.add('active');
-        }
-    });
-
-    currentCardioType = type;
-    updateWorkoutContent();
-}
-
-function updateWorkoutContent() {
-    const level = userData.getLevel(currentCardioType) + 1;
-    let workout;
-    
-    // Generate appropriate workout based on type
-    switch(currentCardioType) {
-        case 'strength':
-            workout = generateStrengthWorkout(level);
-            break;
-        case 'flexibility':
-            workout = generateFlexWorkout(level);
-            break;
-        default:
-            workout = generateCardioWorkout(level, currentCardioType);
-    }
-    
-    currentWorkout = workout;
-    
-    // Clear and update content
-    const content = document.getElementById('workoutContent');
-    content.innerHTML = '';
-    
-    // Create workout container
-    const workoutContainer = document.createElement('div');
-    workoutContainer.className = 'workout-container';
-    content.appendChild(workoutContainer);
-    
-    // Create widget container
-    const widgetContainer = document.createElement('div');
-    widgetContainer.className = 'level-widget-container';
-    content.appendChild(widgetContainer);
-    
-    // Create new level widget
-    new LevelWidget(widgetContainer, currentCardioType);
-    
-    // Create and render workout display
-    const workoutDisplay = new WorkoutDisplay(
-        workoutContainer,
-        workout,
-        { unitSystem: 'imperial' }
-    );
-    
-    workoutDisplay.render();
-}
-
-        // Remove all references to the "levels" object and rely only on userData
-        // document.getElementById('cardioLevel').addEventListener('input', (e) => {
-        //     const newLevel = parseInt(e.target.value);
-        //     userData.setLevel(currentCardioType, newLevel);
-        //     document.getElementById('cardioLevelDisplay').textContent = newLevel;
-        //     updateCardioContent();
-        // });
-
-        // document.getElementById('strengthLevel').addEventListener('input', (e) => {
-        //     const newLevel = parseInt(e.target.value);
-        //     userData.setLevel('strength', newLevel);
-        //     document.getElementById('strengthLevelDisplay').textContent = newLevel;
-        //     updateStrengthContent();
-        // });
-
-        // document.getElementById('flexLevel').addEventListener('input', (e) => {
-        //     const newLevel = parseInt(e.target.value);
-        //     userData.setLevel('flexibility', newLevel);
-        //     document.getElementById('flexLevelDisplay').textContent = newLevel;
-        //     updateFlexContent();
-        // });
-
-
-        function roundTo10Seconds(seconds) {
-            return Math.round(seconds / 10) * 10;
-        }
-
-
-        // Helper functions for formatting and calculations
-        //NOT USED
-        function formatTime(seconds) {
-            const mins = Math.floor(seconds / 60);
-            const secs = Math.round(seconds % 60);
-            return `${mins}:${secs.toString().padStart(2, '0')}`;
-        }
-
-        function formatPace(minutesPerMile, unit = 'imperial') {
-            console.log('Raw pace value received:', minutesPerMile);
-
-            if (typeof minutesPerMile !== 'number') {
-                console.error('Invalid pace value:', minutesPerMile);
-                return '--:--/mi';
+                updateContent();
             }
 
-            // Log the intermediate calculations
-            const totalMinutes = unit === 'metric' ?
-                minutesPerMile / 1.60934 :
-                minutesPerMile;
-            console.log('Total minutes:', totalMinutes);
+            function switchTab(tabName) {
+                // Update tab-item active states
+                document.querySelectorAll('.tab-item').forEach(tab => {
+                    tab.classList.remove('active');
+                    if (tab.querySelector('.tab-item__label').textContent.toLowerCase() === tabName) {
+                        tab.classList.add('active');
+                    }
+                });
 
-            const minutes = Math.floor(totalMinutes);
-            console.log('Minutes part:', minutes);
+                // Update content visibility
+                document.querySelectorAll('.content').forEach(content => {
+                    content.classList.remove('active');
+                });
+                document.getElementById(tabName).classList.add('active');
 
-            const seconds = Math.round((totalMinutes - minutes) * 60);
-            console.log('Seconds part:', seconds);
+                // Handle specific tab content updates
+                if (tabName === 'dashboard') {
+                    updateDashboard();
+                } else if (tabName === 'overview') {
+                    updateWorkoutContent();
+                } else if (tabName === 'workouts') {
+                    updateWorkoutsList();
+                }
+            }
 
-            const unit_label = unit === 'metric' ? '/km' : '/mi';
 
-            // If it's a round minute
-            if (seconds === 0) {
-                const result = `${minutes} min${unit_label}`;
-                console.log('Final result (round minutes):', result);
+            // Handle workout type switching in the overview tab
+            function switchCardio(type) {
+                // Update active state in the stats grid
+                document.querySelectorAll('.stats-grid .stat-box').forEach(box => {
+                    box.classList.remove('active');
+                    // Match by the label text since that contains the workout type
+                    if (box.querySelector('.stat-box__label').textContent.toLowerCase() === type) {
+                        box.classList.add('active');
+                    }
+                });
+
+                currentCardioType = type;
+                updateWorkoutContent();
+            }
+
+            function updateWorkoutContent() {
+                const level = userData.getLevel(currentCardioType) + 1;
+                let workout;
+
+                // Generate appropriate workout based on type
+                switch (currentCardioType) {
+                    case 'strength':
+                        workout = generateStrengthWorkout(level);
+                        break;
+                    case 'flexibility':
+                        workout = generateFlexWorkout(level);
+                        break;
+                    default:
+                        workout = generateCardioWorkout(level, currentCardioType);
+                }
+
+                currentWorkout = workout;
+
+                // Clear and update content
+                const content = document.getElementById('workoutContent');
+                content.innerHTML = '';
+
+                // Create workout container
+                const workoutContainer = document.createElement('div');
+                workoutContainer.className = 'workout-container';
+                content.appendChild(workoutContainer);
+
+                // Create widget container
+                const widgetContainer = document.createElement('div');
+                widgetContainer.className = 'level-widget-container';
+                content.appendChild(widgetContainer);
+
+                // Create new level widget
+                new LevelWidget(widgetContainer, currentCardioType);
+
+                // Create and render workout display
+                const workoutDisplay = new WorkoutDisplay(
+                    workoutContainer,
+                    workout,
+                    { unitSystem: 'imperial' }
+                );
+
+                workoutDisplay.render();
+            }
+
+            // Remove all references to the "levels" object and rely only on userData
+            // document.getElementById('cardioLevel').addEventListener('input', (e) => {
+            //     const newLevel = parseInt(e.target.value);
+            //     userData.setLevel(currentCardioType, newLevel);
+            //     document.getElementById('cardioLevelDisplay').textContent = newLevel;
+            //     updateCardioContent();
+            // });
+
+            // document.getElementById('strengthLevel').addEventListener('input', (e) => {
+            //     const newLevel = parseInt(e.target.value);
+            //     userData.setLevel('strength', newLevel);
+            //     document.getElementById('strengthLevelDisplay').textContent = newLevel;
+            //     updateStrengthContent();
+            // });
+
+            // document.getElementById('flexLevel').addEventListener('input', (e) => {
+            //     const newLevel = parseInt(e.target.value);
+            //     userData.setLevel('flexibility', newLevel);
+            //     document.getElementById('flexLevelDisplay').textContent = newLevel;
+            //     updateFlexContent();
+            // });
+
+
+            function roundTo10Seconds(seconds) {
+                return Math.round(seconds / 10) * 10;
+            }
+
+
+            // Helper functions for formatting and calculations
+            //NOT USED
+            function formatTime(seconds) {
+                const mins = Math.floor(seconds / 60);
+                const secs = Math.round(seconds % 60);
+                return `${mins}:${secs.toString().padStart(2, '0')}`;
+            }
+
+            function formatPace(minutesPerMile, unit = 'imperial') {
+                console.log('Raw pace value received:', minutesPerMile);
+
+                if (typeof minutesPerMile !== 'number') {
+                    console.error('Invalid pace value:', minutesPerMile);
+                    return '--:--/mi';
+                }
+
+                // Log the intermediate calculations
+                const totalMinutes = unit === 'metric' ?
+                    minutesPerMile / 1.60934 :
+                    minutesPerMile;
+                console.log('Total minutes:', totalMinutes);
+
+                const minutes = Math.floor(totalMinutes);
+                console.log('Minutes part:', minutes);
+
+                const seconds = Math.round((totalMinutes - minutes) * 60);
+                console.log('Seconds part:', seconds);
+
+                const unit_label = unit === 'metric' ? '/km' : '/mi';
+
+                // If it's a round minute
+                if (seconds === 0) {
+                    const result = `${minutes} min${unit_label}`;
+                    console.log('Final result (round minutes):', result);
+                    return result;
+                }
+
+                // Otherwise show MM:SS format
+                const result = `${minutes}:${seconds.toString().padStart(2, '0')}${unit_label}`;
+                console.log('Final result (with seconds):', result);
                 return result;
             }
 
-            // Otherwise show MM:SS format
-            const result = `${minutes}:${seconds.toString().padStart(2, '0')}${unit_label}`;
-            console.log('Final result (with seconds):', result);
-            return result;
-        }
-
-        // HTML Formatting helper functions
-        // TODO These are not currently used, but should probably be brought back
-        function formatWorkoutHeader(workout) {
-            return `
+            // HTML Formatting helper functions
+            // TODO These are not currently used, but should probably be brought back
+            function formatWorkoutHeader(workout) {
+                return `
         <div class="workout-header">
             <h4>${workout.title}</h4>
             <div class="metrics-grid">
@@ -1671,10 +1745,10 @@ function updateWorkoutContent() {
                     <div class="metric">
                         <span class="metric-label">Distance</span>
                         <span class="metric-value">${workout.type === 'swim' ?
-                        `${workout.laps} laps (${workout.distance}yd)` :
-                        workout.type === 'row' ?
-                            `${workout.distance}m` :
-                            `${workout.distance} miles`}</span>
+                            `${workout.laps} laps (${workout.distance}yd)` :
+                            workout.type === 'row' ?
+                                `${workout.distance}m` :
+                                `${workout.distance} miles`}</span>
                     </div>
                 ` : ''}
                 ${workout.pace ? `
@@ -1697,52 +1771,52 @@ function updateWorkoutContent() {
                 ` : ''}
             </div>
         </div>`;
-        }
+            }
 
-        function formatWorkoutStructure(steps) {
-            if (!steps || steps.length === 0) return '';
-            return `
+            function formatWorkoutStructure(steps) {
+                if (!steps || steps.length === 0) return '';
+                return `
         <div class="workout-structure">
             <h5>Workout Structure</h5>
             <ol>
                 ${steps.map(step => `<li>${step}</li>`).join('')}
             </ol>
         </div>`;
-        }
+            }
 
-        function formatFormCues(cues) {
-            if (!cues || cues.length === 0) return '';
-            return `
+            function formatFormCues(cues) {
+                if (!cues || cues.length === 0) return '';
+                return `
         <div class="form-cues">
             <h5>Form Cues</h5>
             <ul>
                 ${cues.map(cue => `<li>${cue}</li>`).join('')}
             </ul>
         </div>`;
-        }
+            }
 
-        function formatNotes(notes) {
-            if (!notes || notes.length === 0) return '';
-            return `
+            function formatNotes(notes) {
+                if (!notes || notes.length === 0) return '';
+                return `
         <div class="workout-notes">
             <h5>Important Notes</h5>
             <ul>
                 ${notes.map(note => `<li>${note}</li>`).join('')}
             </ul>
         </div>`;
-        }
+            }
 
-        function formatCalories(calories) {
-            return `
+            function formatCalories(calories) {
+                return `
         <div class="calorie-estimate">
             <span class="label">Estimated Calories:</span>
             <span class="value">${calories}</span>
         </div>`;
-        }
-        // old don't use
-        function formatIntervalSet(intervals) {
-            if (!intervals) return '';
-            return `
+            }
+            // old don't use
+            function formatIntervalSet(intervals) {
+                if (!intervals) return '';
+                return `
         <div class="interval-set">
             <h5>Interval Structure</h5>
             <div class="interval-details">
@@ -1753,207 +1827,207 @@ function updateWorkoutContent() {
                 </ul>
             </div>
         </div>`;
-        }
-
-
-
-        // todo this is miles only, needs km
-        function calculateDistance(durationSeconds, paceMinutesPerMile) {
-            const hours = durationSeconds / 3600;
-            const milesPerHour = 60 / paceMinutesPerMile;
-            return +(hours * milesPerHour).toFixed(2);
-        }
-
-        // Modify the interval creation to include distance
-        function addDistanceToInterval(interval) {
-            if (interval.duration && interval.targetPace) {
-                interval.distance = calculateDistance(interval.duration, interval.targetPace);
-                interval.pace = interval.targetPace; // Make sure pace is accessible to the display
-            }
-            return interval;
-        }
-
-        // Main workout generation function
-        function generateCardioWorkout(level, type) {
-            function getPhase(level) {
-                if (level <= 10) return 'basic';
-                if (level <= 20) return 'intervals';
-                if (level <= 30) return 'build';
-                if (level <= 70) return 'endurance';
-                return 'long';
             }
 
-            const workout = {
-                type,
-                phase: getPhase(level)
-            };
-
-            // Workout type specific generation
-            switch (type) {
-                case 'run':
-                    return generateRunWorkout(level, workout);
-                case 'bike':
-                    return generateBikeWorkout(level, workout);
-                case 'swim':
-                    return generateSwimWorkout(level, workout);
-                case 'row':
-                    return generateRowWorkout(level, workout);
-                default:
-                    throw new Error('Unsupported workout type');
-            }
-        }
 
 
-        function updateCardioContent() {
-            const level = userData.getLevel(currentCardioType) + 1;
-            const workout = generateCardioWorkout(level, currentCardioType);
-            currentWorkout = workout;
-
-            // Clear existing content
-            const content = document.getElementById('cardioContent');
-            content.innerHTML = '';
-
-            // Create workout container
-            const workoutContainer = document.createElement('div');
-            workoutContainer.className = 'workout-container';
-            content.appendChild(workoutContainer);
-
-            // Create widget container
-            const widgetContainer = document.createElement('div');
-            widgetContainer.className = 'level-widget-container';
-            content.appendChild(widgetContainer);
-
-            // Create new level widget
-            new LevelWidget(widgetContainer, currentCardioType);
-
-            // Create and render workout display
-            const workoutDisplay = new WorkoutDisplay(
-                workoutContainer,
-                workout,
-                { unitSystem: 'imperial' }
-            );
-
-            workoutDisplay.render();
-        }
-
-        function updateStrengthContent() {
-            const level = userData.getLevel('strength') + 1;
-            const workout = generateStrengthWorkout(level);
-            currentWorkout = workout;
-
-            const content = document.getElementById('strengthContent');
-            content.innerHTML = '';
-
-            // Create workout container
-            const workoutContainer = document.createElement('div');
-            workoutContainer.className = 'workout-container';
-            content.appendChild(workoutContainer);
-
-            // Create widget container
-            const widgetContainer = document.createElement('div');
-            widgetContainer.className = 'level-widget-container';
-            content.appendChild(widgetContainer);
-
-            // Create new level widget
-            new LevelWidget(widgetContainer, 'strength');
-
-            // Create workout display
-            const workoutDisplay = new WorkoutDisplay(
-                workoutContainer,
-                workout,
-                { unitSystem: 'imperial' }
-            );
-
-            workoutDisplay.render();
-        }
-
-        function updateFlexContent() {
-            const level = userData.getLevel('flexibility') + 1;
-            const workout = generateFlexWorkout(level);
-            currentWorkout = workout;
-
-            const content = document.getElementById('flexContent');
-            content.innerHTML = '';
-
-            // Create workout container
-            const workoutContainer = document.createElement('div');
-            workoutContainer.className = 'workout-container';
-            content.appendChild(workoutContainer);
-
-            // Create widget container  
-            const widgetContainer = document.createElement('div');
-            widgetContainer.className = 'level-widget-container';
-            content.appendChild(widgetContainer);
-
-            // Create new level widget
-            new LevelWidget(widgetContainer, 'flexibility');
-
-            // Create workout display
-            const workoutDisplay = new WorkoutDisplay(
-                workoutContainer,
-                workout,
-                { unitSystem: 'imperial' }
-            );
-
-            workoutDisplay.render();
-        }
-
-        // function updateFlexContent() {
-        //     const level = userData.getLevel('flexibility');
-        //     const workout = generateFlexWorkout(level);
-        //     const content = document.getElementById('flexContent');
-        //     currentWorkout = workout;
-
-        //     const workoutDisplay = new WorkoutDisplay(
-        //         content,
-        //         workout,
-        //         { unitSystem: 'imperial' }
-        //     );
-
-
-        //     levelWidgetContainer = document.getElementById('level-selector')
-        //     const levelWidget = new LevelWidget(levelWidgetContainer, 'flexibility'); 
-        //     workoutDisplay.render();
-        // }
-
-
-        function updateContent() {
-            const activeTab = document.querySelector('.tab.active');
-            if (!activeTab) {
-                console.error('No active tab found');
-                return;
+            // todo this is miles only, needs km
+            function calculateDistance(durationSeconds, paceMinutesPerMile) {
+                const hours = durationSeconds / 3600;
+                const milesPerHour = 60 / paceMinutesPerMile;
+                return +(hours * milesPerHour).toFixed(2);
             }
 
-            const tabName = activeTab.getAttribute('onclick').match(/switchTab\('(.+)'\)/)[1];
-            console.log('Updating content for active tab:', tabName);
-            switch (tabName) {
-                case 'cardio':
-                    updateCardioContent();
-                    break;
-                case 'strength':
-                    updateStrengthContent();
-                    break;
-                case 'flexibility':
-                    updateFlexContent();
-                    break;
-                case 'dashboard':
-                    // Don't try to update currentWorkout for dashboard
+            // Modify the interval creation to include distance
+            function addDistanceToInterval(interval) {
+                if (interval.duration && interval.targetPace) {
+                    interval.distance = calculateDistance(interval.duration, interval.targetPace);
+                    interval.pace = interval.targetPace; // Make sure pace is accessible to the display
+                }
+                return interval;
+            }
+
+            // Main workout generation function
+            function generateCardioWorkout(level, type) {
+                function getPhase(level) {
+                    if (level <= 10) return 'basic';
+                    if (level <= 20) return 'intervals';
+                    if (level <= 30) return 'build';
+                    if (level <= 70) return 'endurance';
+                    return 'long';
+                }
+
+                const workout = {
+                    type,
+                    phase: getPhase(level)
+                };
+
+                // Workout type specific generation
+                switch (type) {
+                    case 'run':
+                        return generateRunWorkout(level, workout);
+                    case 'bike':
+                        return generateBikeWorkout(level, workout);
+                    case 'swim':
+                        return generateSwimWorkout(level, workout);
+                    case 'row':
+                        return generateRowWorkout(level, workout);
+                    default:
+                        throw new Error('Unsupported workout type');
+                }
+            }
+
+
+            function updateCardioContent() {
+                const level = userData.getLevel(currentCardioType) + 1;
+                const workout = generateCardioWorkout(level, currentCardioType);
+                currentWorkout = workout;
+
+                // Clear existing content
+                const content = document.getElementById('cardioContent');
+                content.innerHTML = '';
+
+                // Create workout container
+                const workoutContainer = document.createElement('div');
+                workoutContainer.className = 'workout-container';
+                content.appendChild(workoutContainer);
+
+                // Create widget container
+                const widgetContainer = document.createElement('div');
+                widgetContainer.className = 'level-widget-container';
+                content.appendChild(widgetContainer);
+
+                // Create new level widget
+                new LevelWidget(widgetContainer, currentCardioType);
+
+                // Create and render workout display
+                const workoutDisplay = new WorkoutDisplay(
+                    workoutContainer,
+                    workout,
+                    { unitSystem: 'imperial' }
+                );
+
+                workoutDisplay.render();
+            }
+
+            function updateStrengthContent() {
+                const level = userData.getLevel('strength') + 1;
+                const workout = generateStrengthWorkout(level);
+                currentWorkout = workout;
+
+                const content = document.getElementById('strengthContent');
+                content.innerHTML = '';
+
+                // Create workout container
+                const workoutContainer = document.createElement('div');
+                workoutContainer.className = 'workout-container';
+                content.appendChild(workoutContainer);
+
+                // Create widget container
+                const widgetContainer = document.createElement('div');
+                widgetContainer.className = 'level-widget-container';
+                content.appendChild(widgetContainer);
+
+                // Create new level widget
+                new LevelWidget(widgetContainer, 'strength');
+
+                // Create workout display
+                const workoutDisplay = new WorkoutDisplay(
+                    workoutContainer,
+                    workout,
+                    { unitSystem: 'imperial' }
+                );
+
+                workoutDisplay.render();
+            }
+
+            function updateFlexContent() {
+                const level = userData.getLevel('flexibility') + 1;
+                const workout = generateFlexWorkout(level);
+                currentWorkout = workout;
+
+                const content = document.getElementById('flexContent');
+                content.innerHTML = '';
+
+                // Create workout container
+                const workoutContainer = document.createElement('div');
+                workoutContainer.className = 'workout-container';
+                content.appendChild(workoutContainer);
+
+                // Create widget container  
+                const widgetContainer = document.createElement('div');
+                widgetContainer.className = 'level-widget-container';
+                content.appendChild(widgetContainer);
+
+                // Create new level widget
+                new LevelWidget(widgetContainer, 'flexibility');
+
+                // Create workout display
+                const workoutDisplay = new WorkoutDisplay(
+                    workoutContainer,
+                    workout,
+                    { unitSystem: 'imperial' }
+                );
+
+                workoutDisplay.render();
+            }
+
+            // function updateFlexContent() {
+            //     const level = userData.getLevel('flexibility');
+            //     const workout = generateFlexWorkout(level);
+            //     const content = document.getElementById('flexContent');
+            //     currentWorkout = workout;
+
+            //     const workoutDisplay = new WorkoutDisplay(
+            //         content,
+            //         workout,
+            //         { unitSystem: 'imperial' }
+            //     );
+
+
+            //     levelWidgetContainer = document.getElementById('level-selector')
+            //     const levelWidget = new LevelWidget(levelWidgetContainer, 'flexibility'); 
+            //     workoutDisplay.render();
+            // }
+
+
+            function updateContent() {
+                const activeTab = document.querySelector('.tab.active');
+                if (!activeTab) {
+                    console.error('No active tab found');
                     return;
-                default:
-                    console.error('Unknown tab type:', tabName);
+                }
+
+                const tabName = activeTab.getAttribute('onclick').match(/switchTab\('(.+)'\)/)[1];
+                console.log('Updating content for active tab:', tabName);
+                switch (tabName) {
+                    case 'cardio':
+                        updateCardioContent();
+                        break;
+                    case 'strength':
+                        updateStrengthContent();
+                        break;
+                    case 'flexibility':
+                        updateFlexContent();
+                        break;
+                    case 'dashboard':
+                        // Don't try to update currentWorkout for dashboard
+                        return;
+                    default:
+                        console.error('Unknown tab type:', tabName);
+                }
             }
-        }
 
-        function updateDashboard() {
-            const workouts = userData.getWorkoutHistory();
-            const workoutHistoryViewer = new WorkoutHistoryViewer('workout-history', workouts);
-        }
-
+            function updateDashboard() {
+                const workouts = userData.getWorkoutHistory();
+                const workoutHistoryViewer = new WorkoutHistoryViewer('workout-history', workouts);
+            }
 
 
-        // Initial content update
-        updateContent();
-    </script>
+
+            // Initial content update
+            updateContent();
+        </script>
 </body>
 
 </html>
