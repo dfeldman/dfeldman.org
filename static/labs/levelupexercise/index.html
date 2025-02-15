@@ -327,8 +327,7 @@
             box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
             width: 90%;
             max-width: 500px;
-        } */
-        /* 
+        }
         .time-display {
             font-size: 72px;
             text-align: center;
@@ -1305,7 +1304,7 @@
 
 <body>
     <div class="container">
-        <div id="workouts" class="content screen">
+        <div id="workouts" class="content screen active">
             <div class="timer-header">
                 <div class="timer-display">Choose Your Quest</div>
                 <div class="timer-label">
@@ -1315,7 +1314,7 @@
             </div>
         </div>
 
-        <div id="overview" class="content screen active">
+        <div id="overview" class="content screen">
             <!-- <div class="timer-header">
                 <div class="timer-display">Workout Overview</div>
                 <div class="timer-label">
@@ -1487,11 +1486,11 @@
         </div>
         <!-- Bottom tab bar -->
         <div class="tab-bar">
-            <a class="tab-item" onclick="switchTab('workouts')">
+            <a class="tab-item active" onclick="switchTab('workouts')">
                 <span class="tab-item__icon">🏃‍♂️</span>
                 <span class="tab-item__label">Workouts</span>
             </a>
-            <a class="tab-item active" onclick="switchTab('overview')">
+            <a class="tab-item" onclick="switchTab('overview')">
                 <span class="tab-item__icon">📋</span>
                 <span class="tab-item__label">Overview</span>
             </a>
@@ -1549,7 +1548,9 @@
             updateCardioLevelDisplay();
 
             function adjustLevel(type, change) {
+                
                 // For cardio activities, use the current cardio type
+
                 const activity = type === 'cardio' ? currentCardioType :
                     type === 'flex' ? 'flexibility' : type;
 
@@ -2027,6 +2028,7 @@
 
             // Initial content update
             updateContent();
+            updateWorkoutsList();
         </script>
 </body>
 

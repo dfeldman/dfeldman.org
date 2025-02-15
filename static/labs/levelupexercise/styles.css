@@ -33,39 +33,6 @@
     margin-bottom: 2rem;
   }
 
-  /* Timer Screen Styles */
-  .timer-header {
-    text-align: center;
-    padding: 2rem 1rem;
-    background: linear-gradient(to right, #22c55e, #059669);
-    border-bottom: var(--border-game);
-  }
-
-  .timer-display {
-    font-size: 3rem;
-    font-weight: 700;
-    color: white;
-    text-shadow: var(--shadow-game);
-    margin-bottom: 1rem;
-    line-height: 1;
-  }
-
-  .timer-label {
-    display: inline-flex;
-    align-items: center;
-    background: white;
-    padding: 0.75rem 1.5rem;
-    border-radius: 9999px;
-    border: var(--border-game);
-    font-size: 1.5rem;
-    font-weight: 700;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  }
-
-  .timer-label__emoji {
-    font-size: 2rem;
-    margin-right: 0.75rem;
-  }
 
   /* Stats Bar */
   .stats-bar {
@@ -234,6 +201,19 @@
         text-shadow: var(--shadow-game);
       }  
 
+      #victory-view {
+        position: fixed;  /* Make it overlay everything */
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        z-index: 1000;
+        background: var(--color-background);
+        display: flex;
+        flex-direction: column;
+        overflow-y: auto;
+    }
+
   /* Victory Screen Styles */
   .victory-header {
     text-align: center;
@@ -300,6 +280,10 @@
     margin-top: 0.25rem;
   }
 
+
+  .victory-view .button {
+    width: 100%; 
+  }
   /* Achievement Items */
   .achievement {
     display: flex;
@@ -404,6 +388,10 @@
     grid-template-columns: repeat(2, 1fr);
     gap: 1rem;
   }
+
+  .controls__grid--single {
+    grid-column: span 2;
+}
 
   .button {
     padding: 1rem;
@@ -588,18 +576,20 @@
     transform: none;
 }
 
-/* Timer modal styles */
 #timer-view {
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    z-index: 1000;
-    display: none;
-    background: linear-gradient(135deg, var(--color-primary), #818cf8);
-    padding: 1rem;
-    overflow-y: auto; /* In case content needs scrolling */
+    display: flex;
+    flex-direction: column !important;
+    min-height: 100vh;
+    width: 100%;
+}
+
+.stats-bar {
+    width: 100%;
+}
+
+.controls {
+    width: 100%;
+    margin-top: auto;  /* Push to bottom */
 }
 
 .timer-container {
@@ -613,16 +603,25 @@
     height: calc(100vh - 2rem);
 }
 
-/* Time display */
+.timer-header {
+    text-align: center;
+    padding: 2rem 1rem;
+    background: linear-gradient(to right, #22c55e, #059669);
+    border-bottom: var(--border-game);
+    width: 100%;
+}
+
 .time-display {
-    font-size: 5rem;
+    font-size: clamp(4rem, 15vw, 8rem);
     font-weight: 800;
     color: white;
     text-align: center;
     text-shadow: var(--shadow-game);
     font-variant-numeric: tabular-nums;
     line-height: 1;
-    margin: 1rem 0;
+    margin: 2rem 0;
+    filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.3));
+    transition: all 0.3s ease; /* Smooth updates */
 }
 
 /* Timer interval information styles */
@@ -664,44 +663,173 @@
     padding: 1rem;
 }
 
+  .timer-display {
+    font-size: 3rem;
+    font-weight: 700;
+    color: white;
+    text-shadow: var(--shadow-game);
+    margin-bottom: 1rem;
+    line-height: 1;
+  }
+
+  .timer-label {
+    display: inline-flex;
+    align-items: center;
+    background: white;
+    padding: 0.75rem 1.5rem;
+    border-radius: 9999px;
+    border: var(--border-game);
+    font-size: 1.5rem;
+    font-weight: 700;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+
+  .timer-label__emoji {
+    font-size: 2rem;
+    margin-right: 0.75rem;
+  }
+
+.timer-container {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    padding: 2rem 1rem;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+/* Enhance interval info card */
+.interval-info {
+    background: white;
+    border-radius: var(--radius-card);
+    border: var(--border-game);
+    padding: 2rem;
+    text-align: center;
+    box-shadow: var(--shadow-game);
+    margin: 1rem 0;
+}
+
+.current-activity {
+    font-size: clamp(1.5rem, 5vw, 2rem);
+    font-weight: 800;
+    color: var(--color-primary);
+    margin-bottom: 1rem;
+    line-height: 1.2;
+}
+
+.next-up {
+    font-size: 1.125rem;
+    color: #4B5563;
+    margin: 0.5rem 0;
+    font-weight: 500;
+}
+
+.interval-description {
+    font-size: 1rem;
+    color: #6B7280;
+    margin-top: 1rem;
+    padding-top: 1rem;
+    border-top: 2px dashed rgba(0, 0, 0, 0.1);
+}
+
+/* Progress bar improvements */
+.progress-container {
+    background: rgba(255, 255, 255, 0.1);
+    border: var(--border-game);
+    border-radius: var(--radius-button);
+    padding: 1rem;
+    margin: 1rem 0;
+}
+
+.progress-fill.complete {
+    background: var(--color-success);  /* Green for completed */
+    width: 100%;
+}
+
+.progress-fill.current {
+    background: var(--color-primary);  /* Indigo/blue for current */
+    /* Add gradient animation */
+    background-image: linear-gradient(
+        45deg,
+        rgba(255, 255, 255, 0.15) 25%,
+        transparent 25%,
+        transparent 50%,
+        rgba(255, 255, 255, 0.15) 50%,
+        rgba(255, 255, 255, 0.15) 75%,
+        transparent 75%,
+        transparent
+    );
+    background-size: 1rem 1rem;
+    animation: progressStripes 1s linear infinite;
+}
+
+.progress-fill.upcoming {
+    background: var(--color-secondary);  /* Pink for upcoming */
+    width: 0%;
+}
+
+/* Base progress bar styles */
 .progress-bar {
     height: 1rem;
-    background: rgba(255, 255, 255, 0.3);
+    background: #e5e7eb;
+    border: 2px solid #000;
     border-radius: 9999px;
     overflow: hidden;
 }
 
 .progress-fill {
     height: 100%;
-    background: var(--color-success);
-    width: 0%;
-    transition: width 1s linear;
+    transition: width 0.3s ease;
+    border-radius: 9999px;
 }
 
-/* Control buttons */
+
+@keyframes progressStripes {
+    0% {
+        background-position: 1rem 0;
+    }
+    100% {
+        background-position: 0 0;
+    }
+}
+
+.workout-progress {
+    text-align: center;
+    color: white;
+    font-weight: 600;
+    margin-top: 0.5rem;
+    text-shadow: var(--shadow-game);
+}
+
+/* Control buttons at bottom */
 .timer-controls {
+    margin-top: auto;
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
     gap: 1rem;
-    margin-top: auto; /* Push controls to bottom */
     padding: 1rem;
+    grid-template-columns: repeat(2, 1fr);
 }
 
 .timer-btn {
-    padding: 1rem;
     border: var(--border-game);
     border-radius: var(--radius-button);
+    padding: 1rem;
     font-size: 1.25rem;
     font-weight: 700;
     color: white;
     cursor: pointer;
-    transition: transform 0.1s;
+    transition: transform 0.2s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
 }
 
 .timer-btn:active {
-    transform: translateY(2px);
+    transform: scale(0.95);
 }
 
+/* Button variations */
 .timer-btn.play-pause {
     background: var(--color-success);
     grid-column: span 2;
@@ -711,16 +839,37 @@
     background: var(--color-warning);
 }
 
-.timer-btn.next-style {
-    background: var(--color-secondary);
-}
-
 .timer-btn.reset {
     background: var(--color-primary);
 }
 
 .timer-btn.exit {
     background: var(--color-danger);
+}
+
+/* Add icons to buttons */
+.timer-btn::before {
+    font-size: 1.5rem;
+}
+
+.play-pause::before {
+    content: "▶️";
+}
+
+.play-pause[data-state="playing"]::before {
+    content: "⏸️";
+}
+
+.skip::before {
+    content: "⏭️";
+}
+
+.reset::before {
+    content: "🔄";
+}
+
+.exit::before {
+    content: "✖️";
 }
 
 /* Responsive adjustments */
@@ -753,3 +902,146 @@
         font-size: 2rem;
     }
 }
+
+/* New timer components */
+.timer-badge {
+    display: inline-block;
+    background: white;
+    padding: 0.75rem 1.5rem;
+    border-radius: 9999px;
+    border: var(--border-game);
+    box-shadow: var(--shadow-game);
+  }
+  
+  .timer-badge__content {
+    display: flex;
+    align-items: center;
+    font-size: 1.25rem;
+    font-weight: bold;
+  }
+  
+  /* Power-ups section */
+  .powerups {
+    background: white;
+    border: var(--border-game);
+    border-radius: var(--radius-card);
+    overflow: hidden;
+  }
+  
+  .powerups__header {
+    background: linear-gradient(to right, var(--color-secondary), #db2777);
+    padding: 1rem;
+    border-bottom: var(--border-game);
+    color: white;
+    font-weight: bold;
+    text-shadow: var(--shadow-game);
+  }
+  
+  .powerups__grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+    padding: 1rem;
+  }
+  
+  .powerup-card {
+    background: var(--color-background);
+    padding: 1rem;
+    border: var(--border-game);
+    border-radius: var(--radius-button);
+    text-align: center;
+    animation: popIn 0.3s ease;
+  }
+  
+  .powerup-card__emoji {
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+  }
+  
+  /* Progress track enhancements */
+  .progress-track__item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1rem;
+    opacity: 1;
+    transition: opacity 0.3s ease;
+  }
+  
+  .progress-track__item--completed {
+    opacity: 0.7;
+  }
+  
+  .progress-track__item--upcoming {
+    opacity: 0.5;
+  }
+  
+  .progress-bar--completed {
+    background: var(--color-success);
+  }
+  
+  .progress-bar--current {
+    background: var(--color-primary);
+  }
+  
+  .progress-bar--upcoming {
+    background: var(--color-secondary);
+  }
+  
+  /* Animations */
+  @keyframes popIn {
+    0% {
+      transform: scale(0.9);
+      opacity: 0;
+    }
+    100% {
+      transform: scale(1);
+      opacity: 1;
+    }
+  }
+  
+  @keyframes pulseGlow {
+    0%, 100% {
+      filter: drop-shadow(0 0 5px rgba(255, 255, 255, 0.5));
+    }
+    50% {
+      filter: drop-shadow(0 0 15px rgba(255, 255, 255, 0.8));
+    }
+  }
+  
+  .time-display {
+    animation: pulseGlow 2s infinite ease-in-out;
+  }
+  
+  /* Enhanced stat boxes */
+  .stat-box--highlighted {
+    background: rgba(255, 255, 255, 0.3);
+    transform: scale(1.05);
+    transition: all 0.3s ease;
+  }
+  
+  /* Make sure these utilities exist */
+  .text-shadow-game {
+    text-shadow: var(--shadow-game);
+  }
+  
+  .border-game {
+    border: var(--border-game);
+  }
+  
+  .gradient-primary {
+    background: linear-gradient(to right, var(--color-primary), #818cf8);
+  }
+  
+  .gradient-success {
+    background: linear-gradient(to right, var(--color-success), #059669);
+  }
+
+  .controls__grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+  }
+  
+  .exit {
+    grid-column: span 2;
+  }
