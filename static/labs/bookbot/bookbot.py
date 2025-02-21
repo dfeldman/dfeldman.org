@@ -425,48 +425,63 @@ class BookBot:
             for key, value in variables.items():
                 content = content.replace(f"{{{{ {key} }}}}", str(value))
         return content
-    
+
+
     def _call_llm(self, prompt: str, max_retries: int = 3) -> Tuple[str, int, int]:
         """Call the LLM API with retry logic"""
         system_prompt = self._load_template("system_prompt")
         
         headers = {
             "Authorization": f"Bearer {self.api_key}",
+            "HTTP-Referer": "http://localhost:3000",
+            "X-Title": "BookBot",
             "Content-Type": "application/json"
         }
         
         data = {
             "model": self.llm.full_name,
             "messages": [
-                {"role": "system", "content": system_prompt},
-                {"role": "user", "content": prompt}
-            ],
-            "temperature": self.llm.temperature,
-            "max_tokens": self.config['max_tokens']
+                {"role": "system", "content": "system_prompt"},
+                {"role": "user", "content": "prompt"}
+            ]
         }
         
+
+
+        # Debug logging
+        logger.info("=== API Request Debug ===")
+        logger.info(f"API URL: https://openrouter.ai/api/v1/chat/completions")
+        logger.info(f"API Key (first 4 chars): {self.api_key[:4]}...")
+        logger.info(f"Headers: {json.dumps({k: v for k, v in headers.items() if k != 'Authorization'}, indent=2)}")
+        logger.info(f"Data: {json.dumps(data, indent=2)}")
         for attempt in range(max_retries):
             try:
                 with Progress(SpinnerColumn(), TextColumn("[progress.description]{task.description}"), console=console) as progress:
                     task = progress.add_task("Generating content...", total=None)
                     
                     response = requests.post(
-                        OPENROUTER_API_URL,
+                        "https://openrouter.ai/api/v1/chat/completions",
                         headers=headers,
-                        json=data,
+                        data=json.dumps(data),  # Use json.dumps() instead of json parameter
                         timeout=60
                     )
                     
-                    if response.status_code == 429:  # Rate limit
+                    if response.status_code != 200:
+                        logger.error(f"Response status: {response.status_code}")
+                        logger.error(f"Response body: {response.text}")
+                    
+                    if response.status_code == 429:
                         retry_after = int(response.headers.get('Retry-After', 5))
+                        logger.warning(f"Rate limited. Waiting {retry_after} seconds...")
                         time.sleep(retry_after)
                         continue
-                    
+                        
                     response.raise_for_status()
                     result = response.json()
                     
                     if 'error' in result:
-                        raise LLMError("API returned error", response)
+                        error_msg = result.get('error', {}).get('message', 'Unknown error')
+                        raise LLMError(f"API returned error: {error_msg}", response)
                     
                     if not result.get('choices'):
                         raise LLMError("No choices in API response", response)
@@ -475,16 +490,16 @@ class BookBot:
                     tokens_in = result["usage"]["prompt_tokens"]
                     tokens_out = result["usage"]["completion_tokens"]
                     
-                    # Remove completion marker if present
                     if "THE END" in content:
                         content = content.split("THE END")[0].strip()
                     
                     return content, tokens_in, tokens_out
                     
             except requests.RequestException as e:
+                logger.error(f"API call failed (attempt {attempt + 1}/{max_retries}): {e}")
                 if attempt == max_retries - 1:
                     raise LLMError(f"Failed to call LLM API after {max_retries} attempts: {e}")
-                time.sleep(2 ** attempt)  # Exponential backoff
+                time.sleep(2 ** attempt)
         
         raise LLMError("Max retries exceeded")
         
