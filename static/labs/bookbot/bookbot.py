@@ -441,8 +441,8 @@ class BookBot:
         data = {
             "model": self.llm.full_name,
             "messages": [
-                {"role": "system", "content": "system_prompt"},
-                {"role": "user", "content": "prompt"}
+                {"role": "system", "content": system_prompt},
+                {"role": "user", "content": prompt}
             ]
         }
         
@@ -451,7 +451,7 @@ class BookBot:
         # Debug logging
         logger.info("=== API Request Debug ===")
         logger.info(f"API URL: https://openrouter.ai/api/v1/chat/completions")
-        logger.info(f"API Key (first 4 chars): {self.api_key[:4]}...")
+        logger.info(f"API Key (first 4 chars): {self.api_key[:5]}...")
         logger.info(f"Headers: {json.dumps({k: v for k, v in headers.items() if k != 'Authorization'}, indent=2)}")
         logger.info(f"Data: {json.dumps(data, indent=2)}")
         for attempt in range(max_retries):
@@ -470,6 +470,11 @@ class BookBot:
                         logger.error(f"Response status: {response.status_code}")
                         logger.error(f"Response body: {response.text}")
                     
+                    if response.status_code == 401:
+                        logger.error(f"Response status: {response.status_code}")
+                        logger.error(f"Response body: {response.text}")
+                        logger.error(f"Received a Forbidden response. This means your key is incorrect or you ran out of credits.")
+
                     if response.status_code == 429:
                         retry_after = int(response.headers.get('Retry-After', 5))
                         logger.warning(f"Rate limited. Waiting {retry_after} seconds...")
