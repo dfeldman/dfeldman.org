@@ -555,7 +555,9 @@ class BookBot:
                 "llm": self.llm.name,
                 "tokens_in": tokens_in,
                 "tokens_out": tokens_out,
-                "prompt": prompt
+                "prompt": prompt,
+                "content": content
+
             })
             setting.save()
             
@@ -595,7 +597,9 @@ class BookBot:
                 "llm": self.llm.name,
                 "tokens_in": tokens_in,
                 "tokens_out": tokens_out,
-                "prompt": prompt
+                "prompt": prompt,
+                "content": content
+
             })
             characters.save()
 
@@ -640,7 +644,8 @@ class BookBot:
                 "llm": self.llm.name,
                 "tokens_in": tokens_in,
                 "tokens_out": tokens_out,
-                "prompt": prompt
+                "prompt": prompt,
+                "content": content
             })
             outline.save()
             
@@ -687,7 +692,8 @@ class BookBot:
                 "llm": self.llm.name,
                 "tokens_in": tokens_in,
                 "tokens_out": tokens_out,
-                "prompt": prompt
+                "prompt": prompt,
+                "content": content
             })
             chapter_file.save()
             
