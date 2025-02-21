@@ -1,0 +1,1 @@
+Review and improve the provided content while maintaining consistency. Focus on clarity, flow, character consistency, description quality, and dialogue naturality.

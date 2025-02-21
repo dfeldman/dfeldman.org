@@ -1,0 +1,1 @@
+Write Chapter {{ chapter_number }} according to the outline, maintaining consistency with the established characters and setting. Focus on engaging prose and natural dialogue.
