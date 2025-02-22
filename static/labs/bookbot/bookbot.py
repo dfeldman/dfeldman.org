@@ -31,10 +31,10 @@ logging.basicConfig(
     ]
 )
 logger = logging.getLogger('BookBot')
-
+logger.setLevel(logging.DEBUG) # For now
 # Constants
 OPENROUTER_API_URL = "https://openrouter.ai/api/v1/chat/completions"
-DEFAULT_TEMPERATURE = 0.7
+DEFAULT_TEMPERATURE = 0.8
 PREVIEW_DIR = Path("preview")
 FINAL_DIR = Path("final")
 COMMON_DIR = Path("common")
@@ -53,7 +53,7 @@ DEFAULT_CONFIG = {
     "auto_preview": True,
     "backup_enabled": True,
     "backup_dir": ".bookbot_backups",
-    "logging_level": "INFO"
+    "logging_level": "DEBUG"
 }
 
 
@@ -410,7 +410,7 @@ class BookBot:
             self.config.update(config)
         self.llm = self._get_llm_config(llm) if llm else AVAILABLE_LLMS[0]
         self.tokenizer = tiktoken.encoding_for_model("gpt-4")
-        
+        logger.setLevel(logging.getLevelName(self.config['logging_level'].upper()))
         # Ensure required directories exist
         for directory in [COMMON_DIR, CHAPTERS_DIR, PROMPTS_DIR, REVIEWS_DIR, FRONTMATTER_DIR, BACKMATTER_DIR, FINAL_DIR]:
             directory.mkdir(parents=True, exist_ok=True)
@@ -522,6 +522,7 @@ class BookBot:
                                 total=None
                             )
                             logger.info(f"Sending request to {OPENROUTER_API_URL}, attempt {attempt + 1}")
+                            logger.debug(f"Request data: {json.dumps(data, indent=2)}")
                             response = requests.post(
                                 "https://openrouter.ai/api/v1/chat/completions",
                                 headers=headers,
@@ -539,6 +540,8 @@ class BookBot:
                                 response.raise_for_status()
                                 
                             result = response.json()
+                            logger.debug(f"Received response: {json.dumps(response.json())}...")
+
                             if not result.get('choices'):
                                 raise LLMError("No choices in response")
                                 
@@ -548,7 +551,7 @@ class BookBot:
                                     continue
                                 raise LLMError("Empty response")
                             logger.info(f"Received response: {content[:100]}...")
-                            logger.debug(f"Received response: {content}...")
+                            logger.debug(f"Received response: {json.dumps(response.json())}...")
                             content = re.sub(r'<think>.*?</think>\n?', '', content, flags=re.DOTALL)
 
                             # Add to token counts
@@ -588,7 +591,7 @@ class BookBot:
             # Not done - add to message history and continue
             messages.append({"role": "assistant", "content": content})
             messages.append({"role": "user", "content": 
-                             f"You have written {wordcount} words so far. Continue writing the next chunk."+
+                             f"You have written {wordcount} words so far. Continue writing the next chunk. "+
                              """When you're done with this chunk, write CONTINUE if you'd like to keep writing,
                              or THE END if this chunk concludes the section."""})
             if content.endswith("CONTINUE\n"): # Should probably be fuzzier here

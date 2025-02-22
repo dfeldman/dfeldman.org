@@ -1,94 +1,161 @@
 ---
 chapter_number: 1
-created_at: 2025-02-22T13:34:12.224980
+created_at: 2025-02-22T13:41:57.662883
 ---
 # Chapter 1: Ghosts of Gilt  
-**June 3, 1929 | 8:00 AM**  
 
-The icebox shuddered like a dying man as Vivian Sinclair pressed her palm against its sweating door. Morning light cut through the apartment’s grime in fractured gold beams, catching motes of dust and the ghost of her breath. She hated this hour—the city still yawned itself awake, but her father’s pocket watch weighed heavy in her dressing gown, ticking louder than the El train rattling past her fire escape.  
+The icebox shuddered to life as Vivian Sinclair pressed her forehead against its door. Condensation dripped down the rusted handle, mimicking the sweat sliding between her shoulder blades. June heat pooled in her fourth-floor walkup like spoiled syrup, thickening the air until even her typewriter keys stuck mid-sentence.  
 
-She poured yesterday’s coffee into a chipped teacup, the liquid sludge-black and cold. Her eyes drifted to the bulletin board dominating the west wall. Newspaper clippings yellowed at the edges: **MET HEIST STILL UNSOLVED (1926)**, **CURSE CLAIMS FOURTH VICTIM**. At the center, a photograph of Joseph Sinclair stared back, his grin frozen mid-laugh under a Panama hat. The same grin he’d worn the night he’d shoved her into a taxi, blood blooming across his shirtfront.  
+She’d left the window open all night, but the Hudson Diner’s neon sign still blinked through the grime-streaked glass—**EAT** in jagged crimson letters that tattooed the opposite wall. It illuminated her bulletin board in hellish flashes: police reports pinned like butterfly specimens, a *New York Sentinel* clipping screaming **MUSEUM HEIST UNSOLVED!**, and the photograph that never moved.  
 
-*“Run, Vivvie. Don’t look back.”*  
+*Joseph Sinclair, 1924*. Father’s smile frozen mid-laugh, one hand raised as if to block the camera. The scar on her collarbone itched where the burglar’s knife had kissed bone three years ago. Same blade that slit Dad’s throat.  
 
-The typewriter called to her.  
+Viv slammed the icebox. The lone ice cube trembled in her coffee as she crossed to the Underwood. Three strikes on the spacebar—her morning ritual—before rolling in fresh paper.  
 
-She settled at the rickety table, fingers hovering over the Underwood’s keys. Three deep breaths—her ritual—before tapping out the name that haunted her dreams:  
+The headline wrote itself:  
 
-*Joseph Sinclair. Joseph Sinclair. Joseph Sinclair.*  
+**MAYOR’S “CLEAN STREETS” A BLOODY JOKE**  
 
-The words blurred. Her scar itched, the one curving over her collarbone like a parenthesis. She dug her nails into the puckered flesh until the memory sharpened:  
+Her fingers flew, words clattering like the Sixth Avenue El outside. *Kensington’s initiative targets only immigrant neighborhoods… sanitation trucks spotted at Red Hook Dock 9 after midnight…*  
 
-*1926. Rain sluicing down the museum’s marble steps. Her father’s notebook, pages stuck together with his blood, fluttering open to a sketch of the Golden Throne. Its emerald eyes glared up at her, luminous even in smudged pencil. Scrawled beneath: *“Victims of the curse—T. Walsh (suicide), E. Choi (drowned), M. Vasquez (burned)...*  
+A cockroach skittered across the desk. Viv crushed it with her coffee cup, staining the Mayor’s speech notes caramel.  
 
-“Christ, Viv. You gonna mourn that machine all day?”  
+---  
 
-Rex Donovan’s voice shattered the memory. He leaned against her doorframe, smelling of rye and gun oil, his limp more pronounced than usual. The scar bisecting his left eyebrow twitched as he tossed a matchbook onto the table. **The Sapphire Rabbit** glinted in raised gold letters.  
+“Sinclair!”  
 
-“Sammy says you’ve been askin’ about dockworkers.” His gaze lingered on the bulletin board. “Try Eddie Malone. Tell him Mr. X sent you.”  
+Fletcher Johnson’s glass eye caught the newsroom’s green-shaded lamps as he emerged from his fishbowl office. Teletype machines stuttered morse-code secrets behind him. “You covering Kensington’s presser or auditioning for *Les Misérables*?”  
 
-She flipped the matchbook. Scrawled inside in smudged charcoal: *Ask about the throne.*  
+Viv leaned back in her chair, suspenders digging into her shoulders. “Thought I’d spice up the fluff piece.” She tossed him her draft. “Turns out ‘grit’ involves more than hosing down tenements.”  
 
-“Since when do you play messenger boy?”  
+Fletcher scanned the page, his prosthetic iris glinting like a shark’s. “*Bloodstains persist under Kensington’s new asphalt*,” he read aloud. A copyboy froze mid-stride. “Cute. You get a quote from the corpses?”  
 
-“Since fools started dyin’.” He nodded at her father’s photo. “You’re chasin’ the same ghosts he did.”  
+“Got a source at Bellevue.”  
 
----
+“You got squat.” He crumpled the paper. “City desk needs 500 words on the Mayor’s haircut, not a conspiracy theory.”  
 
-**10:17 AM | The New York Sentinel Newsroom**  
+The bulletin board photo burned against her spine. She’d hung it facing her desk so Fletcher couldn’t see Dad’s smile.  
 
-Teletype machines clattered a staccato heartbeat as Viv shouldered past copyboys. Fletcher Johnson’s glass eye caught the light through his office window, a shark’s dead stare tracking her progress. She slipped into her desk, tucking Rex’s matchbook beneath a stack of Mayor Kensington’s “Clean Streets Initiative” drafts.  
+“The Golden Throne heist,” she said quietly. “Three guards dead, eight million in art gone. And you buried it on page twelve.”  
 
-“Sinclair!” Fletcher’s roar cut through the newsroom din. “My office. Now.”  
+Fletcher’s real eye twitched. “You’re a society reporter, not Elliot Ness.”  
 
-The glass walls vibrated as he slammed a fist on his desk. “Kensington’s speech. Where is it?”  
+“Joseph Sinclair was—”  
 
-“Buried next to his integrity.” She tossed the flimsy pages at him. “He’s using the initiative to launder construction funds. The docks—”  
+“A damn good journalist.” He slammed his fist, toppling a glue pot. “Who chased ghosts until they strangled him with his own press pass. You want that?”  
 
-“The docks ain’t payin’ your rent.” He leaned forward, his breath reeking of pickled eggs and regret. “Your old man chased shadows too. Look where it got him.”  
+Viv pocketed the crumpled draft. “I want the truth.”  
 
-Her thumb found the watch in her pocket. *Tick-tick-tick.*  
+“Truth won’t pay your rent.” Fletcher jabbed a finger toward the elevator. “Kensington’s speech. No metaphors, no murder accusations. Just—”  
 
-“Give me two days. If I don’t find proof, I’ll write your damn puff piece.”  
+“*A fresh start for our fair city*,” Viv mimicked in the Mayor’s baritone. “Yeah, I’ve read his ghostwriter’s fanfiction.”  
 
-Fletcher’s glass eye glinted. “One day. And if you’re wrong, you’re coverin’ petticoats at Macy’s Parade.”  
+The elevator grate clanged shut behind her.  
 
----
+---  
 
-**12:08 PM | Alley Behind The Sapphire Rabbit**  
+Rex Donovan waited at her desk, smelling of rye and gun oil.  
 
-Rain slicked the bricks as Viv pressed Eddie Malone against the wall, her switchblade pricking his thigh. His eyes darted to the lion crest ring on his pinky—Mayor Kensington’s family symbol.  
+“You’re late, Red.” He eased his weight off the bad leg—shrapnel from the Argonne, he’d told her once. Or a jealous husband’s bullet. With Rex, the story changed hourly.  
 
-“Mr. X says you know where the throne’s hidden.”  
+Viv flicked glue off her chair. “If you’re here to sell more ‘Mayor loves goat yoga’ scoops…”  
 
-Sweat glistened above his lip. “I want fifty bucks.”  
+“Cute.” A matchbook slid across the desk. *The Sapphire Rabbit* glinted in Art Deco script. “Ask Sammy about Mr. X. Seems your throne’s got new friends.”  
 
-“I want a world without men who stink of fish guts. We don’t always get what we want.”  
+Her pulse quickened. “What kind of friends?”  
 
-A door creaked open. A man with spiderweb tattoos coiled up his neck—Sammy Delgado—nodded toward the harbor. “Cops’ll fish what’s left of you from the river if you keep yappin’, Eddie.”  
+“The cyanide-and-shotgun variety.” Rex adjusted his fedora, a dossier slipping from his coat. She glimpsed **RED HOOK DOCK 9** before he snatched it back. “Be sweet to Fletcher. He’s got a soft spot for doomed brunettes.”  
 
-The dockworker swallowed. “Red Hook. Dock 9. Midnight.”  
+The elevator pinged. Viv palmed the matchbook as Fletcher bellowed, “SINCLAIR! MOVE YOUR—”  
 
-Viv stepped back, tucking the blade into her garter. Eddie’s rosary tangled in her fingers as he fled, the beads still warm from his panic.  
+She was already gone.  
 
-Back in her apartment, she struck a match. Mayor Kensington’s speech curled into ash in the sink.  
+---  
 
-“Rot in hell,” she whispered, but the words tasted like her father’s blood.  
+Rain slicked the tenement stairs. Viv relocked the door three times—Dad’s habit, now hers—before confronting the bulletin board.  
+
+Joseph’s bloodstained notebook lay buried under insurance reports. She’d memorized every smear:  
+
+*Victim 1: Giovanni Rossi, security guard. Throat slashed matching the throne’s lion claws…*  
+
+*Victim 3: Eleanor Choi, curator. Drowned in Central Park Pond, lungs filled with gold leaf…*  
+
+Her finger traced the final entry, ink blurred by… coffee? Tears?  
+
+*They’re coming for the eyes. The emeralds aren’t—*  
+
+The page ended.  
+
+Rain blurred the diner’s neon into hellfire. Viv struck a match, watching Kensington’s speech notes curl to ash.  
+
+*Let’s see you spin this, Your Honor.*  
+
+---  
+
+The Sapphire Rabbit’s bouncer had spiderwebs tattooed across his throat.  
+
+“Sammy.” Viv flashed the matchbook. “I need a name.”  
+
+Sammy Delgado polished a glass, eyes on the jazz trumpeter’s solo. “Mr. X likes cash. Fifty bucks, Pier 17 at midnight.”  
+
+“Or?”  
+
+He nodded toward the back booth. Two men in pinstripes split an oyster, their laughter sharp as shucked shells.  
+
+“Or you end up fertilizer for Kensington’s roses.”  
+
+Viv dropped a nickel in the jukebox. “Play *‘St. James Infirmary.’*”  
+
+Sammy’s tattoo rippled as he laughed. “Your dad’s favorite.”  
+
+The music swelled, bitter as bootleg gin. She wondered if drowning in gold leaf felt like champagne.  
 
 CONTINUE  
 
-**1:14 PM | Bellevue Morgue**  
+The harbor wind gnawed through Viv’s peacoat as she approached Pier 17. Moonlight painted the dockworkers’ faces cadaverous—all scarred knuckles and suspicious glares. A freighter loomed in the fog, its hull stamped **VATICAN HOLDINGS**.  
 
-The attendant didn’t blink when Viv flashed her press badge. “Slab 4. Cyanide’s a bitch, ain’t it?”  
+“You Sinclair?”  
 
-Eddie Malone’s face had turned the color of spoiled milk, lips cherry-red and split. She pressed the rosary into his stiffened hand.  
+The man emerged from the shadows, cheeks pockmarked by old acne or shrapnel. Eddie Malone, according to Sammy. His pinky ring glinted—a lion crest she’d seen on Kensington’s campaign posters.  
 
-“Who gave you the throne’s location?” she asked the corpse.  
+“Fifty.” Eddie spit tobacco. “Upfront.”  
 
-A throat cleared behind her. Inspector Bobbie Burns loomed in the doorway, nicotine gum cracking between his teeth. “Let it go, Sinclair. Unless you wanna join him.”  
+Viv fanned the bills. “Talk.”  
 
-Her father’s watch ticked louder.  
+“Mayor’s got a storage locker. Dock 9.” He glanced at the freighter. “They move crates tonight. Art shit, maybe your sparkly chair.”  
 
----
+“Who’s your contact?”  
 
-**3,298 words**
+“Some Eye-talian mobster. Vito something.” Eddie snatched the cash. “Word of advice, lady? Stop digging before you hit your daddy’s coffin.”  
+
+The dock bell tolled. Viv turned—  
+
+—and froze.  
+
+Two men in black overcoats materialized behind her. Tommy guns slung like violins.  
+
+Eddie paled. “Aw, hell.”  
+
+The first bullet caught him between the eyes.  
+
+CONTINUE  
+
+Viv dove behind a pallet stack, splinters scoring her palms. Gunfire shredded the night. She fumbled for her switchblade, the pearl handle slippery with sweat.  
+
+“Sinclair!” A hand yanked her backward.  
+
+Rex shoved her into a rowboat, his Luger barking three shots. “You’re a walking obit!”  
+
+The freighter’s horn drowned her retort. Oars scraped the hull as they fled into the fog. Eddie’s body bobbed in their wake, his lion-ringed hand reaching skyward.  
+
+Viv unclenched her fist. A rosary beads cut her palm—snatched from Eddie’s pocket as he fell.  
+
+“Red Hook Dock 9,” she whispered.  
+
+Rex rowed faster. “Forget it.”  
+
+“They killed him to shut me up.”  
+
+“They’ll do worse to you.” He nodded at the rosary. “Keep that. Might save your soul.”  
+
+The river swallowed the gunfire. Somewhere, the Golden Throne’s emeralds glowed in the dark—waiting.
