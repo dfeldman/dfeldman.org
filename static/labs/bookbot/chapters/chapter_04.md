@@ -1,43 +1,85 @@
 ---
 chapter_number: 4
-created_at: 2025-02-21T00:54:05.282688
+created_at: 2025-02-22T00:21:08.021538
 ---
-## Chapter 4: Crossroads
+**# Chapter 4: Society’s Sharp Edges**  
 
-The air was thick with anticipation in Willow Creek as the residents gathered at the town hall for the meeting that had been the talk of the town for weeks. Nestled among the hills, the small brick building seemed to hum with the energy of its own history—a sanctuary for debates, decisions, and the whisperings of community life.
+The ballroom stank of gardenias and greed. Crystal chandeliers dripped light onto acres of sequined spite, each gown costlier than a tenement’s yearly rent. I adjusted my borrowed pearls—paste replicas that chafed like the lie they were—and wove through champagne tides. Lydia Fitzgerald awaited me by the grand piano, her ice-blonde chignon sharp enough to slit throats.  
 
-Rex padded softly beside Mr. Thompson as they approached the entrance, his eyes darting to and fro with both curiosity and anxiety. He could sense something different in the adults today, an electric tension that coursed through the crowd like summer lightning. Mr. Thompson paused to greet Sheriff Carter, who stood at the door with his usual air of calm authority.
+“Darling!” She air-kissed my cheek, her breath sweet with vermouth. “You simply must try the *canapés*. The pâté is *divine*—I hear they liquored up the geese before slaughter.” Her fingernails bit into my wrist as she leaned closer. “Second button’s loose on your glove. Amateurs always miss the details.”  
 
-“Evenin’, Earl,” Sheriff Carter nodded, tipping his hat. “How’s the farm faring with all this talk about the highway?”
+The piano launched into a jaunty Cole Porter. A waiter glided past; I snagged two coupes of champagne. “How’d you know I’d come?”  
 
-Mr. Thompson gave a measured smile, though his eyes betrayed his inner conflict. “We’re holdin’ up, Frank. Just hoping for the right decision to come outta this.”
+Lydia’s smile was a scalpel. “Because your press pass tears crookedly, dear. The *Star* doesn’t starch its collars.” She sipped, leaving a crimson half-moon on the glass. “Also, Fletcher owes me a favor. Something involving a Senator’s *indiscretion* and a borzoi.”  
 
-Rex shifted closer to Mr. Thompson's leg, feeling the weight of those words. He could sense the unspoken fears, the hopes pinned to the outcome of this meeting. Together, they entered the hall, its wooden floors creaking under the collective footsteps of Willow Creek.
+A marble-columned mirror caught our reflection: we could’ve been sisters, if despair were a shade of lipstick. She saw me notice. “The Mayor’s wife had that installed. She likes to watch her guests stab backs mid-waltz.”  
 
-Inside, the room was filled with an array of townsfolk, their voices a low hum under the high ceiling. At the front, a long table held the council members, their stance formal under the watchful gaze of the community. The lighting cast a warm glow on familiar faces: Mary Jenkins, bustling about with a tray of baked goods, her rustling apron a comforting sound; Whiskers, who slunk stealthily along the windowsills, his presence felt more than seen.
+I deposited my empty flute on a passing tray. “Why help me?”  
 
-The meeting began, and with it, the debates broke the surface like waves. Opinions clashed, new ideas met old, and fear danced with hope in a tangled, uncertain rhythm. Rex watched intently, his tail brushing the floor as his ears twitched to catch the shifts in tone, the subtle gravity of resigned sighs and fervent proclamations.
+“Kensington called my father’s suicide a ‘tax dodge’ at the Darby Ball.” Her thumb grazed the cameo at her throat—real, unlike mine. “Now. Three o’clock. Freddie Winslow’s about to disgrace himself by the potted ivy.”  
 
-“We can’t just sit back and let them take our land,” an older farmer exclaimed, his voice quivering with years of attachment to the soil.
+———  
 
-“But progress—what about the opportunities this highway could bring?” countered a younger voice, more idealistic and untouched by the slump in the economy.
+Freddie swayed like a metronome set to *disaster*. Monocle fogged, ascot askew, he clutched a magnum of Dom Pérignon like a newborn. “Vivi! Vivace! *Vixen!*” Champagne sloshed onto my T-straps as he engulfed me. “Heard you’re hunting ghosts! Did’ya know the mayor’s got a *pet*? Choo-choos to *nowhere*, fulla’ *art* or some rot!”  
 
-Rex looked up at Mr. Thompson, who stood quietly, listening, weighing each argument as if it were the produce of his own farm, ripe and necessary. Beside him, Mary offered an encouraging nod, her presence a silent testament to the ties that bound this community.
+I steadied him. “Slow down, Freddie. Which nowhere?”  
 
-In a rare pause between speeches, Mr. Thompson stood, an emblem of his resolve reflecting in his upright posture. His voice was steady. “I reckon there’s merit in progress, but there’s also value in what we’ve got—this land, these roots we’ve put down. Our decisions need to balance both.”
+“Whitefields!” He hiccuped. “But the throne’s not there. Lost luggage. Or legs? Leggy legs—” His gaze snagged on a waiter’s tight trousers. I yanked his chin back.  
 
-Rex felt a strange pride swelling in his chest, a kinship with the land echoed in Mr. Thompson’s words. But beneath that, a tremor of unease—it wasn’t just about the fields or the barn; it was about home, safety, the everyday warmth of their shared routines.
+“When’s the next train?”  
 
-As discussions stretched into the late hours, the hall seemed to pulsate with possibility. Rex, faithful and vigilant, nudged Mr. Thompson’s hand with a gentle nuzzle, offering his silent support. Mr. Thompson’s fingers absently scratched behind Rex’s ear, a wordless exchange of comfort.
+“Thursday.” His hand found my waist. “Ride with me, Viv. I’ll show you the *compartments*—”  
 
-Finally, the meeting began to wind down, the voices tired but hopeful. Decisions were postponed, yet a promise lingered in the air—a promise of unity, of understanding the road that lay ahead, while respecting the trails they’d all walked to get there.
+The chandelier dimmed. Across the room, Enzo Moretti’s pockmarked face glowed in match-light as he lit a cigar. Two gorillas in tuxedos flanked him, necks thicker than their skulls.  
 
-Outside, the stars scattered across the night sky like whispers of hope, twinkling over the heads of townsfolk dispersing into the night. Rex and Mr. Thompson walked home side by side, a quiet pact of trust binding them together, their path illuminated by the glow of community spirit.
+Vito materialized at my elbow. “You’re lost, doll. Kitten’s pen’s upstairs.” He gripped my arm, silk sleeve sliding over taut muscle.  
 
-Back at the farmhouse, bathed in the familiar scents of earth and wood, Mr. Thompson settled into his chair with a sigh that carried the weight of a thousand decisions. Rex curled at his feet, sensing the troubling thoughts that churned above him.
+Freddie sneered. “Piss off, greaseball.”  
 
-“You reckon we’ll be alright, boy?” Mr. Thompson murmured, his voice low and introspective.
+Vito headbutted him. Freddie folded into the ivy, snoring.  
 
-Rex lifted his head, his amber eyes meeting Mr. Thompson’s, warm with reassurance. He let out a soft bark, the kind that always seemed to dispel shadows.
+———  
 
-In that moment, surrounded by the tender silence of their home, they knew that come what may, they would face it together. For the crossroads of change, though daunting, was also a place of promise—a reminder of the shared journey, as profound as the bond between man and dog.
+The closet smelled of mothballs and murder. Vito shoved me inside, one palm clamped over my mouth. His thumb brushed my lower lip. “Yell and I’ll gag you proper.”  
+
+Shoes clattered past the door. “…check the terrace,” snarled a voice like gravel in a meat grinder. “Boss wants the snoop gutted.”  
+
+Vito’s body pinned mine against brooms. Sandalwood and gunpowder. Heat radiated through his shirt. My Derby hat tilted, veil catching on his stubble.  
+
+“You’re stupid in lace.” His breath scorched my ear. “That dress hides a wire?”  
+
+I kneed his thigh. He grunted, trapping my leg between his. “What’s Moretti’s stake in Kensington’s train?”  
+
+A chuckle vibrated through me. “You’re playing with fire, doll.”  
+
+Outside, Enzo’s thugs argued over Freddie’s prone form. “…wake him. The Eel wants names.”  
+
+Vito’s teeth grazed my earlobe. Not gentle. “Stick to society pages.”  
+
+“Or what? You’ll *spank* me?”  
+
+“Tempting.” He leaned back just enough for light to slit his smirk. “But first, apologize for this—”  
+
+Footsteps retreated. He released me like a thief dropping a hot watch. I lunged for the door.  
+
+He blocked it. “You owe me.”  
+
+“Tell your boss to send a bill.”  
+
+“He don’t deal in cash. Only favors.” His finger hooked my pearls. “I’ll collect.”  
+
+The snap echoed like a gunshot. Pearls rained between us.  
+
+“Fakes.” He crushed one under his wingtip. “But you knew that.”  
+
+———  
+
+Freddie snored in a bergère chair, monocle cracked. I knelt, pretending to adjust his shoe. “Poor lamb,” I cooed to the gawking dowagers. “The bubbles went straight to his head.”  
+
+My fingers slid into his breast pocket. Brass bit my palm: a key, teeth gleaming. *B-12*.  
+
+The mirror showed me Lydia at the bar, waving a handkerchief in mock distress. Behind her reflection, Vito watched me through the crowd—a wolf in a Tommy gun tuxedo.  
+
+He raised his empty champagne flute. *To the game.*  
+
+I palmed the key. Somewhere, a train whistled.
