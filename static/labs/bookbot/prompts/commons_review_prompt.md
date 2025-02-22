@@ -17,6 +17,9 @@ a friend of the protagonist.
 - It's okay for story elements to be mildly supernatural, such as a secret network of tunnels
 or a lucky tree or a premonition. But it's NOT okay for major deus ex machina events to save the day, such as a bomb going off at exactly the right time, a character showing up exactly when they are needed, someone magically becoming healthy after being injured, etc.
 - Foreshadowing shouldn't happen just one time. Typically, if something needs foreshadowing or earlier explanation to make sense, it should be mentioned two or three times earlier in the story.
+- There must not be any items from the future or distant past. Technology like cars must be period-appropriate. There must not 
+be any anachronisms. As an example a previous story revolved around a woman receiving a positive pregnancy test - in the 1920s 
+before that could exist! Anachronisms need to be removed and replaced with timeline-appropriate versions.
 - And most of all, it's important for it to be a fun story! There should be deep tension, exciting twists (that make sense), and a satisfying ending.
 
 Initial Description:

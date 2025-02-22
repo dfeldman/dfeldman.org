@@ -1,91 +1,478 @@
 ---
 chapter_number: 5
-created_at: 2025-02-22T00:35:38.054710
+created_at: 2025-02-22T15:24:38.407932
 ---
-**# Chapter 5: Compartment B-12**  
+# Chapter 5: The Gilded Whisper  
 
-The train groaned like a dying beast as we slipped past the tenements of Queens. Vito’s shoulder pressed against mine in the narrow compartment, our breaths fogging the window. Outside, the moonlit marshes blurred into a smear of oil and shadows. He’d traded his tuxedo for a rumpled newsboy’s cap and workman’s denim, but the sandalwood scent still clung to him—a dissonant note in the stench of coal smoke and stale sweat.  
+**June 7, 1929 | 7:03 PM**  
 
-“You’re staring, doll.” He didn’t look up from cleaning his switchblade. The steel caught the overhead bulb’s jaundiced light.  
+The Beaumont Estate ballroom smelled of gardenias and greed. Vivian Sinclair pressed her back against a marble column, the cold stone biting through the emerald silk of her borrowed dress. Across the sea of white tie and sequins, Vito Romano adjusted his monocle with practiced disdain, his tuxedo tailored to hide the Luger at his ribs.  
 
-“Admiring your restraint. I expected more complaining about riding coach.” I adjusted the kerchief hiding my hair. The stolen porter’s uniform chafed at my thighs.  
+“Eyes left,” he murmured, brushing past her with a champagne flute. “Pink dress, ostrich feathers. That’s Lydia Fitzgerald.”  
 
-“Sweetheart, I grew up hauling fish on the Fulton line. This?” His blade snapped shut. “This is the Ritz.”  
+Viv followed his gaze. The socialite stood beneath a crystal chandelier, pearl bracelet glinting as she accepted a cigarette from a man with a monocle and a diamond-encrusted spoon.  
 
-The key burned against my breastbone, strung on a chain with my mother’s locket. *B-12.* Freddie’s drunken sneer flashed in my memory—*corpses built those rails.* The conductor’s voice barked down the corridor. “Glen Cove, next stop! Glen Cove!”  
+“Freddie Winslow,” Vito added. “Heir to the Winslow railroads. Nose deep in Kensington’s business.”  
 
-Vito rose, the muscles in his back flexing under thin cotton. “Clock’s ticking.”  
+“And deeper in cocaine,” Viv observed as Freddie sniffed powder off his spoon. She smoothed her auburn bob, the weight of the wig’s pins anchoring her to the lie. *Lady Genevieve DuPont*, art collector. The invitation had cost her three bottles of bootleg gin and a threat to publish Lydia’s love letters.  
 
-The first-class car loomed ahead, its mahogany paneling and stained glass doors a mockery of the cattle-car stench we’d escaped. I pressed against the shuddering wall as a white-jacketed steward passed, his tray of champagne flutes trembling. Vito’s hand closed over mine.  
+A waiter materialized with a tray of oysters Rockefeller. Viv took two, the briny cream coating her tongue. “Remember,” Vito whispered, his breath warm against her ear. “We’re here to dance, not dig graves.”  
 
-“Wrong move, detective.” His thumb traced the notch in my palm where the Derringer’s grip had worn a callus. “Nerves?”  
+“Why not both?”  
 
-I jerked free. “Anticipation. Ever stabbed a man in a smoking jacket?”  
+The orchestra launched into *Let’s Misbehave*. Vito’s hand found the small of her back, calluses catching on the silk. He spun her onto the floor, his grip firm enough to bruise. “You’re staring at Freddie like he’s a tax return.”  
 
-Compartment B-12’s lock clicked like a broken jaw. The air inside was tomb-cold, stale with the reek of Cuban cigars and betrayal. Velvet drapes choked the windows. Vito struck a match, the flare illuminating crates stamped *FRAGILE—MUSEUM TRANSPORT.*  
+“He’s sweating through his cummerbund.” Viv counted the steps—*one-two-three, one-two-three*—her heels snapping against black-and-gold tiles. “Men with secrets always sweat.”  
 
-“Jackpot,” I whispered.  
+“And women?” His thumb traced her spine through the fabric.  
 
-He pried open a lid. Rembrandt’s *Storm on the Sea of Galilee* stared up at us, the apostles’ faces warped in a forger’s imperfect hand. “Kensington’s been busy.”  
+“Women lie cooler.”  
 
-I sifted through shipping manifests. “Boston, Philly, Chicago… He’s replacing every stolen piece with fakes.” A love letter fluttered to the floor, the mayor’s crest embossed on creamy stationery.  
+They passed Charles Beaumont holding court beside a potted palm. “...shot the tiger at thirty yards,” he boomed to enraptured debutantes, his safari story rehearsed as a Broadway monologue. The champagne flute in his hand trembled slightly.  
 
-*My dearest Celeste—*  
+*Cyanide tastes sweet*, Viv remembered Doc Harlow saying. She pressed closer to Vito. “Check his left pocket.”  
 
-Vito snatched it up. “Christ. The mistress has better penmanship than my sister’s priest.”  
+“The flask?”  
 
-A floorboard creaked in the corridor. We froze. Inspector Burns’ Scottish brogue sliced through the door. “—absurd notion, but His Honor insists we check every compartment—”  
+“Monogrammed. *CB* in Art Deco script. If he’s Kensington’s banker—”  
 
-Vito killed the match. Darkness swallowed us whole. His hand found my waist, yanking me into the slender gap between a crate and the wall. My back pressed against his chest, his heartbeat a frantic counter-rhythm to the clattering rails.  
+The music crescendoed. Vito dipped her low, his lips grazing her jawline. “Stop working, *baronessa*. You’ll crack your face powder.”  
 
-The doorknob turned.  
+She dug her nails into his shoulder. “The only thing cracking tonight will be your skull if—”  
 
-“Easy,” he breathed into my hair. His palm slid over my mouth. I bit down hard enough to taste copper.  
+A scream sliced through the waltz.  
 
-Burns’ flashlight beam swept the crates. “Bloody waste of time,” he muttered. The door sighed shut.  
+**8:17 PM**  
 
-Vito released me. “You fight like a feral cat.”  
+Freddie Winslow staggered against the grand piano, clutching his throat. The diamond spoon clattered to the floor as froth bloomed on his lips.  
 
-“You smell like a distillery.” I wiped his blood from my lips. “We need those letters.”  
+“Clear the room,” Kensington thundered, linen suit immaculate despite the chaos. Guards in penguin-black tuxedos herded guests toward the terrace.  
 
-“We need to *survive.*” He gripped my wrist as I reached for the crate. “Kensington’s got half the force on his payroll. You think Burns won’t put a bullet in your spine for a pension boost?”  
+Viv ducked behind a potted fern, Vito’s hand on her wrist. “Not yet,” he warned.  
 
-The train lurched. My uncle’s suicide note crinkled in my brassiere—*Forgive me, Viv. The truth is uglier than you know.* I’d carried it for three years, its edges fraying like my resolve.  
+Across the room, Lydia Fitzgerald adjusted her pearl bracelet, fingers trembling. The clasp came undone, a tiny hollow charm slipping into her palm.  
 
-“My uncle wrote that he failed.” The words tasted of gin and grave dirt. “But he didn’t. He found the ledger, the shipping routes. They drove a bullet through his reputation instead of his skull.”  
+*Cyanide vial.*  
 
-Vito stilled. Outside, a crossing bell clanged.  
+Viv lunged forward, but Vito yanked her back. “You’ll get us both shot!”  
 
-“You want confession?” His laugh was bitter as burnt coffee. “I drive trucks full of morphine to Hell’s Kitchen clinics. Take cut from widows’ rent money. Last month, I broke a dockworker’s knees for skimming $10.” He caught my chin, forcing my gaze. “But every cent goes to Rosa’s design school fund. Every. Damn. Cent.”  
+“She poisoned him! The charm—”  
 
-The raw edge in his voice undid me. I reached up, straightening his crooked tie. “You’re a terrible liar, Romano.”  
+Charles Beaumont collapsed mid-toast, champagne flute shattering. The smell hit Viv first—almonds and burnt sugar. His monogrammed flask rolled across the floor, droplets of amber liquid sizzling on marble.  
 
-His hand trapped mine against his chest. “And you’re a worse judge of character, Sinclair.”  
+Kensington knelt beside the convulsing man. “Fetch Doctor Whitcombe!” he barked, though his cufflinks gleamed steady in the lamplight. No tremors. No surprise.  
 
-The train shrieked into a tunnel. Blackness swallowed us. His lips grazed my cheekbone, then the corner of my mouth—a question, not a demand. The crate shifted.  
+Viv memorized the guards’ positions—two at the east door, one by the service entrance. She inched toward Charles’ body, Vito’s curses following her.  
 
-We fell.  
+“Miss?” A maid stared at her, tray of canapés shaking. “You shouldn’t—”  
 
-He twisted mid-air, taking the brunt of the impact. My hips slotted against his as we sprawled across cold hardwood. His thumb brushed the silver streak in my hair. “Still playing hero?” I rasped.  
+Viv grabbed a linen napkin and scooped up the flask. *CB. Charles Beaumont.* The engraving bit into her palm like an accusation.  
 
-“Still dodging answers?”  
+“*Baronessa.*” Vito materialized at her side, his Italian accent slipping. “Time to go.”  
 
-The train erupted into light. We froze—my palms on his shoulders, his fingers digging into my hips. Somewhere, a child laughed. A woman’s stockinged leg brushed our compartment door.  
+“The ledger,” she hissed. “Lydia mentioned a private gallery—”  
 
-Vito’s grin was all teeth. “You gonna kiss me or solve the case, detective?”  
+A hand clapped her shoulder. “Admiring the decor, Lady DuPont?”  
 
-The brakes screamed. Glass shattered. A fist pounded the door. “Police! Open up!”  
+Mayor Kensington’s smile could’ve frozen the Hudson. Behind him, two guards cracked their knuckles in unison.  
 
-He rolled us sideways as bullets splintered the wood. “Time to go.”  
+Viv curtsied, the motion stiff. “Your taste in art is… *expansive*, Mr. Mayor.”  
 
-We leapt onto the coupling platform, wind clawing at our clothes. The marsh stretched below, hungry and endless. Vito’s hand found mine.  
+“Come.” He steered her toward a bookshelf-lined wall. “Let me show you true grandeur.”  
 
-“Jump when I say!”  
+**9:48 PM**  
 
-“Go to hell!”  
+The secret library reeked of sherry and mildew. Kensington pulled a copy of *Moby Dick* from the shelf, triggering a soft *click*. The bookcase swung open, revealing a vault door with a retinal scanner ahead of its time.  
 
-“Already on fire, doll.” He pulled me against him. “Now.”  
+“Retinal what?” Viv blurted before remembering her faux-French accent.  
 
-We fell through smoke and stars, the tracks rising to meet us.  
+“German engineering,” Kensington said proudly. “The future of security.”  
 
-**
+The vault exhaled cold, dry air. Inside, paintings glowed under UV lights—Van Goghs that made her gasp, Rodin sculptures still sweating clay.  
+
+And on a dais in the center, the Golden Throne.  
+
+Viv’s pulse throbbed in her scar. The throne’s emerald eyes watched her, their facets cut to catch the light at every angle. She reached into her clutch, fingers brushing the UV torch from Celeste’s studio.  
+
+“Magnifique,” she breathed. “But I heard rumors… replicas?”  
+
+Kensington stiffened. “All great art inspires imitations.”  
+
+She flicked the UV light on.  
+
+The emeralds glowed poisonous green.  
+
+*“The Mughal emeralds fluoresce like hellfire,”* her father’s journal had said. Her knees threatened to buckle.  
+
+“Fascinating.” She aimed the light at a Monet. “Are these all—”  
+
+The vault door slammed shut.  
+
+**10:11 PM**  
+
+Lydia Fitzgerald’s laugh tinkled through the air vents. Viv pounded on the steel door. “Kensington, you son of a—”  
+
+“Language, Miss Sinclair.” The mayor’s voice crackled through an intercom. “Did you truly think I wouldn’t recognize Joseph’s daughter? Those eyes… they begged just like his.”  
+
+She froze.  
+
+“Don’t fret. The gas is painless.” A hiss echoed from the ceiling vents. “You’ll join your father in whatever gutter heaven he—”  
+
+The lights died.  
+
+A gunshot rang out.  
+
+The door creaked open, revealing Vito with a guard’s pistol smoking in his hand. “You’re a walking obituary, Red.”  
+
+She grabbed the shipment ledger off the desk, its pages fluttering like trapped birds. “The throne—the eyes are real!”  
+
+“And we’re leaving.” He dragged her toward a service elevator. “Kensington’s men are flooding the tunnels.”  
+
+**11:59 PM**  
+
+The getaway car stank of Vito’s cologne and panic. Viv studied the ledger under a streetlamp’s glow, photographs of the throne’s emeralds already burning in her mind.  
+
+*Red Hook Dock 9. Vatican Holdings. Shipment 428.*  
+
+Vito downed a hip flask. “You realize he let us escape?”  
+
+She touched Charles’ monogrammed flask in her clutch. “He wants us to follow the trail.”  
+
+“To a trap.”  
+
+“To the truth.”  
+
+Somewhere beneath Manhattan, the Golden Throne waited. Somewhere beyond the fog, Rex Donovan’s ghost laughed.  
+
+The car sped toward the bridge, its headlights cutting through the lies.  
+
+CONTINUE
+**11:59 PM (Continued)**  
+
+Tires screamed against asphalt as Vito took a corner too fast, throwing Viv against the door. The ledger’s pages fluttered to the floorboards, revealing shipping dates scrawled in familiar handwriting—*Celeste’s*.  
+
+“Red Hook Dock 9,” Viv muttered, clutching the seat. “Kensington’s moving the throne tonight.”  
+
+“And we’re walking into his crosshairs.” Vito checked the rearview mirror. Headlights bloomed behind them. “Hold on.”  
+
+He yanked the wheel left, sending them careening down an alley. Garbage cans exploded against the fenders, rancid melon rinds smearing the windshield. Viv wiped citrus pulp from her cheek. “Couldn’t steal a car with wipers?”  
+
+A bullet shattered the back window.  
+
+“Down!” Vito shoved her head below the dashboard. Glass rained over the ledger as he leaned out the driver’s window, firing blindly. The pursuing car swerved, clipping a fire hydrant.  
+
+Viv clawed her way upright. “Give me the gun.”  
+
+“You’ll shoot your damn foot off.”  
+
+“I outscored you at the range last week!”  
+
+“Those were *tins*, Red. Not people!”  
+
+Another bullet tore through the roof. Viv grabbed the pistol from his waistband, the grip still warm. She twisted over the seat, aiming through the shattered rear window. The pursuing car’s headlights blinded her—*two goons in driver’s caps, tommy gun muzzle flashing*.  
+
+Breathe in. Squeeze.  
+
+The driver’s cap flew off in a spray of red. The car veered into a lamppost, horn blaring a death rattle.  
+
+Vito whistled. “Remind me never to play poker with you.”  
+
+**12:22 AM**  
+
+They abandoned the car behind a fish market, its hood steaming like a teakettle. Vito kicked open a storm drain. “Tunnel access. Goes straight to the Lyric.”  
+
+Viv hesitated, Charles’ flask heavy in her clutch. “Wait.”  
+
+She flipped through the ledger under the flickering streetlamp. “Shipment 428’s arriving at Dock 9 via the *SS Vaticano*. But look—” Her finger traced a margin note: *“Eyes to be transferred separately. Midnight train.”*  
+
+Vito stilled. “The scenic line to Long Island.”  
+
+“Kensington’s splitting the throne and its emeralds. If we lose track of the eyes…”  
+
+“Then all we’ve got is fancy firewood.” He scrubbed a hand over his jaw. “You take the docks. I’ll intercept the train.”  
+
+“Like hell.” She grabbed his arm. “We stick together.”  
+
+His laughter bounced off the alley walls. “You’ve got a death wish hotter than a speakeasy gin.”  
+
+“And you’ve got the subtlety of a brass band.” She shoved the ledger at him. “You’re the one who can read Celeste’s codes. Dock 9 needs finessė, not your usual ‘shoot first, pray later’ routine.”  
+
+A siren wailed in the distance. Vito stared at her, the streetlight carving shadows under his cheekbones. “If you die, I’m not writing your obituary.”  
+
+“Wouldn’t want you to.” She pressed the UV torch into his hand. “Check every emerald. If they don’t glow…”  
+
+“Then Celeste’s forgeries are heading to Rome.” He stepped into the drain, his tuxedo swallowed by gloom. “Don’t get spotted, Red. That dress screams target.”  
+
+**1:14 AM**  
+
+The dockyard gate creaked on rusted hinges. Viv slipped through, her silk dress swapped for a stolen guard’s uniform three sizes too big. Salt wind clawed at her pinned-up hair as she approached the *SS Vaticano*.  
+
+Crates stamped *Vatican Holdings* lined the pier. Workers chanted a chain-gang rhythm as they loaded a pallet shrouded in burlap. The shape beneath—too angular for paintings, too regal for machinery.  
+
+*The throne.*  
+
+Viv ducked behind a coil of rope. Three guards patrolled the gangplank, their Tommy guns glinting. Her fingers itched for the switchblade in her boot.  
+
+“—think it’s cursed?” A worker muttered to his partner.  
+
+“Ain’t cursed. Just bad luck.” They heaved a crate onto the pallet. “Heard the last guy who touched it got his tongue cut out.”  
+
+A shadow moved atop the cargo crane. Viv squinted.  
+
+*Lydia Fitzgerald.*  
+
+The socialite climbed the ladder with surprising agility, mink stole flapping like a trapped bat. She paused at the control booth, pulling a lever. Chains rattled.  
+
+The throne’s pallet swung wildly, knocking two guards into the harbor.  
+
+“Bitch!” The remaining guard fired. Lydia ducked, her stole exploding into feathers.  
+
+Viv lunged. Her switchblade found the guard’s kidney. He crumpled with a wet gurgle.  
+
+Lydia met her at the crane base, pearls askew. “Sinclair. Here to arrest me?”  
+
+“Why’d you kill Charles?”  
+
+“Same reason you’re here.” She adjusted her ruined stole. “He discovered Kensington’s sending the throne to Mussolini. Was going public.”  
+
+Viv gestured to the chaos below. “And this?”  
+
+“Distraction.” Lydia opened her clutch, revealing a brass key stamped *9*. “There’s a vault beneath the crane. The real prize’s inside.”  
+
+The throne’s burlap shroud slipped, revealing golden claws. Viv’s scar burned.  
+
+“He’s watching, you know.” Lydia nodded to the captain’s deck. A figure stood silhouetted against cabin lights—Kensington’s unmistakable stance.  
+
+Viv grabbed the key. “What’s in the vault?”  
+
+“Proof.” Lydia’s smile curved like a scalpel. “Of where the throne’s emeralds really came from.”  
+
+A shot rang out.  
+
+Lydia gasped, crimson blooming across her stole. Viv caught her as she fell.  
+
+“Letters…” the socialite whispered. “In his desk… Vatican…” Her head lolled.  
+
+Viv lowered her to the dock. The key bit into her palm.  
+
+**2:03 AM**  
+
+The vault door opened with a groan. Inside, stacks of letters bearing papal seals shimmered in Viv’s flashlight beam. *His Holiness… Blood antiquities… Generous donations…*  
+
+“He’s funding the Vatican’s museums with stolen art,” Viv muttered. “Using the Church to launder his legacy.”  
+
+Footsteps echoed above. She grabbed a handful of letters, tucking them into her uniform.  
+
+The throne sat alone on the pier now, guards unconscious around it. Viv approached, her father’s pocket watch ticking like a bomb in her breast pocket.  
+
+“Rot in hell, Harry,” she whispered, placing the watch on the throne’s seat. “This one’s from Joseph.”  
+
+She lit a match.  
+
+**2:17 AM**  
+
+The explosion lit the harbor gold. Viv ran as flaming debris rained around her, Lydia’s key melting in her fist. Across the water, a train whistle wailed—Vito’s midnight express, speeding into the dark.  
+
+Somewhere in the smoke, Kensington roared.  
+
+CONTINUE
+**2:33 AM**  
+
+The train’s wheels screamed against the tracks as Vito clung to the roof, the UV torch clamped between his teeth. Wind tore at his borrowed conductor’s uniform—Hank’s blood still warm on the collar. Below, through the rattling skylight, he counted six guards flanking a velvet-lined case.  
+
+*Emeralds don’t need that many babysitters.*  
+
+He dropped through the skylight feet-first.  
+
+**2:37 AM**  
+
+Glass shards bit into his palms as he rolled across the compartment floor. The nearest guard swung a blackjack—Vito caught his wrist, snapping it backward with a wet crunch.  
+
+“Where’s the fire, boys?” He spit out the UV torch. “Let’s see the merchandise.”  
+
+The case’s locks gave way under his boot. Green light spilled out, the emeralds’ facets winking like a dozen malevolent eyes. Vito flicked the UV beam.  
+
+Nothing.  
+
+“Celeste, you brilliant bitch,” he muttered. The forgeries were flawless to the naked eye.  
+
+A bullet grazed his ear. He dove beneath a seat as tommy guns shredded the compartment. Wood splinters flew. The case toppled, fake emeralds cascading across the floor.  
+
+*Bait. The real eyes are—*  
+
+The restroom door creaked open behind him.  
+
+**3:01 AM**  
+
+Viv stumbled into the Sentinel’s wrecked newsroom, her uniform stiff with dried seawater. Fletcher snored at his desk, a half-empty bourbon bottle clutched to his chest.  
+
+“Wake up.” She slammed the Vatican letters beside his drool-stained blotter. “We’re printing a morning edition.”  
+
+Fletcher’s glass eye rolled loose as he jerked upright. “You look like a mugging victim.”  
+
+“Kensington’s laundering stolen art through the Church.” She spread the letters out, papal seals glowing under his desk lamp. “These prove it.”  
+
+“Proof gets people killed, Sinclair.” He squinted at the Latin script. “This one mentions ‘donations’ from the Golden Throne’s 1926 heist…”  
+
+“Front page headline. ‘Mayor Funds Vatican with Blood Antiquities.’” She tossed him Charles’ monogrammed flask. “And run a sidebar on his cyanide habit.”  
+
+The old editor traced the flask’s engraving. “You sure?”  
+
+A train whistle howled in the distance. Viv watched lightning fork over the harbor. “Burn it all.”  
+
+**3:47 AM**  
+
+The freight car reeked of coal and copper. Vito wiped his stiletto on a dead guard’s shirt, eyeing the safe bolted to the floor—too heavy to move, too obvious to ignore.  
+
+He pressed his ear to the cold metal. *Click-click-click*. Three turns left. Two right.  
+
+The door swung open.  
+
+Nestled in black velvet, two emeralds glowed hellish green under his UV beam.  
+
+“There you are,” he whispered.  
+
+The train lurched. Brakes screeched. Through the slatted door, he saw the glowing fungus of the Lyric Theatre tunnels.  
+
+*Red Hook Dock 9. Shipment 428.*  
+
+He pocketed the gems as armed shadows swarmed the tracks.  
+
+**4:12 AM**  
+
+Rain sheeted across the Beaumont Estate’s scorched gardens. Kensington crushed a champagne flute underfoot, his reflection warped in the fractured crystal.  
+
+“She burned it?”  
+
+“Down to the bolts, sir.” The guard trembled. “But the eyes… Romano intercepted the train.”  
+
+The Mayor turned slowly. “And the Vatican letters?”  
+
+“Gone.”  
+
+Lightning flashed. For a heartbeat, the Golden Throne’s shadow loomed behind him, eyeless and screaming.  
+
+**4:59 AM**  
+
+Viv found Vito on the Sentinel’s fire escape, his eye swelling shut. She tossed him a flask. “You look worse than my last blind date.”  
+
+He upended the bourbon. “Got your eyes.” The emeralds glinted in his palm, fluorescing faintly as dawn broke.  
+
+Her finger traced the jagged edge where he’d chipped one during the fight. “We’ll need these to expose the forgeries.”  
+
+“We’ll need an army to survive the week.”  
+
+Below them, newsboys hit the streets. **“MAYOR’S VATICAN DIRT!”**  
+
+Viv touched the scar on her collarbone—mirroring the throne’s claw marks. “He’ll retaliate.”  
+
+Vito pressed an emerald into her hand. Cold. Heavy. Alive. “Let him.”  
+
+Somewhere, a typewriter clacked.  
+
+CONTINUE
+**5:17 AM**  
+
+The first edition hit the streets as dawn smeared the sky. Viv stood at her apartment window, watching newsboys dart through the alleys like inkblots. Across her desk, the Golden Throne’s emeralds glowed under the UV torch, their light throwing distorted shadows that clawed at the peeling wallpaper.  
+
+A knock rattled the door. Vito leaned against the frame, his split lip pulling into a smirk. “Expecting company?”  
+
+She gestured to the half-packed suitcase on her bed. “Kensington’s thugs. You?”  
+
+“Better not be Girl Scouts.” He tossed a brown envelope onto the desk. FBI seals gleamed in the greenish light.  
+
+Viv thumbed through grainy surveillance photos—Kensington shaking hands with cardinals, crates marked *Vatican Holdings* being unloaded at the Met. “Where’d you get these?”  
+
+“Mailed to the Sentinel. Anonymous.” He picked up an emerald, rolling it across his knuckles. “Your father’s friends have long memories.”  
+
+The phone jangled. Viv let it ring three times before answering.  
+
+“Miss Sinclair.” Kensington’s voice oozed through the line. “You’ve made a spectacular mess.”  
+
+She gripped the receiver. “Your donors might disagree. The Archdiocese of New York is currently fielding calls from *The Times*.”  
+
+A pause. Ice clinked. “You think this ends with headlines? The throne is eternal. Its curse outlives us all.”  
+
+Across the room, Vito froze.  
+
+“Funny,” Viv said. “Your nephew mentioned the curse too. Right before he died begging.”  
+
+The line went dead.  
+
+**6:02 AM**  
+
+The safe house stank of gun oil and burnt coffee. Celeste Moreau paced her studio, bare feet slapping concrete. “You shouldn’t have come here. They’re watching.”  
+
+Viv unrolled blueprints on the paint-stained table. “Kensington’s moving the throne tonight. The real one.”  
+
+“Impossible. I burned the shipping schedule—”  
+
+“He’s using the City Hall Station tunnel.” Viv tapped a red-circled map. “Your forgeries went to Rome. The original’s heading to a private collector in Buenos Aires.”  
+
+Celeste’s brush clattered to the floor. “How do you stop a ghost?”  
+
+Vito emerged from the shadows, emeralds glowing in his palm. “With bigger ghosts.”  
+
+**7:19 PM**  
+
+The abandoned subway platform hummed with fungal light. Viv adjusted her gas mask, the bioluminescent spores glittering like alien stars. Somewhere ahead, minecart wheels screeched.  
+
+Vito checked his watch. “Right on time.”  
+
+The Golden Throne materialized in the tunnel’s mouth, its emerald eyes casting sickly beams. Guards flanked it, faces obscured by respirators.  
+
+Viv raised the UV torch. “Now.”  
+
+Celeste’s forged emeralds—strapped to a stray cat’s collar—darted across the tracks. The guards spun, firing wildly as the animal vanished into a side tunnel.  
+
+“Chamber’s clear,” Vito said, sliding his stiletto free.  
+
+They moved as one.  
+
+**8:45 PM**  
+
+The throne sat abandoned on the tracks, its gilt claws sunk into rotting ties. Viv approached slowly, her father’s pocket watch chiming in rhythm with her pulse.  
+
+“Joseph’s daughter.” Kensington stepped from the shadows, pearl-handled revolver steady. “You’ve inherited his stubbornness.”  
+
+Viv kept walking. “And his notes.”  
+
+“Notes burn.”  
+
+“But curses linger.” She stopped an arm’s length from the throne. “Ask Eddie.”  
+
+The gun cocked. “Sit.”  
+
+“You first.”  
+
+The blast shook the tunnel. Dust rained as the FBI swarmed from both ends. Kensington wheeled, firing at shapes in the haze. Viv lunged.  
+
+**9:03 PM**  
+
+The throne’s eyes glowed as Viv slotted the real emeralds into their sockets. Kensington thrashed beneath Vito’s knee, his shouts echoing through the vaulted chamber.  
+
+“It’s over, Harry.” Viv pressed the UV torch to his cheek. “The Vatican’s disavowing you. The FBI has the letters. All that’s left is the curse.”  
+
+The Mayor laughed, blood frothing his lips. “You think *you* control it?”  
+
+A rumble shook the tracks. The throne’s emeralds blazed, light refracting through the fungal haze into a thousand accusing fingers.  
+
+*Joseph Sinclair’s ghost stepped from the shadows.*  
+
+**9:17 PM**  
+
+Viv’s breath caught. The specter raised a translucent hand, pointing to the throne.  
+
+Kensington screamed.  
+
+They found his body at dawn, eyes stripped from their sockets, face frozen in a rictus grin. The throne sat pristine, emeralds gleaming.  
+
+At Viv’s apartment, Vito packed Rosa’s visa papers. “Sicily’s nice this time of year.”  
+
+She stared at the last headline: **“MAYOR’S CURSE CLAIMS FINAL VICTIM.”**  
+
+“It’s not over.”  
+
+He touched the scar on her collarbone—now a perfect match to the throne’s claws. “It never is.”  
+
+Somewhere, a train whistle blew.
