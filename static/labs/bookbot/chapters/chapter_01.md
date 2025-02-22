@@ -1,39 +1,67 @@
 ---
 chapter_number: 1
-created_at: 2025-02-21T00:52:03.981506
+created_at: 2025-02-22T00:08:03.163165
 ---
-# Chapter 1: The Heart of Willow Creek
+# Chapter 1: Empty Pedestral  
 
-The first rays of dawn stretched long, golden fingers across the gentle hills of Willow Creek, touching everything with a warm embrace. It was a period marked by transformation, the early 1960s, where whispers of change tugged at the seams of tradition. Yet here, nestled within the tranquil folds of the American Midwest, life moved at a pace that was as steady and sure as the seasons themselves.
+Smoke curled from my cigarette as I stared at the void where Byzantine emperors once sat. The Golden Throne’s pedestal hadn’t changed in three years—same black velvet shroud, same brass plaque tarnished by the breath of gawkers. I flicked ash onto the Kensington Museum’s marble floor. Let the docents tut.  
 
-From his vantage point on the weathered porch of the Thompson farmhouse, Rex surveyed his small piece of this world with keen amber eyes. The farmhouse, with its whitewashed walls and crooked chimney, stood resolute against the morning sky—a testament to resilience and simplicity. Around it, sprawling fields unfurled, dotted with wildflowers and lined with the rustic embrace of a picket fence. A gentle breeze carried the scent of dew-kissed earth, mingled with the faint aroma of smoke from countless fireplaces stirring to life.
+“Miss Sinclair.” Gus’s wheeze preceded him around the Corinthian column. His flashlight trembled in rheumatic hands. “We close in ten.”  
 
-Rex flicked his ears, ever-alert, tail weaving a gentle rhythm as he watched the sun slip higher, igniting the dew in a dance of twinkling diamonds. He was a dog of mixed breed, his sable and white coat sleek and shiny, the result of both the gentle hands that groomed him and the adventurous spirit that led him through farmland and forest alike.
+I didn’t turn. The dagger of his knowledge—that he’d been on duty that night too—pressed between my shoulder blades. “You ever hear anything else? About the theft?”  
 
-Rex's morning began as it often did, in the comforting silence shared with Mr. Thompson. The wooden planks creaked under the weight of familiarity as the old farmer stood, cup of steaming coffee in hand, gazing out over his domain. A tall man of few words, Mr. Thompson's face bore the gentle wear of years well-lived, with silver strands reflecting the dawn like halos.
+His throat rattled. “Administration said not to talk.”  
 
-Their routine was a sacred dance, and though the steps were simple, they spoke volumes of companionship. Rex would position himself at Mr. Thompson's side, a comforting presence in the quiet conversation of shared glances and companionable sighs. This bond, forged on the anvil of countless sunrises, was the anchor that grounded Rex’s world.
+“But you want to.” I caught his reflection in the glass case behind me. The dumb guilt in his bloodshot eyes.  
 
-With a gesture of farewell that was more felt than seen, Mr. Thompson shuffled towards the barn, his steps trailing purpose and habit. Rex bounded forward, paws skimming across the grass, heart light with the promise of the day's adventures. His path took him first to a particularly cozy spot by the barn, where Whiskers, the resident barn cat, lay stretched in the sunlight.
+He shuffled closer, reeking of Ben-Gay and rye. “Basement door’s been…whispering. Last Tuesday.” A cough shook his hunched frame. “Like someone dragging chains.”  
 
-Whiskers opened one eye, a conspiratorial gleam flashing in his green gaze. "Mornin’, Rex," he purred, a lazy drawl wrapped around his words. "Off to chase more tails and conspiracies?"
+My pulse leapt. *Uncle Arthur’s ghost,* the superstitious part of me whispered. The part that still saw his bloated face in the East River whenever I closed my eyes.  
 
-Rex tilted his head, a characteristic gesture of curiosity. "Maybe just the morning air today, Whiskers. It seems extra sweet, don’t you think?"
+I crushed the cigarette under my oxford. “Tell me where.”  
 
-The cat flicked an ear, a signal of grudging agreement. Their friendship was one woven through playful bickering and shared silence, as natural a part of the farm as the sunlight and shadows.
+The grand staircase creaked. Gus melted into shadows as a pair of interns descended, their laughter too bright for the tomb-quiet halls.  
 
-As Rex padded away, the allure of the farmhouse yielded to the draw of town. Mr. Thompson, his morning chores behind him, slipped into his cherished old truck, its engine humming a tune only the observant would call music. There, Rex hopped into the back, ears flapping with the breeze as they rumbled down the dirt path and onto the cobblestone streets of Willow Creek.
+“Miss Sinclair!” Fletcher’s voice carried the edge of a man who’d shouted down riots. “My office. Now.”  
 
-The heart of the town was a tapestry of nostalgia, threaded with the hues of life and community. Main Street buzzed with the early stirrings of trade and chatter. Brick buildings squatted comfortably along the road, each with its stories whispered in creaking floors and chipping paint. It was here, beneath this canopy of heritage and hope, that Mr. Thompson parked the truck in front of Mary Jenkins’ bakery.
+———  
 
-The bakery was a confection of aroma and warmth. The sweet, bread-scented air swirled like an embrace, and Mary herself was waiting at the counter, a figure of motherhood wrapped in a flour-dust apron. Her laughter was as robust as the loaves she kneaded with such care.
+The *New York Star* newsroom swam in honeyed light and sweat. Teletype machines clattered like vengeful spirits. Fletcher stood at his cracked leather desk, ink bleeding through the society page draft in his fist.  
 
-"Morning, John," she called, her voice filling the room like sunshine. "The usual?"
+“Beaumont’s gala.” He thrust the paper at me. “Tonight. Whitefields Estate.”  
 
-Mr. Thompson nodded, offering a smile that crinkled the corners of his eyes. Rex settled near the door, observing the harmonious flow of townsfolk gathering, their greetings a symphony of familiarity.
+I leaned against the doorframe. “You’re giving me glitter and hors d'oeuvres?”  
 
-As Mr. Thompson received his fresh-baked goods, they exchanged a few words on the rumors sweeping town—new policies and unfamiliar influences that stirred both excitement and unease among the neighbors. Though spoken softly, each word carried the weight of an era teetering on the brink of change.
+“Charles Beaumont’s importing ‘art benefactors’ from Marseille.” His index finger stabbed the guest list—a who’s who of bankers and bootleggers. “Word is the Moretti crew’s laundering through his gallery.”  
 
-Yet, for Rex and Mr. Thompson, wrapped in the comforting cotton of routine, the day unfolded with the ease of a well-loved story. They returned to the farmhouse, the sun casting long shadows as it dipped towards the horizon. Another day in Willow Creek drew to a close, leaving echoes of warmth and expectation hanging in the cool evening air.
+The name hit like a gut punch. *Moretti.* The same family who’d paid a certain security guard to look the other way in ’26. The guard whose body they pulled from the river six days later.  
 
-For now, the heart of Willow Creek beat strong, its rhythm a gentle promise of unity, of friendships forged in shared moments and of change embraced with open arms. Rex settled in for the night, his dreams chasing after whispers of the adventures that tomorrow would bring.
+“I need sources, not society drivel.”  
+
+Fletcher’s laugh smelled of bourbon and bronchitis. “Kid, drivel pays your rent.” He tossed me a press pass. “Be there by eight. And Viv?” His gaze softened a fracture. “Don’t pick fights with waiters.”  
+
+———  
+
+My apartment greeted me with mildew and silence. I shrugged off my suspenders, the cotton sticking to my skin. The icebox yielded half a grapefruit and a bottle of Bathtub Ring gin. I drank straight from the neck.  
+
+Three years. Three years since the headlines crucified Arthur Sinclair as the Kensington Mole. Since I’d found the farewell note hidden in my copy of *The Great Gatsby*—*They made me do it, Vivvie. Forgive me.*  
+
+The Remington waited on the desk, its keys gleaming like rotten teeth. I fed in a fresh sheet.  
+
+The carriage jerked.  
+
+A slip of onionskin paper fluttered to the floor.  
+
+Ice flooded my veins.  
+
+*DON’T LOOK*  
+
+The typed words blurred. I sank into the armchair, springs biting my thighs. My name curled at the bottom in familiar, spidery cursive—Arthur’s handwriting.  
+
+But that wasn’t possible.  
+
+The gin rose bitter in my throat as I angled the page toward the light. A single phrase glowed beneath his signature, written in lemon juice—his old trick for passing me notes during church sermons.  
+
+*The Throne isn’t lost—it’s currency.*  
+
+Outside, the El train screamed.

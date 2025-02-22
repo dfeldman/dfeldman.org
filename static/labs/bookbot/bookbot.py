@@ -719,6 +719,61 @@ class BookBot:
             logger.error(f"Error writing outline: {e}")
             raise BookBotError(f"Failed to write outline: {e}")
 
+    def _get_previous_chapter_content(self, chapter_num: int) -> Optional[str]:
+        """Get content from the previous chapter if it exists"""
+        if chapter_num <= 1:
+            return None
+            
+        prev_chapter = CHAPTERS_DIR / f"chapter_{chapter_num-1:02d}.md"
+        if not prev_chapter.exists():
+            return None
+            
+        try:
+            return TextFile(prev_chapter).content
+        except Exception as e:
+            logger.warning(f"Could not read previous chapter: {e}")
+            return None
+
+    def _truncate_to_last_n_words(self, text: str, n: int = 5000) -> str:
+        """
+        Truncate text to last N words, preserving complete sentences.
+        
+        Args:
+            text: The text to truncate
+            n: Maximum number of words to keep (default 5000)
+            
+        Returns:
+            Truncated text ending with complete sentences
+        """
+        # Split into sentences (handling common abbreviations)
+        import re
+        
+        # Pattern matches sentence endings while preserving common abbreviations
+        sent_pattern = r'(?<![A-Z][a-z]\.)(?<=\.|\?|\!)\s+'
+        sentences = re.split(sent_pattern, text)
+        
+        # Count words in each sentence
+        sentence_word_counts = [len(s.split()) for s in sentences]
+        
+        # Find how many sentences we need from the end to get close to N words
+        total_words = 0
+        sentences_needed = 0
+        for count in reversed(sentence_word_counts):
+            if total_words + count > n:
+                break
+            total_words += count
+            sentences_needed += 1
+        
+        # Get the required sentences from the end
+        final_sentences = sentences[-sentences_needed:] if sentences_needed > 0 else [sentences[-1]]
+        
+        # Join sentences back together
+        result = ' '.join(final_sentences).strip()
+        
+        logger.info(f"Truncated previous chapter from {sum(sentence_word_counts)} to {len(result.split())} words")
+        
+        return result
+
     def write_chapter(self, chapter_num: int):
         """Write a new chapter"""
         try:
@@ -726,13 +781,18 @@ class BookBot:
             outline = TextFile(COMMON_DIR / "outline.md")
             setting = TextFile(COMMON_DIR / "setting.md")
             characters = TextFile(COMMON_DIR / "characters.md")
+                
+            prev_chapter_content = self._get_previous_chapter_content(chapter_num)
+            if prev_chapter_content:
+                prev_chapter_content = self._truncate_to_last_n_words(prev_chapter_content)
             
             # Prepare variables for template
             variables = {
                 "chapter_number": chapter_num,
                 "outline": outline.content,
                 "setting": setting.content,
-                "characters": characters.content
+                "characters": characters.content,
+                "previous_chapter": prev_chapter_content
             }
             
             # Generate chapter content

@@ -14,4 +14,7 @@ Setting:
 Characters:
 {{ characters }}
 
+Previous chapter (to help maintain narrative consistency, may be truncated):
+{{ previous_chapter }}
+
 Write the chapter in engaging prose. End with "THE END".

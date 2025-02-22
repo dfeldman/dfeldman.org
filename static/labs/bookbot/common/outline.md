@@ -18,6 +18,7 @@ created_at: 2025-02-22T00:01:49.845758
 - Editor Fletcher assigns her to cover Charles Beaumont’s upcoming gala, suspecting ties to recent underworld activity.  
 
 **Key Introductions:**  
+- **Vivian**: She's first person, but we need to show the reader who she is
 - **Charles Beaumont**: Mentioned as the gala’s host (found dead in Ch. 7).  
 - **Fletcher Johnson**: Vivian’s gruff editor with ink-stained fingers.  
 - **Museum Night Guard**: Gus, a wheezing retiree, hints at “strange noises” in the basement last week.  
