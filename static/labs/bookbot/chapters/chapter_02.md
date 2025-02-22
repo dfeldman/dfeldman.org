@@ -1,39 +1,69 @@
 ---
 chapter_number: 2
-created_at: 2025-02-21T00:53:20.914120
+created_at: 2025-02-22T00:11:54.891791
 ---
-# Chapter 2: Whispers of Change
+# Chapter 2: Whiskey and Razorblades  
 
-Morning dew glistened on the blades of grass lining Willow Creek’s main street, painting a serene yet vibrant picture. The sun peeked over the horizon, casting a gentle light that warmed the cobblestone roads and washed over the red-brick buildings. The small town was slowly waking up, as shopkeepers began their morning routines, lifting awnings and sweeping doorsteps.
+The Oasis stank of bad decisions. I ducked through the butcher shop’s hanging beef carcasses, their bloody hooks glinting like accusation fingers. A false wall groaned open behind the liverwurst display. Blue smoke slapped me first—cheap cigars and the sweet rot of bootleg gin. Then came the sawdust tang of spilled blood.  
 
-Rex, with his sleek coat of sable and white, trotted alongside Mr. Thompson. His nose hovered just above the ground, capturing the kaleidoscope of scents mingling in the crisp air. As they approached the diner, Rex’s ears perked up—a gateway to the heartbeats of the town.
+Rex Donovan sat in the back booth, nursing rye from a jar labeled *Pig’s Feet*. His shoulders swallowed the space, a mountain gone to seed. He didn’t look up as I slid in. “You’re late.”  
 
-Inside the diner, the atmosphere buzzed with energies both new and familiar. The aroma of frying bacon mixed with the earthy scent of freshly brewed coffee, wrapping around the patrons in an intimate embrace. Rex positioned himself by the door, his amber eyes alert, while Mr. Thompson settled into his usual seat. It was a modest booth near the window, where sunlight streamed in, painting dappled patterns on the faded upholstery.
+“And you’re a cliché.” I snatched his drink, the liquor burning like a struck match. “What’s so urgent a girl has to skip her beauty sleep?”  
 
-"Morning, Joe," called Sheriff Carter from the counter, his voice a comforting rumble. He glanced toward Mr. Thompson, offering a nod, the kind exchanged by men who had shared many a morning like this one, steeped in quiet solidarity.
+His thumb jabbed toward the bar. Sammy Delgado polished glasses with a rag that’d never seen soap. The serpent tattoo on his neck rippled. “Your new boyfriend’s been nosing around all week,” Rex grunted. “Asking who runs the art beat at the *Star*.”  
 
-"Morning, Sheriff," Mr. Thompson replied, lifting his steaming cup in a casual salute. 
+**“Who** asked?”  
 
-Rex's attention, however, was captured by a hush of conversation rising from the neighboring table. A cluster of townsfolk leaned in, voices threaded with curiosity and trepidation.
+Rex’s flask sneaked from his coat. I caught the glint of nickel plating. “Some greaseball in a sharkskin suit. Enzo Moretti’s favorite lapdog.” He tossed a matchbook onto the table. Waterfront address scribbled on the back. “Delancey Street. It’s a knife magnet.”  
 
-"Did you hear about the new policy they're proposing?" Miss Eleanor, the town librarian, asked, her voice a melodic whisper that carried across the room.
+I pocketed the matches. “Come with me. Split the scoop.”  
 
-"Indeed, it's all anyone talks about in town. Change is coming, whether we want it or not," grunted Mr. Hansen, the barber, twisting his waxed mustache with a distracted hand.
+“I don’t file reports for Fletcher’s fishwrap.” His laugh rattled loose change. “You been tailed?”  
 
-Rex felt the ripple of unease spreading through the room, the conversations blending into a mutable tapestry of concern. He nudged Mr. Thompson’s leg, as if to prompt a response, but his owner merely patted Rex absentmindedly, his thoughts lingering on the whispers of progress and uncertainty.
+“Only by ghosts.”  
 
-Stepping outside, Rex spotted Whiskers slinking through the shadows cast by the morning sun. The cat's green eyes glinted with mischief, an unspoken invitation for adventure. Rex bounded toward him, his paws kicking up small clouds of dust.
+He leaned in. Whiskey and Sen-Sen overwhelmed the speakeasy stench. “Your uncle wasn’t no thief, Viv. But digging up that coffin gets you two things—a bullet or a body bag.”  
 
-"Ready to see what trouble we can get into today?" Whiskers chirped, stretching languidly before darting toward the inviting expanse of fields just beyond the town’s edge.
+The door to the butcher shop creaked open. Cold air razored through the haze. Rex stiffened. “Back exit. Now.”  
 
-Together, they raced through the tall grass, their path a joyous blur of green and gold. In their playful exploration, the world seemed to stand still, a vibrant canvas full of potential that defied the backdrop of change hinted at back in the diner.
+———  
 
-As they rested under the shade of an old oak tree, Rex watched the clouds drift lazily across the sky, his thoughts wandering back to the snippets of conversation he had absorbed. Beneath his surface, a gentle curiosity stirred—a desire to understand what these changes meant for his home and the human world entwined with it.
+Rain needled my neck as I stumbled into the alley. Garbage festered in puddles. My fingers found the Derringer in my garter just as a voice purred through the downpour. “Running from shadows, doll?”  
 
-Back at the farmhouse, Mr. Thompson too pondered the murmurs of change that laced through the town. The bakery loomed large in his mind, not merely as a place of sweet confectionary comforts but as a symbol of the small transformations sweeping through Willow Creek. Mary Jenkins, with her hearty laughter and modern ideas, embodied much of what was new.
+Vito Romano leaned against a brick wall, flicking a silver dollar across his knuckles. His suit clung too well, sharp enough to draw blood. I stepped back. “Who’s paying you to lurk in the dark? Moretti?”  
 
-This morning, her words echoed in his mind, "We've got to find a balance, Joe. Tradition's important, but so is moving forward."
+The coin froze midair. “You say his name like it’s a curse. Could be we’re on the same side.”  
 
-Rex returned to the farmhouse with Whiskers, their spirits lifted by the boundless imagination of the fields. Observing Mr. Thompson gazing thoughtfully toward the town, Rex sensed an undercurrent of tension tempered by hope, mirrored by the flickers of change drifting through the cobblestone streets of Willow Creek.
+“Do thieves have sides now?”  
 
-In the stillness of the afternoon, amid the murmurs of nature and distant echoes from town, both man and dog looked toward a future suspended between the comforting embrace of the familiar and the tantalizing brink of something new.
+His laugh hummed against wet skin. “We’ve got better wardrobes than cops.” He pushed off the wall. Rain sluiced down his jaw. My throat tightened.  
+
+“Let’s trade.” He blocked my path. Heat radiated through his soaked shirt. “You tell me why Kensington’s pet project died with your uncle. I tell you why his corpse floats in every speakeasy confession.”  
+
+I spat at his wingtip. “Only corpse here’s yours if you don’t move.”  
+
+He reached for my collar. Calluses snagged the silk. “You’ve got—” His thumb brushed my pulse point. “Lint.”  
+
+The slap echoed. His head snapped sideways, but the grin stayed. “Attagirl.”  
+
+We stood chest to chest, breath tangling. His sandalwood cologne warred with the alley’s decay. Thunder cannonballed overhead. He pressed the silver dollar into my palm. “For the subway, *principessa*. Looks like you’ll need it.”  
+
+———  
+
+My drenched clothes clung like a second skin. Rex’s matchbook dissolved in my hand as I stared at the boarded-up tenement. The Delancey Street address bled ink. Above me, a gargoyle vomited rainwater.  
+
+Inside my apartment, I peeled off my stockings. The telegram slithered from my coat pocket.  
+
+*Dear Miss Sinclair—*  
+*Urban Renewal Comm. records enclosed. Follow the tracks.*  
+*—A Friend*  
+
+The ledger page fluttered to the floor—seven grand diverted from “Public Works” to “Art Preservation LLC” last month. Serial numbers from Kensington’s vault.  
+
+I poured a bath of gin. Drank half. The other half stung my split knuckles. Through the steam, Vito’s smirk haunted the mirror.  
+
+*Currency.*  
+
+Arthur’s lemon-juice ghost whispered as I sank beneath the surface.  
+
+**
