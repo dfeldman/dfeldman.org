@@ -15,6 +15,8 @@ from pathlib import Path
 import markdown
 from rich.console import Console
 from rich.progress import Progress, SpinnerColumn, TextColumn
+import yaml
+import re
 
 # Set up rich console for better output
 console = Console()
@@ -39,12 +41,14 @@ COMMON_DIR = Path("common")
 CHAPTERS_DIR = Path("chapters")
 PROMPTS_DIR = Path("prompts")
 REVIEWS_DIR = Path("reviews")
+FRONTMATTER_DIR = Path("frontmatter")
+BACKMATTER_DIR = Path("frontmatter")
 
 # Default configuration
 DEFAULT_CONFIG = {
     "default_llm": "gpt-4o",
     "max_tokens": 2000,
-    "temperature": 0.7,
+    "temperature": 0.8,
     "git_enabled": True,
     "auto_preview": True,
     "backup_enabled": True,
@@ -153,6 +157,22 @@ Draft:
 End your review with "THE END"."""
 }
 
+DEFAULT_TITLE_FILE="""
+---
+title: Your Book Title
+author: Your Name
+language: en-US
+rights: All rights reserved
+publisher: Optional Publisher Name
+date: 2025
+subtitle: Optional Subtitle
+---
+
+# Your Book Title
+
+By Your Name
+"""
+
 @dataclass
 class LLMConfig:
     """Configuration for an LLM model"""
@@ -167,6 +187,7 @@ class LLMConfig:
 
 # Available LLMs and their configurations
 AVAILABLE_LLMS = [
+    LLMConfig("deepseek-r1", "deepseek", 15.0),
     LLMConfig("gpt-4o", "openai", 15.0),
     LLMConfig("claude-2.1", "anthropic", 8.0),
     LLMConfig("gpt-3.5-turbo", "openai", 0.5)
@@ -390,11 +411,12 @@ class BookBot:
         self.tokenizer = tiktoken.encoding_for_model("gpt-4")
         
         # Ensure required directories exist
-        for directory in [COMMON_DIR, CHAPTERS_DIR, PROMPTS_DIR, REVIEWS_DIR]:
+        for directory in [COMMON_DIR, CHAPTERS_DIR, PROMPTS_DIR, REVIEWS_DIR, FRONTMATTER_DIR, BACKMATTER_DIR, FINAL_DIR]:
             directory.mkdir(parents=True, exist_ok=True)
             
         # Initialize prompt templates
         self._init_prompts()
+        self._init_title()
     
     def _init_prompts(self):
         """Initialize default prompts if they don't exist"""
@@ -403,6 +425,12 @@ class BookBot:
             if not prompt_file.exists():
                 prompt_file.write_text(content)
     
+    def _init_title(self):
+        """Initialize default title file if it doesn't exist"""
+        title_file = FRONTMATTER_DIR / "title.md"
+        if not title_file.exists():
+            title_file.write_text(DEFAULT_TITLE_FILE)
+
     def _get_llm_config(self, llm_name: str) -> LLMConfig:
         """Get LLM configuration by name"""
         for llm in AVAILABLE_LLMS:
@@ -492,6 +520,9 @@ class BookBot:
                         raise LLMError("No choices in API response", response)
                     
                     content = result["choices"][0]["message"]["content"]
+                    # Remove think tags. These are still counted as tokens by the server though.
+                    content = re.sub(r'<think>.*?</think>\n?', '', raw_content, flags=re.DOTALL)
+
                     tokens_in = result["usage"]["prompt_tokens"]
                     tokens_out = result["usage"]["completion_tokens"]
                     
@@ -839,7 +870,257 @@ class BookBot:
         except Exception as e:
             logger.error(f"Error generating preview: {e}")
             console.print(f"[red]![/red] Failed to generate preview: {e}")
-    
+
+    def _get_book_metadata(self) -> dict:
+        """Get book metadata from title.md if it exists"""
+        metadata = {
+            "title": "Untitled",
+            "author": "Anonymous",
+            "language": "en-US",
+            "rights": "All rights reserved",
+            "date": datetime.now().strftime("%Y")
+        }
+        
+        title_file = FINAL_DIR / "front_matter" / "title.md"
+        if title_file.exists():
+            content = title_file.read_text(encoding='utf-8')
+            
+            # Parse YAML metadata if present
+            if content.startswith('---'):
+                try:
+                    import yaml
+                    _, yaml_text, _ = content.split('---', 2)
+                    file_metadata = yaml.safe_load(yaml_text)
+                    if isinstance(file_metadata, dict):
+                        metadata.update(file_metadata)
+                except Exception as e:
+                    logger.warning(f"Error parsing title.md metadata: {e}")
+
+        return metadata
+            
+        
+    def _create_pandoc_defaults(self, output_format: str, cover_image: Optional[Path] = None) -> Path:
+        if output_format not in ['epub', 'pdf']:
+            raise ValueError(f"Unsupported output format: {output_format}")
+            
+        defaults_dir = Path(".pandoc")
+        defaults_dir.mkdir(exist_ok=True)
+        
+        defaults_file = defaults_dir / f"{output_format}-defaults.yaml"
+        
+        common_settings = {
+            "metadata": {
+                "title": self.config.get("book_title", "Untitled"),
+                "author": self.config.get("author", "Anonymous"),
+                "language": self.config.get("language", "en-US"),
+                "rights": self.config.get("rights", "All rights reserved")
+            },
+            "top-level-division": "chapter",
+            #"number-sections": True, NOt needed
+        }
+
+        
+        if output_format == 'epub':
+            settings = {
+                **common_settings,
+                "toc": True,
+                "toc-depth": 2,
+            }
+            if cover_image:
+                settings["epub-cover-image"] = str(cover_image)
+        else:  # PDF
+            settings = {
+                **common_settings,
+                "pdf-engine": "xelatex",
+                # Note: PDF cover is handled via LaTeX in header-includes
+                "variables": {
+                    "papersize": "6in:9in",
+                    #"mainfont": "Garamond",
+                    "mainfont": "Times New Roman",
+                    "fontsize": "11pt",
+                    "geometry": [
+                        "paperwidth=6in",
+                        "paperheight=9in",
+                        "margin=1in",
+                        "headheight=14pt"
+                    ],
+                    "linkcolor": "black",
+                    "header-includes": [
+                        "\\usepackage{fancyhdr}",
+                        "\\usepackage{graphicx}",
+                        "\\pagestyle{fancy}",
+                        "\\fancyhead{}",
+                        "\\fancyhead[CO]{\\leftmark}",
+                        "\\fancyhead[CE]{\\rightmark}",
+                        "\\fancyfoot{}",
+                        "\\fancyfoot[C]{\\thepage}"
+                    ]
+                }
+            }
+        
+        try:
+            import yaml
+            with defaults_file.open('w', encoding='utf-8') as f:
+                yaml.dump(settings, f, sort_keys=False, allow_unicode=True)
+            return defaults_file
+        except Exception as e:
+            logger.error(f"Error creating pandoc defaults file: {e}")
+            raise BookBotError(f"Failed to create pandoc defaults: {e}")
+
+    def _merge_markdown_files(self) -> Path:
+        """Merge all markdown files into a single file in the correct order"""
+        try:
+            merged_content = []
+            
+            # Front matter (if exists)
+            front_matter_dir = FINAL_DIR / "front_matter"
+            if front_matter_dir.exists():
+                for file in sorted(front_matter_dir.glob("*.md")):
+                    merged_content.append(file.read_text(encoding='utf-8'))
+            
+            # Add main content
+            chapters = sorted(
+                [p for p in FINAL_DIR.glob("chapter_*.md")],
+                key=lambda p: int(p.stem.split('_')[1])
+            )
+            
+            for chapter in chapters:
+                # Add chapter marker for proper pandoc processing
+                chapter_content = "" # for numbering chapters f"\n# {chapter.stem.replace('_', ' ').title()}\n\n"
+                chapter_content += chapter.read_text(encoding='utf-8')
+                merged_content.append(chapter_content)
+            
+            # Back matter (if exists)
+            back_matter_dir = FINAL_DIR / "back_matter"
+            if back_matter_dir.exists():
+                for file in sorted(back_matter_dir.glob("*.md")):
+                    merged_content.append(file.read_text(encoding='utf-8'))
+            
+            # Write merged content
+            merged_file = FINAL_DIR / "book.md"
+            merged_file.write_text("\n\n".join(merged_content), encoding='utf-8')
+            return merged_file
+            
+        except Exception as e:
+            logger.error(f"Error merging markdown files: {e}")
+            raise BookBotError(f"Failed to merge markdown files: {e}")
+
+    def _run_pandoc(self, input_file: Path, output_format: str, cover_image: Optional[Path] = None) -> Path:
+        """Run pandoc to convert merged markdown to specified format"""
+        try:
+            import subprocess
+            from shutil import which
+            
+            # Check if pandoc is installed
+            if not which('pandoc'):
+                raise BookBotError("Pandoc is not installed")
+                
+            # Create defaults file
+            defaults_file = self._create_pandoc_defaults(output_format, cover_image)
+            
+            # For PDF, we need to create a temporary LaTeX template if there's a cover
+            if output_format == 'pdf' and cover_image:
+                cover_tex = self._create_pdf_cover_template(cover_image)
+                input_file = self._prepend_cover_to_content(cover_tex, input_file)
+            
+            # Set up output file
+            output_file = FINAL_DIR / f"book.{output_format}"
+            
+            # Build pandoc command
+            cmd = [
+                "pandoc",
+                "--defaults", str(defaults_file),
+                "-o", str(output_file),
+                str(input_file)
+            ]
+            
+            # Run pandoc
+            with Progress(
+                SpinnerColumn(),
+                TextColumn("[progress.description]{task.description}"),
+                console=console
+            ) as progress:
+                task = progress.add_task(
+                    f"Generating {output_format.upper()}...",
+                    total=None
+                )
+                
+                result = subprocess.run(
+                    cmd,
+                    capture_output=True,
+                    text=True
+                )
+                
+                if result.returncode != 0:
+                    raise BookBotError(
+                        f"Pandoc conversion failed: {result.stderr}"
+                    )
+                
+            return output_file
+            
+        except subprocess.SubprocessError as e:
+            logger.error(f"Pandoc conversion failed: {e}")
+            raise BookBotError(f"Failed to run pandoc: {e}")
+        except Exception as e:
+            logger.error(f"Error during pandoc conversion: {e}")
+            raise BookBotError(f"Failed to convert file: {e}")
+
+    def _create_pdf_cover_template(self, cover_image: Path) -> Path:
+        """Create a LaTeX template for the PDF cover page"""
+        try:
+            cover_template = FINAL_DIR / "cover.tex"
+            template_content = f"""\\begin{{titlepage}}
+    \\thispagestyle{{empty}}
+    \\includegraphics[width=\\textwidth,height=\\textheight,keepaspectratio]{{"{cover_image}"}}
+    \\end{{titlepage}}
+    """
+            cover_template.write_text(template_content)
+            return cover_template
+        except Exception as e:
+            logger.error(f"Error creating PDF cover template: {e}")
+            raise BookBotError(f"Failed to create PDF cover template: {e}")
+
+    def _prepend_cover_to_content(self, cover_tex: Path, content_file: Path) -> Path:
+        """Combine cover LaTeX with main content"""
+        try:
+            combined_file = FINAL_DIR / "book_with_cover.md"
+            cover_content = cover_tex.read_text()
+            main_content = content_file.read_text()
+            combined_file.write_text(f"{cover_content}\n\n{main_content}")
+            return combined_file
+        except Exception as e:
+            logger.error(f"Error combining cover with content: {e}")
+            raise BookBotError(f"Failed to combine cover with content: {e}")
+
+    def generate_epub(self, cover_image: Optional[Path] = None):
+        """Generate EPUB version of the book"""
+        try:
+            if cover_image and not cover_image.exists():
+                raise BookBotError(f"Cover image not found: {cover_image}")
+                
+            merged_file = self._merge_markdown_files()
+            epub_file = self._run_pandoc(merged_file, 'epub', cover_image)
+            console.print(f"\n[green]✓[/green] EPUB generated: {epub_file}")
+        except Exception as e:
+            logger.error(f"Error generating EPUB: {e}")
+            console.print(f"[red]![/red] Failed to generate EPUB: {e}")
+            raise
+
+    def generate_pdf(self, cover_image: Optional[Path] = None):
+        """Generate PDF version of the book"""
+        try:
+            if cover_image and not cover_image.exists():
+                raise BookBotError(f"Cover image not found: {cover_image}")
+                
+            merged_file = self._merge_markdown_files()
+            pdf_file = self._run_pandoc(merged_file, 'pdf', cover_image)
+            console.print(f"\n[green]✓[/green] PDF generated: {pdf_file}")
+        except Exception as e:
+            logger.error(f"Error generating PDF: {e}")
+            console.print(f"[red]![/red] Failed to generate PDF: {e}")
+            raise
+
+    # Modified finalize method
     def finalize(self):
         """Create final versions of all content"""
         try:
@@ -858,12 +1139,22 @@ class BookBot:
                 final_path = FINAL_DIR / common_path.name
                 final_path.write_text(common_path.read_text())
             
+            # Check for cover image
+            cover_image = None
+            if (FINAL_DIR / "cover.jpg").exists():
+                cover_image = FINAL_DIR / "cover.jpg"
+            elif (FINAL_DIR / "cover.png").exists():
+                cover_image = FINAL_DIR / "cover.png"
+                
+            # Generate EPUB and PDF versions
+            self.generate_epub(cover_image)
+            self.generate_pdf(cover_image)
+            
             console.print(f"\n[green]✓[/green] Final version created in {FINAL_DIR}")
             
         except Exception as e:
             logger.error(f"Error creating final version: {e}")
             raise BookBotError(f"Failed to create final version: {e}")
-        
 
 
 def main():

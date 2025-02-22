@@ -5,6 +5,9 @@ Based on the initial book description below, create a detailed description of th
 - Important background information
 - Unique elements of the world
 - Atmosphere and mood
+Include enough background to describe each place in the story consistently. For example don't just say 
+"the street in front of their house." Include the condition of the street, the name of the street, 
+landmarks, the names of the neighbors - enough rich detail to write a story set on the street. 
 
 Initial Description:
 {{ initial }}
