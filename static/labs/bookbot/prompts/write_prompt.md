@@ -29,3 +29,8 @@ want to keep going (no bold, just the word CONTINUE on its own line).
 CONTINUE must be the last text in your output in order to get a chance to continue.
 End with "THE END" only when the chapter is absolutely finished and complete. Try to make it roughly the
 number of words requested in the outline. I'll tell you how many words you've used so far.
+DO NOT go further in the plot than chapter {{ chapter_number }} according to the outline! When you've 
+hit the required events in the outline, the chapter is complete. 
+Each chapter is written separately, so this will result in duplicating plot points.
+While you should be aware of the time each sub-section of the chapter takes place in, you do not
+have to say it explicitly.
