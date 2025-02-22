@@ -1423,3 +1423,14 @@ The icebox hummed like a dying man’s bre...
 2025-02-22 13:27:31,878 - BookBot - INFO - New content chunk of length 4899 bytes, 1881 tokens, 799 words (excluding think)
 2025-02-22 13:27:31,878 - BookBot - INFO - Found THE END marker
 2025-02-22 13:27:31,878 - BookBot - INFO - Final content length: 4890 bytes
+2025-02-22 13:27:33,257 - BookBot - INFO - Successfully committed changes: Generated chapter 1
+2025-02-22 13:32:50,411 - BookBot - INFO - Making LLM call (continuation 1)
+2025-02-22 13:32:50,412 - BookBot - INFO - Sending request to https://openrouter.ai/api/v1/chat/completions, attempt 1
+2025-02-22 13:34:12,215 - BookBot - INFO - Received response: # Chapter 1: Ghosts of Gilt  
+**June 3, 1929 | 8:00 AM**  
+
+The icebox shuddered like a dying man as...
+2025-02-22 13:34:12,218 - BookBot - INFO - Tokens in: 20413, Tokens out: 2037
+2025-02-22 13:34:12,220 - BookBot - INFO - New content chunk of length 5179 bytes, 2037 tokens, 826 words (excluding think)
+2025-02-22 13:34:12,220 - BookBot - INFO - Found THE END marker
+2025-02-22 13:34:12,220 - BookBot - INFO - Final content length: 5169 bytes

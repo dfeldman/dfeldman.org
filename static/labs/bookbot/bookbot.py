@@ -588,11 +588,13 @@ class BookBot:
             # Not done - add to message history and continue
             messages.append({"role": "assistant", "content": content})
             messages.append({"role": "user", "content": 
-                             f"You have written {wordcount} so far. Continue writing the next chunk."+
+                             f"You have written {wordcount} words so far. Continue writing the next chunk."+
                              """When you're done with this chunk, write CONTINUE if you'd like to keep writing,
                              or THE END if this chunk concludes the section."""})
             if content.endswith("CONTINUE\n"): # Should probably be fuzzier here
                 content = content[:-len("CONTINUE\n")].strip()
+            if content.endswith("**CONTINUE**\n"):
+                content = content[:-len("**CONTINUE**\n")].strip()
             logger.info("Content chunk does not end with THE END - continuing...")
             
         # If we get here, we hit the max continuations
