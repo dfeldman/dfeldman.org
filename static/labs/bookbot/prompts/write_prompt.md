@@ -24,5 +24,6 @@ Plot hole review:
 
 Write the chapter now. Write CONTINUE when you are done with a chunk and 
 want to keep going (no bold, just the word CONTINUE on its own line). 
-End with "THE END" when the chapter is complete. Try to make it roughly the
+CONTINUE must be the last text in your output in order to get a chance to continue.
+End with "THE END" only when the chapter is absolutely finished and complete. Try to make it roughly the
 number of words requested in the outline. I'll tell you how many words you've used so far.

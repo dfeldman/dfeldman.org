@@ -1,101 +1,131 @@
 ---
 chapter_number: 2
-created_at: 2025-02-22T13:59:41.729505
+created_at: 2025-02-22T14:09:51.459090
 ---
 # Chapter 2: Whispers in the Rain  
 
-The Sapphire Rabbit’s jazz saxophone moaned through cracks in the butcher shop wall. Vivian Sinclair adjusted her cloche hat, its damp brim sagging over one eye. Rain sluiced down Leroy Street, turning the speakeasy’s entrance into a river of gutter filth and bootleg gin. She knocked—three sharp raps—and tasted bile when the slit opened.  
+The Sapphire Rabbit’s blue gas lamps cast shadows like liquid night. Viv pressed her spine against the bar’s splintered edge, Sammy Delgado’s warning buzzing in her skull: *“You got ten minutes before the fuzz rolls in.”* A trumpeter’s mournful wail drowned the clink of ice in bootleg bourbon. She watched the door, her switchblade a cold kiss against her thigh.  
 
-“Sinclair.” Sammy Delgado’s spiderweb neck tattoo rippled as he smirked. “You here to drink or die?”  
+“He’s late.”  
 
-“Which’s cheaper?”  
+Sammy polished a highball glass, spiderweb tattoo stretching as he nodded toward the alley exit. “Malone’s a rat sniffing two cheeses. Wants your cash *and* Kensington’s.”  
 
-He laughed, ushering her into blue-tinged smoke. The bar seethed with pinstripes and perfume, the air thick with the sweet rot of oysters left too long on ice. Viv’s heels stuck to the floorboards as she slid into a back booth. A man hunched over his bourbon, rosary beads slipping through grease-blackened fingers.  
+The door creaked open. Eddie Malone slouched in, rain dripping from his newsboy cap. His eyes darted like cornered mice—left, right, to the rosary clenched in his fist. Viv’s pulse throbbed where Dad’s pocket watch pressed her breastbone. *Three years.* Three years since the throne vanished, since guards started dropping like gutted fish. She slid onto the stool beside Eddie.  
 
-“Eddie Malone.” She flipped open her cigarette case, revealing a switchblade nestled beside Pall Malls. “I hear you’ve got a shipping problem.”  
+“Fifty.” He reeked of fish guts and fear.  
 
-Eddie’s pinky ring glinted—a lion crest mirroring Mayor Kensington’s campaign posters. His pupils darted toward the exit. “Fifty bucks. Upfront.”  
+Viv fanned the bills under the table. “Start talking.”  
 
-Viv pressed the blade to his thigh under the table. The rosary clicked. “Try ‘please.’”  
+Eddie’s pinky ring caught the light—a lion crest swallowed by a crown. *Kensington’s symbol.* “Mayor’s got a shipment leaving Dock 9 tonight. Crated up like machine parts.” His thumb worked the rosary beads. “Your sparkly chair’s eyes… they’re onboard.”  
 
-“You think I’m dumb enough to cross the Mayor?” He laughed, whiskey-breath sour. “They’re moving the throne tonight. Dock 9. But you already knew that, right?”  
+She pressed the switchblade to his leg. “Who’s moving them?”  
 
-A waitress passed with a tray of absinthe. Viv noted the gun bulge under her apron. “Who’s ‘they’?”  
+“Some guinea named Vito.” The blade bit through wool. Eddie hissed. “Works for Paulie.”  
 
-“Some guinea named Vito. Keeps muttering about a sister in Sicily.” Eddie snatched her cash. “You’re gonna get us both—”  
+The trumpeter hit a sour note. Viv followed Eddie’s twitch toward the fire exit. “Why rat out Kensington?”  
 
-The saxophone screeched off-key.  
+“Ain’t family if they don’t share the pie.” His laugh curdled. “He promised my ma—”  
 
-Viv turned.  
+Glass shattered.  
 
-Two shadows blocked the speakeasy’s back door—black overcoats, fedoras dripping rain. *Tommy guns.*  
+Paulie Moretti filled the doorway, garlic breath preceding him like a storm front. A Thompson gun hung loose at his side. “Well, lookit. The reporter bitch and a turncoat.”  
 
-“Aw, Christ.” Eddie crossed himself.  
+Eddie lunged. Viv’s blade sank into his thigh as the first bullets tore through the bourbon bottles. She hit the floor, whiskey and blood soaking her stockings.  
 
-The first bullet tore through his forehead.  
+“Sinclair!”  
 
----  
+A hand clamped her wrist—knuckles scarred, grip iron-strong. Vito Romano dragged her into the alley, rain slashing his face. Neon from the *Deliveries Only* sign painted his cheekbones hell-red. “Run.”  
 
-Glass shattered. Viv dove under the table as gunfire stitched the wall above her. A woman screamed, high and endless, as the trumpeter kept playing *Ain’t Misbehavin’.*  
+Gunfire chased them through labyrinthine puddles. Viv’s heel caught a carcass—rat or human?—as Vito shoved her behind a dumpster. His body pinned hers, heat cutting through the rain-chill. Paulie’s voice boomed off the bricks.  
 
-“Sinclair!” A hand locked around her arm, yanking her toward the kitchen. Vito Romano’s scarred knuckles gleamed in the swinging lamp light. “Move!”  
+“Got a present for you, Viv!” A wet thud. Eddie’s corpse hit the pavement, rosary still tangled in his fingers.  
 
-They crashed through a pantry door into the alley. Rain needled Viv’s face. Neon sizzled overhead—**DELIVERIES ONLY**—as bullets chewed bricks behind them.  
+Vito’s breath warmed her ear. “Breathe through your nose.”  
 
-“Left!” Vito shoved her into a stack of crates. Rotting peaches burst under her knees.  
+She inhaled rust and his cologne—bay rum and gunpowder. Paulie’s boots splashed closer.  
 
-A thug rounded the corner, sawed-off shotgun raised. Vito’s fist snapped his jaw sideways. The gun clattered as Viv grabbed it—warm steel, blood-slick grip.  
+“You ain’t saving her, V!”  
 
-“Don’t!” Vito tackled her as shotgun pellets shredded the air where her head had been.  
+Vito’s hand slid under his coat. Viv tensed. *Luger? Stiletto?* He pulled out a train timetable.  
 
-They skidded across wet cobblestones. Viv’s dress tore on broken glass, his body crushing hers into the stink of garbage and gunpowder. His hand clamped over her mouth.  
+“Midnight freight to Albany,” he whispered. “Board car seven.”  
 
-“Breathe and you’re dead,” he whispered.  
+Her nails dug into his wrist. “Why help me?”  
 
-Paulie Moretti loomed in the alley mouth, garlic breath preceding him. “Got a rat problem, Vito.”  
+“You’re bad for business.” His smile didn’t reach his eyes. “Now *shut up.*”  
 
-Viv’s pulse hammered against Vito’s palm.  
+Paulie cocked his Thompson. “Come out, and I’ll make it qui—”  
 
-“Let me handle it.” Vito stood, brushing off his suit. “She’s nobody.”  
+A police whistle pierced the night. Boots pounded the street.  
 
-Paulie spat. “Boss says the dame’s a loose end. Either you clip her, or I clip you both.”  
+“Fuzz!” Paulie spat. “This ain’t over, Red.”  
 
-A rat gnawing a fish head stared at Viv. She willed her fingers not to shake.  
+Silence.  
 
-Vito lit a cigarette, the match flaring in his dark eyes. “Tell Kensington she’s dealt with.”  
+Viv pushed Vito off. “Your boss?”  
 
-“Tell him yourself.” Paulie tossed a list at Vito’s feet—**RED HOOK DOCK 9—TONIGHT 1 AM.** “Move the throne, or your Sicilian sweetheart gets a coffin ride home.”  
+“My problem.” He straightened his tie, eyes on Eddie’s body. “Touch the throne again, and they’ll find you in pieces.”  
 
-The alley swallowed Paulie’s laughter. Vito pocketed the list, his Luger pressed to Viv’s ribs before she could blink.  
+Rain washed the blood from Viv’s hem as she crouched by Eddie. The rosary beads left indentations in his palm—*Sinner’s guilt.* She pried it loose.  
 
-“This changes nothing.” His thumb caressed the trigger. “Ask about the throne again, and you’ll float in the Hudson.”  
+Vito watched. “You pray?”  
 
-The gun vanished. He melted into the rain.  
+“I collect evidence.”  
 
----  
+He laughed—dark, weary. “Evidence dies here, *capisce?*”  
 
-Viv limped back to the speakeasy. Eddie’s rosary cut her palm—stolen mid-fall, beads still warm. The bullet had left his left eye a crater, but the right stared accusatorily. *You did this.*  
+Viv pocketed the rosary. “So do promises.”  
 
-Sammy mopped blood behind the bar. “Told you Mr. X liked cash.”  
+She vanished into the storm, the timetable burning against her ribs. Three blocks east, under a flickering streetlamp, she unfolded Vito’s “gift.” A shipping manifest fell out—**DOCK 9 - VATICAN HOLDINGS - 6/4/29**.  
 
-She dropped the rosary on the counter. “Who’s Vito’s sister?”  
-
-“Wrong question, Red.” He slid her a gin. “Ask why Kensington’s shipping art to Palermo.”  
-
-The ice clinked like bones. Viv drank.  
+The throne’s emeralds blinked in her mind like cat eyes.  
 
 CONTINUE  
 
-Outside, dawn smeared the sky corpse-gray. She traced Eddie’s lion crest ring—identical to the Mayor’s—before dropping it down a sewer grate. *Sleep well, nephew.*  
+---  
 
-Her apartment door creaked open. The bulletin board glared, Joseph Sinclair’s photo askew. Viv pinned the rosary beside it, crimson beads like congealed blood.  
+Shadows moved in the warehouse across the pier. Viv counted six guards patrolling Dock 9, their silhouettes backlit by the freighter’s floodlights. The *S.S. Vaticano* loomed like a steel tomb, its chains clanking against the midnight tide. She crouched behind a pallet of “agricultural tools”—crates stamped with Kensington’s lion crest.  
 
-A knock. Rex Donovan leaned in the doorway, holding a first edition of *The Great Gatsby.* “Heard you tangoed with the Morettis.”  
+A cigarette flared.  
 
-She snatched the book. A subway token fell from its pages—**CITY HALL STATION.**  
+“You’re either brave or brainless.”  
 
-“Vito’s sister.” Rex tapped his nose. “Rosa Romano. Kensington’s holding her visa.”  
+Viv froze. Vito stepped from the gloom, his suit jacket speckled with rain. “This ain’t your fight, girl.”  
 
-The token burned her palm. Somewhere, the Golden Throne waited in the dark, its emerald eyes whispering.  
+“It’s *always* been my fight.” She nodded at the freighter. “Why crates to Rome?”  
 
-Viv smiled.
+“Export tax loopholes. You’d need a week and a whiskey to understand.”  
+
+“And the throne’s eyes?”  
+
+He hesitated. “Kensington’s obsessed. Says they… whisper.”  
+
+The scar on her collarbone itched. “You heard them?”  
+
+“I hear paychecks.” His gaze flicked to the manifest in her hand. “Leave before Paulie smells you.”  
+
+Boots crunched gravel.  
+
+Vito cursed in Italian, shoving her into the harbor’s ink-black embrace. Icy water stole her breath. Above, Paulie’s laughter rolled like thunder.  
+
+“Got a new game, V! Let’s see if rats float!”  
+
+The first bullet kissed the waves beside her ear. Viv dove, saltwater stinging her eyes. When she surfaced, gasping, the dock was chaos—flames licking the *Vaticano*’s hull, guards shouting in three languages.  
+
+Vito leaned over the pier, hand outstretched. “Now or never, Red!”  
+
+She reached. Missed.  
+
+A wave slammed her into the pilings. The rosary tangled in the barnacles—*Eddie’s last confession.* She tore it free as the current dragged her under.  
+
+Strong hands hauled her up. Vito’s arm locked around her waist, his breath ragged. “You’re gonna get us both killed.”  
+
+Her lips found his ear. “But what a headline.”  
+
+Sirens wailed. He let go.  
+
+“Stay out of the tunnels,” he warned, vanishing into smoke.  
+
+Viv washed ashore two piers down, the manifest disintegrating in her fist. Only one line remained legible: *EMERALD EYES - VATICAN VAULT 12.*  
+
+The throne’s curse hummed in her veins.
