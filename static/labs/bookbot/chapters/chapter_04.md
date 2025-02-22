@@ -1,85 +1,79 @@
 ---
 chapter_number: 4
-created_at: 2025-02-22T00:21:08.021538
+created_at: 2025-02-22T00:24:56.367872
 ---
 **# Chapter 4: Society’s Sharp Edges**  
 
-The ballroom stank of gardenias and greed. Crystal chandeliers dripped light onto acres of sequined spite, each gown costlier than a tenement’s yearly rent. I adjusted my borrowed pearls—paste replicas that chafed like the lie they were—and wove through champagne tides. Lydia Fitzgerald awaited me by the grand piano, her ice-blonde chignon sharp enough to slit throats.  
+Lydia Fitzgerald’s ice-blonde head tilted like a diamond-encrusted pistol. “Your pearls are weeping,” she said. Her own necklace glowed with the fat, lazy luster of old money. I resisted the urge to touch the dime-store strand clinging to my throat. *Mother’s last gift.* The emerald satin of my dress itched where the Derringer pressed against my thigh.  
 
-“Darling!” She air-kissed my cheek, her breath sweet with vermouth. “You simply must try the *canapés*. The pâté is *divine*—I hear they liquored up the geese before slaughter.” Her fingernails bit into my wrist as she leaned closer. “Second button’s loose on your glove. Amateurs always miss the details.”  
+Ballroom heat pressed down like a sweaty palm. Crystal chandeliers dripped light onto the gossip-flushed faces of Manhattan’s merciless elite. A jazz quartet saxophonist hit a note that slithered between my ribs. Lydia’s smile stayed frozen as she handed me a champagne coupe. “Cousin. Do try not to spit in the oysters.”  
 
-The piano launched into a jaunty Cole Porter. A waiter glided past; I snagged two coupes of champagne. “How’d you know I’d come?”  
+I sipped the bubbles. “Thoughtful of you to lend me a family tree, considering mine’s been chainsawed.”  
 
-Lydia’s smile was a scalpel. “Because your press pass tears crookedly, dear. The *Star* doesn’t starch its collars.” She sipped, leaving a crimson half-moon on the glass. “Also, Fletcher owes me a favor. Something involving a Senator’s *indiscretion* and a borzoi.”  
+Her laugh was the sound of ice cracking over dark water. “Harold Kensington’s watching us from the mezzanine. Try to look ornamental, Vivian. Men like him prefer their weapons sheathed.”  
 
-A marble-columned mirror caught our reflection: we could’ve been sisters, if despair were a shade of lipstick. She saw me notice. “The Mayor’s wife had that installed. She likes to watch her guests stab backs mid-waltz.”  
+Across the room, the mayor stood flanked by thick-necked aides. His gaze moved over the crowd like a scalpel. I wondered if he still smelled of his mistress’s blood.  
 
-I deposited my empty flute on a passing tray. “Why help me?”  
+“Ah. The sacrificial lamb approaches.” Lydia flicked her fan toward Freddie Winslow, who swayed toward us wearing a cravat askew and a monocle fogged with gin.  
 
-“Kensington called my father’s suicide a ‘tax dodge’ at the Darby Ball.” Her thumb grazed the cameo at her throat—real, unlike mine. “Now. Three o’clock. Freddie Winslow’s about to disgrace himself by the potted ivy.”  
+“Lydia!” He swept into a bow that nearly toppled him. “Warn a man before parading Medusa at him.” The monocle squinted at me. “Who’s this stark vision?”  
+
+“My cousin. Fresh from finishing school in Boston.”  
+
+“Does it *finish* them so deliciously there?” Freddie’s grin revealed a smear of caviar on his incisor. I let my gloved hand brush his as I took another champagne flute from a passing tray. “Enchanted, Mr.—?”  
+
+“Winslow. Freddie to those I don’t sue.” His breath reeked of lemon gin and the anchovy canapés circling on silver platters. “Boston, eh? Far too Puritan for my tastes. Give me a speakeasy skirt any day.”  
+
+I pressed closer, the rhinestones on my garter biting into skin. “But doesn’t sin lose its *spice* without risk?”  
+
+His laugh sprayed spittle. Lydia murmured something about powdering her nose and melted into the crowd.  
+
+“You’re talking to a man who once bet his inheritance on a cockroach race in Havana.” Freddie’s hand found my waist. “Risk is my middle name.”  
+
+“I heard it was Mortimer.”  
+
+He hiccuped. “Ghastly, isn’t it? Mother’s idea—rhymer with ‘Winslow.’ As if poetry might trick God into sparing me the family chin.” His fingers pinched my hip. “Let’s christen it in the gardens. Mortimer F. Winslow, defiler of unknown cousins.”  
+
+The piano launched into “Ain’t Misbehavin’.” I let my cheek graze his. “I prefer my corruption subtler, Freddie. A whisper in the coat check. A key slid under a door.”  
+
+He stiffened. *Too bold.* But then his throat bobbed. “Kensington’s pet project. A train to *nowhere.* All that clatter, all that *coal*…” His laugh curdled. “Though the mayor does love a scenic route.”  
+
+The music crescendoed. I slipped my hand into his jacket pocket. Cold brass teeth bit my palm.  
+
+“Viv!” Rex’s voice echoed from three years ago, our first pickpocket lesson in a Coney Island crowd. *Watch the eyes. The hands are just the dance.*  
+
+Freddie’s head lolled against my shoulder. “You know who built those rails? *Corpses.*”  
+
+I tucked the key into my glove. “Darling, you’re leaking metaphors.”  
+
+“Vivian.” The growl came from behind me. Vito’s hand closed on my elbow, his grip a handcuff. “There’s a cab waiting.” His tuxedo smelled of gun oil and gardenias.  
+
+I twisted free. “How kind. Tell it I’ll pine from afar.”  
+
+He stepped closer, heat radiating through the bespoke wool. “Moretti’s boys just clocked you. The dumb one’s got a knife. The smart one’s got a *Priest* badge.”  
+
+The crowd parted. Two bull-necked men muscled through the sea of sequins. The brass knuckles on the taller one’s hand glinted.  
+
+Vito yanked me into a servant’s passage. A door slammed. Darkness swallowed us, the linen closet air thick with starch and mothballs. His forearm pressed across my collarbone as footsteps thudded past.  
+
+“Hiding me from your boss or your conscience?” I hissed.  
+
+His breath warmed the shell of my ear. “You’re playing with fire, doll.”  
+
+I jammed the Derringer under his ribcage. “You’re in the splash zone.”  
+
+His teeth flashed in the sliver of light from under the door. “You think I’d kiss you if I planned to let Moretti carve you up?”  
+
+My pulse roared. “I think your lips would flirt with hell if it bought you a better suit.”  
+
+Wood splintered outside. Enzo Moretti’s voice, rasping in Italian.  
+
+Vito’s palm slid to the small of my back. “When I open the door, run for the kitchens.” Sandalwood and sweat. “And Viv?” His lips brushed my temple. “Next time you steal from a mark, check if his pockets are *wired.*”  
+
+He shoved me into the corridor just as Moretti turned the corner. The key in my glove burned like a live round.  
 
 ———  
 
-Freddie swayed like a metronome set to *disaster*. Monocle fogged, ascot askew, he clutched a magnum of Dom Pérignon like a newborn. “Vivi! Vivace! *Vixen!*” Champagne sloshed onto my T-straps as he engulfed me. “Heard you’re hunting ghosts! Did’ya know the mayor’s got a *pet*? Choo-choos to *nowhere*, fulla’ *art* or some rot!”  
+Lydia materialized by the grand staircase, her smile a shard of glass. “Exit’s past the ice swan. Try not to track blood on the Persian.”  
 
-I steadied him. “Slow down, Freddie. Which nowhere?”  
-
-“Whitefields!” He hiccuped. “But the throne’s not there. Lost luggage. Or legs? Leggy legs—” His gaze snagged on a waiter’s tight trousers. I yanked his chin back.  
-
-“When’s the next train?”  
-
-“Thursday.” His hand found my waist. “Ride with me, Viv. I’ll show you the *compartments*—”  
-
-The chandelier dimmed. Across the room, Enzo Moretti’s pockmarked face glowed in match-light as he lit a cigar. Two gorillas in tuxedos flanked him, necks thicker than their skulls.  
-
-Vito materialized at my elbow. “You’re lost, doll. Kitten’s pen’s upstairs.” He gripped my arm, silk sleeve sliding over taut muscle.  
-
-Freddie sneered. “Piss off, greaseball.”  
-
-Vito headbutted him. Freddie folded into the ivy, snoring.  
-
-———  
-
-The closet smelled of mothballs and murder. Vito shoved me inside, one palm clamped over my mouth. His thumb brushed my lower lip. “Yell and I’ll gag you proper.”  
-
-Shoes clattered past the door. “…check the terrace,” snarled a voice like gravel in a meat grinder. “Boss wants the snoop gutted.”  
-
-Vito’s body pinned mine against brooms. Sandalwood and gunpowder. Heat radiated through his shirt. My Derby hat tilted, veil catching on his stubble.  
-
-“You’re stupid in lace.” His breath scorched my ear. “That dress hides a wire?”  
-
-I kneed his thigh. He grunted, trapping my leg between his. “What’s Moretti’s stake in Kensington’s train?”  
-
-A chuckle vibrated through me. “You’re playing with fire, doll.”  
-
-Outside, Enzo’s thugs argued over Freddie’s prone form. “…wake him. The Eel wants names.”  
-
-Vito’s teeth grazed my earlobe. Not gentle. “Stick to society pages.”  
-
-“Or what? You’ll *spank* me?”  
-
-“Tempting.” He leaned back just enough for light to slit his smirk. “But first, apologize for this—”  
-
-Footsteps retreated. He released me like a thief dropping a hot watch. I lunged for the door.  
-
-He blocked it. “You owe me.”  
-
-“Tell your boss to send a bill.”  
-
-“He don’t deal in cash. Only favors.” His finger hooked my pearls. “I’ll collect.”  
-
-The snap echoed like a gunshot. Pearls rained between us.  
-
-“Fakes.” He crushed one under his wingtip. “But you knew that.”  
-
-———  
-
-Freddie snored in a bergère chair, monocle cracked. I knelt, pretending to adjust his shoe. “Poor lamb,” I cooed to the gawking dowagers. “The bubbles went straight to his head.”  
-
-My fingers slid into his breast pocket. Brass bit my palm: a key, teeth gleaming. *B-12*.  
-
-The mirror showed me Lydia at the bar, waving a handkerchief in mock distress. Behind her reflection, Vito watched me through the crowd—a wolf in a Tommy gun tuxedo.  
-
-He raised his empty champagne flute. *To the game.*  
-
-I palmed the key. Somewhere, a train whistled.
+The train key’s teeth bit into my palm, whispering promise. *B-12.*
