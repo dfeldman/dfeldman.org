@@ -1,79 +1,127 @@
 ---
 chapter_number: 4
-created_at: 2025-02-22T00:24:56.367872
+created_at: 2025-02-22T15:07:10.713351
 ---
-**# Chapter 4: Society’s Sharp Edges**  
+# Chapter 4: Bodies in the Bay  
 
-Lydia Fitzgerald’s ice-blonde head tilted like a diamond-encrusted pistol. “Your pearls are weeping,” she said. Her own necklace glowed with the fat, lazy luster of old money. I resisted the urge to touch the dime-store strand clinging to my throat. *Mother’s last gift.* The emerald satin of my dress itched where the Derringer pressed against my thigh.  
+The morgue drawer hissed open on greased tracks, releasing a cloud of frost and decay. Viv gripped Eddie Malone’s rosary until the beads bit into her palm. Inspector Bobbie Burns chewed nicotine gum like it owed him money, his shadow stretching across Slab 4. “You sure you wanna do this, Sinclair?”  
 
-Ballroom heat pressed down like a sweaty palm. Crystal chandeliers dripped light onto the gossip-flushed faces of Manhattan’s merciless elite. A jazz quartet saxophonist hit a note that slithered between my ribs. Lydia’s smile stayed frozen as she handed me a champagne coupe. “Cousin. Do try not to spit in the oysters.”  
+She stepped forward. The toe of her oxford tapped the drain grate beneath the body—rusted from a century of blood and formaldehyde. Dawn light sliced through high windows, illuminating Eddie’s face. His skin held the waxy sheen of candle tallow, lips tinged blue.  
 
-I sipped the bubbles. “Thoughtful of you to lend me a family tree, considering mine’s been chainsawed.”  
+Doc Harlow adjusted his bifocals, scalpel trembling. “Cyanide,” he muttered, lifting the sheet to expose the Y-incision. “Sweet smell lingers in the bronchial tubes. Like… like marzipan left in the sun.”  
 
-Her laugh was the sound of ice cracking over dark water. “Harold Kensington’s watching us from the mezzanine. Try to look ornamental, Vivian. Men like him prefer their weapons sheathed.”  
+Viv’s stomach clenched. She pressed the rosary into Eddie’s stiff hand. The wooden cross caught the light, its edges worn smooth from decades of desperate prayers. *Forgive me*, she thought, reaching for his left pinky. The gold ring gleamed despite the grime—a lion crest above engraved Latin: *Sic Semper Tyrannis*.  
 
-Across the room, the mayor stood flanked by thick-necked aides. His gaze moved over the crowd like a scalpel. I wondered if he still smelled of his mistress’s blood.  
+Burns stiffened. “That’s the Mayor’s family crest.”  
 
-“Ah. The sacrificial lamb approaches.” Lydia flicked her fan toward Freddie Winslow, who swayed toward us wearing a cravat askew and a monocle fogged with gin.  
+“His nephew,” Viv breathed. The truth hit like a sucker punch: Eddie’s darting eyes when she’d pressed the switchblade to his thigh, his refusal to name prices. *“He was protecting family,”* she realized. *“And I got him killed.”*  
 
-“Lydia!” He swept into a bow that nearly toppled him. “Warn a man before parading Medusa at him.” The monocle squinted at me. “Who’s this stark vision?”  
+The inspector grabbed her elbow. “Walk away, Sinclair. This case eats people.”  
 
-“My cousin. Fresh from finishing school in Boston.”  
+She shook free, nostrils flaring at his bourbon-and-sweat stench. “You knew. That’s why you’ve been stonewalling my FOIA requests.”  
 
-“Does it *finish* them so deliciously there?” Freddie’s grin revealed a smear of caviar on his incisor. I let my gloved hand brush his as I took another champagne flute from a passing tray. “Enchanted, Mr.—?”  
+Burns’ wedding ring clicked against the drawer handle. “Kensington’s got judges in his pocket. Reporters in his incinerator.”  
 
-“Winslow. Freddie to those I don’t sue.” His breath reeked of lemon gin and the anchovy canapés circling on silver platters. “Boston, eh? Far too Puritan for my tastes. Give me a speakeasy skirt any day.”  
+Across the room, a telephone rang. Doc Harlow jumped, nicking his thumb. Blood bloomed on the sheet as he scurried to answer it, whispering, “Y-yes, Mr. Mayor. No, the press hasn’t—”  
 
-I pressed closer, the rhinestones on my garter biting into skin. “But doesn’t sin lose its *spice* without risk?”  
+Viv bolted.  
 
-His laugh sprayed spittle. Lydia murmured something about powdering her nose and melted into the crowd.  
+---  
 
-“You’re talking to a man who once bet his inheritance on a cockroach race in Havana.” Freddie’s hand found my waist. “Risk is my middle name.”  
+Red Hook’s docks swam in morning fog, the East River lapping against rotting pilings. Viv leaned over the wharf, heaving coffee and guilt into the brackish water. Eddie’s ring burned through her pocket—evidence she couldn’t publish, leverage she couldn’t wield.  
 
-“I heard it was Mortimer.”  
+“You look like hell, Red.”  
 
-He hiccuped. “Ghastly, isn’t it? Mother’s idea—rhymer with ‘Winslow.’ As if poetry might trick God into sparing me the family chin.” His fingers pinched my hip. “Let’s christen it in the gardens. Mortimer F. Winslow, defiler of unknown cousins.”  
+Rex Donovan materialized from the mist, his trench coat reeking of gun oil and Sen-Sen. He tossed her a handkerchief monogrammed with someone else’s initials. “Burns called. Said you’re digging your grave with both hands.”  
 
-The piano launched into “Ain’t Misbehavin’.” I let my cheek graze his. “I prefer my corruption subtler, Freddie. A whisper in the coat check. A key slid under a door.”  
+She wiped her mouth. “Since when do you care?”  
 
-He stiffened. *Too bold.* But then his throat bobbed. “Kensington’s pet project. A train to *nowhere.* All that clatter, all that *coal*…” His laugh curdled. “Though the mayor does love a scenic route.”  
+“Since your old man’s ghost started haunting my whiskey.” He limped closer, favoring his right leg—the war wound acting up. “Kensington’s boys found Eddie’s body an hour ago. They know you ID’d him.”  
 
-The music crescendoed. I slipped my hand into his jacket pocket. Cold brass teeth bit my palm.  
+As if summoned, two shadows detached from a stack of crates stamped *Machine Parts*. The larger one swung a lead pipe. “Ain’t no room for nosey dames on the docks.”  
 
-“Viv!” Rex’s voice echoed from three years ago, our first pickpocket lesson in a Coney Island crowd. *Watch the eyes. The hands are just the dance.*  
+Viv’s switchblade snicked open. “Try the society pages, then.”  
 
-Freddie’s head lolled against my shoulder. “You know who built those rails? *Corpses.*”  
+The thug lunged. She ducked, slashing at his knees. The pipe grazed her shoulder—white-hot pain—before Rex’s Colt barked. The thug crumpled, clutching his thigh.  
 
-I tucked the key into my glove. “Darling, you’re leaking metaphors.”  
+“Christ, Viv!” Rex dragged her behind a forklift as bullets pinged off steel. “You’ve got nine lives and you’re on number eight!”  
 
-“Vivian.” The growl came from behind me. Vito’s hand closed on my elbow, his grip a handcuff. “There’s a cab waiting.” His tuxedo smelled of gun oil and gardenias.  
+She peered through the machinery. The second thug was shouting into a patrol box. “They’re calling reinforcements. We need—”  
 
-I twisted free. “How kind. Tell it I’ll pine from afar.”  
+A black Cadillac screeched into the yard. Mayor Kensington stepped out, immaculate in a dove-gray suit. “Miss Sinclair! Let’s discuss your… *ghostwriting*.”  
 
-He stepped closer, heat radiating through the bespoke wool. “Moretti’s boys just clocked you. The dumb one’s got a knife. The smart one’s got a *Priest* badge.”  
+Rex cocked his revolver. “Stay behind me.”  
 
-The crowd parted. Two bull-necked men muscled through the sea of sequins. The brass knuckles on the taller one’s hand glinted.  
+“Like hell.” Viv stood, back straight as a tombstone. “You murdered your own nephew, Harry.”  
 
-Vito yanked me into a servant’s passage. A door slammed. Darkness swallowed us, the linen closet air thick with starch and mothballs. His forearm pressed across my collarbone as footsteps thudded past.  
+Kensington’s smile didn’t reach his eyes. “Eddie lacked vision. You, however…” He nodded to his men. “Bring her. The throne prefers its sacrifices lively.”  
 
-“Hiding me from your boss or your conscience?” I hissed.  
+CONTINUE  
 
-His breath warmed the shell of my ear. “You’re playing with fire, doll.”  
+The dock exploded into chaos. Rex tackled a guard into the Hudson, the man’s scream cut short by oily waves. Viv scrambled up a cargo net, lug wrench in hand. Above her, a crane swung a crate marked *Vatican Holdings*.  
 
-I jammed the Derringer under his ribcage. “You’re in the splash zone.”  
+“Catch!” Rex tossed her his revolver.  
 
-His teeth flashed in the sliver of light from under the door. “You think I’d kiss you if I planned to let Moretti carve you up?”  
+She fired wild—shattering the crane’s control panel. Chains screeched. The crate plummeted, crushing Kensington’s sedan. The Mayor dove behind a pallet, linen suit smeared with fish guts. “You’ll drown in that dress, girl!”  
 
-My pulse roared. “I think your lips would flirt with hell if it bought you a better suit.”  
+Saltwater soaked Viv’s skirt as she waded toward the riverwalk. A hand yanked her into a boathouse. Rex slammed the door, breathing ragged. “Key to the Lyric Theatre basement.” He pressed a tarnished brass key into her palm. “Underground tunnels connect to Kensington’s vault.”  
 
-Wood splintered outside. Enzo Moretti’s voice, rasping in Italian.  
+She stared at it. “Why help me?”  
 
-Vito’s palm slid to the small of my back. “When I open the door, run for the kitchens.” Sandalwood and sweat. “And Viv?” His lips brushed my temple. “Next time you steal from a mark, check if his pockets are *wired.*”  
+“Because you’re the only one stubborn enough to bury that bastard.” He touched her bleeding shoulder—brief, paternal. “And I owe your father.”  
 
-He shoved me into the corridor just as Moretti turned the corner. The key in my glove burned like a live round.  
+Footsteps pounded outside. Kensington’s voice boomed through the planks. “Come out, and I’ll make it quick!”  
 
-———  
+Rex shoved her toward a rusted grate. “Sewer leads to Canal Street. Don’t look back.”  
 
-Lydia materialized by the grand staircase, her smile a shard of glass. “Exit’s past the ice swan. Try not to track blood on the Persian.”  
+“But—”  
 
-The train key’s teeth bit into my palm, whispering promise. *B-12.*
+He cocked his Colt with a grin. “I’ve survived worse.”  
+
+The last thing Viv saw before the sewer swallowed her: Rex Donovan, framed in dawn light, singing *“When Johnny Comes Marching Home”* as the door burst open.  
+
+Somewhere above, a single gunshot echoed.  
+
+---  
+
+Viv emerged in an alley behind the Fulton Fish Market, reeking of despair. The key bit her palm like a guilty secret. Around her, the city stirred—newsboys hawking headlines about Eddie’s “tragic accident,” trolleys rattling past shop windows displaying Kensington’s campaign posters.  
+
+She ducked into a phone booth, dialing the Sentinel with a nickel slick from blood. “Fletcher? Run the obituary. Page six.”  
+
+Static crackled. “Sinclair? Where the hell—”  
+
+“Eddie Malone. He’s the Mayor’s nephew.” She watched a beat cop light a cigarette across the street. “And we’re going to print the truth.”  
+
+The line went dead. Viv slid down the glass, knees pulled to chest. In her pocket, Eddie’s rosary tangled with the key—one to unlock ghosts, the other to bury them. Somewhere, a factory whistle screamed.  
+
+CONTINUE  
+
+The Sentinel’s presses roared like caged beasts. Fletcher slammed the morning edition onto Viv’s desk, ink still wet. **MAYOR’S NEPHEW FOUND DEAD IN DOCK YARD TRAGEDY** screamed the headline, her byline sharp beneath it.  
+
+“You’ve got sand, Sinclair,” he growled, glass eye gleaming. “But sand don’t stop bullets.”  
+
+She touched the bandage on her shoulder. “Any word on Rex?”  
+
+“Donovan’s a cockroach. He’ll turn up.” Fletcher lit a cigar with shaking hands. “Kensington’s holding a press conference at noon. Wants to ‘address these vicious rumors.’”  
+
+Viv stared at Eddie’s ring beside her typewriter. The lion crest leered. “Let me cover it.”  
+
+“Like hell. You’re off the—”  
+
+The window shattered.  
+
+They hit the floor as bullets chewed the walls. Viv crawled under her desk, earring snagging on a splintered drawer. Fletcher’s cigar glowed in the dust. “East window! Fire escape!”  
+
+She lunged for the emergency ladder, typewriter keys spraying like shrapnel. Three floors down, her knees buckled on the asphalt. The getaway car idled across the street—Vito Romano at the wheel, engine revving.  
+
+“Need a ride, Red?”  
+
+Tires screeched behind them. Viv dove into the Model A’s rumble seat as Vito floored it. “Who hates you more today? Kensington or God?”  
+
+She clutched the Lyric Theatre key. “Take me to 48th & Broadway.”  
+
+He glanced in the rearview. “You’ll get us both killed.”  
+
+“But what a way to go.”  
+
+They vanished into midtown traffic, the Sentinel’s smoke staining the sky behind them. Somewhere, the throne waited—and with it, answers written in blood and emerald light.

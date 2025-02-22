@@ -562,6 +562,7 @@ class BookBot:
                                 raise LLMError("Empty response")
                             logger.info(f"Received response: {content[:100]}...")
                             logger.debug(f"Received response: {json.dumps(response.json())}...")
+                            # Why are think tags not showing up in the debug logs???
                             content = re.sub(r'<think>.*?</think>\n?', '', content, flags=re.DOTALL)
 
                             # Add to token counts

@@ -5,6 +5,8 @@ Write Chapter {{ chapter_number }} according to the details below. Remember to:
 - Use natural dialogue
 - Balance action, dialogue, and description
 - Include danger, fear, tension, pain, joy, romance, sexuality, and the full range of human emotion
+- Include both fast moments and slow moments. Not everything can be action all the time. Linger on scenery and
+slow moments and balance them with fast action. 
 - Try to write about as many words in the chapter as specified in the outline
 
 Outline:
