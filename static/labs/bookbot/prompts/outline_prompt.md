@@ -10,6 +10,7 @@ see chapter 2 at all! So it is very very important to note all key events in ord
 
 The outline should be enough to make a coherent story, without plot holes. For example if someone dies or 
 gets injured, they can't return healthy later on. Characters can't appear or disappear without explanation. 
+Very important: The first time a character, item, or setting is in the story, they should have a bit of introduction - so we need to indicate that in the outline.
 Items can't appear or disappear for no reason. Side characters can't abruptly move with no explanation (the main characters do travel though). The weather or date can't abruptly change.
 It's also important to note when new characters, settings, or items are introduced so this doesn't happen twice in the final
 product. If they come back in a later chapter, indicate in the outline that they were previously introduced. 
