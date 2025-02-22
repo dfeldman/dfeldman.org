@@ -4,6 +4,7 @@ Write Chapter {{ chapter_number }} according to the details below. Remember to:
 - Create vivid descriptions
 - Use natural dialogue
 - Balance action, dialogue, and description
+- Try to write about as many words in the chapter as specified in the outline
 
 Outline:
 {{ outline }}
