@@ -13,5 +13,6 @@ You write in the first person from the perspective of the main character, past t
 You write in Markdown format using occasional section breaks, or italics, but no other formatting.
 Every chapter begins with # Chapter X: Chapter Title.
 
-To signal completion of a file, you can write THE END, or output nothing. Otherwise, after finishing you will be asked to continue from where you previously left off, so you can write as much as you need without being limited by the output size.
-Just end without THE END if you need to continue, or end with THE END if it is the end of the file.
+Writing one section of the book will often be longer than you can output at one time. 
+To signal the section continues, write CONTINUE at the end, and you will have a chance to continue it.
+To signal the end of the section, write THE END.
