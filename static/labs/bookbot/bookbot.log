@@ -1291,3 +1291,29 @@ l.27 \fi
 2025-02-22 12:29:48,628 - BookBot - INFO - New content chunk of length 6693 bytes, 2767 tokens, 943 words (excluding think)
 2025-02-22 12:29:48,629 - BookBot - INFO - Found THE END marker
 2025-02-22 12:29:48,629 - BookBot - INFO - Final content length: 27332 bytes
+2025-02-22 12:29:49,596 - BookBot - INFO - Successfully committed changes: Generated characters
+2025-02-22 12:38:00,605 - BookBot - INFO - Making LLM call (continuation 1)
+2025-02-22 12:38:00,606 - BookBot - INFO - Sending request to https://openrouter.ai/api/v1/chat/completions, attempt 1
+2025-02-22 12:39:14,461 - BookBot - INFO - Received response: **Chapter-by-Chapter Outline**  
+*Note: All chapters include date/time stamps, setting details, and ...
+2025-02-22 12:39:14,464 - BookBot - INFO - Tokens in: 16235, Tokens out: 2252
+2025-02-22 12:39:14,466 - BookBot - INFO - New content chunk of length 5743 bytes, 2252 tokens, 829 words (excluding think)
+2025-02-22 12:39:14,466 - BookBot - INFO - Content chunk does not end with THE END - continuing...
+2025-02-22 12:39:14,466 - BookBot - INFO - Making LLM call (continuation 2)
+2025-02-22 12:39:14,468 - BookBot - INFO - Sending request to https://openrouter.ai/api/v1/chat/completions, attempt 1
+2025-02-22 12:40:24,273 - BookBot - INFO - Received response: ### **CHAPTER 5: THE GILDED WHISPER**  
+**Date/Time**: June 7 | 7:00 PM – Midnight  
+**Setting**:  
+...
+2025-02-22 12:40:24,275 - BookBot - INFO - Tokens in: 34162, Tokens out: 4327
+2025-02-22 12:40:24,277 - BookBot - INFO - New content chunk of length 5250 bytes, 2075 tokens, 743 words (excluding think)
+2025-02-22 12:40:24,278 - BookBot - INFO - Content chunk does not end with THE END - continuing...
+2025-02-22 12:40:24,278 - BookBot - INFO - Making LLM call (continuation 3)
+2025-02-22 12:40:24,281 - BookBot - INFO - Sending request to https://openrouter.ai/api/v1/chat/completions, attempt 1
+2025-02-22 12:42:10,876 - BookBot - INFO - Received response: ### **CHAPTER 9: ECHOES IN THE ABYSS**  
+**Date/Time**: June 11, 1929 | 10:00 PM – 2:00 AM  
+**Setti...
+2025-02-22 12:42:10,878 - BookBot - INFO - Tokens in: 53633, Tokens out: 7586
+2025-02-22 12:42:10,879 - BookBot - INFO - New content chunk of length 6583 bytes, 3259 tokens, 953 words (excluding think)
+2025-02-22 12:42:10,879 - BookBot - INFO - Found THE END marker
+2025-02-22 12:42:10,880 - BookBot - INFO - Final content length: 17569 bytes
