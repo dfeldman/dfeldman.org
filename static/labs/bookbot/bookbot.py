@@ -479,8 +479,9 @@ class BookBot:
         messages = [
             {"role": "system", "content": system_prompt},
             {"role": "user", "content": prompt + 
-             """\n Now write your first chunk of content. Write as much as you wish, and end with CONTINUE to have the chance to 
-             continue writing in the next chunk. Write THE END if this chunk concludes the section."""}
+             """\n Now write your first chunk of content. Write as much as you wish, and end your message with CONTINUE to have the chance to 
+             continue writing in the next chunk. CONTINUE must be at the end of your message if you want to write more than one chunk of content.
+             Write THE END if this chunk concludes the section. You can write as much or as little as you wish, but typically aim for around 3000 words."""}
         ]
         
         provider = self.llm.provider
@@ -600,8 +601,9 @@ class BookBot:
             messages.append({"role": "assistant", "content": content})
             messages.append({"role": "user", "content": 
                              f"You have written {wordcount} words so far out of an expected 3000 words. Continue writing the next chunk. "+
-                             """When you're done with this chunk, write CONTINUE if you'd like to keep writing,
-                             or THE END if this chunk concludes the section. CONTINUE or THE END must be at the 
+                             """When you're done with this chunk, write CONTINUE if you'd like to keep writing, and then
+                             end your message. Then you'll get a new prompt to continue writing.
+                             Write THE END if this chunk concludes the section. CONTINUE or THE END must be at the 
                              end of your output."""})
             if content.endswith("CONTINUE\n"): # Should probably be fuzzier here
                 content = content[:-len("CONTINUE\n")].strip()
@@ -1368,6 +1370,11 @@ def main():
     edit_parser = subparsers.add_parser('edit-chapter', help='Edit an existing chapter')
     edit_parser.add_argument('number', type=int, help='Chapter number')
     
+
+    # Extend chapter command
+    extend_parser = subparsers.add_parser('extend-chapter', help='Edit an existing chapter to make it longer')
+    extend_parser.add_argument('number', type=int, help='Chapter number')
+
     # Review command
     subparsers.add_parser('review', help='Generate a review of the book')
     
