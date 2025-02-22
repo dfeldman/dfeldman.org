@@ -479,9 +479,10 @@ class BookBot:
         messages = [
             {"role": "system", "content": system_prompt},
             {"role": "user", "content": prompt + 
-             """\n Now write your first chunk of content. Write as much as you wish, and end your message with CONTINUE to have the chance to 
-             continue writing in the next chunk. CONTINUE must be at the end of your message if you want to write more than one chunk of content.
-             Write THE END if this chunk concludes the section. You can write as much or as little as you wish, but typically aim for around 3000 words."""}
+             """\n Write one chunk of content. Write as much as you wish, and end your output with CONTINUE to have the chance to 
+             continue writing in a new chunk of content. CONTINUE must be at the end of your message if you want to write more than one chunk of content.
+             Write THE END if this chunk concludes the section. You can write as much or as little as you wish, but typically aim for around 3000 words.
+             If you CONTINUE, you'll get a current word count of how much you've written so far. You should ALWAYS write at least two chunks."""}
         ]
         
         provider = self.llm.provider
@@ -601,10 +602,12 @@ class BookBot:
             messages.append({"role": "assistant", "content": content})
             messages.append({"role": "user", "content": 
                              f"You have written {wordcount} words so far out of an expected 3000 words. Continue writing the next chunk. "+
-                             """When you're done with this chunk, write CONTINUE if you'd like to keep writing, and then
-                             end your message. Then you'll get a new prompt to continue writing.
-                             Write THE END if this chunk concludes the section. CONTINUE or THE END must be at the 
-                             end of your output."""})
+                             """When you're done with this chunk of text, write CONTINUE, and then
+                             end your message. Then you'll get a new prompt to continue writing the chapter.
+                             Don't write CONTINUE in the middle of your output, that *WILL NOT* help you write more. Only write it at the end of
+                             your output in order to get a new prompt where you can continue writing the chapter.
+                             Write THE END when you're done writing. CONTINUE or THE END *MUST* be at the 
+                             end of your output. Be sure to write enough words."""})
             if content.endswith("CONTINUE\n"): # Should probably be fuzzier here
                 content = content[:-len("CONTINUE\n")].strip()
             if content.endswith("**CONTINUE**\n"):
