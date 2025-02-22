@@ -601,7 +601,8 @@ class BookBot:
             messages.append({"role": "user", "content": 
                              f"You have written {wordcount} words so far. Continue writing the next chunk. "+
                              """When you're done with this chunk, write CONTINUE if you'd like to keep writing,
-                             or THE END if this chunk concludes the section."""})
+                             or THE END if this chunk concludes the section. CONTINUE or THE END must be at the 
+                             end of your output."""})
             if content.endswith("CONTINUE\n"): # Should probably be fuzzier here
                 content = content[:-len("CONTINUE\n")].strip()
             if content.endswith("**CONTINUE**\n"):
