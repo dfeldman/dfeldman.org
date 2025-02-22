@@ -1317,3 +1317,98 @@ l.27 \fi
 2025-02-22 12:42:10,879 - BookBot - INFO - New content chunk of length 6583 bytes, 3259 tokens, 953 words (excluding think)
 2025-02-22 12:42:10,879 - BookBot - INFO - Found THE END marker
 2025-02-22 12:42:10,880 - BookBot - INFO - Final content length: 17569 bytes
+2025-02-22 12:42:11,047 - BookBot - INFO - Successfully committed changes: Generated outline
+2025-02-22 13:05:59,561 - BookBot - ERROR - Error writing outline: Template not found: commons_review_prompt
+2025-02-22 13:06:25,456 - BookBot - INFO - Making LLM call (continuation 1)
+2025-02-22 13:06:25,457 - BookBot - INFO - Sending request to https://openrouter.ai/api/v1/chat/completions, attempt 1
+2025-02-22 13:08:06,166 - BookBot - INFO - Received response: **PLOT HOLE REVIEW & FIXES**  
+**Issues Identified and Resolutions**  
+
+---
+
+### **1. VITO’S KNOWLED...
+2025-02-22 13:08:06,168 - BookBot - INFO - Tokens in: 21392, Tokens out: 2616
+2025-02-22 13:08:06,171 - BookBot - INFO - New content chunk of length 7482 bytes, 2616 tokens, 1140 words (excluding think)
+2025-02-22 13:08:06,172 - BookBot - INFO - Content chunk does not end with THE END - continuing...
+2025-02-22 13:08:06,172 - BookBot - INFO - Making LLM call (continuation 2)
+2025-02-22 13:08:06,174 - BookBot - INFO - Sending request to https://openrouter.ai/api/v1/chat/completions, attempt 1
+2025-02-22 13:08:46,141 - BookBot - INFO - Received response: **CONTINUED**  
+
+---  
+
+**The Sapphire Rabbit Speakeasy | 11:48 PM**  
+
+Rain needled Viv’s neck as s...
+2025-02-22 13:08:46,142 - BookBot - INFO - Tokens in: 44881, Tokens out: 3632
+2025-02-22 13:08:46,146 - BookBot - INFO - New content chunk of length 2118 bytes, 1016 tokens, 334 words (excluding think)
+2025-02-22 13:08:46,146 - BookBot - INFO - Content chunk does not end with THE END - continuing...
+2025-02-22 13:08:46,146 - BookBot - INFO - Making LLM call (continuation 3)
+2025-02-22 13:08:46,148 - BookBot - INFO - Sending request to https://openrouter.ai/api/v1/chat/completions, attempt 1
+2025-02-22 13:09:56,900 - BookBot - INFO - Received response: **CONTINUED**  
+
+---  
+
+**Chapter 3: Society’s Sharp Edge**  
+**June 5, 1929 | 7:15 PM**  
+
+The pear...
+2025-02-22 13:09:56,901 - BookBot - INFO - Tokens in: 68995, Tokens out: 5657
+2025-02-22 13:09:56,903 - BookBot - INFO - New content chunk of length 1794 bytes, 2025 tokens, 270 words (excluding think)
+2025-02-22 13:09:56,903 - BookBot - INFO - Content chunk does not end with THE END - continuing...
+2025-02-22 13:09:56,904 - BookBot - INFO - Making LLM call (continuation 4)
+2025-02-22 13:09:56,905 - BookBot - INFO - Sending request to https://openrouter.ai/api/v1/chat/completions, attempt 1
+2025-02-22 13:10:27,211 - BookBot - INFO - Received response: **CONTINUED**  
+
+---  
+
+**Abandoned Subway Station – City Hall Loop | 10:02 PM**  
+
+The third rail h...
+2025-02-22 13:10:27,213 - BookBot - INFO - Tokens in: 93632, Tokens out: 6376
+2025-02-22 13:10:27,215 - BookBot - INFO - New content chunk of length 1231 bytes, 719 tokens, 201 words (excluding think)
+2025-02-22 13:10:27,215 - BookBot - INFO - Content chunk does not end with THE END - continuing...
+2025-02-22 13:10:27,215 - BookBot - INFO - Making LLM call (continuation 5)
+2025-02-22 13:10:27,217 - BookBot - INFO - Sending request to https://openrouter.ai/api/v1/chat/completions, attempt 1
+2025-02-22 13:11:00,754 - BookBot - INFO - Received response: **CONTINUED**  
+
+---  
+
+Viv’s hand shot to her switchblade. “You were there. The night he died.”  
+
+...
+2025-02-22 13:11:00,755 - BookBot - INFO - Tokens in: 118658, Tokens out: 7182
+2025-02-22 13:11:00,757 - BookBot - INFO - New content chunk of length 1180 bytes, 806 tokens, 180 words (excluding think)
+2025-02-22 13:11:00,757 - BookBot - INFO - Content chunk does not end with THE END - continuing...
+2025-02-22 13:11:00,758 - BookBot - INFO - Making LLM call (continuation 6)
+2025-02-22 13:11:00,759 - BookBot - INFO - Sending request to https://openrouter.ai/api/v1/chat/completions, attempt 1
+2025-02-22 13:11:39,001 - BookBot - INFO - Received response: **CONTINUED**  
+
+---  
+
+The mine cart’s screech crescendoed. Viv’s UV light flickered over the funga...
+2025-02-22 13:11:39,002 - BookBot - INFO - Tokens in: 144053, Tokens out: 8038
+2025-02-22 13:11:39,003 - BookBot - INFO - New content chunk of length 1857 bytes, 856 tokens, 283 words (excluding think)
+2025-02-22 13:11:39,004 - BookBot - INFO - Content chunk does not end with THE END - continuing...
+2025-02-22 13:11:39,004 - BookBot - INFO - Making LLM call (continuation 7)
+2025-02-22 13:11:39,005 - BookBot - INFO - Sending request to https://openrouter.ai/api/v1/chat/completions, attempt 1
+2025-02-22 13:12:24,469 - BookBot - INFO - Received response: **CONTINUED**  
+
+---  
+
+**Red Hook Dock 9 | 11:55 PM**  
+
+Oily waves slapped against the pilings as ...
+2025-02-22 13:12:24,470 - BookBot - INFO - Tokens in: 169983, Tokens out: 9076
+2025-02-22 13:12:24,472 - BookBot - INFO - New content chunk of length 2039 bytes, 1038 tokens, 309 words (excluding think)
+2025-02-22 13:12:24,472 - BookBot - INFO - Content chunk does not end with THE END - continuing...
+2025-02-22 13:12:24,472 - BookBot - INFO - Making LLM call (continuation 8)
+2025-02-22 13:12:24,474 - BookBot - INFO - Sending request to https://openrouter.ai/api/v1/chat/completions, attempt 1
+2025-02-22 13:13:20,437 - BookBot - INFO - Received response: **CONTINUED**  
+
+---  
+
+**City Hall Station – Abandoned Subway Tunnels | June 13, 1929 | 3:17 AM**  ...
+2025-02-22 13:13:20,439 - BookBot - INFO - Tokens in: 196507, Tokens out: 10527
+2025-02-22 13:13:20,441 - BookBot - INFO - New content chunk of length 2943 bytes, 1451 tokens, 441 words (excluding think)
+2025-02-22 13:13:20,441 - BookBot - INFO - Found THE END marker
+2025-02-22 13:13:20,441 - BookBot - INFO - Final content length: 20128 bytes

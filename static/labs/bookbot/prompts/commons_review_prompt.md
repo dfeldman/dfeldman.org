@@ -1,0 +1,36 @@
+This is an important step called the outline edit.
+Based on all the materials you've already written, look carefully for plot holes, and decide how they will be fixed.
+Plot holes include: 
+- The point-of-view character knowing things they shouldn't know (things they can't possibly have seen or been told)
+- The point-of-view character knowing things that the reader doesn't know, such as that a person who appeaers is actually
+an old friend, or how to get to a location that they just found out about previously
+- The point of view character going from place to place within a chapter, with no explanation of how they got there
+- Characters who show up in the outline with no introduction
+- Characters who move from place to place with no explanation for how they got there or why
+- Characters whose names are mentioned without being introduced anywhere
+- Important things that happen and then are completely forgotten, including death, injury, running out of money, getting in a fight, romantic events, pregnancy, meeting people, items or places getting destroyed, major decision. Whenever these happen, it needs to either
+be resolved in a satisfying way or continue throughout the story. 
+- Physically impossible actions. Such as a character who's in a car popping the tires of the car they are in, going through locked doors, opening locked boxes, traveling between places faster than is physically possible, lifting things that are not realistic for a person to lift.
+- Illogical things with money, such as buying things that are clearly unaffordable, giving away valuable things, etc. 
+- Characters doing things that are plainly contrary to their motivations, such as a friend of the antagonist suddenly becoming 
+a friend of the protagonist. 
+- It's okay for story elements to be mildly supernatural, such as a secret network of tunnels
+or a lucky tree or a premonition. But it's NOT okay for major deus ex machina events to save the day, such as a bomb going off at exactly the right time, a character showing up exactly when they are needed, someone magically becoming healthy after being injured, etc.
+- And most of all, it's important for it to be a fun story! There should be deep tension, exciting twists (that make sense), and a satisfying ending.
+
+Initial Description:
+{{ initial }}
+
+Setting:
+{{ setting }}
+
+Characters:
+{{ characters }}
+
+Outline:
+{{ outline }}
+
+Carefully review these materials and write a "plot hole review" document which specifies how to fix them
+by altering the outline, settings, and character descriptions. 
+Be sure to be specific on your chosen resolution, since you'll have to carry them out - say things like
+"be sure to write that Bob loses his shoe in chapter 3, so that in chapter 5 he has no shoes" so that later, when writing, you know exactly where to make the change to resolve the plot hole.

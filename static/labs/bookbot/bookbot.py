@@ -772,6 +772,55 @@ class BookBot:
             logger.error(f"Error writing outline: {e}")
             raise BookBotError(f"Failed to write outline: {e}")
 
+    
+    def write_commons_review(self):
+        """Generate the commons review"""
+        try:
+            # Load required files
+            initial = TextFile(Path("initial.md"))
+            setting = TextFile(COMMON_DIR / "setting.md")
+            characters = TextFile(COMMON_DIR / "characters.md")
+            outline = TextFile(COMMON_DIR / "outline.md")
+            if not all(f.filepath.exists() for f in [initial, setting, characters]):
+                raise BookBotError("Required files (initial.md, setting.md, characters.md) not found")
+            
+            # Generate outline
+            prompt = self._load_template("commons_review_prompt", {
+                "initial": initial.content,
+                "setting": setting.content,
+                "characters": characters.content,
+                "outline": outline.content
+            })
+            content, tokens_in, tokens_out = self._call_llm(prompt)
+            
+            # Save outline
+            commons_review = TextFile(COMMON_DIR / "commons_review.md")
+            commons_review.content = content
+            commons_review.metadata = {
+                "created_at": datetime.now().isoformat()
+            }
+            commons_review.update_conversation_history({
+                "command": "write_commons_review",
+                "llm": self.llm.name,
+                "tokens_in": tokens_in,
+                "tokens_out": tokens_out,
+                "prompt": prompt,
+                "content": content
+            })
+            commons_review.save()
+            
+            self._git_commit("Generated commons review")
+
+            # Generate preview
+            self._generate_preview()
+            
+            console.print("\n[green]✓[/green] Commons review generated successfully")
+            
+        except Exception as e:
+            logger.error(f"Error writing commons review: {e}")
+            raise BookBotError(f"Failed to write commons review: {e}")
+
+
     def _get_previous_chapter_content(self, chapter_num: int) -> Optional[str]:
         """Get content from the previous chapter if it exists"""
         if chapter_num <= 1:
@@ -1293,7 +1342,8 @@ def main():
     subparsers.add_parser('write-setting', help='Generate the story setting')
     subparsers.add_parser('write-characters', help='Generate the story characters')
     subparsers.add_parser('write-outline', help='Generate the story outline')
-    
+    subparsers.add_parser('write-commons-review', help='Generate commons review (plot hole fix)')
+
     # Write chapter command
     write_parser = subparsers.add_parser('write-chapter', help='Write a new chapter')
     write_parser.add_argument('number', type=int, help='Chapter number')
@@ -1325,6 +1375,8 @@ def main():
             bot.write_characters()
         elif args.command == 'write-outline':
             bot.write_outline()
+        elif args.command == 'write-commons-review':
+            bot.write_commons_review()
         elif args.command == 'write-chapter':
             bot.write_chapter(args.number)
         elif args.command == 'edit-chapter':

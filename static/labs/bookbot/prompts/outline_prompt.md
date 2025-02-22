@@ -15,6 +15,7 @@ Items can't appear or disappear for no reason. Side characters can't abruptly mo
 If a character, item, or setting, is REUSED (it's already been introduced in an earlier chapter), denote that as well.
 Each chapter description should indicate the setting; the characters; and the date and time. Be detailed with the setting - 
 not "on a train" but "sitting next to each other in seat X of the train Y". 
+If a character changes locations, it MUST be mentioned how they get from place to place. Car, bus, train, walk, bicycle - how long did it take, was it a safe journey. 
 You will write each chapter individually, without seeing the other chapters, so the outline as a whole needs to make sense. 
 Also include a rough length for each chapter, in words, so the writer knows how long to make it.
 
