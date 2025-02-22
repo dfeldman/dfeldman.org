@@ -883,6 +883,7 @@ class BookBot:
             outline = TextFile(COMMON_DIR / "outline.md")
             setting = TextFile(COMMON_DIR / "setting.md")
             characters = TextFile(COMMON_DIR / "characters.md")
+            commons_review = TextFile(COMMON_DIR / "commons_review.md")
                 
             prev_chapter_content = self._get_previous_chapter_content(chapter_num)
             if prev_chapter_content:
@@ -894,6 +895,7 @@ class BookBot:
                 "outline": outline.content,
                 "setting": setting.content,
                 "characters": characters.content,
+                "commons_review": commons_review.content,
                 "previous_chapter": prev_chapter_content
             }
             

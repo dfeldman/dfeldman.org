@@ -16,6 +16,7 @@ be resolved in a satisfying way or continue throughout the story.
 a friend of the protagonist. 
 - It's okay for story elements to be mildly supernatural, such as a secret network of tunnels
 or a lucky tree or a premonition. But it's NOT okay for major deus ex machina events to save the day, such as a bomb going off at exactly the right time, a character showing up exactly when they are needed, someone magically becoming healthy after being injured, etc.
+- Foreshadowing shouldn't happen just one time. Typically, if something needs foreshadowing or earlier explanation to make sense, it should be mentioned two or three times earlier in the story.
 - And most of all, it's important for it to be a fun story! There should be deep tension, exciting twists (that make sense), and a satisfying ending.
 
 Initial Description:
@@ -34,3 +35,4 @@ Carefully review these materials and write a "plot hole review" document which s
 by altering the outline, settings, and character descriptions. 
 Be sure to be specific on your chosen resolution, since you'll have to carry them out - say things like
 "be sure to write that Bob loses his shoe in chapter 3, so that in chapter 5 he has no shoes" so that later, when writing, you know exactly where to make the change to resolve the plot hole.
+Don't start writing the content of the book yet. Just write the plot hole review document, and stop.

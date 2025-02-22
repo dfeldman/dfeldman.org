@@ -1,67 +1,84 @@
 ---
 chapter_number: 1
-created_at: 2025-02-22T00:08:03.163165
+created_at: 2025-02-22T13:27:31.882301
 ---
-# Chapter 1: Empty Pedestral  
+# Chapter 1: Ghosts of Gilt  
+**June 3, 1929 | 8:00 AM**  
 
-Smoke curled from my cigarette as I stared at the void where Byzantine emperors once sat. The Golden Throne’s pedestal hadn’t changed in three years—same black velvet shroud, same brass plaque tarnished by the breath of gawkers. I flicked ash onto the Kensington Museum’s marble floor. Let the docents tut.  
+The icebox hummed like a dying man’s breath as I cracked two eggs into the skillet. Morning light cut through the grime on my apartment window, striping the bulletin board where my father’s face stared back from a yellowed photograph. Joseph Sinclair, 1926—two days before they found him in the Met’s loading dock with his throat slit and a museum guard’s baton shoved through his ribs.  
 
-“Miss Sinclair.” Gus’s wheeze preceded him around the Corinthian column. His flashlight trembled in rheumatic hands. “We close in ten.”  
+I ate standing up, grease dripping onto yesterday’s edition of *The Sentinel*. Mayor Kensington’s smirking face soaked up the yolk under the headline: **“CLEAN STREETS, CLEANER CONSCIENCE!”** The skillet hissed when I slammed it back on the stove.  
 
-I didn’t turn. The dagger of his knowledge—that he’d been on duty that night too—pressed between my shoulder blades. “You ever hear anything else? About the theft?”  
+The ritual came next. Three taps on the Underwood’s spacebar to wake it up. A sip of bootleg gin from the teapot. Then the lie I told myself every morning since the funeral: *Today’s the day you’ll finish his story.*  
 
-His throat rattled. “Administration said not to talk.”  
+My fingers found the scar on my collarbone—a souvenir from chasing a pickpocket through the Bowery—as I reread Dad’s notes for the hundredth time.  
 
-“But you want to.” I caught his reflection in the glass case behind me. The dumb guilt in his bloodshot eyes.  
+*Golden Throne of Akbar: Mughal, 1572. Last seen in Met storage vault. Missing: twin emerald eyes (approx. 200 carats each). Security footage erased. Curator Heinrich Mueller resigned abruptly 3/14/26…*  
 
-He shuffled closer, reeking of Ben-Gay and rye. “Basement door’s been…whispering. Last Tuesday.” A cough shook his hunched frame. “Like someone dragging chains.”  
+The words blurred. That smell came back—coppery and sweet, like pennies left in the sun. Blood soaking the notebook’s pages when I’d pulled it from his coat. His handwriting spasmed near the end: *Cursed? Six victims in three months—all linked to the heist. Heart attacks, drownings… even the damn janitor.*  
 
-My pulse leapt. *Uncle Arthur’s ghost,* the superstitious part of me whispered. The part that still saw his bloated face in the East River whenever I closed my eyes.  
+**Knock-knock-knock.**  
 
-I crushed the cigarette under my oxford. “Tell me where.”  
+I jammed the notebook into my desk drawer. Mrs. O’Hara’s shrill voice cut through the door: “Miss Sinclair! Either your icebox is electrocuting that cat again, or you’ve taken up the theremin!”  
 
-The grand staircase creaked. Gus melted into shadows as a pair of interns descended, their laughter too bright for the tomb-quiet halls.  
+“It’s a *new* theremin!” I shouted back, shrugging into my blazer. The pocket watch slipped from the lining—Dad’s, its hands frozen at 2:17 AM. I kissed the cracked glass before dropping it down my cleavage. Let the Mayor’s cronies try frisking me there.  
 
-“Miss Sinclair!” Fletcher’s voice carried the edge of a man who’d shouted down riots. “My office. Now.”  
+---
 
-———  
+**10:15 AM | The New York Sentinel Newsroom**  
 
-The *New York Star* newsroom swam in honeyed light and sweat. Teletype machines clattered like vengeful spirits. Fletcher stood at his cracked leather desk, ink bleeding through the society page draft in his fist.  
+Fletcher’s glass eye caught the light as I passed his office. “Sinclair! My desk. Now.”  
 
-“Beaumont’s gala.” He thrust the paper at me. “Tonight. Whitefields Estate.”  
+Teletype machines chattered like angry starlings. I stepped over a copyboy sleeping in a nest of AP wire reports and tossed my hat at the coat rack. Missed.  
 
-I leaned against the doorframe. “You’re giving me glitter and hors d'oeuvres?”  
+“Fluff piece.” Fletcher slammed a folder on his desk, his good eye bloodshot. “Kensington’s speech at noon. ‘Clean Streets Initiative.’”  
 
-“Charles Beaumont’s importing ‘art benefactors’ from Marseille.” His index finger stabbed the guest list—a who’s who of bankers and bootleggers. “Word is the Moretti crew’s laundering through his gallery.”  
+I stared at the photo—Kensington posing with a broom beside a gleaming sanitation truck. “You want me to lick his boots while he launders blood money?”  
 
-The name hit like a gut punch. *Moretti.* The same family who’d paid a certain security guard to look the other way in ’26. The guard whose body they pulled from the river six days later.  
+“I want you to write what pays the rent.” He leaned closer, whiskey and Sen-Sen smothering the air between us. “Chasing your father’s ghost won’t unkill him, Viv.”  
 
-“I need sources, not society drivel.”  
+The pocket watch burned against my sternum. “At least ghosts don’t charge by the column inch.”  
 
-Fletcher’s laugh smelled of bourbon and bronchitis. “Kid, drivel pays your rent.” He tossed me a press pass. “Be there by eight. And Viv?” His gaze softened a fracture. “Don’t pick fights with waiters.”  
+Someone cleared their throat behind me.  
 
-———  
+Rex Donovan leaned against my desk, his limp more pronounced today. The rye on his breath couldn’t mask the gun oil. “Heard you’ve been asking about Sammy Delgado’s establishment.”  
 
-My apartment greeted me with mildew and silence. I shrugged off my suspenders, the cotton sticking to my skin. The icebox yielded half a grapefruit and a bottle of Bathtub Ring gin. I drank straight from the neck.  
+Fletcher’s chair creaked. “Get your mob gossip off my payroll, Donovan.”  
 
-Three years. Three years since the headlines crucified Arthur Sinclair as the Kensington Mole. Since I’d found the farewell note hidden in my copy of *The Great Gatsby*—*They made me do it, Vivvie. Forgive me.*  
+“Just sharing a lunch tip. Best corned beef in town.” Rex pressed a matchbook into my palm—*The Sapphire Rabbit, 83 Leroy*. Inside, scrawled in grease pencil: *Ask about Mr. X*.  
 
-The Remington waited on the desk, its keys gleaming like rotten teeth. I fed in a fresh sheet.  
+**CONTINUE**  
 
-The carriage jerked.  
+The newsroom’s clatter faded as I palmed the matchbook. Rex’s dossier peeked from his coat—a shipping manifest with *Red Hook Dock 9* circled in red. He caught me looking and snapped the folder shut.  
 
-A slip of onionskin paper fluttered to the floor.  
+“You still take your gin with lime?” he muttered.  
 
-Ice flooded my veins.  
+“You still carry that Derringer in your sock?”  
 
-*DON’T LOOK*  
+His laugh rasped like a match strike. “Only when I’m courting trouble.”  
 
-The typed words blurred. I sank into the armchair, springs biting my thighs. My name curled at the bottom in familiar, spidery cursive—Arthur’s handwriting.  
+Fletcher’s door flew open. “Sinclair! You’re late to suck up to City Hall!”  
 
-But that wasn’t possible.  
+I grabbed my notepad, Kensington’s speech notes crinkling in my fist. The furnace in the basement chose that moment to roar—or maybe it was my pulse.  
 
-The gin rose bitter in my throat as I angled the page toward the light. A single phrase glowed beneath his signature, written in lemon juice—his old trick for passing me notes during church sermons.  
+“Tell Sammy I want the ’24 batch,” Rex said too loudly. “None of that bathtub swill.”  
 
-*The Throne isn’t lost—it’s currency.*  
+Outside, I lit a cigarette with a Sapphire Rabbit match. The flame trembled.  
 
-Outside, the El train screamed.
+---
+
+**12:30 PM | City Hall Press Pool**  
+
+Mayor Kensington’s voice dripped honey over the crowd. “—and with these new sanitation protocols, we’ll scrub our fair city down to its virtuous bones!”  
+
+I scribbled nothing. The matchbook’s edges dug into my palm.  
+
+A sanitation worker passed out flyers. I grabbed his wrist. “Who’s Mr. X?”  
+
+His pupils blew wide. “Lady, I just drive the truck.”  
+
+The Mayor’s gaze snagged on me as I slipped away. His smile didn’t reach his eyes—flat and cold as the emeralds missing from the Golden Throne.  
+
+In the alley, I burned Kensington’s speech notes with a Sapphire Rabbit match. The smoke tasted like my father’s last tip.  
+
+**

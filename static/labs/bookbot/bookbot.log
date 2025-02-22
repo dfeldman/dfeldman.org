@@ -1412,3 +1412,14 @@ Oily waves slapped against the pilings as ...
 2025-02-22 13:13:20,441 - BookBot - INFO - New content chunk of length 2943 bytes, 1451 tokens, 441 words (excluding think)
 2025-02-22 13:13:20,441 - BookBot - INFO - Found THE END marker
 2025-02-22 13:13:20,441 - BookBot - INFO - Final content length: 20128 bytes
+2025-02-22 13:13:21,894 - BookBot - INFO - Successfully committed changes: Generated commons review
+2025-02-22 13:26:06,322 - BookBot - INFO - Making LLM call (continuation 1)
+2025-02-22 13:26:06,324 - BookBot - INFO - Sending request to https://openrouter.ai/api/v1/chat/completions, attempt 1
+2025-02-22 13:27:31,874 - BookBot - INFO - Received response: # Chapter 1: Ghosts of Gilt  
+**June 3, 1929 | 8:00 AM**  
+
+The icebox hummed like a dying man’s bre...
+2025-02-22 13:27:31,876 - BookBot - INFO - Tokens in: 20385, Tokens out: 1881
+2025-02-22 13:27:31,878 - BookBot - INFO - New content chunk of length 4899 bytes, 1881 tokens, 799 words (excluding think)
+2025-02-22 13:27:31,878 - BookBot - INFO - Found THE END marker
+2025-02-22 13:27:31,878 - BookBot - INFO - Final content length: 4890 bytes
