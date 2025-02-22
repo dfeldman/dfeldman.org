@@ -455,14 +455,25 @@ class BookBot:
                 content = content.replace(f"{{{{ {key} }}}}", str(value))
         return content
 
-    def _make_single_llm_call(self, messages: List[Dict[str, str]], max_retries: int = 3) -> Tuple[str, int, int]:
-        """Make a single API call to the LLM with retry logic"""
-        headers = {
-            "Authorization": f"Bearer {self.api_key}",
-            "HTTP-Referer": "http://localhost:3000",
-            "X-Title": "BookBot",
-            "Content-Type": "application/json"
-        }
+
+
+    def _call_llm(self, prompt: str, max_retries: int = 3) -> Tuple[str, int, int]:
+        """
+        Call the LLM API with continuation support.
+        
+        Will make multiple API calls if necessary until a complete response is received
+        (ending with THE END) or an error occurs.
+        """
+        # TODO needs far more logging
+        system_prompt = self._load_template("system_prompt")
+        
+        # Initialize the message history
+        messages = [
+            {"role": "system", "content": system_prompt},
+            {"role": "user", "content": prompt + 
+             """\n Now write your first chunk of content. Write as much as you wish, and end with CONTINUE to have the chance to 
+             continue writing in the next chunk. Write THE END if this chunk concludes the section."""}
+        ]
         
         provider = self.llm.provider
         if provider == "":
@@ -474,123 +485,121 @@ class BookBot:
             "model": self.llm.full_name,
             "messages": messages,
             "temperature": self.llm.temperature, 
-            "provider": provider
         }
 
-        # Debug logging
-        logger.info("=== API Request Debug ===")
-        logger.info(f"Messages length: {len(messages)}")
-        logger.info(f"Last message: {messages[-1]}")
-
-        for attempt in range(max_retries):
-            try:
-                with Progress(SpinnerColumn(), TextColumn("[progress.description]{task.description}"), console=console) as progress:
-                    task = progress.add_task("Generating content...", total=None)
-                    
-                    response = requests.post(
-                        "https://openrouter.ai/api/v1/chat/completions",
-                        headers=headers,
-                        json=data,
-                        timeout=60
-                    )
-                    
-                    if response.status_code != 200:
-                        logger.error(f"Response status: {response.status_code}")
-                        logger.error(f"Response body: {response.text}")
-                    
-                    if response.status_code == 401:
-                        raise LLMError("Authentication failed - check your API key", response)
-
-                    if response.status_code == 429:
-                        retry_after = int(response.headers.get('Retry-After', 5))
-                        logger.warning(f"Rate limited. Waiting {retry_after} seconds...")
-                        time.sleep(retry_after)
-                        continue
-                        
-                    response.raise_for_status()
-                    result = response.json()
-                    
-                    if 'error' in result:
-                        error_msg = result.get('error', {}).get('message', 'Unknown error')
-                        raise LLMError(f"API returned error: {error_msg}", response)
-                    
-                    if not result.get('choices'):
-                        raise LLMError("No choices in API response", response)
-                    
-                    content = result["choices"][0]["message"]["content"]
-                    tokens_in = result["usage"]["prompt_tokens"]
-                    tokens_out = result["usage"]["completion_tokens"]
-                    
-                    # Check for completely empty response
-                    if not content or content.isspace():
-                        if attempt < max_retries - 1:
-                            logger.warning("Received empty content, retrying...")
-                            continue
-                        else:
-                            raise LLMError("API returned empty content after all retries")
-                    
-                    return content.strip(), tokens_in, tokens_out
-                    
-            except requests.RequestException as e:
-                logger.error(f"API call failed (attempt {attempt + 1}/{max_retries}): {e}")
-                if attempt == max_retries - 1:
-                    raise LLMError(f"Failed to call LLM API after {max_retries} attempts: {e}")
-                time.sleep(2 ** attempt)
-        
-        raise LLMError("Max retries exceeded")
-
-    def _call_llm(self, prompt: str, max_retries: int = 3) -> Tuple[str, int, int]:
-        """
-        Call the LLM API with continuation support.
-        
-        Will make multiple API calls if necessary until a complete response is received
-        (ending with THE END) or an empty response is received.
-        """
-        system_prompt = self._load_template("system_prompt")
-        
-        # Initialize the message history
-        messages = [
-            {"role": "system", "content": system_prompt},
-            {"role": "user", "content": prompt}
-        ]
-        
         # Initialize accumulated tokens and content
         total_tokens_in = 0
         total_tokens_out = 0
         accumulated_content = []
+        continuation_count = 0
+        max_continuations = 10  # Safety limit
         
-        while True:
+        while continuation_count < max_continuations:
+            continuation_count += 1
+            logger.info(f"Making LLM call (continuation {continuation_count})")
+            
             # Make the API call
-            content, tokens_in, tokens_out = self._make_single_llm_call(messages, max_retries)
-            
-            # Accumulate tokens
-            total_tokens_in += tokens_in
-            total_tokens_out += tokens_out
-            
-            # Store this chunk of content
+            try:
+                headers = {
+                    "Authorization": f"Bearer {self.api_key}",
+                    "HTTP-Referer": "http://localhost:3000",
+                    "X-Title": "BookBot",
+                    "Content-Type": "application/json"
+                }
+                
+                data = {
+                    "model": self.llm.full_name,
+                    "messages": messages,
+                    "temperature": self.llm.temperature,
+                    "provider": provider
+                }
+                
+                for attempt in range(max_retries):
+                    try:
+                        with Progress(SpinnerColumn(), TextColumn("[progress.description]{task.description}"), console=console) as progress:
+                            task = progress.add_task(
+                                f"Generating content (part {continuation_count})...",
+                                total=None
+                            )
+                            logger.info(f"Sending request to {OPENROUTER_API_URL}, attempt {attempt + 1}")
+                            response = requests.post(
+                                "https://openrouter.ai/api/v1/chat/completions",
+                                headers=headers,
+                                json=data,
+                                timeout=60
+                            )
+                            
+                            if response.status_code != 200:
+                                if response.status_code == 429:  # Rate limit
+                                    retry_after = int(response.headers.get('Retry-After', 5))
+                                    logger.warning(f"Rate limited. Waiting {retry_after} seconds...")
+                                    time.sleep(retry_after)
+                                    continue
+                                logger.error(f"Error response: {response.text}")
+                                response.raise_for_status()
+                                
+                            result = response.json()
+                            if not result.get('choices'):
+                                raise LLMError("No choices in response")
+                                
+                            content = result["choices"][0]["message"]["content"]
+                            if not content or content.isspace():
+                                if attempt < max_retries - 1:
+                                    continue
+                                raise LLMError("Empty response")
+                            logger.info(f"Received response: {content[:100]}...")
+                            logger.debug(f"Received response: {content}...")
+                            content = re.sub(r'<think>.*?</think>\n?', '', content, flags=re.DOTALL)
+
+                            # Add to token counts
+                            total_tokens_in += result["usage"]["prompt_tokens"]
+                            total_tokens_out += result["usage"]["completion_tokens"]
+                            logger.info(f"Tokens in: {total_tokens_in}, Tokens out: {total_tokens_out}")
+                            break  # Successful response
+                            
+                    except requests.RequestException as e:
+                        if attempt == max_retries - 1:
+                            raise
+                        time.sleep(2 ** attempt)
+                        continue
+                        
+            except Exception as e:
+                logger.error(f"API call failed: {str(e)}")
+                # If we have any accumulated content, return it
+                if accumulated_content:
+                    return "\n".join(accumulated_content), total_tokens_in, total_tokens_out
+                raise
+                
+            tokens = result["usage"]["completion_tokens"]
+            words = len(content.split())
+            logger.info(f"New content chunk of length {len(content)} bytes, {tokens} tokens, {words} words (excluding think)")
+
+            # Add this chunk to accumulated content
             accumulated_content.append(content)
-            
             # Check if we're done
             if "THE END" in content:
+                logger.info("Found THE END marker")
                 final_content = "\n".join(accumulated_content)
-                # Split at THE END and take everything before it
                 final_content = final_content.split("THE END")[0].strip()
+                logger.info(f"Final content length: {len(final_content)} bytes")
                 return final_content, total_tokens_in, total_tokens_out
                 
-            # If the content is very short, it might indicate we should stop
-            if len(content) < 50:  # Arbitrary threshold
-                logger.warning(f"Received very short content, stopping: {content}")
-                final_content = "\n".join(accumulated_content)
-                return final_content, total_tokens_in, total_tokens_out
-                
-            # If we get here, we need to continue
-            # Add the last response to the message history
+            wordcount = [len(chunk.split()) for chunk in accumulated_content]
+            # Not done - add to message history and continue
             messages.append({"role": "assistant", "content": content})
-            # Add the continue prompt
-            messages.append({"role": "user", "content": "continue"})
+            messages.append({"role": "user", "content": 
+                             f"You have written {wordcount} so far. Continue writing the next chunk."+
+                             """When you're done with this chunk, write CONTINUE if you'd like to keep writing,
+                             or THE END if this chunk concludes the section."""})
+            if content.endswith("CONTINUE\n"): # Should probably be fuzzier here
+                content = content[:-len("CONTINUE\n")].strip()
+            logger.info("Content chunk does not end with THE END - continuing...")
             
-            logger.info(f"Content chunk received ({len(content)} chars). Continuing...")
-        
+        # If we get here, we hit the max continuations
+        logger.warning(f"Hit maximum continuations ({max_continuations})")
+        return "\n".join(accumulated_content), total_tokens_in, total_tokens_out
+
+
     def _git_commit(self, message: str):
         """
         Commit changes to git repository.

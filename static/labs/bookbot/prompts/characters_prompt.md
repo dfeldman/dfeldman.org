@@ -13,7 +13,11 @@ Be sure to include minor characters, not just those mentioned in the initial fil
 characters need only brief descriptions.
 Be sure to dedicate a lot of attention to writing detailed descriptions of major characters.
 Names should be typical of the time, but not too stereotypical. Be careful that no two characters have similar names. 
-Write at least 3000 words here. 
+Write at least 3000 words here, with at least 500 for each major character and 200 for each minor character. You can
+write as much as you'd like.
+
+ALWAYS REMEMBER THAT THE STORY IS FIRST PERSON. The main character can't see things that they couldn't see in real life, 
+take actions that they can't do in their current locaation, know people's names without being introduced, or know things that other characters know without a conversation. 
 
 Initial Description:
 {{ initial }}

@@ -8,10 +8,14 @@ Based on the initial book description below, create a detailed description of th
 Include enough background to describe each place in the story consistently. For example don't just say 
 "the street in front of their house." Include the condition of the street, the name of the street, 
 landmarks, the names of the neighbors - enough rich detail to write a story set on the street. 
+Include a detailed physical description of each location. How big is it in square feet, how many bedrooms are in the house, 
+where are the entrances and exits, if it's a moving vehicle then exactly how it works. 
 For key locations, include all five senses - visual, touch, smell, taste (if food or drink is involved), and sound ambiance.
-Include all key items that are relevant to the story as well. Artifacts, packages, letters, notes, gifts, weapons, etc. Each should be indicated here with a line or two of description.
+Also temperature and whether it's light or dark.
+Add minor locations as well that add a rich tapestry to the story, not just key locations where major events happen.
+
 Each chapter will be written individually, with only this information. So in order to maintain consistency, this
-file must contain all needed detail.
+file must contain all needed detail to write the complete story.
 
 Initial Description:
 {{ initial }}
