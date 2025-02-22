@@ -1,0 +1,26 @@
+metadata:
+  title: Untitled
+  author: Anonymous
+  language: en-US
+  rights: All rights reserved
+top-level-division: chapter
+pdf-engine: xelatex
+variables:
+  papersize: 6in:9in
+  mainfont: Times New Roman
+  fontsize: 11pt
+  geometry:
+  - paperwidth=6in
+  - paperheight=9in
+  - margin=1in
+  - headheight=14pt
+  linkcolor: black
+  header-includes:
+  - \usepackage{fancyhdr}
+  - \usepackage{graphicx}
+  - \pagestyle{fancy}
+  - \fancyhead{}
+  - \fancyhead[CO]{\leftmark}
+  - \fancyhead[CE]{\rightmark}
+  - \fancyfoot{}
+  - \fancyfoot[C]{\thepage}

@@ -1,51 +1,210 @@
 ---
-created_at: 2025-02-21T00:14:11.310843
+created_at: 2025-02-21T23:55:12.723738
 ---
-# Main Characters
+# Characters for *The Case of the Golden Throne*  
 
-## Rex
-- **Role in the Story**: Protagonist; a loyal dog and keen observer of human life.
-- **Physical Description**: A medium-sized, mixed-breed dog with a sleek, shiny coat of sable and white, expressive amber eyes, and a perpetually wagging tail.
-- **Personality Traits and Mannerisms**: Curious and intelligent, Rex exhibits an innate sense of empathy. He has a playful yet protective nature, frequently tilting his head in a quizzical manner when contemplating the world around him.
-- **Background and History**: Rex was adopted by Mr. Thompson after being found as a stray pup near the town's outskirts. His early life was marked by uncertainty, but he quickly grew into his new home, becoming a cherished member of the Thompson household.
-- **Goals and Motivations**: Rex seeks to understand the human world and his place within it, driven by a deep connection to Mr. Thompson and a desire to protect his home and those he loves.
-- **Relationships with Other Characters**: Rex shares a profound bond with Mr. Thompson, serving as his confidant and protector. He also befriends other animals in the town, including a barn cat named Whiskers.
-- **Key Conflicts or Challenges**: Rex faces the challenge of adapting to societal changes impacting his owner and the town. His loyalty is tested as he navigates the tensions between old traditions and new ideas.
+---
 
-## Mr. Thompson
-- **Role in the Story**: Rex's owner and a central figure in the town.
-- **Physical Description**: A tall, sturdy man in his late 50s with weathered skin, silver hair, and a gentle but firm demeanor.
-- **Personality Traits and Mannerisms**: Resilient, kind-hearted, and pragmatic, Mr. Thompson is a man of few words, often communicating more with a nod or a gentle smile. He has a deep reverence for nature and the simple life.
-- **Background and History**: A widower, Mr. Thompson has dedicated his life to farming and raising his family. His farm, passed down through generations, is both his livelihood and legacy.
-- **Goals and Motivations**: Mr. Thompson is motivated by a desire to maintain his farm and honor his family’s legacy while embracing the new ideas and changes of the era.
-- **Relationships with Other Characters**: He shares a paternal bond with Rex and is well-regarded in the community, often found in conversation with townsfolk at the local diner.
-- **Key Conflicts or Challenges**: Mr. Thompson struggles with the dual challenges of modernizing his farm and reconciling his traditional values with the evolving societal landscape.
+## **VIVIAN SINCLAIR (MAIN CHARACTER)**  
+**Role**: Lead gumshoe reporter.  
+**Nicknames**: Viv, "Lace" (by underworld contacts for her deceptive softness).  
+**Gender**: Female.  
 
-# Supporting Characters
+### **Physical Description**  
+- **Height/Weight**: 5'8", 135 lbs. Lithe but muscular from chasing leads.  
+- **Build**: Athletic with sharp angles—collarbones like stair rails, hands calloused from typewriter keys.  
+- **Skin Tone**: Pale ivory with freckles across her nose. Burns easily in the summer sun.  
+- **Eyes**: Hazel-green, almost gold in low light. Dark circles underneath from insomnia.  
+- **Hair**: Chin-length bob, jet black with a single silver streak (stress-induced, appeared after her uncle’s suicide).  
+- **Quirks**: Bites her cuticles when anxious. Always smells faintly of cigarette smoke and lavender oil.  
+- **Shoe Size**: 7.5—wears scuffed oxfords for work, silk T-straps for parties.  
 
-## Mary Jenkins
-- **Role in the Story**: The owner of the local bakery and a family friend.
-- **Physical Description**: A robust woman in her 40s with curly auburn hair and flour-dusted aprons.
-- **Personality Traits and Mannerisms**: Warm and motherly, with a hearty laugh that fills her bakery. Known for her generosity, often seen offering free pastries to children.
-- **Background and History**: Mary moved to Willow Creek from a big city, seeking a quieter life. Her bakery quickly became a staple in the community.
-- **Goals and Motivations**: Mary aims to expand her bakery while fostering a sense of community and belonging in the ever-changing town.
-- **Relationships with Other Characters**: A close friend to Mr. Thompson and a frequent visitor to his farm, she often shares her insights and baked goods with him.
-- **Key Conflicts or Challenges**: She faces the challenge of balancing business growth with her desire to maintain the intimate, community-focused atmosphere of her bakery.
+### **Fashion**  
+- **Work**: Men’s taupe trousers, white blouse with rolled sleeves, suspenders. A newsboy cap hides her face during stakeouts.  
+- **Evening**: Emerald satin slip dress, seamed stockings, a rhinestone garter holstering a Derringer.  
+- **Makeup**: Cupid’s bow lips in deep rouge; kohl smudged under eyes to mask exhaustion.  
 
-## Whiskers
-- **Role in the Story**: A barn cat and Rex's confidant.
-- **Physical Description**: A sleek, black cat with piercing green eyes and a nimble, stealthy presence.
-- **Personality Traits and Mannerisms**: Independent and cunning, Whiskers has a sharp wit and a penchant for mischief, often seen slinking through the shadows or lounging in sunbeams.
-- **Background and History**: Born in the barn on Mr. Thompson's farm, Whiskers has always been a part of the farm's ecosystem, adept at catching mice and observing the world from a distance.
-- **Goals and Motivations**: Whiskers is motivated by a desire for adventure and discovery, always seeking out new mysteries to unravel within the town.
-- **Relationships with Other Characters**: Shares a playful rivalry and camaraderie with Rex, often engaging in banter and shared adventures.
-- **Key Conflicts or Challenges**: Whiskers grapples with the changes brought by modernization, as they threaten the tranquility and mystery of his familiar surroundings.
+### **Personality**  
+- **Traits**: Tenacious, skeptical to a fault, sardonic humor. Hides vulnerability behind clipped professionalism.  
+- **Mannerisms**: Talks fast, punctuates sentences with cigarette gestures. Taps her heel when impatient.  
 
-## Sheriff Carter
-- **Role in the Story**: The town's lawman and a figure of authority.
-- **Physical Description**: A tall, imposing man with a neatly trimmed mustache and a stern yet approachable demeanor.
-- **Personality Traits and Mannerisms**: Fair and just, with a keen sense of right and wrong. Known for his methodical approach and a penchant for chewing gum.
-- **Background and History**: A lifelong resident of Willow Creek, Sheriff Carter grew up in the town and has seen it through various changes.
-- **Goals and Motivations**: Committed to maintaining peace and order in Willow Creek while adapting to the new societal changes.
-- **Relationships with Other Characters**: Respected by Mr. Thompson and the townsfolk, often seen having coffee at Mary's bakery.
-- **Key Conflicts or Challenges**: Faces the challenge of enforcing laws that are becoming outdated in the face of societal change, while maintaining the community's trust.
+### **Work Life**  
+- **Office**: *The New York Star*, 43rd Street. A cramped desk piled with telegrams and coffee-stained notebooks.  
+- **Boss**: Fletcher Johnson, who chain-smokes Camels and throws pencils at tardy reporters.  
+- **Pay**: $45/week—barely covers rent and gin.  
+- **Commute**: Takes the Third Avenue El, memorizes faces in the crowd.  
+- **Lunch**: Street-cart pretzels or a dime-apple pie from the automat.  
+
+### **Home Life**  
+- **Apartment**: 312 Park Avenue, 4th floor. $30/month. Peeling walls, a Murphy bed that creaks, and a window overlooking a brick wall.  
+- **Meals**: Breakfast—black coffee, day-old bagels. Dinner—tinned sardines or diner meatloaf.  
+- **Neighborhood**: A mix of Italian immigrants and struggling artists. Smells of garlic and turpentine.  
+
+### **Background**  
+- **Childhood**: Grew up in Albany, NY. Father a failed playwright, mother a melancholic seamstress.  
+- **Family**: Uncle Arthur was the Kensington Museum night guard framed for the 1926 heist. His suicide when Viv was 19 haunts her.  
+- **Education**: Barnard College dropout (journalism). Speaks passable French and street Italian.  
+- **Romance**: Two past flings—a married editor (ended badly) and a jazz trumpeter (ghosted her).  
+- **Hobbies**: Collects vintage postcards, plays poker with cops at Sammy’s speakeasy.  
+
+### **Goals**  
+- **Primary**: Expose the Mayor’s corruption and clear her uncle’s name.  
+- **Secondary**: Survive the underworld without losing her soul (or heart to Vito).  
+
+### **Relationships**  
+- **Vito**: Electric tension—she distrusts his charm but craves his honesty.  
+- **Rex**: Father-figure she’ll never admit needing. Brings him whiskey to loosen his secrets.  
+- **Fletcher**: Respects his integrity but resents his deadlines.  
+
+---
+
+## **VITO ROMANO (MAIN CHARACTER)**  
+**Role**: Low-level gangster with conflicted loyalties.  
+**Nicknames**: "Venom" (for his bite), "The Tailor" (meticulous planning).  
+**Gender**: Male.  
+
+### **Physical Description**  
+- **Height/Weight**: 6'1", 185 lbs. Broad-shouldered, sinewy arms from loading smuggled crates.  
+- **Build**: Fighter’s physique—knobby knuckles, a crescent scar on his jaw (razor fight, age 17).  
+- **Skin Tone**: Mediterranean olive, tanned from rooftop deals.  
+- **Eyes**: Dark brown, hooded. Gazes linger a beat too long.  
+- **Hair**: Jet-black, slicked back with pomade. Sideburns razored sharp.  
+- **Quirks**: Rolls a silver dollar over his knuckles when thinking. Smells of sandalwood and gun oil.  
+
+### **Fashion**  
+- **Work**: Gray pinstripe suit, paisley vest, tie pin shaped like a dagger.  
+- **Casual**: Unbuttoned white shirt, suspenders, black wool slacks.  
+- **Footwear**: Polished wingtips (size 11) with a blade sewn into the left sole.  
+
+### **Personality**  
+- **Traits**: Charismatic strategist, morally ambiguous, fiercely protective of his younger sister.  
+- **Mannerisms**: Low, gravelly voice. Leans into personal space during conversations.  
+
+### **Work Life**  
+- **Role**: Smuggles art and liquor for the Moretti gang. Reports to Enzo "The Eel" Moretti.  
+- **HQ**: A garage on Mulberry Street—front for a flower shop reeking of carnations.  
+- **Pay**: $100/week (skims an extra $20 off shipments).  
+- **Lunch**: Eggplant parm subs shared with his crew.  
+
+### **Home Life**  
+- **Apartment**: 76 Orchard Street, 2nd floor. $40/month. Sparse—a Murphy bed, a shrine to his dead mother, and a locked chest of stolen sketches.  
+- **Meals**: Eats at his sister Rosa’s tenement most nights—gnocchi and bitter red wine.  
+
+### **Background**  
+- **Childhood**: Born in Naples, immigrated to NYC at 5. Father killed in a dockworker strike; mother died of consumption.  
+- **Family**: Raises Rosa (18), a seamstress he keeps shielded from his work.  
+- **Education**: Dropped out at 14. Reads Dante and Sun Tzu in secret.  
+- **Romance**: Avoids commitment—dalliances with showgirls and widows. Vivian is the first to challenge his defenses.  
+
+### **Goals**  
+- **Primary**: Earn enough to send Rosa to design school.  
+- **Secondary**: Escape the Morettis without getting a bullet in the skull.  
+
+### **Relationships**  
+- **Vivian**: Initially uses her for intel, but her grit mirrors his own hunger for redemption.  
+- **Enzo Moretti**: Feigns loyalty; suspects Enzo ordered his father’s death.  
+
+---
+
+## **REX DONOVAN (SUPPORTING)**  
+**Role**: Seasoned PI with a whiskey habit.  
+**Nicknames**: "Ghost" (for his vanishing acts), "Father Time" (cynical wisdom).  
+**Gender**: Male.  
+
+### **Physical Description**  
+- **Height/Weight**: 5'10", 200 lbs. Barrel-chested, gone soft at the middle.  
+- **Build**: Ex-boxer’s frame—broke nose, cauliflower ears.  
+- **Skin Tone**: Ruddy, whiskey-flushed.  
+- **Eyes**: Pale blue, bloodshot.  
+- **Hair**: Salt-and-pepper buzz cut.  
+- **Quirks**: Chews toothpicks; carries a flask of rye.  
+
+### **Personality**  
+- **Traits**: Jaded, sardonic, hates authority. Secretly funds an orphanage.  
+
+### **Work Life**  
+- **Office**: Above a Chinese laundry on Canal Street.  
+- **Clients**: Cheating spouses, missing heirs, the occasional mobster.  
+- **Pay**: Erratic—takes barter (once got a parrot as payment).  
+
+### **Background**  
+- **NYPD detective until 1921**—fired for refusing bribes. Wife left him; son died in the Great War.  
+
+### **Relationship with Vivian**  
+- Sees her as the daughter he lost. Teaches her to pick locks and spot tail jobs.  
+
+---
+
+## **MAYOR HAROLD KENSINGTON (ANTAGONIST)**  
+**Role**: Corrupt politician.  
+**Gender**: Male.  
+
+### **Physical Description**  
+- **Height/Weight**: 6'3", 220 lbs. Imposing, with a politician’s smile.  
+- **Hair**: Silver fox, combed back.  
+- **Eyes**: Arctic blue, unblinking.  
+
+### **Fashion**  
+- **Always in three-piece suits**, pocket watch chain glinting.  
+
+### **Home**  
+- **Manhattan penthouse** with a vault behind a Rembrandt forgery.  
+
+### **Background**  
+- **Born into old money**. Married a steel heiress; their frigid marriage is a press charade.  
+
+---
+
+## **CELESTE MOREAU (SUPPORTING)**  
+**Role**: Art forger.  
+**Gender**: Female.  
+
+### **Physical Description**  
+- **Waifish**, 5'4", 110 lbs. Porcelain skin; raven hair in a chignon.  
+- **Eyes**: One green, one brown (heterochromia).  
+
+### **Personality**  
+- **Haunted genius**. Addicted to absinthe; speaks in riddles.  
+
+### **Work**  
+-x Paints forgeries in a loft above a Harlem jazz club.  
+
+---
+
+## **LYDIA FITZGERALD (SUPPORTING)**  
+**Role**: Society debutante.  
+**Gender**: Female.  
+
+### **Physical Description**  
+- **Statuesque**, 5'9", willowy.  
+- **Hair**: Platinum waves.  
+- **Style**: Bias-cut gowns, pearl chokers.  
+
+### **Personality**  
+- **Ice queen** with a photographic memory. Hides opium addiction.  
+
+---
+
+## **FREDDIE WINSLOW (SUPPORTING)**  
+**Role**: Heir and gossipmonger.  
+**Gender**: Male.  
+
+### **Physical Description**  
+- **Dandyish**, 6'0", lean.  
+- **Hair**: Blond pompadour.  
+- **Style**: Monocle, silk cravats.  
+
+### **Personality**  
+- **Charmingly amoral**. Trades secrets for blackmail fodder.  
+
+---
+
+## **MINOR CHARACTERS**  
+1. **Sammy Delgado** (Bartender): Mid-30s, tattooed arms, runs The Oasis. Divorced; listens more than he speaks.  
+2. **Inspector Bobbie Burns**: 50s, scar across cheek. Hates politicians; leaks files to Vivian.  
+3. **Eleanor Brooks**: Librarian with a pistol in her purse. Widow; knows every tunnel exit.  
+4. **Enzo "The Eel" Moretti**: Gang boss. Bald, pockmarked face. Collects antique daggers.  
+
+---
+
+**

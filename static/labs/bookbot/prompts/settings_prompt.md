@@ -8,6 +8,9 @@ Based on the initial book description below, create a detailed description of th
 Include enough background to describe each place in the story consistently. For example don't just say 
 "the street in front of their house." Include the condition of the street, the name of the street, 
 landmarks, the names of the neighbors - enough rich detail to write a story set on the street. 
+For key locations, include all five senses - visual, touch, smell, taste (if food or drink is involved), and sound ambiance.
+Each chapter will be written individually, with only this information. So in order to maintain consistency, this
+file must contain all needed detail.
 
 Initial Description:
 {{ initial }}

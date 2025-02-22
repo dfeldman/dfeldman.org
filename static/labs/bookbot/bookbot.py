@@ -176,6 +176,7 @@ By Your Name
 @dataclass
 class LLMConfig:
     """Configuration for an LLM model"""
+    group: str
     name: str
     provider: str
     cost_per_million_tokens: float
@@ -183,14 +184,14 @@ class LLMConfig:
     
     @property
     def full_name(self) -> str:
-        return f"{self.provider}/{self.name}"
+        return f"{self.group}/{self.name}"
 
 # Available LLMs and their configurations
 AVAILABLE_LLMS = [
-    LLMConfig("deepseek-r1", "deepseek", 15.0),
-    LLMConfig("gpt-4o", "openai", 15.0),
-    LLMConfig("claude-2.1", "anthropic", 8.0),
-    LLMConfig("gpt-3.5-turbo", "openai", 0.5)
+    LLMConfig("deepseek", "deepseek-r1", "Together", 15.0),
+    LLMConfig("openai", "gpt-4o", "", 15.0),
+    LLMConfig("anthropic", "claude-2.1", "", 8.0),
+    LLMConfig("openai", "gpt-3.5-turbo", "", 0.5),
 ]
 
 class BookBotError(Exception):
@@ -466,8 +467,15 @@ class BookBot:
             "Content-Type": "application/json"
         }
         
+        provider = self.llm.provider
+        if provider == "":
+            provider = {"sort": "price"}
+        else :
+            provider = {"order": [self.llm.provider]}
+
         data = {
             "model": self.llm.full_name,
+            "provider": provider,
             "messages": [
                 {"role": "system", "content": system_prompt},
                 {"role": "user", "content": prompt}
@@ -518,10 +526,10 @@ class BookBot:
                     
                     if not result.get('choices'):
                         raise LLMError("No choices in API response", response)
-                    
+                    logger.info(json.dumps(result, indent=2))
                     content = result["choices"][0]["message"]["content"]
                     # Remove think tags. These are still counted as tokens by the server though.
-                    content = re.sub(r'<think>.*?</think>\n?', '', raw_content, flags=re.DOTALL)
+                    content = re.sub(r'<think>.*?</think>\n?', '', content, flags=re.DOTALL)
 
                     tokens_in = result["usage"]["prompt_tokens"]
                     tokens_out = result["usage"]["completion_tokens"]
