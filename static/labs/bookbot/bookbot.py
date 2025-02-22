@@ -595,11 +595,11 @@ class BookBot:
                 logger.info(f"Final content length: {len(final_content)} bytes")
                 return final_content, total_tokens_in, total_tokens_out
                 
-            wordcount = [len(chunk.split()) for chunk in accumulated_content]
+            wordcount = sum([len(chunk.split()) for chunk in accumulated_content])
             # Not done - add to message history and continue
             messages.append({"role": "assistant", "content": content})
             messages.append({"role": "user", "content": 
-                             f"You have written {wordcount} words so far. Continue writing the next chunk. "+
+                             f"You have written {wordcount} words so far out of an expected 3000 words. Continue writing the next chunk. "+
                              """When you're done with this chunk, write CONTINUE if you'd like to keep writing,
                              or THE END if this chunk concludes the section. CONTINUE or THE END must be at the 
                              end of your output."""})

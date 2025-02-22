@@ -1,101 +1,98 @@
 ---
 chapter_number: 3
-created_at: 2025-02-22T00:17:47.870052
+created_at: 2025-02-22T14:14:26.752896
 ---
-**# Chapter 3: The Art of Disappearing**  
+# Chapter 3: Society’s Sharp Edge  
 
-Delancey Street hunted corpses. I counted twelve moldering mattresses in the tenement’s foyer, springs curled like fossilized ribcages. The address from Rex’s matchbook leered in peeling gilt numbers above a door boarded with nails rusted to sepia tears. My flashlight beam sliced through grime-coated air. Blood spatter clung to the walls, old as sin.  
+Lydia Fitzgerald’s townhouse glowed like a poisoned jewel against the Sutton Place skyline. Viv adjusted her cloche hat, the dossier of stolen photographs slick in her gloved hand. A butler with the dead eyes of a taxidermied owl opened the door. “Miss Sinclair.” His nostrils flared at the scent of rainwater and tenement soot on her coat. “Madam is *indisposed.*”  
 
-“Nowhere to go but down,” I whispered to Arthur’s ghost. He’d preferred attics.  
+Viv stepped past him, heels sinking into a Deco rug worth more than her annual rent. The parlor smelled of gardenias and deceit. Lydia lounged on a zebra-striped divan, her platinum Marcel wave catching the chandelier light like a knife’s edge. “Darling.” She didn’t rise. “I’d offer champagne, but I hear you prefer—”  
 
-The coal chute crouched behind a cairn of firebricks, its iron hinges shrieking betrayal. I slid into the void, knees scraping through a century of soot. My blouse caught on a nail, tearing free with the sound of a violinist’s last breath.  
+“Rat poison?” Viv tossed the envelope onto the lacquered coffee table. “Let’s skip the small talk, Lyds.”  
 
-Greenish light flickered below.  
+Lydia’s pearl bracelet clinked as she lifted the first photograph—Charles Beaumont’s naked back arching over hers in a Waldorf suite, his Yale ring glinting on the nightstand. She traced the image with a manicured nail. “You’ve developed a *vulgar* hobby, Vivian.”  
 
-The tunnels stank of wet earth and ozone. Narrow-gauge tracks gleamed under bare bulbs strung like witchlights. I pressed against a sweating brick pillar as voices echoed.  
+“And you’ve developed a taste for engaged bankers.” Viv slipped into the armchair across from her, knees brushing the table’s sharp corners. “The *Sentinel* prints this, your fiancé inherits his daddy’s steel mills alone.”  
 
-“…Thursday’s shipment,” growled a sandpapered baritone. “Throne goes to the docks, same as the Rembrandt.”  
+A derringer slid from Lydia’s sleeve, its mother-of-pearl grip pressing Viv’s ribs. “You’re in over your painted little head.”  
 
-A younger voice: “Who’s moving it?”  
+Viv didn’t flinch. She’d rehearsed this dance in speakeasy bathrooms and morgue corridors. “Pull the trigger, and tomorrow’s headline reads *‘Mayor’s Mistress Murders Reporter.’*” Her smile cut. “How many suitors survive that scandal?”  
 
-“Same bastards who shut Lowell’s trap permanent.” Ragged laughter. “Boss don’t care if we sail it or sink it, long as the mayor gets paid.”  
+The gun wavered. Lydia’s laugh sounded like breaking crystal. “What do you want?”  
 
-*Mayor.* My pulse thrummed. The flashlight slipped in my clammy grip.  
+“The Met Gala guest list. Every dealer, every fence, every sycophant Kensington’s schmoozed this year.”  
 
-A distant train horn drowned their retreating footsteps. Silence rushed in, thick as clotting blood. My beam trembled over tracks, then caught on something pale.  
+Lydia poured champagne from a Baccarat decanter, the liquid bubbling ominously. Viv noted the hollow charm on her bracelet—a pearl that clicked open to reveal cyanide powder when twisted. *Charles’ last drink.* “The Mayor’s… acquisitions aren’t displayed publicly.” Lydia sipped, leaving a crimson half-moon on the rim. “He keeps his *treasures* underground.”  
 
-A hand.  
+“Where?”  
 
-The subway worker lay sprawled like a broken marionette, left arm twisted behind him, right fist clenched. I pried open his rigor-mortis fingers. A slip of paper—*Grand Central. Thursday, 11:15 PM. Track B-12.*  
+“Beneath the Egyptian wing.” A diamond pin slid from Lydia’s hair as she leaned close. “They say the Golden Throne’s new home has better security than Fort Knox. Motion sensors. Armed guards.” Her breath smelled of almonds and lies. “You’ll die like your father.”  
 
-His throat grinned sideways.  
+Viv pocketed the guest list, its vellum edges sharp against her fingertips. “Send my regards to Charles.”  
 
-Gin surged up my own. I retched into the coal dust.  
+Rain lashed the cathedral steps an hour later. Viv knelt in the confessional, the torn screen digging into her forehead. “Bless me, Father, for I’ve sinned.”  
 
-———  
+Father O’Malley’s rasp held no mercy. “You’re here for the box, not absolution.”  
 
-**“I’ve been threatened by better,”** I lied.  
+A subway token slid through the grate, green patina staining her palm. *City Hall Loop.* “Who left it?”  
 
-Fletcher’s pencil snapped. Gold whiskey trembled on his mustache. “They mentioned your uncle. Said if I didn’t bury this story, they’d send Arthur a playmate.”  
+“A man with eyes like last rites.” The priest’s wheeze deepened. “Said you’d need it for the library.”  
 
-The *Star*’s newsroom buzzed behind us, telewriters clattering like distant artillery.  
+Her pulse quickened. *The Forgotten Library.* Dad’s journal mentioned it once—*“532 Fifth Avenue, where art goes to die.”* She reached under the kneeler, finding a folded Psalm: *“Trust in him at all times, you people.”* Vito’s scrawl bled through the paper:  
 
-“You’re off the case.” His ink-stained fingers drummed a Morse code of fear.  
+***Meet me where the tracks hum. Midnight.***  
 
-I slapped the train schedule on his desk. Blood smeared the page. “Tell that to the corpse in the tunnels.”  
+The confession curtain ripped open. Viv spun, switchblade drawn.  
 
-He didn’t look up. “Funeral’s Friday. Bring lilies.”  
+Empty pews gaped like a ribcage. A single rose lay on the altar, its stem wrapped in shipping manifest tissue. She pressed it to her nose—bay rum and danger.  
 
-———  
+Somewhere in the storm, a train whistle screamed.  
 
-Rain lashed the library’s leaded windows. Eleanor Brooks emerged from the stacks, a cameo brooch pinned at her throat like a preserved scar.  
+CONTINUE
+The forgotten subway platform reeked of wet coal and desperation. Viv’s flashlight beam trembled across moss-caked tiles as a rat skittered over tracks humming with approaching danger. She gripped Vito’s psalm note, the paper damp with tunnel sweat. *Midnight.*  
 
-“Tunnels, you say?” She unrolled a yellowed map, her voice as dry as the parchment. “Built for coal in ’58. Retrofitted during Prohibition.” Her nail traced a spiderweb beneath Fifth Avenue. “Smugglers use them to bypass checkpoints.”  
+Footsteps echoed.  
 
-I pointed to Delancey Street. “Where does this spur lead?”  
+“You’re early,” Vito materialized from shadow, his collar turned up against the chill. A fresh cut split his eyebrow—Paulie’s handiwork.  
 
-“Docks.” She folded the map with surgical precision. “But you didn’t hear that from me.”  
+“And you’re predictable.” Viv aimed her light at his chest. “Since when do mob rats quote scripture?”  
 
-———  
+He stepped closer, the Luger at his hip catching the glow of bioluminescent fungus. “Since the Mayor started moving relics through my grandmother’s church.” His thumb brushed the rosary in her pocket—Eddie’s rosary. “You’re digging a grave, Red.”  
 
-My apartment reeked of betrayal. I tossed the schedule onto the desk, poured two fingers of bathtub gin, and froze.  
+“Yours or mine?”  
 
-Shadows moved.  
+The tracks vibrated. Vito yanked her against the wall as a maintenance cart roared past, its cargo tarp flapping to reveal crates stamped *Vatican Holdings.* Viv’s pulse thrummed against his forearm. “The throne’s eyes,” she breathed. “They’re here.”  
 
-“Late for a social call, isn’t it?” My Derringer found the darkness.  
+He released her like she’d scalded him. “Forget the eyes. Kensington’s got a new play—shipments heading east disguised as charity donations.”  
 
-Vito stepped into the jaundiced glow of my desk lamp. Rain glistened on his shoulders. “You missed the memo, doll. Warrens are Moretti turf.”  
+“To where? Palermo?”  
 
-“What’s the penalty for trespassing these days?”  
+His jaw tightened. *Rosa.*  
 
-He plucked the glass from my hand, swallowed the gin in one motion. “Depends. You hoping for a spanking or a bullet?”  
+A clang echoed down the tunnel. Vito spun, shielding her with his body as a flashlight beam sliced the dark. “Find the bitch!” Paulie’s voice bounced off moldering bricks. “Boss wants her tongue in a jar!”  
 
-Sandalwood cut through the mildew. Closer now.  
+Viv’s switchblade clicked open. “Trouble follows you like a bad cologne.”  
 
-“You’re tracking mud on my last clean rug.”  
+“You’re the common denominator.” Vito pressed a rusted key into her palm—Lyric Theatre insignia worn smooth. “Basement storage. Comb through the props.”  
 
-He stepped over the stain. “That corpse in the tunnels? He worked for *my* crew. You’re costing me money.”  
+She laughed, bitter. “Let me guess—another wild goose chase?”  
 
-“Send me a bill.”  
+“Wild geese peck out eyes.” He shoved her toward an alcove. “Go!”  
 
-His fingers brushed the silver streak in my hair. “Or a wreath?”  
+She ran, the key biting her flesh. Behind her, gunfire erupted—Vito’s Luger versus Paulie’s curses. The tunnels wept green light as she stumbled into a chamber stacked with moth-eaten theater curtains. A prop trunk gaped open, its innards spilling shredded velvet and a single emerald cufflink.  
 
-The kiss landed like a sucker punch—hot, brutal, gone before I could bite.  
+Kensington’s crest glinted in the fungal glow.  
 
-He was at the door when I threw the glass. It shattered against the jamb.  
+Footsteps approached. Viv crouched, blade raised.  
 
-“You taste like secrets,” he said, and vanished into the stairwell.  
+“Sinclair.” Inspector Burns blocked the exit, his badge dangling from nicotine-stained fingers. “Should’ve stayed in your typewriter cage.”  
 
-———  
+She palmed the subway token. “City Hall Loop have nice acoustics for bribes, Bobbie?”  
 
-The train schedule glowed under my lamp. 11:15 PM. Compartment B-12.  
+His smile died as she hurled the token at his temple and bolted. Dawn found her on the Sentinel’s rooftop, the guest list spread at her feet. Lydia’s looping script labeled one name with a dagger-drawn heart:  
 
-Arthur’s pocket watch ticked on my wrist. I lit a cigarette with hands that wouldn’t steady.  
+***Charles Beaumont - Broker of Beautiful Liars.***  
 
-Somewhere below, the third-floor neighbor’s radio crooned: *“…the golden chair, the golden chair, the gangster’s sweet affair…”*  
+Viv lit a Chesterfield with trembling hands. Somewhere below, presses roared to life with Fletcher’s exposé on dockyard arson. The emerald cufflink burned in her pocket—a twin to the one buried with her father.  
 
-I traced the dead man’s bloodstains. Gus the night guard had mentioned strange noises in the museum basement.  
-
-Coal chutes. Corpses. Compartments.  
-
-The typewriter keys laughed under my fingers.
+The throne’s curse whispered through the ink-stained wind: *You’re next.*
