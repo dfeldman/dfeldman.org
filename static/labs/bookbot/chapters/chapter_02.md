@@ -1,69 +1,63 @@
 ---
 chapter_number: 2
-created_at: 2025-02-22T00:11:54.891791
+created_at: 2025-02-22T13:50:41.299221
 ---
-# Chapter 2: Whiskey and Razorblades  
+# Chapter 2: Whispers in the Rain  
 
-The Oasis stank of bad decisions. I ducked through the butcher shop’s hanging beef carcasses, their bloody hooks glinting like accusation fingers. A false wall groaned open behind the liverwurst display. Blue smoke slapped me first—cheap cigars and the sweet rot of bootleg gin. Then came the sawdust tang of spilled blood.  
+The Sapphire Rabbit’s blue gas lamps cast long shadows across Eddie Malone’s twitching jaw. He sat wedged in the speakeasy’s back booth, fingers worrying a rosary beneath the table. Bourbon sweat gleamed on his forehead. Viv slid into the seat opposite him, the .32 revolver in her purse digging into her thigh.  
 
-Rex Donovan sat in the back booth, nursing rye from a jar labeled *Pig’s Feet*. His shoulders swallowed the space, a mountain gone to seed. He didn’t look up as I slid in. “You’re late.”  
+“You’re late,” Eddie muttered. His pinky ring caught the light—gold lion crest, same as the Mayor’s campaign buttons.  
 
-“And you’re a cliché.” I snatched his drink, the liquor burning like a struck match. “What’s so urgent a girl has to skip her beauty sleep?”  
+Viv tossed a fifty-dollar bill bundle on the table. The trumpeter’s mute couldn’t drown the *click* of her switchblade springing open under the table. The tip pressed against Eddie’s denim-clad leg. “Talk fast. Who’s moving Kensington’s crates?”  
 
-His thumb jabbed toward the bar. Sammy Delgado polished glasses with a rag that’d never seen soap. The serpent tattoo on his neck rippled. “Your new boyfriend’s been nosing around all week,” Rex grunted. “Asking who runs the art beat at the *Star*.”  
+A waitress passed with a tray of absinthe frappés. Eddie waited for her hips to sway out of earshot. “Vito Romano. Moretti’s top button man. He’s been—”  
 
-**“Who** asked?”  
+Gunfire erupted upstairs.  
 
-Rex’s flask sneaked from his coat. I caught the glint of nickel plating. “Some greaseball in a sharkskin suit. Enzo Moretti’s favorite lapdog.” He tossed a matchbook onto the table. Waterfront address scribbled on the back. “Delancey Street. It’s a knife magnet.”  
+Viv ducked as plaster rained from the ceiling. The jazz band scattered, the trumpet landing with a dissonant wail. Eddie lunged for the fire exit, rosary beads scattering. She caught his wrist. “You set me up!”  
 
-I pocketed the matches. “Come with me. Split the scoop.”  
+“I didn’t know they’d send *Paulie*!” He yanked free, bull-rushing the door.  
 
-“I don’t file reports for Fletcher’s fishwrap.” His laugh rattled loose change. “You been tailed?”  
+A silhouette filled the stairwell—broad shoulders, scarred knuckles gripping a Thompson. Viv recognized Paulie Moretti from Fletcher’s mob beat photos. Garlic and cordite clogged her nostrils as he leveled the barrel.  
 
-“Only by ghosts.”  
+“Eddie!” she screamed.  
 
-He leaned in. Whiskey and Sen-Sen overwhelmed the speakeasy stench. “Your uncle wasn’t no thief, Viv. But digging up that coffin gets you two things—a bullet or a body bag.”  
+Too  
 
-The door to the butcher shop creaked open. Cold air razored through the haze. Rex stiffened. “Back exit. Now.”  
+CONTINUE  
 
-———  
+late. Three bullets punched through Eddie’s back, slamming him into the jukebox. *St. James Infirmary* skipped, the needle screeching over his death rattle. Viv dove behind the bar as bullets chewed the mahogany. Shards of rum bottles exploded, stinging her cheeks.  
 
-Rain needled my neck as I stumbled into the alley. Garbage festered in puddles. My fingers found the Derringer in my garter just as a voice purred through the downpour. “Running from shadows, doll?”  
+A hand clamped over her mouth. “Don’t. Breathe.” The voice was low, Sicilian. Vito Romano dragged her into the stockroom, his suit reeking of bergamot and gunpowder.  
 
-Vito Romano leaned against a brick wall, flicking a silver dollar across his knuckles. His suit clung too well, sharp enough to draw blood. I stepped back. “Who’s paying you to lurk in the dark? Moretti?”  
+Paulie’s boots crunched glass. “Find the dame!”  
 
-The coin froze midair. “You say his name like it’s a curse. Could be we’re on the same side.”  
+Vito pressed Viv against pickle barrels, his thigh trapping hers. Moonlight through a high window caught the scar bisecting his brow. “You cost me fifty grand, reporter.”  
 
-“Do thieves have sides now?”  
+She drove her knee upward. He blocked it, chuckling. “Feisty. Your father’s eyes, but your mother’s left hook—Clara Sinclair, right? Worked the Roosevelt Library.”  
 
-His laugh hummed against wet skin. “We’ve got better wardrobes than cops.” He pushed off the wall. Rain sluiced down his jaw. My throat tightened.  
+The air left her lungs. “How do you—”  
 
-“Let’s trade.” He blocked my path. Heat radiated through his soaked shirt. “You tell me why Kensington’s pet project died with your uncle. I tell you why his corpse floats in every speakeasy confession.”  
+Paulie kicked the stockroom door. Vito smashed a jar of pickled cauliflower over the thug’s head, grabbed Viv’s hand, and sprinted into the alley. Rain needled her face, mingling with the copper tang of Eddie’s blood on her blouse.  
 
-I spat at his wingtip. “Only corpse here’s yours if you don’t move.”  
+“Dock 9,” Viv panted, skidding on wet cobblestones. “The throne’s there tonight, isn’t it?”  
 
-He reached for my collar. Calluses snagged the silk. “You’ve got—” His thumb brushed my pulse point. “Lint.”  
+Vito shoved her behind a coal chute as Paulie’s bullets sparked. “Asking about that thing’ll get you—”  
 
-The slap echoed. His head snapped sideways, but the grin stayed. “Attagirl.”  
+CONTINUE  
 
-We stood chest to chest, breath tangling. His sandalwood cologne warred with the alley’s decay. Thunder cannonballed overhead. He pressed the silver dollar into my palm. “For the subway, *principessa*. Looks like you’ll need it.”  
+crowned with a tombstone, *cara.*” He returned fire, the Luger’s report echoing between tenements. A neon sign flickered **DELIVERIES ONLY**, painting his scowl hellish red.  
 
-———  
+Viv’s fingers found Eddie’s rosary in her pocket—half the beads snapped off during the chase. She wondered which saint watched over backstabbing dockworkers.  
 
-My drenched clothes clung like a second skin. Rex’s matchbook dissolved in my hand as I stared at the boarded-up tenement. The Delancey Street address bled ink. Above me, a gargoyle vomited rainwater.  
+Paulie reloaded. Vito seized the moment, dragging her toward a Model T idling in the fog. “Keep up or die.”  
 
-Inside my apartment, I peeled off my stockings. The telegram slithered from my coat pocket.  
+The realization hit as her torn stockings snagged on broken glass: *He’s stealing Kensington’s getaway car.* The trunk overflowed with crates stamped **VATICAN HOLDINGS**. Viv glimpsed a ledger poking from Vito’s waistband—shipping dates? Routes?  
 
-*Dear Miss Sinclair—*  
-*Urban Renewal Comm. records enclosed. Follow the tracks.*  
-*—A Friend*  
+Paulie’s final bullet shattered the rear window as Vito floored it. Viv clutched the dashboard, her pulse thrumming faster than the engine. “Why save me?”  
 
-The ledger page fluttered to the floor—seven grand diverted from “Public Works” to “Art Preservation LLC” last month. Serial numbers from Kensington’s vault.  
+He lit a cigarette with a match from The Sapphire Rabbit. “Dead reporters can’t pay debts.”  
 
-I poured a bath of gin. Drank half. The other half stung my split knuckles. Through the steam, Vito’s smirk haunted the mirror.  
-
-*Currency.*  
-
-Arthur’s lemon-juice ghost whispered as I sank beneath the surface.  
+Rain blurred the city into a wash of grays. Somewhere behind them, the Golden Throne’s emerald eyes glowed in the dark—patient, hungry.  
 
 **

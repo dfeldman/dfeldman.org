@@ -236,11 +236,12 @@ class LLMError(BookBotError):
 class TextFile:
     """Represents a markdown file with content and metadata"""
     
-    def __init__(self, filepath: Path):
+    def __init__(self, filepath: Path, config: Optional[Dict] = None):
         self.filepath = Path(filepath)
         self.content = ""
         self.metadata = {}
         self.conversation_history = []
+        self.config = config if config else DEFAULT_CONFIG
         self._load()
     
     def _load(self):
@@ -284,6 +285,13 @@ class TextFile:
                 content.append('---')
             content.append(self.content)
             
+            # If backups are enabled, create a backup
+            if self.filepath.exists() and self.filepath.stat().st_size > 0:
+                backup_dir = Path(self.filepath.parent, self.config['backup_dir'])
+                backup_dir.mkdir(parents=True, exist_ok=True)
+                backup_path = backup_dir / f"{self.filepath.name}.bak"
+                shutil.copy(self.filepath, backup_path)
+                logger.info(f"Backup created at {backup_path}")
             # Write main content
             self.filepath.write_text('\n'.join(content), encoding='utf-8')
             
@@ -653,7 +661,7 @@ class BookBot:
         """Generate the story setting"""
         try:
             # Load initial description
-            initial = TextFile(Path("initial.md"))
+            initial = TextFile(Path("initial.md"), config=self.config)
             if not initial.filepath.exists():
                 raise BookBotError("initial.md not found. Please create it with your story description.")
             
@@ -662,7 +670,7 @@ class BookBot:
             content, tokens_in, tokens_out = self._call_llm(prompt)
             
             # Save setting
-            setting = TextFile(COMMON_DIR / "setting.md")
+            setting = TextFile(COMMON_DIR / "setting.md", config=self.config)
             setting.content = content
             setting.metadata = {
                 "created_at": datetime.now().isoformat()
@@ -691,8 +699,8 @@ class BookBot:
         """Generate the story characters"""
         try:
             # Load required files
-            initial = TextFile(Path("initial.md"))
-            setting = TextFile(COMMON_DIR / "setting.md")
+            initial = TextFile(Path("initial.md"), config=self.config)
+            setting = TextFile(COMMON_DIR / "setting.md", config=self.config)
             if not initial.filepath.exists() or not setting.filepath.exists():
                 raise BookBotError("Required files (initial.md and setting.md) not found")
             
@@ -704,7 +712,7 @@ class BookBot:
             content, tokens_in, tokens_out = self._call_llm(prompt)
             
             # Save characters
-            characters = TextFile(COMMON_DIR / "characters.md")
+            characters = TextFile(COMMON_DIR / "characters.md", config=self.config)
             characters.content = content
             characters.metadata = {
                 "created_at": datetime.now().isoformat()
@@ -736,9 +744,9 @@ class BookBot:
         """Generate the story outline"""
         try:
             # Load required files
-            initial = TextFile(Path("initial.md"))
-            setting = TextFile(COMMON_DIR / "setting.md")
-            characters = TextFile(COMMON_DIR / "characters.md")
+            initial = TextFile(Path("initial.md"), config=self.config)
+            setting = TextFile(COMMON_DIR / "setting.md", config=self.config)
+            characters = TextFile(COMMON_DIR / "characters.md", config=self.config)
             if not all(f.filepath.exists() for f in [initial, setting, characters]):
                 raise BookBotError("Required files (initial.md, setting.md, characters.md) not found")
             
@@ -751,7 +759,7 @@ class BookBot:
             content, tokens_in, tokens_out = self._call_llm(prompt)
             
             # Save outline
-            outline = TextFile(COMMON_DIR / "outline.md")
+            outline = TextFile(COMMON_DIR / "outline.md", config=self.config)
             outline.content = content
             outline.metadata = {
                 "created_at": datetime.now().isoformat()
@@ -782,10 +790,10 @@ class BookBot:
         """Generate the commons review"""
         try:
             # Load required files
-            initial = TextFile(Path("initial.md"))
-            setting = TextFile(COMMON_DIR / "setting.md")
-            characters = TextFile(COMMON_DIR / "characters.md")
-            outline = TextFile(COMMON_DIR / "outline.md")
+            initial = TextFile(Path("initial.md"), config=self.config)
+            setting = TextFile(COMMON_DIR / "setting.md", config=self.config)
+            characters = TextFile(COMMON_DIR / "characters.md", config=self.config)
+            outline = TextFile(COMMON_DIR / "outline.md", config=self.config)
             if not all(f.filepath.exists() for f in [initial, setting, characters]):
                 raise BookBotError("Required files (initial.md, setting.md, characters.md) not found")
             
@@ -799,7 +807,7 @@ class BookBot:
             content, tokens_in, tokens_out = self._call_llm(prompt)
             
             # Save outline
-            commons_review = TextFile(COMMON_DIR / "commons_review.md")
+            commons_review = TextFile(COMMON_DIR / "commons_review.md", config=self.config)
             commons_review.content = content
             commons_review.metadata = {
                 "created_at": datetime.now().isoformat()
@@ -885,10 +893,10 @@ class BookBot:
         """Write a new chapter"""
         try:
             # Load necessary context
-            outline = TextFile(COMMON_DIR / "outline.md")
-            setting = TextFile(COMMON_DIR / "setting.md")
-            characters = TextFile(COMMON_DIR / "characters.md")
-            commons_review = TextFile(COMMON_DIR / "commons_review.md")
+            outline = TextFile(COMMON_DIR / "outline.md", config=self.config)
+            setting = TextFile(COMMON_DIR / "setting.md", config=self.config)
+            characters = TextFile(COMMON_DIR / "characters.md", config=self.config)
+            commons_review = TextFile(COMMON_DIR / "commons_review.md", config=self.config)
                 
             prev_chapter_content = self._get_previous_chapter_content(chapter_num)
             if prev_chapter_content:
@@ -909,7 +917,7 @@ class BookBot:
             content, tokens_in, tokens_out = self._call_llm(prompt)
             
             # Save chapter
-            chapter_file = TextFile(CHAPTERS_DIR / f"chapter_{chapter_num:02d}.md")
+            chapter_file = TextFile(CHAPTERS_DIR / f"chapter_{chapter_num:02d}.md", config=self.config)
             chapter_file.content = content
             chapter_file.metadata = {
                 "chapter_number": str(chapter_num),
@@ -943,7 +951,7 @@ class BookBot:
             if not chapter_path.exists():
                 raise BookBotError(f"Chapter {chapter_num} not found")
             
-            chapter = TextFile(chapter_path)
+            chapter = TextFile(chapter_path, config=self.config)
             
             # Prepare editing prompt
             variables = {
@@ -987,7 +995,7 @@ class BookBot:
                 chapter_path = CHAPTERS_DIR / f"chapter_{chapter_num:02d}.md"
                 if not chapter_path.exists():
                     break
-                chapter = TextFile(chapter_path)
+                chapter = TextFile(chapter_path, config=self.config)
                 chapters.append(chapter.content)
                 chapter_num += 1
             
@@ -1001,7 +1009,7 @@ class BookBot:
             
             # Save review
             review_num = len(list(REVIEWS_DIR.glob("*.md"))) + 1
-            review = TextFile(REVIEWS_DIR / f"review_{review_num:02d}.md")
+            review = TextFile(REVIEWS_DIR / f"review_{review_num:02d}.md", config=self.config)
             review.content = content
             review.metadata = {
                 "review_number": str(review_num),
@@ -1033,11 +1041,11 @@ class BookBot:
             # Collect all files by category
             files = {
                 "Chapters": sorted(
-                    [TextFile(p) for p in CHAPTERS_DIR.glob("*.md")],
+                    [TextFile(p, config=self.config) for p in CHAPTERS_DIR.glob("*.md")],
                     key=lambda f: int(f.filepath.stem.split('_')[1])
                 ),
-                "Common": [TextFile(p) for p in COMMON_DIR.glob("*.md")],
-                "Reviews": [TextFile(p) for p in REVIEWS_DIR.glob("*.md")]
+                "Common": [TextFile(p, config=self.config) for p in COMMON_DIR.glob("*.md")],
+                "Reviews": [TextFile(p, config=self.config) for p in REVIEWS_DIR.glob("*.md")]
             }
             
             # Generate preview
@@ -1307,7 +1315,7 @@ class BookBot:
             
             # Copy all chapters
             for chapter_path in sorted(CHAPTERS_DIR.glob("*.md")):
-                chapter = TextFile(chapter_path)
+                chapter = TextFile(chapter_path, config=self.config)
                 final_path = FINAL_DIR / chapter_path.name
                 final_path.write_text(chapter.content)
             
