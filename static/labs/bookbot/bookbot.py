@@ -529,8 +529,8 @@ class BookBot:
                                 f"Generating content (part {continuation_count})...",
                                 total=None
                             )
-                            logger.info(f"Sending request to {OPENROUTER_API_URL}, attempt {attempt + 1}")
-                            logger.debug(f"Request data: {json.dumps(data, indent=2)}")
+                            logger.info(f"Sending request to {OPENROUTER_API_URL}, continuation {continuation_count}, attempt {attempt + 1}")
+                            logger.debug(f"Full request data: {data}")
                             response = requests.post(
                                 "https://openrouter.ai/api/v1/chat/completions",
                                 headers=headers,
