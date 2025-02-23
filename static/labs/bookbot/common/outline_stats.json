@@ -1,47 +1,47 @@
 {
-  "input_tokens": 79111,
-  "output_tokens": 6531,
-  "time": 177.3571901321411,
+  "input_tokens": 77687,
+  "output_tokens": 5531,
+  "time": 166.12496614456177,
   "calls": [
     {
-      "timestamp": "2025-02-23T15:44:15.448911",
-      "input_tokens": 17840,
-      "output_tokens": 1775,
-      "elapsed": 53.913976192474365,
+      "timestamp": "2025-02-23T15:51:29.503259",
+      "input_tokens": 17862,
+      "output_tokens": 1490,
+      "elapsed": 46.167967319488525,
       "retry": 1,
       "provider": "Together",
       "model": "deepseek/deepseek-r1"
     },
     {
-      "timestamp": "2025-02-23T15:45:00.173642",
-      "input_tokens": 19186,
-      "output_tokens": 1704,
-      "elapsed": 44.699472188949585,
+      "timestamp": "2025-02-23T15:52:15.575722",
+      "input_tokens": 18951,
+      "output_tokens": 1416,
+      "elapsed": 46.0529899597168,
       "retry": 2,
       "provider": "Together",
       "model": "deepseek/deepseek-r1"
     },
     {
-      "timestamp": "2025-02-23T15:45:45.061713",
-      "input_tokens": 20451,
-      "output_tokens": 1732,
-      "elapsed": 44.861533880233765,
+      "timestamp": "2025-02-23T15:52:54.192978",
+      "input_tokens": 19925,
+      "output_tokens": 1435,
+      "elapsed": 38.57403492927551,
       "retry": 3,
       "provider": "Together",
       "model": "deepseek/deepseek-r1"
     },
     {
-      "timestamp": "2025-02-23T15:46:18.971476",
-      "input_tokens": 21634,
-      "output_tokens": 1320,
-      "elapsed": 33.8822078704834,
+      "timestamp": "2025-02-23T15:53:29.538875",
+      "input_tokens": 20949,
+      "output_tokens": 1190,
+      "elapsed": 35.32997393608093,
       "retry": 4,
       "provider": "Together",
       "model": "deepseek/deepseek-r1"
     }
   ],
-  "previous_input_tokens": "58730",
-  "previous_output_tokens": "5054",
-  "previous_time": "135.7748577594757",
+  "previous_input_tokens": "57477",
+  "previous_output_tokens": "5211",
+  "previous_time": "143.47498226165771",
   "previous_continuation_count": "3"
 }
