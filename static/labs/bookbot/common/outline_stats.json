@@ -1,0 +1,25 @@
+{
+  "input_tokens": 31877,
+  "output_tokens": 5962,
+  "total_time": 162.687424659729,
+  "calls": [
+    {
+      "timestamp": "2025-02-23T00:06:32.062101",
+      "input_tokens": 14899,
+      "output_tokens": 2949,
+      "elapsed": 85.02204585075378,
+      "retry": 1,
+      "provider": "Together",
+      "model": "deepseek/deepseek-r1"
+    },
+    {
+      "timestamp": "2025-02-23T00:07:49.740512",
+      "input_tokens": 16978,
+      "output_tokens": 3013,
+      "elapsed": 77.66537880897522,
+      "retry": 2,
+      "provider": "Together",
+      "model": "deepseek/deepseek-r1"
+    }
+  ]
+}
