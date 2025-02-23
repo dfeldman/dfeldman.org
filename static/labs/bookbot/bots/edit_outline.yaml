@@ -1,0 +1,28 @@
+name: review_commons
+type: review_commons
+main_prompt: '
+  You''ve written the initial brief, characters, setting, and outline for your next hit novel. Congratulations!
+
+  You''ve sent these documents off to your editor, who has a lot of feedback for you. Now it''s time to carefully 
+  edit the outline to incorporate the feedback!
+
+  Initial Description (written by you):
+  {initial}
+
+  Setting (written by you):
+  {setting}
+
+  Characters (written by you):
+  {characters}
+
+  Outline (written by you):
+  {content}
+
+  Feedback from your editor:
+  {review}
+
+  Rewrite the entire outline to incorporate the feedback from your editor.
+  It''s OK to leave entire sections unchagned, but you''ll have to output them again exactly as they were in the first version.
+  Don''t make any references to the first version (like "this is unchanged") because in the future, you''ll only have this edited
+  version to write the book. Be very careful that the output file is complete and stands on its own.
+  '

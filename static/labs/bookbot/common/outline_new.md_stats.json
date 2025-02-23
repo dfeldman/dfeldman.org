@@ -1,0 +1,101 @@
+{
+  "input_tokens": 100,
+  "output_tokens": 200,
+  "time": 0.026228666305541992,
+  "calls": [
+    {
+      "timestamp": "2025-02-23T12:05:07.799950",
+      "input_tokens": 10,
+      "output_tokens": 20,
+      "elapsed": 0.0026171207427978516,
+      "retry": 1,
+      "provider": "openai",
+      "model": "gpt-4"
+    },
+    {
+      "timestamp": "2025-02-23T12:05:07.805332",
+      "input_tokens": 10,
+      "output_tokens": 20,
+      "elapsed": 0.0030388832092285156,
+      "retry": 2,
+      "provider": "openai",
+      "model": "gpt-4"
+    },
+    {
+      "timestamp": "2025-02-23T12:05:07.809885",
+      "input_tokens": 10,
+      "output_tokens": 20,
+      "elapsed": 0.0024950504302978516,
+      "retry": 3,
+      "provider": "openai",
+      "model": "gpt-4"
+    },
+    {
+      "timestamp": "2025-02-23T12:05:07.814867",
+      "input_tokens": 10,
+      "output_tokens": 20,
+      "elapsed": 0.0028488636016845703,
+      "retry": 4,
+      "provider": "openai",
+      "model": "gpt-4"
+    },
+    {
+      "timestamp": "2025-02-23T12:05:07.819780",
+      "input_tokens": 10,
+      "output_tokens": 20,
+      "elapsed": 0.002778768539428711,
+      "retry": 5,
+      "provider": "openai",
+      "model": "gpt-4"
+    },
+    {
+      "timestamp": "2025-02-23T12:05:07.824297",
+      "input_tokens": 10,
+      "output_tokens": 20,
+      "elapsed": 0.002431154251098633,
+      "retry": 6,
+      "provider": "openai",
+      "model": "gpt-4"
+    },
+    {
+      "timestamp": "2025-02-23T12:05:07.828505",
+      "input_tokens": 10,
+      "output_tokens": 20,
+      "elapsed": 0.002361774444580078,
+      "retry": 7,
+      "provider": "openai",
+      "model": "gpt-4"
+    },
+    {
+      "timestamp": "2025-02-23T12:05:07.833305",
+      "input_tokens": 10,
+      "output_tokens": 20,
+      "elapsed": 0.0026297569274902344,
+      "retry": 8,
+      "provider": "openai",
+      "model": "gpt-4"
+    },
+    {
+      "timestamp": "2025-02-23T12:05:07.837734",
+      "input_tokens": 10,
+      "output_tokens": 20,
+      "elapsed": 0.0024480819702148438,
+      "retry": 9,
+      "provider": "openai",
+      "model": "gpt-4"
+    },
+    {
+      "timestamp": "2025-02-23T12:05:07.842279",
+      "input_tokens": 10,
+      "output_tokens": 20,
+      "elapsed": 0.002579212188720703,
+      "retry": 10,
+      "provider": "openai",
+      "model": "gpt-4"
+    }
+  ],
+  "previous_input_tokens": 0,
+  "previous_output_tokens": 0,
+  "previous_time": 0,
+  "previous_continuation_count": 0
+}

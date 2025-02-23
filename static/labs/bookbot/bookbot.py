@@ -19,6 +19,10 @@ from rich.progress import Progress, SpinnerColumn, TextColumn
 import yaml
 import re
 
+
+# Disable all LLM calls
+DRY_RUN = True
+
 # Set up rich console for better output
 console = Console()
 
@@ -55,7 +59,8 @@ DEFAULT_CONFIG = {
     "backup_enabled": True,
     "backup_dir": ".bookbot_backups",
     "logging_level": "DEBUG",
-    "bot_dir": "bots" 
+    "bot_dir": "bots",
+    "review_dir": "reviews"
 }
 
 DEFAULT_TITLE_FILE="""
@@ -367,7 +372,7 @@ class BotType(Enum):
             BotType.WRITE_SETTING: {"initial"},
             BotType.WRITE_CHARACTERS: {"initial", "setting"},
             BotType.WRITE_CHAPTER: {"chapter_number", "outline", "setting", "characters", "previous_chapter"},
-            BotType.REVIEW_COMMONS: {"initial", "setting", "characters", "outline"},
+            BotType.REVIEW_COMMONS: {"initial", "setting", "characters", "content"}, # Content is the outline since it is being edited
             BotType.REVIEW_CHAPTER: {"chapter_number", "content", "outline", "setting", "characters"},
             BotType.EDIT_CHAPTER: {"chapter_number", "content", "edit_notes"},
             BotType.REVIEW_WHOLE: {"content"}
@@ -462,12 +467,13 @@ class BotChat:
         self.stats = {
             "input_tokens": 0,
             "output_tokens": 0,
-            "total_time": 0,
+            "time": 0,
             "calls": []
         }
         self.error: Optional[Exception] = None
         self.final_text: Optional[str] = None
         self.content_file = content_file
+        self._load_initial_stats()
         logger.info(f"Initializing chat with bot '{bot.name}' for command: {command}")
         
     def _update_history(self):
@@ -483,7 +489,15 @@ class BotChat:
                 self.history_file.write_text(json.dumps(history, indent=2))
             except Exception as e:
                 logger.error(f"Failed to update history file: {e}")
-                
+    
+    def _load_initial_stats(self): 
+        if self.content_file:
+            f = TextFile(self.content_file)
+            self.stats["previous_input_tokens"] = f.metadata.get("input_tokens", 0)
+            self.stats["previous_output_tokens"] = f.metadata.get("output_tokens", 0)
+            self.stats["previous_time"] = f.metadata.get("total_time", 0)
+            self.stats["previous_continuation_count"] = f.metadata.get("total_continuation_count", 0)
+
     def _update_stats(self):
         """Update stats file with current statistics"""
         if self.stats_file:
@@ -604,12 +618,17 @@ class BotChat:
                 logger.debug(f"Request data: {json.dumps(data, indent=2)}")
                 self._update_progress(progress, status="Generating...")
 
-                response = requests.post(
-                    "https://openrouter.ai/api/v1/chat/completions",
-                    headers=headers,
-                    json=data,
-                    timeout=60
-                )
+                if not DRY_RUN:
+                    response = requests.post(
+                        "https://openrouter.ai/api/v1/chat/completions",
+                        headers=headers,
+                        json=data,
+                        timeout=60
+                    )
+                else:
+                    response = requests.Response()
+                    response.status_code = 200
+                    response._content = b'{"choices":[{"message":{"content":"Generated content here"}}], "usage":{"prompt_tokens":10,"completion_tokens":20}, "provider":"openai","model":"gpt-4"}'
                 
                 elapsed = time.time() - start_time
                 
@@ -669,7 +688,7 @@ class BotChat:
                 self.stats["calls"].append(call_stats)
                 self.stats["input_tokens"] += input_tokens
                 self.stats["output_tokens"] += output_tokens
-                self.stats["total_time"] += elapsed
+                self.stats["time"] += elapsed
                 
                 self._update_stats()
             
@@ -754,6 +773,7 @@ class BotChat:
                     final_text = final_text.split("THE END")[0].strip()
                 self.final_text = final_text
                 if self.content_file:
+                    # Save on every iteration so we can see what's going on
                     f = TextFile(self.content_file)
                     f.content = final_text
                     f.metadata["command"] = self.command
@@ -761,10 +781,18 @@ class BotChat:
                     f.metadata["timestamp"] = datetime.now().isoformat()
                     f.metadata["input_tokens"] = self.stats["input_tokens"]
                     f.metadata["output_tokens"] = self.stats["output_tokens"]
-                    f.metadata["total_time"] = self.stats["total_time"]
                     f.metadata["continuation_count"] = continuation_count
                     f.metadata["provider"] = self.bot.provider
                     f.metadata["model"] = self.bot.llm
+                    f.metadata["time"] = self.stats["time"]
+                    # Be a bit careful here. The stats are NOT reset to zero at the beginning of each continuation, 
+                    # so we have to add these numbers to the ones from before we started the generation
+                    # to get a running multi-generation total. The previous_* are only moved to the current values 
+                    # once per generation.
+                    f.metadata["total_input_tokens"] = f.metadata.get("previous_input_tokens", 0) + self.stats["input_tokens"]
+                    f.metadata["total_output_tokens"] = f.metadata.get("previous_output_tokens", 0) + self.stats["output_tokens"]
+                    f.metadata["total_time"] = f.metadata.get("previous_total_time", 0) + self.stats["time"]
+                    f.metadata["total_continuation_count"] = f.metadata.get("previous_continuation_count", 0) + continuation_count
                     f.save()
                 # Log final statistics
                 # The stats file should probably be removed since it serves no purpose
@@ -1499,51 +1527,93 @@ class BookBot:
             logger.error(f"Error generating review: {e}")
             raise BookBotError(f"Failed to generate review: {e}")
 
-    def review_and_edit_with_2_bots(self, reviewer_bot: str, editor_bot: str, file: str):
+    def revise(self, reviewer_bot: str, editor_bot: str, file: str, revise_step_name: str):
         """Review and edit a file using two different bots.
         First, loads the file, which can be a chapter file or commons file specified by its path in either case.
         Then call the LLM with the reviewer bot and the file to generate a new review file.
-        Then call the LLM with the editor bot and the review file to edit the original file (overwriting it)."""
+        Then call the LLM with the editor bot and the review file to edit the original file (overwriting it).
+        Since there may be multiple rounds of revision with the same reviewer and file, revise_step_name is 
+        an optional value that lets you specify the step name to use in the file name, logs, and git commit message."""
         try:
+            # Load initial, setting, and characters files
+            # NOTE: Because they are substituted in as variables it doesn't make sense to revise these files
+            initial = TextFile(Path("initial.md"), config=self.config)
+            setting = TextFile(COMMON_DIR / "setting.md", config=self.config)
+            characters = TextFile(COMMON_DIR / "characters.md", config=self.config)
+
             # Load the file to be reviewed
-            file_path = Path(file)
+            if file.endswith(".md"):
+                file = file[:-3]
+                # Need the path without extension since it's used to make other filenames
+            file_path = Path(file + ".md") 
             if not file_path.exists():
                 raise BookBotError(f"File not found: {file}")
                 
-            text_file = TextFile(file_path, config=self.config)
+            orig_file = TextFile(file_path, config=self.config)
 
             # Generate review using the reviewer bot
-            review_file = file_path.with_suffix('.review.md')
+            if revise_step_name:
+                review_file = self.config["review_dir"] + f"/{file_path.stem}_review.md"
+            else:
+                review_file = self.config["review_dir"] + f"/{file_path.stem}_{reviewer_bot}_review.md"
             self._call_llm(
                 review_file,
                 reviewer_bot,
                 {
-                    "content": text_file.content
+                    "initial": initial.content,
+                    "setting": setting.content,
+                    "characters": characters.content,
+                    "content": orig_file.content,
                 },
-                command=f"review_and_edit_with_2_bots_{reviewer_bot}_{editor_bot}"
+                command=f"review_{reviewer_bot}_{editor_bot}"
             )
 
+            file_path_with_suffix = file_path.with_suffix(".new")
             # Edit the original file using the editor bot
             self._call_llm(
-                file_path,
+                file+"_new.md", # Will remove once I know it's working
                 editor_bot,
                 {
-                    "content": text_file.content,
+                    "initial": initial.content,
+                    "setting": setting.content,
+                    "characters": characters.content,
+                    "content": orig_file.content,
                     "review": TextFile(review_file).content
                 },
-                command=f"edit_with_2_bots_{reviewer_bot}_{editor_bot}"
+                command=f"edit_{reviewer_bot}_{editor_bot}"
             )
 
-            self._git_commit(f"Reviewed and edited {file}")
+            diff_message = self._generate_diff_message(orig_file.content, file_path.read_text())
+            logger.info(f"Diff: {diff_message}")
+
+            if revise_step_name:
+                self._git_commit(f"Reviewed and edited {file} with {reviewer_bot} and {editor_bot} - {revise_step_name}")
+            else:
+                self._git_commit(f"Reviewed and edited {file} with {reviewer_bot} and {editor_bot}")
             self._generate_preview()
             
             console.print(f"\n[green]✓[/green] Reviewed and edited successfully")
             
         except Exception as e:
             logger.error(f"Error reviewing and editing with 2 bots: {e}")
+            # Print traceback
+            import traceback
+            traceback.print_exc()
             raise BookBotError(f"Failed to review and edit: {e}")
 
-
+    def _generate_diff_message(self, old_text: str, new_text: str) -> str:
+        """Generate a summary of the diff between two texts"""
+        from difflib import unified_diff
+        
+        diff = list(unified_diff(old_text.splitlines(), new_text.splitlines(), lineterm=''))
+        if not diff:
+            return "No changes detected."
+        else:
+            # Summarize the diff as lines added, lines removed
+            added_lines = sum(1 for line in diff if line.startswith('+ ') and not line.startswith('+++'))
+            removed_lines = sum(1 for line in diff if line.startswith('- ') and not line.startswith('---'))
+            summary = f"Changes detected: {added_lines} lines added, {removed_lines} lines removed."
+            return summary
 
     def _get_previous_chapter_content(self, chapter_num: int) -> Optional[str]:
         """Get content from the previous chapter if it exists"""
@@ -1940,6 +2010,13 @@ def main():
     # Review command
     subparsers.add_parser('review', help='Generate a review of the book')
     
+    # Revise commands
+    revise_parser = subparsers.add_parser('revise', help='Revise a file using two different bots')
+    revise_parser.add_argument('reviewer_bot', type=str, help='Reviewer bot name')
+    revise_parser.add_argument('editor_bot', type=str, help='Editor bot name')
+    revise_parser.add_argument('file', type=str, help='File to revise')
+    revise_parser.add_argument('revise_step_name', type=str, nargs='?', help='Revision step name (optional)')
+
     # Finalize command
     subparsers.add_parser('finalize', help='Create final versions of all content')
     
@@ -1968,6 +2045,8 @@ def main():
             bot.edit_chapter(args.number)
         elif args.command == 'review':
             bot.review_book()
+        elif args.command == 'revise':
+            bot.revise(args.reviewer_bot, args.editor_bot, args.file, args.revise_step_name)
         elif args.command == 'finalize':
             bot.finalize()
         else:
