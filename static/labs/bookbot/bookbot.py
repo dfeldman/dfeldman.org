@@ -769,9 +769,9 @@ class BotChat:
                 logger.info("Added continuation prompt")
                 
                 if self.content_file:
-                    # Save on every iteration so we can see what's going on
+                    # Save on every continuation so we can see what's going on
                     f = TextFile(self.content_file)
-                    f.content = final_text
+                    f.content = '\n'.join(accumulated_content)
                     f.metadata["command"] = self.command
                     f.metadata["bot"] = self.bot.name
                     f.metadata["timestamp"] = datetime.now().isoformat()
@@ -794,10 +794,16 @@ class BotChat:
             # Clean and store final text
             if accumulated_content:
                 final_text = "\n".join(accumulated_content)
+                # Make any final tweaks to the text
                 if "THE END" in final_text:
                     final_text = final_text.split("THE END")[0].strip()
                 self.final_text = final_text
 
+                # Final save after tweaking
+                if self.content_file:
+                    f = TextFile(self.content_file)
+                    f.content = self.final_text
+                    f.save()
                 # Log final statistics
                 # The stats file should probably be removed since it serves no purpose
                 logger.info(f"Generation complete for {self.command}:")
