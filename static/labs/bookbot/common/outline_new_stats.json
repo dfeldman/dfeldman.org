@@ -1,0 +1,38 @@
+{
+  "input_tokens": 71523,
+  "output_tokens": 6557,
+  "time": 172.82259702682495,
+  "calls": [
+    {
+      "timestamp": "2025-02-23T12:29:44.336441",
+      "input_tokens": 21753,
+      "output_tokens": 2811,
+      "elapsed": 67.36881303787231,
+      "retry": 1,
+      "provider": "Together",
+      "model": "deepseek/deepseek-r1"
+    },
+    {
+      "timestamp": "2025-02-23T12:30:30.210655",
+      "input_tokens": 24220,
+      "output_tokens": 1799,
+      "elapsed": 45.8590362071991,
+      "retry": 2,
+      "provider": "Together",
+      "model": "deepseek/deepseek-r1"
+    },
+    {
+      "timestamp": "2025-02-23T12:31:29.816681",
+      "input_tokens": 25550,
+      "output_tokens": 1947,
+      "elapsed": 59.59474778175354,
+      "retry": 3,
+      "provider": "Together",
+      "model": "deepseek/deepseek-r1"
+    }
+  ],
+  "previous_input_tokens": 0,
+  "previous_output_tokens": 0,
+  "previous_time": 0,
+  "previous_continuation_count": 0
+}

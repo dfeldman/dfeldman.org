@@ -21,7 +21,7 @@ import re
 
 
 # Disable all LLM calls
-DRY_RUN = True
+DRY_RUN = False
 
 # Set up rich console for better output
 console = Console()
@@ -1511,7 +1511,7 @@ class BookBot:
 
             # Generate review using review_whole bot
             review_num = len(list(REVIEWS_DIR.glob("*.md"))) + 1
-            self._call_llm(
+            content, _, _ = self._call_llm(
                 f"reviews/review_{review_num:02d}",
                 "review_whole",
                 {
@@ -1547,8 +1547,8 @@ class BookBot:
                 raise BookBotError(f"File not found: {file}")
             orig_file = TextFile(file_path, config=self.config)
             # Run the LLM to overwrite the original file
-            self._call_llm(
-                file+"_new.md", # Will remove once I know it's working
+            content, _, _ = self._call_llm(
+                file+"_new", # Will remove once I know it's working
                 editor_bot,
                 {
                     "initial": initial.content,
@@ -1559,7 +1559,7 @@ class BookBot:
                 command=f"edit_{editor_bot}"
             )
             # Generate a diff message
-            diff_message = self._generate_diff_message(orig_file.content, file_path.read_text())
+            diff_message = self._generate_diff_message(orig_file.content, content)
             logger.info(f"Diff: {diff_message}")
             # Commit the changes
             if editor_step_name:
@@ -1619,7 +1619,7 @@ class BookBot:
 
             file_path_with_suffix = file_path.with_suffix(".new")
             # Edit the original file using the editor bot
-            self._call_llm(
+            content, _, _ = self._call_llm(
                 file+"_new.md", # Will remove once I know it's working
                 editor_bot,
                 {
@@ -1632,7 +1632,7 @@ class BookBot:
                 command=f"edit_{reviewer_bot}_{editor_bot}"
             )
 
-            diff_message = self._generate_diff_message(orig_file.content, file_path.read_text())
+            diff_message = self._generate_diff_message(orig_file.content, content)
             logger.info(f"Diff: {diff_message}")
 
             if revise_step_name:
