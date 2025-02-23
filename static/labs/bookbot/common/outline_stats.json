@@ -1,40 +1,40 @@
 {
-  "input_tokens": 73104,
-  "output_tokens": 9503,
-  "total_time": 280.63139390945435,
+  "input_tokens": 72121,
+  "output_tokens": 9915,
+  "total_time": 306.1938953399658,
   "calls": [
     {
-      "timestamp": "2025-02-23T01:23:35.557496",
+      "timestamp": "2025-02-23T01:35:41.353409",
       "input_tokens": 15118,
-      "output_tokens": 2774,
-      "elapsed": 78.2251079082489,
+      "output_tokens": 2733,
+      "elapsed": 84.70171093940735,
       "retry": 1,
       "provider": "Together",
       "model": "deepseek/deepseek-r1"
     },
     {
-      "timestamp": "2025-02-23T01:24:42.833784",
-      "input_tokens": 17312,
-      "output_tokens": 2381,
-      "elapsed": 67.26280093193054,
+      "timestamp": "2025-02-23T01:36:53.095856",
+      "input_tokens": 17134,
+      "output_tokens": 2369,
+      "elapsed": 71.71296000480652,
       "retry": 2,
       "provider": "Together",
       "model": "deepseek/deepseek-r1"
     },
     {
-      "timestamp": "2025-02-23T01:26:14.663717",
-      "input_tokens": 19034,
-      "output_tokens": 3078,
-      "elapsed": 91.81753015518188,
+      "timestamp": "2025-02-23T01:38:08.765374",
+      "input_tokens": 19024,
+      "output_tokens": 2505,
+      "elapsed": 75.65768003463745,
       "retry": 3,
       "provider": "Together",
       "model": "deepseek/deepseek-r1"
     },
     {
-      "timestamp": "2025-02-23T01:26:57.998504",
-      "input_tokens": 21640,
-      "output_tokens": 1270,
-      "elapsed": 43.32595491409302,
+      "timestamp": "2025-02-23T01:39:22.899003",
+      "input_tokens": 20845,
+      "output_tokens": 2308,
+      "elapsed": 74.1215443611145,
       "retry": 4,
       "provider": "Together",
       "model": "deepseek/deepseek-r1"

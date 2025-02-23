@@ -4,7 +4,7 @@ llm: deepseek/deepseek-r1
 input_price: 8.0
 output_price: 24.0
 provider: Together
-temperature: 0.8
+temperature: 0.7
 expected_length: 3000
 context_window: 128000
 system_prompt: '
