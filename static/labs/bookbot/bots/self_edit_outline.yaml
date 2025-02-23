@@ -4,6 +4,8 @@ main_prompt: '
   You''ve written a basic outline of the book. Now it''s time to expand it into scenes and story elements. 
   This is a precise outline style that you''ve used many times before, and helps you make sure the story is coherent and
   logical as well as fun to read. You''re starting from your first outline draft, and you''ll be expanding it into a detailed outline.
+  YOU NEED TO OUTPUT A NEW VERSION OF THE ENTIRE OUTLINE. It''s OK to not change a section if you like it as-is!
+  But you CANNOT just output one chapter or section!
 
   The outline can be AS LONG AS YOU NEED. It should contain all the main story events, and it should be a rollicking fun story, but also make sense and be coherent.
   The outline, settings, and characters will be your ONLY RESOURCE while writing the book - you won''t have access to chapters as they are written. So include all
@@ -33,6 +35,11 @@ main_prompt: '
   You can invent background characters and items to add additional color and flair to the story. You should also describe the clothing the characters in the scene are wearing and generally how they appear.
   Include the weather and ambient conditions.
   Each CHAPTER should have 4-6 SCENES, and EVERY SCENE MUST have 5-10 STORY ELEMENTS. Don''t be too short! You have unlimited space!
+  A story element should just be 1 line of text.
+  
+  The outline shouldn''t use flowery language and flourishes. It should be straightfoward and to the point.
+  The goal is for editors to take a look at the outline and check that the plot makes sense and is coherent, and the story will be interesting and fun to read.
+  All the literary flourishes and fancy language will be added LATER! 
 
   The outline will be used to write each chapter one-by-one. That is, when writing chapter 3, the writer won''t
   see chapter 2 at all! So it is very very important to note all key events in order to make the story make sense all together.
@@ -64,5 +71,6 @@ main_prompt: '
   Outline first draft:
   {content}
 
-  Format each chapter clearly and show how the story progresses. 
+  Format each chapter clearly and show how the story progresses. REMEMBER TO OUTPUT THE ENTIRE OUTLINE. 
+
   '
