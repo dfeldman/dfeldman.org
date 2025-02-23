@@ -626,7 +626,7 @@ class BotChat:
             TextColumn("[yellow]{task.fields[status]}"),
             TextColumn("[bold white]Cmd: {task.fields[command]}•"),
             TextColumn("[bold white]Out: {task.fields[content_file]}•"),
-            TextColumn("[bold blue]{task.fields[bot]}"),
+            TextColumn("[bold blue]Bot: {task.fields[bot]}"),
             TextColumn("[white]•[/white]"),
             TextColumn("[green]In: {task.fields[tokens_in]}[/green]"),
             TextColumn("[white]•[/white]"),
@@ -1258,7 +1258,7 @@ class BookBot:
         return len(self.tokenizer.encode(text))
     
     def _load_template(self, template_name: str, variables: Dict[str, str] = None) -> str:
-        """Load and fill a template"""
+        """Load and fill a template. Designed to be somewhat flexible to how the variables are used in the template."""
         template_path = PROMPTS_DIR / f"{template_name}.md"
         if not template_path.exists():
             raise BookBotError(f"Template not found: {template_name}")
@@ -1266,8 +1266,18 @@ class BookBot:
         content = template_path.read_text()
         if variables:
             for key, value in variables.items():
+                # Handle both {{ key }} and {{key}} formats
                 content = content.replace(f"{{{{ {key} }}}}", str(value))
-        return content
+                content = content.replace(f"{{{{{key}}}}}", str(value))
+                
+                # Also handle potential YAML-style variables
+                content = content.replace(f"{ key }", str(value))
+                content = content.replace(f"{key}", str(value))
+        
+        # Clean up any remaining template markers
+        content = re.sub(r'{{\s*\w+\s*}}', '', content)
+        
+        return content.strip()
 
     def _call_llm(self, output_file: str, bot_name: str, template_vars: Optional[Dict[str, str]] = None, max_retries: int = 3, command:str="") -> Tuple[str, int, int]:
         """

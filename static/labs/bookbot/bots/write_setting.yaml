@@ -20,6 +20,6 @@ main_prompt: 'Based on the initial book description below, create a detailed des
   file must contain all needed detail to write the complete story.
 
   Initial Description:
-  {{ initial }}
+  {initial}
 
   Remember to be specific and vivid in your descriptions. End with "THE END".'
