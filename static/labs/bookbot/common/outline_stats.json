@@ -1,38 +1,56 @@
 {
-  "input_tokens": 55566,
-  "output_tokens": 5685,
-  "time": 189.2705328464508,
+  "input_tokens": 99708,
+  "output_tokens": 8665,
+  "time": 272.9844799041748,
   "calls": [
     {
-      "timestamp": "2025-02-23T16:00:17.331567",
-      "input_tokens": 17030,
-      "output_tokens": 2362,
-      "elapsed": 79.86763310432434,
+      "timestamp": "2025-02-23T16:06:33.352591",
+      "input_tokens": 17264,
+      "output_tokens": 2085,
+      "elapsed": 54.82889485359192,
       "retry": 1,
       "provider": "Together",
       "model": "deepseek/deepseek-r1"
     },
     {
-      "timestamp": "2025-02-23T16:01:12.217527",
-      "input_tokens": 18707,
-      "output_tokens": 1509,
-      "elapsed": 54.845592975616455,
+      "timestamp": "2025-02-23T16:07:43.530116",
+      "input_tokens": 18835,
+      "output_tokens": 2030,
+      "elapsed": 70.15268993377686,
       "retry": 2,
       "provider": "Together",
       "model": "deepseek/deepseek-r1"
     },
     {
-      "timestamp": "2025-02-23T16:02:06.819491",
-      "input_tokens": 19829,
-      "output_tokens": 1814,
-      "elapsed": 54.55730676651001,
+      "timestamp": "2025-02-23T16:08:23.750095",
+      "input_tokens": 20057,
+      "output_tokens": 1404,
+      "elapsed": 40.197710037231445,
       "retry": 3,
+      "provider": "Together",
+      "model": "deepseek/deepseek-r1"
+    },
+    {
+      "timestamp": "2025-02-23T16:09:08.228623",
+      "input_tokens": 21110,
+      "output_tokens": 1590,
+      "elapsed": 44.45263409614563,
+      "retry": 4,
+      "provider": "Together",
+      "model": "deepseek/deepseek-r1"
+    },
+    {
+      "timestamp": "2025-02-23T16:10:11.628859",
+      "input_tokens": 22442,
+      "output_tokens": 1556,
+      "elapsed": 63.352550983428955,
+      "retry": 5,
       "provider": "Together",
       "model": "deepseek/deepseek-r1"
     }
   ],
-  "previous_input_tokens": "56738",
-  "previous_output_tokens": "4341",
-  "previous_time": "130.79499220848083",
-  "previous_continuation_count": "3"
+  "previous_input_tokens": "35737",
+  "previous_output_tokens": "3871",
+  "previous_time": "134.7132260799408",
+  "previous_continuation_count": "2"
 }
