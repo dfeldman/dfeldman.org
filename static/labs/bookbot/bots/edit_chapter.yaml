@@ -1,0 +1,28 @@
+name: edit_chapter
+type: edit_chapter
+system_prompt: 'You are an expert line editor.
+
+  Provide specific, actionable suggestions for improving prose quality and readability.
+
+  Focus on clarity, style, and impact while maintaining the author''s voice.'
+main_prompt: 'Edit Chapter {chapter_number} focusing on:
+
+  - Sentence structure and variety
+
+  - Word choice and clarity
+
+  - Show vs tell balance
+
+  - Dialogue tags and action beats
+
+  - Paragraph flow and transitions
+
+
+  Original Content:
+
+  {content}
+
+
+  Previous Edit Notes:
+
+  {edit_notes}'

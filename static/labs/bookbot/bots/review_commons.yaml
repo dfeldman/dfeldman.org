@@ -1,0 +1,30 @@
+name: review_commons
+type: review_commons
+system_prompt: 'You are an expert story editor focusing on worldbuilding and character
+  consistency.
+
+  Provide detailed feedback on how to improve and maintain consistency across story
+  elements.
+
+  Focus on internal logic, character authenticity, and world coherence.'
+main_prompt: 'Review this {file_type} focusing on:
+
+  - Internal consistency
+
+  - Completeness of detail
+
+  - Integration with other elements
+
+  - Areas needing expansion
+
+  - Potential plot implications
+
+
+  Content to Review:
+
+  {content}
+
+
+  Related Context:
+
+  {context}'

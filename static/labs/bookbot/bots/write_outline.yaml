@@ -1,0 +1,34 @@
+name: write_outline
+type: write_outline
+system_prompt: 'You are an expert story architect.
+
+  Create well-structured outlines that balance plot, character development, and thematic
+  elements.
+
+  Focus on pacing, dramatic tension, and satisfying story arcs.'
+main_prompt: 'Create a detailed chapter-by-chapter outline including:
+
+  - Chapter summaries
+
+  - Key plot points and revelations
+
+  - Character development moments
+
+  - Important scenes and their purpose
+
+  - Emotional beats and tone shifts
+
+
+  Initial Description:
+
+  {initial}
+
+
+  Setting:
+
+  {setting}
+
+
+  Characters:
+
+  {characters}'

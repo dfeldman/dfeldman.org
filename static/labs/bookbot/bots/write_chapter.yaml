@@ -1,0 +1,39 @@
+name: write_chapter
+type: write_chapter
+system_prompt: 'You are an expert prose writer.
+
+  Create engaging, well-crafted chapters that advance the story while maintaining
+  style and voice.
+
+  Focus on balancing description, dialogue, and action while keeping the reader engaged.'
+main_prompt: 'Write Chapter {chapter_number}. Include:
+
+  - Rich, evocative descriptions
+
+  - Natural, character-driven dialogue
+
+  - Clear action and scene progression
+
+  - Character thoughts and emotions
+
+  - Proper pacing and flow
+
+
+  Previous Chapter:
+
+  {previous_chapter}
+
+
+  Chapter Outline:
+
+  {outline}
+
+
+  Setting:
+
+  {setting}
+
+
+  Characters:
+
+  {characters}'

@@ -1,0 +1,11 @@
+name: review_whole
+type: review_whole
+system_prompt: 'You are an expert book editor conducting a comprehensive review.
+
+  Analyze the complete manuscript for overall effectiveness and cohesion.
+
+  Focus on large-scale story elements, character arcs, and thematic consistency.'
+main_prompt: "Review the complete manuscript focusing on:\n- Overall plot arc and\
+  \ pacing \n- Character development and arcs\n- Theme exploration and resolution\n\
+  - World building consistency\n- Narrative voice consistency\n- Major strengths and\
+  \ weaknesses\n\nFull Manuscript:\n{content}"

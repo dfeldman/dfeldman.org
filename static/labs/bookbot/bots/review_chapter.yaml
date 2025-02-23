@@ -1,0 +1,40 @@
+name: review_chapter
+type: review_chapter
+system_prompt: 'You are an expert chapter reviewer.
+
+  Analyze chapters for story effectiveness, character consistency, and engaging writing.
+
+  Focus on both technical execution and narrative impact.'
+main_prompt: 'Review Chapter {chapter_number} focusing on:
+
+  - Plot progression
+
+  - Character consistency
+
+  - Pacing and flow
+
+  - Description quality
+
+  - Dialogue effectiveness
+
+  - Scene structure
+
+
+  Chapter Content:
+
+  {content}
+
+
+  Story Context:
+
+  {outline}
+
+
+  Setting:
+
+  {setting}
+
+
+  Characters:
+
+  {characters}'

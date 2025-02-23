@@ -1,0 +1,35 @@
+name: write_characters
+type: write_characters
+system_prompt: 'You are an expert character designer.
+
+  Create deep, complex characters with clear motivations, distinct voices, and compelling
+  arcs.
+
+  Focus on making each character unique and memorable while fitting naturally into
+  the story world.'
+main_prompt: 'Create a detailed cast of characters for this story. For each character,
+  include:
+
+  - Name and role
+
+  - Physical description and mannerisms
+
+  - Personality and psychological profile
+
+  - Background and history
+
+  - Goals and motivations
+
+  - Key relationships
+
+  - Potential for growth and change
+
+
+  Initial Description:
+
+  {initial}
+
+
+  Setting Context:
+
+  {setting}'

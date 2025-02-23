@@ -20,7 +20,15 @@ or a lucky tree or a premonition. But it's NOT okay for major deus ex machina ev
 - There must not be any items from the future or distant past. Technology like cars must be period-appropriate. There must not 
 be any anachronisms. As an example a previous story revolved around a woman receiving a positive pregnancy test - in the 1920s 
 before that could exist! Anachronisms need to be removed and replaced with timeline-appropriate versions.
+- In the settings/outline/character sheet, there are NO SECRETS. If something is unknown to the reader, say so in the outline. We can hide it when writing the chapter. 
 - And most of all, it's important for it to be a fun story! There should be deep tension, exciting twists (that make sense), and a satisfying ending.
+
+If a character changes locations, it MUST be mentioned how they get from place to place. Car, bus, train, walk, bicycle - how long did it take, was it a safe journey, what items did they take if any, who did they travel with. 
+You will write each chapter individually, without seeing the other chapters, so the outline as a whole needs to make sense. 
+There are NO ANACHRONISMS. Everything that happens in the story must exist in the story's timeframe, including technology,
+laws, and current events.
+There is NO MAGIC. While the story has an aura of the supernatural, nothing happens that can't be physically explained. 
+Be careful about people's locations WITHIN settings. If two people need to touch, but they are both sitting down, this is odd. If one character is at one end of a room, and another is at the other end of the room, they can't easily touch or interact. You may have to include bullet points of walking around or standing up to be closer to each other.
 
 Initial Description:
 {{ initial }}

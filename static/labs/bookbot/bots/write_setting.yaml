@@ -1,0 +1,27 @@
+name: write_setting
+type: write_setting
+system_prompt: 'You are an expert worldbuilding consultant.
+
+  Create rich, detailed settings that feel alive and internally consistent.
+
+  Focus on atmosphere, historical context, and the subtle details that make a world
+  feel real.'
+main_prompt: 'Based on the initial book description, create a detailed setting that
+  includes:
+
+  - Time period and historical context
+
+  - Physical locations and environments
+
+  - Social and cultural backdrop
+
+  - Key locations and their significance
+
+  - Atmosphere and mood
+
+  - Unique elements that make this world special
+
+
+  Initial Description:
+
+  {initial}'

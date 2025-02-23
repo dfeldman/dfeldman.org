@@ -7,7 +7,8 @@ import argparse
 import requests
 import logging
 import time
-from typing import Dict, List, Optional, Tuple
+from typing import Dict, List, Optional, Tuple, Set
+from enum import Enum, auto
 from dataclasses import dataclass
 from datetime import datetime
 import tiktoken
@@ -53,7 +54,8 @@ DEFAULT_CONFIG = {
     "auto_preview": True,
     "backup_enabled": True,
     "backup_dir": ".bookbot_backups",
-    "logging_level": "DEBUG"
+    "logging_level": "DEBUG",
+    "bot_dir": "bots" 
 }
 
 
@@ -172,6 +174,805 @@ subtitle: Optional Subtitle
 
 By Your Name
 """
+
+########################### NEW BOT SYSTEM ###########################
+# Once this is fully working, get rid of the old way to call LLMs
+
+#### INIT
+
+def initialize_bot_yaml(bot_dir: Path):
+    """Initialize example bot YAML files in the specified directory.
+    Never overwrites existing files.
+    """
+    bot_dir.mkdir(exist_ok=True)
+    
+    # Default configuration
+    default_yaml = {
+        "name": "default",
+        "type": "default",
+        "llm": "anthropic/claude-2.1",
+        "input_price": 8.00,
+        "output_price": 24.00,
+        "provider": "anthropic",
+        "temperature": 0.7,
+        "expected_length": 3000,
+        "context_window": 4096,
+        "system_prompt": """You are a professional writing assistant.
+Provide clear, detailed responses that directly address the task at hand.
+Focus on quality and completeness in your writing."""
+    }
+    
+    # Example bots for each type
+    example_bots = {
+        "write_setting": {
+            "name": "write_setting",
+            "type": "write_setting",
+            "system_prompt": """You are an expert worldbuilding consultant.
+Create rich, detailed settings that feel alive and internally consistent.
+Focus on atmosphere, historical context, and the subtle details that make a world feel real.""",
+            "main_prompt": """Based on the initial book description, create a detailed setting that includes:
+- Time period and historical context
+- Physical locations and environments
+- Social and cultural backdrop
+- Key locations and their significance
+- Atmosphere and mood
+- Unique elements that make this world special
+
+Initial Description:
+{initial}"""
+        },
+        
+        "write_characters": {
+            "name": "write_characters",
+            "type": "write_characters",
+            "system_prompt": """You are an expert character designer.
+Create deep, complex characters with clear motivations, distinct voices, and compelling arcs.
+Focus on making each character unique and memorable while fitting naturally into the story world.""",
+            "main_prompt": """Create a detailed cast of characters for this story. For each character, include:
+- Name and role
+- Physical description and mannerisms
+- Personality and psychological profile
+- Background and history
+- Goals and motivations
+- Key relationships
+- Potential for growth and change
+
+Initial Description:
+{initial}
+
+Setting Context:
+{setting}"""
+        },
+        
+        "write_outline": {
+            "name": "write_outline",
+            "type": "write_outline",
+            "system_prompt": """You are an expert story architect.
+Create well-structured outlines that balance plot, character development, and thematic elements.
+Focus on pacing, dramatic tension, and satisfying story arcs.""",
+            "main_prompt": """Create a detailed chapter-by-chapter outline including:
+- Chapter summaries
+- Key plot points and revelations
+- Character development moments
+- Important scenes and their purpose
+- Emotional beats and tone shifts
+
+Initial Description:
+{initial}
+
+Setting:
+{setting}
+
+Characters:
+{characters}"""
+        },
+        
+        "write_chapter": {
+            "name": "write_chapter",
+            "type": "write_chapter",
+            "system_prompt": """You are an expert prose writer.
+Create engaging, well-crafted chapters that advance the story while maintaining style and voice.
+Focus on balancing description, dialogue, and action while keeping the reader engaged.""",
+            "main_prompt": """Write Chapter {chapter_number}. Include:
+- Rich, evocative descriptions
+- Natural, character-driven dialogue
+- Clear action and scene progression
+- Character thoughts and emotions
+- Proper pacing and flow
+
+Previous Chapter:
+{previous_chapter}
+
+Chapter Outline:
+{outline}
+
+Setting:
+{setting}
+
+Characters:
+{characters}"""
+        },
+        
+        "review_commons": {
+            "name": "review_commons",
+            "type": "review_commons",
+            "system_prompt": """You are an expert story editor focusing on worldbuilding and character consistency.
+Provide detailed feedback on how to improve and maintain consistency across story elements.
+Focus on internal logic, character authenticity, and world coherence.""",
+            "main_prompt": """Review this {file_type} focusing on:
+- Internal consistency
+- Completeness of detail
+- Integration with other elements
+- Areas needing expansion
+- Potential plot implications
+
+Content to Review:
+{content}
+
+Related Context:
+{context}"""
+        },
+        
+        "review_chapter": {
+            "name": "review_chapter",
+            "type": "review_chapter",
+            "system_prompt": """You are an expert chapter reviewer.
+Analyze chapters for story effectiveness, character consistency, and engaging writing.
+Focus on both technical execution and narrative impact.""",
+            "main_prompt": """Review Chapter {chapter_number} focusing on:
+- Plot progression
+- Character consistency
+- Pacing and flow
+- Description quality
+- Dialogue effectiveness
+- Scene structure
+
+Chapter Content:
+{content}
+
+Story Context:
+{outline}
+
+Setting:
+{setting}
+
+Characters:
+{characters}"""
+        },
+        
+        "edit_chapter": {
+            "name": "edit_chapter",
+            "type": "edit_chapter",
+            "system_prompt": """You are an expert line editor.
+Provide specific, actionable suggestions for improving prose quality and readability.
+Focus on clarity, style, and impact while maintaining the author's voice.""",
+            "main_prompt": """Edit Chapter {chapter_number} focusing on:
+- Sentence structure and variety
+- Word choice and clarity
+- Show vs tell balance
+- Dialogue tags and action beats
+- Paragraph flow and transitions
+
+Original Content:
+{content}
+
+Previous Edit Notes:
+{edit_notes}"""
+        },
+        
+        "review_whole": {
+            "name": "review_whole",
+            "type": "review_whole",
+            "llm": "anthropic/claude-3-opus-20240229",  # Different LLM for full book review
+            "input_price": 15.00,
+            "output_price": 75.00,
+            "context_window": 1000000,
+            "system_prompt": """You are an expert book editor conducting a comprehensive review.
+Analyze the complete manuscript for overall effectiveness and cohesion.
+Focus on large-scale story elements, character arcs, and thematic consistency.""",
+            "main_prompt": """Review the complete manuscript focusing on:
+- Overall plot arc and pacing 
+- Character development and arcs
+- Theme exploration and resolution
+- World building consistency
+- Narrative voice consistency
+- Major strengths and weaknesses
+
+Full Manuscript:
+{content}"""
+        }
+    }
+    
+    # Write default config
+    default_path = bot_dir / "default.yaml"
+    if not default_path.exists():
+        with default_path.open('w') as f:
+            yaml.dump(default_yaml, f, sort_keys=False, indent=2)
+    
+    # Write example bots
+    for bot_name, bot_config in example_bots.items():
+        bot_path = bot_dir / f"{bot_name}.yaml"
+        if not bot_path.exists():
+            # Only include non-default values
+            minimal_config = {
+                "name": bot_config["name"],
+                "type": bot_config["type"],
+                "system_prompt": bot_config["system_prompt"],
+                "main_prompt": bot_config["main_prompt"]
+            }
+            
+            # For book reviewer, include special LLM config
+            if bot_name == "book_reviewer":
+                minimal_config.update({
+                    "llm": bot_config["llm"],
+                    "input_price": bot_config["input_price"],
+                    "output_price": bot_config["output_price"],
+                    "context_window": bot_config["context_window"]
+                })
+            
+            with bot_path.open('w') as f:
+                yaml.dump(minimal_config, f, sort_keys=False, indent=2)
+    
+    logger.info(f"Initialized example bot configurations in {bot_dir}")
+    return list(bot_dir.glob("*.yaml"))
+
+
+
+##### Core bot system
+
+# Global helper functions
+def format_text_stats(text: str) -> str:
+    """Format text statistics as bytes/words/tokens
+    
+    Returns a string like '1234b/456w/789t'
+    """
+    bytes_count = len(text.encode('utf-8'))
+    words_count = len(text.split())
+    enc = tiktoken.encoding_for_model("gpt-4")
+    tokens_count = len(enc.encode(text))
+    return f"{bytes_count}b/{words_count}w/{tokens_count}t"
+
+def format_price(input_tokens: int, output_tokens: int, 
+                input_price: float, output_price: float) -> str:
+    """Format price calculation
+    
+    Returns a string like '$1.234 (in:$0.123 out:$1.111)'
+    """
+    input_cost = (input_tokens / 1_000_000) * input_price
+    output_cost = (output_tokens / 1_000_000) * output_price
+    total_cost = input_cost + output_cost
+    return f"${total_cost:.4f} (in:${input_cost:.4f} out:${output_cost:.4f})"
+
+
+##### BotType
+
+
+class BotType(Enum):
+    """Types of bots and their required template variables"""
+    DEFAULT = auto()           # No specific variables required
+    WRITE_OUTLINE = auto()     # initial, setting, characters
+    WRITE_SETTING = auto()     # initial
+    WRITE_CHARACTERS = auto()  # initial, setting
+    WRITE_CHAPTER = auto()     # chapter_number, outline, setting, characters, previous_chapter
+    REVIEW_COMMONS = auto()    # file_type, content, context
+    REVIEW_CHAPTER = auto()    # chapter_number, content, outline, setting, characters
+    EDIT_CHAPTER = auto()      # chapter_number, content, edit_notes
+    REVIEW_WHOLE = auto()      # content
+    
+    @property
+    def required_vars(self) -> Set[str]:
+        """Get required template variables for this bot type"""
+        return {
+            BotType.DEFAULT: set(),
+            BotType.WRITE_OUTLINE: {"initial", "setting", "characters"},
+            BotType.WRITE_SETTING: {"initial"},
+            BotType.WRITE_CHARACTERS: {"initial", "setting"},
+            BotType.WRITE_CHAPTER: {"chapter_number", "outline", "setting", "characters", "previous_chapter"},
+            BotType.REVIEW_COMMONS: {"file_type", "content", "context"},
+            BotType.REVIEW_CHAPTER: {"chapter_number", "content", "outline", "setting", "characters"},
+            BotType.EDIT_CHAPTER: {"chapter_number", "content", "edit_notes"},
+            BotType.REVIEW_WHOLE: {"content"}
+        }[self]
+
+@dataclass
+class Bot:
+    """Configuration for a chat bot"""
+    # TODO everything here is hardcoded around reading bots from "bots/"
+    # should make this configurable
+    name: str
+    type: BotType
+    llm: str
+    input_price: float  # Price per million tokens
+    output_price: float  # Price per million tokens
+    provider: Optional[str] = None
+    temperature: float = 0.7
+    expected_length: int = 2000  # Expected length in words
+    system_prompt: str = ""
+    context_window: int = 4096
+    main_prompt: str = ""
+    continuation_prompt_initial: str = "Type THE END when finished, or CONTINUE if you need to write more."
+    continuation_prompt: str = "You have written {current_words} words out of {expected_words} expected words. Continue the text."
+    
+    @classmethod
+    def from_file(cls, file_path: Path, defaults_path: Optional[Path] = None) -> 'Bot':
+        """Load bot configuration from a YAML file with defaults"""
+        if defaults_path is None:
+            defaults_path = Path("bots/default.yaml")
+        try:
+            # Load defaults if provided
+            defaults = {}
+            if defaults_path.exists():
+                with defaults_path.open('r') as f:
+                    defaults = yaml.safe_load(f)
+            else:
+                logger.warning(f"Defaults file {defaults_path} not found, using empty defaults")
+            # Load bot config
+            with file_path.open('r') as f:
+                config = yaml.safe_load(f)
+            
+            # Merge with defaults
+            merged = {**defaults, **config}
+            
+            # Convert type string to enum
+            merged['type'] = BotType[merged['type'].upper()]
+            
+            return cls(**merged)
+            
+        except Exception as e:
+            raise ValueError(f"Failed to load bot config from {file_path}: {e}")
+    
+    @staticmethod
+    def list_bots(bot_dir: Path, bot_type: Optional[BotType] = None) -> List[Path]:
+        """List all bot configuration files, optionally filtered by type"""
+        bot_dir.mkdir(exist_ok=True)
+        
+        if bot_type:
+            # Load each file to check its type
+            matching_bots = []
+            for file in bot_dir.glob("*.yaml"):
+                try:
+                    bot = Bot.from_file(file)
+                    if bot.type == bot_type:
+                        matching_bots.append(file)
+                except Exception as e:
+                    logger.warning(f"Skipping invalid bot file {file}: {e}")
+            return matching_bots
+        else:
+            return list(bot_dir.glob("*.yaml"))
+    
+    def validate_template_vars(self, variables: Dict[str, str]):
+        """Validate that all required template variables are present"""
+        required = self.type.required_vars
+        missing = required - set(variables.keys())
+        if missing:
+            raise ValueError(f"Missing required template variables for {self.type}: {missing}")
+
+class BotChat:
+    """Manages a conversation with a bot"""
+    
+    def __init__(self, bot: Bot, command: str, api_key: str,
+                 history_file: Optional[Path] = None,
+                 stats_file: Optional[Path] = None,
+                 content_file: Optional[Path] = None):
+        self.bot = bot
+        self.command = command
+        self.api_key = api_key
+        self.history_file = history_file
+        self.stats_file = stats_file
+        self.messages: List[Dict] = []
+        self.stats = {
+            "input_tokens": 0,
+            "output_tokens": 0,
+            "total_time": 0,
+            "calls": []
+        }
+        self.error: Optional[Exception] = None
+        self.final_text: Optional[str] = None
+        self.content_file = content_file
+        logger.info(f"Initializing chat with bot '{bot.name}' for command: {command}")
+        
+    def _update_history(self):
+        """Update history file with current messages"""
+        if self.history_file:
+            try:
+                history = {
+                    "timestamp": datetime.now().isoformat(),
+                    "bot": self.bot.name,
+                    "command": self.command,
+                    "messages": self.messages
+                }
+                self.history_file.write_text(json.dumps(history, indent=2))
+            except Exception as e:
+                logger.error(f"Failed to update history file: {e}")
+                
+    def _update_stats(self):
+        """Update stats file with current statistics"""
+        if self.stats_file:
+            try:
+                self.stats_file.write_text(json.dumps(self.stats, indent=2))
+            except Exception as e:
+                logger.error(f"Failed to update stats file: {e}")
+    
+    def _get_provider_config(self) -> Dict:
+        """Get provider configuration for OpenRouter API"""
+        if not self.bot.provider:
+            return {"sort": "price"}
+        elif self.bot.provider == "together" and "deepseek" in self.bot.llm.lower():
+            return {"order": ["together"]}
+        elif self.bot.provider == "google" and "gemini" in self.bot.llm.lower():
+            return {"order": ["google"]}
+        else:
+            return {"order": [self.bot.provider]}
+    
+    def _clean_content(self, content: str) -> str:
+        """Clean continuation markers and think tags from content"""
+        # Remove CONTINUE markers at end
+        if content.endswith("CONTINUE\n"):
+            content = content[:-len("CONTINUE\n")].strip()
+        if content.endswith("**CONTINUE**\n"):
+            content = content[:-len("**CONTINUE**\n")].strip()
+            
+        # Remove think tags if present
+        import re
+        content = re.sub(r'<think>.*?</think>\n?', '', content, flags=re.DOTALL)
+        
+        return content.strip()
+
+    def _create_progress_display(self, continuation_count: int) -> Progress:
+        """Create a progress display for API calls"""
+        progress = Progress(
+            SpinnerColumn(),
+            TextColumn("[bold white]Cmd: {task.fields[command]}•"),
+            TextColumn("[bold white]Cmd: {task.fields[content_file]}•"),
+            TextColumn("[bold blue]{task.fields[bot]}"),
+            TextColumn("[white]•[/white]"),
+            TextColumn("[yellow]{task.fields[status]}"),
+            TextColumn("[white]•[/white]"),
+            TextColumn("[green]In: {task.fields[tokens_in]}[/green]"),
+            TextColumn("[white]•[/white]"),
+            TextColumn("[cyan]Out: {task.fields[tokens_out]}[/cyan]"),
+            TextColumn("[white]•[/white]"),
+            TextColumn("[magenta]${task.fields[cost]}[/magenta]"),
+            console=console
+        )
+        
+        # Add initial task
+        task = progress.add_task(
+            "",
+            command=self.command,
+            bot=f"{self.bot.name} ({self.bot.llm})",
+            content_file=self.content_file,
+            status=f"Continuation {continuation_count}",
+            tokens_in=self.stats['input_tokens'],
+            tokens_out=self.stats['output_tokens'],
+            cost=format_price(
+                self.stats['input_tokens'],
+                self.stats['output_tokens'],
+                self.bot.input_price,
+                self.bot.output_price
+            ).split()[0]
+        )
+        
+        return progress
+
+    def _update_progress(self, progress: Progress, input_tokens: int = 0, 
+                        output_tokens: int = 0, status: Optional[str] = None):
+        """Update the progress display with new information"""
+        fields = {}
+        
+        # Update tokens if provided
+        if input_tokens or output_tokens:
+            total_in = self.stats['input_tokens'] + input_tokens
+            total_out = self.stats['output_tokens'] + output_tokens
+            fields.update({
+                'tokens_in': total_in,
+                'tokens_out': total_out,
+                'cost': format_price(total_in, total_out, 
+                                self.bot.input_price, 
+                                self.bot.output_price).split()[0]
+            })
+        
+        # Update status if provided or add retry information
+        if status:
+            fields['status'] = status
+        
+        # Update the task
+        progress.update(progress.tasks[0].id, **fields)
+
+    def _make_api_call(self, messages: List[Dict], retry: int = 0, continuation_count: int = 0) -> Tuple[str, int, int]:
+        """Make a single API call with retry logic"""
+        max_retries = 3
+        headers = {
+            "Authorization": f"Bearer {self.api_key}",
+            "HTTP-Referer": "http://localhost:3000",
+            "X-Title": "BookBot",
+            "Content-Type": "application/json"
+        }
+        
+        data = {
+            "model": self.bot.llm,
+            "messages": messages,
+            "temperature": self.bot.temperature,
+            "provider": self._get_provider_config()
+        }
+        
+        try:
+            start_time = time.time()
+            with self._create_progress_display(continuation_count) as progress:
+
+                # Log request details
+                logger.info(f"Making OpenRouter API call ({self.command})")
+                logger.debug(f"Request data: {json.dumps(data, indent=2)}")
+                self._update_progress(progress, status="Generating...")
+
+                response = requests.post(
+                    "https://openrouter.ai/api/v1/chat/completions",
+                    headers=headers,
+                    json=data,
+                    timeout=60
+                )
+                
+                elapsed = time.time() - start_time
+                
+                # Log raw response for debugging
+                logger.debug(f"Raw API response: {response.text}")
+                
+                if response.status_code != 200:
+                    if response.status_code == 429:  # Rate limit
+                        if retry < max_retries:
+                            wait_time = int(response.headers.get('Retry-After', 5))
+                            logger.warning(f"Rate limited. Waiting {wait_time}s (retry {retry + 1}/{max_retries})")
+                            time.sleep(wait_time)
+                            return self._make_api_call(messages, retry + 1)
+                        else:
+                            raise Exception("Max retries exceeded for rate limit")
+                            
+                    logger.error(f"Error response ({response.status_code}): {response.text}")
+                    response.raise_for_status()
+                    
+                result = response.json()
+                
+                # Extract data from response
+                if not result.get('choices'):
+                    raise Exception("No choices in API response")
+                    
+                content = result["choices"][0]["message"]["content"]
+                if not content or content.isspace():
+                    if retry < max_retries:
+                        logger.warning(f"Received empty content, retrying ({retry + 1}/{max_retries})")
+                        time.sleep(2 ** retry)
+                        return self._make_api_call(messages, retry + 1)
+                    raise Exception("Empty response after retries")
+                    
+                # Get token counts
+                input_tokens = result["usage"]["prompt_tokens"]
+                output_tokens = result["usage"]["completion_tokens"]
+                
+                # Log success details
+                words = len(content.split())
+                logger.info(f"Response stats: {len(content)}b/{words}w/{output_tokens}t in {elapsed:.1f}s ({output_tokens/elapsed:.1f} t/s)")
+                logger.info(f"Tokens: {input_tokens} in, {output_tokens} out")
+                logger.debug(f"Content preview: {content[:200]}...")
+                
+                # In the final output, all these stats are stored in the file props.
+                # The purpose of the stats file is to have a real time update. 
+                # Ideally, this would also be persistent if the file is rewritten multiple times. 
+                # But that is not implemented. 
+                call_stats = {
+                    "timestamp": datetime.now().isoformat(),
+                    "input_tokens": input_tokens,
+                    "output_tokens": output_tokens,
+                    "elapsed": elapsed,
+                    "retry": retry,
+                    "provider": result.get("provider", "unknown"),
+                    "model": result.get("model", self.bot.llm)
+                }
+                self.stats["calls"].append(call_stats)
+                self.stats["input_tokens"] += input_tokens
+                self.stats["output_tokens"] += output_tokens
+                self.stats["total_time"] += elapsed
+                
+                self._update_stats()
+            
+            return content, input_tokens, output_tokens
+            
+        except Exception as e:
+            logger.error(f"API call failed: {str(e)}")
+            if retry < max_retries:
+                wait_time = 2 ** retry
+                logger.warning(f"Retrying in {wait_time}s (retry {retry + 1}/{max_retries})")
+                time.sleep(wait_time)
+                return self._make_api_call(messages, retry + 1)
+            raise
+    
+    def generate(self, template_vars: Dict[str, str]):
+        """Generate content using the bot"""
+        try:
+            # Validate template variables
+            self.bot.validate_template_vars(template_vars)
+            
+            # Initialize messages with system prompt
+            self.messages = [
+                {"role": "system", "content": self.bot.system_prompt},
+                {"role": "user", "content": (
+                    self.bot.main_prompt.format(**template_vars) +
+                    "\n Write one chunk of content. Write as much as you wish, and end your output with CONTINUE to have the chance to " +
+                    "continue writing in a new chunk of content. CONTINUE must be at the end of your message if you want to write more than one chunk of content. " +
+                    "Write THE END if this chunk concludes the section. You can write as much or as little as you wish, but typically aim for around 3000 words. " +
+                    "If you CONTINUE, you'll get a current word count of how much you've written so far. You should ALWAYS write at least two chunks."
+                )}
+            ]
+            
+            # Track accumulated content
+            accumulated_content = []
+            continuation_count = 0
+            max_continuations = 10  # Safety limit
+            
+            while continuation_count < max_continuations:
+                continuation_count += 1
+                logger.info(f"Making API call {continuation_count} for {self.command}")
+                
+                # Check context window
+                total_tokens = sum(len(m['content'].split()) for m in self.messages) * 1.5  # Rough estimate
+                if total_tokens > self.bot.context_window / 2:
+                    logger.warning(f"Context window is more than half full ({total_tokens} tokens)")
+                
+                # Make API call
+                content, input_tokens, output_tokens = self._make_api_call(self.messages, continuation_count)
+                
+                # Clean the content before accumulating
+                cleaned_content = self._clean_content(content)
+                accumulated_content.append(cleaned_content)
+                
+                # Calculate total words written
+                total_words = sum(len(chunk.split()) for chunk in accumulated_content)
+                logger.info(f"Total words written: {total_words}")
+                
+                # Update conversation history with raw content
+                self.messages.append({"role": "assistant", "content": content})
+                self._update_history()
+                
+                # Check if we're done
+                if "THE END" in content:
+                    logger.info("Found THE END marker")
+                    break
+                    
+                # Not done - add continuation prompt
+                continuation_prompt = (
+                    f"You have written {total_words} words so far out of a minimum 3000 words. Continue writing the next chunk. " +
+                    "When you're done with this chunk of text, write CONTINUE, and then end your message. Then you'll get a new prompt to " +
+                    "continue writing the chapter. Don't write CONTINUE in the middle of your output, that *WILL NOT* help you write more. " +
+                    "Only write it at the end of your output in order to get a new prompt where you can continue writing the chapter. " +
+                    "Write THE END when you're done writing. CONTINUE or THE END *MUST* be at the end of your output. Be sure to write enough words."
+                )
+                self.messages.append({"role": "user", "content": continuation_prompt})
+                logger.info("Added continuation prompt")
+            
+            # Clean and store final text
+            if accumulated_content:
+                final_text = "\n".join(accumulated_content)
+                if "THE END" in final_text:
+                    final_text = final_text.split("THE END")[0].strip()
+                self.final_text = final_text
+                if self.content_file:
+                    f = TextFile(self.content_file)
+                    f.content = final_text
+                    f.metadata["command"] = self.command
+                    f.metadata["bot"] = self.bot.name
+                    f.metadata["timestamp"] = datetime.now().isoformat()
+                    f.metadata["input_tokens"] = self.stats["input_tokens"]
+                    f.metadata["output_tokens"] = self.stats["output_tokens"]
+                    f.metadata["total_time"] = self.stats["total_time"]
+                    f.metadata["continuation_count"] = continuation_count
+                    f.metadata["provider"] = self.bot.provider
+                    f.metadata["model"] = self.bot.llm
+                    f.save()
+                # Log final statistics
+                # The stats file should probably be removed since it serves no purpose
+                logger.info(f"Generation complete for {self.command}:")
+                logger.info(f"Final length: {format_text_stats(self.final_text)}")
+                logger.info(f"Total tokens: {self.stats['input_tokens']} in, {self.stats['output_tokens']} out")
+                logger.info(f"Total cost: {format_price(self.stats['input_tokens'], self.stats['output_tokens'], self.bot.input_price, self.bot.output_price)}")
+            else:
+                raise Exception("No content generated")
+            
+        except Exception as e:
+            logger.error(f"Error in generation: {str(e)}")
+            self.error = e
+            raise
+            
+    @property
+    def has_error(self) -> bool:
+        """Check if an error occurred during generation"""
+        return self.error is not None
+        
+    @property
+    def content(self) -> Optional[str]:
+        """Get the generated content if available"""
+        return self.final_text
+        
+    def get_stats(self) -> Dict:
+        """Get the current statistics"""
+        return self.stats.copy()
+        
+    def get_messages(self) -> List[Dict]:
+        """Get the conversation messages"""
+        return self.messages.copy()
+    
+
+
+
+#### YAML validation
+
+def extract_template_vars(prompt: str) -> Set[str]:
+    """Extract all template variables from a prompt string.
+    Variables are in the format {variable_name}"""
+    import re
+    matches = re.findall(r'\{([^}]+)\}', prompt)
+    return set(matches)
+
+def validate_bot_template_vars(bot_config: dict, bot_type: BotType) -> Tuple[List[str], List[str]]:
+    """Validate template variables in a bot configuration
+    
+    Returns:
+        Tuple of (missing_vars, extra_vars)
+    """
+    required_vars = bot_type.required_vars
+    
+    # Extract variables from main prompt and continuation prompts
+    found_vars = set()
+    if 'main_prompt' in bot_config:
+        found_vars.update(extract_template_vars(bot_config['main_prompt']))
+    if 'continuation_prompt' in bot_config:
+        found_vars.update(extract_template_vars(bot_config['continuation_prompt']))
+    if 'continuation_prompt_initial' in bot_config:
+        found_vars.update(extract_template_vars(bot_config['continuation_prompt_initial']))
+        
+    # Compare against required vars
+    missing_vars = list(required_vars - found_vars)
+    extra_vars = list(found_vars - required_vars)
+    
+    return missing_vars, extra_vars
+
+def validate_bot_yaml(file_path: Path) -> bool:
+    """Validate a bot YAML file's template variables
+    
+    Returns:
+        bool: True if validation passes
+    """
+    try:
+        with file_path.open('r') as f:
+            config = yaml.safe_load(f)
+            
+        # Skip validation for default config
+        if config.get('type', '').upper() == 'DEFAULT':
+            return True
+            
+        bot_type = BotType[config['type'].upper()]
+        missing_vars, extra_vars = validate_bot_template_vars(config, bot_type)
+        
+        if missing_vars or extra_vars:
+            logger.warning(f"Template variable issues in {file_path.name}:")
+            if missing_vars:
+                logger.warning(f"  Missing required variables: {', '.join(missing_vars)}")
+            if extra_vars:
+                logger.warning(f"  Extra variables not in spec: {', '.join(extra_vars)}")
+            return False
+            
+        return True
+        
+    except Exception as e:
+        logger.error(f"Error validating {file_path}: {e}")
+        return False
+
+####################### END NEW BOT SYSTEM ########################
+
+
+
+
+
+
+
 
 @dataclass
 class LLMConfig:
@@ -423,8 +1224,10 @@ class BookBot:
         for directory in [COMMON_DIR, CHAPTERS_DIR, PROMPTS_DIR, REVIEWS_DIR, FRONTMATTER_DIR, BACKMATTER_DIR, FINAL_DIR]:
             directory.mkdir(parents=True, exist_ok=True)
             
-        # Initialize prompt templates
+        # Initialize prompt templates OLD SYSTEM
         self._init_prompts()
+        self._init_bots()
+        # Still need title file
         self._init_title()
     
     def _init_prompts(self):
@@ -434,6 +1237,9 @@ class BookBot:
             if not prompt_file.exists():
                 prompt_file.write_text(content)
     
+    def _init_bots(self):
+        initialize_bot_yaml(Path(self.config['bot_dir']))
+
     def _init_title(self):
         """Initialize default title file if it doesn't exist"""
         title_file = FRONTMATTER_DIR / "title.md"
@@ -463,9 +1269,77 @@ class BookBot:
                 content = content.replace(f"{{{{ {key} }}}}", str(value))
         return content
 
+    def _call_llm(self, output_file: str, bot_name: str, template_vars: Optional[Dict[str, str]] = None, max_retries: int = 3, command:str="") -> Tuple[str, int, int]:
+        """
+        Call the LLM API using a specific bot configuration.
+        
+        Args:
+            output_file: File prefix to save the 3 outputs (stats, history, content)
+            bot_name: Name of the bot YAML file (without .yaml extension)
+            template_vars: Variables to fill in the bot's prompt template
+            max_retries: Maximum number of retries per API call
+            command (Optional): Command name for logging and progress bar display only
+        Returns:
+            Tuple of (final_text, total_input_tokens, total_output_tokens)
+            (In general just use the output files though)
+        """
+        try:
+            # Load bot configuration
+            # TODO FIX THIS
+            bot_dir = Path(self.config['bot_dir'])
+            bot_path = bot_dir / f"{bot_name}.yaml"
+            if not bot_path.exists():
+                raise BookBotError(f"Bot configuration not found: {bot_name}")
+                
+            # Load the bot
+            bot = Bot.from_file(bot_path)
+            
+            # Override LLM settings if specified in BookBot
+            if self.llm:
+                bot.llm = self.llm.full_name
+                bot.provider = self.llm.provider
+                bot.temperature = self.llm.temperature
+                bot.input_price = self.llm.cost_per_million_tokens
+                bot.output_price = self.llm.cost_per_million_tokens
+                
+            history_file = Path(output_file + "_history.json")
+            stats_file = Path(output_file + "_stats.json")
+            content_file = Path(output_file + "_content.md")
+                
+            # Initialize BotChat
+            chat = BotChat(
+                bot=bot,
+                command=command,
+                api_key=self.api_key,
+                history_file=history_file,
+                stats_file=stats_file,
+                content_file=content_file
+            )
+            
+            # Use template variables if provided, otherwise use prompt directly
+            vars_to_use = template_vars 
+            
+            # Generate content
+            chat.generate(vars_to_use)
+            
+            if chat.has_error:
+                raise Exception(f"BotChat error: {chat.error}")
+                
+            # Get results
+            content = chat.final_text
+            stats = chat.get_stats()
+            
+            return (
+                content,
+                stats["input_tokens"],
+                stats["output_tokens"]
+            )
+                
+        except Exception as e:
+            logger.error(f"Error in _call_llm using bot {bot_name}: {str(e)}")
+            raise BookBotError(f"LLM call failed: {str(e)}")
 
-
-    def _call_llm(self, prompt: str, max_retries: int = 3) -> Tuple[str, int, int]:
+    def _call_llm_old(self, prompt: str, max_retries: int = 3) -> Tuple[str, int, int]:
         """
         Call the LLM API with continuation support.
         
@@ -602,7 +1476,7 @@ class BookBot:
             # Not done - add to message history and continue
             messages.append({"role": "assistant", "content": content})
             messages.append({"role": "user", "content": 
-                             f"You have written {wordcount} words so far out of an expected 3000 words. Continue writing the next chunk. "+
+                             f"You have written {wordcount} words so far out of a minimum 3000 words. Continue writing the next chunk. "+
                              """When you're done with this chunk of text, write CONTINUE, and then
                              end your message. Then you'll get a new prompt to continue writing the chapter.
                              Don't write CONTINUE in the middle of your output, that *WILL NOT* help you write more. Only write it at the end of
@@ -673,26 +1547,9 @@ class BookBot:
                 raise BookBotError("initial.md not found. Please create it with your story description.")
             
             # Generate setting
-            prompt = self._load_template("settings_prompt", {"initial": initial.content})
-            content, tokens_in, tokens_out = self._call_llm(prompt)
+            self._call_llm("common/setting", "write_setting", {"initial": initial.content}, command="write_setting")
             
-            # Save setting
-            setting = TextFile(COMMON_DIR / "setting.md", config=self.config)
-            setting.content = content
-            setting.metadata = {
-                "created_at": datetime.now().isoformat()
-            }
-            setting.update_conversation_history({
-                "command": "write_setting",
-                "llm": self.llm.name,
-                "tokens_in": tokens_in,
-                "tokens_out": tokens_out,
-                "prompt": prompt,
-                "content": content
-
-            })
-            setting.save()
-            
+            self._git_commit("Generated setting")
             # Generate preview
             self._generate_preview()
             
