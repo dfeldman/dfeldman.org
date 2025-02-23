@@ -58,107 +58,6 @@ DEFAULT_CONFIG = {
     "bot_dir": "bots" 
 }
 
-
-# Default prompts - simplified for clarity
-# Default prompts
-DEFAULT_PROMPTS = {
-    "system_prompt.md": """You are a professional author and writing assistant. Your task is to help write a book based on the provided outline and guidelines. Your writing should be engaging, consistent, and follow proper narrative structure. When asked to write or edit, provide your output in Markdown format. Signal completion with "THE END" on a new line.""",
-    
-    "settings_prompt.md": """Based on the initial book description below, create a detailed description of the story's setting. Include:
-- Time period and historical context
-- Physical locations and environments
-- Social and cultural context
-- Important background information
-- Unique elements of the world
-- Atmosphere and mood
-
-Initial Description:
-{{ initial }}
-
-Remember to be specific and vivid in your descriptions. End with "THE END".""",
-    
-    "characters_prompt.md": """Based on the initial description and setting below, create a detailed list of main and supporting characters. For each character, provide:
-- Name and role in the story
-- Physical description
-- Personality traits and mannerisms
-- Background and history
-- Goals and motivations
-- Relationships with other characters
-- Key conflicts or challenges
-
-Initial Description:
-{{ initial }}
-
-Setting:
-{{ setting }}
-
-Present each character in their own section with clear headers. End with "THE END".""",
-    
-    "outline_prompt.md": """Based on the materials below, create a detailed chapter-by-chapter outline of the book. For each chapter, include:
-- Chapter number and title
-- Main plot points and events
-- Character arcs and developments
-- Key scenes and their purposes
-- Emotional beats and tone
-
-Initial Description:
-{{ initial }}
-
-Setting:
-{{ setting }}
-
-Characters:
-{{ characters }}
-
-Format each chapter clearly and show how the story progresses. End with "THE END".""",
-    
-    "write_prompt.md": """Write Chapter {{ chapter_number }} according to the details below. Remember to:
-- Follow the outline's key events
-- Maintain consistent character voices
-- Create vivid descriptions
-- Use natural dialogue
-- Balance action, dialogue, and description
-
-Outline:
-{{ outline }}
-
-Setting:
-{{ setting }}
-
-Characters:
-{{ characters }}
-
-Write the chapter in engaging prose. End with "THE END".""",
-    
-    "edit_prompt.md": """Review and improve the provided content while maintaining consistency with the larger story. Focus on:
-- Clarity and flow of prose
-- Character voice consistency
-- Description quality and vividness
-- Dialogue naturality
-- Pacing and engagement
-- Grammar and style
-
-Current Content:
-{{ content }}
-
-Make your improvements while keeping the core story elements intact. End with "THE END".""",
-    
-    "review_prompt.md": """Review the complete draft below, analyzing:
-- Plot progression and consistency
-- Character development and arcs
-- Pacing and engagement
-- Writing style and voice
-- Setting utilization
-- Themes and motifs
-
-Provide specific examples and constructive suggestions for improvement.
-
-Draft:
-{{ content }}
-
-End your review with "THE END"."""
-}
-
 DEFAULT_TITLE_FILE="""
 ---
 title: Your Book Title
@@ -1224,18 +1123,8 @@ class BookBot:
         for directory in [COMMON_DIR, CHAPTERS_DIR, PROMPTS_DIR, REVIEWS_DIR, FRONTMATTER_DIR, BACKMATTER_DIR, FINAL_DIR]:
             directory.mkdir(parents=True, exist_ok=True)
             
-        # Initialize prompt templates OLD SYSTEM
-        self._init_prompts()
         self._init_bots()
-        # Still need title file
         self._init_title()
-    
-    def _init_prompts(self):
-        """Initialize default prompts if they don't exist"""
-        for name, content in DEFAULT_PROMPTS.items():
-            prompt_file = PROMPTS_DIR / name
-            if not prompt_file.exists():
-                prompt_file.write_text(content)
     
     def _init_bots(self):
         initialize_bot_yaml(Path(self.config['bot_dir']))
@@ -1349,161 +1238,6 @@ class BookBot:
             logger.error(f"Error in _call_llm using bot {bot_name}: {str(e)}")
             raise BookBotError(f"LLM call failed: {str(e)}")
 
-    def _call_llm_old(self, prompt: str, max_retries: int = 3) -> Tuple[str, int, int]:
-        """
-        Call the LLM API with continuation support.
-        
-        Will make multiple API calls if necessary until a complete response is received
-        (ending with THE END) or an error occurs.
-        """
-        # TODO needs far more logging
-        system_prompt = self._load_template("system_prompt")
-        
-        # Initialize the message history
-        messages = [
-            {"role": "system", "content": system_prompt},
-            {"role": "user", "content": prompt + 
-             """\n Write one chunk of content. Write as much as you wish, and end your output with CONTINUE to have the chance to 
-             continue writing in a new chunk of content. CONTINUE must be at the end of your message if you want to write more than one chunk of content.
-             Write THE END if this chunk concludes the section. You can write as much or as little as you wish, but typically aim for around 3000 words.
-             If you CONTINUE, you'll get a current word count of how much you've written so far. You should ALWAYS write at least two chunks."""}
-        ]
-        
-        provider = self.llm.provider
-        if provider == "":
-            provider = {"sort": "price"}
-        else :
-            provider = {"order": [self.llm.provider]}
-
-        data = {
-            "model": self.llm.full_name,
-            "messages": messages,
-            "temperature": self.llm.temperature, 
-        }
-
-        # Initialize accumulated tokens and content
-        total_tokens_in = 0
-        total_tokens_out = 0
-        accumulated_content = []
-        continuation_count = 0
-        max_continuations = 10  # Safety limit
-        
-        while continuation_count < max_continuations:
-            continuation_count += 1
-            logger.info(f"Making LLM call (continuation {continuation_count})")
-            
-            # Make the API call
-            try:
-                headers = {
-                    "Authorization": f"Bearer {self.api_key}",
-                    "HTTP-Referer": "http://localhost:3000",
-                    "X-Title": "BookBot",
-                    "Content-Type": "application/json"
-                }
-                
-                data = {
-                    "model": self.llm.full_name,
-                    "messages": messages,
-                    "temperature": self.llm.temperature,
-                    "provider": provider
-                }
-                
-                for attempt in range(max_retries):
-                    try:
-                        with Progress(SpinnerColumn(), TextColumn("[progress.description]{task.description}"), console=console) as progress:
-                            task = progress.add_task(
-                                f"Generating content (part {continuation_count})...",
-                                total=None
-                            )
-                            logger.info(f"Sending request to {OPENROUTER_API_URL}, continuation {continuation_count}, attempt {attempt + 1}")
-                            logger.debug(f"Full request data: {data}")
-                            response = requests.post(
-                                "https://openrouter.ai/api/v1/chat/completions",
-                                headers=headers,
-                                json=data,
-                                timeout=60
-                            )
-                            
-                            if response.status_code != 200:
-                                if response.status_code == 429:  # Rate limit
-                                    retry_after = int(response.headers.get('Retry-After', 5))
-                                    logger.warning(f"Rate limited. Waiting {retry_after} seconds...")
-                                    time.sleep(retry_after)
-                                    continue
-                                logger.error(f"Error response: {response.text}")
-                                response.raise_for_status()
-                                
-                            result = response.json()
-                            logger.debug(f"Received response: {json.dumps(response.json())}...")
-
-                            if not result.get('choices'):
-                                raise LLMError("No choices in response")
-                                
-                            content = result["choices"][0]["message"]["content"]
-                            if not content or content.isspace():
-                                if attempt < max_retries - 1:
-                                    continue
-                                raise LLMError("Empty response")
-                            logger.info(f"Received response: {content[:100]}...")
-                            logger.debug(f"Received response: {json.dumps(response.json())}...")
-                            # Why are think tags not showing up in the debug logs???
-                            content = re.sub(r'<think>.*?</think>\n?', '', content, flags=re.DOTALL)
-
-                            # Add to token counts
-                            total_tokens_in += result["usage"]["prompt_tokens"]
-                            total_tokens_out += result["usage"]["completion_tokens"]
-                            logger.info(f"Tokens in: {total_tokens_in}, Tokens out: {total_tokens_out}")
-                            break  # Successful response
-                            
-                    except requests.RequestException as e:
-                        if attempt == max_retries - 1:
-                            raise
-                        time.sleep(2 ** attempt)
-                        continue
-                        
-            except Exception as e:
-                logger.error(f"API call failed: {str(e)}")
-                # If we have any accumulated content, return it
-                if accumulated_content:
-                    return "\n".join(accumulated_content), total_tokens_in, total_tokens_out
-                raise
-                
-            tokens = result["usage"]["completion_tokens"]
-            words = len(content.split())
-            logger.info(f"New content chunk of length {len(content)} bytes, {tokens} tokens, {words} words (excluding think)")
-
-            # Add this chunk to accumulated content
-            accumulated_content.append(content)
-            # Check if we're done
-            if "THE END" in content:
-                logger.info("Found THE END marker")
-                final_content = "\n".join(accumulated_content)
-                final_content = final_content.split("THE END")[0].strip()
-                logger.info(f"Final content length: {len(final_content)} bytes")
-                return final_content, total_tokens_in, total_tokens_out
-                
-            wordcount = sum([len(chunk.split()) for chunk in accumulated_content])
-            # Not done - add to message history and continue
-            messages.append({"role": "assistant", "content": content})
-            messages.append({"role": "user", "content": 
-                             f"You have written {wordcount} words so far out of a minimum 3000 words. Continue writing the next chunk. "+
-                             """When you're done with this chunk of text, write CONTINUE, and then
-                             end your message. Then you'll get a new prompt to continue writing the chapter.
-                             Don't write CONTINUE in the middle of your output, that *WILL NOT* help you write more. Only write it at the end of
-                             your output in order to get a new prompt where you can continue writing the chapter.
-                             Write THE END when you're done writing. CONTINUE or THE END *MUST* be at the 
-                             end of your output. Be sure to write enough words."""})
-            if content.endswith("CONTINUE\n"): # Should probably be fuzzier here
-                content = content[:-len("CONTINUE\n")].strip()
-            if content.endswith("**CONTINUE**\n"):
-                content = content[:-len("**CONTINUE**\n")].strip()
-            logger.info("Content chunk does not end with THE END - continuing...")
-            
-        # If we get here, we hit the max continuations
-        logger.warning(f"Hit maximum continuations ({max_continuations})")
-        return "\n".join(accumulated_content), total_tokens_in, total_tokens_out
-
-
     def _git_commit(self, message: str):
         """
         Commit changes to git repository.
@@ -1568,7 +1302,7 @@ class BookBot:
         except Exception as e:
             logger.error(f"Error writing setting: {e}")
             raise BookBotError(f"Failed to write setting: {e}")
-    
+
     def write_characters(self):
         """Generate the story characters"""
         try:
@@ -1577,35 +1311,19 @@ class BookBot:
             setting = TextFile(COMMON_DIR / "setting.md", config=self.config)
             if not initial.filepath.exists() or not setting.filepath.exists():
                 raise BookBotError("Required files (initial.md and setting.md) not found")
-            
-            # Generate characters
-            prompt = self._load_template("characters_prompt", {
-                "initial": initial.content,
-                "setting": setting.content
-            })
-            content, tokens_in, tokens_out = self._call_llm(prompt)
-            
-            # Save characters
-            characters = TextFile(COMMON_DIR / "characters.md", config=self.config)
-            characters.content = content
-            characters.metadata = {
-                "created_at": datetime.now().isoformat()
-            }
-            characters.update_conversation_history({
-                "command": "write_characters",
-                "llm": self.llm.name,
-                "tokens_in": tokens_in,
-                "tokens_out": tokens_out,
-                "prompt": prompt,
-                "content": content
 
-            })
-            characters.save()
+            # Generate characters using the write_characters bot
+            self._call_llm(
+                "common/characters",
+                "write_characters",
+                {
+                    "initial": initial.content,
+                    "setting": setting.content
+                },
+                command="write_characters"
+            )
 
-            # Commit git if enabled
             self._git_commit("Generated characters")
-
-            # Generate preview
             self._generate_preview()
             
             console.print("\n[green]✓[/green] Characters generated successfully")
@@ -1613,7 +1331,7 @@ class BookBot:
         except Exception as e:
             logger.error(f"Error writing characters: {e}")
             raise BookBotError(f"Failed to write characters: {e}")
-    
+
     def write_outline(self):
         """Generate the story outline"""
         try:
@@ -1623,34 +1341,20 @@ class BookBot:
             characters = TextFile(COMMON_DIR / "characters.md", config=self.config)
             if not all(f.filepath.exists() for f in [initial, setting, characters]):
                 raise BookBotError("Required files (initial.md, setting.md, characters.md) not found")
-            
-            # Generate outline
-            prompt = self._load_template("outline_prompt", {
-                "initial": initial.content,
-                "setting": setting.content,
-                "characters": characters.content
-            })
-            content, tokens_in, tokens_out = self._call_llm(prompt)
-            
-            # Save outline
-            outline = TextFile(COMMON_DIR / "outline.md", config=self.config)
-            outline.content = content
-            outline.metadata = {
-                "created_at": datetime.now().isoformat()
-            }
-            outline.update_conversation_history({
-                "command": "write_outline",
-                "llm": self.llm.name,
-                "tokens_in": tokens_in,
-                "tokens_out": tokens_out,
-                "prompt": prompt,
-                "content": content
-            })
-            outline.save()
-            
-            self._git_commit("Generated outline")
 
-            # Generate preview
+            # Generate outline using the write_outline bot
+            self._call_llm(
+                "common/outline",
+                "write_outline",
+                {
+                    "initial": initial.content,
+                    "setting": setting.content,
+                    "characters": characters.content
+                },
+                command="write_outline"
+            )
+
+            self._git_commit("Generated outline")
             self._generate_preview()
             
             console.print("\n[green]✓[/green] Outline generated successfully")
@@ -1659,7 +1363,6 @@ class BookBot:
             logger.error(f"Error writing outline: {e}")
             raise BookBotError(f"Failed to write outline: {e}")
 
-    
     def write_commons_review(self):
         """Generate the commons review"""
         try:
@@ -1668,37 +1371,22 @@ class BookBot:
             setting = TextFile(COMMON_DIR / "setting.md", config=self.config)
             characters = TextFile(COMMON_DIR / "characters.md", config=self.config)
             outline = TextFile(COMMON_DIR / "outline.md", config=self.config)
-            if not all(f.filepath.exists() for f in [initial, setting, characters]):
-                raise BookBotError("Required files (initial.md, setting.md, characters.md) not found")
-            
-            # Generate outline
-            prompt = self._load_template("commons_review_prompt", {
-                "initial": initial.content,
-                "setting": setting.content,
-                "characters": characters.content,
-                "outline": outline.content
-            })
-            content, tokens_in, tokens_out = self._call_llm(prompt)
-            
-            # Save outline
-            commons_review = TextFile(COMMON_DIR / "commons_review.md", config=self.config)
-            commons_review.content = content
-            commons_review.metadata = {
-                "created_at": datetime.now().isoformat()
-            }
-            commons_review.update_conversation_history({
-                "command": "write_commons_review",
-                "llm": self.llm.name,
-                "tokens_in": tokens_in,
-                "tokens_out": tokens_out,
-                "prompt": prompt,
-                "content": content
-            })
-            commons_review.save()
-            
-            self._git_commit("Generated commons review")
+            if not all(f.filepath.exists() for f in [initial, setting, characters, outline]):
+                raise BookBotError("Required files not found")
 
-            # Generate preview
+            # Generate review using the review_commons bot
+            self._call_llm(
+                "common/commons_review",
+                "review_commons",
+                {
+                    "file_type": "common_files",
+                    "content": "\n\n".join([f.content for f in [initial, setting, characters, outline]]),
+                    "context": initial.content  # Initial description provides context
+                },
+                command="write_commons_review"
+            )
+
+            self._git_commit("Generated commons review")
             self._generate_preview()
             
             console.print("\n[green]✓[/green] Commons review generated successfully")
@@ -1706,6 +1394,111 @@ class BookBot:
         except Exception as e:
             logger.error(f"Error writing commons review: {e}")
             raise BookBotError(f"Failed to write commons review: {e}")
+
+    def write_chapter(self, chapter_num: int):
+        """Write a new chapter"""
+        try:
+            # Load necessary context
+            outline = TextFile(COMMON_DIR / "outline.md", config=self.config)
+            setting = TextFile(COMMON_DIR / "setting.md", config=self.config)
+            characters = TextFile(COMMON_DIR / "characters.md", config=self.config)
+            commons_review = TextFile(COMMON_DIR / "commons_review.md", config=self.config)
+            
+            prev_chapter_content = self._get_previous_chapter_content(chapter_num)
+            if prev_chapter_content:
+                prev_chapter_content = self._truncate_to_last_n_words(prev_chapter_content)
+
+            # Generate chapter using write_chapter bot
+            self._call_llm(
+                f"chapters/chapter_{chapter_num:02d}",
+                "write_chapter",
+                {
+                    "chapter_number": chapter_num,
+                    "outline": outline.content,
+                    "setting": setting.content,
+                    "characters": characters.content,
+                    "previous_chapter": prev_chapter_content or "No previous chapter available."
+                },
+                command=f"write_chapter_{chapter_num}"
+            )
+
+            self._git_commit(f"Generated chapter {chapter_num}")
+            self._generate_preview()
+            
+            console.print(f"\n[green]✓[/green] Chapter {chapter_num} generated successfully")
+            
+        except Exception as e:
+            logger.error(f"Error writing chapter {chapter_num}: {e}")
+            raise BookBotError(f"Failed to write chapter: {e}")
+
+    def edit_chapter(self, chapter_num: int):
+        """Edit an existing chapter"""
+        try:
+            chapter_path = CHAPTERS_DIR / f"chapter_{chapter_num:02d}.md"
+            if not chapter_path.exists():
+                raise BookBotError(f"Chapter {chapter_num} not found")
+            
+            chapter = TextFile(chapter_path, config=self.config)
+
+            # Edit chapter using edit_chapter bot
+            self._call_llm(
+                f"chapters/chapter_{chapter_num:02d}",
+                "edit_chapter",
+                {
+                    "chapter_number": chapter_num,
+                    "content": chapter.content,
+                    "edit_notes": "No previous edit notes available."  # Could store previous edits in future
+                },
+                command=f"edit_chapter_{chapter_num}"
+            )
+
+            self._git_commit(f"Edited chapter {chapter_num}")
+            self._generate_preview()
+            
+            console.print(f"\n[green]✓[/green] Chapter {chapter_num} edited successfully")
+            
+        except Exception as e:
+            logger.error(f"Error editing chapter {chapter_num}: {e}")
+            raise BookBotError(f"Failed to edit chapter: {e}")
+
+    def review_book(self):
+        """Generate a review of the entire book"""
+        try:
+            # Collect all chapters
+            chapters = []
+            chapter_num = 1
+            while True:
+                chapter_path = CHAPTERS_DIR / f"chapter_{chapter_num:02d}.md"
+                if not chapter_path.exists():
+                    break
+                chapter = TextFile(chapter_path, config=self.config)
+                chapters.append(chapter.content)
+                chapter_num += 1
+            
+            if not chapters:
+                raise BookBotError("No chapters found to review")
+
+            # Generate review using review_whole bot
+            review_num = len(list(REVIEWS_DIR.glob("*.md"))) + 1
+            self._call_llm(
+                f"reviews/review_{review_num:02d}",
+                "review_whole",
+                {
+                    "content": "\n\n".join(chapters)
+                },
+                command=f"review_book_{review_num}"
+            )
+
+            self._git_commit(f"Generated review #{review_num}")
+            self._generate_preview()
+            
+            console.print(f"\n[green]✓[/green] Book review generated successfully")
+            
+        except Exception as e:
+            logger.error(f"Error generating review: {e}")
+            raise BookBotError(f"Failed to generate review: {e}")
+
+
 
 
     def _get_previous_chapter_content(self, chapter_num: int) -> Optional[str]:
@@ -1762,152 +1555,6 @@ class BookBot:
         logger.info(f"Truncated previous chapter from {sum(sentence_word_counts)} to {len(result.split())} words")
         
         return result
-
-    def write_chapter(self, chapter_num: int):
-        """Write a new chapter"""
-        try:
-            # Load necessary context
-            outline = TextFile(COMMON_DIR / "outline.md", config=self.config)
-            setting = TextFile(COMMON_DIR / "setting.md", config=self.config)
-            characters = TextFile(COMMON_DIR / "characters.md", config=self.config)
-            commons_review = TextFile(COMMON_DIR / "commons_review.md", config=self.config)
-                
-            prev_chapter_content = self._get_previous_chapter_content(chapter_num)
-            if prev_chapter_content:
-                prev_chapter_content = self._truncate_to_last_n_words(prev_chapter_content)
-            
-            # Prepare variables for template
-            variables = {
-                "chapter_number": chapter_num,
-                "outline": outline.content,
-                "setting": setting.content,
-                "characters": characters.content,
-                "commons_review": commons_review.content,
-                "previous_chapter": prev_chapter_content
-            }
-            
-            # Generate chapter content
-            prompt = self._load_template("write_prompt", variables)
-            content, tokens_in, tokens_out = self._call_llm(prompt)
-            
-            # Save chapter
-            chapter_file = TextFile(CHAPTERS_DIR / f"chapter_{chapter_num:02d}.md", config=self.config)
-            chapter_file.content = content
-            chapter_file.metadata = {
-                "chapter_number": str(chapter_num),
-                "created_at": datetime.now().isoformat()
-            }
-            chapter_file.update_conversation_history({
-                "command": "write_chapter",
-                "llm": self.llm.name,
-                "tokens_in": tokens_in,
-                "tokens_out": tokens_out,
-                "prompt": prompt,
-                "content": content
-            })
-            chapter_file.save()
-            
-            self._git_commit(f"Generated chapter {chapter_num}")
-
-            # Generate preview
-            self._generate_preview()
-            
-            console.print(f"\n[green]✓[/green] Chapter {chapter_num} generated successfully")
-            
-        except Exception as e:
-            logger.error(f"Error writing chapter {chapter_num}: {e}")
-            raise BookBotError(f"Failed to write chapter: {e}")
-    
-    def edit_chapter(self, chapter_num: int):
-        """Edit an existing chapter"""
-        try:
-            chapter_path = CHAPTERS_DIR / f"chapter_{chapter_num:02d}.md"
-            if not chapter_path.exists():
-                raise BookBotError(f"Chapter {chapter_num} not found")
-            
-            chapter = TextFile(chapter_path, config=self.config)
-            
-            # Prepare editing prompt
-            variables = {
-                "chapter_number": chapter_num,
-                "content": chapter.content
-            }
-            
-            prompt = self._load_template("edit_prompt", variables)
-            content, tokens_in, tokens_out = self._call_llm(prompt)
-            
-            # Update chapter
-            chapter.content = content
-            chapter.metadata["edited_at"] = datetime.now().isoformat()
-            chapter.update_conversation_history({
-                "command": "edit_chapter",
-                "llm": self.llm.name,
-                "tokens_in": tokens_in,
-                "tokens_out": tokens_out,
-                "prompt": prompt
-            })
-            chapter.save()
-            
-            self._git_commit(f"Edited chapter {chapter_num}")
-
-            # Generate preview
-            self._generate_preview()
-            
-            console.print(f"\n[green]✓[/green] Chapter {chapter_num} edited successfully")
-            
-        except Exception as e:
-            logger.error(f"Error editing chapter {chapter_num}: {e}")
-            raise BookBotError(f"Failed to edit chapter: {e}")
-    
-    def review_book(self):
-        """Generate a review of the entire book"""
-        try:
-            # Collect all chapters
-            chapters = []
-            chapter_num = 1
-            while True:
-                chapter_path = CHAPTERS_DIR / f"chapter_{chapter_num:02d}.md"
-                if not chapter_path.exists():
-                    break
-                chapter = TextFile(chapter_path, config=self.config)
-                chapters.append(chapter.content)
-                chapter_num += 1
-            
-            if not chapters:
-                raise BookBotError("No chapters found to review")
-            
-            # Generate review
-            full_text = "\n\n".join(chapters)
-            prompt = self._load_template("review_prompt", {"content": full_text})
-            content, tokens_in, tokens_out = self._call_llm(prompt)
-            
-            # Save review
-            review_num = len(list(REVIEWS_DIR.glob("*.md"))) + 1
-            review = TextFile(REVIEWS_DIR / f"review_{review_num:02d}.md", config=self.config)
-            review.content = content
-            review.metadata = {
-                "review_number": str(review_num),
-                "created_at": datetime.now().isoformat()
-            }
-            review.update_conversation_history({
-                "command": "review_book",
-                "llm": self.llm.name,
-                "tokens_in": tokens_in,
-                "tokens_out": tokens_out,
-                "prompt": prompt
-            })
-            review.save()
-            
-            self._git_commit(f"Generated review #{review_num}")
-
-            # Generate preview
-            self._generate_preview()
-            
-            console.print(f"\n[green]✓[/green] Book review generated successfully")
-            
-        except Exception as e:
-            logger.error(f"Error generating review: {e}")
-            raise BookBotError(f"Failed to generate review: {e}")
     
     def _generate_preview(self):
         """Generate HTML preview of all content"""

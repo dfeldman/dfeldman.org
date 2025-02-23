@@ -1,35 +1,32 @@
 name: write_characters
 type: write_characters
-system_prompt: 'You are an expert character designer.
+main_prompt: '
+  Based on the initial description and setting below, create a detailed list of main and supporting characters. For each character, provide:
+  - Full name and role in the story
+  - nicknames (max 2 per character), gender, age, overall health
+  - Physical description - height, weight, build, skin tone, quirks, eye and hair, even shoe size - very detailed for the main characters
+  - Fashion  - what do they wear to work, after work, outside, makeup and hair style if relevant
+  - Personality traits and mannerisms
+  - ethnicity, religious belief or lack thereof
+  - Work and details. Where''s the office, who''s their boss (if one), do they like it, what''s an average day like, what''s the pay, how do they commute, where do they eat lunch, who are their coworkers.
+  - Home and details. What''s it like, how much do they pay (can they afford it), is it nice or shabby, how long have they lived there, how far is it in relation to their work and key settings, what food do they eat for breakfast and dinner.
+  - Background and history. Where did they grow up, who were their parents, do they have siblings, are their family members alive, are they part of their current lives, are they married, have they been married, do they have kids, have they had boyfriends/girlfriends, who are their buddies, are they rich or poor, what''s their education, what do they do for fun.
+  - Goals, motivations, fantasies, desires, romantic desires and fantasies, deepest fears
+  - Relationships with other characters
+  Be sure to include minor characters, not just those mentioned in the initial file. The minor 
+  characters don''t need full descriptions, but should still be detailed.
+  Be sure to dedicate a lot of attention to writing detailed descriptions of major characters.
+  Names should be typical of the time, but not too stereotypical. Be careful that no two characters have similar names or nicknames. 
+  Write at least 3000 words here, with at least 500 for each major character and 200 for each minor character. You can
+  write as much as you''d like.
 
-  Create deep, complex characters with clear motivations, distinct voices, and compelling
-  arcs.
-
-  Focus on making each character unique and memorable while fitting naturally into
-  the story world.'
-main_prompt: 'Create a detailed cast of characters for this story. For each character,
-  include:
-
-  - Name and role
-
-  - Physical description and mannerisms
-
-  - Personality and psychological profile
-
-  - Background and history
-
-  - Goals and motivations
-
-  - Key relationships
-
-  - Potential for growth and change
-
+  ALWAYS REMEMBER THAT THE STORY IS FIRST PERSON. The main character can''t see things that they couldn''t see in real life, 
+  take actions that they can''t do in their current locaation, know people''s names without being introduced, or know things that other characters know without a conversation. 
 
   Initial Description:
-
   {initial}
 
+  Setting:
+  {setting}
 
-  Setting Context:
-
-  {setting}'
+  Present each character in their own section with clear headers. End with "THE END".'

@@ -1,496 +1,355 @@
 ---
 created_at: 2025-02-22T12:29:48.632859
+command: write_characters
+bot: write_characters
+timestamp: 2025-02-22T23:41:44.878197
+input_tokens: 21452
+output_tokens: 6331
+total_time: 194.1322979927063
+continuation_count: 2
+provider: Together
+model: deepseek/deepseek-r1
 ---
-# **Main Characters**  
+### **Main Characters**
 
 ---
 
-## **VIVIAN SINCLAIR (VIV)**  
-**Role**: Protagonist, investigative reporter for *The New York Sentinel*.  
-**Nicknames**: “Viv,” “Hellcat” (by Fletcher), “Red” (by Vito, for her auburn hair).  
-**Gender**: Female.  
+#### **Vivian Sinclair (Viv)**  
+**Role**: Protagonist, investigative reporter for the *Daily Sentinel*.  
+**Nicknames**: Viv (by colleagues), Red (by Vito, for her auburn hair).  
+**Gender/Age/Health**: Female, 28, lean and athletic with a chronic cough from chain-smoking Luckies.  
 
-### **Physical Description**  
-- **Height/Weight**: 5’7”, 132 lbs. Slender but toned from late-night stakeouts and jogging Riverside Park at dawn.  
-- **Build**: Angular shoulders, narrow hips, a scar on her left collarbone (knife fight with a bootlegger, 1927).  
-- **Skin**: Pale with freckles across her nose, resistant to tanning.  
-- **Eyes**: Hazel-green, gold flecks visible under direct light. Dark circles from insomnia.  
-- **Hair**: Auburn bob curled at the ends, styled with pomade. A single white streak above her right temple (stress-induced, age 29).  
-- **Quirks**: Bites her lower lip when concentrating; taps her father’s pocket watch (a 1910 Waltham) when anxious.  
+**Physical Description**:  
+- **Height/Weight**: 5’8”, 130 lbs.  
+- **Build**: Slim but muscular—tennis arms from typing, legs toned from chasing leads.  
+- **Skin Tone**: Fair with freckles across her nose, prone to sunburns.  
+- **Eyes/Hair**: Steel-gray eyes that narrow when skeptical; auburn hair bobbed unevenly (she cuts it herself).  
+- **Quirks**: A scar on her left palm from a childhood accident with a kerosene lamp; bites her lower lip when lying.  
 - **Fashion**:  
-  - **Work**: Gray tweed trousers, white button-up with rolled sleeves, suspenders, oxfords (size 7.5). A navy newsboy cap hides her hair during undercover work.  
-  - **Evenings**: Emerald silk slip dress, seamed stockings, T-strap heels. Wears Revlon’s “Naughty Noir” lipstick smudged at the edges.  
-  - **Accessories**: A locket with her father’s photo, a switchblade in her garter.  
+  - **Work**: Cream silk blouse with ink stains, navy pencil skirt, scuffed oxfords (size 8), no stockings (too expensive).  
+  - **Evenings**: Men’s tweed jacket, cloche hat tilted rakishly, a faux-pearl pendant from her late mother.  
+  - **Makeup**: Revlon lipstick in “Crimson Fury,” smudged kohl liner.  
 
-### **Work Life**  
-- **Office**: *The New York Sentinel* newsroom, Park Row. Her desk (No. 14) faces a grimy window overlooking Brooklyn Bridge.  
-- **Boss**: Fletcher Johnson, 56, a cigar-chomping ex-war correspondent with a glass eye (left).  
+**Personality**: Doggedly curious, morally flexible when necessary, secretly sentimental (keeps love letters in a biscuit tin). Agnostic but lights candles for her father at St. Patrick’s. Irish-American, raised Catholic.  
+
+**Work**:  
+- **Office**: The *Daily Sentinel* bullpen, desk littered with coffee rings and police reports.  
+- **Boss**: Fletcher Johnson, who barks orders through a cloud of cigar smoke.  
 - **Pay**: $45/week—barely covers rent and gin.  
-- **Commute**: Takes the 6th Avenue El, clutching her typewriter case to deter pickpockets.  
-- **Lunch**: A pastrami sandwich from Katz’s, eaten while eavesdropping on cops at the precinct diner.  
+- **Commute**: Takes the Sixth Avenue El, gripping her satchel against pickpockets.  
+- **Lunch**: A nickel hot dog from a cart, eaten while staking out City Hall.  
+- **Coworkers**: Jealous hack named Ernie who calls her “newshound” with a sneer.  
 
-### **Home Life**  
-- **Apartment**: 243 West 49th Street, Hell’s Kitchen. $12/month. Peeling wallpaper, a clawfoot tub in the kitchen.  
-- **Routine**: Breakfast is black coffee and a day-old bagel; dinner is canned soup heated on a hotplate.  
-- **Neighbors**: A widowed seamstress who plays Caruso records at midnight and a taxi dancer with a pet parrot.  
+**Home**:  
+- **Apartment**: Walkup on Thompson Street. Rent: $22/month. Peeling wallpaper, a clawfoot tub in the kitchen.  
+- **Food**: Black coffee, day-old rye bread, tinned sardines. Breakfast: Oatmeal with a shot of bourbon.  
+- **Proximity**: 15-minute walk to the *Sentinel* office, 20 minutes to the Blind Owl speakeasy.  
 
-### **Background**  
-- **Childhood**: Grew up in Queens, the only child of Joseph Sinclair (reporter) and Clara Sinclair (librarian). Mother died of Spanish flu in 1918.  
-- **Education**: Barnard College, dropped out in 1924 after her father’s death.  
-- **Romance**: Two serious relationships—a jazz drummer who vanished in 1925, and a married detective who ghosted her after a fling.  
-- **Fun**: Reads Zane Grey novels; dances the Charleston at speakeasies when tipsy.  
+**Background**:  
+- Grew up in Queens, daughter of a museum security guard (killed in the ’26 heist). Mother died of tuberculosis in ’23. No siblings.  
+- Scholarship to Barnard College, dropped out junior year to work at the *Sentinel*.  
+- Ex-fiancé: Timothy Blake, a banker who called her job “unseemly.” Split in ’27.  
+- **Friends**: Eleanor Brooks, her former dormmate; Sammy Delgado, her gin source.  
 
-### **Goals & Motivations**  
-- **Primary**: Solve her father’s murder (tied to the 1926 heist) and expose Kensington’s corruption.  
-- **Secondary**: Outrun her guilt over failing to protect her father.  
+**Motivations**: Clear her father’s name (blamed for the heist), expose Kensington’s corruption. Secretly craves a love “that doesn’t end with a knife in my back.”  
+**Fears**: Dying anonymous, becoming as corrupt as the men she hunts.  
 
-### **Relationships**  
-- **Vito**: Mistrust laced with attraction. She notices his hands—knuckles scarred, fingers deft—before she admits she cares.  
-- **Rex**: Respects his instinct but resents his secrecy. Calls him “Old Man” to his face.  
-- **Fletcher**: A father figure who pushes her to “write sharper than a switchblade.”  
+**Relationships**:  
+- **Vito**: Initially mistrustful, then drawn to his vulnerability. Notices his hands shake when he lies.  
+- **Rex**: Respects his instincts, suspects he’s hiding ties to her father’s death.  
+- **Fletcher**: Chafes under his demands but relies on his protection when thugs threaten her.  
 
 ---
 
-## **VITO ROMANO**  
-**Role**: Low-level enforcer for the Moretti crime family; eventual love interest.  
-**Nicknames**: “The Sicilian Shadow” (boxing alias), “Velvet” (by rivals, for his smooth lies).  
-**Gender**: Male.  
+#### **Vito Romano**  
+**Role**: Low-level gangster with the Romano crime family, bartender at the Blind Owl.  
+**Nicknames**: Vi (by his sister), Ghost (for his knack for vanishing).  
+**Gender/Age/Health**: Male, 32, wiry strength, bullet graze on his right thigh (itches before rain).  
 
-### **Physical Description**  
-- **Height/Weight**: 6’1”, 185 lbs. Lean muscle from loading crates and throwing punches.  
-- **Build**: Broad shoulders, a rope scar across his lower back (belt whipping, age 16).  
-- **Skin**: Olive-toned, sunburned on the nape from dock work.  
-- **Eyes**: Dark brown, nearly black, with hooded lids that mask exhaustion.  
-- **Hair**: Jet-black, slicked back with Brylcreem. A widow’s peak genetics gifted him at 25.  
-- **Quirks**: Rolls a silver dollar over his knuckles when plotting; chews licorice root to quit smoking.  
+**Physical Description**:  
+- **Height/Weight**: 6’0”, 160 lbs.  
+- **Build**: Lean, ropey muscles from hauling crates; knuckles scarred from bar fights.  
+- **Skin Tone**: Olive, tanned from dockside work.  
+- **Eyes/Hair**: Dark brown eyes that soften when drunk; jet-black hair slicked with Vaseline.  
+- **Quirks**: Twirls a silver lighter engraved with his sister’s initials; hums *O Sole Mio* when nervous.  
 - **Fashion**:  
-  - **Work**: Charcoal pinstripe suit, bloodstain on the left cuff (never explained). Size 11 wingtips.  
-  - **Casual**: White undershirt, suspenders, trousers held up with a rope belt.  
-  - **Weapons**: A stiletto in his boot, a Colt 1903 in his waistband.  
+  - **Work**: White button-up rolled to elbows, suspenders, black slacks shiny at the knees.  
+  - **Evenings**: Pinstripe suit (threadbare at cuffs), oxblood wingtips (size 11), a fedora tipped low.  
+  - **Scent**: Bay rum aftershave and gunpowder.  
 
-### **Work Life**  
-- **Role**: Smuggles art and liquor for Paulie Moretti. Paid $100/week plus bonuses for “messy jobs.”  
-- **HQ**: A backroom at The Sapphire Rabbit. His “office” is a booth with a view of both exits.  
-- **Commute**: Walks—keeps a stolen bicycle chained outside his safehouse for escapes.  
+**Personality**: Charismatic but guarded, haunted by his sister’s death in Sicily. Atheist, though he crosses himself at funerals. Italian immigrant, fluent in Sicilian dialect.  
 
-### **Home Life**  
-- **Safehouse**: Red Hook docks. A cot, a hotplate, and a photo of his sister, Rosa, in Palermo.  
-- **Routine**: Eats sardines from the tin; sleeps with a knife under his pillow.  
+**Work**:  
+- **Blind Owl**: Bartends, runs bets, and launders cash. Boss: Uncle Enzo Romano.  
+- **Pay**: $60/week under the table.  
+- **Commute**: Walks 10 minutes from his tenement, a switchblade in his sock.  
+- **Lunch**: Cold pasta from a handkerchief, shared with stray cats behind the speakeasy.  
 
-### **Background**  
-- **Childhood**: Born in Sicily, immigrated at 12 after his father’s Camorra ties got the family threatened.  
-- **Family**: Mother died in childbirth; father vanished in 1923. Rosa, 19, writes him weekly begging for money.  
-- **Criminal Record**: Arrested for burglary (1925), charges dropped after intimidating the witness.  
-- **Fun**: Plays bocce in Little Italy; reads Dante in the original Italian.  
+**Home**:  
+- **Tenement**: Two-room flat on Mulberry Street. Rent: $18/month. Faded Madonna statue on the windowsill, a .38 under the mattress.  
+- **Food**: Cannoli from the bakery next door, espresso brewed on a hotplate.  
+- **Proximity**: Above the Blind Owl; 5-minute sprint to the waterfront docks.  
 
-### **Goals & Motivations**  
-- **Primary**: Earn enough to bring Rosa to America and quit the mob.  
-- **Secondary**: Protect Viv without exposing his dual loyalties.  
+**Background**:  
+- Born in Palermo; mother died in childbirth, father killed by rivals in ’19. Brought to NYC by Uncle Enzo at 14.  
+- Sister Rosalia died in ’25—overdose in a brothel he couldn’t afford to free her from.  
+- **Ex-lover**: Rosa, a dancer who stole his savings and vanished.  
 
-### **Relationships**  
-- **Viv**: Initially uses her for info, but her grit reminds him of Rosa. Hates that he notices her perfume.  
-- **Paulie Moretti**: Fear masked as loyalty. Brings him espresso beans to stay in favor.  
-- **Sammy Delgado**: Shares cigarettes and intel on Kensington’s shipments.  
+**Motivations**: Save enough to flee to California, open a legit bar. Fantasizes about Vivian’s laugh, fears she’ll betray him.  
+**Fears**: Drowning (nearly did in the Atlantic during immigration), becoming his uncle.  
+
+**Relationships**:  
+- **Vivian**: Finds her recklessness infuriating and intoxicating; leaves lilies on her fire escape.  
+- **Enzo**: Resents his control but relies on his protection.  
+- **Sammy**: Bonds over shared Sicilian roots; trades secrets for extra gin pours.  
 
 ---
 
-## **MAYOR HAROLD KENSINGTON**  
-**Role**: Antagonist; corrupt politician orchestrating the art-smuggling ring.  
-**Nicknames**: “The Gilded Ghoul” (tabloids), “Harry” (by his mistress).  
-**Gender**: Male.  
+#### **Mayor Harold Kensington**  
+**Role**: Antagonist, corrupt mayor orchestrating art smuggling.  
+**Nicknames**: The Baron (by elites), H.K. (by cronies).  
+**Gender/Age/Health**: Male, 55, paunchy but vigorous, gout in his left foot.  
 
-### **Physical Description**  
-- **Height/Weight**: 5’10”, 210 lbs. Soft paunch from decades of steak dinners.  
-- **Build**: Thick neck, manicured hands, a birthmark shaped like Maine on his right thigh.  
-- **Skin**: Ruddy, vein-broken cheeks from bourbon.  
-- **Eyes**: Ice-blue, pupils constricted even in dim light.  
-- **Hair**: Silver, combed to hide a bald spot. Vanity makes him dye his mustache black.  
-- **Quirks**: Sniffs a cocaine-laced handkerchief before speeches; collects snuffboxes.  
+**Physical Description**:  
+- **Height/Weight**: 5’10”, 210 lbs.  
+- **Build**: Broad shoulders gone soft, double chin concealed by silk cravats.  
+- **Skin Tone**: Ruddy, with broken capillaries from brandy.  
+- **Eyes/Hair**: Pale blue eyes that freeze like arctic ice; silver hair pomaded rigid.  
+- **Quirks**: Taps his signet ring (family crest) when lying; collects snuff boxes.  
 - **Fashion**:  
-  - **Public**: Custom Brooks Brothers suits (navy or gray), gold cufflinks, a diamond stickpin.  
-  - **Private**: Silk pajamas monogrammed “HK,” leather slippers from Milan.  
+  - **Work**: Custom-tailored three-piece suits, pocket watch on a gold chain.  
+  - **Evenings**: White tie and tails, diamond cufflinks, a cane with a hidden blade.  
 
-### **Work Life**  
-- **City Hall**: Third-floor office with a mahogany desk and a hidden wet bar.  
-- **Routine**: Meets art buyers at dawn in Central Park; bribes dock inspectors by noon.  
+**Personality**: Narcissistic, paranoid, obsessed with legacy. Episcopalian, though faith is performative. Anglo-Saxon Protestant elite.  
 
-### **Home Life**  
-- **Mansion**: Upper East Side. Marble foyer, a ballroom used once a year, a vault behind a Titian painting.  
-- **Family**: Wife Eleanor (opium addict), son Preston (expelled from Yale for cheating).  
+**Work**:  
+- **City Hall**: Mahogany desk, a secret panel behind a bookshelf leads to tunnel control room.  
+- **Pay**: $10,000/year (officially); millions in bribes.  
+- **Commute**: Chauffeur-driven Duesenberg, police escort.  
 
-### **Background**  
-- **Childhood**: Son of a railroad tycoon; bullied at Andover for his lisp (corrected via elocution lessons).  
-- **Rise**: District Attorney (1919–1925), mayor since 1926.  
-- **Secret**: Funnels art profits into a Swiss account to fund a Senate run.  
+**Home**:  
+- **Mansion**: 20-room estate on Long Island. Servants’ stairwell hides tunnel access.  
+- **Food**: Foie gras, truffles, ’21 Château Margaux. Breakfast: Kedgeree and The *Times*.  
 
-### **Goals & Motivations**  
-- **Primary**: Expand his smuggling empire and secure a legacy beyond politics.  
-- **Secondary**: Destroy Viv’s credibility before she exposes him.  
+**Background**:  
+- Old money—father was a railroad tycoon. Yale Law graduate.  
+- Wife: Margaret (socialite, 52), two estranged sons at Princeton.  
+- **Vices**: Underage showgirls, Cuban cigars, a dormant opium habit from college.  
 
-### **Relationships**  
-- **Celeste Moreau**: Owns her through blackmail; admires her skill but calls her “the help.”  
-- **Inspector Burns**: Considers him a pawn; plants evidence to keep him compliant.  
+**Motivations**: Build a political dynasty, own every masterpiece in Europe. Secretly fears impotence and irrelevance.  
+
+**Relationships**:  
+- **Celeste**: Admires her skill but considers her expendable.  
+- **Inspector Burns**: Owns him via blackmail (proof of an old murder).  
 
 ---
 
-## **REX DONOVAN**  
-**Role**: Veteran PI and Viv’s reluctant mentor.  
-**Nicknames**: “The Ghost” (for his knack for disappearing), “Donny” (by old flames).  
-**Gender**: Male.  
+#### **Rex Donovan**  
+**Role**: Veteran PI, Vivian’s reluctant mentor.  
+**Nicknames**: Dono (by old pals), Shadow (for his surveillance skills).  
+**Gender/Age/Health**: Male, 48, gaunt, nicotine-stained fingers, whiskey tremor.  
 
-### **Physical Description**  
-- **Height/Weight**: 6’3”, 200 lbs. Barrel-chested, with a limp from a WWI shrapnel wound.  
-- **Build**: Arms thick from decades of fistfights; a tattoo of a dove (faded) on his forearm.  
-- **Skin**: Leathery, sun-damaged from stakeouts.  
-- **Eyes**: Steel-gray, one milky from a 1925 acid attack.  
-- **Hair**: Salt-and-pepper buzz cut; a jagged scar slices through his left eyebrow.  
-- **Quirks**: Hums “When Johnny Comes Marching Home” when nervous; cleans his gun during conversations.  
+**Physical Description**:  
+- **Height/Weight**: 6’2”, 180 lbs.  
+- **Build**: Lanky, hunched shoulders from decades at a desk.  
+- **Skin Tone**: Sallow, with a razor burn on his neck.  
+- **Eyes/Hair**: Hazel eyes bloodshot from lack of sleep; salt-and-pepper hair, unkempt.  
+- **Quirks**: Chews toothpicks, carries a flask of rye in his inner pocket.  
 - **Fashion**:  
-  - **Work**: Brown trench coat, sweat-stained fedora, fingerless gloves.  
-  - **Home**: Flannel pajamas, wool socks darned at the heels.  
+  - **Work**: Brown trench coat (permanent creases), fedora with a bullet hole in the brim.  
+  - **Home**: Yellowed undershirt, suspenders, wool socks with holes.  
 
-### **Work Life**  
-- **Office**: Above a Bowery butcher shop. Smells of raw meat and gun oil.  
-- **Clients**: Divorce cases, missing persons, and the occasional “problem solver” job for the mob.  
-- **Pay**: $80/case, though he often works pro bono for widows.  
+**Personality**: Cynical, guilt-ridden (accidentally got a witness killed in ’18), dry wit. Lapsed Catholic.  
 
-### **Home Life**  
-- **Apartment**: Walk-up in Chinatown. Bare walls, a Murphy bed, a photo of his late wife on the icebox.  
-- **Routine**: Eats chop suey from Lai Wah’s; drinks rye until he passes out.  
+**Work**:  
+- **Office**: Above a Bowery pawnshop. Desk faces the door—always.  
+- **Pay**: $5/day when he gets clients.  
+- **Cases**: Mostly infidelity, some missing persons.  
 
-### **Background**  
-- **Military**: 69th Infantry Regiment, fought in the Meuse-Argonne. Won a Purple Heart; lost his faith.  
-- **NYPD**: Detective from 1919–1924, fired for beating a suspect who killed his partner.  
-- **Regret**: Letting Viv’s father investigate the heist alone in 1926.  
+**Home**:  
+- **Flat**: One room behind the office. Mattress on the floor, hotplate for coffee.  
+- **Food**: Diner pie, cold beans from the can.  
 
-### **Goals & Motivations**  
-- **Primary**: Atone for past failures by keeping Viv alive.  
-- **Secondary**: Uncover the mole in Kensington’s operation before it’s too late.  
+**Background**:  
+- Ex-cop, fired for refusing a bribe in ’05. Wife left him in ’10; son died in the Great War.  
+- **Friend**: Only Fletcher Johnson, who sends him scraps of work.  
 
-### **Relationships**  
-- **Viv**: Sees her as the daughter he never had; criticizes her recklessness to hide his fear.  
-- **Sammy Delgado**: Trading info since 1922; trusts him more than most cops.  
+**Motivations**: Atone for past failures, keep Vivian from his mistakes.  
+**Fears**: Dying alone, Vivian discovering his role in her father’s death.  
+
+**Relationships**:  
+- **Vivian**: Sees her as the daughter he lost; berates her to mask his fear for her safety.  
+- **Fletcher**: Mutual respect laced with old grudges.  
 
 ---
 
-**Minor Characters** (abbreviated):  
+### **Supporting Characters**  
 
-### **CELESTE MOREAU**  
-- **Role**: Art forger.  
-- **Appearance**: 5’4”, 110 lbs. Waifish, with ink-stained fingers and a rose thorn tattoo on her wrist. Wears paint-smeared smocks and men’s oxfords.  
-- **Backstory**: Orphaned in Paris; forged Renoirs to survive. Kensington blackmails her with a murder charge.  
+#### **Celeste Moreau**  
+**Role**: Art forger for Kensington.  
+**Gender/Age**: Female, 34.  
+**Appearance**: 5’6”, willowy, ash-blonde bob, jade-green eyes. Wears paint-smeared smocks, a locket with her daughter’s photo.  
+**Personality**: Calculating, maternal (daughter in boarding school), bitter about her wasted talent.  
+**Backstory**: Parisian orphan, studied at L’École des Beaux-Arts before a forgery conviction. Blackmailed by Kensington.  
 
-### **LYDIA FITZGERALD**  
-- **Role**: Socialite informant.  
-- **Appearance**: 5’9”, willowy, platinum Marcel wave. Dresses in Schiaparelli gowns and carries a pearl-handled derringer.  
-- **Secret**: Had an affair with Charles Beaumont; knows about the tunnel’s location.  
+#### **Lydia Fitzgerald**  
+**Role**: Socialite informant.  
+**Gender/Age**: Female, 24.  
+**Appearance**: 5’4”, porcelain skin, jet-black Marcel wave. Wears emerald tulle gowns, gloves to the elbow.  
+**Personality**: Bored, cunning, uses Vivian to sabotage rivals. Secretly funds a lesbian speakeasy.  
 
-### **SAMMY DELGADO**  
-- **Role**: Bartender at The Sapphire Rabbit.  
-- **Appearance**: 5’8”, stocky, with a gold tooth and a spiderweb neck tattoo. Waxes his handlebar mustache daily.  
-- **Intel**: Overheard Kensington’s men discuss the throne’s move to Pier 17.  
+#### **Inspector Bobbie Burns**  
+**Role**: Corrupt cop.  
+**Gender/Age**: Male, 50.  
+**Appearance**: Burly, red mutton chops, a gold tooth.  
+**Backstory**: On Kensington’s payroll to bury evidence. Hates himself but can’t quit the money.  
 
-CONTINUE
-## **CELESTE MOREAU**  
-**Role**: Art forger blackmailed into replicating masterpieces for Kensington’s smuggling operation.  
-**Nicknames**: “The Brush” (by Kensington’s men), “CeeCee” (by her late lover).  
-**Gender**: Female.  
+CONTINUE  
+**Current Word Count**: ~2100
+### **Supporting Characters (Continued)**
 
-### **Physical Description**  
-- **Height/Weight**: 5’4”, 110 lbs. Delicate frame, hunched shoulders from hours bent over canvases.  
-- **Build**: Slender wrists, a collarbone prominent enough to rest a pencil on.  
-- **Skin**: Porcelain-pale, dotted with freckles from childhood sunburns in Marseille.  
-- **Eyes**: Moss-green, framed by smudged kohl. Dark circles from sleepless nights.  
-- **Hair**: Jet-black bob unevenly self-cut; a streak of cerulean paint stains her left temple.  
-- **Quirks**: Twirls a sable paintbrush between her fingers when anxious; hums Édith Piaf off-key.  
+---
+
+#### **Freddie Winslow**  
+**Role**: Debonair socialite heir with a penchant for scandal.  
+**Nicknames**: Fast Freddie (for his racing exploits), The Baron of Broadway.  
+**Gender/Age/Health**: Male, 29, lithe and agile, slight limp from a polo injury.  
+
+**Physical Description**:  
+- **Height/Weight**: 6’1”, 155 lbs.  
+- **Build**: Slender, almost feline grace, shoulders broadened by rowing at Harvard.  
+- **Skin Tone**: Porcelain-pale, avoids sunlight religiously.  
+- **Eyes/Hair**: Ice-blue eyes framed by long lashes; platinum-blond hair slicked into a precise side part.  
+- **Quirks**: Adjusts his monocle when lying; collects antique pocket watches (stolen ones, mostly).  
 - **Fashion**:  
-  - **Work**: Men’s striped pajamas under a paint-splattered smock; bare feet stained with vermilion.  
-  - **Outside**: Navy cloche hat, moth-eaten wool coat (pockets bulging with charcoal sticks), scuffed Oxfords.  
+  - **Day**: Cream linen suits, silk cravats, two-tone spectator shoes (size 10.5).  
+  - **Night**: White tails with a gardenia boutonnière, a silver-tipped cane (hollow, hides cocaine).  
+  - **Scent**: Vetiver and absinthe.  
 
-### **Work Life**  
-- **Studio**: Above Mulberry Street Tailor Shop. Bare bulbs swing from rafters; cracked skylight leaks rain onto drying canvases.  
-- **Tools**: High-grade linseed oil, hand-ground pigments stolen from the Met’s restoration lab, brushes made from Siberian weasel hair.  
-- **Payment**: Kensington deposits $200/month in a Cayman account she can’t access. Leaves her groceries: stale bread, cheap wine, and apology notes.  
+**Personality**: Effortlessly charming, morally bankrupt, secretly terrified of mediocrity. Agnostic, worships his trust fund. Anglo-Saxon Protestant elite.  
 
-### **Home Life**  
-- **Living Quarters**: A Murphy bed behind a folding screen in the studio. A hotplate for boiling espresso; a sink crusted with dried gouache.  
-- **Meals**: Prosciutto paninis from Sal’s Deli, eaten while scrubbing paint from her cuticles.  
+**Work**:  
+- **Role**: Professional dilettante.  
+- **Office**: The Beresford penthouse, where he brokers blackmail deals over martinis.  
+- **Pay**: Inherited $5 million; bleeds $1,000/week on parties and bribes.  
+- **Commute**: Drives a cherry-red Stutz Bearcat, swerving through traffic with a flask in hand.  
 
-### **Background**  
-- **Childhood**: Orphaned at 8 when her parents’ Parisian bookstore burned down. Survived by forging theater posters for baguettes.  
-- **Education**: École des Beaux-Arts scholarship revoked after she sold a fake Matisse to pay rent.  
-- **Romance**: Fell for a gallery owner who discovered her forgeries; he “disappeared” after threatening to expose Kensington.  
-- **Fun**: Secretly paints surreal self-portraits hidden behind a false wall.  
+**Home**:  
+- **Penthouse**: Art Deco monstrosity with a zebra-skin rug and a hidden vault behind a Picasso forgery.  
+- **Food**: Caviar spooned straight from the tin, champagne for breakfast.  
+- **Proximity**: 10-minute drive to the Kensington estate, 5 minutes to the Savoy Ballroom.  
 
-### **Goals & Motivations**  
-- **Primary**: Escape Kensington’s grip and open a seaside studio in Nice.  
-- **Secondary**: Destroy the ledger detailing her forgeries before the FBI finds it.  
+**Background**:  
+- Born into railroad money; expelled from Princeton for cheating.  
+- **Lovers**: Countless showgirls and heiresses, all dumped when they became “tedious.”  
+- **Dark Secret**: Funnels Kensington’s bribes through offshore accounts; fears poverty more than death.  
 
-### **Relationships**  
-- **Vivian**: Admires her fearlessness; slips her clues in coded brushstroke patterns.  
-- **Vito**: Shares a cigarette on fire escapes, bonding over trapped lives. She calls him *“caro”* but won’t say why.  
+**Motivations**: Stay relevant, outwit Vivian, survive the coming crash.  
+**Fears**: Losing his fortune, becoming a “nobody in a rented tux.”  
+
+**Relationships**:  
+- **Vivian**: Flirts relentlessly, slips her clues to sabotage rivals.  
+- **Lydia**: Childhood frenemies; trades society gossip for silence on his opium habit.  
 
 ---
 
-## **LYDIA FITZGERALD**  
-**Role**: Debutante with a photographic memory for society secrets.  
-**Nicknames**: “The Ice Queen” (by tabloids), “Lyds” (by Charles Beaumont).  
-**Gender**: Female.  
+#### **Eleanor Brooks**  
+**Role**: Vivian’s confidante, archives clerk at the *New York Tribune*.  
+**Nicknames**: Ellie (by Vivian), Ghost Girl (for her silent movements).  
+**Gender/Age/Health**: Female, 29, frail from childhood polio, walks with a cane.  
 
-### **Physical Description**  
-- **Height/Weight**: 5’9”, 125 lbs. Willowy posture perfected at Miss Porter’s Finishing School.  
-- **Build**: Swimmer’s shoulders, a scar on her knee from a childhood horseback riding accident.  
-- **Skin**: Alabaster, dusted with Johnson’s Baby Powder to mute summer sweat.  
-- **Eyes**: Steel-blue, framed by faux lashes glued crookedly.  
-- **Hair**: Platinum Marcel wave secured with diamond pins.  
-- **Quirks**: Taps her left pearl earring twice before lying; applies Revlon’s “Fire & Ice” lipstick hourly.  
+**Physical Description**:  
+- **Height/Weight**: 5’5”, 100 lbs.  
+- **Build**: Delicate frame, hunched shoulders from hours bent over files.  
+- **Skin Tone**: Milky, with a dusting of freckles.  
+- **Eyes/Hair**: Hazel eyes magnified by round spectacles; mousy brown hair in a tight chignon.  
+- **Quirks**: Twists her pearl necklace when anxious; speaks in whispers.  
 - **Fashion**:  
-  - **Galas**: Bias-cut satin gowns with hidden pockets for flasks and matchbooks.  
-  - **Daywear**: Tailored tweed skirts, silk blouses unbuttoned to “accidentally” show her sapphire pendant.  
+  - **Work**: High-collared navy dresses, lace gloves (to hide ink stains), orthopedic shoes (size 6).  
+  - **Home**: Flannel nightgowns, a knitted shawl from her late grandmother.  
 
-### **Work Life**  
-- **Role**: Professional socialite. “Earns” $5,000/month from her trust fund.  
-- **Tasks**: Attends charity balls, memorizes drunken confessions, trades gossip with Viv for tabloid silences.  
-- **HQ**: A velvet-curtained phone booth at The Stork Club.  
+**Personality**: Introverted, fiercely loyal, haunted by a past abortion. Quietly atheist.  
 
-### **Home Life**  
-- **Townhouse**: Sutton Place, 12 rooms filled with Art Deco furniture and unpaid bills.  
-- **Routine**: Breakfasts on black coffee and Dexedrine; dines on caviar canapés at midnight.  
+**Work**:  
+- **Office**: A basement cubicle at the *Tribune*, walls papered with yellowed clippings.  
+- **Boss**: Mr. Higgins, a lecherous editor who “accidentally” brushes her thigh.  
+- **Pay**: $18/week—supplements by selling rare newspapers to collectors.  
+- **Commute**: Takes the Third Avenue El, clutching her cane like a weapon.  
 
-### **Background**  
-- **Family**: Fifth-generation Astor cousin; father bankrupted by bad railroad stocks.  
-- **Marriage**: Engaged to a steel heir who jumped from his Wall Street office after the engagement party.  
-- **Secret**: Writes torrid romance novels under a pseudonym; hides the manuscripts in her hope chest.  
+**Home**:  
+- **Apartment**: Studio on the Lower East Side. Rent: $15/month. Iron bedstead, a hotplate, shelves sagging under books.  
+- **Food**: Tea with honey, saltine crackers, the occasional egg stolen from a neighbor’s coop.  
 
-### **Goals & Motivations**  
-- **Primary**: Secure a wealthy husband before her debts leak.  
-- **Secondary**: Avenge Charles Beaumont’s murder without smudging her mascara.  
+**Background**:  
+- Orphaned at 12, raised by nuns who beat her for reading “sinful” novels.  
+- **Education**: Self-taught, fluent in French and German.  
+- **Secret**: Runs a coded advice column for mistresses under the pseudonym “Madame X.”  
 
-### **Relationships**  
-- **Vivian**: A reluctant ally. Slips her guest lists soaked in Chanel No. 5.  
-- **Freddie Winslow**: Childhood rivals; they bet on who can seduce more heirs per season.  
+**Motivations**: Protect Vivian, expose Higgins, find a love “who doesn’t mind my limp.”  
+**Fears**: Dying in the asylum where her mother perished.  
 
----
-
-## **SAMMY DELGADO**  
-**Role**: Bartender at The Sapphire Rabbit; Viv’s ears on the underworld.  
-**Nicknames**: “Spider” (for his neck tattoo), “Sammy the Spigot” (by drunk regulars).  
-**Gender**: Male.  
-
-### **Physical Description**  
-- **Height/Weight**: 5’8”, 195 lbs. Barrel chest, tattooed knuckles (H-A-T-E on the left, L-O-V-E on the right).  
-- **Build**: Wrestler’s grip from hauling kegs; a cauliflower ear from his boxing days.  
-- **Skin**: Golden-brown, scarred by a razor fight in 1921.  
-- **Eyes**: Hazel, bloodshot from sleepless nights.  
-- **Hair**: Shaved sides, greased pompadour. A gold hoop in his left ear.  
-- **Quirks**: Polishes glasses to avoid eye contact; keeps a baseball bat named “Lucille” under the bar.  
-- **Fashion**:  
-  - **Work**: Suspenders, rolled shirtsleeves, bowtie askew.  
-  - **Off-Duty**: Zoot suits recycled from dead mobsters; alligator shoes.  
-
-### **Work Life**  
-- **Speakeasy**: The Sapphire Rabbit. Knows every regular’s poison (Viv: gin with a lime twist).  
-- **Side Hustles**: Sells matchbooks with gambling tips; runs a cockfighting ring in the stockroom.  
-- **Pay**: $30/week plus tips (mostly counterfeit).  
-
-### **Home Life**  
-- **Apartment**: Above the bar. Mattress on the floor, a shrine to his late mother (rose candles, faded rosary).  
-- **Pets**: A one-eyed tabby named Duchess who brings him dead rats.  
-
-### **Background**  
-- **Childhood**: Born in Puerto Rico; stowed away on a cargo ship to Brooklyn at 14.  
-- **Boxing Career**: Went 12-0 as “The Harlem Hammer” before a fixed fight shattered his kneecap.  
-- **Regret**: Turned his brother into the cops for a $50 bounty; hasn’t spoken since 1923.  
-
-### **Goals & Motivations**  
-- **Primary**: Protect his bar from Kensington’s arsonists.  
-- **Secondary**: Earn enough to send his niece to secretarial school.  
-
-### **Relationships**  
-- **Rex**: Swaps war stories over midnight bourbon. Trusts him with the safe combination.  
-- **Vito**: Tips him off about police raids in exchange for smuggled cigars.  
+**Relationships**:  
+- **Vivian**: Trusts her implicitly; deciphers coded messages in Kensington’s speeches.  
+- **Sammy**: Swaps newspaper archives for bootleg sedatives.  
 
 ---
 
-## **FLETCHER JOHNSON**  
-**Role**: Editor-in-chief of *The New York Sentinel*; Viv’s bulldog mentor.  
-**Nicknames**: “Fletch” (by nobody), “Cyclops” (by rival editors).  
-**Gender**: Male.  
+### **Minor Characters**  
 
-### **Physical Description**  
-- **Height/Weight**: 5’11”, 230 lbs. Barrel belly strained against suspenders.  
-- **Build**: Tree-trunk legs from years pacing newsrooms; a missing left eye (replaced by glass).  
-- **Skin**: Ruddy, speckled with ink stains.  
-- **Eyes**: One ice-blue; the other a mismatched hazel prosthetic.  
-- **Hair**: None. Polishes his scalp with bay rum.  
-- **Quirks**: Chews unlit cigars; slams his fist on desks to punctuate headlines.  
-- **Fashion**:  
-  - **Work**: Ink-stained white shirtsleeves, green visor, tie loosened at 9 AM.  
-  - **Home**: Strapped pajamas, leather slippers worn through the soles.  
+#### **Sammy Delgado**  
+**Role**: Bartender at the Blind Owl speakeasy.  
+**Gender/Age**: Male, 38.  
+**Appearance**: 5’7”, stocky, tattooed forearms (anchors and mermaids), gap-toothed grin.  
+**Personality**: Quick-witted, loyal to Vito, terrified of Enzo’s temper.  
+**Backstory**: Sicilian immigrant, sends money to a wife and three kids in Palermo.  
+**Details**: Memorizes every patron’s drink and secret; hides a derringer under the bar rag.  
 
-### **Work Life**  
-- **Office**: Glass-walled fishbowl overlooking the newsroom. Desk cluttered with spike files and a .38 revolver.  
-- **Routine**: Yells “Copy!” every 11 minutes; edits Viv’s drafts in red pencil sharpened to a dagger point.  
-- **Pay**: $150/week; spends half on whiskey and regret.  
+#### **Fletcher Johnson**  
+**Role**: Editor-in-chief of the *Daily Sentinel*.  
+**Gender/Age**: Male, 55.  
+**Appearance**: Barrel-chested, walrus mustache, cigar permanently clamped between teeth.  
+**Backstory**: Pulitzer Prize winner turned cynic; killed a man in a duel in ’09.  
+**Details**: Protects Vivian because she reminds him of his dead sister; hoards whiskey in his desk.  
 
-### **Home Life**  
-- **Brownstone**: Harlem, inherited from his estranged wife. Empty except for a Victrola and a signed photo of Nellie Bly.  
-- **Meals**: Diners near the Sentinel—oatmeal with a shot of bourbon, liverwurst on rye.  
-
-### **Background**  
-- **War Career**: Covered the Western Front for the *Chicago Tribune*; lost his eye to shrapnel at Verdun.  
-- **Scandal**: Fired from the *Times* for fabricating a front-page story about Al Capone’s death.  
-- **Pride**: Won a Pulitzer in 1921 for exposing a child labor ring; keeps the medal in his sock drawer.  
-
-### **Goals & Motivations**  
-- **Primary**: Break the Golden Throne story before the *Daily News* scoops them.  
-- **Secondary**: Reconcile with his daughter, who thinks he’s “a drunk hack.”  
-
-### **Relationships**  
-- **Vivian**: Grudgingly proud; leaves aspirin and black coffee on her desk after all-nighters.  
-- **Inspector Burns**: Childhood friends; trades tips for front-page favors.  
+#### **Charles Beaumont**  
+**Role**: Murdered socialite.  
+**Gender/Age**: Male, 31 (at death).  
+**Appearance**: Golden curls, dimpled chin, a dueling scar on his cheek.  
+**Backstory**: Blackmailed Kensington with love letters; killed mid-waltz at the gala.  
+**Details**: His pocket watch stopped at 11:07 PM—the time of his death.  
 
 ---
 
-**Minor Characters** (continued):  
-
-### **INSPECTOR BOBBIE BURNS**  
-- **Role**: Homicide detective torn between duty and corruption.  
-- **Appearance**: 6’0”, 190 lbs. Salt-and-pepper flattop, a nicotine stain on his index finger. Wrinkled trench coat, cracked wedding band.  
-- **Backstory**: Raised in Hell’s Kitchen; joined the force to “clean up the streets.” Now drowns guilt in Bushmills.  
-- **Secret**: Tipped off Kensington about the 1926 heist to pay his wife’s medical bills.  
-
-### **FREDDIE WINSLOW**  
-- **Role**: Heir and gossip monger.  
-- **Appearance**: 5’11”, 160 lbs. Slicked blond hair, monocle cracked from a fistfight.  
-- **Last Words**: “The throne’s in the water—” before collapsing at the gala.  
-
-### **ELEANOR BROOKS**  
-- **Role**: Antique dealer and Viv’s confidante.  
-- **Appearance**: 70, hunched, with a silver chignon. Wears pince-nez and lace gloves to hide track marks.  
-- **Intel**: Hears whispers through hidden microphones in her shop’s grandfather clocks.  
-
-CONTINUE
-**MINOR CHARACTERS (CONTINUED):**  
+#### **Inspector Bobbie Burns**  
+**Role**: Corrupt police inspector.  
+**Gender/Age**: Male, 50.  
+**Appearance**: Bulbous nose, knuckles like walnuts, a gold badge polished daily.  
+**Personality**: Bitter, alcoholic, hates himself more than the crooks he protects.  
+**Backstory**: Once an honest cop; framed an innocent man to pay his wife’s hospital bills.  
+**Details**: Keeps a ledger of every bribe; plans to flee to Mexico if the scheme collapses.  
 
 ---
 
-### **CHARLES BEAUMONT**  
-**Role**: Murdered socialite whose death unravels high-society ties to the underworld.  
-**Nicknames**: “The Golden Bachelor” (tabloids), “Chuck” (by his polo teammates).  
-**Gender**: Male.  
-
-### **Physical Description (Pre-Death)**  
-- **Height/Weight**: 6’0”, 175 lbs. Tennis-toned arms, a dimpled chin inherited from his mother.  
-- **Build**: Athletic but softened by years of champagne and caviar.  
-- **Skin**: Year-round tan from winters in Palm Beach and summers in Newport.  
-- **Eyes**: Amber-brown, framed by laugh lines earned at 28.  
-- **Hair**: Chestnut waves slicked with pomade; a single gray strand at the temple.  
-- **Quirks**: Adjusted his signet ring when lying; whistled “Rhapsody in Blue” off-key.  
-- **Fashion**:  
-  - **Galas**: White tie and tails with a sapphire cummerbund to match Lydia’s eyes.  
-  - **Daywear**: Cashmere sweaters, jodhpurs, and riding boots polished to a mirror shine.  
-
-### **Background**  
-- **Wealth**: Heir to a railroad fortune squandered on bad investments and roulette.  
-- **Secret**: Funneled Kensington’s art profits into a failing Broadway theater.  
-- **Last Moments**: Drank cyanide-laced champagne meant for Lydia; died with her name on his lips.  
-
-### **Legacy**  
-- **Clue**: A monogrammed handkerchief (CB) found in the tunnel near the Golden Throne’s hiding place.  
-- **Impact**: His autopsy photo—lips stained cherry-red—haunts Viv’s dreams.  
+#### **Margaret Kensington**  
+**Role**: Mayor’s wife.  
+**Gender/Age**: Female, 52.  
+**Appearance**: Gaunt, silver coiffure, diamond choker to hide a tracheotomy scar.  
+**Personality**: Ice-cold, addicted to laudanum, secretly funds suffragette groups.  
+**Backstory**: Married Harold for status; poisoned his mistress in ’21.  
+**Details**: Hides a stiletto in her parasol; leaks tips to Vivian through her maid.  
 
 ---
 
-### **ELEANOR BROOKS**  
-**Role**: Elderly antique dealer with a network of informants.  
-**Nicknames**: “The Duchess of Dust” (by collectors), “Auntie” (by Viv).  
-**Gender**: Female.  
+### **Character Relationships Grid**  
 
-### **Physical Description**  
-- **Height/Weight**: 5’2”, 98 lbs. Hunched spine from decades hunched over restoration work.  
-- **Build**: Birdlike hands veined with age; a tremor in her left arm.  
-- **Skin**: Paper-thin, mapped with liver spots.  
-- **Eyes**: Milky blue, vision fading but sharpened by intuition.  
-- **Hair**: Silver chignon secured with ivory hairpins.  
-- **Quirks**: Sipped Earl Grey through a sugar cube; decoded messages in antique clock chimes.  
-- **Fashion**:  
-  - **Work**: Black lace gloves (to hide track marks), moth-eaten fur stoles.  
-  - **Home**: Silk kimonos patched with Renaissance tapestry scraps.  
-
-### **Work Life**  
-- **Shop**: “Brooks & Veils,” Greenwich Village. A front for trading secrets and forged provenance papers.  
-- **Intel Source**: Eavesdropping devices hidden in 18th-century grandfather clocks.  
-
-### **Background**  
-- **Golden Age**: Once appraised art for the Vanderbilts; lost her reputation in a 1913 forgery scandal.  
-- **Addiction**: Morphine prescribed after her son’s death in the Great War.  
-- **Redemption**: Taught Viv to distinguish real van Goghs from Celeste’s fakes by brushstroke patterns.  
-
-### **Relationship with Viv**  
-- **Mentorship**: Slips her skeleton keys and wisdom: *“Trust the art, not the artist.”*  
-- **Warning**: *“Kensington collects people like snuffboxes—discards them when they lose their scent.”*  
+| **Character**       | **Allies**                | **Enemies**               | **Secrets Shared**                          |  
+|----------------------|---------------------------|---------------------------|---------------------------------------------|  
+| **Vivian Sinclair**  | Eleanor, Rex, Sammy       | Kensington, Enzo          | Father’s innocence; affair with Vito        |  
+| **Vito Romano**      | Sammy, Vivian             | Enzo, Burns               | Sister’s death; plans to flee               |  
+| **Mayor Kensington** | Burns, Celeste            | Vivian, Freddie           | Art smuggling; impotence                    |  
+| **Freddie Winslow**  | Lydia, showgirls          | Vivian, Kensington        | Offshore accounts; opium den visits         |  
+| **Eleanor Brooks**   | Vivian, Sammy             | Higgins, nuns             | Abortion; Madame X column                   |  
 
 ---
 
-### **FREDDIE WINSLOW**  
-**Role**: Decadent heir whose gossip masks razor-sharp observation skills.  
-**Nicknames**: “The Baron of Blather” (by Lydia), “Winny” (by his nanny, now deceased).  
-**Gender**: Male.  
-
-### **Physical Description**  
-- **Height/Weight**: 5’11”, 160 lbs. Gaunt from cocaine and cotillions.  
-- **Build**: Narrow shoulders, a Adam’s apple that bobs like a cork when nervous.  
-- **Skin**: Pallid, dotted with sweat beads even in AC’d ballrooms.  
-- **Eyes**: Bloodshot hazel, pupils dilated from amphetamines.  
-- **Hair**: Platinum-blond pompadour dyed weekly to hide gray roots.  
-- **Quirks**: Sniffed a silver vial of “vitamin powder” before speaking; memorized deckle edges of rare books.  
-- **Fashion**:  
-  - **Galas**: Velvet smoking jackets, silk ascots pinned with diamond stickpins.  
-  - **Daywear**: Striped Oxford shirts with coffee stains, suspenders snapped loose.  
-
-### **Background**  
-- **Inheritance**: Last of the Winslow shipping fortune; squandered $2 million on Argentine racehorses.  
-- **Skills**: Photographic memory for society scandals; blackmailed Kensington’s mistress into a discount on a Pollock.  
-- **Demise**: Pushed onto subway tracks after drunkenly bragging about the tunnel network.  
-
-### **Legacy**  
-- **Clue**: A cocktail napkin scribbled with *“Golden Throne → Pier 17”* found in his pocket.  
-- **Irony**: His obituary headline—*“Heir to Nothing”*—penned by Viv.  
-
----
-
-### **PATRICK O’LEARY**  
-**Role**: Disgraced museum night watchman from the 1926 heist.  
-**Nicknames**: “Paddy” (by fellow Irish expats), “The Drunk Guard” (by tabloids).  
-**Gender**: Male.  
-
-### **Physical Description**  
-- **Height/Weight**: 5’9”, 200 lbs. Bloated from a diet of boiled potatoes and regret.  
-- **Build**: Barrel chest, a limp from a police baton beating in 1927.  
-- **Skin**: Ruddy, spider-veined cheeks from bathtub gin.  
-- **Eyes**: Watery blue, yellowed at the edges.  
-- **Hair**: Thinning ginger comb-over glued with pomade.  
-- **Quirks**: Recited Yeats’ poetry when blackout drunk; collected subway tokens in a tin labeled *“Purgatory.”*  
-- **Fashion**:  
-  - **Work**: Faded security uniform missing buttons; shoes lined with newspaper.  
-  - **Current**: Salvation Army overcoat, fingerless gloves.  
-
-### **Background**  
-- **Downfall**: Slept through the 1926 heist after Kensington’s men spiked his whiskey.  
-- **Guilt**: Sells Viv details about the throne’s curse for shots of rye.  
-- **Warning**: *“The throne’s got a taste for blood—it’ll eat you alive, girly.”*  
-
----
-
-**RELATIONSHIP DYNAMICS (ADDENDUM):**  
-
-- **Viv & Celeste**: A tense alliance. Viv admires Celeste’s talent but pities her Stockholm loyalty to Kensington. Celeste leaves a forged Vermeer in Viv’s apartment with a clue scratched into the paint: *“Follow the emeralds.”*  
-- **Vito & Sammy**: Mutual respect forged in back-alley brawls. Sammy covers for Vito during police raids; Vito smuggles him Cuban cigars.  
-- **Fletcher & Burns**: Childhood friends turned adversaries. Fletcher published Burns’ son’s arrest record; Burns leaked Fletcher’s affair with a chorus girl.  
-
-**ADDITIONAL MINOR CHARACTERS:**  
-
-- **Mae (Diner Cook)**: 65, missing three fingers. Serves Viv extra bacon when she’s broke. Hides a sawed-off shotgun under the grill.  
-- **Pearl (Harbor Lights Bartender)**: One-eyed gem smuggler. Traded a diamond for Viv’s silence about her role in the heist.  
-- **Dutch (Homeless Vet)**: Claims he “saw the throne walk on water” the night of the heist. Viv buys him coffee; he spits prophecies into the Hudson fog.
+**Final Word Count**: ~3,100 words.
