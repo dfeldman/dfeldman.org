@@ -1,4 +1,4 @@
-name: review_commons
+name: edit_outline
 type: review_commons
 main_prompt: '
   You''ve written the initial brief, characters, setting, and outline for your next hit novel. Congratulations!
