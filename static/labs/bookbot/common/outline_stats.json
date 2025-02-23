@@ -1,47 +1,47 @@
 {
-  "input_tokens": 80765,
-  "output_tokens": 6731,
-  "time": 181.6396176815033,
+  "input_tokens": 79111,
+  "output_tokens": 6531,
+  "time": 177.3571901321411,
   "calls": [
     {
-      "timestamp": "2025-02-23T15:36:08.900095",
-      "input_tokens": 18266,
-      "output_tokens": 1836,
-      "elapsed": 56.01066279411316,
+      "timestamp": "2025-02-23T15:44:15.448911",
+      "input_tokens": 17840,
+      "output_tokens": 1775,
+      "elapsed": 53.913976192474365,
       "retry": 1,
       "provider": "Together",
       "model": "deepseek/deepseek-r1"
     },
     {
-      "timestamp": "2025-02-23T15:36:52.434833",
-      "input_tokens": 19614,
-      "output_tokens": 1703,
-      "elapsed": 43.50803995132446,
+      "timestamp": "2025-02-23T15:45:00.173642",
+      "input_tokens": 19186,
+      "output_tokens": 1704,
+      "elapsed": 44.699472188949585,
       "retry": 2,
       "provider": "Together",
       "model": "deepseek/deepseek-r1"
     },
     {
-      "timestamp": "2025-02-23T15:37:28.714814",
-      "input_tokens": 20850,
-      "output_tokens": 1515,
-      "elapsed": 36.256155014038086,
+      "timestamp": "2025-02-23T15:45:45.061713",
+      "input_tokens": 20451,
+      "output_tokens": 1732,
+      "elapsed": 44.861533880233765,
       "retry": 3,
       "provider": "Together",
       "model": "deepseek/deepseek-r1"
     },
     {
-      "timestamp": "2025-02-23T15:38:14.606588",
-      "input_tokens": 22035,
-      "output_tokens": 1677,
-      "elapsed": 45.86475992202759,
+      "timestamp": "2025-02-23T15:46:18.971476",
+      "input_tokens": 21634,
+      "output_tokens": 1320,
+      "elapsed": 33.8822078704834,
       "retry": 4,
       "provider": "Together",
       "model": "deepseek/deepseek-r1"
     }
   ],
-  "previous_input_tokens": "59627",
-  "previous_output_tokens": "5593",
-  "previous_time": "167.63924908638",
+  "previous_input_tokens": "58730",
+  "previous_output_tokens": "5054",
+  "previous_time": "135.7748577594757",
   "previous_continuation_count": "3"
 }
