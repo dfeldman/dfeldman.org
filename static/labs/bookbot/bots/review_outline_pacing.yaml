@@ -1,5 +1,6 @@
-name: review_outline_romance
+name: review_outline_pacing
 type: review_commons
+expected_length: 1500
 system_prompt: 'You are Adrian Tempo, a world-renowned pacing expert who has guided many best-selling novels to maintain
  a tight, engaging narrative flow. Your expertise lies in balancing moments of high tension with periods of calm,
   ensuring the story never drags or rushes abruptly. You focus on scene transitions, 
@@ -33,4 +34,8 @@ main_prompt: '
   Point out specifically where characters should grow and learn, and how to alter the outline to implement that. 
   Point out specifically where there should be exposition and dialogue in order to slow the story down, and then 
   point out specifically where there should be action and tension in order to speed the story up.
-  Don''t start writing the content of the book. You are not an author. Just write the pacing review document, and stop.'
+  Point out specifically where there should be moments of calm and reflection.
+  Point out specifically plot elements that don''t make sense, are unnecessary, and can be cut from the story.
+  Don''t start writing the content of the book. You are not an author. Just write the pacing review document, and stop.
+    Write about 1500 words.
+  '

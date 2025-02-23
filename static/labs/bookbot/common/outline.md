@@ -1,139 +1,122 @@
 ---
 created_at: 2025-02-22T12:42:10.882697
-command: edit_review_outline_action_edit_outline
+command: edit_review_outline_realism_edit_outline
 bot: edit_outline
-timestamp: 2025-02-23T15:26:42.145009
-input_tokens: 59627
-output_tokens: 5593
-total_time: 167.63924908638
+timestamp: 2025-02-23T15:37:28.724188
+input_tokens: 58730
+output_tokens: 5054
+total_time: 135.7748577594757
 continuation_count: 3
 provider: Together
 model: deepseek/deepseek-r1
-time: 167.63924908638
-total_input_tokens: 59627
-total_output_tokens: 5593
+time: 135.7748577594757
+total_input_tokens: 58730
+total_output_tokens: 5054
 total_continuation_count: 3
 ---
-**Revised Chapter-by-Chapter Outline**  
-**Total Word Count**: ~8,000  
+### **Revised Chapter-by-Chapter Outline**  
+**Total Word Count**: ~11,000  
 
 ---  
 
 ### **Chapter 1: Dust & Desire**  
-**Word Count**: 1,600 | **Timeline**: June 3-5, 1929  
+**Word Count**: 2,100 | **Timeline**: June 3-5, 1929  
 
 #### **Scene 1: The Metropolitan Museum Heist Gallery**  
-**Setting**: Gallery 17, 10:00 AM. Sunlight filters through cracked stained glass, illuminating dust motes swirling above the Golden Throne’s empty plinth.  
-**Characters**: Vivian (alone), Guard Joe (nervous twitch), Celeste (posing as a society matron).  
+**Setting**: Gallery 17, 10:00 AM. Shattered glass crunches under Vivian’s oxfords as she kneels beside the Golden Throne’s plinth.  
+**Characters**: Vivian (alone), Guard Joe (shift-eyed), Celeste (disguised in lace gloves).  
 **Key Beats**:  
-1. **Sensuality**: Vivian’s fingertips trace her father’s initials carved into the floor—*Old Spice and gunpowder haunt her memory*. Sweat beads under her silk blouse as she spots fresh glue on the throne’s replica.  
-2. **Mystery**: Peels back a corner of the throne’s gilding to reveal *Celeste’s forged signature* in crimson paint. Guard Joe’s cufflinks (*Kensington’s crest*) glint as he blocks the service door, throat bobbing.  
-3. **Action**: Celeste “accidentally” drops a tube of cadmium red paint. Vivian pockets it—*later, the opium-jasmine scent links to the Jade Lily brothel*.  
-4. **Romantic Foreshadowing**: A silver lighter (*engraved “Rosa”*) clatters from a fleeing thug’s pocket. Vivian ignites it—*flame reflects in Vito’s watching eyes across the gallery*. His knuckles whiten on the doorframe before he vanishes.  
+1. **Sensuality**: Vivian’s fingers brush her father’s initials carved into the marble. *His Old Spice lingers in memory.* Sweat dampens her silk blouse as she peels back the throne’s replica gilding—*fresh glue glistens*.  
+2. **Mystery**: Celeste “trips,” spilling a tube of Prussian blue paint. *The scent of opium clings to her pearls.* Vivian pockets the tube, smirking as Guard Joe’s cufflinks (*Kensington’s crest*) catch the light.  
+3. **Violence**: A thug lunges from the service door—*switchblade grazes her thigh*. She disarms him as his silver lighter (*engraved “Rosa”*) skids across the floor. *Vito’s shadow looms in the doorway, gone before she can scream.*  
 
 #### **Scene 2: Daily Sentinel Newsroom**  
-**Setting**: 2:30 PM. Ernie’s smirk lingers as Fletcher’s cigar ash stains Vivian’s notes.  
-**Characters**: Vivian (fuming), Fletcher (barking orders), Freddie (lounging on her desk).  
+**Setting**: 2:30 PM. Ernie’s smirk curdles as Vivian slams his hand in a drawer.  
+**Characters**: Vivian (bloodied knuckles), Fletcher (cigar ash staining her notes), Freddie (lounging on her desk).  
 **Key Beats**:  
-1. **Conflict**: Ernie steals her notes on the museum glue; Vivian slams his hand in a drawer. “Next time, I’ll break your nose *and* your Remington.” Fletcher’s lips twitch approvingly.  
-2. **Sensual Tension**: Fletcher leans close—bourbon breath, calloused thumb brushing her jaw. “Chase this story, you’ll feed the eels in the Hudson.” The heat of his grip lingers.  
-3. **Clue**: Freddie slips a train ticket into her garter, fingers lingering. “The 9:15 to Long Island, Red. Bring the lighter.” His ice-blue eyes track her hips as she leaves.  
+1. **Conflict**: “Next time I’ll break your nose and your Remington,” Vivian hisses. Fletcher’s calloused thumb tilts her chin. “Chase this story, sweetheart, and you’ll feed the eels.”  
+2. **Romantic Foreshadowing**: Freddie’s gloved hand slips a train ticket into her garter. *His monocle reflects her parted lips.* “The 9:15 to Long Island, Red. Wear the emerald.”  
+3. **Clue**: Eleanor’s coded note tumbles from a filing cabinet: *“Follow the blue. —Madame X”*  
 
 #### **Scene 3: The Blind Owl Speakeasy**  
-**Setting**: Midnight. Smoke coils around Vito’s trembling hands as he scrubs bloodstains from the mahogany bar.  
-**Characters**: Vivian (disheveled), Vito (sweating through his shirt), Enzo’s thug (cracking knuckles).  
+**Setting**: Midnight. Vito scrubs blood from the bar, his sleeves rolled to reveal Sicilian tattoos.  
+**Characters**: Vivian (gin-splashed), Vito (knuckles split), Enzo’s thug (leering).  
 **Key Beats**:  
-1. **Sexual Tension**: Vito wipes spilled gin from her wrist—*slow drag of cloth over her pulse*. “You cost me two grand tonight.” His thumb presses into her palm’s scar.  
-2. **Violence**: Thug grabs her thigh; she smashes a highball glass across his face. *Blood sprays as Enzo’s laughter booms*. Vivian’s torn stocking reveals a garter holster—Vito’s gaze lingers.  
-3. **Mystery**: Shoved into the storage room, Vivian spots *Rosalia’s photo face-down* near an open safe. Torn manifests list *“Byzantine artifacts → Pier 17”*. A ledger page sticks to her shoe—*smudged “Kensington”*.  
-
-**CONTINUE**  
-**Current Word Count**: 1,600  
-
----  
-
-### **Chapter 1: Dust & Desire (Cont’d)**  
-**Word Count**: 1,400 | **Cumulative**: 3,000  
-
-#### **Scene 4: Thompson Street Fire Escape**  
-**Setting**: 3:00 AM. Rain soaks Vivian’s silk slip as Rex’s shadow swallows the alley below.  
-**Characters**: Vivian (barefoot), Rex (soaked trench coat), Eleanor (candle flickering upstairs).  
-**Key Beats**:  
-1. **Betrayal**: Rex yanks her down by the ankle—*knife pressed to her ribs*. “I buried your father’s shame. Let it rot.” His whiskey-soaked voice cracks.  
-2. **Sensuality**: Rain slides between her breasts as she knees his groin. *He grunts, grips her waist to steady himself—heat cuts through the cold*. A matchbook (*Jade Lily logo*) falls from his pocket.  
-3. **Clue**: Eleanor’s silhouette shatters a teacup upstairs—*bloodied shard lands at Vivian’s feet*. The fragment glints with embossed letters: *“HK”*.  
+1. **Erotic Tension**: Vito wipes spilled gin from her wrist. *Cloth drags slow over her pulse.* “You cost me a grand tonight.” His breath ghosts her collarbone.  
+2. **Violence**: Thug grabs her thigh—*highball glass shatters his nose*. Enzo’s laughter shakes the rafters as Vivian’s garter holster presses into Vito’s ribs.  
+3. **Mystery**: In the storage room, Rosalia’s photo lies face-down. *Torn manifests list “Golden Throne → Pier 17.”* A ledger page sticks to Vivian’s shoe—*smudged “Kensington” in crimson.*  
 
 ---  
 
 ### **Chapter 2: Whiskey & Wounds**  
-**Word Count**: 1,800 | **Cumulative**: 4,800  
+**Word Count**: 2,400 | **Cumulative**: 4,500  
 
 #### **Scene 1: Rex’s Pawnshop Office**  
-**Setting**: 8:00 AM. Dusty ledgers, a bloodstained rug, and the stench of regret.  
-**Characters**: Vivian (hungover), Rex (loading a revolver), Freddie (lounging in the doorway).  
+**Setting**: 8:00 AM. Dust motes swirl as Rex’s whiskey-laced growl cuts through stale air.  
+**Characters**: Vivian (hungover), Rex (revolver gleaming), Freddie (grinning in the doorway).  
 **Key Beats**:  
-1. **Conflict**: Rex slams a 1926 police report—*Kensington’s face circled in red*. “Your father died a thief. Let it lie.” Vivian’s fist cracks his jaw—*blood drips onto her Oxfords*.  
-2. **Action**: She snatches a ledger—*tremor in her grip*. “I’ll make you retract that with your *teeth*.” The pages smell of gunpowder and burnt sugar.  
-3. **Romantic Foreshadowing**: Freddie’s gloved hand brushes her waist. *Train ticket slides into her garter*. “Wear the emerald tonight. It matches your rage.” His monocle reflects Rex’s twitching eye—*a silent warning*.  
+1. **Conflict**: Rex slams a 1926 police report. “Your father died a thief.” *Her fist cracks his jaw.* Blood drips onto her Oxfords.  
+2. **Betrayal**: She snatches the report—*Kensington’s face circled in red.* “I’ll make you retract that with your teeth.”  
+3. **Romantic Foreshadowing**: Freddie’s hand lingers at her waist. “The gala’s no place for virgins, Red.” His monocle hides a flicker of guilt.  
 
 #### **Scene 2: Pier 17 Smuggle Den**  
-**Setting**: Noon. Rotting fish, crates stamped with mayoral insignias.  
-**Characters**: Vivian (disguised as dockworker), Celeste (forging manifests), Vito (watching from shadows).  
+**Setting**: Noon. Rotting fish clog the air as dockworkers hoist crates stamped with city seals.  
+**Characters**: Vivian (disguised in overalls), Celeste (forging manifests), Vito (watching from shadows).  
 **Key Beats**:  
-1. **Violence**: Thug spots her—*switchblade duel on rain-slick planks*. She disarms him with a fishhook to the eye. His scream draws Vito—*his fists move like pistons*.  
-2. **Mystery**: Celeste’s forgery kit—*half-painted Titian, Golden Throne sketches*. “Kensington pays in emeralds and threats.” Her trembling hand reveals track marks.  
-3. **Clue**: Crate #14 contains *necklace jewels* matching the throne—*engraved “HK”*. Vito’s lighter ignites the manifest—*burns too fast, too bright*.  
+1. **Action**: Thug spots her—*switchblade duel on rain-slick planks.* She disarms him with a fishhook. *Vito’s fists finish the job.*  
+2. **Clue**: Celeste’s forgery kit reveals *half-painted Titians and throne sketches.* “Kensington pays in threats,” she whispers, track marks trembling.  
+3. **Erotic Tension**: Vito’s lighter ignites a manifest. *Flames reflect in his eyes.* “You’re bad for business, Red.” His thumb brushes soot from her cheek.  
 
 **CONTINUE**  
-**Current Word Count**: 3,200
-**Chapter 3: Silk & Scalpels**  
-**Word Count**: 2,100 | **Cumulative**: 6,900  
+**Current Word Count**: 2,100
+### **Chapter 3: Silk & Scalpels**  
+**Word Count**: 2,200 | **Cumulative**: 6,700  
 
 #### **Scene 1: Jade Lily Brothel**  
-**Setting**: Midnight. Opium haze clings to crimson silk drapes. A guzheng’s discordant notes slice through murmured deals.  
-**Characters**: Vivian (disguised in black qipao slit to the thigh), Madame Ling (nails like talons), Celeste (forging passports in a backroom).  
+**Setting**: Midnight. Opium smoke swirls around crimson lanterns. A guzheng’s discordant notes mask whispered threats.  
+**Characters**: Vivian (disguised in qipao slit to mid-thigh), Madame Ling (nails like daggers), Celeste (forging passports in a backroom).  
 **Key Beats**:  
-1. **Sensual Peril**: A client’s hand strays too high—*Madame Ling’s hairpin pricks Vivian’s spine*. “Men talk more when they’re sweating,” she purrs, breath hot with cloves. Vivian’s garter holster digs into her skin as she forces a smile.  
-2. **Violence**: Celeste “accidentally” spills acid—*dissolves a crate lock*. Vivian snatches forged manifests (*“KT Est. Shipments → Throne Fragments”*), pages damp with tunnel mildew.  
+1. **Sensual Peril**: A client’s hand slides up Vivian’s leg—*Madame Ling’s hairpin pricks her spine*. “Men talk more when they’re sweating,” she purrs. Vivian’s garter holster digs into her skin as she forces a smile.  
+2. **Violence**: Celeste “spills” acid—*dissolves a crate lock*. Vivian snatches manifests (*“Kensington Est. → Dock 9”*), pages damp with tunnel mildew.  
 3. **Clue**: Behind a lacquered screen, a nude portrait of Kensington smirks—*Golden Throne sketched in shadow*. Celeste’s signature hides in the brushstrokes. The canvas reeks of linseed oil and fear.  
-4. **Action**: Bodyguard lunges—*Vivian cracks his skull with a jade vase*. Shards scatter like emeralds. Celeste slips a key into her hand: *“Pier 17, Dock C. Midnight.”*  
+4. **Action**: Bodyguard lunges—*Vivian cracks his skull with a jade vase*. Shards scatter like emeralds. Celeste slips a key into her hand: *“Pier 17, Midnight. Bring the lighter.”*  
 
 #### **Scene 2: Fulton Street Tunnel Entrance**  
-**Setting**: 2:00 AM. Rat claws screech on rusted tracks. Flickering bulb illuminates a mine cart’s splintered seat.  
-**Characters**: Vivian (grime-streaked), Vito (knuckles raw), Celeste (clutching a stitch in her side).  
+**Setting**: 2:00 AM. Rat claws screech on rusted tracks. A flickering bulb illuminates a mine cart’s splintered seat.  
+**Characters**: Vivian (grime-streaked), Vito (knuckles raw), Celeste (clutching her side).  
 **Key Beats**:  
-1. **Betrayal**: Celeste hesitates—“Kensington has my daughter. I can’t—” *Vito shoves her into the cart*. “You already did.” The cart lurches, Celeste’s scream swallowed by tunnel echoes.  
+1. **Betrayal**: Celeste hesitates—“He has my daughter. I can’t—” *Vito shoves her into the cart*. “You already did.” The cart lurches, Celeste’s scream swallowed by echoes.  
 2. **Mystery**: Celeste’s map reveals a *retinal scanner* at the vault—*requires Kensington’s left eye*. “Pluck it or blind him,” she snarls. Vivian’s fingers brush the scalpel in her pocket.  
 3. **Erotic Tension**: Vivian bandages Vito’s bullet graze—*linen strips tighten around his bicep*. His thumb brushes her jaw. “Why’d you follow me?” “You’re bad for business.” Their thighs press together as the cart rattles into darkness.  
 
 ---  
 
 ### **Chapter 4: Gilded Knives**  
-**Word Count**: 1,900 | **Cumulative**: 8,800  
+**Word Count**: 2,400 | **Cumulative**: 9,100  
 
 #### **Scene 1: Kensington Estate Ballroom**  
-**Setting**: 9:00 PM. Crystal chandeliers refract light through champagne flutes. A string quartet races through *Rhapsody in Blue*.  
-**Characters**: Vivian (emerald silk clinging to sweat-slick skin), Vito (ill-fitting tux, switchblade in cummerbund), Charles Beaumont (marked for death).  
+**Setting**: 9:00 PM. Crystal chandeliers fracture light through champagne flutes. A waltz crescendos as Charles Beaumont’s laughter turns to a gurgle.  
+**Characters**: Vivian (emerald silk clinging to sweat-slick skin), Vito (ill-fitting tux, switchblade in cummerbund), Charles (marked for death).  
 **Key Beats**:  
-1. **Sensual Dance**: Vito’s hand slides lower during the waltz—*calloused palm burns through silk*. “Eyes on the mayor, not my ass,” Vivian breathes, spotting Kensington’s *gold cufflinks* across the room.  
-2. **Violence**: Charles whispers, “The throne’s beneath us—” *gunshot*. Blood sprays Vivian’s dress—*warm and metallic*. She catches him as he falls, his last breath fogging her pendant.  
-3. **Clue**: Dead man’s pocket watch stops at *11:07—tunnel shipment time*. Vito pockets it as guests scream, his other hand steadying Vivian’s trembling wrist.  
+1. **Sensual Dance**: Vito’s hand slides lower during the waltz—*calloused palm burns through silk*. “Eyes on the mayor,” Vivian breathes, spotting Kensington’s *gold cufflinks*.  
+2. **Violence**: Charles whispers, “The throne’s beneath us—” *gunshot*. Blood sprays her dress—*warm and metallic*. She catches him as he falls, his last breath fogging her pendant.  
+3. **Clue**: Dead man’s pocket watch stops at *11:07—tunnel shipment time*. Vito pockets it, his other hand steadying her trembling wrist.  
 
 #### **Scene 2: Hedge Maze Ambush**  
 **Setting**: 11:00 PM. Moonlight sharpens thorny rose canes. Gravel crunches under fleeing steps.  
 **Characters**: Vivian (bloodied hem), Inspector Burns (silencer glinting), Vito (dragging her into shadows).  
 **Key Beats**:  
-1. **Brutal Combat**: Burns’ bullet grazes Vivian’s hip—*Vito tackles him into thorns*. “He owns the cops!” Vito roars, brass knuckles crunching into Burns’ gun hand. A gold tooth flies into the hydrangeas.  
-2. **Mystery**: Burns’ badge—*Kensington’s initials etched on the back*. Vivian snaps a photo as he flees, Kodak flash illuminating his snarling face.  
-3. **Intimate Aftermath**: Vivian stitches Vito’s arm—*needle glints in moonlight*. His teeth sink into her shoulder to muffle pain. “Don’t… don’t stop.” Her breath hitches—*needle slips, blood blooms on linen*.  
+1. **Brutal Combat**: Burns’ bullet grazes Vivian’s hip—*Vito tackles him into thorns*. “He owns the cops!” Brass knuckles crunch bone. A gold tooth flies into hydrangeas.  
+2. **Mystery**: Burns’ badge—*Kensington’s initials etched on the back*. Vivian snaps a photo as he flees, Kodak flash freezing his snarl.  
+3. **Intimate Aftermath**: Vivian stitches Vito’s arm—*needle glints in moonlight*. His teeth sink into her shoulder to muffle pain. “Don’t… stop.” Her breath hitches—*blood blooms on linen*.  
 
 **CONTINUE**  
-**Current Word Count**: 4,700
-**Chapter 5: Forged in Fire**  
-**Word Count**: 2,300 | **Cumulative**: 11,100  
+**Current Word Count**: 2,200
+### **Chapter 5: Forged in Fire**  
+**Word Count**: 2,600 | **Cumulative**: 11,700  
 
 #### **Scene 1: Celeste’s Soho Studio**  
-**Setting**: 3:00 AM. Turpentine stings the air. Half-faked Monet water lilies sag under flickering Edison bulbs.  
+**Setting**: 3:00 AM. Turpentine fumes sting the air. Half-faked Monet water lilies sag under flickering bulbs.  
 **Characters**: Vivian (bloodied blouse), Celeste (wild-eyed, scalpel in hand), Freddie (leaning on the doorframe, monocle cracked).  
 **Key Beats**:  
 1. **Desperate Confrontation**: Celeste slashes at Vivian—“Touch the Cézanne and I’ll flay you alive!” Her smock drips Prussian blue—*same shade as Kensington’s cufflinks*. Vivian parries with a palette knife, nicking Celeste’s wrist.  
@@ -151,7 +134,7 @@ total_continuation_count: 3
 ---  
 
 ### **Chapter 6: Ashes & Echoes**  
-**Word Count**: 2,400 | **Cumulative**: 13,500  
+**Word Count**: 2,800 | **Cumulative**: 14,500  
 
 #### **Scene 1: The Blind Owl’s Last Call**  
 **Setting**: Dawn. Shattered glass litters the floor. Enzo’s corpse (throat slit) stares at Rosalia’s photo on the bar.  
@@ -170,9 +153,9 @@ total_continuation_count: 3
 3. **Clue**: Eleanor’s coded FBI letter—*signed “Madame X”*—falls from the hymnal. *Address: Celeste’s studio*. The paper reeks of lavender and regret.  
 
 **CONTINUE**  
-**Current Word Count**: 7,100
-**Chapter 7: Throne of Lies**  
-**Word Count**: 2,600 | **Cumulative**: 16,100  
+**Current Word Count**: 2,600
+### **Chapter 7: Throne of Lies**  
+**Word Count**: 3,200 | **Cumulative**: 17,700  
 
 #### **Scene 1: City Hall Tunnel Collapse**  
 **Setting**: 3:00 AM. Ceiling cracks spiderweb across damp concrete. Mine carts derail, sparks flying from severed wires.  
@@ -195,7 +178,7 @@ total_continuation_count: 3
 ---  
 
 ### **Epilogue: Pacific Veils**  
-**Word Count**: 1,200 | **Cumulative**: 17,300  
+**Word Count**: 1,500 | **Cumulative**: 19,200  
 
 **Setting**: Malibu cliffside. 1931. Salt air tangles with typewriter clatter. Waves crash below a stilted bungalow.  
 **Key Beats**:  

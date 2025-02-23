@@ -1,47 +1,47 @@
 {
-  "input_tokens": 82117,
-  "output_tokens": 6893,
-  "time": 211.05758810043335,
+  "input_tokens": 80765,
+  "output_tokens": 6731,
+  "time": 181.6396176815033,
   "calls": [
     {
-      "timestamp": "2025-02-23T15:25:08.022356",
-      "input_tokens": 18294,
-      "output_tokens": 2477,
-      "elapsed": 73.57225012779236,
+      "timestamp": "2025-02-23T15:36:08.900095",
+      "input_tokens": 18266,
+      "output_tokens": 1836,
+      "elapsed": 56.01066279411316,
       "retry": 1,
       "provider": "Together",
       "model": "deepseek/deepseek-r1"
     },
     {
-      "timestamp": "2025-02-23T15:25:47.866848",
-      "input_tokens": 20028,
-      "output_tokens": 1477,
-      "elapsed": 39.82350993156433,
+      "timestamp": "2025-02-23T15:36:52.434833",
+      "input_tokens": 19614,
+      "output_tokens": 1703,
+      "elapsed": 43.50803995132446,
       "retry": 2,
       "provider": "Together",
       "model": "deepseek/deepseek-r1"
     },
     {
-      "timestamp": "2025-02-23T15:26:42.132883",
-      "input_tokens": 21305,
-      "output_tokens": 1639,
-      "elapsed": 54.243489027023315,
+      "timestamp": "2025-02-23T15:37:28.714814",
+      "input_tokens": 20850,
+      "output_tokens": 1515,
+      "elapsed": 36.256155014038086,
       "retry": 3,
       "provider": "Together",
       "model": "deepseek/deepseek-r1"
     },
     {
-      "timestamp": "2025-02-23T15:27:25.576053",
-      "input_tokens": 22490,
-      "output_tokens": 1300,
-      "elapsed": 43.418339014053345,
+      "timestamp": "2025-02-23T15:38:14.606588",
+      "input_tokens": 22035,
+      "output_tokens": 1677,
+      "elapsed": 45.86475992202759,
       "retry": 4,
       "provider": "Together",
       "model": "deepseek/deepseek-r1"
     }
   ],
-  "previous_input_tokens": "79217",
-  "previous_output_tokens": "7713",
-  "previous_time": "260.64052987098694",
-  "previous_continuation_count": "4"
+  "previous_input_tokens": "59627",
+  "previous_output_tokens": "5593",
+  "previous_time": "167.63924908638",
+  "previous_continuation_count": "3"
 }
