@@ -21,7 +21,7 @@ import re
 
 
 # Disable all LLM calls
-DRY_RUN = True
+DRY_RUN = False
 
 # Set up rich console for better output
 console = Console()
@@ -1553,9 +1553,10 @@ class BookBot:
 
             # Generate review using the reviewer bot
             if revise_step_name:
-                review_file = self.config["review_dir"] + f"/{file_path.stem}_review.md"
+                review_file = self.config["review_dir"] + f"/{file_path.stem}_{revise_step_name}_review"
             else:
-                review_file = self.config["review_dir"] + f"/{file_path.stem}_{reviewer_bot}_review.md"
+                # TODO Add a number in case this file does exist?
+                review_file = self.config["review_dir"] + f"/{file_path.stem}_{reviewer_bot}_review"
             self._call_llm(
                 review_file,
                 reviewer_bot,
