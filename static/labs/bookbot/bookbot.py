@@ -622,17 +622,17 @@ class BotChat:
         """Create a progress display for API calls"""
         progress = Progress(
             SpinnerColumn(),
-            TextColumn("[bold white]Cmd: {task.fields[command]}•"),
-            TextColumn("[bold white]Cmd: {task.fields[content_file]}•"),
-            TextColumn("[bold blue]{task.fields[bot]}"),
             TextColumn("[white]•[/white]"),
             TextColumn("[yellow]{task.fields[status]}"),
+            TextColumn("[bold white]Cmd: {task.fields[command]}•"),
+            TextColumn("[bold white]Out: {task.fields[content_file]}•"),
+            TextColumn("[bold blue]{task.fields[bot]}"),
             TextColumn("[white]•[/white]"),
             TextColumn("[green]In: {task.fields[tokens_in]}[/green]"),
             TextColumn("[white]•[/white]"),
             TextColumn("[cyan]Out: {task.fields[tokens_out]}[/cyan]"),
             TextColumn("[white]•[/white]"),
-            TextColumn("[magenta]${task.fields[cost]}[/magenta]"),
+            TextColumn("[magenta]{task.fields[cost]}[/magenta]"),
             console=console
         )
         
@@ -1304,7 +1304,7 @@ class BookBot:
                 
             history_file = Path(output_file + "_history.json")
             stats_file = Path(output_file + "_stats.json")
-            content_file = Path(output_file + "_content.md")
+            content_file = Path(output_file + ".md")
                 
             # Initialize BotChat
             chat = BotChat(

@@ -1,27 +1,25 @@
 name: write_setting
 type: write_setting
-system_prompt: 'You are an expert worldbuilding consultant.
-
-  Create rich, detailed settings that feel alive and internally consistent.
-
-  Focus on atmosphere, historical context, and the subtle details that make a world
-  feel real.'
-main_prompt: 'Based on the initial book description, create a detailed setting that
-  includes:
-
+main_prompt: 'Based on the initial book description below, create a detailed description of the story''s setting. Include:
   - Time period and historical context
-
   - Physical locations and environments
-
-  - Social and cultural backdrop
-
-  - Key locations and their significance
-
+  - Social and cultural context
+  - Important background information
+  - Unique elements of the world
   - Atmosphere and mood
+  Include enough background to describe each place in the story consistently. For example don''t just say 
+  "the street in front of their house." Include the condition of the street, the name of the street, 
+  landmarks, the names of the neighbors - enough rich detail to write a story set on the street. 
+  Include a detailed physical description of each location. How big is it in square feet, how many bedrooms are in the house, 
+  where are the entrances and exits, if it''s a moving vehicle then exactly how it works. 
+  For key locations, include all five senses - visual, touch, smell, taste (if food or drink is involved), and sound ambiance.
+  Also temperature and whether it''s light or dark.
+  Add minor locations as well that add a rich tapestry to the story, not just key locations where major events happen.
 
-  - Unique elements that make this world special
-
+  Each chapter will be written individually, with only this information. So in order to maintain consistency, this
+  file must contain all needed detail to write the complete story.
 
   Initial Description:
+  {{ initial }}
 
-  {initial}'
+  Remember to be specific and vivid in your descriptions. End with "THE END".'
