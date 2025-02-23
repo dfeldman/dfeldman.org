@@ -1,56 +1,47 @@
 {
-  "input_tokens": 101961,
-  "output_tokens": 8141,
-  "time": 283.27127385139465,
+  "input_tokens": 82117,
+  "output_tokens": 6893,
+  "time": 211.05758810043335,
   "calls": [
     {
-      "timestamp": "2025-02-23T15:17:11.910794",
-      "input_tokens": 17530,
-      "output_tokens": 2428,
-      "elapsed": 73.5383768081665,
+      "timestamp": "2025-02-23T15:25:08.022356",
+      "input_tokens": 18294,
+      "output_tokens": 2477,
+      "elapsed": 73.57225012779236,
       "retry": 1,
       "provider": "Together",
       "model": "deepseek/deepseek-r1"
     },
     {
-      "timestamp": "2025-02-23T15:18:16.507806",
-      "input_tokens": 19317,
-      "output_tokens": 1951,
-      "elapsed": 64.58094310760498,
+      "timestamp": "2025-02-23T15:25:47.866848",
+      "input_tokens": 20028,
+      "output_tokens": 1477,
+      "elapsed": 39.82350993156433,
       "retry": 2,
       "provider": "Together",
       "model": "deepseek/deepseek-r1"
     },
     {
-      "timestamp": "2025-02-23T15:19:15.759640",
-      "input_tokens": 20601,
-      "output_tokens": 1757,
-      "elapsed": 59.22531795501709,
+      "timestamp": "2025-02-23T15:26:42.132883",
+      "input_tokens": 21305,
+      "output_tokens": 1639,
+      "elapsed": 54.243489027023315,
       "retry": 3,
       "provider": "Together",
       "model": "deepseek/deepseek-r1"
     },
     {
-      "timestamp": "2025-02-23T15:20:19.075222",
-      "input_tokens": 21769,
-      "output_tokens": 1577,
-      "elapsed": 63.295892000198364,
+      "timestamp": "2025-02-23T15:27:25.576053",
+      "input_tokens": 22490,
+      "output_tokens": 1300,
+      "elapsed": 43.418339014053345,
       "retry": 4,
-      "provider": "Together",
-      "model": "deepseek/deepseek-r1"
-    },
-    {
-      "timestamp": "2025-02-23T15:20:41.743864",
-      "input_tokens": 22744,
-      "output_tokens": 428,
-      "elapsed": 22.630743980407715,
-      "retry": 5,
       "provider": "Together",
       "model": "deepseek/deepseek-r1"
     }
   ],
-  "previous_input_tokens": "35730",
-  "previous_output_tokens": "3961",
-  "previous_time": "165.55506992340088",
-  "previous_continuation_count": "2"
+  "previous_input_tokens": "79217",
+  "previous_output_tokens": "7713",
+  "previous_time": "260.64052987098694",
+  "previous_continuation_count": "4"
 }
