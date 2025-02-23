@@ -1,47 +1,38 @@
 {
-  "input_tokens": 86077,
-  "output_tokens": 5703,
-  "time": 244.10987758636475,
+  "input_tokens": 55905,
+  "output_tokens": 5355,
+  "time": 221.41787481307983,
   "calls": [
     {
-      "timestamp": "2025-02-23T15:04:47.573042",
-      "input_tokens": 20060,
-      "output_tokens": 1227,
-      "elapsed": 46.11965084075928,
+      "timestamp": "2025-02-23T15:11:54.745152",
+      "input_tokens": 17090,
+      "output_tokens": 2062,
+      "elapsed": 92.2513689994812,
       "retry": 1,
       "provider": "Together",
       "model": "deepseek/deepseek-r1"
     },
     {
-      "timestamp": "2025-02-23T15:05:50.873054",
-      "input_tokens": 20995,
-      "output_tokens": 1308,
-      "elapsed": 63.28398275375366,
+      "timestamp": "2025-02-23T15:13:08.073813",
+      "input_tokens": 18640,
+      "output_tokens": 1899,
+      "elapsed": 73.30370092391968,
       "retry": 2,
       "provider": "Together",
       "model": "deepseek/deepseek-r1"
     },
     {
-      "timestamp": "2025-02-23T15:07:09.113458",
-      "input_tokens": 21897,
-      "output_tokens": 1852,
-      "elapsed": 78.22338008880615,
+      "timestamp": "2025-02-23T15:14:03.963656",
+      "input_tokens": 20175,
+      "output_tokens": 1394,
+      "elapsed": 55.862804889678955,
       "retry": 3,
-      "provider": "Together",
-      "model": "deepseek/deepseek-r1"
-    },
-    {
-      "timestamp": "2025-02-23T15:08:05.608784",
-      "input_tokens": 23125,
-      "output_tokens": 1316,
-      "elapsed": 56.482863903045654,
-      "retry": 4,
       "provider": "Together",
       "model": "deepseek/deepseek-r1"
     }
   ],
-  "previous_input_tokens": "70711",
-  "previous_output_tokens": "7283",
-  "previous_time": "252.41317296028137",
+  "previous_input_tokens": "62952",
+  "previous_output_tokens": "4387",
+  "previous_time": "187.6270136833191",
   "previous_continuation_count": "3"
 }

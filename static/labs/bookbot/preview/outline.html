@@ -11,332 +11,212 @@
         <body>
             <h1>Common - outline.md</h1>
             <div class="content">
-                <p><strong>Expanded Chapter-by-Chapter Outline</strong><br />
-<strong>Total Word Count</strong>: ~9,500 words  </p>
+                <p><strong>Revised Chapter-by-Chapter Outline</strong><br />
+<strong>Total Word Count</strong>: ~7,200 words  </p>
 <hr />
-<h3><strong>Chapter 1: The Spark Ignited</strong></h3>
-<p><strong>Word Count</strong>: 1,200 | <strong>Timeline</strong>: June 3-5, 1929  </p>
-<h4><strong>Scene 1: The Metropolitan Museum of Art – Heist Gallery</strong></h4>
-<p><strong>Setting</strong>: Gallery 17, 10:00 AM. Sunlight through stained glass, dust motes swirling.<br />
-<strong>Characters</strong>: Vivian (alone), Guard Joe (NPC), Harold Kensington (mentioned).<br />
-<strong>Story Elements</strong>:<br />
-1. <strong>INTRODUCTION</strong>: Gallery’s cracked marble floors and empty frames from 1926 heist.<br />
-2. <strong>SCENERY</strong>: Vivian’s oxfords echo; she traces her father’s initials carved on a pillar base.<br />
-3. <strong>DIALOGUE</strong>: Guard Joe warns, “Mayor’s men cleared the security logs. Nothing to see.”<br />
-4. <strong>ACTION</strong>: Vivian photographs glue smudges on throne replica. <strong>HOW</strong>: Uses father’s magnifying glass. <strong>EFFECT</strong>: Proves forgery.<br />
-5. <strong>KNOWLEDGE</strong>: Fresh scrape near service door—recent tunnel activity.  </p>
-<h4><strong>Scene 2: The <em>Daily Sentinel</em> Newsroom</strong></h4>
-<p><strong>Setting</strong>: Bullpen, 2:30 PM. Clattering typewriters, Fletcher’s cigar fog.<br />
-<strong>Characters</strong>: Vivian, Fletcher, Ernie (rival reporter).<br />
-<strong>Story Elements</strong>:<br />
-1. <strong>ACTION</strong>: Ernie steals Vivian’s notes; she slams his hand in a drawer. <strong>EFFECT</strong>: Fletcher laughs but warns her.<br />
-2. <strong>DIALOGUE</strong>: Fletcher: “Write fluff or get fired.” Vivian: “I’ll expose Kensington.”<br />
-3. <strong>SCENERY</strong>: Vivian’s chalkboard connects “Golden Throne → Tunnels → Mr. X.”<br />
-4. <strong>KNOWLEDGE</strong>: Police report mentions “Mr. X” paid off witnesses.  </p>
+<h3><strong>Chapter 1: Sparks in the Dark</strong></h3>
+<p><strong>Word Count</strong>: 1,400 | <strong>Timeline</strong>: June 3-5, 1929  </p>
+<h4><strong>Scene 1: The Metropolitan Museum</strong></h4>
+<p><strong>Setting</strong>: Gallery 17, 10:00 AM. Sunlight slicing through dust, empty frames glaring.<br />
+<strong>Characters</strong>: Vivian (alone), Guard Joe.<br />
+<strong>Key Beats</strong>:<br />
+1. <strong>Sensory</strong>: Vivian’s fingertips brush her father’s initials carved into marble. The ghost of his Old Spice lingers.<br />
+2. <strong>Action</strong>: Discovers fresh glue on the throne replica—<em>smells like betrayal</em>.<br />
+3. <strong>Mystery</strong>: Guard Joe’s new gold cufflinks (<em>Kensington’s emblem</em>) glint as he blocks the service door.<br />
+4. <strong>Romance</strong>: Vito’s lighter (<em>engraved “Rosa”</em>) falls from a thug’s pocket—Vivian pockets it, pulse racing.  </p>
+<h4><strong>Scene 2: <em>Daily Sentinel</em> Newsroom</strong></h4>
+<p><strong>Setting</strong>: 2:30 PM. Ernie’s smirk, Fletcher’s cigar smoke choking ambition.<br />
+<strong>Key Beats</strong>:<br />
+1. <strong>Conflict</strong>: Ernie steals her notes; Vivian slams his hand in a drawer. “Next time, I’ll break your typewriter.”<br />
+2. <strong>Sensuality</strong>: Fletcher leans close—bourbon breath, call#1:    sum  <br />
+CREATE TABLE sum_1 (  <br />
+    sumId INT PRIMARY KEY,  <br />
+    sum VARCHAR(255)  <br />
+);    </p>
+<h1>2:    sums_prop</h1>
+<p>CREATE TABLE sums_prop_2 (  <br />
+    sumPropId INT PRIMARY KEY,  <br />
+    sumPropName VARCHAR(255),  <br />
+    sumPropValue VARCHAR(255),  <br />
+    sumId INT,  <br />
+    FOREIGN KEY (sumId) REFERENCES sum_1(sumId)  <br />
+);    </p>
+<h1>3:    kind</h1>
+<p>CREATE TABLE kind_3 (  <br />
+    kindId INT PRIMARY KEY,  <br />
+    kindName VARCHAR(255),  <br />
+    sumPropId INT,  <br />
+    FOREIGN KEY (sumPropId) REFERENCES sums_prop_2(sumPropId)  <br />
+);    </p>
+<h1>4:    object</h1>
+<p>CREATE TABLE object_4 (  <br />
+    objectId INT PRIMARY KEY,  <br />
+    objectName VARCHAR(255),  <br />
+    kindId INT,  <br />
+    FOREIGN KEY (kindId) REFERENCES kind_3(kindId)  <br />
+);    </p>
+<h1>5:    obj_prop</h1>
+<p>CREATE TABLE obj_prop_5 (  <br />
+    objPropId INT PRIMARY KEY,  <br />
+    objPropName VARCHAR(255),  <br />
+    objPropValue VARCHAR(255),  <br />
+    objectId INT,  <br />
+    FOREIGN KEY (objectId) REFERENCES object_4(objectId)  <br />
+);</p>
+<h1>6:    link</h1>
+<p>CREATE TABLE link_6 (  <br />
+    linkId INT PRIMARY KEY,  <br />
+    linkName VARCHAR(255),  <br />
+    objectId INT,  <br />
+    FOREIGN KEY (objectId) REFERENCES object_4(objectId)  <br />
+);    </p>
+<h1>7:    link_prop</h1>
+<p>CREATE TABLE link_prop_7 (  <br />
+    linkPropId INT PRIMARY KEY,  <br />
+    linkPropName VARCHAR(255),  <br />
+    linkPropValue VARCHAR(255),  <br />
+    linkId INT,  <br />
+    FOREIGN KEY (linkId) REFERENCES link_6(linkId)  <br />
+);    </p>
+<h1>8:    link_obj</h1>
+<p>CREATE TABLE link_obj_8 (  <br />
+    linkObjId INT PRIMARY KEY,  <br />
+    linkObjName VARCHAR(255),  <br />
+    linkId INT,  <br />
+    objectId INT,  <br />
+    FOREIGN KEY (linkId) REFERENCES link_6(linkId),  <br />
+    FOREIGN KEY (objectId) REFERENCES object_4(objectId)  <br />
+);
+CONTINUE  </p>
+<h3><strong>Chapter 1: Sparks in the Dark (Cont’d)</strong></h3>
+<p><strong>Word Count</strong>: 1,300 (Cumulative: 2,700)  </p>
 <h4><strong>Scene 3: The Blind Owl Speakeasy</strong></h4>
-<p><strong>Setting</strong>: Back alley entrance, 9:00 PM. Jazz muffled by brick walls.<br />
-<strong>Characters</strong>: Vivian, Sammy (bartender), Vito (behind bar).<br />
-<strong>Story Elements</strong>:<br />
-1. <strong>INTRODUCTION</strong>: Vito’s silver lighter (engraved <em>Rosa</em>) and tremor while pouring gin.<br />
-2. <strong>ACTION</strong>: Vivian “spills” drink on mobster to distract; Vito drags her to office.<br />
-3. <strong>DIALOGUE</strong>: Vito: “Kensington owns the cops. Stop digging.”<br />
-4. <strong>SCENERY</strong>: Rosalia’s photo falls—Vito’s hands shake as he rights it.<br />
-5. <strong>FORESHADOWING</strong>: Safe behind desk hums—art inside?  </p>
-<h4><strong>Scene 4: Thompson Street Alley</strong></h4>
-<p><strong>Setting</strong>: Outside Vivian’s apartment, 11:30 PM. Mist, flickering streetlamp.<br />
-<strong>Characters</strong>: Vivian, Rex (lurking).<br />
-<strong>Story Elements</strong>:<br />
-1. <strong>ACTION</strong>: Rex grabs her wrist. <strong>HOW</strong>: Tracked her via Fletcher. <strong>WHY</strong>: Warn about hitmen.<br />
-2. <strong>DIALOGUE</strong>: Rex: “Your father stole the throne. Drop it.” <strong>EFFECT</strong>: Vivian slaps him.<br />
-3. <strong>KNOWLEDGE</strong>: Rex drops Jade Lily matchbook—brothel link.<br />
-4. <strong>THOUGHT</strong>: <em>He’s lying. But why?</em>  </p>
-<p><strong>CONTINUE</strong>  </p>
+<p><strong>Setting</strong>: Midnight. Smoke clings to mahogany bar, Vito’s hands trembling.<br />
+<strong>Characters</strong>: Vivian (disheveled), Vito (pouring gin), Enzo’s thug (leering).<br />
+<strong>Key Beats</strong>:<br />
+1. <strong>Sexual Tension</strong>: Vito wipes spilled gin from Vivian’s wrist—slow drag of cloth over pulse point.<br />
+2. <strong>Action</strong>: Thug grabs Vivian’s thigh; she smashes his nose with a highball glass (<em>blood sprays mahogany</em>).<br />
+3. <strong>Mystery</strong>: Vito shoves her into storage room—<em>safe door ajar</em>, Rosalia’s photo face-down.<br />
+4. <strong>Dialogue</strong>: “Curiosity kills dames faster than gin,” Vito growls, breath hot on her neck. “Stay alive.”  </p>
+<h4><strong>Scene 4: Thompson Street Fire Escape</strong></h4>
+<p><strong>Setting</strong>: 3:00 AM. Rain soaks Vivian’s slip, Rex’s shadow looming.<br />
+<strong>Characters</strong>: Vivian (barefoot), Rex (trench coat dripping), Eleanor (window light flickers).<br />
+<strong>Key Beats</strong>:<br />
+1. <strong>Violence</strong>: Rex pins her against brick—<em>knife at her throat</em>. “I buried your father’s shame. Don’t dig.”<br />
+2. <strong>Sensuality</strong>: Rain slides between her breasts as she knees his groin—<em>he grunts, laughs bitterly</em>.<br />
+3. <strong>Clue</strong>: Matchbook (<em>Jade Lily logo</em>) falls from Rex’s pocket—<em>scent of jasmine and opium</em>.<br />
+4. <strong>Foreshadow</strong>: Eleanor’s silhouette watches—<em>shatters teacup</em>, leaves bloodied shard on sill.  </p>
 <hr />
-<h3><strong>Chapter 2: Whiskey and Warnings</strong></h3>
-<p><strong>Word Count</strong>: 1,300 | <strong>Timeline</strong>: June 6-8, 1929  </p>
-<h4><strong>Scene 1: Rex Donovan’s Office</strong></h4>
-<p><strong>Setting</strong>: Above pawnshop, 8:00 AM. Dusty files, whiskey stench.<br />
-<strong>Characters</strong>: Vivian, Rex, Pawnbroker (offscreen).<br />
-<strong>Story Elements</strong>:<br />
-1. <strong>DIALOGUE</strong>: Rex: “Mr. X is Kensington’s puppet. You’re outmatched.”<br />
-2. <strong>ACTION</strong>: Rex shows blurred 1926 heist photo—Kensington’s profile visible. <strong>EFFECT</strong>: Vivian’s hands tremble.<br />
-3. <strong>KNOWLEDGE</strong>: Storage locker key—Pier 17, crate #14.<br />
-4. <strong>SCENERY</strong>: Rex’s flask trembles—guilt over father’s death.  </p>
-<h4><strong>Scene 2: Pier 17 Docks</strong></h4>
-<p><strong>Setting</strong>: Foggy docks, noon. Seagulls, creaking ships.<br />
-<strong>Characters</strong>: Vivian, Enzo’s thug (attacker), Vito (observer).<br />
-<strong>Story Elements</strong>:<br />
-1. <strong>ACTION</strong>: Vivian picks lock—finds forged Titian paintings. <strong>HOW</strong>: Father’s lockpick kit.<br />
-2. <strong>DIALOGUE</strong>: Thug: “Boss says you’re a problem.” <strong>EFFECT</strong>: Vito rams thug with car.<br />
-3. <strong>RELATIONSHIP</strong>: Vito burns crates—flames reflect mutual distrust shifting to alliance.<br />
-4. <strong>FORESHADOWING</strong>: Emerald necklace in crate matches throne’s jewels.  </p>
-<h4><strong>Scene 3: The Jade Lily Brothel</strong></h4>
-<p><strong>Setting</strong>: Opium den, 3:00 AM. Guzheng music, smoke haze.<br />
-<strong>Characters</strong>: Vivian (disguised), Madame Ling, Celeste (forger).<br />
-<strong>Story Elements</strong>:<br />
-1. <strong>INTRODUCTION</strong>: Celeste’s paint-stained smock and jade bracelet.<br />
-2. <strong>ACTION</strong>: Vivian triggers fire alarm; Celeste slips her tunnel key. <strong>EFFECT</strong>: Ledger stolen.<br />
-3. <strong>DIALOGUE</strong>: Celeste: “The throne’s in the tunnels. Follow the rats.”<br />
-4. <strong>KNOWLEDGE</strong>: Ledger lists “KT Est.” shipments—Kensington’s tunnels.  </p>
-<h4><strong>Scene 4: Vivian’s Apartment</strong></h4>
-<p><strong>Setting</strong>: 4:00 AM. Cluttered desk, Eleanor at door.<br />
-<strong>Characters</strong>: Vivian, Eleanor, Rex (caller).<br />
-<strong>Story Elements</strong>:<br />
-1. <strong>ACTION</strong>: Eleanor deciphers ledger—“KT Est.” = tunnel network under City Hall.<br />
-2. <strong>DIALOGUE</strong>: Rex’s call: “They’re coming. Run.” <strong>EFFECT</strong>: Vivian packs .38, train ticket.<br />
-3. <strong>RELATIONSHIP</strong>: Eleanor forges gala invite—trust tested.  </p>
-<p><strong>CONTINUE</strong>  </p>
+<h3><strong>Chapter 2: Whiskey-Stained Lies</strong></h3>
+<p><strong>Word Count</strong>: 1,400 | <strong>Cumulative</strong>: 4,100  </p>
+<h4><strong>Scene 1: Rex’s Pawnshop Office</strong></h4>
+<p><strong>Setting</strong>: 8:00 AM. Dusty ledgers, whiskey-stained rug.<br />
+<strong>Characters</strong>: Vivian (hungover), Rex (loading revolver), Freddie (eavesdropping).<br />
+<strong>Key Beats</strong>:<br />
+1. <strong>Conflict</strong>: Rex slams 1926 police report—<em>Kensington’s face circled red</em>. “Your father died a thief.”<br />
+2. <strong>Action</strong>: Vivian snatches ledger—<em>tremor in her grip</em>. “I’ll make you retract that with your teeth.”<br />
+3. <strong>Romance</strong>: Freddie’s gloved hand brushes her waist—<em>slips train ticket into her garter</em>. “Join me tonight, Red.”  </p>
+<h4><strong>Scene 2: Pier 17 Smuggle Den</strong></h4>
+<p><strong>Setting</strong>: Noon. Rotting fish, crate maze.<br />
+<strong>Characters</strong>: Vivian (disguised as dockworker), Celeste (forging manifests).<br />
+<strong>Key Beats</strong>:<br />
+1. <strong>Violence</strong>: Thug spots her—<em>switchblade duel on wet planks</em>. She disarms him with a fishhook.<br />
+2. <strong>Mystery</strong>: Celeste’s forgery kit—<em>half-painted Titian</em>, <em>Golden Throne sketches</em>.<br />
+3. <strong>Clue</strong>: Crate #14 contains <em>emerald necklace</em> matching throne’s jewels—<em>engraved “HK”</em>.  </p>
+<p>CONTINUE
+CONTINUE  </p>
+<h3><strong>Chapter 3: Shadows in the Jade Lily</strong></h3>
+<p><strong>Word Count</strong>: 1,500 | <strong>Cumulative</strong>: 5,600  </p>
+<h4><strong>Scene 1: Jade Lily Brothel</strong></h4>
+<p><strong>Setting</strong>: Opium haze, silk curtains. Midnight.<br />
+<strong>Characters</strong>: Vivian (disguised as courtesan), Madame Ling (watchful), Celeste (painting forgeries).<br />
+<strong>Key Beats</strong>:<br />
+1. <strong>Sensuality</strong>: Vivian’s dress splits at the thigh—<em>cold jade hairpin presses to her spine</em>. “Men talk more when they’re sweating,” Madame Ling purrs.<br />
+2. <strong>Action</strong>: Celeste drops a vial of acid—<em>dissolves crate lock</em>. Vivian snatches forged ledger (<em>“KT Est. Shipments”</em>).<br />
+3. <strong>Clue</strong>: Naked portrait of Kensington hidden behind screen—<em>golden throne etched in background</em>.  </p>
+<h4><strong>Scene 2: Kensington’s Tunnel Network</strong></h4>
+<p><strong>Setting</strong>: 2:00 AM. Damp concrete, flickering bulbs, mine cart screech.<br />
+<strong>Characters</strong>: Vivian, Vito (bloodied knuckles), Celeste (limping).<br />
+<strong>Key Beats</strong>:<br />
+1. <strong>Violence</strong>: Gang ambush—Vito snaps a man’s neck with piano wire. Vivian’s heel cracks a jawbone.<br />
+2. <strong>Mystery</strong>: Celeste’s map reveals <em>retinal scanner</em>—Kensington’s eye required. “Steal it or blind him,” she hisses.<br />
+3. <strong>Romance</strong>: Vito binds Vivian’s gunshot wound—<em>linen strips tight against her ribs</em>. “Why’d you follow me?” “You’re bad for business, Red.”  </p>
 <hr />
-<p><strong>Current Word Count</strong>: 2,500 (Continuing with Chapters 3-8, ensuring plot continuity and romantic/action beats.)  </p>
-<p><strong>Final Outline Completion</strong>: 3 more chunks needed. Proceed?  </p>
-<p><strong>CONTINUE</strong></p>
-<h3><strong>Chapter 3: Rain-Soaked Secrets</strong></h3>
-<p><strong>Word Count</strong>: 1,400 | <strong>Timeline</strong>: June 9-11, 1929  </p>
-<h4><strong>Scene 1: Thompson Street Apartment</strong></h4>
-<p><strong>Setting</strong>: Kitchen, 7:00 AM. Rain pelts the fire escape, coffee percolates.<br />
-<strong>Characters</strong>: Vivian (in rumpled pajamas), Eleanor (at the door).<br />
-<strong>Story Elements</strong>:<br />
-1. <strong>DIALOGUE</strong>: Eleanor hands forged invite: “Lydia’s emerald gown is at the cleaner’s. Try not to bleed on it.”<br />
-2. <strong>ACTION</strong>: Vivian discovers a listening device under her phone. <strong>WHO</strong>: Kensington’s men. <strong>EFFECT</strong>: Paranoia sets in.<br />
-3. <strong>KNOWLEDGE</strong>: Deciphered ledger symbols: “⚡ = power grid near City Hall tunnels.”<br />
-4. <strong>SCENERY</strong>: Chalkboard updated: “MR. X → TUNNELS → KENSINGTON. ELEANOR?”<br />
-5. <strong>FORESHADOWING</strong>: Vivian’s .38 jams—humidity warps the barrel.  </p>
-<h4><strong>Scene 2: The Blind Owl Back Alley</strong></h4>
-<p><strong>Setting</strong>: Rain-drenched alley, 10:00 PM. Neon signs flicker, garbage reeks.<br />
-<strong>Characters</strong>: Vivian, Vito (leaning against wall), Sammy (watching from door).<br />
-<strong>Story Elements</strong>:<br />
-1. <strong>SCENERY</strong>: Rain soaks Vito’s fedora; Vivian’s cloche hat drips onto her coat.<br />
-2. <strong>DIALOGUE</strong>: Vito: “Enzo’s got a price on your head. Leave town.” Vivian: “Make me.”<br />
-3. <strong>ACTION</strong>: Vito grabs her wrist, pulls her close—<strong>WHY</strong>: To whisper, “Trust no one. Not even me.”<br />
-4. <strong>RELATIONSHIP</strong>: Vivian feels his racing pulse; he releases her abruptly.<br />
-5. <strong>KNOWLEDGE</strong>: Vito slides her a subway token stamped “KT Est.”—tunnel access.  </p>
-<h4><strong>Scene 3: Abandoned Woolworth Factory</strong></h4>
-<p><strong>Setting</strong>: Underground boxing ring, midnight. Bloodied sawdust, kerosene stench.<br />
-<strong>Characters</strong>: Vivian (disguised as bettor), Enzo (in shadows), Thug #3 (boxer).<br />
-<strong>Story Elements</strong>:<br />
-1. <strong>ACTION</strong>: Vivian bets $20 on Thug #3. <strong>HOW</strong>: Uses fake Bronx accent. <strong>EFFECT</strong>: Eavesdrops on Enzo.<br />
-2. <strong>DIALOGUE</strong>: Enzo to lieutenant: “Move the throne tonight. Drown any leaks.”<br />
-3. <strong>SCENERY</strong>: Thug #3’s knuckles crack—Vivian flinches, drops betting slip.<br />
-4. <strong>ACTION</strong>: Recognized by Enzo’s men—Vito tosses smoke bomb, drags her into rafters.<br />
-5. <strong>FORESHADOWING</strong>: Mine cart screech echoes—tunnel entrance nearby.  </p>
-<h4><strong>Scene 4: The Savoy Ballroom</strong></h4>
-<p><strong>Setting</strong>: Balcony, 2:00 AM. Jazz blares, champagne flutes clink.<br />
-<strong>Characters</strong>: Vivian, Freddie (grinning), Inspector Burns (at bar).<br />
-<strong>Story Elements</strong>:<br />
-1. <strong>DIALOGUE</strong>: Freddie: “Dance with me, Red. I know where the throne’s hiding.”<br />
-2. <strong>ACTION</strong>: Freddie slips a key into her garter—<strong>EFFECT</strong>: Penthouse vault access.<br />
-3. <strong>SCENERY</strong>: Burns’ gold badge glints as he watches them waltz.<br />
-4. <strong>KNOWLEDGE</strong>: Freddie whispers, “Follow the rats. They’ll lead you underground.”<br />
-5. <strong>RELATIONSHIP</strong>: Vivian knees Freddie’s groin—crowd cheers, Burns smirks.  </p>
-<p><strong>CONTINUE</strong>  </p>
-<hr />
-<h3><strong>Chapter 4: Gala of Shadows</strong></h3>
-<p><strong>Word Count</strong>: 1,500 | <strong>Timeline</strong>: June 12-14, 1929  </p>
+<h3><strong>Chapter 4: Gala of Blood and Silk</strong></h3>
+<p><strong>Word Count</strong>: 1,600 | <strong>Cumulative</strong>: 7,200  </p>
 <h4><strong>Scene 1: Kensington Estate Ballroom</strong></h4>
-<p><strong>Setting</strong>: Grand ballroom, 8:00 PM. Chandeliers, orchids, hidden microphones.<br />
-<strong>Characters</strong>: Vivian (emerald gown), Vito (posing as date), Charles Beaumont (flirting).<br />
-<strong>Story Elements</strong>:<br />
-1. <strong>SCENERY</strong>: Vivian’s dress clings with sweat; Vito’s hand tenses at her lower back.<br />
-2. <strong>DIALOGUE</strong>: Charles to Lydia: “The Mayor’s throne would make Nero blush.”<br />
-3. <strong>ACTION</strong>: Vivian plants bug in potted palm—<strong>HOW</strong>: Disguised as hairpin. <strong>EFFECT</strong>: Feedback screech.<br />
-4. <strong>KNOWLEDGE</strong>: Overhears Kensington: “Shipment at 11:07. Kill Beaumont after.”<br />
-5. <strong>FORESHADOWING</strong>: Clock ticks toward 11:07 PM—Charles’ death time.  </p>
-<h4><strong>Scene 2: Hedge Maze Ambush</strong></h4>
-<p><strong>Setting</strong>: Moonlit maze, 10:30 PM. Gravel crunches, orchestra muffled.<br />
-<strong>Characters</strong>: Vivian, Vito, Charles (panicking), Burns (lurking).<br />
-<strong>Story Elements</strong>:<br />
-1. <strong>DIALOGUE</strong>: Charles: “The letters prove Kensington’s smuggling! They’re in my—”<br />
-2. <strong>ACTION</strong>: Gunshot—Charles collapses. <strong>WHO</strong>: Burns, silencer smoking. <strong>EFFECT</strong>: Letters stolen.<br />
-3. <strong>SCENERY</strong>: Blood soaks Vivian’s gloves; Vito shoves her into hedge thorns.<br />
-4. <strong>RELATIONSHIP</strong>: Vito pins her against thorns—kisses her, desperate. <strong>EFFECT</strong>: Mutual breathlessness.<br />
-5. <strong>KNOWLEDGE</strong>: Charles’ pocket watch stops at 11:07—tied to tunnel shipment.  </p>
-<h4><strong>Scene 3: Tunnel Entrance – Boathouse</strong></h4>
-<p><strong>Setting</strong>: Gasoline-slick boathouse, 11:30 PM. Speedboat engine idling.<br />
-<strong>Characters</strong>: Vivian, Vito, Kensington (boarding), Celeste (loading crates).<br />
-<strong>Story Elements</strong>:<br />
-1. <strong>ACTION</strong>: Vivian snaps photo—<strong>FLASH</strong> alerts guards. <strong>EFFECT</strong>: Celeste shoves them into mine cart.<br />
-2. <strong>DIALOGUE</strong>: Celeste: “The throne’s on the 11:07 train! Stop it!”<br />
-3. <strong>SCENERY</strong>: Cart rails gleam; Celeste yanks lever—cart plunges into darkness.<br />
-4. <strong>KNOWLEDGE</strong>: Tunnel map on wall—route to Grand Central.<br />
-5. <strong>RELATIONSHIP</strong>: Vito grips Vivian’s waist—trust solidifies in freefall.  </p>
-<h4><strong>Scene 4: Jade Lily Tunnel</strong></h4>
-<p><strong>Setting</strong>: Opium-scented tunnel, 3:00 AM. Flickering bulbs, distant Mandarin shouts.<br />
-<strong>Characters</strong>: Vivian, Vito, Madame Ling (above).<br />
-<strong>Story Elements</strong>:<br />
-1. <strong>SCENERY</strong>: Vivian’s torn gown, Vito’s bloodied knuckles from fighting guards.<br />
-2. <strong>DIALOGUE</strong>: Vito: “Why’d you save me?” Vivian: “You’re not the villain here.”<br />
-3. <strong>ACTION</strong>: They find “Golden Throne” crate—Vivian’s father’s initials etched inside.<br />
-4. <strong>RELATIONSHIP</strong>: Vito traces her palm scar—silent understanding.<br />
-5. <strong>FORESHADOWING</strong>: Ling shouts: “Find the forger! She’s the key!”  </p>
-<p><strong>CONTINUE</strong>  </p>
+<p><strong>Setting</strong>: Crystal chandeliers, champagne fountains. 9:00 PM.<br />
+<strong>Characters</strong>: Vivian (emerald gown), Vito (stolen tux), Charles Beaumont (marked for death).<br />
+<strong>Key Beats</strong>:<br />
+1. <strong>Sensuality</strong>: Vito’s hand slides lower during waltz—<em>calloused palm burns silk</em>. “Eyes on the mayor, not my ass,” Vivian breathes.<br />
+2. <strong>Action</strong>: Charles whispers, “The throne’s beneath us—” <em>gunshot</em>. Blood sprays Vivian’s décolletage.<br />
+3. <strong>Clue</strong>: Dead man’s pocket watch stops at <em>11:07—tunnel shipment time</em>.  </p>
+<h4><strong>Scene 2: Hedge Maze Chase</strong></h4>
+<p><strong>Setting</strong>: Moonlit thorns, gravel crunching. 11:00 PM.<br />
+<strong>Characters</strong>: Vivian (bloodied hem), Inspector Burns (silencer drawn), Vito (dragging her).<br />
+<strong>Key Beats</strong>:<br />
+1. <strong>Violence</strong>: Burns’ bullet grazes Vivian’s hip—<em>Vito tackles him into rosebushes</em>. Thorns embed in flesh.<br />
+2. <strong>Mystery</strong>: Burns’ badge tarnished—<em>Kensington’s initials etched on back</em>. “He owns the cops,” Vito growls.<br />
+3. <strong>Romance</strong>: Vivian stitches Vito’s arm—<em>needle punctures skin</em>. His teeth sink into her shoulder to muffle pain.  </p>
 <hr />
-<p><strong>Current Word Count</strong>: 3,400 (Proceeding with Chapters 5-8. Final outline completion in 2 more chunks.)  </p>
-<p><strong>CONTINUE</strong></p>
-<h3><strong>Chapter 5: Tunnels of Treachery</strong></h3>
-<p><strong>Word Count</strong>: 1,600 | <strong>Timeline</strong>: June 15-17, 1929  </p>
-<h4><strong>Scene 1: Kensington Tunnel Network</strong></h4>
-<p><strong>Setting</strong>: Mine cart rattling on rails, 1:00 AM. Flickering lights, rat squeals.<br />
-<strong>Characters</strong>: Vivian, Vito (bleeding shoulder), Celeste (emerging from shadows).<br />
-<strong>Story Elements</strong>:<br />
-1. <strong>ACTION</strong>: Cart jolts violently; Vivian clings to Vito. <strong>HOW</strong>: Uses belt to strap them in. <strong>EFFECT</strong>: Trust deepens.<br />
-2. <strong>DIALOGUE</strong>: Celeste: “The retinal scanner only opens for Kensington’s eyes. You’ll need leverage.”<br />
-3. <strong>KNOWLEDGE</strong>: Vivian sketches tunnel routes on her thigh—exits marked with chalk.<br />
-4. <strong>SCENERY</strong>: Crates labeled “Byzantine Artifacts” rattle past—fraudulent shipments.<br />
-5. <strong>FORESHADOWING</strong>: Celeste’s jade bracelet cracks—symbolizing her fraying loyalty.  </p>
-<h4><strong>Scene 2: Tunnel Control Hub</strong></h4>
-<p><strong>Setting</strong>: Vaulted chamber, 2:30 AM. Armed guards, Golden Throne on dais.<br />
-<strong>Characters</strong>: Vivian, Vito, Kensington (on platform), Guards.<br />
-<strong>Story Elements</strong>:<br />
-1. <strong>ACTION</strong>: Vito garrotes a guard—<strong>HOW</strong>: Sicilian rope technique. <strong>EFFECT</strong>: Steals keycard.<br />
-2. <strong>DIALOGUE</strong>: Kensington: “You’re a cockroach, Miss Sinclair. But even cockroaches burn.”<br />
-3. <strong>SCENERY</strong>: Throne’s emeralds gleam—Vivian’s father’s pocket watch hidden in base.<br />
-4. <strong>RELATIONSHIP</strong>: Vivian hesitates to shoot Kensington; Vito takes the gun. “Not your burden.”<br />
-5. <strong>KNOWLEDGE</strong>: Celeste triggers sprinklers—floods tunnel, erasing evidence.  </p>
-<h4><strong>Scene 3: Celeste’s Studio</strong></h4>
-<p><strong>Setting</strong>: Skylight studio, 5:00 AM. Half-forged Monet, arsenic fumes.<br />
-<strong>Characters</strong>: Vivian, Celeste, Eleanor (deciphering ledger).<br />
-<strong>Story Elements</strong>:<br />
-1. <strong>DIALOGUE</strong>: Celeste: “Fletcher’s on Kensington’s payroll. Your editor buried your father’s files.”<br />
-2. <strong>ACTION</strong>: Eleanor decodes ledger—<strong>EFFECT</strong>: “Mr. X” payments match Fletcher’s initials.<br />
-3. <strong>SCENERY</strong>: Mirror reflects Vivian’s face in a forged painting—identity crisis.<br />
-4. <strong>RELATIONSHIP</strong>: Celeste hands Vivian truth serum: “Use it on Fletcher. Then run.”<br />
-5. <strong>FORESHADOWING</strong>: Freddie’s name appears in ledger—blackmailed into compliance.  </p>
-<h4><strong>Scene 4: Daily Sentinel Office</strong></h4>
-<p><strong>Setting</strong>: Bullpen, 8:00 AM. Fletcher’s cigar fog, Ernie eavesdropping.<br />
-<strong>Characters</strong>: Vivian, Fletcher, Ernie.<br />
-<strong>Story Elements</strong>:<br />
-1. <strong>ACTION</strong>: Vivian spikes Fletcher’s coffee with serum. <strong>HOW</strong>: Distracts him with fake headline.<br />
-2. <strong>DIALOGUE</strong>: Fletcher slurs: “Kensington promised me a Pulitzer… your father was collateral.”<br />
-3. <strong>KNOWLEDGE</strong>: Ernie snaps photo of confession—front-page scandal.<br />
-4. <strong>RELATIONSHIP</strong>: Fletcher lunges; Vivian knees his gut—professional bond shattered.<br />
-5. <strong>FORESHADOWING</strong>: Ernie smirks: “You owe me, Red.”  </p>
-<p><strong>CONTINUE</strong>  </p>
+<h3><strong>Chapter 5: The Forger’s Gambit</strong></h3>
+<p><strong>Word Count</strong>: 1,800 | <strong>Cumulative</strong>: 9,000  </p>
+<h4><strong>Scene 1: Celeste’s Soho Studio</strong></h4>
+<p><strong>Setting</strong>: 3:00 AM. Turpentine stench, half-faked Van Gogh.<br />
+<strong>Characters</strong>: Vivian (exhausted), Celeste (paranoid), Freddie (lurking).<br />
+<strong>Key Beats</strong>:<br />
+1. <strong>Conflict</strong>: Celeste brandishes scalpel—“Touch the Monet, I carve your eyes.”<br />
+2. <strong>Action</strong>: FBI raid echoes below—Vivian shoves Celeste into hidden closet. <em>Forged throne blueprint crumples underfoot</em>.<br />
+3. <strong>Clue</strong>: Freddie’s monocle reflects <em>“Golden Throne → Docks”</em>. “Meet me at the Oyster Bar,” he whispers.  </p>
+<h4><strong>Scene 2: Grand Central Terminal Showdown</strong></h4>
+<p><strong>Setting</strong>: 6:00 AM. Steam engines roar, FBI swarms.<br />
+<strong>Characters</strong>: Vivian, Vito (bleeding), Kensington (fleeing).<br />
+<strong>Key Beats</strong>:<br />
+1. <strong>Violence</strong>: Kensington’s cane-sword slashes Vivian’s collarbone—<em>Vito disarms him with a railroad spike</em>.<br />
+2. <strong>Mystery</strong>: Throne crate cracks open—<em>Vivian’s father’s pocket watch inside</em>. “He died saving this,” she rasps.<br />
+3. <strong>Climax</strong>: FBI cuffs Kensington—<em>press cameras flash</em>. Vito vanishes into crowd, train ticket clutched in Vivian’s fist.  </p>
+<p>CONTINUE
+CONTINUE  </p>
+<h3><strong>Chapter 6: Fires in the Dark</strong></h3>
+<p><strong>Word Count</strong>: 1,800 | <strong>Cumulative</strong>: 10,800  </p>
+<h4><strong>Scene 1: The Blind Owl’s Last Call</strong></h4>
+<p><strong>Setting</strong>: Dawn. Smashed glasses, blood-smeared bar.<br />
+<strong>Characters</strong>: Vivian (bandaged), Sammy (sweeping glass), Enzo’s corpse (slumped).<br />
+<strong>Key Beats</strong>:<br />
+1. <strong>Violence</strong>: Vito’s knife still jammed in Enzo’s throat—<em>blood pools around Vivian’s heels</em>.<br />
+2. <strong>Romance</strong>: Vito presses a California train ticket into her palm—<em>ink smudged with his blood</em>. “Your choice, Red.”<br />
+3. <strong>Clue</strong>: Enzo’s ledger reveals <em>“Eleanor Brooks → $10k for tunnel maps”</em>. Vivian burns it—<em>ashes taste like absinthe</em>.  </p>
+<h4><strong>Scene 2: Eleanor’s Redemption</strong></h4>
+<p><strong>Setting</strong>: St. Agnes confessional. Noon. Candle smoke, creaking pews.<br />
+<strong>Characters</strong>: Vivian (forgiving), Eleanor (crippled guilt), Priest (silent witness).<br />
+<strong>Key Beats</strong>:<br />
+1. <strong>Conflict</strong>: Eleanor’s cane cracks on marble—“I sold secrets to pay the asylum. They still killed her.”<br />
+2. <strong>Action</strong>: Vivian drops truth serum vial—<em>Vatican stamp visible</em>. “Clear your name or drown in it.”<br />
+3. <strong>Foreshadow</strong>: Eleanor’s coded letter to FBI—<em>signed “Madame X”</em>.  </p>
 <hr />
-<h3><strong>Chapter 6: The Mole Unmasked</strong></h3>
-<p><strong>Word Count</strong>: 1,700 | <strong>Timeline</strong>: June 18-20, 1929  </p>
-<h4><strong>Scene 1: Freddie’s Penthouse Vault</strong></h4>
-<p><strong>Setting</strong>: Behind Picasso forgery, midnight. Diamond dust, stolen art.<br />
-<strong>Characters</strong>: Vivian, Vito, Freddie (drugged on floor).<br />
-<strong>Story Elements</strong>:<br />
-1. <strong>ACTION</strong>: Vivian cracks safe—<strong>HOW</strong>: Father’s birthdate combo. <strong>EFFECT</strong>: Finds Kensington’s love letters.<br />
-2. <strong>DIALOGUE</strong>: Vito: “This enough to hang him?” Vivian: “Enough to start an avalanche.”<br />
-3. <strong>SCENERY</strong>: Ledger entry: “E. Brooks – $5,000 for archival access.”<br />
-4. <strong>RELATIONSHIP</strong>: Vivian’s hands tremble—<strong>EFFECT</strong>: Vito steadies her, silent support.<br />
-5. <strong>FORESHADOWING</strong>: Freddie mumbles: “Eleanor’s not… what she seems.”  </p>
-<h4><strong>Scene 2: Eleanor’s Apartment</strong></h4>
-<p><strong>Setting</strong>: Cramped studio, 3:00 AM. Flickering bulb, coded letters.<br />
-<strong>Characters</strong>: Vivian, Eleanor (pleading), Rex (blocking door).<br />
-<strong>Story Elements</strong>:<br />
-1. <strong>DIALOGUE</strong>: Eleanor: “The nuns took my leg brace! I needed the money!”<br />
-2. <strong>ACTION</strong>: Vivian slams ledger on table—<strong>EFFECT</strong>: Eleanor collapses, sobbing.<br />
-3. <strong>SCENERY</strong>: Photo of Eleanor’s mother in asylum—<strong>KNOWLEDGE</strong>: She’s alive, imprisoned.<br />
-4. <strong>RELATIONSHIP</strong>: Rex: “She sold tunnel maps to Kensington. Let her rot.”<br />
-5. <strong>FORESHADOWING</strong>: Vivian leaves truth serum vial—Eleanor’s redemption chance.  </p>
-<h4><strong>Scene 3: Abandoned Subway Station</strong></h4>
-<p><strong>Setting</strong>: Crumbling platform, 5:30 AM. Rat swarm, dripping pipes.<br />
-<strong>Characters</strong>: Vivian, Vito, Enzo (ambush), Celeste (snared).<br />
-<strong>Story Elements</strong>:<br />
-1. <strong>ACTION</strong>: Enzo’s men surround them—<strong>WHY</strong>: Vito’s factory betrayal.<br />
-2. <strong>DIALOGUE</strong>: Enzo: “Blood first, boy.” Vito: “She’s my blood now.”<br />
-3. <strong>SCENERY</strong>: Celeste’s ankle bleeds—trapwire. Vivian throws smoke bomb.<br />
-4. <strong>RELATIONSHIP</strong>: Vito takes bullet for Vivian—grazed shoulder. Kisses her mid-gunfire.<br />
-5. <strong>KNOWLEDGE</strong>: Celeste: “Throne’s on the 6 AM train! Stop it or we die!”  </p>
-<h4><strong>Scene 4: Grand Central Terminal</strong></h4>
-<p><strong>Setting</strong>: Oyster Bar storage, 6:00 AM. Crates, PA announcements.<br />
-<strong>Characters</strong>: Vivian, Vito, Kensington (boarding train), Burns.<br />
-<strong>Story Elements</strong>:<br />
-1. <strong>ACTION</strong>: Vivian photographs throne—<strong>FLASH</strong> alerts Burns. <strong>EFFECT</strong>: Shootout erupts.<br />
-2. <strong>DIALOGUE</strong>: Kensington: “You’ll die a nobody!” Vivian: “But you’ll die a thief.”<br />
-3. <strong>SCENERY</strong>: FBI agents swarm—<strong>EFFECT</strong>: Burns hesitates, shot by Eleanor (offscreen).<br />
-4. <strong>KNOWLEDGE</strong>: Train departs—Vivian leaps onto moving car.<br />
-5. <strong>FORESHADOWING</strong>: Throne’s crate door jams—symbol of unfinished justice.  </p>
-<p><strong>CONTINUE</strong>  </p>
+<h3><strong>Chapter 7: Throne of Ashes</strong></h3>
+<p><strong>Word Count</strong>: 2,000 | <strong>Cumulative</strong>: 12,800  </p>
+<h4><strong>Scene 1: City Hall Tunnel Meltdown</strong></h4>
+<p><strong>Setting</strong>: Collapsing tunnels. 3:00 AM. Sparks rain, emeralds scatter.<br />
+<strong>Characters</strong>: Vivian (grime-streaked), Kensington (cuffed), Celeste (forging escape).<br />
+<strong>Key Beats</strong>:<br />
+1. <strong>Violence</strong>: Kensington bites FBI agent—<em>Vivian pistol-whips him</em>. “Your legacy’s a footnote.”<br />
+2. <strong>Mystery</strong>: Celeste swaps throne emeralds for paste—“Even winners need souvenirs.”<br />
+3. <strong>Romance</strong>: Vito’s lips meet Vivian’s—<em>gunpowder and blood</em>. “Still bad for business.”  </p>
+<h4><strong>Scene 2: Vivian’s Farewell</strong></h4>
+<p><strong>Setting</strong>: <em>Daily Sentinel</em> ruins. 8:00 AM. Smoldering presses, Ernie’s smirk.<br />
+<strong>Key Beats</strong>:<br />
+1. <strong>Action</strong>: Vivian tosses press badge into Hudson—<em>sinks like her father’s watch</em>.<br />
+2. <strong>Dialogue</strong>: Ernie: “Front page’s yours, Red.” She flips him off—<em>laughs for the first time</em>.<br />
+3. <strong>Climax</strong>: Taxi idles—<em>Vito’s silhouette in backseat</em>. California license plate glints: <strong>VIV-VI-29</strong>.  </p>
 <hr />
-<p><strong>Current Word Count</strong>: 3,100 (Final chapters 7-8 and epilogue in next chunk.)  </p>
-<p><strong>CONTINUE</strong></p>
-<h3><strong>Chapter 7: The Final Heist</strong></h3>
-<p><strong>Word Count</strong>: 1,800 | <strong>Timeline</strong>: June 21-23, 1929  </p>
-<h4><strong>Scene 1: Long Island Rail Road – Moving Train</strong></h4>
-<p><strong>Setting</strong>: Cargo car, 6:15 AM. Wind roaring, crates rattling.<br />
-<strong>Characters</strong>: Vivian (clinging to ladder), Vito (bloodied), Kensington (guarding throne).<br />
-<strong>Story Elements</strong>:<br />
-1. <strong>ACTION</strong>: Vivian shimmies across roof, dodging gunfire. <strong>HOW</strong>: Uses father’s case file as a shield. <strong>EFFECT</strong>: Distracts guards.<br />
-2. <strong>DIALOGUE</strong>: Kensington: “The throne’s already in Europe! You lose, Sinclair!”<br />
-3. <strong>SCENERY</strong>: Throne’s emeralds catch dawn light—Vivian’s father’s watch lodged in base.<br />
-4. <strong>RELATIONSHIP</strong>: Vito tackles Kensington—<strong>WHY</strong>: To protect Vivian. <strong>EFFECT</strong>: Gun skids into shadows.<br />
-5. <strong>KNOWLEDGE</strong>: Shipping manifest reveals buyers: European fascists and elites.  </p>
-<h4><strong>Scene 2: Tunnel Junction Showdown</strong></h4>
-<p><strong>Setting</strong>: Rail fork, 6:45 AM. Rusted switch lever, sparks flying.<br />
-<strong>Characters</strong>: Vivian, Celeste (limping), FBI Agent Connors.<br />
-<strong>Story Elements</strong>:<br />
-1. <strong>DIALOGUE</strong>: Celeste: “Derail the throne or let Kensington win!”<br />
-2. <strong>ACTION</strong>: Vivian hesitates—<strong>EFFECT</strong>: Flashback to father’s death. Pulls lever.<br />
-3. <strong>SCENERY</strong>: Train screeches; throne crate tumbles into FBI custody.<br />
-4. <strong>KNOWLEDGE</strong>: Celeste vanishes with forged Monet—clue for future stories.<br />
-5. <strong>FORESHADOWING</strong>: Connors: “This isn’t over. Kensington’s got friends in high places.”  </p>
-<h4><strong>Scene 3: The Blind Owl – Aftermath</strong></h4>
-<p><strong>Setting</strong>: Bar at dawn, 7:30 AM. Broken glass, bloodied rags.<br />
-<strong>Characters</strong>: Vito (stitching wound), Sammy, Eleanor (silent).<br />
-<strong>Story Elements</strong>:<br />
-1. <strong>DIALOGUE</strong>: Sammy: “Enzo’s dead. You’re the new boss.” Vito: “I’m done with this life.”<br />
-2. <strong>ACTION</strong>: Eleanor slides California train ticket to Vito. <strong>EFFECT</strong>: He pockets it, glances at Vivian.<br />
-3. <strong>SCENERY</strong>: Vivian enters with FBI commendation—silence falls.<br />
-4. <strong>RELATIONSHIP</strong>: Vito stands: “Told you I’d stick around, Red.”<br />
-5. <strong>FORESHADOWING</strong>: Photo of Kensington in cuffs—<em>Sentinel</em> headline: “MAYOR’S EMPIRE CRUMBLES.”  </p>
-<h4><strong>Scene 4: Vivian’s Apartment – Climax</strong></h4>
-<p><strong>Setting</strong>: Fire escape at sunset, 8:00 PM. Gin bottle half-empty.<br />
-<strong>Characters</strong>: Vivian, Vito (shirtless), Rex (voicemail).<br />
-<strong>Story Elements</strong>:<br />
-1. <strong>ACTION</strong>: Rex’s voicemail: “Your dad’s cleared. Kensington’s singing.” <strong>EFFECT</strong>: Vivian cries silently.<br />
-2. <strong>DIALOGUE</strong>: Vito: “What’s next?” Vivian: “Somewhere sunny. You?” Vito: “Wherever you are.”<br />
-3. <strong>SCENERY</strong>: Chalkboard erased—only “V + V” remains.<br />
-4. <strong>RELATIONSHIP</strong>: Clothes drop; Vivian’s .38 on nightstand—safety on.<br />
-5. <strong>FORESHADOWING</strong>: Distant train whistle—California beckons.  </p>
-<p><strong>CONTINUE</strong>  </p>
-<hr />
-<h3><strong>Chapter 8: A New Dawn</strong></h3>
-<p><strong>Word Count</strong>: 1,900 | <strong>Timeline</strong>: June 24-26, 1929  </p>
-<h4><strong>Scene 1: Grand Central Press Conference</strong></h4>
-<p><strong>Setting</strong>: Oyster Bar entrance, noon. Flashbulbs, microphones.<br />
-<strong>Characters</strong>: Vivian, Agent Connors, Fletcher (in cuffs).<br />
-<strong>Story Elements</strong>:<br />
-1. <strong>ACTION</strong>: Vivian hands Connors throne evidence. <strong>EFFECT</strong>: FBI arrests Kensington’s cronies.<br />
-2. <strong>DIALOGUE</strong>: Fletcher: “You’ll miss the chase.” Vivian: “I’ll find better stories.”<br />
-3. <strong>SCENERY</strong>: Ernie snaps front-page photo: “REPORTER TOPPLES MAYOR.”<br />
-4. <strong>KNOWLEDGE</strong>: Headlines note Eleanor’s asylum donations—partial redemption.<br />
-5. <strong>FORESHADOWING</strong>: Celeste’s forgery hangs in the Met—unsigned.  </p>
-<h4><strong>Scene 2: Savoy Ballroom Farewell</strong></h4>
-<p><strong>Setting</strong>: Packed dance floor, 10:00 PM. Confetti, champagne towers.<br />
-<strong>Characters</strong>: Vivian, Vito, Freddie (toasting), Lydia (flirting).<br />
-<strong>Story Elements</strong>:<br />
-1. <strong>ACTION</strong>: Vivian burns father’s case file—<strong>EFFECT</strong>: Ashes mix with champagne.<br />
-2. <strong>DIALOGUE</strong>: Freddie: “Stay, Red! The city’s dull without you.” Vivian: “Send liquor, not postcards.”<br />
-3. <strong>SCENERY</strong>: Vito leads Vivian in waltz—Sammy plays <em>At Last</em> on piano.<br />
-4. <strong>RELATIONSHIP</strong>: Vito whispers: “I want a beach bar. You’ll hate it.”<br />
-5. <strong>FORESHADOWING</strong>: Lydia’s emerald necklace matches throne’s jewels—stolen souvenir.  </p>
-<h4><strong>Scene 3: Thompson Street Departure</strong></h4>
-<p><strong>Setting</strong>: Dawn alley, 5:00 AM. Taxi idling, suitcases stacked.<br />
-<strong>Characters</strong>: Vivian, Vito, Rex (at pawnshop).<br />
-<strong>Story Elements</strong>:<br />
-1. <strong>DIALOGUE</strong>: Rex: “You’ll hate California.” Tosses new .38. <strong>EFFECT</strong>: Vivian catches it, smirks.<br />
-2. <strong>ACTION</strong>: Vivian hugs Rex—stiff, brief. <strong>EFFECT</strong>: His eyes glisten.<br />
-3. <strong>SCENERY</strong>: Eleanor watches from window—cane in hand, nods farewell.<br />
-4. <strong>KNOWLEDGE</strong>: Taxi plate: “VIV-VI-29.”<br />
-5. <strong>FORESHADOWING</strong>: Storm clouds gather over Manhattan.  </p>
-<p><strong>CONTINUE</strong>  </p>
-<hr />
-<h3><strong>Epilogue: Pacific Coast Highway</strong></h3>
-<p><strong>Word Count</strong>: 400 | <strong>Timeline</strong>: July 1, 1929  </p>
-<h4><strong>Scene 1: Open Convertible</strong></h4>
-<p><strong>Setting</strong>: Coastal highway, midday. Ocean breeze, radio static.<br />
-<strong>Characters</strong>: Vivian (sunglasses, scarf), Vito (shirtless, driving).<br />
-<strong>Story Elements</strong>:<br />
-1. <strong>SCENERY</strong>: Waves crash; Vivian’s auburn hair whips free. .38 gleams in glovebox.<br />
-2. <strong>DIALOGUE</strong>: Vito: “First rule: no reporters.” Vivian: “Second rule?”<br />
-3. <strong>ACTION</strong>: She kisses him—steering wheel veers. Laughter drowns out radio.<br />
-4. <strong>RELATIONSHIP</strong>: No lies now—salt air, sunburn, and silence.<br />
-5. <strong>FINAL LINE</strong>: Behind them, a storm brews over New York. Ahead, endless road.  </p>
-<p>**</p>
+<h3><strong>Epilogue: Pacific Whispers</strong></h3>
+<p><strong>Word Count</strong>: 500 | <strong>Cumulative</strong>: 13,300  </p>
+<p><strong>Setting</strong>: Malibu cliffside. 1931. Ocean wind, typewriter clatter.<br />
+<strong>Key Beats</strong>:<br />
+1. <strong>Romance</strong>: Vito mixes cocktails—<em>scarred hands steady now</em>. Vivian types memoir—title: <em>Golden Throne</em>.<br />
+2. <strong>Mystery</strong>: Postmarked letter arrives—<em>Celeste’s forged Monet hangs in Met</em>. Unsigned note: “Stay curious.”<br />
+3. <strong>Final Image</strong>: Vivian’s .38 rests on manuscript—<em>safety off</em>. Waves crash. The End.</p>
             </div>
         </body>
         </html>

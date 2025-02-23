@@ -1,5 +1,6 @@
 name: edit_outline
 type: review_commons
+expected_length: 5000 # What should this be???
 main_prompt: '
   You''ve written the initial brief, characters, setting, and outline for your next hit novel. Congratulations!
 
