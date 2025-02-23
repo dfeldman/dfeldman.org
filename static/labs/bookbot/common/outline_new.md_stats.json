@@ -1,20 +1,20 @@
 {
   "input_tokens": 10,
   "output_tokens": 20,
-  "time": 0.0037360191345214844,
+  "time": 0.003866910934448242,
   "calls": [
     {
-      "timestamp": "2025-02-23T12:27:06.525918",
+      "timestamp": "2025-02-23T12:27:48.007960",
       "input_tokens": 10,
       "output_tokens": 20,
-      "elapsed": 0.0037360191345214844,
+      "elapsed": 0.003866910934448242,
       "retry": 1,
       "provider": "openai",
       "model": "gpt-4"
     }
   ],
-  "previous_input_tokens": "91545",
-  "previous_output_tokens": "7972",
-  "previous_time": "214.3590738773346",
-  "previous_continuation_count": "4"
+  "previous_input_tokens": "10",
+  "previous_output_tokens": "20",
+  "previous_time": "0.0037360191345214844",
+  "previous_continuation_count": "1"
 }
