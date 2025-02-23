@@ -1628,7 +1628,7 @@ class BookBot:
             file_path_with_suffix = file_path.with_suffix(".new")
             # Edit the original file using the editor bot
             content, _, _ = self._call_llm(
-                file+"_new.md", # Will remove once I know it's working
+                file, # OVERWRITE the file. Store old version in git. Should add history to props.
                 editor_bot,
                 {
                     "initial": initial.content,

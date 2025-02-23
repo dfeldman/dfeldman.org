@@ -1,47 +1,65 @@
 {
-  "input_tokens": 98015,
-  "output_tokens": 8341,
-  "time": 291.8306860923767,
+  "input_tokens": 155884,
+  "output_tokens": 11569,
+  "time": 256.524178981781,
   "calls": [
     {
-      "timestamp": "2025-02-23T12:53:07.909183",
+      "timestamp": "2025-02-23T13:04:45.880403",
       "input_tokens": 21757,
-      "output_tokens": 2451,
-      "elapsed": 85.10599398612976,
+      "output_tokens": 2587,
+      "elapsed": 51.511075019836426,
       "retry": 1,
       "provider": "Together",
       "model": "deepseek/deepseek-r1"
     },
     {
-      "timestamp": "2025-02-23T12:54:25.467841",
-      "input_tokens": 23706,
-      "output_tokens": 2209,
-      "elapsed": 77.54334688186646,
+      "timestamp": "2025-02-23T13:05:32.587635",
+      "input_tokens": 23885,
+      "output_tokens": 1974,
+      "elapsed": 46.68986392021179,
       "retry": 2,
       "provider": "Together",
       "model": "deepseek/deepseek-r1"
     },
     {
-      "timestamp": "2025-02-23T12:55:46.542384",
-      "input_tokens": 25452,
-      "output_tokens": 2280,
-      "elapsed": 81.05728006362915,
+      "timestamp": "2025-02-23T13:06:06.076003",
+      "input_tokens": 25373,
+      "output_tokens": 1843,
+      "elapsed": 33.46958804130554,
       "retry": 3,
       "provider": "Together",
       "model": "deepseek/deepseek-r1"
     },
     {
-      "timestamp": "2025-02-23T12:56:34.683451",
-      "input_tokens": 27100,
-      "output_tokens": 1401,
-      "elapsed": 48.12406516075134,
+      "timestamp": "2025-02-23T13:06:50.066697",
+      "input_tokens": 27072,
+      "output_tokens": 1546,
+      "elapsed": 43.97397494316101,
       "retry": 4,
+      "provider": "Together",
+      "model": "deepseek/deepseek-r1"
+    },
+    {
+      "timestamp": "2025-02-23T13:07:32.278279",
+      "input_tokens": 28171,
+      "output_tokens": 2026,
+      "elapsed": 42.18822908401489,
+      "retry": 5,
+      "provider": "Together",
+      "model": "deepseek/deepseek-r1"
+    },
+    {
+      "timestamp": "2025-02-23T13:08:10.989248",
+      "input_tokens": 29626,
+      "output_tokens": 1593,
+      "elapsed": 38.69144797325134,
+      "retry": 6,
       "provider": "Together",
       "model": "deepseek/deepseek-r1"
     }
   ],
-  "previous_input_tokens": 0,
-  "previous_output_tokens": 0,
-  "previous_time": 0,
-  "previous_continuation_count": 0
+  "previous_input_tokens": "70915",
+  "previous_output_tokens": "6940",
+  "previous_time": "243.70662093162537",
+  "previous_continuation_count": "3"
 }
