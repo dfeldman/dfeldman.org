@@ -652,6 +652,15 @@ class BotChat:
                     
                 result = response.json()
                 
+                # Out of credits?
+                if result.get("error") and "more credits are required to" in result["error"]["message"].lower():
+                    # Go into an infinite loop and wait for the user to add credits
+                    # and press any key on the console.
+                    logger.error("Out of credits. Waiting for user to add credits...")
+                    console.print("[red]Out of credits. Waiting for user to add credits...[/red]")
+                    console.input("Press any key to continue...")
+                    return self._make_api_call(messages, retry + 1, continuation_count = continuation_count)
+
                 # Extract data from response
                 if not result.get('choices'):
                     raise Exception("No choices in API response")
@@ -1613,6 +1622,7 @@ class BookBot:
             else:
                 # TODO Add a number in case this file does exist?
                 review_file = self.config["review_dir"] + f"/{file_path.stem}_{reviewer_bot}_review"
+            logger.info("REVISING WITH REVIEW BOT "+reviewer_bot)
             self._call_llm(
                 review_file,
                 reviewer_bot,
@@ -2033,6 +2043,18 @@ class BookBot:
             logger.error(f"Error creating final version: {e}")
             raise BookBotError(f"Failed to create final version: {e}")
 
+def task_gen_outline(bot):
+    """Task to generate the outline"""
+    bot.write_settings()
+    bot.write_characters()
+    bot.write_outline()
+
+def task_revise_outline(bot):
+    """Apply all of the possible outline revisions. Trying to start with the lowest quality ones 
+    on the theory that higher-quality ones will fix any errors introduced."""
+    bot.revise("review_outline_romance", "edit_outline", COMMON_DIR+"/outline", "revise_romance")
+    bot.revise("review_outline_motivation", "edit_outline", COMMON_DIR+"/outline", "revise_motivation")
+    bot.revise("review_outline_plot_hole", "edit_outline", COMMON_DIR+"/outline", "revise_plot_hole")
 
 def main():
     """Main entry point for BookBot"""
