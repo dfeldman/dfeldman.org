@@ -628,7 +628,7 @@ class BotChat:
                 else:
                     response = requests.Response()
                     response.status_code = 200
-                    response._content = b'{"choices":[{"message":{"content":"Generated content here"}}], "usage":{"prompt_tokens":10,"completion_tokens":20}, "provider":"openai","model":"gpt-4"}'
+                    response._content = b'{"choices":[{"message":{"content":"Generated content here. THE END"}}], "usage":{"prompt_tokens":10,"completion_tokens":20}, "provider":"openai","model":"gpt-4"}'
                 
                 elapsed = time.time() - start_time
                 

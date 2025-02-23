@@ -1,5 +1,5 @@
 {
-  "timestamp": "2025-02-23T12:05:07.791404",
+  "timestamp": "2025-02-23T12:05:30.427216",
   "bot": "review_commons",
   "command": "review_review_outline_1_edit_outline",
   "messages": [
@@ -13,79 +13,7 @@
     },
     {
       "role": "assistant",
-      "content": "Generated content here"
-    },
-    {
-      "role": "user",
-      "content": "You have written 3 words so far out of a minimum 3000 words. Continue writing the next chunk. When you're done with this chunk of text, write CONTINUE, and then end your message. Then you'll get a new prompt to continue writing the chapter. Don't write CONTINUE in the middle of your output, that *WILL NOT* help you write more. Only write it at the end of your output in order to get a new prompt where you can continue writing the chapter. Write THE END when you're done writing. CONTINUE or THE END *MUST* be at the end of your output. Be sure to write enough words."
-    },
-    {
-      "role": "assistant",
-      "content": "Generated content here"
-    },
-    {
-      "role": "user",
-      "content": "You have written 6 words so far out of a minimum 3000 words. Continue writing the next chunk. When you're done with this chunk of text, write CONTINUE, and then end your message. Then you'll get a new prompt to continue writing the chapter. Don't write CONTINUE in the middle of your output, that *WILL NOT* help you write more. Only write it at the end of your output in order to get a new prompt where you can continue writing the chapter. Write THE END when you're done writing. CONTINUE or THE END *MUST* be at the end of your output. Be sure to write enough words."
-    },
-    {
-      "role": "assistant",
-      "content": "Generated content here"
-    },
-    {
-      "role": "user",
-      "content": "You have written 9 words so far out of a minimum 3000 words. Continue writing the next chunk. When you're done with this chunk of text, write CONTINUE, and then end your message. Then you'll get a new prompt to continue writing the chapter. Don't write CONTINUE in the middle of your output, that *WILL NOT* help you write more. Only write it at the end of your output in order to get a new prompt where you can continue writing the chapter. Write THE END when you're done writing. CONTINUE or THE END *MUST* be at the end of your output. Be sure to write enough words."
-    },
-    {
-      "role": "assistant",
-      "content": "Generated content here"
-    },
-    {
-      "role": "user",
-      "content": "You have written 12 words so far out of a minimum 3000 words. Continue writing the next chunk. When you're done with this chunk of text, write CONTINUE, and then end your message. Then you'll get a new prompt to continue writing the chapter. Don't write CONTINUE in the middle of your output, that *WILL NOT* help you write more. Only write it at the end of your output in order to get a new prompt where you can continue writing the chapter. Write THE END when you're done writing. CONTINUE or THE END *MUST* be at the end of your output. Be sure to write enough words."
-    },
-    {
-      "role": "assistant",
-      "content": "Generated content here"
-    },
-    {
-      "role": "user",
-      "content": "You have written 15 words so far out of a minimum 3000 words. Continue writing the next chunk. When you're done with this chunk of text, write CONTINUE, and then end your message. Then you'll get a new prompt to continue writing the chapter. Don't write CONTINUE in the middle of your output, that *WILL NOT* help you write more. Only write it at the end of your output in order to get a new prompt where you can continue writing the chapter. Write THE END when you're done writing. CONTINUE or THE END *MUST* be at the end of your output. Be sure to write enough words."
-    },
-    {
-      "role": "assistant",
-      "content": "Generated content here"
-    },
-    {
-      "role": "user",
-      "content": "You have written 18 words so far out of a minimum 3000 words. Continue writing the next chunk. When you're done with this chunk of text, write CONTINUE, and then end your message. Then you'll get a new prompt to continue writing the chapter. Don't write CONTINUE in the middle of your output, that *WILL NOT* help you write more. Only write it at the end of your output in order to get a new prompt where you can continue writing the chapter. Write THE END when you're done writing. CONTINUE or THE END *MUST* be at the end of your output. Be sure to write enough words."
-    },
-    {
-      "role": "assistant",
-      "content": "Generated content here"
-    },
-    {
-      "role": "user",
-      "content": "You have written 21 words so far out of a minimum 3000 words. Continue writing the next chunk. When you're done with this chunk of text, write CONTINUE, and then end your message. Then you'll get a new prompt to continue writing the chapter. Don't write CONTINUE in the middle of your output, that *WILL NOT* help you write more. Only write it at the end of your output in order to get a new prompt where you can continue writing the chapter. Write THE END when you're done writing. CONTINUE or THE END *MUST* be at the end of your output. Be sure to write enough words."
-    },
-    {
-      "role": "assistant",
-      "content": "Generated content here"
-    },
-    {
-      "role": "user",
-      "content": "You have written 24 words so far out of a minimum 3000 words. Continue writing the next chunk. When you're done with this chunk of text, write CONTINUE, and then end your message. Then you'll get a new prompt to continue writing the chapter. Don't write CONTINUE in the middle of your output, that *WILL NOT* help you write more. Only write it at the end of your output in order to get a new prompt where you can continue writing the chapter. Write THE END when you're done writing. CONTINUE or THE END *MUST* be at the end of your output. Be sure to write enough words."
-    },
-    {
-      "role": "assistant",
-      "content": "Generated content here"
-    },
-    {
-      "role": "user",
-      "content": "You have written 27 words so far out of a minimum 3000 words. Continue writing the next chunk. When you're done with this chunk of text, write CONTINUE, and then end your message. Then you'll get a new prompt to continue writing the chapter. Don't write CONTINUE in the middle of your output, that *WILL NOT* help you write more. Only write it at the end of your output in order to get a new prompt where you can continue writing the chapter. Write THE END when you're done writing. CONTINUE or THE END *MUST* be at the end of your output. Be sure to write enough words."
-    },
-    {
-      "role": "assistant",
-      "content": "Generated content here"
+      "content": "Generated content here. THE END"
     }
   ]
 }
