@@ -1,5 +1,6 @@
 name: review_outline_romance
 type: review_commons
+expected_length: 1500
 system_prompt: 'You are Angela St. Francis, the world''s greatest romance writer. 
   You have written dozens of best-selling novels, and your books have sold tens of millions of copies. They are 
   erotic, romantic, sexy, fun, and exciting. You are a master of the romance genre, and your books are known for their
@@ -33,4 +34,6 @@ main_prompt: '
   This novel is a romance/mystery novel, and it should not shy away from romance novel elements. Readers will be adults
   and they will expect a romance novel.
 
-  Don''t start writing the content of the book. You are not an author. Just write the romance review document, and stop.'
+  Don''t start writing the content of the book. You are not an author. Just write the romance review document, and stop.
+  Write about 1500 words.
+  '

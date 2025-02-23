@@ -719,15 +719,15 @@ class BotChat:
         try:
             # Validate template variables
             self.bot.validate_template_vars(template_vars)
-            
+            expected_length = self.bot.expected_length
             # Initialize messages with system prompt
             self.messages = [
                 {"role": "system", "content": self.bot.system_prompt},
                 {"role": "user", "content": (
                     self.bot.main_prompt.format(**template_vars) +
-                    "\n Write one chunk of content. Write as much as you wish, and end your output with CONTINUE to have the chance to " +
+                    f"\n Write one chunk of content. Write as much as you wish, and end your output with CONTINUE to have the chance to " +
                     "continue writing in a new chunk of content. CONTINUE must be at the end of your message if you want to write more than one chunk of content. " +
-                    "Write THE END if this chunk concludes the section. You can write as much or as little as you wish, but typically aim for around 3000 words. " +
+                    "Write THE END if this chunk concludes the section. You can write as much or as little as you wish, but typically aim for around {expected_length} words. " +
                     "If you CONTINUE, you'll get a current word count of how much you've written so far. You should ALWAYS write at least two chunks."
                 )}
             ]
@@ -768,7 +768,7 @@ class BotChat:
                     
                 # Not done - add continuation prompt
                 continuation_prompt = (
-                    f"You have written {total_words} words so far out of a minimum 3000 words. Continue writing the next chunk. " +
+                    f"You have written {total_words} words so far out of a minimum {expected_length} words. Continue writing the next chunk. " +
                     "When you're done with this chunk of text, write CONTINUE, and then end your message. Then you'll get a new prompt to " +
                     "continue writing the chapter. Don't write CONTINUE in the middle of your output, that *WILL NOT* help you write more. " +
                     "Only write it at the end of your output in order to get a new prompt where you can continue writing the chapter. " +
@@ -1565,7 +1565,7 @@ class BookBot:
             orig_file = TextFile(file_path, config=self.config)
             # Run the LLM to overwrite the original file
             content, _, _ = self._call_llm(
-                file+"_new", # Will remove once I know it's working
+                file, # Will remove once I know it's working
                 editor_bot,
                 {
                     "initial": initial.content,
@@ -2052,9 +2052,27 @@ def task_gen_outline(bot):
 def task_revise_outline(bot):
     """Apply all of the possible outline revisions. Trying to start with the lowest quality ones 
     on the theory that higher-quality ones will fix any errors introduced."""
-    bot.revise("review_outline_romance", "edit_outline", COMMON_DIR+"/outline", "revise_romance")
-    bot.revise("review_outline_motivation", "edit_outline", COMMON_DIR+"/outline", "revise_motivation")
-    bot.revise("review_outline_plot_hole", "edit_outline", COMMON_DIR+"/outline", "revise_plot_hole")
+    # This whole thing is fairly expensive. All of them use DeepSeek and either 1500 words (most)
+    # or 3000 words (some). Need to figure out if cost can be reduced somehow.
+    # Also could pull out the big guns (o3-mini-high) for some content.
+    dir="common"
+    # First do a self-edit to give it a little more time to work
+    bot.self_edit("self_edit_outline", dir+"/outline", "revise_outline")
+    # First do a plot hole edit to make sure the story makes sense to begin wtih
+    bot.revise("review_outline_plot_hole", "edit_outline", dir+"/outline", "revise_plot_hole_1")
+    # Genre edits to add more drama
+    bot.revise("review_outline_romance", "edit_outline", dir+"/outline", "revise_romance")
+    bot.revise("review_outline_mystery", "edit_outline", dir+"/outline", "revise_mystery")
+    bot.revise("review_outline_action", "edit_outline", dir+"/outline", "revise_action")
+    # Historical accuracy and realism
+    bot.revise("review_outline_realism", "edit_outline", dir+"/outline", "revise_realism")
+    # Story structure and pacing
+    bot.revise("review_outline_pov", "edit_outline", dir+"/outline", "revise_pov")
+    bot.revise("review_outline_motivation", "edit_outline", dir+"/outline", "revise_motivation")
+    bot.revise("review_outline_foreshadowing", "edit_outline", dir+"/outline", "revise_foreshadowing")
+    bot.revise("review_outline_pacing", "edit_outline", dir+"/outline", "revise_pacing")
+    # Another plot hole edit
+    bot.revise("review_outline_plot_hole", "edit_outline", dir+"/outline", "revise_plot_hole_2")
 
 def main():
     """Main entry point for BookBot"""
@@ -2103,6 +2121,9 @@ def main():
     self_edit_parser.add_argument('file', type=str, help='File to self-edit')
     self_edit_parser.add_argument('editor_step_name', type=str, nargs='?', help='Editor step name (optional)')
 
+    # Task revise outline command
+    task_revise_outline_parser = subparsers.add_parser('task-revise-outline', help='Apply all possible outline revisions')
+
     # Finalize command
     subparsers.add_parser('finalize', help='Create final versions of all content')
     
@@ -2135,6 +2156,8 @@ def main():
             bot.revise(args.reviewer_bot, args.editor_bot, args.file, args.revise_step_name)
         elif args.command == 'self-edit':
             bot.self_edit(args.editor_bot, args.file, args.editor_step_name)
+        elif args.command == 'task-revise-outline':
+            task_revise_outline(bot)
         elif args.command == 'finalize':
             bot.finalize()
         else:

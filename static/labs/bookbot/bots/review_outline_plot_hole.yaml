@@ -1,5 +1,6 @@
-name: review_commons
+name: review_outline_plot_hole
 type: review_commons
+expected_length: 3000
 system_prompt: 'You are an expert plot hole reviewer. 
   You are a professional editor who specializes in reviewing story outlines and identifying plot holes.
   You have a deep understanding of storytelling, character development, and narrative structure.
@@ -70,4 +71,6 @@ main_prompt: '
   by altering the outline, settings, and character descriptions. 
   Be sure to be specific on your chosen resolution, since you''ll have to carry them out - say things like
   "be sure to write that Bob loses his shoe in chapter 3, so that in chapter 5 he has no shoes" so that later, when writing, you know exactly where to make the change to resolve the plot hole.
-  Don''t start writing the content of the book yet. Just write the plot hole review document, and stop.'
+  Don''t start writing the content of the book yet. Just write the plot hole review document, and stop.
+    Write about 1500 words.
+ '
