@@ -5,6 +5,7 @@ main_prompt: '
   Here is the format: 
   Chapters: Chapters have a number and a title, and 3-6 scenes
   Scenes: Each scene has a setting, a date and time, a list of characters in the scene, and a list of story elements. 
+  Start with how did the characters arrive at the setting. Be
   Story elements: A story element can be an INTRODUCTION, THOUGHT, DIALOGUE, FORESHADOWING, ACTION, RELATIONSHIP, KNOWLEDGE, or SCENERY.
   INTRODUCTIONS indicate the first time a person, place, or thing is mentioned in the story. This is important so the writer can describe the thing in more detail the first time, rather than assuming the reader knows it already.
   Subsequent mentions of the same person, place, or thing should be marked as REUSED.
@@ -13,7 +14,7 @@ main_prompt: '
   Dialogue only makes sense to include if the main character participates in the conversation, or can somehow overhear.
   ACTIONS always have a WHO (the character doing the action), a WHAT (the action itself), a WHERE (the location of the action, within the setting),
   a HOW (the method of the action), a WHY (the motivation for the action), a HOW DID THEY KNOW (what background skill or information did they have to perform the action),
-  a WHO KNOWS (who learned that the action happened), and a EFFECT (what long-term effect happened that will need to be resolved later). 
+  a WHO KNOWS (who learned that the action happened), and a EFFECT (what long-term effect happened that will need to be resolved later - and be sure they ARE resolved later if there is one!).
   Example actions: 
   ACTION: Dave and Mary got in his car, with Dave in the driver seat, and Dave drove to her favorite restaurant (which he knew from chapter 3) because he wanted to impress her. No one else knows they went. They are now in the restaurant.
   ACTION: Bob and Joe engage in a hand-to-hand fight because Bob insulted Joe in chapter 2. Bob learned karate from his father, but Joe doesn''t know how to fight. People on the street see them fight. Bob scrapes his knee and Joe breaks his arm.
@@ -22,8 +23,10 @@ main_prompt: '
   One example is that after kissing, the two lead characters fall deeper into passionate love. Another is that two antagonists decide to conspire together (but the protagonist has to know it happens in some way).
   KNOWLEDGE events are when a character learns something important other than through dialogue or action. For example, they see a hidden door and it will come in handy later.
   SCENERY is the most creative. You can show the reader what the main character sees, hears, smells, tastes, or feels, especially if it''s new or unexpected.
-  You can invent background characters and items to add additional color and flair to the story. You should also describe the clothing the main characters are wearing.
-  
+  You can invent background characters and items to add additional color and flair to the story. You should also describe the clothing the characters in the scene are wearing and generally how they appear.
+  Include the weather and ambient conditions.
+  Each CHAPTER should have 4-6 SCENES, and each SCENE should have 10-20 STORY ELEMENTS.
+
   The outline will be used to write each chapter one-by-one. That is, when writing chapter 3, the writer won''t
   see chapter 2 at all! So it is very very important to note all key events in order to make the story make sense all together.
 
@@ -32,8 +35,8 @@ main_prompt: '
   MOST IMPORTANT: The first time a character, item, or setting is in the story, they need to have a bit of introduction when written - so we NEED to indicate that in the outline.
   Items can''t appear or disappear without explanation. Characters can''t move with no explanation. The weather or date can''t abruptly change.
   If a character, item, or setting, is REUSED (it''s already been introduced in an earlier chapter), denote that as well.
-  Each chapter description should indicate the setting; the characters; and the date and time. Be detailed with the setting - 
-  not "on a train" but "sitting next to each other in seat X of the train Y". 
+  Be detailed with the setting - 
+  not "on a train" but "sitting next to each other in seat X of the train Y", as this helps the writer.
   If a character changes locations, it MUST be mentioned how they get from place to place. Car, bus, train, walk, bicycle - how long did it take, was it a safe journey, what items did they take if any, who did they travel with. 
   You will write each chapter individually, without seeing the other chapters, so the outline as a whole needs to make sense. 
   There are NO ANACHRONISMS. Everything that happens in the story must exist in the story''s timeframe, including technology,
