@@ -1,0 +1,68 @@
+name: write_outline
+type: self_edit
+main_prompt: '
+  You''ve written a basic outline of the book. Now it''s time to expand it into scenes and story elements. 
+  This is a precise outline style that you''ve used many times before, and helps you make sure the story is coherent and
+  logical as well as fun to read. You''re starting from your first outline draft, and you''ll be expanding it into a detailed outline.
+
+  The outline can be AS LONG AS YOU NEED. It should contain all the main story events, and it should be a rollicking fun story, but also make sense and be coherent.
+  The outline, settings, and characters will be your ONLY RESOURCE while writing the book - you won''t have access to chapters as they are written. So include all
+  necessary detail. The outline should be many pages long! 
+  Here is the format: 
+  Chapters: Chapters have a number and a title, and 3-6 scenes
+  Scenes: Each scene has a setting, a date and time, a list of characters in the scene, and a list of story elements. 
+  Start with how did the characters arrive at the setting. Be specific. Where are they - sitting, standing, together, apart.
+  Story elements: A story element can be an INTRODUCTION, THOUGHT, DIALOGUE, FORESHADOWING, ACTION, RELATIONSHIP, KNOWLEDGE, or SCENERY.
+  INTRODUCTIONS indicate the first time a person, place, or thing is mentioned in the story. This is important so the writer can describe the thing in more detail the first time, rather than assuming the reader knows it already.
+  Subsequent mentions of the same person, place, or thing should be marked as REUSED.
+  THOUGHTS are the main character''s thoughts. No one knows their thoughts. They do not know any other person''s thoughts. They may be emotions or abstract thoughts.
+  DIALOGUE is a conversation between two or more characters. The result of the conversation is always indicated. Typically, characters exchange important information. 
+  Dialogue only makes sense to include if the main character participates in the conversation, or can somehow overhear.
+  ACTIONS always have a WHO (the character doing the action), a WHAT (the action itself), a WHERE (the location of the action, within the setting),
+  a HOW (the method of the action), a WHY (the motivation for the action), a HOW DID THEY KNOW (what background skill or information did they have to perform the action),
+  a WHO KNOWS (who learned that the action happened), and a EFFECT (what long-term effect happened that will need to be resolved later - and be sure they ARE resolved later if there is one!).
+  Example actions: 
+  ACTION: Dave and Mary got in his car, with Dave in the driver seat, and Dave drove to her favorite restaurant (which he knew from chapter 3) because he wanted to impress her. No one else knows they went. They are now in the restaurant.
+  ACTION: Bob and Joe engage in a hand-to-hand fight because Bob insulted Joe in chapter 2. Bob learned karate from his father, but Joe doesn''t know how to fight. People on the street see them fight. Bob scrapes his knee and Joe breaks his arm.
+  ACTION: Tim finds a note on the ground and studies it. He didn''t know the note would be there, it was just random. Everyone sees him pick it up. Because of the note, he knows the secret location of the treasure.
+  Be sure to include ALL the needed details on EVERY action. If they are left out, there may be plot holes in the writing later on! 
+  RELATIONSHIP events are changes in the relationship between two characters. They can be negative or positive. 
+  One example is that after kissing, the two lead characters fall deeper into passionate love. Another is that two antagonists decide to conspire together (but the protagonist has to know it happens in some way).
+  KNOWLEDGE events are when a character learns something important other than through dialogue or action. For example, they see a hidden door and it will come in handy later.
+  SCENERY is the most creative. You can show the reader what the main character sees, hears, smells, tastes, or feels, especially if it''s new or unexpected.
+  You can invent background characters and items to add additional color and flair to the story. You should also describe the clothing the characters in the scene are wearing and generally how they appear.
+  Include the weather and ambient conditions.
+  Each CHAPTER should have 4-6 SCENES, and EVERY SCENE MUST have 5-10 STORY ELEMENTS. Don''t be too short! You have unlimited space!
+
+  The outline will be used to write each chapter one-by-one. That is, when writing chapter 3, the writer won''t
+  see chapter 2 at all! So it is very very important to note all key events in order to make the story make sense all together.
+  YOU HAVE UNLIMITED SPACE. DON''T BE TOO SHORT. ALWAYS ERR ON THE SIDE OF WRITING TOO MUCH in the outline.
+
+  IN THE OUTLINE THERE ARE NO SECRETS. If someone dies, specify why they die. If something is stolen, say why it is stolen. 
+  Later, when writing the chapters, we can hide things from the reader. However if something is hidden in the outline, it will
+  not make sense during the writing steps, and then not make sense in the final output!
+
+  If something is described in the character sheet (eg. someone dying or having a romantic relationship), be careful to ensure
+  it actually happens in the outline somewhere.
+
+  Feel free to invent additional minor background characters, settings, or items in the outline, with a quick description. 
+  Remember to make the story edgy, exciting, unpredictable, and fun. Like a bestselling novel .
+  Remember that the main characters grow closer over time, with growing erotic tension, until a night of passion near the end. 
+  Everything MUST be coherent and logical AT THIS STAGE. The most important thing is to not have plot holes.
+
+  The outline should be around 8000-10000 words. Each chapter description should be at least 1000 words, and each scene at least 200.
+
+  Initial Description:
+  {initial}
+
+  Setting:
+  {setting}
+
+  Characters:
+  {characters}
+
+  Outline first draft:
+  {content}
+
+  Format each chapter clearly and show how the story progresses. 
+  '

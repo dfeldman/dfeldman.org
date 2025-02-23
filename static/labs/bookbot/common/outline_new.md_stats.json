@@ -1,47 +1,20 @@
 {
-  "input_tokens": 91545,
-  "output_tokens": 7972,
-  "time": 214.3590738773346,
+  "input_tokens": 10,
+  "output_tokens": 20,
+  "time": 0.0037360191345214844,
   "calls": [
     {
-      "timestamp": "2025-02-23T12:08:56.530673",
-      "input_tokens": 20644,
-      "output_tokens": 2677,
-      "elapsed": 67.9863932132721,
+      "timestamp": "2025-02-23T12:27:06.525918",
+      "input_tokens": 10,
+      "output_tokens": 20,
+      "elapsed": 0.0037360191345214844,
       "retry": 1,
-      "provider": "Together",
-      "model": "deepseek/deepseek-r1"
-    },
-    {
-      "timestamp": "2025-02-23T12:09:37.975629",
-      "input_tokens": 22484,
-      "output_tokens": 1440,
-      "elapsed": 41.431143283843994,
-      "retry": 2,
-      "provider": "Together",
-      "model": "deepseek/deepseek-r1"
-    },
-    {
-      "timestamp": "2025-02-23T12:10:26.870844",
-      "input_tokens": 23627,
-      "output_tokens": 1684,
-      "elapsed": 48.884337186813354,
-      "retry": 3,
-      "provider": "Together",
-      "model": "deepseek/deepseek-r1"
-    },
-    {
-      "timestamp": "2025-02-23T12:11:22.938999",
-      "input_tokens": 24790,
-      "output_tokens": 2171,
-      "elapsed": 56.05720019340515,
-      "retry": 4,
-      "provider": "Together",
-      "model": "deepseek/deepseek-r1"
+      "provider": "openai",
+      "model": "gpt-4"
     }
   ],
-  "previous_input_tokens": "10",
-  "previous_output_tokens": "20",
-  "previous_time": "0.002354145050048828",
-  "previous_continuation_count": "1"
+  "previous_input_tokens": "91545",
+  "previous_output_tokens": "7972",
+  "previous_time": "214.3590738773346",
+  "previous_continuation_count": "4"
 }

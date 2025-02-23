@@ -21,7 +21,7 @@ import re
 
 
 # Disable all LLM calls
-DRY_RUN = False
+DRY_RUN = True
 
 # Set up rich console for better output
 console = Console()
@@ -362,6 +362,7 @@ class BotType(Enum):
     REVIEW_CHAPTER = auto()    # chapter_number, content, outline, setting, characters
     EDIT_CHAPTER = auto()      # chapter_number, content, edit_notes
     REVIEW_WHOLE = auto()      # content
+    SELF_EDIT = auto()          # initial, characters, settings, content
     
     @property
     def required_vars(self) -> Set[str]:
@@ -375,7 +376,8 @@ class BotType(Enum):
             BotType.REVIEW_COMMONS: {"initial", "setting", "characters", "content"}, # Content is the outline since it is being edited
             BotType.REVIEW_CHAPTER: {"chapter_number", "content", "outline", "setting", "characters"},
             BotType.EDIT_CHAPTER: {"chapter_number", "content", "edit_notes"},
-            BotType.REVIEW_WHOLE: {"content"}
+            BotType.REVIEW_WHOLE: {"content"},
+            BotType.SELF_EDIT: {"initial", "characters", "setting", "content"}
         }[self]
 
 @dataclass
@@ -1527,6 +1529,52 @@ class BookBot:
             logger.error(f"Error generating review: {e}")
             raise BookBotError(f"Failed to generate review: {e}")
 
+    def self_edit(self, editor_bot: str, file: str, editor_step_name: str):
+        """Self-edit a file. In a self-edit, only one Bot is used to edit an existing file.
+        The file is loaded, and the Bot is called with the file content to generate a new edited file.
+        """
+        try:
+            initial = TextFile(Path("initial.md"), config=self.config)
+            setting = TextFile(COMMON_DIR / "setting.md", config=self.config)
+            characters = TextFile(COMMON_DIR / "characters.md", config=self.config)
+
+            # Load the file to be edited
+            if file.endswith(".md"):
+                file = file[:-3]
+                # Need the path without extension since it's used to make other filenames
+            file_path = Path(file + ".md")
+            if not file_path.exists():
+                raise BookBotError(f"File not found: {file}")
+            orig_file = TextFile(file_path, config=self.config)
+            # Run the LLM to overwrite the original file
+            self._call_llm(
+                file+"_new.md", # Will remove once I know it's working
+                editor_bot,
+                {
+                    "initial": initial.content,
+                    "setting": setting.content,
+                    "characters": characters.content,
+                    "content": orig_file.content,
+                },
+                command=f"edit_{editor_bot}"
+            )
+            # Generate a diff message
+            diff_message = self._generate_diff_message(orig_file.content, file_path.read_text())
+            logger.info(f"Diff: {diff_message}")
+            # Commit the changes
+            if editor_step_name:
+                self._git_commit(f"Edited {file} with {editor_bot} - {editor_step_name}")
+            else:
+                self._git_commit(f"Edited {file} with {editor_bot}")
+            self._generate_preview()
+            console.print(f"\n[green]✓[/green] Edited successfully")
+        except Exception as e:
+            logger.error(f"Error editing with {editor_bot}: {e}")
+            # Print traceback
+            import traceback
+            traceback.print_exc()
+            raise BookBotError(f"Failed to edit: {e}")
+
     def revise(self, reviewer_bot: str, editor_bot: str, file: str, revise_step_name: str):
         """Review and edit a file using two different bots.
         First, loads the file, which can be a chapter file or commons file specified by its path in either case.
@@ -2018,6 +2066,13 @@ def main():
     revise_parser.add_argument('file', type=str, help='File to revise')
     revise_parser.add_argument('revise_step_name', type=str, nargs='?', help='Revision step name (optional)')
 
+
+    # Self-edit command
+    self_edit_parser = subparsers.add_parser('self-edit', help='Self-edit a file')
+    self_edit_parser.add_argument('editor_bot', type=str, help='Editor bot name')
+    self_edit_parser.add_argument('file', type=str, help='File to self-edit')
+    self_edit_parser.add_argument('editor_step_name', type=str, nargs='?', help='Editor step name (optional)')
+
     # Finalize command
     subparsers.add_parser('finalize', help='Create final versions of all content')
     
@@ -2048,6 +2103,8 @@ def main():
             bot.review_book()
         elif args.command == 'revise':
             bot.revise(args.reviewer_bot, args.editor_bot, args.file, args.revise_step_name)
+        elif args.command == 'self-edit':
+            bot.self_edit(args.editor_bot, args.file, args.editor_step_name)
         elif args.command == 'finalize':
             bot.finalize()
         else:
