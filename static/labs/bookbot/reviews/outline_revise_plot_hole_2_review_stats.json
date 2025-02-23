@@ -1,0 +1,20 @@
+{
+  "input_tokens": 19324,
+  "output_tokens": 3397,
+  "time": 122.86118698120117,
+  "calls": [
+    {
+      "timestamp": "2025-02-23T16:12:17.091793",
+      "input_tokens": 19324,
+      "output_tokens": 3397,
+      "elapsed": 122.86118698120117,
+      "retry": 1,
+      "provider": "Together",
+      "model": "deepseek/deepseek-r1"
+    }
+  ],
+  "previous_input_tokens": 0,
+  "previous_output_tokens": 0,
+  "previous_time": 0,
+  "previous_continuation_count": 0
+}
