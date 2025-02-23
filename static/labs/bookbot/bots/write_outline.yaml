@@ -3,6 +3,8 @@ type: write_outline
 main_prompt: '
   Based on the materials below, create a detailed chapter-by-chapter outline of the book. 
   The outline can be AS LONG AS YOU NEED. It should contain all the main story events, and it should be a rollicking fun story, but also make sense and be coherent.
+  The outline, settings, and characters will be your ONLY RESOURCE while writing the book - you won''t have access to chapters as they are written. So include all
+  necessary detail. The outline should be many pages long! 
   Here is the format: 
   Chapters: Chapters have a number and a title, and 3-6 scenes
   Scenes: Each scene has a setting, a date and time, a list of characters in the scene, and a list of story elements. 
@@ -20,26 +22,26 @@ main_prompt: '
   ACTION: Dave and Mary got in his car, with Dave in the driver seat, and Dave drove to her favorite restaurant (which he knew from chapter 3) because he wanted to impress her. No one else knows they went. They are now in the restaurant.
   ACTION: Bob and Joe engage in a hand-to-hand fight because Bob insulted Joe in chapter 2. Bob learned karate from his father, but Joe doesn''t know how to fight. People on the street see them fight. Bob scrapes his knee and Joe breaks his arm.
   ACTION: Tim finds a note on the ground and studies it. He didn''t know the note would be there, it was just random. Everyone sees him pick it up. Because of the note, he knows the secret location of the treasure.
+  Be sure to include ALL the needed details on EVERY action. If they are left out, there may be plot holes in the writing later on! 
   RELATIONSHIP events are changes in the relationship between two characters. They can be negative or positive. 
   One example is that after kissing, the two lead characters fall deeper into passionate love. Another is that two antagonists decide to conspire together (but the protagonist has to know it happens in some way).
   KNOWLEDGE events are when a character learns something important other than through dialogue or action. For example, they see a hidden door and it will come in handy later.
   SCENERY is the most creative. You can show the reader what the main character sees, hears, smells, tastes, or feels, especially if it''s new or unexpected.
   You can invent background characters and items to add additional color and flair to the story. You should also describe the clothing the characters in the scene are wearing and generally how they appear.
   Include the weather and ambient conditions.
-  Each CHAPTER should have 4-6 SCENES, and EVERY SCENE should have 10-20 STORY ELEMENTS. Don''t be too short! You have unlimited space!
+  Each CHAPTER should have 4-6 SCENES, and EVERY SCENE MUST have 10-20 STORY ELEMENTS. Don''t be too short! You have unlimited space!
 
   The outline will be used to write each chapter one-by-one. That is, when writing chapter 3, the writer won''t
   see chapter 2 at all! So it is very very important to note all key events in order to make the story make sense all together.
+  YOU HAVE UNLIMITED SPACE. DON''T BE TOO SHORT. ALWAYS ERR ON THE SIDE OF WRITING TOO MUCH in the outline.
 
   The outline should be enough to make a coherent story, without plot holes. For example if someone dies or 
   gets injured, they can''t return healthy later on. Characters can''t appear or disappear without explanation. 
-  MOST IMPORTANT: The first time a character, item, or setting is in the story, they need to have a bit of introduction when written - so we NEED to indicate that in the outline.
-  Items can''t appear or disappear without explanation. Characters can''t move with no explanation. The weather or date can''t abruptly change.
-  If a character, item, or setting, is REUSED (it''s already been introduced in an earlier chapter), denote that as well.
   Be detailed with the setting - 
   not "on a train" but "sitting next to each other in seat X of the train Y", as this helps the writer.
   If a character changes locations, it MUST be mentioned how they get from place to place. Car, bus, train, walk, bicycle - how long did it take, was it a safe journey, what items did they take if any, who did they travel with. 
-  You will write each chapter individually, without seeing the other chapters, so the outline as a whole needs to make sense. 
+  You will write each chapter individually, without seeing the other chapters, so the outline as a whole needs to make sense. These should be ACTIONS. 
+  Even within a chapter, it''s necessary to explain how they get from place to place - even if it doesn''t make it into the final book. 
   There are NO ANACHRONISMS. Everything that happens in the story must exist in the story''s timeframe, including technology,
   laws, and current events. There are no photocopiers, videocameras, cell phones, genetic modification, retina scanners, or similar complete anachronisms for the setting.
   There is NO MAGIC. While the story has an aura of the supernatural, nothing happens that can''t be physically explained. 
@@ -60,11 +62,11 @@ main_prompt: '
   or a secret locked area without breaking the lock. 
 
   Feel free to invent additional minor background characters, settings, or items in the outline, with a quick description. 
-  Remember to make it edgy, exciting, unpredictable, and fun. Like a bestselling novel .
+  Remember to make the story edgy, exciting, unpredictable, and fun. Like a bestselling novel .
   Remember that the main characters grow closer over time, with growing erotic tension, until a night of passion near the end. 
   Everything MUST be coherent and logical AT THIS STAGE. The most important thing is to not have plot holes.
 
-  The outline should be around 5000-8000 words. Each chapter description should be at least 1000 words.
+  The outline should be around 8000-10000 words. Each chapter description should be at least 1000 words, and each scene at least 200.
 
   Initial Description:
   {initial}

@@ -1499,6 +1499,49 @@ class BookBot:
             logger.error(f"Error generating review: {e}")
             raise BookBotError(f"Failed to generate review: {e}")
 
+    def review_and_edit_with_2_bots(self, reviewer_bot: str, editor_bot: str, file: str):
+        """Review and edit a file using two different bots.
+        First, loads the file, which can be a chapter file or commons file specified by its path in either case.
+        Then call the LLM with the reviewer bot and the file to generate a new review file.
+        Then call the LLM with the editor bot and the review file to edit the original file (overwriting it)."""
+        try:
+            # Load the file to be reviewed
+            file_path = Path(file)
+            if not file_path.exists():
+                raise BookBotError(f"File not found: {file}")
+                
+            text_file = TextFile(file_path, config=self.config)
+
+            # Generate review using the reviewer bot
+            review_file = file_path.with_suffix('.review.md')
+            self._call_llm(
+                review_file,
+                reviewer_bot,
+                {
+                    "content": text_file.content
+                },
+                command=f"review_and_edit_with_2_bots_{reviewer_bot}_{editor_bot}"
+            )
+
+            # Edit the original file using the editor bot
+            self._call_llm(
+                file_path,
+                editor_bot,
+                {
+                    "content": text_file.content,
+                    "review": TextFile(review_file).content
+                },
+                command=f"edit_with_2_bots_{reviewer_bot}_{editor_bot}"
+            )
+
+            self._git_commit(f"Reviewed and edited {file}")
+            self._generate_preview()
+            
+            console.print(f"\n[green]✓[/green] Reviewed and edited successfully")
+            
+        except Exception as e:
+            logger.error(f"Error reviewing and editing with 2 bots: {e}")
+            raise BookBotError(f"Failed to review and edit: {e}")
 
 
 
