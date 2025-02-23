@@ -34,16 +34,16 @@ main_prompt: '
   Be careful about people''s locations WITHIN settings. If two people need to touch, but they are both sitting down, this is odd. If one character is at one end of a room, and another is at the other end of the room, they can''t easily touch or interact. You may have to include bullet points of walking around or standing up to be closer to each other.
 
   Initial Description:
-  {{ initial }}
+  {initial}
 
   Setting:
-  {{ setting }}
+  {setting}
 
   Characters:
-  {{ characters }}
+  {characters}
 
   Outline:
-  {{ outline }}
+  {outline}
 
   Carefully review these materials and write a "plot hole review" document which specifies how to fix them
   by altering the outline, settings, and character descriptions. 

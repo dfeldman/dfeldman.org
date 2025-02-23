@@ -2,10 +2,11 @@ name: write_outline
 type: write_outline
 main_prompt: '
   Based on the materials below, create a detailed chapter-by-chapter outline of the book. 
+  The outline can be AS LONG AS YOU NEED. It should contain all the main story events, and it should be a rollicking fun story, but also make sense and be coherent.
   Here is the format: 
   Chapters: Chapters have a number and a title, and 3-6 scenes
   Scenes: Each scene has a setting, a date and time, a list of characters in the scene, and a list of story elements. 
-  Start with how did the characters arrive at the setting. Be
+  Start with how did the characters arrive at the setting. Be specific. Where are they - sitting, standing, together, apart.
   Story elements: A story element can be an INTRODUCTION, THOUGHT, DIALOGUE, FORESHADOWING, ACTION, RELATIONSHIP, KNOWLEDGE, or SCENERY.
   INTRODUCTIONS indicate the first time a person, place, or thing is mentioned in the story. This is important so the writer can describe the thing in more detail the first time, rather than assuming the reader knows it already.
   Subsequent mentions of the same person, place, or thing should be marked as REUSED.
@@ -25,7 +26,7 @@ main_prompt: '
   SCENERY is the most creative. You can show the reader what the main character sees, hears, smells, tastes, or feels, especially if it''s new or unexpected.
   You can invent background characters and items to add additional color and flair to the story. You should also describe the clothing the characters in the scene are wearing and generally how they appear.
   Include the weather and ambient conditions.
-  Each CHAPTER should have 4-6 SCENES, and each SCENE should have 10-20 STORY ELEMENTS.
+  Each CHAPTER should have 4-6 SCENES, and EVERY SCENE should have 10-20 STORY ELEMENTS. Don''t be too short! You have unlimited space!
 
   The outline will be used to write each chapter one-by-one. That is, when writing chapter 3, the writer won''t
   see chapter 2 at all! So it is very very important to note all key events in order to make the story make sense all together.
@@ -40,7 +41,7 @@ main_prompt: '
   If a character changes locations, it MUST be mentioned how they get from place to place. Car, bus, train, walk, bicycle - how long did it take, was it a safe journey, what items did they take if any, who did they travel with. 
   You will write each chapter individually, without seeing the other chapters, so the outline as a whole needs to make sense. 
   There are NO ANACHRONISMS. Everything that happens in the story must exist in the story''s timeframe, including technology,
-  laws, and current events.
+  laws, and current events. There are no photocopiers, videocameras, cell phones, genetic modification, retina scanners, or similar complete anachronisms for the setting.
   There is NO MAGIC. While the story has an aura of the supernatural, nothing happens that can''t be physically explained. 
   Be careful about people''s locations WITHIN settings. If two people need to touch, but they are both sitting down, this is odd. If one 
   character is at one end of a room, and another is at the other end of the room, they can''t easily touch or interact. You may have

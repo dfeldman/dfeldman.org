@@ -367,7 +367,7 @@ class BotType(Enum):
             BotType.WRITE_SETTING: {"initial"},
             BotType.WRITE_CHARACTERS: {"initial", "setting"},
             BotType.WRITE_CHAPTER: {"chapter_number", "outline", "setting", "characters", "previous_chapter"},
-            BotType.REVIEW_COMMONS: {"file_type", "content", "context"},
+            BotType.REVIEW_COMMONS: {"initial", "setting", "characters", "outline"},
             BotType.REVIEW_CHAPTER: {"chapter_number", "content", "outline", "setting", "characters"},
             BotType.EDIT_CHAPTER: {"chapter_number", "content", "edit_notes"},
             BotType.REVIEW_WHOLE: {"content"}
@@ -1379,9 +1379,10 @@ class BookBot:
                 "common/commons_review",
                 "review_commons",
                 {
-                    "file_type": "common_files",
-                    "content": "\n\n".join([f.content for f in [initial, setting, characters, outline]]),
-                    "context": initial.content  # Initial description provides context
+                    "initial": initial.content,
+                    "setting": setting.content,
+                    "characters": characters.content,
+                    "outline": outline.content
                 },
                 command="write_commons_review"
             )
