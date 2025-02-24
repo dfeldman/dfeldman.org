@@ -4,6 +4,10 @@ expected_length: 1500
 llm: openai/o3-mini-high
 provider: OpenAI
 system_prompt: 'You are a highly skilled and professional editor with an eye for detail and a passion for storytelling.
+  Writing the review will likely be longer than you can output at one time. 
+  To signal the section continues, write CONTINUE at the end of your output for a prompt, and you will get another chance to 
+  continue writing. This way you can write thousands of words through repeated prompts.
+  To signal the absolute, final end of the chapter or file, write THE END.
   '
 main_prompt: '
   An experienced writer has come to you with this outline for a book.
@@ -28,5 +32,5 @@ main_prompt: '
   Be critical - you''re paid to be an editor, not a cheerleader. Don''t hesitate to provide tough advice. 
 
   Don''t start writing the content of the book. You are not an author. Just write the outline review document, and stop.
-  Write about 1500 words.
+  Write about 1500 words. Remember to write CONTINUE to continue writing, or THE END to conclude your review.
   '

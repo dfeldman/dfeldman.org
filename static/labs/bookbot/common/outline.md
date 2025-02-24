@@ -1,27 +1,31 @@
 ---
 created_at: 2025-02-22T12:42:10.882697
-command: edit_review_outline_o3_edit_outline
+command: edit_review_outline_claude_edit_outline
 bot: edit_outline
-timestamp: 2025-02-23T19:26:04.619102
-input_tokens: 38522
-output_tokens: 3546
-total_time: 52.300325870513916
-continuation_count: 2
+timestamp: 2025-02-23T19:33:13.640626
+input_tokens: 55108
+output_tokens: 5229
+total_time: 88.1742639541626
+continuation_count: 3
 provider: Together
 model: deepseek/deepseek-r1
-time: 52.300325870513916
-total_input_tokens: 38522
-total_output_tokens: 3546
-total_continuation_count: 2
+time: 88.1742639541626
+total_input_tokens: 55108
+total_output_tokens: 5229
+total_continuation_count: 3
 ---
+### **Revised Outline: The Case of the Golden Throne**  
+
+---
+
 ### **Chapter 1: Dust & Desire**  
-**Word Count**: 4,200 | **Timeline**: June 3-5, 1929  
+**Word Count**: 4,200 | **Timeline**: June 3–5, 1929  
 
 #### **Scene 1: The Metropolitan Museum Heist Gallery**  
 **Setting**: Gallery 17, 10:00 AM. Heatwave glare fractures through stained glass, baking the stink of linseed oil and old stone. Vivian’s damp blouse clings to her spine as she kneels beside the Golden Throne replica, her father’s initials carved into the base.  
 **Characters**: Vivian (Leica camera, frayed leather satchel), Guard Joe (holster digging into love handles), Celeste (docent disguise, cobalt paint flecking her cuticles).  
 **Key Beats**:  
-1. **Sensual Memory**: Vivian’s thumb grazes her father’s initials. *His Old Spice lingers—sandalwood and gun oil.* Sweat trickles between her breasts.  
+1. **Sensory Memory**: Vivian’s thumb grazes her father’s initials. *His Old Spice lingers—sandalwood and gun oil.* Sweat trickles between her breasts.  
 2. **Violent Discovery**: A shadow shifts behind the Byzantine tapestry. Switchblade slashes her thigh. She disarms the thug, slamming his skull into marble. *Blood drips onto mosaics.*  
 3. **Romantic Foreshadowing**: Vito leans in the doorway, silver lighter catching sunlight. “Curiosity’s a killer, Red.” He tosses it—*engraved “Rosa”* lands at her feet.  
 4. **Clue**: Celeste “accidentally” spills Prussian blue paint—*same shade on tunnel maps in Vivian’s files.*  
@@ -65,7 +69,6 @@ total_continuation_count: 2
 
 ---
 
-CONTINUE
 ### **Chapter 3: Silk & Scalpels**  
 **Word Count**: 4,800 | **Cumulative**: 13,500  
 
@@ -86,24 +89,26 @@ CONTINUE
 
 ---
 
+**CONTINUE**  
+**Current Word Count**: ~1,700
 ### **Chapter 4: Gilded Knives**  
 **Word Count**: 5,000 | **Cumulative**: 18,500  
 
 #### **Scene 1: Kensington Estate Ballroom**  
-**Setting**: 9:00 PM. Crystal chandeliers fracture light. Jazz quartet plays *Ain’t Misbehavin’* at panic tempo.  
-**Characters**: Vivian (emerald silk dress), Vito (switchblade in cummerbund), Charles Beaumont (cocaine-dilated pupils).  
+**Setting**: 9:00 PM. Crystal chandeliers fracture light into daggers. A jazz quartet plays *Ain’t Misbehavin’* at a manic tempo, syncopated by the clink of champagne flutes and the rustle of silk.  
+**Characters**: Vivian (emerald dress slit to mid-thigh), Vito (switchblade strapped to his calf), Charles Beaumont (coke-bright eyes, sweat beading on his upper lip).  
 **Key Beats**:  
-1. **Deception**: Vito’s hand slides lower during foxtrot. *Teeth graze his earlobe.*  
-2. **Murder**: Charles grabs her wrist—*gunshot.* Blood arcs across her décolletage.  
-3. **Clue**: Vivian steals his pocket watch—*stopped at 11:07 PM.* Initials *H.K.* gleam.  
-4. **Chase**: Butcher’s cleaver embeds in wall—*blade quivers inches from her ear.*  
+1. **Deception**: Vito’s hand lingers at the small of Vivian’s back during the foxtrot. “You’re a terrible dancer,” he murmurs. Her teeth graze his earlobe. “You’re a worse liar.”  
+2. **Murder**: Charles grabs her wrist, breath reeking of absinthe. “Kensington’s got a *taste* for you—” A gunshot cracks. Blood arcs across her décolletage as he collapses.  
+3. **Clue**: Vivian snatches Charles’ pocket watch—*stopped at 11:07 PM.* Initials *H.K.* gleam under crystal light.  
+4. **Chase**: A butcher’s cleaver embeds in the wall beside her head. *Blade quivers* as she flees through swinging kitchen doors.  
 
 #### **Scene 2: Hedge Maze Ambush**  
-**Setting**: 11:30 PM. Moonlight carves thorns into razors.  
-**Characters**: Vivian (torn hem), Inspector Burns (silencer gleaming), Vito (knuckles split).  
+**Setting**: 11:30 PM. Moonlight carves thorns into razors. The scent of crushed boxwood and gun oil hangs thick.  
+**Characters**: Vivian (stocking torn, heel lost), Inspector Burns (silencer gleaming), Vito (knuckles split and bleeding).  
 **Key Beats**:  
-1. **Brutal Combat**: Burns pins Vivian—*thorns pierce her spine.* Vito tackles him into brambles.  
-2. **Betrayal Exposed**: Burns’ badge clatters—*“H.K.” etched on the back.*  
+1. **Brutal Combat**: Burns pins Vivian against thorns—*prickles pierce her spine.* Vito tackles him into brambles. Fists crack bone. Burns’ gold tooth skitters into darkness.  
+2. **Betrayal Exposed**: Burns’ badge clatters to the ground. Vivian kicks it—*“H.K.” etched on the back.* “How much did he pay you?” she snarls. Burns spits blood. “More than you’re worth.”  
 
 ---
 
@@ -111,42 +116,43 @@ CONTINUE
 **Word Count**: 5,200 | **Cumulative**: 23,700  
 
 #### **Scene 1: Celeste’s SoHo Studio**  
-**Setting**: 3:00 AM. Turpentine fumes sear lungs. Half-forged Van Goghs leer.  
-**Characters**: Vivian (revolver in waistband), Celeste (scalpel trembling), Freddie (leaning on absinthe crate).  
+**Setting**: 3:00 AM. Turpentine fumes sear lungs. Half-forged Van Goghs leer from easels, their sunflowers twisted into sneers.  
+**Characters**: Vivian (revolver digging into her ribs), Celeste (scalpel trembling in paint-stained fingers), Freddie (lounging on an absinthe crate, monocle cracked).  
 **Key Beats**:  
-1. **Confrontation**: Celeste slashes—*Prussian blue smock matches Kensington’s handkerchief.*  
-2. **Heartbreak**: FBI sirens wail. Vivian shoves a train ticket into Celeste’s hand. *Child’s fingerprint stains the corner.*  
-3. **Clue**: Blueprint under Freddie’s shoe—*“Golden Throne → Dock 9”* circled.  
+1. **Confrontation**: Celeste slashes a canvas—*Prussian blue smock matches Kensington’s handkerchief.* “You think you’re the first to hunt him?”  
+2. **Heartbreak**: FBI sirens wail below. Vivian shoves a train ticket into Celeste’s hand. *A child’s fingerprint stains the corner.* “Run. For her.”  
+3. **Clue**: Blueprint under Freddie’s shoe—*“Golden Throne → Dock 9”* circled in red. He grins. “Always leaving breadcrumbs, Red.”  
 
 #### **Scene 2: Grand Central Terminal Showdown**  
-**Setting**: 5:45 AM. Steam hisses. FBI agents swarm Platform 9.  
-**Characters**: Vivian (father’s watch), Vito (chain-wrapped fists), Kensington (cane-sword raised).  
+**Setting**: 5:45 AM. Steam hisses like a serpent. FBI agents swarm Platform 9, guns drawn.  
+**Characters**: Vivian (father’s watch clutched like a talisman), Vito (chain wrapped around bloody fists), Kensington (cane-sword raised, face purple with rage).  
 **Key Beats**:  
-1. **Combat**: Vito drives railroad spike into Kensington’s gut. *“For Rosalia.”*  
-2. **Revelation**: Throne crate cracks—*her father’s watch inside.*  
-3. **Escape**: Vito vanishes into steam. *Ticket smeared with blood burns.*  
+1. **Combat**: Vito drives a railroad spike into Kensington’s gut. *“For Rosalia.”* The Mayor collapses, clawing at his Rolex.  
+2. **Revelation**: The throne crate splits—*her father’s pocket watch glints inside.* Vivian’s knees buckle. “He wasn’t a thief.”  
+3. **Escape**: Vito vanishes into steam. *A ticket smeared with blood burns in her fist.*  
 
 ---
 
-CONTINUE
+**CONTINUE**  
+**Current Word Count**: ~2,600
 ### **Chapter 6: Ashes & Echoes**  
 **Word Count**: 5,500 | **Cumulative**: 29,200  
 
 #### **Scene 1: The Blind Owl’s Last Call**  
-**Setting**: Dawn. Shattered glass like diamonds. Enzo’s corpse slumps under Rosalia’s photo, eyes frozen wide.  
-**Characters**: **Vivian** (knife in hand), **Vito** (washing gore from fists), **Sammy** (sweeping debris).  
+**Setting**: Dawn. Shattered glass carpets the floor like diamonds. Enzo’s corpse slumps beneath Rosalia’s photo, eyes frozen wide. A fog of whiskey and gunpowder hangs in the air.  
+**Characters**: Vivian (knife still in hand, blood drying under her nails), Vito (scrubbing gore from his fists in the sink), Sammy (sweeping glass shards with a broom missing half its bristles).  
 **Key Beats**:  
-1. **Aftermath**: Vito’s switchblade protrudes from Enzo’s throat. “Should’ve stabbed him twice,” Vivian mutters. Sammy tosses a rag—*blood blooms on linen.*  
-2. **Romance**: Vito presses a ticket into her palm. “Next stop: nowhere they’ll find us.” Lips brush her knuckles. *Stubble scrapes skin.* She slams him against the bar—*teeth clash, ice melting in abandoned cups.*  
-3. **Betrayal**: Enzo’s ledger spills—*“Eleanor Brooks → $10k for tunnel maps.”* Vivian tosses it into flames. “We all burn.”  
+1. **Aftermath**: Vito’s switchblade protrudes from Enzo’s throat. “Should’ve stabbed him twice,” Vivian mutters, tossing a rag that *blooms crimson* when it hits the floor.  
+2. **Romantic Turning Point**: Vito presses a train ticket into her palm. “Next stop: nowhere they’ll find us.” His lips brush her knuckles—*stubble scrapes her skin.* She slams him against the bar, bottles rattling. Teeth clash. *Ice melts in abandoned highball glasses.*  
+3. **Betrayal Revealed**: Enzo’s ledger spills open—*“Eleanor Brooks → $10k for tunnel maps.”* Vivian hurls it into the fireplace. “We all burn,” she whispers, watching flames lick Eleanor’s name.  
 
 #### **Scene 2: The Sentinel’s Funeral**  
-**Setting**: *Daily Sentinel* ruins. 8:00 AM. Charred headlines swirl in Hudson gusts. A typewriter melts into slag.  
-**Characters**: **Vivian** (press badge in fist), **Fletcher** (flask trembling), **Freddie** (leaning on a burnt desk).  
+**Setting**: *Daily Sentinel* ruins. 8:00 AM. Charred headlines swirl in Hudson River gusts. A melted typewriter drips onto ashes.  
+**Characters**: Vivian (press badge clenched in her fist), Fletcher (flask trembling in his liver-spotted hand), Freddie (leaning on a burnt desk, monocle missing a lens).  
 **Key Beats**:  
-1. **Symbolic Release**: Vivian hurls her badge into the river—*ripples erase her reflection.* Fletcher’s grip tightens. “You’ll starve without this.”  
-2. **Final Clue**: Freddie tosses Kensington’s snuff box. *Hidden map inside.* “For the memoir, Red.” His ring finger—*missing*—gleams.  
-3. **Escape**: Taxi idles—*Vito’s silhouette inside.* License plate: **VIV-VI-29**.  
+1. **Symbolic Release**: Vivian hurls her badge into the river—*ripples erase her reflection.* Fletcher grabs her wrist. “You’ll starve without this.” She wrenches free. “I’d rather starve than choke on his lies.”  
+2. **Final Clue**: Freddie tosses Kensington’s snuff box. *A hidden compartment clicks open—tunnel map inside.* “For the memoir, Red.” His ring finger, *missing since the gala*, gleams with fresh stitches.  
+3. **Escape**: A taxi idles at the curb—*Vito’s silhouette smokes in the backseat.* License plate: **VIV-VI-29**. Freddie tips his hat. “Try not to die, darling.”  
 
 ---
 
@@ -154,43 +160,49 @@ CONTINUE
 **Word Count**: 5,800 | **Cumulative**: 35,000  
 
 #### **Scene 1: City Hall Tunnel Collapse**  
-**Setting**: 3:00 AM. Concrete dust chokes the air. Sparks rain from severed wires.  
-**Characters**: **Vivian** (father’s watch), **Kensington** (cuffed), **Celeste** (daughter’s doll), **Vito** (hauling crates).  
+**Setting**: 3:00 AM. Concrete dust chokes the air. Sparks rain from severed wires, casting strobe-light chaos.  
+**Characters**: Vivian (father’s watch dangling from her neck), Kensington (cuffed to a rusted pipe), Celeste (clutching her daughter’s doll), Vito (hauling crates of forged Rembrandts).  
 **Key Beats**:  
-1. **Power Shift**: Kensington bites an agent’s ear—*Vivian pistol-whips him.* “Your legacy’s a *footnote*.”  
-2. **Redemption**: Celeste swaps throne emeralds for paste. “Heroes need souvenirs.”  
-3. **Romantic Climax**: Vito pulls Vivian into a shadowed alcove—*lips clash, tasting gunpowder.*  
+1. **Power Shift**: Kensington bites an FBI agent’s ear—*Vivian pistol-whips him.* “Your legacy’s a *footnote*,” she hisses. Blood drips onto his silk cravat.  
+2. **Redemption**: Celeste swaps throne emeralds for paste. “Heroes need souvenirs,” she says, tucking a real gem into Vivian’s pocket. *Their eyes meet—years of unsaid apologies.*  
+3. **Romantic Climax**: Vito pulls Vivian into a shadowed alcove. Lips clash, tasting gunpowder and desperation. Her fingers knot in his hair. *A mine cart rattles past—they don’t let go.*  
 
 #### **Scene 2: The Long Island Rail Road – Parlor Car 3**  
-**Setting**: 11:30 PM. Velvet seats, ice buckets of Champagne. A rattling door to the next car.  
-**Characters**: **Vivian** (bloodied train ticket), **Vito** (switchblade loose in sleeve), **Freddie** (monocle cracked).  
+**Setting**: 11:30 PM. Velvet seats reek of spilled Champagne. A rattling door to the next car threatens to burst open.  
+**Characters**: Vivian (bloodied train ticket crumpled in her fist), Vito (switchblade loose in his sleeve), Freddie (monocle cracked, slurring obscenities).  
 **Key Beats**:  
-1. **Ambush**: Freddie lounges, sipping bourbon. “Did you *really* think I’d let you flee?”  
-2. **Showdown**: Vito disarms Freddie’s cane-gun—*barrel presses under his jaw.* “You’re bad at goodbyes.”  
-3. **Clue**: Freddie’s pocket yields a photo—*Vivian’s Malibu villa circled in red.*  
+1. **Ambush**: Freddie lounges, swirling bourbon. “Did you *really* think I’d let you flee?” His cane-gun clicks.  
+2. **Showdown**: Vito disarms him—*barrel presses under Freddie’s jaw.* “You’re bad at goodbyes.” Freddie laughs. “You’re worse at endings.”  
+3. **Clue**: Freddie’s pocket yields a photo—*Malibu villa circled in red.* “Safe houses aren’t safe, Red.”  
 
 ---
 
+**CONTINUE**  
+**Current Word Count**: ~3,800
 ### **Epilogue: Pacific Veils**  
 **Word Count**: 4,500 | **Cumulative**: 39,500  
 
 #### **Scene 1: Malibu Cliffside Villa**  
-**Setting**: 1931. Salt air tangles with typewriter clatter. Waves claw at jagged rocks.  
-**Characters**: **Vivian** (sunburned shoulders), **Vito** (mixing old-fashioneds).  
+**Setting**: 1931. Salt air tangles with typewriter clatter. Waves claw at jagged rocks below the sun-bleached veranda.  
+**Characters**: Vivian (sunburned shoulders, Remington No. 10 keys sticky with ocean spray), Vito (mixing old-fashioneds, shirt unbuttoned to reveal a scar over his heart).  
 **Key Beats**:  
-1. **Uneasy Peace**: Vito sets a drink beside her Remington. “Gonna mention how I saved your ass?”  
-2. **Lingering Threat**: Unmarked envelope arrives—*forged Monet inside.* Note: “Curiosity keeps us breathing. —C.”  
+1. **Uneasy Peace**: Vito sets a drink beside her manuscript. “Gonna mention how I saved your ass?” She smirks. “Only if you admit I saved yours first.”  
+2. **Lingering Threat**: An unmarked envelope arrives—*a forged Monet inside.* Note: “Curiosity keeps us breathing. —C.” Vivian tosses it into the hearth. *Flames curl the edges of Celeste’s signature.*  
 
 #### **Scene 2: Manhattan’s Echo**  
-**Setting**: Times Square, midnight. Neon screams through rain.  
-**Characters**: **Celeste** (boarding freighter), **Eleanor** (morphine vial), **Freddie** (smirking from cab).  
+**Setting**: Times Square, midnight. Neon screams through rain-slick streets. A newsboy hawks the *Daily Tribune*: **“FORMER MAYOR’S TRIAL BEGINS.”**  
+**Characters**: Celeste (boarding a Lisbon-bound freighter, valise heavy with forged passports), Eleanor (morphine vial clutched in trembling fingers), Freddie (smirking from a taxi, new monocle glinting).  
 **Key Beats**:  
-1. **Celeste’s Flight**: Customs officer eyes her valise—*forged Monet rolled inside.*  
-2. **Eleanor’s Penance**: She lights a candle for Vivian. *Shadow sits beside her.*  
+1. **Celeste’s Flight**: A customs officer eyes her valise. She flashes a smile—*a diamond slips into his palm.* The forged Monet rolls safely in oilcloth.  
+2. **Eleanor’s Penance**: She lights a candle at St. Patrick’s. A shadow sits beside her—*Rex’s trench coat brushes her knee.* “You’re late,” she whispers. He offers a lily. “Had to atone.”  
 
 #### **Scene 3: Last Train West**  
-**Setting**: Flashback: June 30, 1929. The 6:05 to Chicago plunges into darkness.  
-**Characters**: **Vivian** (bloodied ticket), **Vito** (bandaged knuckles).  
+**Setting**: Flashback: June 30, 1929. The 6:05 PM to Chicago plunges into tunnel darkness.  
+**Characters**: Vivian (bloodied ticket stub in hand), Vito (bandaged knuckles, jaw tight).  
 **Key Beats**:  
-1. **Confession**: “He took a bullet for me.” Vito’s jaw tightens. *Scar over his heart pulses.*  
-2. **Horizon**: Dawn breaks—*golden light gilds the pistol between them.*
+1. **Confession**: “He took a bullet for me.” Vivian’s voice cracks. Vito’s scar pulses. *A mine cart’s ghostly rumble echoes.*  
+2. **Horizon**: Dawn breaks—*golden light gilds the pistol between them.* The train emerges into sun. “What now?” he asks. She cocks the hammer. “We keep running.”  
+
+---
+
+**
