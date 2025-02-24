@@ -1585,10 +1585,10 @@ class BookBot:
         try:
             # Load initial, setting, and characters files
             # NOTE: Because they are substituted in as variables it doesn't make sense to revise these files
-            initial = TextFile(Path("initial.md"), config=self.config)
-            setting = TextFile(COMMON_DIR / "setting.md", config=self.config)
-            characters = TextFile(COMMON_DIR / "characters.md", config=self.config)
-            outline = TextFile(COMMON_DIR / "outline.md", config=self.config)
+            initial = TextFile(Path("initial.md"), config=self.config, ensure_exists=True)
+            setting = TextFile(COMMON_DIR / "setting.md", config=self.config, ensure_exists=True)
+            characters = TextFile(COMMON_DIR / "characters.md", config=self.config, ensure_exists=True)
+            outline = TextFile(COMMON_DIR / "outline.md", config=self.config, ensure_exists=True)
 
             # Note: Commons review bots do NOT include the outline as a separate template var,
             # because they are editing the outline. However there's no harm in loading the outline
@@ -1627,7 +1627,7 @@ class BookBot:
             )
 
             # Load the review file
-            review = TextFile(review_file + ".md", config=self.config)
+            review = TextFile(review_file + ".md", config=self.config, ensure_exists=True)
             if review.content == "":
                 raise BookBotError(f"Review file is empty: {review_file}")
             # Edit the original file using the editor bot

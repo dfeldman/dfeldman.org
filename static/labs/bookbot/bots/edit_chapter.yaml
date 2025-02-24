@@ -16,4 +16,5 @@ main_prompt: 'You''ve written the initial brief, characters, setting, outline, a
   You should follow ALL the editor''s suggestions. They are very good and will make the chapter much better.
   It''s OK to leave entire sections unchanged if the editor had no comments, but you''ll have to output them again exactly as they were in the first version.
   Don''t make any references to the first version (like "this is unchanged") because in the future, you''ll only have this edited
-  version to write the book. Be very careful that the output file is complete and stands on its own.'
+  version to write the book. Be very careful that the output file is complete and stands on its own.
+  YOU ARE ONLY EDITING THE CHAPTER. Do not include any major plot points that do not appear in the original!'

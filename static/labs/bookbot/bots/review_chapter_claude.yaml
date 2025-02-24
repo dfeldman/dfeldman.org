@@ -29,6 +29,11 @@ main_prompt: 'Review the following chapter of a book and make editorial notes.
   DO NOT REWRITE THE CHAPTER. Instead, just provide editorial notes on each change that needs to happen.
   Keep it relatively brief. There will be multiple iterations of editing, so there''s no need to do it all
   at once. 
+
+  YOU ARE ONLY REVIEWING ONE CHAPTER. While you have access to the whole outline for coherency, only include editorial
+  notes for the chapter provided. Otherwise, the writer may accidentally include the notes in the final version of the
+  chapter, spoiling the ending and making it more confusing!
+
   Overall Book Outline:
 
   {outline}
@@ -43,6 +48,7 @@ main_prompt: 'Review the following chapter of a book and make editorial notes.
 
   {characters}
   
-  Chapter to review: 
+  CHAPTER TO REVIEW:
+  (**ONLY** REVIEW THE FOLLOWING TEXT)
   {content}
   '

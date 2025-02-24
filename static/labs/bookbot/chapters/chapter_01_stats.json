@@ -1,14 +1,77 @@
 {
-  "input_tokens": 8877,
-  "output_tokens": 3322,
-  "time": 50.290302991867065,
+  "input_tokens": 171121,
+  "output_tokens": 15904,
+  "time": 386.13277316093445,
   "calls": [
     {
-      "timestamp": "2025-02-23T21:57:54.209653",
-      "input_tokens": 8877,
-      "output_tokens": 3322,
-      "elapsed": 50.290302991867065,
+      "timestamp": "2025-02-23T22:09:29.931632",
+      "input_tokens": 17708,
+      "output_tokens": 1937,
+      "elapsed": 48.37866806983948,
       "retry": 1,
+      "provider": "Together",
+      "model": "deepseek/deepseek-r1"
+    },
+    {
+      "timestamp": "2025-02-23T22:10:31.314585",
+      "input_tokens": 19083,
+      "output_tokens": 2885,
+      "elapsed": 61.35234093666077,
+      "retry": 2,
+      "provider": "Together",
+      "model": "deepseek/deepseek-r1"
+    },
+    {
+      "timestamp": "2025-02-23T22:11:38.541648",
+      "input_tokens": 20289,
+      "output_tokens": 3009,
+      "elapsed": 67.19312477111816,
+      "retry": 3,
+      "provider": "Together",
+      "model": "deepseek/deepseek-r1"
+    },
+    {
+      "timestamp": "2025-02-23T22:12:35.133587",
+      "input_tokens": 21365,
+      "output_tokens": 1984,
+      "elapsed": 56.5533971786499,
+      "retry": 4,
+      "provider": "Together",
+      "model": "deepseek/deepseek-r1"
+    },
+    {
+      "timestamp": "2025-02-23T22:13:12.231905",
+      "input_tokens": 22095,
+      "output_tokens": 1470,
+      "elapsed": 37.024991035461426,
+      "retry": 5,
+      "provider": "Together",
+      "model": "deepseek/deepseek-r1"
+    },
+    {
+      "timestamp": "2025-02-23T22:13:44.544124",
+      "input_tokens": 22759,
+      "output_tokens": 1153,
+      "elapsed": 32.291285037994385,
+      "retry": 6,
+      "provider": "Together",
+      "model": "deepseek/deepseek-r1"
+    },
+    {
+      "timestamp": "2025-02-23T22:14:22.054137",
+      "input_tokens": 23467,
+      "output_tokens": 1483,
+      "elapsed": 37.48892903327942,
+      "retry": 7,
+      "provider": "Together",
+      "model": "deepseek/deepseek-r1"
+    },
+    {
+      "timestamp": "2025-02-23T22:15:07.929801",
+      "input_tokens": 24355,
+      "output_tokens": 1983,
+      "elapsed": 45.85003709793091,
+      "retry": 8,
       "provider": "Together",
       "model": "deepseek/deepseek-r1"
     }
