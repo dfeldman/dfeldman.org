@@ -1,83 +1,65 @@
 {
-  "input_tokens": 171121,
-  "output_tokens": 15904,
-  "time": 386.13277316093445,
+  "input_tokens": 120147,
+  "output_tokens": 8437,
+  "time": 193.51514601707458,
   "calls": [
     {
-      "timestamp": "2025-02-23T22:09:29.931632",
-      "input_tokens": 17708,
-      "output_tokens": 1937,
-      "elapsed": 48.37866806983948,
+      "timestamp": "2025-02-23T22:22:29.354769",
+      "input_tokens": 17843,
+      "output_tokens": 1101,
+      "elapsed": 29.00192093849182,
       "retry": 1,
       "provider": "Together",
       "model": "deepseek/deepseek-r1"
     },
     {
-      "timestamp": "2025-02-23T22:10:31.314585",
-      "input_tokens": 19083,
-      "output_tokens": 2885,
-      "elapsed": 61.35234093666077,
+      "timestamp": "2025-02-23T22:22:56.970510",
+      "input_tokens": 18753,
+      "output_tokens": 1321,
+      "elapsed": 27.589452028274536,
       "retry": 2,
       "provider": "Together",
       "model": "deepseek/deepseek-r1"
     },
     {
-      "timestamp": "2025-02-23T22:11:38.541648",
-      "input_tokens": 20289,
-      "output_tokens": 3009,
-      "elapsed": 67.19312477111816,
+      "timestamp": "2025-02-23T22:23:17.823250",
+      "input_tokens": 19699,
+      "output_tokens": 997,
+      "elapsed": 20.832205057144165,
       "retry": 3,
       "provider": "Together",
       "model": "deepseek/deepseek-r1"
     },
     {
-      "timestamp": "2025-02-23T22:12:35.133587",
-      "input_tokens": 21365,
-      "output_tokens": 1984,
-      "elapsed": 56.5533971786499,
+      "timestamp": "2025-02-23T22:23:51.601793",
+      "input_tokens": 20491,
+      "output_tokens": 1471,
+      "elapsed": 33.75149178504944,
       "retry": 4,
       "provider": "Together",
       "model": "deepseek/deepseek-r1"
     },
     {
-      "timestamp": "2025-02-23T22:13:12.231905",
-      "input_tokens": 22095,
-      "output_tokens": 1470,
-      "elapsed": 37.024991035461426,
+      "timestamp": "2025-02-23T22:24:27.809853",
+      "input_tokens": 21236,
+      "output_tokens": 1326,
+      "elapsed": 36.17455315589905,
       "retry": 5,
       "provider": "Together",
       "model": "deepseek/deepseek-r1"
     },
     {
-      "timestamp": "2025-02-23T22:13:44.544124",
-      "input_tokens": 22759,
-      "output_tokens": 1153,
-      "elapsed": 32.291285037994385,
+      "timestamp": "2025-02-23T22:25:14.010378",
+      "input_tokens": 22125,
+      "output_tokens": 2221,
+      "elapsed": 46.165523052215576,
       "retry": 6,
-      "provider": "Together",
-      "model": "deepseek/deepseek-r1"
-    },
-    {
-      "timestamp": "2025-02-23T22:14:22.054137",
-      "input_tokens": 23467,
-      "output_tokens": 1483,
-      "elapsed": 37.48892903327942,
-      "retry": 7,
-      "provider": "Together",
-      "model": "deepseek/deepseek-r1"
-    },
-    {
-      "timestamp": "2025-02-23T22:15:07.929801",
-      "input_tokens": 24355,
-      "output_tokens": 1983,
-      "elapsed": 45.85003709793091,
-      "retry": 8,
       "provider": "Together",
       "model": "deepseek/deepseek-r1"
     }
   ],
-  "previous_input_tokens": "43823",
-  "previous_output_tokens": "7812",
-  "previous_time": "100.50735640525818",
+  "previous_input_tokens": "99650",
+  "previous_output_tokens": "8107",
+  "previous_time": "196.6563844680786",
   "previous_continuation_count": "5"
 }
