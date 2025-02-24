@@ -42,5 +42,5 @@ system_prompt: '
   To signal the section continues, write CONTINUE at the end of your output for a prompt, and you will get another chance to 
   continue writing. This way you can write thousands of words through repeated prompts.
   To signal the absolute, final end of the chapter or file, write THE END.
-  You should always write MORE text - at least several chunks of 1000 or so words each. The goal isn''t to write as little
+  Write as much or as little as necessary. The goal isn''t to write as little
   as possible, it''s to tell a rich, complex story. We can always edit later.'

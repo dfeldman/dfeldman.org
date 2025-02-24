@@ -1,56 +1,47 @@
 {
-  "input_tokens": 59829,
-  "output_tokens": 7218,
-  "time": 449.9738116264343,
+  "input_tokens": 80194,
+  "output_tokens": 8985,
+  "time": 1284.3305575847626,
   "calls": [
     {
-      "timestamp": "2025-02-23T22:57:29.355287",
-      "input_tokens": 9510,
-      "output_tokens": 1954,
-      "elapsed": 36.86236023902893,
+      "timestamp": "2025-02-23T23:15:08.533043",
+      "input_tokens": 17843,
+      "output_tokens": 2473,
+      "elapsed": 52.75187087059021,
       "retry": 1,
       "provider": "Together",
       "model": "deepseek/deepseek-r1"
     },
     {
-      "timestamp": "2025-02-23T22:58:05.435339",
-      "input_tokens": 11053,
-      "output_tokens": 1564,
-      "elapsed": 36.05456519126892,
+      "timestamp": "2025-02-23T23:27:30.240450",
+      "input_tokens": 19635,
+      "output_tokens": 2052,
+      "elapsed": 741.6792209148407,
       "retry": 2,
-      "provider": "Together",
+      "provider": "Nebius",
       "model": "deepseek/deepseek-r1"
     },
     {
-      "timestamp": "2025-02-23T23:02:11.008646",
-      "input_tokens": 12226,
-      "output_tokens": 1600,
-      "elapsed": 245.54248929023743,
+      "timestamp": "2025-02-23T23:34:39.978851",
+      "input_tokens": 21170,
+      "output_tokens": 1476,
+      "elapsed": 429.70475482940674,
       "retry": 3,
       "provider": "Nebius",
       "model": "deepseek/deepseek-r1"
     },
     {
-      "timestamp": "2025-02-23T23:02:35.396308",
-      "input_tokens": 13136,
-      "output_tokens": 1281,
-      "elapsed": 24.36115288734436,
+      "timestamp": "2025-02-23T23:35:40.200227",
+      "input_tokens": 21546,
+      "output_tokens": 2984,
+      "elapsed": 60.19471096992493,
       "retry": 4,
       "provider": "Together",
       "model": "deepseek/deepseek-r1"
-    },
-    {
-      "timestamp": "2025-02-23T23:04:22.584358",
-      "input_tokens": 13904,
-      "output_tokens": 819,
-      "elapsed": 107.15324401855469,
-      "retry": 5,
-      "provider": "Nebius",
-      "model": "deepseek/deepseek-r1"
     }
   ],
-  "previous_input_tokens": "90553",
-  "previous_output_tokens": "5805",
-  "previous_time": "297.230829000473",
+  "previous_input_tokens": "45925",
+  "previous_output_tokens": "6399",
+  "previous_time": "342.82056760787964",
   "previous_continuation_count": "4"
 }

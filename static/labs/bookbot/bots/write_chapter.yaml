@@ -1,6 +1,6 @@
 name: write_chapter
 type: write_chapter
-expected_length: 3000
+expected_length: 2000 # Chapters vary greatly in length and are unpredictable.
 # Really, we need to split up the outline file as an array and only pass the relevant ones in. 
 # However, this is a bit tricky as the outline is freeform text.
 main_prompt: 'Write Chapter {chapter_number} (note-the final chapter may be the epilogue in the outline). 
@@ -19,7 +19,8 @@ main_prompt: 'Write Chapter {chapter_number} (note-the final chapter may be the 
   that will cause problems later (e.g. a new character being introduced, an injury, an item being destroyed). 
   Write in Becky''s signature style - short, punchy sentences during action, lots of dialogue, and long paragraphs
   when the plot is slow.
-  The chapter should be around 4000-5000 words long.
+  Each scene in the chapter should be 500-1500 words long. So if you have 3 scenes, it should be 1500-4500 words. 
+  
   ONLY WRITE THE EVENTS OF YOUR ASSIGNED CHAPTER, CHAPTER {chapter_number}. DO NOT KEEP GOING AFTER YOU HAVE WRITTEN THE CHAPTER.
   WHEN YOU HAVE COMPLETED THIS ONE CHAPTER ACCORDING TO THE OUTLINE, WRITE "THE END" TO SIGNAL THE END OF THE CHAPTER.
   DO NOT KEEP GOING AFTER THE END OF THE CHAPTER. YOU ARE ONLY WRITING ONE CHAPTER TODAY WITH THE 
