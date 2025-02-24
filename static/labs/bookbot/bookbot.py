@@ -980,7 +980,9 @@ class LLMError(BookBotError):
 class TextFile:
     """Represents a markdown file with content and metadata"""
     
-    def __init__(self, filepath: Path, config: Optional[Dict] = None):
+    def __init__(self, filepath: Path, config: Optional[Dict] = None, ensure_exists = False):
+        if ensure_exists and not filepath.exists():
+            raise FileNotFoundError(f"File {filepath} does not exist")
         self.filepath = Path(filepath)
         self.content = ""
         self.metadata = {}
@@ -1586,7 +1588,7 @@ class BookBot:
             initial = TextFile(Path("initial.md"), config=self.config)
             setting = TextFile(COMMON_DIR / "setting.md", config=self.config)
             characters = TextFile(COMMON_DIR / "characters.md", config=self.config)
-            outline = TextFile(COMMON_DIR / "outline.md", config=self.config).content
+            outline = TextFile(COMMON_DIR / "outline.md", config=self.config)
 
             # Note: Commons review bots do NOT include the outline as a separate template var,
             # because they are editing the outline. However there's no harm in loading the outline
@@ -1618,13 +1620,16 @@ class BookBot:
                     "initial": initial.content,
                     "setting": setting.content,
                     "characters": characters.content,
-                    "outline": outline,
+                    "outline": outline.content,
                     "content": orig_file.content,
                 },
-                command=f"review_{reviewer_bot}_{editor_bot}"
+                command=f"review_{reviewer_bot}"
             )
 
-            file_path_with_suffix = file_path.with_suffix(".new")
+            # Load the review file
+            review = TextFile(review_file + ".md", config=self.config)
+            if review.content == "":
+                raise BookBotError(f"Review file is empty: {review_file}")
             # Edit the original file using the editor bot
             content, _, _ = self._call_llm(
                 file, # OVERWRITE the file. Store old version in git. Should add history to props.
@@ -1634,10 +1639,10 @@ class BookBot:
                     "setting": setting.content,
                     "characters": characters.content,
                     "content": orig_file.content,
-                    "outline": outline,
-                    "review": TextFile(review_file).content
+                    "outline": outline.content,
+                    "review": review.content
                 },
-                command=f"edit_{reviewer_bot}_{editor_bot}"
+                command=f"edit_{reviewer_bot}"
             )
 
             diff_message = self._generate_diff_message(orig_file.content, content)

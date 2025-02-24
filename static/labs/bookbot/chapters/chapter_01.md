@@ -17,382 +17,221 @@ total_continuation_count: 5
 ---
 **# Chapter 1: Dust & Shadows**  
 
-The stink of linseed oil hit me like a sucker punch when I stepped into Gallery 17. June sunlight fractured through stained glass windows, painting the empty pedestal where the Golden Throne once sat in jagged shards of color. My fingers found the initials carved into the marble base—*T.S.*—and for a heartbeat, I smelled Old Spice and gun oil instead of museum dust.  
+The mirror in my Hell’s Kitchen walkup showed a woman forged from stubbornness and sleepless nights. I pinned the *Daily Clarion* press badge to my lapel, its brass edges dulled from three years of Fletcher’s disdain. Dad’s pocket watch slipped into my silk stocking garter—9:15 a.m. Right on schedule for the guard shift change.  
 
-“Press badge don’t give you permission to fondle exhibits, Miss Sinclair.”  
+Gallery 17’s bronze doors swallowed the morning sun whole. A security guard with shoulders like a stevedore blocked my path. “Press hour ended at eight.”  
 
-Guard Joe’s voice snapped me back. His holster creaked as he shifted weight, nightstick tapping a Morse code of impatience against his thigh. I held up my hands in mock surrender, the chain of Dad’s pocket watch digging into my palm where I’d clenched it in my satchel.  
+I flashed credentials still warm from the printshop. “Vivian Sinclair. Arts & Culture.” The lie tasted of ink and desperation. His eyes lingered on the hem of my skirt climbing the marble stairs—exactly as I’d planned.  
 
-“Just admiring the craftsmanship,” I lied, tracing the chisel marks around the initials. “That papier-mâché replica’s almost convincing. From five feet away.”  
+Linseed oil and marble dust filled my lungs. June heat pressed against stained glass windows, fracturing sunlight across the empty pedestal where the Golden Throne had presided over a thousand school tours. My thumbnail found the initials carved into the base—*T.S.*—still rough after twenty years. The air shifted.  
 
-His laugh turned into a wet cough. “Tell that to the Met’s insurance adjusters.”  
+Old Spice. Gun oil.  
 
-The gallery door groaned. A docent with paint-stained fingers hurried in, her blonde chignon unraveling. Prussian blue smeared across her smock matched the shade dripping from the “Byzantine artifacts” sign she carried.  
+“Admiring your handiwork, Miss Sinclair?”  
 
-“Terribly sorry!” Her French accent wobbled as she mopped the spill with a rag. “The restoration team—*mon dieu*, such a disaster upstairs!”  
+Guard Joe materialized by a Titian forgery, nightstick tapping Morse code impatience against his thigh. His holster creaked with the particular whine of a Colt 1903 Pocket Hammerless—Dad’s service weapon before the department disowned him.  
 
-Something glinted in the puddle. Not glass. A key.  
+“Merely appreciating the Met’s commitment to replica artistry.” I traced chisel marks around the initials. “Though papier-mâché seems ambitious for Byzantine thrones.”  
 
-Cold steel kissed my thigh before I could bend.  
+His laugh turned phlegmy. “Tell that to the insurance sharks circling upstairs.”  
 
-“Scream and I fillet that pretty neck,” a man’s voice hissed.  
+The gallery door groaned. A willowy docent stumbled in, Prussian blue paint dripping from her smock to puddle around our feet.  
 
-The blade sliced through silk stocking, blood welling hot. I stomped backward, crunching his instep with my Oxford heel. He grunted. The knife clattered as I whipped around—  
+“*Pardonnez-moi!*” Her French accent trembled as she blotted the spill. “The restoration team—*c’est un désastre!*”  
+
+Something glinted in the cobalt smear. Not glass. A key.  
+
+I bent, silk stocking tearing as cold steel kissed my thigh.  
+
+“Scream and I’ll gift the Met a new Pollock.” The blade pressed through my skirt, drawing first blood.  
+
+Dad’s voice echoed from academy days long buried: *Never show fear.* My Oxford heel found his instep. Bone crunched.  
+
+The knife clattered as I spun—  
 
 Empty air.  
 
-Only the Byzantine tapestries swayed, their gold threads catching light where someone had slipped behind.  
+Tapestries rippled where someone had vanished behind scenes. Guard Joe’s whistle shrilled through the gallery.  
 
-“You alright, Red?”  
+“You hit, Red?”  
 
-The new voice rolled through me like bourbon smoke. A man leaned in the doorway, silver lighter flicking open and shut in his hand. *Click. Click. Click.* Black hair gleamed with too much pomade, his shirt sleeves rolled to reveal forearms corded with muscle and old scars.  
+The voice rolled through me like bourbon over gravel. A man leaned against the doorway, silver lighter dancing through scarred fingers. *Click. Click. Click.* Black hair gleamed with enough pomade to drown a flapper, shirt sleeves rolled past forearms mapped with knife fights and poor decisions.  
 
-I pressed a hand to my bleeding leg. “Do I look alright?”  
+I pressed a gloved hand to my leg. “Do they let vultures in before the corpse cools?”  
 
-He shrugged, all loose-limbed nonchalance. “Curiosity kills. But since you’re still breathing…” The lighter arced through the air. I caught it on reflex—engraved with a single name. *Rosa.*  
+He shrugged, all loose joints and calculated indifference. “Curiosity killed the cat, doll. Good thing you’ve got nine lives.” The lighter arced through sunlight. I caught it cold—*Rosa* etched in looping script.  
 
-“Check your six next time.” His grin showed crooked teeth. “This museum’s got more snakes than the Bronx Zoo.”  
+“Check your blind spots next time.” His grin showed a chipped canine. “This museum’s got more tunnels than the IRT.”  
 
-The docent whimpered. I turned just in time to see her “accidentally” kick the key under a display case. Prussian blue paint streaked the floor in the exact pattern of tunnel maps I’d seen in Dad’s old case files.  
+The docent whimpered. Her shoe “accidentally” nudged the key beneath a display case, Prussian blue streaking the floor in the exact pattern from Dad’s case files. Guard Joe’s radio barked to life: “All units to Egyptian Wing—10-31 in progress!”  
 
-Guard Joe’s radio crackled to life. “All units to Egyptian Wing—possible 10-31!”  
+I limped toward the exit, blood seeping into my T-strap. The stranger’s gaze burned between my shoulder blades.  
 
-I limped toward the exit, blood trickling into my shoe. The stranger’s gaze burned between my shoulder blades.  
-
-“Keep the lighter, Red,” he called. “Looks better on you anyway.”  
+“Keep the lighter, Red. Matches your eyes.”  
 
 ---
 
-The newsroom ceiling fans churned cigar smoke into a toxic soup. I dabbed iodine on my thigh under the desk, hissing as it seared the knife cut. My typewriter held a half-finished expose: *Mayor’s “Cleanup” Campaign Leaves Bloodstains on Fifth Avenue.*  
+The Sixth Avenue El rattled past the *Clarion*’s soot-stained windows. I dabbed iodine on my thigh beneath the desk, the sting barely registering over Fletcher’s cigar fumes choking the city room.  
 
-Fletcher’s shadow fell across the page. “Ghost chasing again, Sinclair?”  
+“Ghost hunting again, Sinclair?”  
 
-He yanked the paper free, match flaring. My words curled black at the edges.  
+He snatched the half-typed page from my Underwood: *Mayor’s “Philanthropy” Fund Finances Mob Operations.*  
 
-“That was three days’ work!”  
+“That’s three days’ work!”  
 
-“And worth less than the ash.” His jowls quivered. “No one cares about dead janitors or missing gold chairs. Give me gangland shootings. Mistress scandals. *Real* news.”  
+“And worth less than the ash.” His Zippo flared. “No one gives a damn about dead janitors or missing relics. Give me gangland shootings. Divorce scandals. *News.*”  
 
-The elevator dinged. Eleanor’s archives cart squeaked past, her lace glove brushing my shoulder. A scrap of stationery fluttered into my lap—*Follow the blue. -Madame X*  
+The elevator clattered open. Eleanor’s archive cart squeaked past, her fox fur stole brushing my arm. A train ticket fluttered into my lap—*Grand Central → Dock 9. Midnight.*  
 
-“You’re not even printing the obits anymore,” I spat at Fletcher.  
+“You’re not even printing the truth anymore,” I spat.  
 
-“Obits don’t sell papers. *This* does.” He slapped down the morning edition: *FLAPPER FOUND DEAD IN HARLEM JAZZ JOINT*. Beneath the headline, my byline had been stripped.  
+“Truth?” Fletcher slammed down the morning edition: *FLAPPER FOUND DEAD IN HARLEM SPEAKEASY*. My byline had been scalped. “Your old man sold lies for a living too. At least his made money.”  
 
-The clatter of keys around us died. Reporters stared like vultures scenting weakness.  
+Reporters paused mid-clatter. Copy boys froze with their coffee urns.  
 
-I stood too fast, my torn stocking rasping. “My father—”  
+I stood too fast, torn stocking catching on the desk drawer. “My father—”  
 
-“Died a thief.” Fletcher’s smile showed nicotine-stained teeth. “Keep digging his grave deeper, Viv. You’ll hit China before you hit truth.”  
+“Died a thief.” His jowls quivered. “Keep digging, Viv. You’ll hit China before you hit justice.”  
 
-The ladies’ room mirror showed a pale stranger. Auburn hair clung damp to my neck, gray eyes fever-bright. I scrubbed blood from my hands as the stall door banged open.  
+The lavatory mirror showed a stranger’s face—pale under rouge, gray eyes fever-bright. I scrubbed blood from under my nails as the stall door creaked.  
 
-Eleanor leaned against the sink, her cane trembling. “Gallery 17’s security logs disappeared. But I found this.”  
+Eleanor leaned on her cane, arthritis twisting her fingers. “Gallery 17’s security logs vanished. But the freight elevator maintenance schedule…” She slid a blueprint under the partition.  
 
-A train ticket slid under the partition. *Grand Central → Dock 9. Midnight.*  
+“Why help me?”  
 
-“Who’s Madame X?” I whispered.  
+Her reflection smiled. “Because unlike Fletcher, I remember when newspapers stood for something.”  
 
-Her reflection smiled. “Someone who knows what it’s like to drown in men’s lies.”  
+The door slammed. Lydia Fitzgerald’s Chanel No. 5 arrived first, then the woman herself—emerald earrings swinging, lips stained the color of fresh bruises.  
 
-The door creaked. We froze as Lydia Fitzgerald swept in, emerald earrings catching the light.  
+“Darling Viv! Heard you’re poking around Byzantine relics.” Her gloved hand lingered on my shoulder. “Careful. Museums bury their secrets deep.”  
 
-“Darling Viv!” Her perfume—Jicky by Guerlain—clogged my throat. “Heard you’re sniffing around the Met. Careful, hmm? Museums eat curious girls for breakfast.”  
+She dropped a matchbook into my palm. *The Blind Owl. 145½ Mulberry.*  
 
-She dropped a matchbook into my palm. *The Blind Owl. 45 Mulberry.*  
+“Ask for the canary.”  
 
-“Ask for Sammy. Tell him…” Her gloved finger traced my collarbone. “The canary sent you.”  
+---
 
 CONTINUE  
-**(Current word count: 1,233)**
+**(Current word count: 1,201)**  
+
 ---  
 
-Midnight found me limping past Luigi’s Tailor Shop, the ticket burning in my purse like a guilty secret. A neon owl’s eyes blinked red through boarded-up windows, their glow staining puddles of gutter water the color of diluted blood. Three knocks. A slit opened, revealing a pupil swimming in gin-blurred suspicion.  
+The El’s shadow swallowed Mulberry Street whole. A neon owl blinked above a boarded-up storefront, its hoot drowned by thunder rolling in from Jersey. Three quick raps.  
 
 “Password?”  
 
-“The canary—”  
+“The canary sings at midnight.”  
 
-The door swung wide on oiled hinges. Smoke and cheap perfume washed over me, the Blind Owl’s air thick with the musk of hidden agendas. A jazz trumpet wailed from a cracked phonograph horn, the melody warping as I pushed through constellations of silk dresses and newsboy caps. The bartender’s gold tooth caught the light when he grinned, polishing a highball glass with a rag darker than my prospects.  
+Bolts clattered. The speakeasy exhaled gin and desperation, sweat-slick bodies moving to a Bessie Smith record skipping on the phonograph. Sammy leaned across the mahogany, gold tooth glinting.  
 
-“Whiskey neat,” I told him, sliding onto a stool sticky with last night’s bad decisions.  
+“Sinclair.” He poured rye into a chipped teacup. “Vito said you’d come crawling.”  
 
-“Ain’t you Viv Sinclair?” Sammy’s voice rasped like sandpaper on a fresh wound. He poured rye into a tumbler, ice clinking like loose teeth in a tin cup. “Vito said you’d come sniffling ’round.”  
+The storeroom door creaked. Lamplight carved the man from shadows—shirtless, suturing a knife wound with hands steady as a surgeon’s.  
 
-The storeroom door creaked open, spilling lamplight across floorboards stained with things better left unnamed. I followed the scent of iodine and iron.  
+“Christ, Red. You track blood like a wounded doe.”  
 
-Vito hunched shirtless over a cracked mirror, suturing a gash across his ribs. Moonlight through a high window painted his muscles in mercury—a topography of scars and survival. The needle flashed as he turned, shadows pooling in the hollow of his throat.  
+Vito’s thumb brushed my torn stocking. His touch sparked something older than fear, hotter than shame.  
 
-“Christ, Red. You bleed everywhere or just museums?”  
+“Still patching up fools who pick fights,” I countered, tossing Rosa’s lighter.  
 
-He pressed a flask to my lips. Cheap rye burned through the last of my composure. His fingers—knuckles split and stained with printer’s ink—skimmed the tear in my stocking.  
+The name caught him mid-stitch. For a heartbeat, grief stripped him bare—then the mask slid back.  
 
-“Got a death wish or just shit taste in men?”  
+“Sit.” He nodded at a whisky crate. “Unless you want to faint in front of Sammy’s customers.”  
 
-“Got a lighter thief who talks too much.” I tossed Rosa’s silver at his chest.  
+The needle bit. His knuckles grazed my inner thigh—once, twice. Not accidental.  
 
-His smile died mid-taunt. For a heartbeat, the mask slipped—I saw the boy who’d carried his sister’s name etched in metal long after the grave claimed her. Then he jerked his chin toward a crate, thread glinting between scarred fingers.  
+“Why’s a society doll playing Dick Tracy?”  
 
-“Sit. Before you ruin every rug in Manhattan.”  
+“Same reason a bootlegger reads Nietzsche.”  
 
-The needle bit flesh. His knuckles brushed my inner thigh—once, twice. Not accidental. Pain and something hotter coiled low in my gut.  
-
-“So.” His breath warmed my knee as he pulled the stitch tight. “Why’s a society columnist playing Nancy Drew with mobsters?”  
-
-“Same reason a bootlegger’s got Tolstoy on his nightstand.”  
-
-His laugh vibrated through the needle’s tug. The door burst open.  
-
-“Drinks, Red’s done playing nurse!” Sammy shouted over the rising din.  
-
-The bar’s roar swallowed us whole. A drunk in a pinstripe suit reeking of bathtub gin grabbed my waist, his fingers digging into fresh stitches. “Dance, doll?”  
-
-Vito’s bottle shattered across his skull. Glass teeth glittered in bourbon puddles as the man crumpled.  
-
-“Anyone else?” He wiped his mouth with a bloodied fist, shirt clinging to the sweat-slick planes of his chest.  
-
-Silence fell. Then—  
+His laugh vibrated through the thread’s pull. The door crashed open.  
 
 “Harding’s dead!”  
 
-A woman’s scream split the air. The crowd surged toward the entrance where a man sprawled like a broken marionette, blood pooling beneath his head in a viscous halo. Prussian blue smudged his collar—the exact shade of paint from the museum key.  
+The crowd surged toward the entrance where a man lay sprawled, Prussian blue smeared across his collar. A train ticket protruded from his breast pocket—*Midnight. Pier 17. Cargo Hold 9.*  
 
-Vito hauled me into the alley, his palm searing my lower back through torn silk. A train ticket fluttered from the dead man’s pocket, blood blooming across the words *Midnight. Pier 17. Cargo Hold 9.*  
+Vito pressed it into my palm, blood seeping through the paper. “Still think this is a game?”  
 
-He pressed the damp paper into my hand. “Still think chasing ghosts is a lark, Red?”  
+We kissed in the alley’s stench of rotting fruit and revelation, his hands fisted in my hair like a man clinging to a cliff’s edge. Somewhere beyond the docks, fog swallowed the truth whole.  
 
-The answer tasted like his kiss—rye and ruin and the sweet rot of lies we’d both swallow whole.  
-
-CONTINUE  
-**(Current word count: 1,970)**
----  
-
-The Hudson breathed diesel fumes as we limped toward Pier 17’s skeletal outline. Fog clung to rusted cranes like cobwebs on a corpse, the river’s black tongue licking at rotten pilings. Somewhere in the dark, waves slapped against hulls filled with secrets better left drowned.  
-
-A shadow detached from a trawler’s hull—Vito’s cigarette flaring red.  
-
-“Took you long enough.”  
-
-“Had to lose Burns’ tail.” I nodded at the switchblade in his hand, moonlight running its edge like a lover’s finger. “Expecting company?”  
-
-“Always.”  
-
-We picked through crates marked MACHINERY. Inside one, Renaissance Madonnas stared blank through straw packing, their gilt frames tarnished by salt air. The Golden Throne wasn’t here.  
-
-“Check the manifests.” Vito jerked his chin at the trawler’s cabin, breath frosting in the unnatural June chill.  
-
-A guard’s flashlight swept the deck. I ducked behind an oil drum, chain of Dad’s watch biting into my clenched fist. The beam passed—then snapped back.  
-
-“Press badge,” the guard sneered, yanking my arm. Steel gleamed at his hip. “Kensington said you’d come sniffing.”  
-
-His knife glinted. I kneed his groin, fumbling for the pistol. The safety stuck.  
-
-Vito’s blade found the guard’s throat. “Wrong move, *idiota*.”  
-
-Blood pattered on my Oxfords like warm rain. The manifest in his pocket bore Celeste’s looping signature—and a smudge of Prussian blue.  
-
-“Tunnels,” I breathed. “Under City Hall. Dad’s notes mentioned—”  
-
-A shot rang out. Wood splintered by my ear.  
-
-“*Move!*” Vito shoved me toward the water.  
-
-We leapt onto a passing coal barge as bullets chased us into the fog. His laugh vibrated against my neck, the Hudson’s current humming a funeral dirge.  
-
----  
-
-The safe house stank of mildew and mothballed regrets. Vito kicked the door shut, his arm sliding from my waist as he lit a kerosene lamp. The flame guttered, revealing peeling cabbage-rose wallpaper and a mattress stained with more stories than I wanted to know.  
-
-"Home sweet hell," he muttered, shrugging out of his bloodied shirt. Muscle flexed beneath sweat-sheened skin, the scar above his heart pulsing like a second mouth.  
-
-I pressed the stolen gun to his chest. "Why help me?"  
-
-His fingers closed over the barrel, warm and unflinching. "Recognize this?" He guided my hand left, where old scar tissue formed a star-shaped crater. "Your old man took a bullet meant for me."  
-
-The mattress springs screamed as I stumbled back. Dad’s service revolver—missing since the heist—weighed sudden and terrible in my memory.  
-
-Vito peeled the bandage from my thigh. "Been repaying that debt ever since."  
-
-The needle bit flesh. Outside, rain began its interrogation on the tin roof. His thumb brushed my trembling lip when I gasped.  
-
-"Stay still, Red. Unless you want this jagged."  
-
-We didn’t speak of the way his hands lingered, or how the storm drowned our breathing when the lamp died.  
+---
 
 CONTINUE  
-**(Current word count: 2,675)**
----  
-
-Dawn slithered through the Met’s service entrance as Celeste’s key turned in a rusted lock. Dank air clung to our clothes like a jealous lover, the tunnel’s throat swallowing our lamplight whole. The Golden Throne loomed ahead, emeralds glinting like a drunkard’s false promises.  
-
-“Fake,” Vito spat, prying a gem loose. It rolled into shadows, revealing corroded tin beneath gilding.  
-
-Beneath the throne lay Dad’s journal, wrapped in oilskin and decades of lies. His final entry screamed from the page: *Kensington ordered the hit. Protect the throne at all—*  
-
-A gunshot echoed. Vito tackled me as the journal exploded in paper shrapnel.  
-
-“Miss me, darling?” Lydia Fitzgerald stepped from the shadows, pearl-handled derringer smoking. Her emerald dress matched the throne’s false jewels. “Really, Viv—snooping in subbasements? You’ll ruin your stockings.”  
-
-Vito’s knife found her thigh before she could fire again. Her scream brought down centuries of dust as we fled through steam vents, Dad’s burned words clinging to our skin like funeral ash.  
+**(Current word count: 1,803)**  
 
 ---  
 
-The Blind Owl’s back booth reeked of yesterday’s gin and tomorrow’s regrets. I pieced together the journal’s fragments: *...throne moves tonight...pier...*  
+The Kensington Estate’s ballroom glittered with stolen art and borrowed time. I adjusted my emerald headband, forged documents tucked against my garter.  
 
-Sammy slid a rickey across the table, lime bleeding into cheap gin. “Heard Kensington’s throwing a gala. All society swells and stolen art.”  
+“Eyes left, doll.” Vito’s tuxedo smelled of gun oil and orchids.  
 
-Vito’s hand settled on my lower back, thumb brushing bare skin where my dress had torn. “Feel like dancing, Red?”  
+Mayor Kensington waltzed past with Lydia on his arm, her limp masked by layers of silk.  
 
-His lips tasted of vengeance and vermouth. Somewhere beyond the boarded windows, a throne waited to bleed.  
+“Darling Viv!” She air-kissed my cheeks. “Still chasing phantom thrones?”  
 
----  
+Vito’s hand tightened on my waist. “Still auctioning city secrets?”  
 
-The Kensington estate’s ballroom shimmered with poisoned champagne and lies. Crystal chandeliers dripped light onto flappers doing the Charleston, their laughter sharp as broken stemware. I adjusted my emerald headband, forged documents tucked into my garter.  
+The orchestra crescendoed. A waiter dropped a note into my champagne flute: *Library. Now.*  
 
-“Eyes left,” Vito murmured, his tuxedo smelling of gun oil and orchids.  
+Between leather-bound lies, Eleanor waited with blueprints.  
 
-Mayor Kensington waltzed past with Lydia on his arm, her limp masked by layers of silk. Her laugh cut through the orchestra’s swell.  
+“Tunnels connect the docks to City Hall,” she whispered.  
 
-“Darling Viv!” She air-kissed my cheeks, gardenia perfume cloying. “Still playing detective?”  
+Shouts erupted. Gunfire replaced violins.  
 
-Vito’s hand tightened on my waist. “Still selling out your friends?”  
+Vito smashed a window with a candelabra. “Time to fly, Nancy.”  
 
-The music crescendoed. A waiter with a too-polished smile dropped a note into my champagne flute: *Library. Now. -X*  
+We repelled down ivy, my dress tearing on thorns. Charles Beaumont staggered from the hedge maze, clutching his gut.  
 
----  
+“Kensington...throne...” Blood bubbled on his lips.  
 
-Between leather-bound lies, Eleanor waited with a blueprint. Her gloves trembled as she unrolled vellum.  
+The pocket watch in his waistcoat read 11:07. Same as Dad’s.  
 
-“Tunnels connect to the docks,” she whispered. “They’re moving it tonight.”  
+Bullets chewed marble as Vito dragged me behind a fountain. His mouth found mine—desperate, bruising—before shoving me toward the kitchen.  
 
-Shouts erupted below. Gunfire replaced violin strings.  
+A cleaver embedded where my head had been. I sprinted past screaming cooks, the throne’s absence louder than gunfire.  
 
-Vito smashed the window with a candelabra. “Time to go, Nancy.”  
-
-We repelled down ivy, his arms a vise around me. My dress ripped on thorns, blood blooming like poppies on silk. Across the lawn, Charles Beaumont staggered from the hedge maze, clutching his gut.  
-
-“Kensington wants—” His words drowned in a gurgle as another shot cracked.  
-
-I lunged for his collapsing body. The pocket watch slipped from his waistcoat—engraved *H.K.*, hands frozen at 11:07.  
-
-“Viv!”  
-
-Vito yanked me behind a marble fountain as bullets chewed stone. His mouth found mine—desperate, bruising—before shoving me toward the kitchen.  
-
-A cleaver embedded in the wall where my head had been. I kicked off heels, sprinting past screaming cooks. The throne’s absence screamed louder.  
+---
 
 CONTINUE  
-**(Current word count: 3,211)**
----  
-
-Pier 17 swallowed us whole. Moonlight razored through crane shadows as we crept toward Cargo Hold 9. The Golden Throne sat exposed under a tarp, emeralds glinting like dead men’s eyes in the gloom.  
-
-“It’s a decoy,” I whispered, fingers brushing the too-perfect gilding.  
-
-Celeste stepped from the darkness, scalpel glinting. Moonlight caught the arsenic green of her smock—the same shade that had dripped from her museum sign. “Clever girl.”  
-
-Her blade slashed toward Vito’s throat. I fired.  
-
-The crack echoed off rusted shipping containers. Celeste staggered back, clutching her shoulder. The throne toppled, its hollow core clanging against steel grates. Underneath lay the real one—crusted with blood, Dad’s pocket watch chain tangled in its jewels like a serpent in Eden.  
-
-Sirens howled in the distance. Celeste fled into the fog, her scream trailing behind like bad debt.  
-
-Vito pressed Dad’s lighter into my palm. His thumb stroked the hinge. “For luck.”  
-
-We kissed as the world burned, his hands fisted in my hair like a man clinging to a cliff’s edge.  
+**(Current word count: 2,135)**  
 
 ---  
 
-The *Times* front page screamed the next morning: *MAYOR’S SECRET ART HOARD EXPOSED!* My byline bled ink beneath the fold, the truth finally naked.  
+Pier 17’s shadows swallowed us whole. The Golden Throne gleamed under a tarp, emeralds winking like dead men’s eyes.  
 
-Fletcher’s jowls quivered as he dropped a severance check on my desk. “Pack your things.”  
+“Decoy,” I breathed.  
 
-Eleanor’s note arrived with my coffee—a train ticket to Poughkeepsie and three words: *She’s at St. Mary’s.* Her lace glove left a powder smudge on the stationery, the ghost of a goodbye.  
+Celeste emerged from the dark, scalpel glinting. “Clever girl.”  
 
----  
+Her blade slashed. I fired.  
 
-The orphanage walls echoed with the ghosts of abandoned laughter. The girl looked up from Celeste’s sketchbook, her mother’s eyes staring through me. Charcoal smudged her fingers where she’d drawn the Golden Throne with childish strokes.  
+The throne toppled, revealing the real relic beneath—crusted with blood, Dad’s watch chain tangled in its jewels.  
 
-“Are you the lady who killed the bad men?”  
+Sirens wailed. Vito pressed his lighter into my palm.  
 
-Vito’s motorcycle roared outside, scattering gravel. The future tasted like gasoline and stolen emeralds as I knelt before her.  
+We kissed as the world burned, his hands in my hair, the Hudson singing our requiem.  
 
-“The bad men are gone.” The lie stuck to my teeth.  
+---
 
-She pressed a folded crane into my hand. Inside: *He’s watching.*  
+The *Clarion*’s headline screamed next morning: *MAYOR’S SECRET HOARD EXPOSED!* My byline bled beneath the fold.  
 
----  
+Fletcher dropped a severance check. “Get out.”  
 
-We raced the storm west, the Hudson’s ghosts clinging to our clothes. Vito’s leather jacket smelled of gunpowder and spearmint, his body a furnace against mine. Rain needled our skin as the roadhouse appeared—a mirage of flickering neon.  
+Eleanor’s note arrived with my coffee—*St. Mary’s Orphanage. Ask for Rosa.*  
 
-“Regrets, Red?” His shout frayed in the wind.  
+---
 
-The jukebox crooned *St. James Infirmary Blues* as we tumbled into a booth. His knee pressed mine under the table, a live wire in the dark.  
+The girl looked up from Celeste’s sketchbook, charcoal smudging her fingers.  
 
-Burns found us there, rainwater pooling around cheap wingtips. “Kensington’s dead.” His gold shield couldn’t hide the tremor. “They’re pinning it on you.”  
+“Are you the lady who kills monsters?”  
 
-Vito’s knife kissed Burns’ jugular. “Your doing?”  
+Vito’s motorcycle roared outside. The future tasted like gasoline and absolution as I knelt.  
 
-The dossier slid across sticky Formica—crime scene photos of the mayor’s study, the real throne gleaming behind his corpse. “Take it. Just…make it stop.”  
+“The monsters are gone.”  
 
-We left his confession in the diner’s fryer, flames licking at his sins. The storm screamed our names all the way to Nevada.  
+Her paper crane unfolded in my palm: *He’s watching.*  
 
----  
+---
 
-El Paso’s telegram office stank of dust and desperation. Eleanor’s message burned my palm: *New throne. New lies. Same snakes.*  
-
-Vito packed the Colt while I loaded the typewriter, our silence heavier than the gunmetal sky. At the station, a newsboy hawked the latest lie: *MAYOR’S MISTRESS FLEES COUNTRY!*  
-
-Lydia’s photo smiled up from the gutter, gardenia wilted in her hair.  
-
-“You think she’s really gone?” Vito hefted our trunk of evidence.  
-
-I touched the scar on my thigh—a twin to the one over his heart. “Nothing’s ever really gone.”  
-
-The whistle blew. Somewhere ahead, another city waited to bleed.  
-
----  
-
-The Met’s new exhibit hall reeked of fresh varnish and older sins. Gallery 17’s plaque mocked me: *Generously Donated by the Kensington Estate.*  
-
-Celeste’s daughter pressed a charcoal-stained crane into my hand. Inside: *Finish it.*  
-
-Vito’s lighter flared. “Burn it?”  
-
-The fire alarm wailed as we kissed in the chaos, his hands mapping the city’s scars beneath my dress. We ran laughing into the storm, the throne’s ashes clinging to our shoes like old lovers.  
-
-CONTINUE  
-**(Current word count: 3,863)**
----  
-
-The safe deposit box exhaled decades of dust when I turned the key. Dad’s final secret lay inside—photographs of Kensington shaking hands with Capone, shipping manifests stamped with city seals, a list of names that could topple empires.  
-
-Vito whistled low, thumbing through the evidence. “This is bigger than thrones.”  
-
-I fed a page to the fireplace. Flames licked at the mayor’s smirking face. “Empires have better foundations.”  
-
-He caught my wrist, heat bleeding through his grip. “What’re you doing?”  
-
-The firelight danced in his eyes, carving hollows beneath his cheekbones. “Starting a bigger fire.”  
-
-We made love in the dying light, evidence curling to ash around us. His teeth on my scar felt like absolution, his hands a benediction. When the FBI came at midnight, we were already smoke.  
-
----  
-
-They found us in Juarez, of course. Suits soaked in sweat and Italian leather. We fought dirty—Sammy’s derringer cold in my palm, Vito’s switchblade singing through the dark.  
-
-By dawn, the Blind Owl was cinders. Vito bandaged my arm with his tie, our reflections wavering in whiskey puddles. The bullet had grazed him too, a fresh scar to match the collection.  
-
-“West?” He pressed a ticket to my lips, blood crusting his knuckles.  
-
-The train whistle screamed *yes*.  
-
----  
-
-Wyoming smelled of sage and borrowed time. I typed our story between coffee refills at a diner off Route 30, the jukebox crooning Bessie Smith’s *Empty Bed Blues*.  
-
-*Once upon a heist, a reporter and a thief…*  
-
-Vito slid into the booth, sunset bleeding through the blinds behind him. A new scar peeked above his collar. “Ready for the next chapter, Red?”  
-
-Somewhere in the desert, the throne’s ghost whispered. Another city waited, another web of lies to unravel. His kiss tasted of road dust and redemption, and for now—just now—that was enough.
+We raced the storm west, the throne’s ashes clinging to our shoes. Somewhere ahead, another city waited to bleed.
