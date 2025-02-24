@@ -1,16 +1,16 @@
 {
-  "input_tokens": 17210,
-  "output_tokens": 17592,
-  "time": 206.74305820465088,
+  "input_tokens": 7031,
+  "output_tokens": 2255,
+  "time": 297.4099371433258,
   "calls": [
     {
-      "timestamp": "2025-02-24T00:06:25.168647",
-      "input_tokens": 17210,
-      "output_tokens": 17592,
-      "elapsed": 206.74305820465088,
+      "timestamp": "2025-02-24T00:14:17.015602",
+      "input_tokens": 7031,
+      "output_tokens": 2255,
+      "elapsed": 297.4099371433258,
       "retry": 1,
-      "provider": "OpenAI",
-      "model": "openai/o3-mini-high"
+      "provider": "Nebius",
+      "model": "deepseek/deepseek-r1"
     }
   ],
   "previous_input_tokens": "58648",

@@ -15,192 +15,84 @@ total_output_tokens: 6001
 total_time: 1224.1358466148376
 total_continuation_count: 3
 ---
-# Chapter 1: Dust & Shadows  
+Chapter 1: Dust & Shadows
 
-The Metropolitan Museum’s signature scent hit me first—linseed oil and wet stone, the musk of preservation battling entropy. Sunlight slanted through stained glass above the empty pedestal, dappling the plaque that read *Byzantine Throne, 10th Century CE (Current Location: Unknown)*. Three years since the heist. Three years since they’d hung the theft around my father’s corpse like a medal of dishonor.  
+I arrived at the Metropolitan Museum on the morning of June 3, 1929, at exactly 10:00 AM. I stepped into Gallery 17, where sunlight fractured through stained glass and illuminated the space with patterns of colored light. The heavy scent of linseed oil mixed with the odor of old stone filled the air. In the center of the gallery, I saw the pedestal that once held the Golden Throne. Now the pedestal was empty except for its crude papier‑mâché replacement—a sight that seemed to mock the artifact that had been stolen.
 
-**“Last chance, Miss Sinclair.”**  
+I carried my press badge, which dangled from my neck, and my father’s pocket watch, which rested heavily in the satchel slung over my shoulder. I had come not only to report on the museum heist but also to search for any clues that might connect back to my father’s past. As I moved slowly along the polished floor, I stopped in front of the pedestal. I ran a finger along the carved base and noticed the initials that my father had once inscribed here. I recognized them immediately. Near the initials, I could still smell a faint odor—a mix of Old Spice, sandalwood, and gun oil—that brought back memories of him.
 
-The guard’s holster creaked as he shifted. Joe—mid-fifties, coffee stain blooming on his collar—had the resigned slump of a man who’d spent decades babysitting relics and rich fools. I flashed my press badge, the chain snagging on Mom’s cameo. “Five minutes. Security upgrade piece.”  
+I continued to walk among the exhibits, noticing Guard Joe stationed nearby with his hand resting on a worn holster, and Celeste, who was dressed in a docent’s uniform. Her fingers were streaked with paint, evidence of the work she often did on the restoration of exhibits. The atmosphere was a blend of hushed voices and soft footsteps. Every detail mattered now, and I committed each one to memory.
 
-**“Upgrades.”** He snorted, gesturing to the nearest camera. **“They replaced the lenses with kaleidoscopes last month.”**  
+Suddenly, as I neared a set of heavy Byzantine tapestries hanging on the far wall, I observed a dark, shifting shape among the drapes. I paused, and before I fully registered the warning, a flash of steel cut through the air. In an instant I felt a searing pain in my thigh—a blade had slashed through the silk of my blouse. I looked down to see blood beginning to drip onto the ancient mosaics on the floor. The pain burned sharply, and I could only stare in disbelief at the wound and its unexpected timing.
 
-The lie tasted bitter as I crouched. Silk stockings tore against marble as my fingers found the scarred pedestal edge. Dad had carved his initials here during graveyard shifts—*J.S.*, jagged and defiant. I pressed my cheek to cold stone, inhaling phantom traces of Old Spice and gun oil. His ghost lingered in every chisel mark.  
+Almost immediately after the attack, I noticed a man emerging from the doorway. It was Vito. His figure appeared suddenly, framed in the light coming from outside. In his hand he held a silver lighter, its surface catching the sun’s rays. In a low voice he said, “Curiosity kills, Red.” I heard him use a nickname I was known by, and as his words lingered in the air, his lighter slipped from his fingers and landed at my feet. I bent down to retrieve it, and in that small moment I saw the inscription on its casing: “Rosa.”
 
-The shadow moved wrong.  
+I stood there for several seconds, trying to gather my thoughts while the pain pulsed in my thigh. I had no time for lengthy contemplation. Almost as if on cue, Celeste—who had been nearby in her docent disguise—moved clumsily and “accidentally” knocked over a container of paint. Prussian blue liquid spilled onto the floor right next to me. I recalled that the exact shade of blue was used on the tunnel maps I had been studying. It was clear that the spilled paint was not an accidental mess but a deliberate clue.
 
-Not the waltz of cloud-covered sun through stained glass. This slithered—a serpentine ripple in the Byzantine tapestry to my left.  
+After that chaotic moment, I left the museum feeling an uncomfortable mix of pain and determination. I walked out onto the busy Manhattan street, my mind racing with questions about who had attacked me and why my father’s initials were so deliberately left intact on the pedestal. Each step reminded me that I was now entangled in a mystery that went far deeper than an art heist.
 
-**“Mr. Joe?”** I stood too fast, head swimming. **“Did they repurpose this wing for—”**  
+Later that afternoon, I returned to the bustling offices of the Daily Sentinel. It was 2:30 PM when I entered the newsroom, where overhead fans churned warm, stale air mixed with the persistent scent of cigar smoke. The room was alive with the clack of typewriters and the low murmur of reporters chasing their next big story. I made my way to my desk while carefully hiding the bloodied stocking beneath a pile of papers. Every now and then, the sting of my thigh reminded me of the earlier attack, but I focused on the work ahead.
 
-Steel flashed.  
+I settled into my chair and began to review my morning notes—the carved initials on the pedestal, the faint smell of my father’s cologne, the sudden pain from that unknown blade, and Vito’s cryptic warning as he had uttered “Curiosity kills, Red.” I set my fingers to the keys of my typewriter and started composing a report that would capture the events of Gallery 17 in plain language. Before I could get too far, Fletcher, the editor known for his brusque manner, strode over. Without offering much in the way of explanation, he grabbed the draft I had been working on and, in a matter of moments, burned it in the office sink. “Chase ghosts, you’ll join them,” Fletcher said in a gruff, dismissive tone. His actions left no room for argument; I had no choice but to start rewriting the account from scratch.
 
-Pain came second. First, the visceral *snick* of blade through wool skirt. Then blood, hot and insistent, painting a trail down my thigh. Drops splattered the mosaic floor, pooling between Emperor Justinian’s stone eyes.  
+I resumed typing as Fletcher’s harsh words echoed in my mind. The clacking of keys merged with the ambient noise of the newsroom as I steadily rebuilt the report. In the midst of my focused work, I became aware of Eleanor moving quietly along the cramped corridors. Pushing a cart laden with archival documents, she paused beside my desk. Leaning in slightly, she slipped a small folded note into my hand. I unfolded it discreetly; the note simply read, “Follow the blue. —Madame X.” The message was as terse as it was mysterious, and I remembered the spilled blue paint from the museum. I tucked the note away with the intention of revisiting it later.
 
-**“Run,”** the shadow hissed.  
+Not long after, while I was arranging papers on my desk, something odd caught my eye on the typewriter. There, lying among a few stray sheets, was a train ticket. I picked it up carefully. The ticket’s handwritten note stated, “Midnight. Don’t be late. —V.” My heart quickened as the initial “V” resonated with the man I had encountered at the museum. It was a clear message, and though I didn’t fully trust it yet, I recognized it as another thread linking the day’s events. I saved the ticket along with Eleanor’s note, determined to piece together the clues.
 
-My fingers closed around iron—a candelabra from the medieval arms display I’d passed earlier. I swung blind. Fabric ripped, revealing Celeste Moreau: head conservator, paint under her nails, moth-eaten docent uniform hanging loose.  
+I worked diligently through the rest of the afternoon, rewriting my report to include every succinct detail of the unfolding drama—the museum assault with its painful cut, the engraved lighter with “Rosa” on it, the accidental spill of Prussian blue paint, Fletcher’s ruthless destruction of my first draft, and the cryptic messages that now pointed to midnight. The newsroom eventually quieted down as the day wore on, and I packed my notes and the small items that might serve as evidence. With these in hand, I left the Sentinel, aware that the day’s investigation was far from over.
 
-**“You framed him,”** I gasped as her knife clanged against the candelabra. **“A man who trusted you!”**  
+I took a cab back to my modest apartment on Thompson Street—a cramped fourth-floor walkup marked by peeling wallpaper and worn hardwood floors—and on the ride I examined my belongings again. The train ticket, Eleanor’s note, and my recollection of the museum events were all pieces of a puzzle that I needed to solve. I methodically wrapped a clean rag around the cut on my thigh, and once home, I spread my notes out on a cluttered desk. I sat quietly and reviewed the details one by one: the carved initials, the scent of Old Spice mixed with gun oil, the sudden flash of steel and ensuing pain, Vito’s terse remark, Celeste’s spilled blue paint, and lastly, the message from the typewriter promising a meeting at midnight. Each clue, I was certain, was deliberately placed to guide me deeper into a mystery that intertwined art theft, corruption, and my family’s past.
 
-**“Trust’s a luxury.”** She lunged again, blade singing past my ear. **“Your father learned that too late.”**  
+After a short rest and a meager meal, I redressed quickly and prepared for what the night might bring. I checked the time on my father’s pocket watch—a steady tick against the backdrop of mounting urgency—and remembered that the train ticket had instructed me, “Midnight. Don’t be late. —V.” With these thoughts in mind, I left my apartment and headed back toward the Sentinel building briefly, gathering any last-minute thoughts before embarking on the next phase of my investigation. I exchanged few words with a couple of colleagues, accepting only curt nods and furtive glances, all of which confirmed that every one of us was building our own version of a story that was only beginning to unravel.
 
-Dad’s pocket watch tumbled from my satchel, cracking against marble. Its arrhythmic ticking filled the gallery.  
+I left the newsroom without fanfare, stepping into an evening that carried a mix of cool air and subtle menace. My collected clues—the note from Eleanor, the train ticket scrawled with “Midnight. Don’t be late. —V,” and the recollection of violent events at the museum—burned in my pocket as I walked out onto the busy Manhattan sidewalk. In that charged moment, I made a silent promise to myself: I would follow every lead, however dangerous it might be. Every piece of evidence was a step closer to uncovering the truth behind the Golden Throne and restoring my father’s honor.
 
-**“Curiosity kills, Red.”**  
+The bustle of the day gave way to calmer, yet no less unpredictable, evening streets. I climbed into a taxi, instructing the driver to take me toward an address I knew led to the Blind Owl speakeasy—a place I had often found refuge among others who traded in secrets as much as in drinks. I knew that later that night, at midnight, my next set of events would unravel there. I reviewed my notes one final time during the ride, and soon the neon lights of the city seemed to blur past me as I anticipated what lay ahead.
 
-The new voice dripped like honey laced with strychnine. A man lounged in the archway, silver lighter dancing across his knuckles. He flipped it to me—*Rosa* etched in cursive.  
+I stepped from the taxi near a narrow alley off Mulberry Street and walked slowly toward the discreet entrance of the Blind Owl speakeasy. The door was hidden behind a battered sign for a tailor shop; a faded velvet curtain concealed the passage into a lower level. I paused for a moment to steady my breathing and then pushed through into the dim interior.
 
-**“Vito Romano.”** He nodded at Celeste. **“And you’re blocking my uncle’s cleaner from her bonus.”**  
+––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
+  
+I arrived at the Blind Owl speakeasy just as midnight settled over the city. Inside, neon lights bled through wooden boards and a broken phonograph played the doleful strains of “Empty Bed Blues,” its sad melody filling the room with a nearly tangible sense of weariness. The space was low-ceilinged and smoky, filled with a motley crowd of patrons quietly nursing their bootleg spirits. I recognized the familiar, restrained chaos of this underworld refuge—a place where secrets were exchanged as discreetly as the sips of whiskey.
 
-Celeste spat at his Oxfords. **“Tell Enzo the throne rots before I hand it to that pig Kensington.”**  
+I spotted Vito almost immediately. He was leaning casually near a row of tables when he saw me enter. Without needing a word, he moved toward me. His face bore a look of concern as he knelt beside me. I could see that my injured thigh, now crudely bandaged with a strip of cloth I had hastily wrapped earlier, needed proper attention. Vito retrieved a small first‐aid kit from behind the bar and calmly set about cleaning the cut with iodine. I winced as the burning sting of the antiseptic touched my open wound, but his careful, methodical hands worked quickly. I sat in a rickety chair near the back, allowing him to stitch the cut with plain efficiency.
 
-The lighter burned my palm. **“You planted evidence,”** I hissed, stepping closer. **“Made the world think my father—”**  
+While Vito operated on my thigh, I couldn’t help but notice that every movement, however slight, seemed to magnify the tension. At one moment, as I shifted in my seat, my skirt rode up and the vulnerability of my exposed skin sparked a brief flash in Vito’s eyes. His breath caught in his throat for a split second; however, he continued his work without further comment. I said nothing. The treatment was clinical and meant only to stop the bleeding and ease the pain.
 
-**“She forges Picassos, sweetheart.”** Vito’s smile chilled more than the museum’s AC. **“Framing’s an art form.”**  
+As the quiet of the speakeasy began to settle again, the calm was abruptly shattered by a sudden commotion. A drunken man staggered into our area. His gait was unsteady, and his eyes were unfocused. Before I could register what he was about to do, the man reached out and groped me roughly. The unexpected contact made me recoil, and I instinctively tried to push him away. But he clung stubbornly, muttering incoherently.
 
-Celeste lunged. I swung the candelabra. Steel rang as her blade skittered across the floor. She scrambled for the service stairs, apron spilling tubes of Prussian blue—the same shade that marked coordinates in Dad’s stolen case files.  
+Vito immediately reacted. He picked up a bottle from behind the mahogany bar—a bottle still half‑full of bootleg liquor—and swung it toward the assailant. I heard the sharp crash of glass hitting flesh, followed by a sickening sound as the blow cracked bone. The drunk man howled in pain and staggered backward, the spilled contents of his drink mixing with the blood that now joined the earlier traces on the floor. The entire area seemed to hold its breath momentarily as the altercation died down.
 
-**“You’re bleeding on a sixth-century mosaic,”** Vito observed. **“The trustees’ll add desecration to your family resume.”**  
+In the ensuing silence, I noticed something small near the fallen drunk’s outstretched hand. He had dropped a crumpled piece of paper. I retrieved it and unfolded it carefully. It was a manifest—a hastily written note that bore a single instruction: “Golden Throne → Pier 17. Midnight.” The message was brief but clear. I realized that this new clue tied directly to the art theft and the mysteries that had unfolded since my morning visit to the museum.
 
-I fisted his pinstriped lapels. **“Why the lighter? Guilt?”**  
+I set the manifest aside, still holding it in my hand as Vito finished stitching the wound. He dabbed at the cut once more with iodine and then wrapped it securely with a clean strip of cloth. When he finally looked up, his expression was hard to read. I quietly murmured a simple “Thank you,” and he nodded slightly, indicating that nothing further needed to be said between us about this matter.
 
-**“Currency.”** He peeled my fingers back, calluses snagging silk. **“Run now, meet tonight, and I’ll show you who really cut Daddy’s strings.”**  
+For several long minutes after the commotion, I remained seated at a small table in a quiet corner of the speakeasy. I sipped water from a chipped glass and reviewed the clues that now surrounded me. The note from Eleanor reading “Follow the blue,” the train ticket signed “—V,” the violent encounter in the museum, and now the manifest directing me to Pier 17—all of these pieces converged in my mind to suggest a course of action I could not ignore. The plan was becoming clearer: by midnight, I was expected to make contact or intercept something at Pier 17 that might explain the true significance of the Golden Throne.
 
-His thumb brushed my collarbone as he shoved me toward the exit. The cameo brooch bit my sternum, Mom’s stone profile judging every step.  
+Throughout the remainder of the night, I stayed alert. I listened to murmurs, watched the other patrons, and observed every movement in the subdued interior of the Blind Owl. The low hum of conversation, mixed with occasional bursts of subdued laughter and the scratchy sound of the old phonograph, provided a backdrop that was both comforting and cautionary. I knew that this establishment was a haven for those who preferred their dealings conducted in whispers and hidden glances.
 
----  
+At one point, unable to contain the restless energy inside, I stepped out into the alley behind the speakeasy for a breath of cool night air. The contrast was immediate: the tight, smoky space gave way to a dark and quiet back street. I paused on the cold pavement and pulled the manifest from my pocket. I reread its instructions—“Golden Throne → Pier 17. Midnight”—and felt the weight of the message settle in my mind. Every detail, from the spilled Prussian blue at the museum to the signature on the train ticket, was part of a larger trail that I was determined to follow.
 
-The *Daily Sentinel* newsroom reeked of defeat. I slumped at my desk, thigh bandaged with a pilfered handkerchief, and hammered out:  
+After a few minutes, I returned inside and ordered a glass of water. I took a seat in a secluded booth and laid out the few clues I had collected: Eleanor’s note, the train ticket, and now the manifest. I let my eyes scan the room and noted where Vito was; he was quietly tending to affairs behind the bar, occasionally glancing in my direction. I resolved that I should speak with him once more before leaving, for his words earlier had hinted that the Golden Throne was not merely a stolen artifact but part of a larger network of power in the city.
 
-**METROPOLITAN BREACH EXPOSES SECURITY FLAWS**  
+I called softly for him when I felt ready and asked, “Do you know anything more about why I should be at Pier 17 at midnight?” Vito looked at me steadily and replied in a low tone, “I don’t have all the answers, but listen—The Golden Throne is more than just a museum piece. It means something to the men running this city. If you follow the note, you might even find the truth about your father.” He offered no further explanation, and I accepted his words as a simple directive. I knew I had to trust the clues, however perilous they might be.
 
-**By Vivian Sinclair**  
+Soon, I checked my watch. The night was advanced and every minute was critical. With the manifest securely folded in my jacket along with the train ticket and Eleanor’s note, I prepared to leave the Blind Owl. I thanked Vito once again with minimal words and slipped out the side door into the cool, dark night. Outside, the streets of Manhattan were nearly deserted, and I walked slowly, keeping alert to every sound. The quiet of the night was punctuated only by distant footsteps and the hum of traffic in the far-off avenues.
 
-**Eyewitness accounts confirm—**  
+I set my course for Pier 17—a rotting dock along the East River known for its bleak, industrial charm and the faint odor of diesel and brine. The manifest’s simple instructions had pointed me there; I had to trust that this step was part of the larger puzzle. I walked along the nearly empty side streets until I reached the waterfront. The pier stretched out before me, its wooden planks worn by years of salt and neglect. The air was heavy with the scent of saltwater and diesel fumes, and the distant sound of lapping waves provided an eerie rhythm to the night.
 
-Fletcher’s meaty palm crushed the carriage return. **“Obituaries are downstairs, kid.”**  
+I moved cautiously along the pier, scanning the area for any sign of activity. Every creak of the boards under my feet and every whisper of the wind was magnified in the quiet. As I walked, I thought of the clues arising from the day—the violent cut at the museum, the cryptic messages, Vito’s somber warning—and I realized that each event was interconnected. I paused several times to check my surroundings, ensuring I was not being followed or observed by unwanted eyes.
 
-**“The throne’s still in the city.”** I slapped Celeste’s paint-stained glove on his desk. **“Prussian blue markers in the tunnels. Dad was closing in when—”**  
+After walking several hundred feet, I finally reached a more secluded stretch of the pier. I noticed two figures speaking quietly near a cluster of abandoned crates. Their voices were low and indistinct, but one of them mentioned something about a scheduled meeting at midnight. I listened intently, piecing together snippets of conversation that seemed to confirm the manifest’s location as significant. I did not approach immediately; instead, I moved slowly along the pier, staying hidden in the shadows cast by old lampposts and weathered barrels.
 
-**“When he became the story.”** Fletcher ignited his Zippo. **“Let it die.”**  
+I eventually found a relatively safe spot away from the figures and pulled out the manifest once again. I unfolded the note and re-read the terse instruction: “Golden Throne → Pier 17. Midnight.” I sat down on a wooden crate and took a few deep breaths. I realized that this directive was meant to lead me into the midst of a dangerous network—one that involved men with power and money, individuals who would go to great lengths to keep their secrets hidden. Despite the pain in my leg and the heavy burden of the day’s events, I felt a steady resolve set in. I needed to see this through.
 
-**“It wasn’t him!”**  
+After making careful notes of everything I had witnessed that night—every detail of my walk along the pier, every sound and movement—I folded the manifest and tucked it safely into the inner pocket of my coat along with the train ticket and Eleanor’s note. I knew I had to retreat to a more secure location in order to compile my findings before the next phase of the investigation unfolded. I moved off the open pier, seeking a quieter exit from this dangerous area.
 
-The flame kissed glove leather. **“Ghost chasing’s a young woman’s game.”** He watched synthetic flowers melt. **“You’ll end up like your old man—ink on yesterday’s front page.”**  
+I found a darkened side street that allowed a quick escape without drawing attention. In the cool quiet of that street, I reviewed the chain of events in my mind: the violent attack in the museum, the harsh words of my editor at the Sentinel, the cryptic clues passed to me by Eleanor, and now the unmistakable instruction to be at Pier 17 at midnight. Each piece was as simple as it was forced, leaving little room for personal interpretation. I noted only the facts, determined that I would record every step later in clear, plain language.
 
-The elevator clanged. Eleanor’s archive cart squeaked through the bullpen, dropping a slip into my wastebasket:  
+Eventually, I reached a small boarding house off a quietly lit avenue—a modest, unremarkable building where I could take a short rest. Inside, in a sparse, dim room, I sat on a rickety bed and spread out all my notes and physical clues on a rickety, battered desk. I wrote down, in plain and simple language, every moment of the day: the blood on the mosaic in Gallery 17, my father’s carved initials, the scent that reminded me of him, Vito’s warning with the engraved lighter that read “Rosa,” Celeste’s spilled Prussian blue paint, Fletcher’s abrasive destruction of my report at the Sentinel, and the train ticket proclaiming “Midnight. Don’t be late. —V.” Finally, I detailed the violent encounter in the Blind Owl speakeasy where Vito treated my wound and where a drunk man’s assault yielded the manifest that pointed me toward Pier 17.
 
-*Midnight. Don’t disappoint. —V*  
+Even as I recorded these facts, I understood that tonight was only the beginning of an investigation that would pull me deeper into Manhattan’s shadows. I did not allow myself any extravagant thoughts or impressions—only the plain truth of what had occurred. In that silent room, I resolved to follow these clues without deviation. My father’s legacy, the fate of the Golden Throne, and the corruption agents behind it were all indications that the truth had to be uncovered, no matter how dangerous the pursuit.
 
-Pier 17. 11:59 PM.  
-
----  
-
-The Blind Owl’s haze of gin and regret clung to my skin. I nursed a fizz at the bar, torn stocking exposing sutures. Vito materialized with a medical kit, hands steady save for the pinkie finger that trembled ever so slightly.  
-
-**“Booth three’s discreet.”**  
-
-**“So’s a grave.”** I didn’t budge. **“Talk here.”**  
-
-He knelt, rolling my skirt hem with clinical precision. Iodine burned. **“Why save me?”**  
-
-**“Kensington’s your white whale.”** His breath ghosted my inner thigh as he tied gauze. **“Enzo wants him gutted. Mutual benefit.”**  
-
-**“And Rosa?”**  
-
-The needle hesitated. **“Sister. Collateral damage.”**  
-
-A drunk lurched over, reeking of regret. **“How much for the ginger?”**  
-
-Vito rose slow, a panther uncoiling. **“You’re blocking the exit.”**  
-
-**“Exit’s that way, slick.”**  
-
-The broken bottle flashed. Blood arced across mahogany as the drunk howled.  
-
-**“I said,”** Vito murmured, glass teeth glinting in the man’s shoulder, **“you’re blocking the exit.”**  
-
-Sammy dragged the man out, leaving a crumpled manifest in his wake:  
-
-*Golden Throne → Pier 17. Midnight.*  
-
-Vito’s grin cut through cigar haze. **“Still think you’re mad?”**  
-
-The train ticket seared my ribs.  
-
-CONTINUE  
-
------
-
-The Packard's engine growled through fog-choked streets. I clutched the manifest, its ink bleeding from Hudson River damp. Vito drove one-handed, wristwatch glinting—11:47 PM.  
-
-**“Celeste’s message mentioned Kensington.”** I had to shout over the wind. **“How deep is he in?”**  
-
-**“Mayor’s the puppet master.”** Vito skidded onto South Street. **“Enzo’s the knife.”**  
-
-The docks materialized through mist—crumbling piers, trawlers coughing rust. Vito killed the lights, pointing to a listing hull. *SS Rosa* wept Prussian blue from its seams.  
-
-**“Sentiment?”** I nodded at the peeling name.  
-
-**“Poetry.”** He checked his revolver. **“Enzo’s got none.”**  
-
-Two thugs emerged from the trawler, crate groaning between them. Gold leaf winked through splintered wood.  
-
-**“Consigliere wants it polished by dawn,”** one grunted.  
-
-**“Polished?”** His partner spat. **“It’s been sitting in the damn—”**  
-
-Vito stepped into the open, lighter flaring. **“Evening, boys. Tell Uncle the prodigal’s home.”**  
-
-Recognition flared. Gunfire erupted.  
-
-**“Left flank!”** Vito tossed me his revolver. **“Make ‘em dance!”**  
-
-I dove behind oil barrels, bullets pinging steel. The watch in my pocket thrummed—11:54. Five minutes till midnight. Five till truth.  
-
-Celeste emerged from the hold, blade dripping river sludge. **“Persistent little bloodhound, aren’t you?”**  
-
-**“You loved him once.”** I circled, saltwater seeping into Oxfords. **“Why bury him?”**  
-
-**“Love’s collateral.”** Her knife caught moonlight. **“Kensington holds the mortgage.”**  
-
-The trawler lurched. Water gushed through rotten planks.  
-
-**“Your daughter’s tuition?”** I gambled, recalling Dad’s notes. **“He threatened her?”**  
-
-Celeste faltered.  
-
-I swung a rusted chain. Metal bit her wrist. The blade clattered as we crashed into crates—Renaissance gold spilling like sins at confession.  
-
-**“He tried to protect you both!”** Her whisper carried over creaking wood. **“Left clues in his articles. But you were busy playing reporter!”**  
-
-Dad’s watch screamed in my ears—11:59.  
-
-**“Down!”** Vito’s roar preceded the blast.  
-
-Fire swallowed the hold. Celeste vanished in the chaos as the *SS Rosa* fractured. Vito hauled me up the disintegrating ladder, lungs burning. We breached as the trawler capsized, frigid waves choking curses.  
-
-Enzo waited on the pier, silhouette framed by henchmen.  
-
-**“Family first, boy.”** The don’s grin held rot.  
-
-Vito’s hand found mine beneath the waves. **“Swim or die, Red.”**  
-
-We chose the current.  
-
------
-
-The Hudson spared us at Brooklyn Bridge’s rotting pilings. Vito collapsed against stone, chest heaving. Moonlight caught the scar tissue mapping his ribs—a history written in violence.  
-
-**“Still think I’m the villain?”** He offered a cigarette.  
-
-**“Still think I care?”** I stole his lighter.  
-
-The flame illuminated the manifest’s survivor—a partial consignee line: *H.K. Kensington.*  
-
-**“Gala’s in three weeks.”** Vito nodded Uptown. **“He’ll unveil his prize.”**  
-
-I exhaled smoke, watching it coil like the lies we’d unravel. **“Then we RSVP with fireworks.”**  
-
-He grinned, all edge and ember. **“Welcome to the war, Red.”
+As I finally settled into a fitful sleep on the narrow cot, I reminded myself that I would not rest long. Tomorrow—if not this very hour—I would return to the field armed with these precise details, ready to confront whatever darkness lay ahead. I closed my eyes with only the steady tick of my father’s pocket watch in the background, its sound marking the relentless advance of time toward a revelation I could not yet imagine.
