@@ -2073,6 +2073,9 @@ def task_revise_outline(bot):
     bot.revise("review_outline_pacing", "edit_outline", dir+"/outline", "revise_pacing")
     # Another plot hole edit
     bot.revise("review_outline_plot_hole", "edit_outline", dir+"/outline", "revise_plot_hole_2")
+    # Diversity edits with Claude and o3
+    bot.revise("review_outline_claude", "edit_outline", dir+"/outline", "revise_claude")
+    bot.revise("review_outline_o3", "edit_outline", dir+"/outline", "revise_o3")
 
 def main():
     """Main entry point for BookBot"""

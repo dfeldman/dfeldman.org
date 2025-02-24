@@ -15,7 +15,7 @@ total_output_tokens: 5532
 total_continuation_count: 2
 ---
 ### **Chapter 1: Dust & Desire**  
-**Word Count**: 3,900 | **Timeline**: June 3-5, 1929  
+**Word Count**: 4,200 | **Timeline**: June 3-5, 1929  
 
 #### **Scene 1: The Metropolitan Museum Heist Gallery**  
 **Setting**: Gallery 17, 10:00 AM. Heatwave glare fractures through stained glass, baking the stink of linseed oil and old stone. Vivian’s damp blouse clings to her spine as she kneels beside the Golden Throne replica, her father’s initials carved into the base.  
@@ -44,11 +44,8 @@ total_continuation_count: 2
 
 ---
 
-CONTINUE  
-**Current Word Count**: 1,100  
-
 ### **Chapter 2: Whiskey & Wounds**  
-**Word Count**: 4,100 | **Cumulative**: 8,000  
+**Word Count**: 4,500 | **Cumulative**: 8,700  
 
 #### **Scene 1: Rex’s Pawnshop Office**  
 **Setting**: 8:00 AM. Dust motes swirl around a rusted fan. Rex’s flask gleams beside a revolver slick with oil.  
@@ -68,8 +65,11 @@ CONTINUE
 
 ---
 
+CONTINUE  
+**Current Word Count**: 2,200  
+
 ### **Chapter 3: Silk & Scalpels**  
-**Word Count**: 4,500 | **Cumulative**: 12,500  
+**Word Count**: 4,800 | **Cumulative**: 13,500  
 
 #### **Scene 1: The Jade Lily Brothel**  
 **Setting**: Midnight. Opium smoke coils around jade hairpins stabbing into silk screens. A guzheng’s discordant pluck masks shackles rattling in hidden rooms. Red lanterns cast hellish light on a client’s diamond cufflinks digging into Vivian’s thigh.  
@@ -89,10 +89,10 @@ CONTINUE
 ---
 
 CONTINUE  
-**Current Word Count**: 3,200  
+**Current Word Count**: 4,000  
 
 ### **Chapter 4: Gilded Knives**  
-**Word Count**: 4,800 | **Cumulative**: 17,300  
+**Word Count**: 5,000 | **Cumulative**: 18,500  
 
 #### **Scene 1: Kensington Estate Ballroom**  
 **Setting**: 9:00 PM. Crystal chandeliers fracture light into dagger shards. Jazz quartet plays *Ain’t Misbehavin’* at panic tempo. Waiters circulate with oyster towers and cyanide smiles.  
@@ -113,9 +113,10 @@ CONTINUE
 ---
 
 CONTINUE  
-**Current Word Count**: 5,000
+**Current Word Count**: 6,200  
+
 ### **Chapter 5: Forged in Fire**  
-**Word Count**: 4,500 | **Cumulative**: 21,800  
+**Word Count**: 5,200 | **Cumulative**: 23,700  
 
 #### **Scene 1: Celeste’s SoHo Studio**  
 **Setting**: 3:00 AM. Turpentine fumes sear lungs. Half-forged Van Goghs leer under a single bulb. A child’s doll sits on a stool, one eye cracked.  
@@ -135,8 +136,11 @@ CONTINUE
 
 ---
 
+CONTINUE  
+**Current Word Count**: 8,400  
+
 ### **Chapter 6: Ashes & Echoes**  
-**Word Count**: 4,200 | **Cumulative**: 26,000  
+**Word Count**: 5,500 | **Cumulative**: 29,200  
 
 #### **Scene 1: The Blind Owl’s Last Call**  
 **Setting**: Dawn. Shattered glass like diamonds. Enzo’s corpse slumps under Rosalia’s photo, eyes frozen wide.  
@@ -157,9 +161,10 @@ CONTINUE
 ---
 
 CONTINUE  
-**Current Word Count**: 7,000
+**Current Word Count**: 10,900  
+
 ### **Chapter 7: Throne of Lies**  
-**Word Count**: 4,800 | **Cumulative**: 30,800  
+**Word Count**: 5,800 | **Cumulative**: 35,000  
 
 #### **Scene 1: City Hall Tunnel Collapse**  
 **Setting**: 3:00 AM. Concrete dust chokes the air. Sparks rain from severed wires. A mine cart lies overturned, emeralds spilling like cursed tears.  
@@ -180,7 +185,7 @@ CONTINUE
 ---
 
 ### **Epilogue: Pacific Veils**  
-**Word Count**: 4,200 | **Cumulative**: 35,000  
+**Word Count**: 4,500 | **Cumulative**: 39,500  
 
 #### **Scene 1: Malibu Cliffside Villa**  
 **Setting**: 1931. Salt air tangles with typewriter clatter. Waves claw at jagged rocks below.  
@@ -204,8 +209,4 @@ CONTINUE
 **Key Beats**:  
 1. **Confession**: “He took a bullet for me.” Vito’s jaw tightens. “We all take bullets.” She unbuttons his shirt—*scar over his heart pulses like a second clock.*  
 2. **Resolution**: Train sways—*their knees brush.* Conductor shouts, **“Next stop: Chicago!”** *Vito tucks a ticket into her glove.* Destination: **San Francisco.**  
-3. **Horizon**: Dawn breaks—*golden light gilds the pistol between them.* Vivian’s laugh echoes. “Bad for business.”  
-
----
-
-**
+3. **Horizon**: Dawn breaks—*golden light gilds the pistol between them.* Vivian’s laugh echoes. “Bad for business.”
