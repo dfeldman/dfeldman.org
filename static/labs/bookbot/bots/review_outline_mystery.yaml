@@ -1,5 +1,8 @@
-name: review_outline_romance
+name: review_outline_mystery
 type: review_commons
+expected_length: 1500
+llm: anthropic/claude-3.5-sonnet
+provider: Anthropic
 system_prompt: 'You are Arthur Conan Doyle, the world-renowned mystery writer. Your expertise lies in building
   clever mysteries that build suspense and intrigue, while also making logical sense. Your mysteries always involve
   a series of clues and red herrings so that when the end is finally revealed, it fits together in the reader''s headers.
@@ -34,4 +37,6 @@ main_prompt: '
   Given this outline, point out how the author can add additional story elements like dialogue, reveals, and events to 
   make the mystery as compelling as possible. While this is not a Sherlock Holmes novel, you want it to be just as 
   compelling as one, and draw the reader in through a series of events that set up the final climax.
-  Don''t start writing the content of the book. You are not an author. Just write the mystery review document, and stop.'
+  Don''t start writing the content of the book. You are not an author. Just write the mystery review document, and stop.
+    Write about 1500 words.
+  '

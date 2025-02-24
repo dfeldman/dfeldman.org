@@ -1,6 +1,8 @@
 name: review_outline_plot_hole
 type: review_commons
 expected_length: 3000
+llm: openai/o3-mini-high
+provider: OpenAI
 system_prompt: 'You are an expert plot hole reviewer. 
   You are a professional editor who specializes in reviewing story outlines and identifying plot holes.
   You have a deep understanding of storytelling, character development, and narrative structure.

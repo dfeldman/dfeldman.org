@@ -1,47 +1,74 @@
 {
-  "input_tokens": 79671,
-  "output_tokens": 2119,
-  "time": 51.573349714279175,
+  "input_tokens": 149336,
+  "output_tokens": 2572,
+  "time": 78.75063419342041,
   "calls": [
     {
-      "timestamp": "2025-02-23T19:31:10.757248",
-      "input_tokens": 18792,
-      "output_tokens": 713,
-      "elapsed": 17.06385898590088,
+      "timestamp": "2025-02-23T19:35:49.077114",
+      "input_tokens": 19660,
+      "output_tokens": 530,
+      "elapsed": 15.525156021118164,
       "retry": 1,
       "provider": "Anthropic",
       "model": "anthropic/claude-3.5-sonnet"
     },
     {
-      "timestamp": "2025-02-23T19:31:21.778308",
-      "input_tokens": 19645,
-      "output_tokens": 498,
-      "elapsed": 11.00452184677124,
+      "timestamp": "2025-02-23T19:36:03.646887",
+      "input_tokens": 20323,
+      "output_tokens": 452,
+      "elapsed": 14.558450937271118,
       "retry": 2,
       "provider": "Anthropic",
       "model": "anthropic/claude-3.5-sonnet"
     },
     {
-      "timestamp": "2025-02-23T19:31:35.528337",
-      "input_tokens": 20283,
-      "output_tokens": 527,
-      "elapsed": 13.738390922546387,
+      "timestamp": "2025-02-23T19:36:09.876486",
+      "input_tokens": 20915,
+      "output_tokens": 4,
+      "elapsed": 6.2190961837768555,
       "retry": 3,
       "provider": "Anthropic",
       "model": "anthropic/claude-3.5-sonnet"
     },
     {
-      "timestamp": "2025-02-23T19:31:45.309442",
-      "input_tokens": 20951,
-      "output_tokens": 381,
-      "elapsed": 9.766577959060669,
+      "timestamp": "2025-02-23T19:36:23.966230",
+      "input_tokens": 21156,
+      "output_tokens": 601,
+      "elapsed": 14.076729774475098,
       "retry": 4,
+      "provider": "Google",
+      "model": "anthropic/claude-3.5-sonnet"
+    },
+    {
+      "timestamp": "2025-02-23T19:36:35.964326",
+      "input_tokens": 21897,
+      "output_tokens": 441,
+      "elapsed": 11.984709978103638,
+      "retry": 5,
+      "provider": "Google",
+      "model": "anthropic/claude-3.5-sonnet"
+    },
+    {
+      "timestamp": "2025-02-23T19:36:44.655829",
+      "input_tokens": 22478,
+      "output_tokens": 291,
+      "elapsed": 8.683700323104858,
+      "retry": 6,
+      "provider": "Google",
+      "model": "anthropic/claude-3.5-sonnet"
+    },
+    {
+      "timestamp": "2025-02-23T19:36:52.370643",
+      "input_tokens": 22907,
+      "output_tokens": 253,
+      "elapsed": 7.702790975570679,
+      "retry": 7,
       "provider": "Anthropic",
       "model": "anthropic/claude-3.5-sonnet"
     }
   ],
-  "previous_input_tokens": "17596",
-  "previous_output_tokens": "2250",
-  "previous_time": "39.704617977142334",
-  "previous_continuation_count": "1"
+  "previous_input_tokens": "58720",
+  "previous_output_tokens": "1738",
+  "previous_time": "41.806771755218506",
+  "previous_continuation_count": "3"
 }
