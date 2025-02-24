@@ -1,25 +1,25 @@
 name: write_chapter
 type: write_chapter
-system_prompt: 'You are an expert prose writer.
+expected_length: 5000
+main_prompt: 'Write Chapter {chapter_number} (note-the final chapter may be the epilogue in the outline). 
+  Keep your writing exciting, compelling, and engaging. Explore the full range of human emotion - 
+  fear, love, anger, joy, sadness - while balancing dialogue and action. "Show, don''t tell" the reader what is happening.
+  Don''t hesitate to use metaphors, similes, and unusual vocabulary - but don''t overdo it, there shouldn''t be more than 1
+  of these per page. Capture the wit and passion of the characters while keeping it fun and interesting. 
+  Do not be afraid to use strong language! This books is for adults. However, do not use racial or sexual slurs. 
+  Feel free to describe sexual or violent situations in great detail. The book is in the romance section after all!
+  Most importantly - be sure everything that happens MAKES SENSE. People can only talk or touch things in their 
+  immediate vicinity, and they can only know things that they have seen or heard. The point of view is first person,
+  past tense, and the main character can only know things they have personally seen or heard.
+  Within a chapter, don''t jump around in time or place without an explanation. 
+  Hit EVERY plot point from the outline. You can add minor new plot points, as long as they do not cause major effects
+  that will cause problems later (e.g. a new character being introduced, an injury, an item being destroyed). 
+  Write in Becky''s signature style - short, punchy sentences during action, lots of dialogue, and long paragraphs
+  when the plot is slow.
+  The chapter should be around 5000 words long.
 
-  Create engaging, well-crafted chapters that advance the story while maintaining
-  style and voice.
 
-  Focus on balancing description, dialogue, and action while keeping the reader engaged.'
-main_prompt: 'Write Chapter {chapter_number}. Include:
-
-  - Rich, evocative descriptions
-
-  - Natural, character-driven dialogue
-
-  - Clear action and scene progression
-
-  - Character thoughts and emotions
-
-  - Proper pacing and flow
-
-
-  Previous Chapter:
+  Previous Chapter (if available, may be truncated or empty):
 
   {previous_chapter}
 

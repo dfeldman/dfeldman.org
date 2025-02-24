@@ -1,161 +1,785 @@
 ---
 chapter_number: 1
 created_at: 2025-02-22T13:41:57.662883
+command: write_chapter_1
+bot: write_chapter
+timestamp: 2025-02-23T19:54:31.113266
+input_tokens: 140678
+output_tokens: 12178
+continuation_count: 7
+provider: Together
+model: deepseek/deepseek-r1
+time: 267.36170625686646
+total_input_tokens: 140678
+total_output_tokens: 12178
+total_time: 267.36170625686646
+total_continuation_count: 7
 ---
-# Chapter 1: Ghosts of Gilt  
+**# Chapter 1: Dust & Shadows**  
 
-The icebox shuddered to life as Vivian Sinclair pressed her forehead against its door. Condensation dripped down the rusted handle, mimicking the sweat sliding between her shoulder blades. June heat pooled in her fourth-floor walkup like spoiled syrup, thickening the air until even her typewriter keys stuck mid-sentence.  
+The smell hit me first—linseed oil gone rancid, clinging to the museum’s stone walls like a sweaty hand. June sunlight sliced through stained glass above the Golden Throne’s pedestal, painting the empty dais in fractured emerald and gold. I pressed my thumb against the initials carved into the marble base: *J.S.* My father’s pocket---
+title: "Tobacco Outlet"
+url: /kent/tobacco-outlet/
+shop: tobacco
+---
+**# Chapter 1: Dust & Shadows**
 
-She’d left the window open all night, but the Hudson Diner’s neon sign still blinked through the grime-streaked glass—**EAT** in jagged crimson letters that tattooed the opposite wall. It illuminated her bulletin board in hellish flashes: police reports pinned like butterfly specimens, a *New York Sentinel* clipping screaming **MUSEUM HEIST UNSOLVED!**, and the photograph that never moved.  
+The smell hit me first—linseed oil gone rancid, clinging to the museum’s stone walls like a sweaty hand. June sunlight sliced through stained glass above the Golden Throne’s pedestal, painting the empty dais in fractured emerald and gold. I pressed my thumb against the initials carved into the marble base: *J.S.* My father’s pocket watch weighed heavy in my satchel, its ticking syncopated with the guard’s footsteps echoing behind me.  
 
-*Joseph Sinclair, 1924*. Father’s smile frozen mid-laugh, one hand raised as if to block the camera. The scar on her collarbone itched where the burglar’s knife had kissed bone three years ago. Same blade that slit Dad’s throat.  
+“Press badge, sweetheart.”  
 
-Viv slammed the icebox. The lone ice cube trembled in her coffee as she crossed to the Underwood. Three strikes on the spacebar—her morning ritual—before rolling in fresh paper.  
+Guard Joe’s holster creaked as he leaned against the velvet rope. His breath smelled of pickled eggs and disappointment. I flashed my credentials, the laminated edge catching light. His eyes dropped to my neckline instead.  
 
-The headline wrote itself:  
+“Real shame about the throne,” he said, thumbing his belt buckle. “Heard your old man got fired before he croaked. Guess he missed the—”  
 
-**MAYOR’S “CLEAN STREETS” A BLOODY JOKE**  
+The air shifted.  
 
-Her fingers flew, words clattering like the Sixth Avenue El outside. *Kensington’s initiative targets only immigrant neighborhoods… sanitation trucks spotted at Red Hook Dock 9 after midnight…*  
+A shadow peeled itself from the Byzantine tapestries—too fast, too liquid. Steel flashed. My thigh burned before I registered the blade. Blood bloomed through my skirt, dripping onto the 13th-century mosaics like cheap cabernet.  
 
-A cockroach skittered across the desk. Viv crushed it with her coffee cup, staining the Mayor’s speech notes caramel.  
+*Move.*  
+
+I pivoted, heel skidding on marble. The figure lunged again, blade aiming for my ribs. I grabbed the pedestal’s velvet drape, yanking hard. The bastard stumbled as fabric swallowed him like a shroud.  
+
+“Curiosity kills, Red.”  
+
+The voice came from the doorway. Silver glinted—a lighter arced through the air, landing at my feet with a clatter. Engraved letters caught the light: *Rosa*.  
+
+Vito Romano leaned against the archway, sleeves rolled to reveal tattoos snaking up his forearms. His grin didn’t touch his eyes. “You bleed pretty for a reporter.”  
+
+“You stalk pretty for a criminal.” I pressed the lighter into my palm, the metal still warm from his pocket.  
+
+A paint can clattered behind us. The docent—mousy brown hair, trembling hands—fumbled with a brush. Prussian blue splashed across the floor, pooling around my blood.  
+
+“S-sorry!” she stammered, eyes darting to the emergency exit. “Accidents happen!”  
+
+I knew that shade of blue. Same as the markings on the tunnel maps buried in my files.  
+
+Vito stepped closer, the scent of bay rum cutting through the linseed stench. “Run along, Celeste. Grown-up’s talking.”  
+
+The docent fled.  
+
+He crouched, fingers brushing my torn stocking. Blood smeared his thumbnail. “Three blocks east. Blind Owl speakeasy. Midnight.” His thumb grazed my inner thigh. “Don’t be late.”  
+
+The pocket watch chimed three o’clock in my bag. When I looked up, he’d vanished—leaving only the coppery tang of blood and the lighter burning my palm.  
+
+---
+
+**CONTINUE**  
+
+(Word count so far: 400)
+**# Chapter 1: Dust & Shadows (Continued)**  
+
+The *Daily Sentinel* newsroom smelled like burnt coffee and regret. I limped past rows of clattering typewriters, my torn stocking chafing the wound Vito’s knife had gifted me. Fletcher’s office loomed at the far end, its glass walls fogged with cigar smoke.  
+
+“Sinclair!” His bark cut through the din. “My office. Now.”  
+
+I slid into the chair still warm from some cub reporter’s ass. Fletcher didn’t look up from his desk, ash tumbling from his cigar onto my draft.  
+
+“Heist conspiracy?” He snorted. “You writing dime novels now?”  
+
+“The throne’s a fake,” I said, slapping Celeste’s paint-stained museum map on his desk. “Same Prussian blue pigment used in the—”  
+
+He struck a match, flame kissing the edge of my article. “Chase ghosts, you’ll join them.”  
+
+Smoke curled between us as my father’s legacy burned.  
+
+The ceiling fan churned the ashes into a snowstorm of defeat. At my desk, I uncorked the emergency gin flask strapped to my thigh. The liquor burned worse than the knife wound.  
+
+“Viv.”  
+
+Eleanor materialized like a specter, her cardigan sleeves swallowing her hands. She dropped a classifieds page into my lap—obituaries circled in red.  
+
+“Rex Donovan’s running an auction,” she whispered. “Midnight. Don’t bring cash.”  
+
+The page rustled as I flipped it. A train ticket fell out, destination smudged.  
+
+“Who’s Madame X?” I traced the note scrawled on the back.  
+
+Eleanor’s cane tapped Morse code panic. “Someone who doesn’t want you dead. Yet.”  
+
+The pressroom door banged open. Inspector Burns loomed in the threshold, sweat staining his collar. His eyes locked on my bloody stocking.  
+
+“Hear you took a stroll through Kensington’s tunnel fantasies.” He leaned over my desk, breath reeking of spearmint and lies. “Word of advice? Stay out of basements.”  
+
+My father’s watch chimed six o’clock as he left. The sound drowned out the sudden silence—reporters pretending not to eavesdrop, keys frozen mid-clatter.  
+
+I waited until nightfall to check the morgue files. The dead guard from the museum stared up from his drawer, Y-incision stitched with black thread. Prussian blue residue clung to his fingernails.  
+
+“Toxicology’s back,” said the night attendant, popping his gum. “Cyanide cocktail. Fancy way to die.”  
+
+Fancier way to kill.  
+
+The L train rattled my bones as I rode to SoHo. Celeste’s loft glowed above the pawnshop, shadows moving behind drawn shades. I counted three figures—two smoking by the window, one pacing.  
+
+Her scream shattered the night.  
+
+I was halfway up the fire escape when the gunshot came.  
+
+---
+
+**CONTINUE**  
+
+(Word count so far: 800)
+**# Chapter 1: Dust & Shadows (Continued)**  
+
+The fire escape groaned under my weight. Through Celeste’s shattered window, I saw her backed against an easel, clutching a scalpel to a man’s throat. Prussian blue paint streaked her arms like war paint.  
+
+“You think Kensington lets traitors retire?” The thug’s switchblade glinted.  
+
+I swung through the frame, glass crunching under my Oxfords. The scalpel flashed. The man howled, clutching his eye. Celeste kicked his knees out, sending him crashing into a rack of canvases. Forgeries of Van Goghs and Rembrandts rained down.  
+
+“Run!” She shoved a sketchbook into my hands. “They’ll kill us both!”  
+
+Footstairs pounded below. I grabbed her wrist, yanking her toward the roof. Her fingers trembled—the same fingers that had forged masterpieces.  
+
+“Why?” I shouted over the wind. “Why risk helping me?”  
+
+She hesitated at the roof’s edge. Below us, the city pulsed like an open wound. “My daughter’s at St. Mary’s Home,” she said, voice breaking. “Tell her I tried.”  
+
+Celeste jumped first, her smock billowing like a surrender flag. She landed on a laundry line two stories down, rolling into a dumpster. I didn’t have the luxury of grace.  
+
+The Blind Owl’s neon sign flickered through the fog. I slipped through the alley entrance, the stench of gin and blood hitting me like a fist. Vito leaned against the bar, stitching a gash on his knuckles with dental floss.  
+
+“You’re late, Red.” He didn’t look up.  
+
+A drunk pawed at my hip. “Sweetheart, buy you a—”  
+
+Vito’s bottle shattered against the man’s skull. Bourbon and blood misted the air.  
+
+“You bleed too easy,” he said, dabbing my thigh with iodine-soaked cotton. His fingers lingered. The speakeasy’s piano player struck a discordant note.  
+
+The drunk’s pocket yielded a manifest: *Golden Throne → Pier 17. Midnight.*  
+
+Vito’s lighter clicked open. “Burn it.”  
+
+“Or what?”  
+
+His lips brushed my earlobe. “Or I’ll make you.”  
+
+The door exploded inward.  
+
+---
+
+**CONTINUE**  
+
+(Word count so far: 1,100)
+**# Chapter 1: Dust & Shadows (Continued)**  
+
+Splinters rained down as the doorframe surrendered to steel-toed boots. Three men in police uniforms stormed in, batons swinging. The piano died mid-chorus.  
+
+“Raid!” someone yelled. Glass shattered as patrons bolted for hidden exits.  
+
+Vito shoved me behind the bar. His hand lingered at the small of my back, warm through my blouse. “Stay down, Red.”  
+
+Batons cracked against mahogany. A cop grabbed Sammy by his greasy apron, slamming his face into the cash register. Coins sprayed like shrapnel.  
+
+“Where’s the throne?” The lead cop’s badge gleamed—*H.K.* etched faintly under the numbers.  
+
+Vito flipped the bar table, gin bottles exploding against the wall. “Check the mayor’s ass.”  
+
+I lunged for the fallen manifest. A boot crushed my wrist.  
+
+“Pretty hands for a typist.” The cop leaned down, breath reeking of onions and power.  
+
+Vito’s fist connected with his jaw. Bone cracked. The cop staggered, spitting blood and a molar.  
+
+“Run!” Vito tossed me a key from around his neck. “Wine cellar!”  
+
+Bullets chased us down the stairs. The cellar reeked of mold and betrayal. A single lightbulb swung above crates labeled *Olive Oil*. Vito kicked one open—gold-leaf frames glinted, stolen Renoirs nestled in straw.  
+
+“Kensington’s retirement fund,” he muttered, prying a floorboard loose. A tunnel yawned black beneath us.  
+
+“You first.” He palmed my hip, pushing me toward the void.  
+
+The dark swallowed us whole. His chest pressed against my back as we shuffled through damp stone. Somewhere above, the cops’ shouts muffled into echoes.  
+
+“Why help me?” My voice sounded small in the tunnel’s throat.  
+
+His laugh vibrated through me. “You’re better copy when breathing.”  
+
+We emerged under the Brooklyn Bridge, moonlight silvering the river. Vito lit a cigarette with *Rosa’s* lighter. The flame trembled.  
+
+“She was my sister,” he said quietly. “Kensington’s men drowned her in the East River. Had to identify her by this.” He flicked the lighter shut.  
+
+I touched his sleeve. The fabric was still damp with my blood.  
+
+Sirens wailed upstream. He crushed the cigarette under his heel. “Pier 17. Midnight. Don’t—”  
+
+Gunfire erupted. We dove behind a stack of cargo nets. The bullets weren’t aiming for us.  
+
+Across the dock, Celeste wrestled a crate from a trawler. Prussian blue paint streaked the wood.  
+
+“The throne,” I breathed.  
+
+Vito’s hand closed over mine. “Let’s dance.”  
+
+---
+
+**CONTINUE**  
+
+(Word count so far: 1,500)
+**# Chapter 1: Dust & Shadows (Continued)**  
+
+Celeste’s scream cut through the dock’s fog as Kensington’s men closed in. The crate hit the pier with a splintering crack. Prussian blue streaked the wood like a fresh bruise.  
+
+Vito yanked me behind a stack of salt-crusted lobster traps. His heartbeat thudded against my spine, rapid but steady—a soldier’s rhythm.  
+
+“Three shooters,” he breathed. “Left flank’s clear.”  
+
+I peered through the slats. Celeste crouched behind an overturned dinghy, clutching a flare gun. The thugs advanced, their Oxfords crunching oyster shells.  
+
+“The manifest said midnight.” I checked my father’s watch—11:47. “They’re early.”  
+
+Vito’s grin flashed in the dark. “So’s trouble.”  
+
+He moved like smoke, disarming the first goon with a fishing gaff. The man’s wrist snapped. I lunged for the crate, splinters digging under my nails.  
+
+“It’s empty!” Celeste hissed, tossing me a canvas-wrapped bundle. “They switched trucks at Hell’s Gate!”  
+
+The flare gun’s *pop* lit the night in garish red. Shadows danced like demons. A bullet grazed my ear, hot as a lover’s whisper.  
+
+Vito pinned me against a piling, his thigh wedged between mine. “Still breathing, Red?”  
+
+“Disappointed?”  
+
+His laugh died as searchlights swept the pier. Coast Guard boats. Kensington’s reach stretched farther than we’d feared.  
+
+Celeste shoved a soggy sketchbook into my hands. “St. Mary’s—promise me!” Her eyes mirrored the harbor’s black water as she leapt off the dock.  
+
+The sketchbook’s pages bled Prussian blue—tunnel schematics, retinal scanner blueprints, a nude portrait of Kensington with coordinates etched into his collarbone.  
+
+Vito dragged me into a trawler’s hold reeking of mackerel. His hands fumbled with my buttons, checking for wounds.  
+
+“Just a scratch,” I lied.  
+
+His thumb brushed the blood trickling down my neck. “Liar.”  
+
+The engine roared to life. As we slid into the Hudson’s hungry current, the lighter’s engraving bit into my palm. *R# View of /PEAK/src/peak/config/interfaces.py
+Parent Directory | Revision Log | Revision Graph
+Revision: 1.20 - (download) (as text) (annotate)
+
+Fri Nov 8 02:05:40 2002 UTC (21 years, 3 months ago) by pje
+
+Branch: MAIN
+
+Changes since 1.19: +14 -0 lines
+Added 'getPropertyFor()' and 'instanceMeans()' methods to IConfigKey, to
+support property paths that work like SEF's.  (Probably need to re-express
+this when I have time to think about it, but for now this will do.)
+
+from protocols import Interface, Attribute
+
+__all__ = [
+    'IConfigKey', 'IConfigMap', 'IConfigSource',
+    'IRuleFactory', 'IRule',
+    'IPropertyMap', 'IPropertySet', 
+    'IExecutionDomain', 'IDomainService',
+    'IParentComponents', 'IServiceComponent',
+]
+
+class IConfigKey(Interface):
+
+    """Marker for configuration data that can be retrieved via a component
+
+    If a key class implements this interface, it can be used as a configuration
+    key.  That is, it can be used as an argument to 'lookup()', 'get()', or
+    'setdefault()' in a component.  The class must also implement the
+    configuration map interface (i.e. act as a supplier for itself), or
+    it must have a parent key that does.  See 'IConfigMap' for details.
+
+    Configuration keys are essentially scoping objects for configuration data.
+    They can be used to define namespaces for configuration data, or to supply
+    defaults, rules, and other information for a configuration parameter.
+
+    For example, a configuration key could represent an XML element in a
+    template, or an attribute of such an element.  The configuration data
+    supplied under that key could then be used to specify the element's
+    attributes, contents, etc., from a configuration file.  Or a key could
+    represent a particular kind of permission, with the configuration data
+    supplying the default access level for that permission.
+
+    In addition to acting as a key, the object can supply configuration data
+    by acting as a configuration map.  That is, when you call 'get()' on a
+    component, and the component doesn't have an explicit value for the key,
+    the component will check to see if the key supplies a value.  If it does,
+    that value will be returned.  This allows you to define default values,
+    rules, etc. as part of the key itself.
+
+    Note that not all configuration keys must do this; keys which are used
+    only as identifiers do not need to supply a configuration map.  However,
+    all configuration keys that are used to look up data (as opposed to being
+    used only to store it) must supply either a configuration map of their
+    own, or have a parent key that does.  This is because the configuration
+    system will automatically check with each of the key's parents, if the
+    main component doesn't have a value for the key.  If a key in the parent
+    hierarchy has a configuration map that supplies a value for the key, that
+    value will be used.
+
+    Many configuration keys will want to support the 'ISettingLoader'
+    interface, which allows them to load settings from configuration files.
+    """
+
+    def registrationKeys(component, configKey):
+
+        """Return a list of keys that should be registered in component
+
+        The default behavior is to return 'configKey,' itself.  However, this
+        method can be overridden to have the registration of one key
+        automatically register the object for other keys.  For example, a
+        class with a 'classAttr' configuration key might have instances
+        automatically register their 'instanceAttr' key whenever the class
+        registers the 'classAttr' key.  The method is called with the
+        component doing the registration, and the configuration key that was
+        specified.  It should return a list of configuration keys to be
+        registered.  Note that the default behavior is to return a list
+        containing the original configuration key.  The method may return
+        an empty list if no registration is desired, but the normal way to
+        do that is to not supply any 'registrationKeys' in the first place.
+        """
+
+    def getBases(component):
+
+        """Return a sequence of configuration maps to search in order"""
+
+    def getPropertyFor(obj, propName, default):
+
+        """Find property 'propName' for 'obj' from this key's rules
+
+        If a value for 'propName' can be determined for 'obj' using the
+        rules supplied by this key, return it.  Otherwise, return 'default'.
+        This is used by 'config.getProperty()' when walking the component
+        hierarchy, and allows keys to supply their own semantics for how
+        a named property should be determined.  For example, this method
+        is used by 'Property' instances to look up properties in their
+        underlying rule base, and by 'ComponentName' keys to support
+        property path traversal.
+        """
+
+    def instanceMeans(obj, parent, name):
+
+        """Return a configuration key that 'obj' implies in context
+
+        When a property path is used (e.g. "SomeConfigKey.SomePropertyName"),
+        each segment of the path is processed by this method.  It should return
+        the configuration key represented by that segment, in the context of
+        the previous object.  For example, a 'ComponentName' (aka 'PropertyName')
+        instance can return a new 'ComponentName' that is the parent+child name,
+        or it can return a property object, if the name is that of a property.
+        """
+
+class IConfigMap(Interface):
+
+    """Source of configuration data for a configuration key"""
+
+    def getValueFor(component, key):
+
+        """Return value of 'key' for 'component', or 'NOT_FOUND'"""
+
+    def registerProvider(component, key, provider):
+
+        """Register 'provider' for 'key' in 'component'
+
+        If the configuration map supports dynamic providers, this method
+        should add the provider to the component's configuration data.
+        If the map does not support dynamic providers, it should either
+        ignore the request or raise an error."""
+
+class IConfigSource(IConfigMap):
+
+    """Something that can be queried for configuration data"""
+
+    def get(component, key, default=None):
+
+        """Return value of 'key' for 'component', or 'default'"""
+
+    def getProperty(component, propName, default=None):
+
+        """Return the value of property 'propName' for 'component'"""
+
+    def setdefault(component, key, default=None):
+
+        """Return value of 'key' for 'component', or set it to 'default'"""
+
+    def setRule(component, key, ruleObj):
+
+        """Set a rule for computing 'key' in 'component'"""
+
+class IParentComponents(Interface):
+
+    """Component's parents that may provide configuration data
+
+    A component can potentially have multiple context parents, each of whom
+    may have their own configuration data.  A component must therefore
+    list its possible parent components via this interface, so that the
+    configuration system can look up configuration data for them.  Note that
+    this is *not* the same as the component's base classes, which are
+    managed by the component itself.  Rather, this is a list of components
+    that are considered to be the component's logical parents, in the
+    sense that configuration data should be inherited from them.
+
+    For example, a component that's a widget might list its parent window
+    as a context parent, so that configuration data set on the window is
+    available to the widget.  Similarly, a database connection object
+    might list its parent database as a context parent, so that default
+    configuration data for the connection is taken from the database.
+    """
+
+    def getParentComponents(component):
+
+        """Return list of parent components to check for configuration data
+
+        This is used by the configuration system to look up configuration
+        values supplied by parent components.  The returned list should
+        contain the parent components in order from "closest" to "farthest".
+        That is, the first parent in the list should be the next parent
+        checked after the component itself, and the last parent should be
+        the last one checked before the component's default configuration
+        sources (if any).
+        """
+
+class IRuleFactory(Interface):
+
+    """Factory to create an IRule for a specific component and config key"""
+
+    def __call__(component, key):
+
+        """Return an IRule instance for 'component' and 'key'
+
+        If the rule does not apply to 'component' and 'key', return 'None'.
+        Otherwise, return an instance of the rule, which will be used to
+        compute the value for the key.
+        """
+
+class IRule(Interface):
+
+    """Rule to compute a configuration value"""
+
+    def __call__(component, key, targetObject):
+
+        """Return the value for 'key' in 'component' for 'targetObject'
+
+        'targetObject' is the object that the value is being computed for.
+        For example, if the rule is being used to compute a class' attribute,
+        'targetObject' will be the class.  The 'component' is the component
+        that the configuration key is being retrieved from.  Note that
+        'component' may be an 'IConfigMap' provider, so don't assume it's
+        an instance of a particular class.  'key' is the configuration key
+        that is being looked up.
+
+        The method should return the desired value, or 'NOT_GIVEN' if the rule
+        does not supply a value.  Note that if the rule does not supply a
+        value, the next rule in the chain will be consulted, and so on until
+        a value is found or all rules have been exhausted.
+        """
+
+class IPropertySet(Interface):
+
+    """A component with properties that can be get/set en masse"""
+
+    def setProperties(component, **props):
+
+        """Set all 'props' on 'component' (if no conflict)"""
+
+    def getProperties(component, *propNames):
+
+        """Return a dictionary of the named properties (if present)"""
+
+class IPropertyMap(IPropertySet):
+
+    """A component that can get/set its properties via a mapping interface
+
+    Note: Property maps may be written to accept any key, but should require
+    that any key implement 'IConfigKey'.  Also, property maps need to
+    support 'IPropertySet', which allows bulk setting of multiple properties,
+    but the 'IPropertySet' methods may be implemented via '__setitem__' and
+    'get()', if desired.  However, the 'getProperties()' method of
+    'IPropertySet' allows retrieving multiple properties at once, which
+    should be optimized for speed where possible.
+    """
+
+class IExecutionDomain(Interface):
+
+    """Component representing the application's execution environment
+
+    All tasks and services run within an execution domain.  The domain
+    provides access to system resources (e.g. the event loop, thread
+    pool, etc.), and manages the lifetime of services and tasks.  The
+    domain is also the root component for configuration data, so any
+    configuration defaults not supplied by a component's parents will
+    be sought in the execution domain.
+
+    Execution domains may be nested, but this is not required.  The
+    top-level domain is known as the "system domain".  Domains may be
+    created and destroyed as needed, but the system domain is created
+    automatically when PEAK is first imported, and is never destroyed.
+    """
+
+    def serviceParent(service):
+
+        """'service' is being asked to find a parent in this domain
+
+        The service should return an appropriate parent component from this
+        domain, or 'None' if the domain doesn't recognize the service.  The
+        service can use this to find its "natural" parent in the domain,
+        e.g. a service that is part of a GUI application might return the
+        application's main window.  Note that a service may be parented to
+        a component that doesn't support 'IExecutionDomain', if that's
+        appropriate for the service.
+
+        If the domain doesn't recognize the service, it should return 'None',
+        allowing the service to continue searching for a parent via other
+        means.  If the domain recognizes the service but cannot provide a
+        parent, it may raise an error.
+        """
+
+    def addService(service):
+
+        """Add 'service' to the domain's list of services
+
+        This method is called when a service is started.  The domain should
+        add the service to its list of active services, and call the
+        service's 'startService()' method.  If the service is already
+        running, the domain should do nothing.  If the service cannot be
+        added, the domain should raise an error.
+
+        Note that services are not required to register with a domain;
+        they may be started and stopped independently.  However, services
+        that are registered with a domain will be automatically stopped
+        when the domain is shut down.
+        """
+
+    def removeService(service):
+
+        """Remove 'service' from the domain's list of services
+
+        This method is called when a service is stopped.  The domain should
+        remove the service from its list of active services, and call the
+        service's 'stopService()' method.  If the service is not registered
+        with the domain, the domain should do nothing.  If the service
+        cannot be removed, the domain should raise an error.
+        """
+
+    def runUntilIdle():
+
+        """Run the event loop until no scheduled tasks remain
+
+        This method is called by the main loop when there are no active
+        tasks.  The domain should schedule any necessary events (e.g.
+        GUI events, I/O events, etc.) and then return.  The main loop
+        will then wait for the next event to occur, and call this method
+        again when the event loop is idle.
+
+        Note that this method may be called multiple times, even if the
+        domain is already running.  The domain should ensure that it
+        doesn't get into an infinite loop in such cases.
+        """
+
+    def shutdown():
+
+        """Shut down the domain and all its services
+
+        This method is called when the domain is to be shut down.  The
+        domain should stop all its services, release any resources it
+        holds, and then return.  After this method is called, the domain
+        should not be used again.
+
+        Note that the system domain cannot be shut down.
+        """
+
+class IDomainService(Interface):
+
+    """A service that is part of an execution domain
+
+    Domain services are components that are managed by an execution domain.
+    They are typically started when the domain is started, and stopped when
+    the domain is stopped.  They may also be started and stopped independently,
+    but they should register themselves with the domain so that the domain
+    can manage their lifetime.
+
+    Domain services may be accessed via the domain's 'services' attribute,
+    which is a mapping of service names to service instances.  The service
+    name is typically the service's '__name__' attribute, but may be
+    overridden by the service's 'serviceName' attribute.
+
+    Domain services may also be accessed via the domain's 'getService()'
+    method, which takes a service name and returns the corresponding
+    service instance, or 'None' if no such service exists.
+    """
+
+    def startService():
+
+        """Start the service
+
+        This method is called when the service is started.  The service
+        should perform any necessary setup, such as opening files,
+        connecting to databases, etc.  If the service is already running,
+        this method should do nothing.  If the service cannot be started,
+        it should raise an error.
+        """
+
+    def stopService():
+
+        """Stop the service
+
+        This method is called when the service is stopped.  The service
+        should perform any necessary cleanup, such as closing files,
+        disconnecting from databases, etc.  If the service is not running,
+        this method should do nothing.  If the service cannot be stopped,
+        it should raise an error.
+        """
+
+    serviceName = Attribute(
+        """The name under which the service is registered in the domain"""
+    )
+
+class IServiceComponent(Interface):
+
+    """A component that is part of a service
+
+    Service components are components that are managed by a service.  They
+    are typically created when the service is started, and destroyed when
+    the service is stopped.  They may also be created and destroyed
+    independently, but they should register themselves with the service so
+    that the service can manage their lifetime.
+
+    Service components may be accessed via the service's 'components'
+    attribute, which is a mapping of component names to component instances.
+    The component name is typically the component's '__name__' attribute,
+    but may be overridden by the component's 'componentName' attribute.
+
+    Service components may also be accessed via the service's 'getComponent()'
+    method, which takes a component name and returns the corresponding
+    component instance, or 'None' if no such component exists.
+    """
+
+    def startComponent():
+
+        """Start the component
+
+        This method is called when the component is started.  The component
+        should perform any necessary setup, such as opening files,
+        connecting to databases, etc.  If the component is already running,
+        this method should do nothing.  If the component cannot be started,
+        it should raise an error.
+        """
+
+    def stopComponent():
+
+        """Stop the component
+
+        This method is called when the component is stopped.  The component
+        should perform any necessary cleanup, such as closing files,
+        disconnecting from databases, etc.  If the component is not running,
+        this method should do nothing.  If the component cannot be stopped,
+        it should raise an error.
+        """
+
+    componentName = Attribute(
+        """The name under which the component is registered in the service"""
+    )
+**# Chapter 1: Dust & Shadows (Continued)**  
+
+The trawler’s engine sputtered as we drifted into Pier 17’s shadow. Moonlight glinted off the Coast Guard’s hull two hundred yards back. Vito’s hand tightened on mine as he cut the engine, letting the tide carry us into the dock’s rotting embrace.  
+
+“Manifest said midnight,” he muttered, checking his stolen Rolex. “They’re early.”  
+
+I unrolled Celeste’s sketchbook. The retinal scanner blueprint fluttered in the salt wind. *Pluck his eye or blind him*—the note’s block letters bled through the page.  
+
+A crane’s silhouette jerked to life above us, its hook descending like a spider’s leg. Men in peacoats swarmed the dock, crates marked *AGRICULTURAL SUPPLIES* stacking into a labyrinth.  
+
+“Kensington’s welcoming committee.” Vito pressed a switchblade into my palm. “Stab first, flirt later.”  
+
+We slipped overboard, harbor water soaking through my skirt. The cold bit deeper than the knife wound. Celeste’s blueprints disintegrated in my grip, leaving only the scanner schematic.  
+
+“There.” Vito nodded toward a rusted shipping container. The Golden Throne’s gilded legs gleamed through the half-open door.  
+
+A guard lit a cigarette, flame illuminating the *H.K.* tattoo on his neck. Vivian’s father had the same mark in his autopsy photos.  
+
+Vito moved first. His garrote caught the guard’s throat mid-inhale. The cigarette tumbled, hissing as it hit the water. I caught the man’s keys before they splashed.  
+
+The throne reeked of linseed oil and lies. I ran a finger along the armrest—the Byzantine dragons were all wrong. “It’s another forgery.”  
+
+Vito cursed in Sicilian. Behind us, the crane’s gears whined.  
+
+The container door slammed shut.  
+
+Darkness. Then the sickening lurch of ascent.  
+
+“Clever girl.” Kensington’s voice boomed from a loudspeaker as we rose thirty feet above the dock. “But the throne you want’s in City Hall’s belly. Pity you’ll drown before telling anyone.”  
+
+Saltwater gushed through floor grates. Vito’s lighter sparked, revealing air pockets forming in the container’s ceiling.  
+
+“Give me a boost,” I shouted, stripping off my waterlogged blouse.  
+
+His hands gripped my waist as the water reached our chests. The scanner blueprint floated past, ink bleeding into the flood.  
+
+“Don’t miss, Red.”  
+
+I jammed the switchblade into the ceiling’s rubber seal. Brackish water sprayed my face as I sawed through weatherproofing. The Coast Guard’s spotlight swept closer.  
+
+Vito’s lips brushed my shoulder. “Last request?”  
+
+“Don’t die romantic.”  
+
+The blade broke.  
+
+He lunged, brass knuckles cracking the weakened metal. Cold air rushed in as the sea claimed the container.  
+
+We plunged into blackness.  
+
+---
+
+**CONTINUE**  
+
+(Word count so far: 4,850)
+**# Chapter 1: Dust & Shadows (Continued)**  
+
+The impact tore us apart. Saltwater burned my lungs as the harbor’s current dragged me deeper. Above, the container sank like a gilded coffin, chains rattling a death knell. A hand grabbed my collar—Vito, eyes wild in the murk, hauling me toward a sliver of moonlight.  
+
+We breached beside a rotting piling, gasping. The Coast Guard’s spotlight skimmed the waves where we’d vanished.  
+
+“Still romantic?” Vito rasped, blood trickling from his split lip.  
+
+I spat out seaweed. “Disappointed?”  
+
+He laughed silently, shoulders shaking. The sound died as searchlights swept the docks. Kensington’s men paced above, flashlights probing the shadows.  
+
+Vito nudged me toward a rusted ladder. “Move.”  
+
+The rungs bit into my palms. At the top, a warehouse door hung ajar, stale air whispering of diesel and decay. We collapsed behind a stack of oil drums, lungs heaving.  
+
+Vito stripped off his soaked shirt. Moonlight traced the bullet scar on his shoulder—a twin to the one I’d seen in my father’s autopsy photos.  
+
+“Your turn.” He nodded at my sodden camisole.  
+
+I arched an eyebrow. “Subtle.”  
+
+“Practical.” He tossed me a mildewed tarp. “Hypothermia’s ugly.”  
+
+The fabric scratched like sandpaper. His lighter flared, illuminating a shipping manifest pinned to the wall—*City Hall Vault Access – Midnight*.  
+
+“He played us.” I traced the forged throne’s serial number. “Bait to flush out Celeste.”  
+
+Vito’s thumb brushed the *Rosa* engraving. “We’re dancing his tune, Red.”  
+
+A rat skittered past. The flashlight beams retreated. Somewhere, a church bell tolled—once, twice.  
+
+Eleven fifty-nine.  
+
+Vito stood, water sluicing off his shoulders. “Coming?”  
+
+City Hall’s clock tower loomed through broken windows. His hand found mine, calluses catching on fresh cuts. We ran through alleys stinking of fish guts and false promises, the throne’s gilded ghost trailing behind.  
+
+The vault door yawned open at twelve-oh-one.  
+
+Empty.  
+
+Kensington’s laughter echoed from a gramophone left on the floor. *“Check the morgue, darling. Your father’s final resting place.”*  
+
+The record skipped. Vito crushed it under his heel.  
+
+In the silence, my father’s watch chimed.  
 
 ---  
 
-“Sinclair!”  
-
-Fletcher Johnson’s glass eye caught the newsroom’s green-shaded lamps as he emerged from his fishbowl office. Teletype machines stuttered morse-code secrets behind him. “You covering Kensington’s presser or auditioning for *Les Misérables*?”  
-
-Viv leaned back in her chair, suspenders digging into her shoulders. “Thought I’d spice up the fluff piece.” She tossed him her draft. “Turns out ‘grit’ involves more than hosing down tenements.”  
-
-Fletcher scanned the page, his prosthetic iris glinting like a shark’s. “*Bloodstains persist under Kensington’s new asphalt*,” he read aloud. A copyboy froze mid-stride. “Cute. You get a quote from the corpses?”  
-
-“Got a source at Bellevue.”  
-
-“You got squat.” He crumpled the paper. “City desk needs 500 words on the Mayor’s haircut, not a conspiracy theory.”  
-
-The bulletin board photo burned against her spine. She’d hung it facing her desk so Fletcher couldn’t see Dad’s smile.  
-
-“The Golden Throne heist,” she said quietly. “Three guards dead, eight million in art gone. And you buried it on page twelve.”  
-
-Fletcher’s real eye twitched. “You’re a society reporter, not Elliot Ness.”  
-
-“Joseph Sinclair was—”  
-
-“A damn good journalist.” He slammed his fist, toppling a glue pot. “Who chased ghosts until they strangled him with his own press pass. You want that?”  
-
-Viv pocketed the crumpled draft. “I want the truth.”  
-
-“Truth won’t pay your rent.” Fletcher jabbed a finger toward the elevator. “Kensington’s speech. No metaphors, no murder accusations. Just—”  
-
-“*A fresh start for our fair city*,” Viv mimicked in the Mayor’s baritone. “Yeah, I’ve read his ghostwriter’s fanfiction.”  
-
-The elevator grate clanged shut behind her.  
-
----  
-
-Rex Donovan waited at her desk, smelling of rye and gun oil.  
-
-“You’re late, Red.” He eased his weight off the bad leg—shrapnel from the Argonne, he’d told her once. Or a jealous husband’s bullet. With Rex, the story changed hourly.  
-
-Viv flicked glue off her chair. “If you’re here to sell more ‘Mayor loves goat yoga’ scoops…”  
-
-“Cute.” A matchbook slid across the desk. *The Sapphire Rabbit* glinted in Art Deco script. “Ask Sammy about Mr. X. Seems your throne’s got new friends.”  
-
-Her pulse quickened. “What kind of friends?”  
-
-“The cyanide-and-shotgun variety.” Rex adjusted his fedora, a dossier slipping from his coat. She glimpsed **RED HOOK DOCK 9** before he snatched it back. “Be sweet to Fletcher. He’s got a soft spot for doomed brunettes.”  
-
-The elevator pinged. Viv palmed the matchbook as Fletcher bellowed, “SINCLAIR! MOVE YOUR—”  
-
-She was already gone.  
-
----  
-
-Rain slicked the tenement stairs. Viv relocked the door three times—Dad’s habit, now hers—before confronting the bulletin board.  
-
-Joseph’s bloodstained notebook lay buried under insurance reports. She’d memorized every smear:  
-
-*Victim 1: Giovanni Rossi, security guard. Throat slashed matching the throne’s lion claws…*  
-
-*Victim 3: Eleanor Choi, curator. Drowned in Central Park Pond, lungs filled with gold leaf…*  
-
-Her finger traced the final entry, ink blurred by… coffee? Tears?  
-
-*They’re coming for the eyes. The emeralds aren’t—*  
-
-The page ended.  
-
-Rain blurred the diner’s neon into hellfire. Viv struck a match, watching Kensington’s speech notes curl to ash.  
-
-*Let’s see you spin this, Your Honor.*  
-
----  
-
-The Sapphire Rabbit’s bouncer had spiderwebs tattooed across his throat.  
-
-“Sammy.” Viv flashed the matchbook. “I need a name.”  
-
-Sammy Delgado polished a glass, eyes on the jazz trumpeter’s solo. “Mr. X likes cash. Fifty bucks, Pier 17 at midnight.”  
-
-“Or?”  
-
-He nodded toward the back booth. Two men in pinstripes split an oyster, their laughter sharp as shucked shells.  
-
-“Or you end up fertilizer for Kensington’s roses.”  
-
-Viv dropped a nickel in the jukebox. “Play *‘St. James Infirmary.’*”  
-
-Sammy’s tattoo rippled as he laughed. “Your dad’s favorite.”  
-
-The music swelled, bitter as bootleg gin. She wondered if drowning in gold leaf felt like champagne.  
-
-CONTINUE  
-
-The harbor wind gnawed through Viv’s peacoat as she approached Pier 17. Moonlight painted the dockworkers’ faces cadaverous—all scarred knuckles and suspicious glares. A freighter loomed in the fog, its hull stamped **VATICAN HOLDINGS**.  
-
-“You Sinclair?”  
-
-The man emerged from the shadows, cheeks pockmarked by old acne or shrapnel. Eddie Malone, according to Sammy. His pinky ring glinted—a lion crest she’d seen on Kensington’s campaign posters.  
-
-“Fifty.” Eddie spit tobacco. “Upfront.”  
-
-Viv fanned the bills. “Talk.”  
-
-“Mayor’s got a storage locker. Dock 9.” He glanced at the freighter. “They move crates tonight. Art shit, maybe your sparkly chair.”  
-
-“Who’s your contact?”  
-
-“Some Eye-talian mobster. Vito something.” Eddie snatched the cash. “Word of advice, lady? Stop digging before you hit your daddy’s coffin.”  
-
-The dock bell tolled. Viv turned—  
-
-—and froze.  
-
-Two men in black overcoats materialized behind her. Tommy guns slung like violins.  
-
-Eddie paled. “Aw, hell.”  
-
-The first bullet caught him between the eyes.  
-
-CONTINUE  
-
-Viv dove behind a pallet stack, splinters scoring her palms. Gunfire shredded the night. She fumbled for her switchblade, the pearl handle slippery with sweat.  
-
-“Sinclair!” A hand yanked her backward.  
-
-Rex shoved her into a rowboat, his Luger barking three shots. “You’re a walking obit!”  
-
-The freighter’s horn drowned her retort. Oars scraped the hull as they fled into the fog. Eddie’s body bobbed in their wake, his lion-ringed hand reaching skyward.  
-
-Viv unclenched her fist. A rosary beads cut her palm—snatched from Eddie’s pocket as he fell.  
-
-“Red Hook Dock 9,” she whispered.  
-
-Rex rowed faster. “Forget it.”  
-
-“They killed him to shut me up.”  
-
-“They’ll do worse to you.” He nodded at the rosary. “Keep that. Might save your soul.”  
-
-The river swallowed the gunfire. Somewhere, the Golden Throne’s emeralds glowed in the dark—waiting.
+**
