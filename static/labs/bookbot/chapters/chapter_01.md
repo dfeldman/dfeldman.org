@@ -17,307 +17,190 @@ total_continuation_count: 3
 ---
 # Chapter 1: Dust & Shadows  
 
-The smell hit me first—linseed oil and wet stone, the Metropolitan Museum’s particular bouquet of decay and desperation. Sunlight fractured through stained glass above the empty pedestal, casting jewel-toned shadows over the plaque that read *Byzantine Throne, 10th Century CE (Current Location: Unknown)*. My finger traced the crude gouges in the marble base where the Golden Throne had sat before the heist. Before they blamed my father.  
+The Metropolitan Museum’s signature scent hit me first—linseed oil and wet stone, the musk of preservation battling entropy. Sunlight slanted through stained glass above the empty pedestal, dappling the plaque that read *Byzantine Throne, 10th Century CE (Current Location: Unknown)*. Three years since the heist. Three years since they’d hung the theft around my father’s corpse like a medal of dishonor.  
 
 **“Last chance, Miss Sinclair.”**  
 
-The guard’s holster creaked as he shifted weight. Joe—the nameplate said Joe—had the bored eyes of a man who’d seen too many society matrons fawn over empty spaces where art ought to be. I flashed my press badge, the chain catching on my mother’s cameo brooch. “Five minutes. I’m writing about the museum’s security upgrades.”  
+The guard’s holster creaked as he shifted. Joe—mid-fifties, coffee stain blooming on his collar—had the resigned slump of a man who’d spent decades babysitting relics and rich fools. I flashed my press badge, the chain snagging on Mom’s cameo. “Five minutes. Security upgrade piece.”  
 
-He snorted. “Upgrades. They replaced the cameras with papier-mâché doves last week.”  
+**“Upgrades.”** He snorted, gesturing to the nearest camera. **“They replaced the lenses with kaleidoscopes last month.”**  
 
-The lie curdled in my throat as I crouched, silk stockings snagging on rough marble. Three years since the heist, but the scar on the pedestal’s edge still held traces of Old Spice. Sandalwood and gun oil. Dad’s cologne. My nail caught in the *J.S.* he’d carved during his midnight rounds—James Sinclair, honest man, dead liar.  
+The lie tasted bitter as I crouched. Silk stockings tore against marble as my fingers found the scarred pedestal edge. Dad had carved his initials here during graveyard shifts—*J.S.*, jagged and defiant. I pressed my cheek to cold stone, inhaling phantom traces of Old Spice and gun oil. His ghost lingered in every chisel mark.  
 
-A shadow rippled behind the Byzantine tapestry to my left.  
+The shadow moved wrong.  
 
-I stood too fast, the room tilting. “Mr. Joe? Did they repurpose this alcove for—”  
+Not the waltz of cloud-covered sun through stained glass. This slithered—a serpentine ripple in the Byzantine tapestry to my left.  
+
+**“Mr. Joe?”** I stood too fast, head swimming. **“Did they repurpose this wing for—”**  
 
 Steel flashed.  
 
-The blade sliced through my skirt before I registered the pain—a white-hot line across my thigh. Blood pattered onto the mosaic floor, pooling between Justinian’s stone eyes.  
+Pain came second. First, the visceral *snick* of blade through wool skirt. Then blood, hot and insistent, painting a trail down my thigh. Drops splattered the mosaic floor, pooling between Emperor Justinian’s stone eyes.  
 
 **“Run,”** the shadow hissed.  
 
-I grabbed the nearest weapon—an iron candelabra—and swung blind. The tapestry tore, revealing a man in a moth-eaten docent’s uniform. Paint-stained fingers. Familiar face from the museum staff roster. *Celeste Moreau, Restoration Specialist.*  
+My fingers closed around iron—a candelabra from the medieval arms display I’d passed earlier. I swung blind. Fabric ripped, revealing Celeste Moreau: head conservator, paint under her nails, moth-eaten docent uniform hanging loose.  
 
-She lunged again, knife aimed at my ribs. I twisted, the blade screeching against the candelabra. My satchel spilled—Dad’s pocket watch skittered across the floor, ticking louder than my racing heart.  
+**“You framed him,”** I gasped as her knife clanged against the candelabra. **“A man who trusted you!”**  
+
+**“Trust’s a luxury.”** She lunged again, blade singing past my ear. **“Your father learned that too late.”**  
+
+Dad’s pocket watch tumbled from my satchel, cracking against marble. Its arrhythmic ticking filled the gallery.  
 
 **“Curiosity kills, Red.”**  
 
-The new voice came from the gallery entrance. A man leaned against the doorframe, silver lighter flicking open and shut in his palm. Sunlight caught the engraving as he tossed it to me—*Rosa* in looping script.  
+The new voice dripped like honey laced with strychnine. A man lounged in the archway, silver lighter dancing across his knuckles. He flipped it to me—*Rosa* etched in cursive.  
 
-**“Vito Romano.”** He nodded at Celeste, who froze mid-lunge. **“And you’re between my uncle’s cleaner and her paycheck.”**  
+**“Vito Romano.”** He nodded at Celeste. **“And you’re blocking my uncle’s cleaner from her bonus.”**  
 
-Celeste spat at his Italian leather shoes. **“Tell Enzo the throne stays lost.”**  
+Celeste spat at his Oxfords. **“Tell Enzo the throne rots before I hand it to that pig Kensington.”**  
 
-The lighter burned my palm. **“You shot my father?”** I pressed the flame closer to her face. **“Strung him up as some common thief?”**  
+The lighter burned my palm. **“You planted evidence,”** I hissed, stepping closer. **“Made the world think my father—”**  
 
-Vito’s laugh echoed off the vaulted ceiling. **“She forges art, sweetheart. Killing’s my family’s hobby.”**  
+**“She forges Picassos, sweetheart.”** Vito’s smile chilled more than the museum’s AC. **“Framing’s an art form.”**  
 
-Celeste seized her chance—she kicked the candelabra from my grip and bolted toward the service stairs. A jar of Prussian blue paint fell from her apron, shattering at my feet. The same shade marked the subway tunnels in Dad’s case files.  
+Celeste lunged. I swung the candelabra. Steel rang as her blade skittered across the floor. She scrambled for the service stairs, apron spilling tubes of Prussian blue—the same shade that marked coordinates in Dad’s stolen case files.  
 
-**“You’re bleeding on a sixth-century mosaic,”** Vito observed, nodding at my thigh. **“The curator’ll add vandalism to your old man’s crimes.”**  
+**“You’re bleeding on a sixth-century mosaic,”** Vito observed. **“The trustees’ll add desecration to your family resume.”**  
 
-I grabbed his lapels, blood smearing the pinstripes. **“Why toss me a lighter? Sentiment?”**  
+I fisted his pinstriped lapels. **“Why the lighter? Guilt?”**  
 
-**“A trade.”** He pried my fingers loose, calluses scraping my knuckles. **“You’ve got thirty seconds before the cops arrive. Run now, meet me tonight, and I’ll show you who really killed Daddy.”**  
+**“Currency.”** He peeled my fingers back, calluses snagging silk. **“Run now, meet tonight, and I’ll show you who really cut Daddy’s strings.”**  
 
-His thumb brushed the hollow of my throat as he shoved me toward the exit.  
+His thumb brushed my collarbone as he shoved me toward the exit. The cameo brooch bit my sternum, Mom’s stone profile judging every step.  
 
 ---  
 
-The *Daily Sentinel* newsroom stank of cigar smoke and regret. I slumped at my desk, the gash on my thigh wrapped in a stolen handkerchief, and typed one-handed:  
+The *Daily Sentinel* newsroom reeked of defeat. I slumped at my desk, thigh bandaged with a pilfered handkerchief, and hammered out:  
 
-**METROPOLITAN SECURITY BREACH: THIEF STRIKES AGAIN?**  
+**METROPOLITAN BREACH EXPOSES SECURITY FLAWS**  
 
 **By Vivian Sinclair**  
 
-**Sources confirm—**  
+**Eyewitness accounts confirm—**  
 
-Fletcher Johnson’s meaty palm slammed down on the carriage return. **“You’re not Woodward, kid. Drop the tombstone raiding.”**  
+Fletcher’s meaty palm crushed the carriage return. **“Obituaries are downstairs, kid.”**  
 
-Ash flaked onto my notes as he lit his fifth cigar of the hour. **“James Sinclair died a thief. Write about the mayor’s new trolley line like I damn well pay you to.”**  
+**“The throne’s still in the city.”** I slapped Celeste’s paint-stained glove on his desk. **“Prussian blue markers in the tunnels. Dad was closing in when—”**  
 
-**“The throne’s still in the city.”** I shoved Celeste’s paint-smeared glove across the desk. **“Prussian blue marks the smuggling tunnels. Dad was tracking them before—”**  
+**“When he became the story.”** Fletcher ignited his Zippo. **“Let it die.”**  
 
-**“Before he got greedy?”** Fletcher spat. **“I warned him. Same as I’m warning you.”**  
+**“It wasn’t him!”**  
 
-The glove burst into flames under his Zippo. I watched the threads blacken, the mayor’s latest “Clean Up NYC” poster grinning from the wall behind him.  
+The flame kissed glove leather. **“Ghost chasing’s a young woman’s game.”** He watched synthetic flowers melt. **“You’ll end up like your old man—ink on yesterday’s front page.”**  
 
-**“Chase ghosts,”** Fletcher growled, **“you’ll join them.”**  
+The elevator clanged. Eleanor’s archive cart squeaked through the bullpen, dropping a slip into my wastebasket:  
 
-The elevator dinged.  
+*Midnight. Don’t disappoint. —V*  
 
-Eleanor limped into the bullpen, her archives cart squeaking like a dying mouse. She caught my eye—a barely-there nod—and let a slip of paper flutter into my wastebasket.  
-
-*Midnight. Don’t be late. —V*  
-
-Beneath the words, a train ticket to Pier 17.  
+Pier 17. 11:59 PM.  
 
 ---  
 
-The Blind Owl smelled of sawdust and bad decisions. I nursed a gin fizz at the bar, stocking torn to expose the bandage beneath. Vito emerged from the shadows, medical kit in hand.  
+The Blind Owl’s haze of gin and regret clung to my skin. I nursed a fizz at the bar, torn stocking exposing sutures. Vito materialized with a medical kit, hands steady save for the pinkie finger that trembled ever so slightly.  
 
-**“Booth three’s private.”** He nodded toward the back.  
+**“Booth three’s discreet.”**  
 
-**“So’s a back alley.”** I didn’t move. **“Talk here.”**  
+**“So’s a grave.”** I didn’t budge. **“Talk here.”**  
 
-He shrugged, crouching to roll up my skirt. His fingers trembled slightly against my skin—the only crack in that polished facade. **“Eight stitches. Don’t make me regret this.”**  
+He knelt, rolling my skirt hem with clinical precision. Iodine burned. **“Why save me?”**  
 
-The iodine burned. **“Why help me?”**  
-
-**“Enzo wants the throne found. You want the truth.”** His breath warmed my inner thigh as he tied the bandage. **“Temporary alignment.”**  
+**“Kensington’s your white whale.”** His breath ghosted my inner thigh as he tied gauze. **“Enzo wants him gutted. Mutual benefit.”**  
 
 **“And Rosa?”**  
 
-The needle paused. **“My sister. Died because I trusted the wrong people.”**  
+The needle hesitated. **“Sister. Collateral damage.”**  
 
-A drunk staggered over, reeking of bathtub gin. **“How much for the redhead?”**  
+A drunk lurched over, reeking of regret. **“How much for the ginger?”**  
 
-Vito stood slowly, the movement liquid and lethal. **“You’re blocking my view.”**  
+Vito rose slow, a panther uncoiling. **“You’re blocking the exit.”**  
 
-**“Of her legs?”** The man leered.  
+**“Exit’s that way, slick.”**  
 
-The broken bottle flashed faster than I could blink. Blood arced across the bar, mixing with bourbon.  
+The broken bottle flashed. Blood arced across mahogany as the drunk howled.  
 
-**“Of the door,”** Vito said calmly, glass shards jutting from the drunk’s shoulder. **“Sammy, take out the trash.”**  
+**“I said,”** Vito murmured, glass teeth glinting in the man’s shoulder, **“you’re blocking the exit.”**  
 
-As the bartender dragged the whimpering man outside, a folded paper fell from the drunk’s pocket. Vito smoothed it on the bar—a shipping manifest.  
+Sammy dragged the man out, leaving a crumpled manifest in his wake:  
 
-**Golden Throne → Pier 17. Midnight.**  
+*Golden Throne → Pier 17. Midnight.*  
 
-He met my eyes over the bloody bourbon. **“Still think you’re chasing ghosts?”**  
+Vito’s grin cut through cigar haze. **“Still think you’re mad?”**  
 
-The train ticket burned against my ribs.  
+The train ticket seared my ribs.  
 
-CONTINUE
-The gin’s bite faded under the adrenaline thrumming through my veins. Vito’s knuckles whitened around the manifest. **“Enzo’s men will be crawling that dock.”**  
+CONTINUE  
 
-**“So we beat them there.”** I stood, the barstool screeching against the floorboards. Pain lanced up my leg—eight stitches holding together more than flesh.  
+-----
 
-He blocked my path, smelling of bourbon and iodine. **“You’ll get us both killed.”**  
+The Packard's engine growled through fog-choked streets. I clutched the manifest, its ink bleeding from Hudson River damp. Vito drove one-handed, wristwatch glinting—11:47 PM.  
 
-**“Us?”** I laughed, sharp and brittle. **“You’ve got a lighter and a line of bullshit. I’ve got three years of unanswered questions.”**  
+**“Celeste’s message mentioned Kensington.”** I had to shout over the wind. **“How deep is he in?”**  
 
-His hand shot out, gripping my wrist. Calluses. Gunmetal warmth. **“You’ve also got a death wish, Red.”**  
+**“Mayor’s the puppet master.”** Vito skidded onto South Street. **“Enzo’s the knife.”**  
 
-The phonograph scratched out *Empty Bed Blues*. Sammy polished glasses with forced nonchalance, eyeing the bloodstain on the mahogany.  
+The docks materialized through mist—crumbling piers, trawlers coughing rust. Vito killed the lights, pointing to a listing hull. *SS Rosa* wept Prussian blue from its seams.  
 
-**“Midnight’s in twenty minutes.”** I twisted free, the manifest crumpling in my fist. **“You coming or not?”**  
+**“Sentiment?”** I nodded at the peeling name.  
 
-Vito’s smirk didn’t reach his eyes. **“If you die, I’m billing your corpse for the stitches.”**  
+**“Poetry.”** He checked his revolver. **“Enzo’s got none.”**  
 
----  
+Two thugs emerged from the trawler, crate groaning between them. Gold leaf winked through splintered wood.  
 
-The docks stank of rotting fish and diesel. Fog clung to the river like a jealous lover, muffling our footsteps on the rain-slick planks. Crate shadows loomed like tombstones.  
+**“Consigliere wants it polished by dawn,”** one grunted.  
 
-**“There.”** Vito pointed to a trawler listing in the sludge. *SS Rosa.* Peeling letters. Prussian blue smeared across the hull.  
+**“Polished?”** His partner spat. **“It’s been sitting in the damn—”**  
 
-**“Subtle,”** I muttered, crouching behind a stack of cargo.  
+Vito stepped into the open, lighter flaring. **“Evening, boys. Tell Uncle the prodigal’s home.”**  
 
-**“Enzo’s not known for nuance.”** He checked his revolver’s chamber. Moonlight caught the inscription on the barrel—*Per Rosalia.*  
+Recognition flared. Gunfire erupted.  
 
-A door creaked. Two thugs emerged, lugging a crate marked *MACHINERY.* The glint of gold leaf peeked through a split seam.  
+**“Left flank!”** Vito tossed me his revolver. **“Make ‘em dance!”**  
 
-**“Consigliere’ll skin us if this gets wet,”** one grumbled.  
+I dove behind oil barrels, bullets pinging steel. The watch in my pocket thrummed—11:54. Five minutes till midnight. Five till truth.  
 
-**“Shut up and row.”**  
+Celeste emerged from the hold, blade dripping river sludge. **“Persistent little bloodhound, aren’t you?”**  
 
-Vito stiffened. **“The idiot’s using my sister’s boat.”**  
+**“You loved him once.”** I circled, saltwater seeping into Oxfords. **“Why bury him?”**  
 
-**“Focus.”** I slipped Dad’s watch from my pocket—11:52. **“Distract them. I’ll search the hold.”**  
+**“Love’s collateral.”** Her knife caught moonlight. **“Kensington holds the mortgage.”**  
 
-**“Distract. Right.”** He stepped into the open, lighter flicking. **“Hey, Paulie! Heard the boss wants that throne polished before the mayor’s party.”**  
+The trawler lurched. Water gushed through rotten planks.  
 
-Recognition flashed. **“Shit! Romano’s here!”**  
+**“Your daughter’s tuition?”** I gambled, recalling Dad’s notes. **“He threatened her?”**  
 
-Gunfire erupted.  
+Celeste faltered.  
 
-I ducked behind the crates, heart slamming against my ribs. Bullets splintered wood inches above my head. Vito’s laugh cut through the chaos.  
+I swung a rusted chain. Metal bit her wrist. The blade clattered as we crashed into crates—Renaissance gold spilling like sins at confession.  
 
-**“Left side, Red! Go!”**  
+**“He tried to protect you both!”** Her whisper carried over creaking wood. **“Left clues in his articles. But you were busy playing reporter!”**  
 
-I lunged for the trawler’s gangplank. Salt-rotted ropes bit into my palms as I climbed. The hold reeked of mildew and greed.  
+Dad’s watch screamed in my ears—11:59.  
 
-Crates piled to the ceiling. One lid pried open—Renaissance canvases, Greek urns, a reliquary dripping fake jewels. No throne.  
+**“Down!”** Vito’s roar preceded the blast.  
 
-**“Looking for this?”**  
+Fire swallowed the hold. Celeste vanished in the chaos as the *SS Rosa* fractured. Vito hauled me up the disintegrating ladder, lungs burning. We breached as the trawler capsized, frigid waves choking curses.  
 
-Celeste stepped from the shadows, blade glinting. Prussian blue streaked her cheek like war paint.  
+Enzo waited on the pier, silhouette framed by henchmen.  
 
-**“You framed my father.”** I grabbed a rusted crowbar. **“Why?”**  
+**“Family first, boy.”** The don’s grin held rot.  
 
-**“James was a good man.”** Her voice softened. **“Too good. Kensington needed a patsy.”**  
+Vito’s hand found mine beneath the waves. **“Swim or die, Red.”**  
 
-The boat lurched. Water sloshed belowdecks—tide rising.  
+We chose the current.  
 
-**“He threatened your kid?”** I edged toward a porthole. Moonlit waves churned below.  
+-----
 
-Her grip tightened on the knife. **“You don’t walk away from the mayor.”**  
+The Hudson spared us at Brooklyn Bridge’s rotting pilings. Vito collapsed against stone, chest heaving. Moonlight caught the scar tissue mapping his ribs—a history written in violence.  
 
-**“Neither did Dad.”** I swung the crowbar.  
+**“Still think I’m the villain?”** He offered a cigarette.  
 
-Metal rang against metal. She lunged, blade grazing my sleeve. We crashed into a crate. Gold coins scattered, rolling into the bilge.  
+**“Still think I care?”** I stole his lighter.  
 
-**“He tried to protect you!”** Celeste hissed. **“Left clues in his reports. But you were too busy playing reporter to see!”**  
+The flame illuminated the manifest’s survivor—a partial consignee line: *H.K. Kensington.*  
 
-Dad’s watch burned in my pocket. *11:59.*  
+**“Gala’s in three weeks.”** Vito nodded Uptown. **“He’ll unveil his prize.”**  
 
-A gunshot echoed above. Vito’s voice, raw with fury: **“Down!”**  
+I exhaled smoke, watching it coil like the lies we’d unravel. **“Then we RSVP with fireworks.”**  
 
-I tackled Celeste as the world exploded.  
-
-Fire ripped through the hold. The *SS Rosa* groaned, splitting at the seams. Water surged, swallowing gold and guilt alike.  
-
-**“Move!”** Vito hauled me up the ladder, Celeste scrambling after us.  
-
-We reached the deck as the trawler capsized. I gasped for air, treading water amidst flaming debris.  
-
-**“The throne—”**  
-
-**“Gone.”** Vito treaded beside me, his shirt plastered to scarred skin. **“But not for long.”**  
-
-Celeste surfaced, clutching a sodden painting. **“Pier 9. Midnight tomorrow. Tell no one.”**  
-
-A gun cocked. **“Too late.”**  
-
-Enzo Romano stood on the dock, flanked by shadows. **“Family first, nephew. Always.”**  
-
-Vito’s arm slid around my waist, fingers digging into my hip. **“Swim, Red.”**  
-
-We dove as bullets peppered the waves.  
-
----  
-
-The Hudson’s current dragged us three blocks downstream. We crawled ashore beneath the Brooklyn Bridge, retching up saltwater and secrets.  
-
-Vito collapsed against a piling, laughter bubbling dark. **“Still think I’m the villain?”**  
-
-Moonlight traced the scar on his chest—a bullet wound, poorly healed.  
-
-**“You’re a terrible liar.”** I shivered, my dress transparent with river filth.  
-
-His jacket settled over my shoulders, still warm. **“And you’re a worse swimmer.”**  
-
-The train ticket disintegrated in my pocket. But the watch ticked on—12:07.  
-
-**“Next move?”** He lit two cigarettes, passing me one.  
-
-**“We find the throne.”** I inhaled, nicotine steadying my hands. **“And bury Kensington with it.”**  
-
-His smile held no humor. **“Welcome to the family, Red.”  
-
-CONTINUE
-The river’s chill clung to my bones as we limped back to the Blind Owl. Sammy barred the door behind us, his usual smirk replaced by grim efficiency. **“Boss is pissed.”**  
-
-**“Enzo’s always pissed.”** Vito tossed a towel at my head. **“Whiskey. Neat.”**  
-
-The backroom storeroum reeked of damp wool and fear. I wrung out my hair, watching blood-tinged water pool at my feet. Vito’s jacket hung heavy with the weight of his secrets.  
-
-**“You’re staring, Red.”** He peeled off his sodden shirt, revealing a map of scars. A bullet wound here. Knife slash there. The marks of a man who’d danced too close to the flame.  
-
-**“The throne’s not on Pier 17.”** I threw Celeste’s waterlogged painting onto the table. The canvas peeled back to reveal numbers scrawled in Prussian blue. *IX-XVII-XXIX.*  
-
-**“September 17, 1929.”** Vito traced the date. **“Kensington’s anniversary gala
-**"The mayor’s anniversary gala."** I pressed a palm to the peeling numbers, river water dripping onto the coded message. **"He’ll unveil the throne there. Brazen bastard."**  
-
-Vito lit a cigarette, the flame trembling slightly before catching. **“Three weeks to infiltrate a party guarded by every crooked cop in Manhattan. Easy.”**  
-
-**“We’ve got something better than invitations.”** I peeled off my ruined stockings, wincing as the fabric tugged at dried blood. **“The manifest listed a consignee—H.K. Kensington. This isn’t just theft. It’s a transaction.”**  
-
-He stilled. **“You can prove that?”**  
-
-From my sodden satchel, I withdrew the museum guard’s logbook—lifted during the chaos. Water had blurred the ink, but not the damning entry: *June 3, 1926: H.K. override on Gallery 17 security.* The night Dad died.  
-
-**“The throne’s been Kensington’s all along.”** I slapped the logbook onto the table. **“My father caught him rerouting artifacts through the tunnels. That’s why they killed him.”**  
-
-Vito’s thumb brushed the H.K. initials. **“Enzo’s been laundering Kensington’s art through the docks for years. The throne...”**  
-
-**“Was too high profile. They needed a fall guy.”** My voice broke. **“My father.”**  
-
-Silence pooled between us, thick as the river sludge in our hair. Sammy knocked twice at the door—Enzo’s men were searching Mulberry Street.  
-
-Vito stood abruptly, chair screeching. **“You’ll need a dress.”**  
-
-**“What?”**  
-
-**“For the gala.”** He rummaged through a steamer trunk, tossing me a sequined flapper gown. **“Stole this from a Ziegfeld girl. Should fit if you don’t breathe.”**  
-
-The red beads bit into my palms. **“I’m not dancing with you at gunpoint, Romano.”**  
-
-**“Better learn.”** He produced a pearl-handled derringer from his boot. **“Kensington’s got a retinal scanner on his vault. We need his eyeball or a damn good replica.”**  
-
-The watch in my pocket ticked louder. *12:17 AM.* Three weeks until the gala. Three weeks to become someone worth champagne and gunpowder.  
-
-**“Teach me.”**  
-
-His grin held knives. **“Lesson one: Never trust a man who offers help.”**  
-
-The derringer pressed into my palm, still warm from his skin.  
-
-**“Lesson two?”**  
-
-He leaned close, bourbon breath mingling with mine. **“Always shoot first.”**  
-
----  
-
-The *Daily Sentinel*’s morning edition hit stands as I limped up the steps. My byline screamed from page six:  
-
-**CITY HALL CORRUPTION? QUESTIONS LINGER IN MUSEUM HEIST**  
-
-Fletcher’s cigar nearly ignited the desk. **“You’re done, Sinclair! Kensington’s lawyers are crawling up my—”**  
-
-**“Resignation.”** I dropped my press badge onto his inkwell. **“Effective immediately.”**  
-
-Eleanor’s cart squeaked past. Her gloved hand brushed mine—a hotel key slid into my palm. *The Plaza. Room 1207.*  
-
-The elevator doors closed on Fletcher’s apoplectic roar. I leaned against mirrored walls, watching bruises bloom on my neck. The derringer’s weight comforted me more than it should.  
-
-Vito waited in the alley, leaning against a stolen Packard. **“Ready to go criminal, Red?”**  
-
-I tossed him the hotel key. **“Ready to burn this city down.”**  
-
-The engine roared to life. Behind us, the *Sentinel*’s windows shattered—Enzo’s greeting card. I didn’t look back.  
-
-Some ghosts deserve chasing.  
-
-**
+He grinned, all edge and ember. **“Welcome to the war, Red.”
