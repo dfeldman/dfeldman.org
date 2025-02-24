@@ -1,16 +1,97 @@
 {
-  "input_tokens": 17812,
-  "output_tokens": 3056,
-  "time": 67.36701202392578,
+  "input_tokens": 279001,
+  "output_tokens": 33072,
+  "time": 233.85520482063293,
   "calls": [
     {
-      "timestamp": "2025-02-23T19:02:56.742007",
-      "input_tokens": 17812,
-      "output_tokens": 3056,
-      "elapsed": 67.36701202392578,
+      "timestamp": "2025-02-23T19:22:13.368665",
+      "input_tokens": 17724,
+      "output_tokens": 8121,
+      "elapsed": 55.20577597618103,
       "retry": 1,
-      "provider": "Together",
-      "model": "deepseek/deepseek-r1"
+      "provider": "OpenAI",
+      "model": "openai/o3-mini-high"
+    },
+    {
+      "timestamp": "2025-02-23T19:22:37.992623",
+      "input_tokens": 20600,
+      "output_tokens": 3600,
+      "elapsed": 24.6065411567688,
+      "retry": 2,
+      "provider": "OpenAI",
+      "model": "openai/o3-mini-high"
+    },
+    {
+      "timestamp": "2025-02-23T19:23:09.041063",
+      "input_tokens": 23179,
+      "output_tokens": 4617,
+      "elapsed": 31.00659680366516,
+      "retry": 3,
+      "provider": "OpenAI",
+      "model": "openai/o3-mini-high"
+    },
+    {
+      "timestamp": "2025-02-23T19:23:28.956267",
+      "input_tokens": 25431,
+      "output_tokens": 2492,
+      "elapsed": 19.885180711746216,
+      "retry": 4,
+      "provider": "OpenAI",
+      "model": "openai/o3-mini-high"
+    },
+    {
+      "timestamp": "2025-02-23T19:23:45.771016",
+      "input_tokens": 27158,
+      "output_tokens": 2371,
+      "elapsed": 16.795320987701416,
+      "retry": 5,
+      "provider": "OpenAI",
+      "model": "openai/o3-mini-high"
+    },
+    {
+      "timestamp": "2025-02-23T19:24:03.798598",
+      "input_tokens": 29148,
+      "output_tokens": 2539,
+      "elapsed": 18.007323026657104,
+      "retry": 6,
+      "provider": "OpenAI",
+      "model": "openai/o3-mini-high"
+    },
+    {
+      "timestamp": "2025-02-23T19:24:21.603212",
+      "input_tokens": 31306,
+      "output_tokens": 2443,
+      "elapsed": 17.771485090255737,
+      "retry": 7,
+      "provider": "OpenAI",
+      "model": "openai/o3-mini-high"
+    },
+    {
+      "timestamp": "2025-02-23T19:24:38.136227",
+      "input_tokens": 33112,
+      "output_tokens": 2264,
+      "elapsed": 16.512078285217285,
+      "retry": 8,
+      "provider": "OpenAI",
+      "model": "openai/o3-mini-high"
+    },
+    {
+      "timestamp": "2025-02-23T19:24:52.839365",
+      "input_tokens": 34995,
+      "output_tokens": 1862,
+      "elapsed": 14.689417839050293,
+      "retry": 9,
+      "provider": "OpenAI",
+      "model": "openai/o3-mini-high"
+    },
+    {
+      "timestamp": "2025-02-23T19:25:12.242838",
+      "input_tokens": 36348,
+      "output_tokens": 2763,
+      "elapsed": 19.375484943389893,
+      "retry": 10,
+      "provider": "OpenAI",
+      "model": "openai/o3-mini-high"
     }
   ],
   "previous_input_tokens": 0,

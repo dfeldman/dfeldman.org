@@ -51,7 +51,6 @@ BACKMATTER_DIR = Path("frontmatter")
 
 # Default configuration
 DEFAULT_CONFIG = {
-    "default_llm": "gpt-4o",
     "max_tokens": 2000,
     "temperature": 0.8,
     "git_enabled": True,
@@ -920,31 +919,13 @@ def validate_bot_yaml(file_path: Path) -> bool:
 
 
 
-@dataclass
-class LLMConfig:
-    """Configuration for an LLM model"""
-    group: str
-    name: str
-    provider: str
-    cost_per_million_tokens: float
-    temperature: float = DEFAULT_TEMPERATURE
-    
-    @property
-    def full_name(self) -> str:
-        return f"{self.group}/{self.name}"
-
-# Available LLMs and their configurations
-AVAILABLE_LLMS = [
-    LLMConfig("deepseek", "deepseek-r1", "Together", 15.0),
-    LLMConfig("openai", "gpt-4o", "", 15.0),
-    LLMConfig("anthropic", "claude-2.1", "", 8.0),
-    LLMConfig("openai", "gpt-3.5-turbo", "", 0.5),
-]
 
 class BookBotError(Exception):
     """Base exception for all BookBot errors"""
     pass
 
+
+# LLMError is currently unused
 class LLMError(BookBotError):
     """Errors related to LLM API calls"""
     def __init__(self, message: str, response: Optional[requests.Response] = None):
@@ -1158,12 +1139,11 @@ class PreviewGenerator:
 class BookBot:
     """Main class for managing the book writing process"""
     
-    def __init__(self, api_key: str, llm: Optional[str] = None, config: Optional[Dict] = None):
+    def __init__(self, api_key: str, config: Optional[Dict] = None):
         self.api_key = api_key
         self.config = DEFAULT_CONFIG.copy()
         if config:
             self.config.update(config)
-        self.llm = self._get_llm_config(llm) if llm else AVAILABLE_LLMS[0]
         self.tokenizer = tiktoken.encoding_for_model("gpt-4")
         logger.setLevel(logging.getLevelName(self.config['logging_level'].upper()))
         # Ensure required directories exist
@@ -1181,13 +1161,6 @@ class BookBot:
         title_file = FRONTMATTER_DIR / "title.md"
         if not title_file.exists():
             title_file.write_text(DEFAULT_TITLE_FILE)
-
-    def _get_llm_config(self, llm_name: str) -> LLMConfig:
-        """Get LLM configuration by name"""
-        for llm in AVAILABLE_LLMS:
-            if llm.name == llm_name:
-                return llm
-        raise ValueError(f"Unknown LLM: {llm_name}")
     
     def _count_tokens(self, text: str) -> int:
         """Count tokens in text"""
@@ -1239,14 +1212,6 @@ class BookBot:
                 
             # Load the bot
             bot = Bot.from_file(bot_path)
-            
-            # Override LLM settings if specified in BookBot
-            if self.llm:
-                bot.llm = self.llm.full_name
-                bot.provider = self.llm.provider
-                bot.temperature = self.llm.temperature
-                bot.input_price = self.llm.cost_per_million_tokens
-                bot.output_price = self.llm.cost_per_million_tokens
                 
             history_file = Path(output_file + "_history.json")
             stats_file = Path(output_file + "_stats.json")
@@ -2081,10 +2046,6 @@ def main():
     """Main entry point for BookBot"""
     parser = argparse.ArgumentParser(description="BookBot - Automated Book Writing Tool")
     
-    # Common arguments
-    parser.add_argument('--llm', help="LLM model to use", 
-                       choices=[llm.name for llm in AVAILABLE_LLMS])
-    
     # Subcommands
     subparsers = parser.add_subparsers(dest='command', help='Command to execute')
     
@@ -2139,7 +2100,7 @@ def main():
         return 1
     
     try:
-        bot = BookBot(api_key, args.llm)
+        bot = BookBot(api_key)
         
         if args.command == 'write-setting':
             bot.write_setting()

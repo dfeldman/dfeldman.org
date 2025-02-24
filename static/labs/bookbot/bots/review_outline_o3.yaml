@@ -2,7 +2,7 @@ name: review_outline_o3
 type: review_commons
 expected_length: 1500
 llm: openai/o3-mini-high
-provider: openah
+provider: OpenAI
 system_prompt: 'You are a highly skilled and professional editor with an eye for detail and a passion for storytelling.
   '
 main_prompt: '

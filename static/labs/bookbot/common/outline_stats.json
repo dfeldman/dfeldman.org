@@ -1,14 +1,32 @@
 {
-  "input_tokens": 18702,
-  "output_tokens": 6162,
-  "time": 54.01637411117554,
+  "input_tokens": 59590,
+  "output_tokens": 5403,
+  "time": 78.95659494400024,
   "calls": [
     {
-      "timestamp": "2025-02-23T19:03:50.793292",
-      "input_tokens": 18702,
-      "output_tokens": 6162,
-      "elapsed": 54.01637411117554,
+      "timestamp": "2025-02-23T19:25:36.094497",
+      "input_tokens": 18713,
+      "output_tokens": 1643,
+      "elapsed": 23.803971767425537,
       "retry": 1,
+      "provider": "Together",
+      "model": "deepseek/deepseek-r1"
+    },
+    {
+      "timestamp": "2025-02-23T19:26:04.610136",
+      "input_tokens": 19809,
+      "output_tokens": 1903,
+      "elapsed": 28.49635410308838,
+      "retry": 2,
+      "provider": "Together",
+      "model": "deepseek/deepseek-r1"
+    },
+    {
+      "timestamp": "2025-02-23T19:26:31.282822",
+      "input_tokens": 21068,
+      "output_tokens": 1857,
+      "elapsed": 26.656269073486328,
+      "retry": 3,
       "provider": "Together",
       "model": "deepseek/deepseek-r1"
     }
