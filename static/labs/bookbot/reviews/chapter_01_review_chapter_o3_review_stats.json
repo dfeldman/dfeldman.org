@@ -1,0 +1,38 @@
+{
+  "input_tokens": 65215,
+  "output_tokens": 11787,
+  "time": 77.35041427612305,
+  "calls": [
+    {
+      "timestamp": "2025-02-23T22:56:04.995544",
+      "input_tokens": 20699,
+      "output_tokens": 4824,
+      "elapsed": 29.93613290786743,
+      "retry": 1,
+      "provider": "OpenAI",
+      "model": "openai/o3-mini-high"
+    },
+    {
+      "timestamp": "2025-02-23T22:56:28.883057",
+      "input_tokens": 21491,
+      "output_tokens": 3323,
+      "elapsed": 23.86942410469055,
+      "retry": 2,
+      "provider": "OpenAI",
+      "model": "openai/o3-mini-high"
+    },
+    {
+      "timestamp": "2025-02-23T22:56:52.460459",
+      "input_tokens": 23025,
+      "output_tokens": 3640,
+      "elapsed": 23.544857263565063,
+      "retry": 3,
+      "provider": "OpenAI",
+      "model": "openai/o3-mini-high"
+    }
+  ],
+  "previous_input_tokens": "287100",
+  "previous_output_tokens": "30679",
+  "previous_time": "248.1962375640869",
+  "previous_continuation_count": "10"
+}

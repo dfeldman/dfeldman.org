@@ -396,6 +396,7 @@ class Bot:
     system_prompt: str = ""
     context_window: int = 4096
     main_prompt: str = ""
+    max_continuations: int = 10
     continuation_prompt_initial: str = "Type THE END when finished, or CONTINUE if you need to write more."
     continuation_prompt: str = "You have written {current_words} words out of {expected_words} expected words. Continue the text."
     
@@ -527,10 +528,6 @@ class BotChat:
         """Get provider configuration for OpenRouter API"""
         if not self.bot.provider:
             return {"sort": "price"}
-        elif self.bot.provider == "together" and "deepseek" in self.bot.llm.lower():
-            return {"order": ["together"]}
-        elif self.bot.provider == "google" and "gemini" in self.bot.llm.lower():
-            return {"order": ["google"]}
         else:
             return {"order": [self.bot.provider]}
     
@@ -752,7 +749,7 @@ class BotChat:
             continuation_count = 0
             max_continuations = 10  # Safety limit
             
-            while continuation_count < max_continuations:
+            while continuation_count < self.bot.max_continuations:
                 continuation_count += 1
                 logger.info(f"Making API call {continuation_count} for {self.command}")
                 
@@ -1605,6 +1602,7 @@ class BookBot:
             orig_file = TextFile(file_path, config=self.config)
 
             # Generate review using the reviewer bot
+            # We're really sloppy here about paths vs strings. Need to be more careful.
             if revise_step_name:
                 review_file = self.config["review_dir"] + f"/{file_path.stem}_{revise_step_name}_review"
             else:
@@ -1627,7 +1625,7 @@ class BookBot:
             )
 
             # Load the review file
-            review = TextFile(review_file + ".md", config=self.config, ensure_exists=True)
+            review = TextFile(Path(review_file + ".md"), config=self.config, ensure_exists=True)
             if review.content == "":
                 raise BookBotError(f"Review file is empty: {review_file}")
             # Edit the original file using the editor bot

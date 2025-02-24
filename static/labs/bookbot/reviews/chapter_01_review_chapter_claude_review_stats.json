@@ -1,47 +1,47 @@
 {
-  "input_tokens": 106990,
-  "output_tokens": 2537,
-  "time": 75.14353680610657,
+  "input_tokens": 102191,
+  "output_tokens": 2103,
+  "time": 56.00275015830994,
   "calls": [
     {
-      "timestamp": "2025-02-23T21:56:08.489768",
-      "input_tokens": 25499,
-      "output_tokens": 775,
-      "elapsed": 19.81919288635254,
+      "timestamp": "2025-02-23T22:34:16.917798",
+      "input_tokens": 24440,
+      "output_tokens": 659,
+      "elapsed": 16.99762511253357,
       "retry": 1,
       "provider": "Anthropic",
       "model": "anthropic/claude-3.5-sonnet"
     },
     {
-      "timestamp": "2025-02-23T21:56:24.983556",
-      "input_tokens": 26414,
-      "output_tokens": 613,
-      "elapsed": 16.452324867248535,
+      "timestamp": "2025-02-23T22:34:32.059302",
+      "input_tokens": 25239,
+      "output_tokens": 587,
+      "elapsed": 15.122446060180664,
       "retry": 2,
       "provider": "Anthropic",
       "model": "anthropic/claude-3.5-sonnet"
     },
     {
-      "timestamp": "2025-02-23T21:56:48.373180",
-      "input_tokens": 27162,
-      "output_tokens": 611,
-      "elapsed": 23.37256407737732,
+      "timestamp": "2025-02-23T22:34:44.826565",
+      "input_tokens": 25956,
+      "output_tokens": 460,
+      "elapsed": 12.758801937103271,
       "retry": 3,
-      "provider": "Amazon Bedrock",
+      "provider": "Anthropic",
       "model": "anthropic/claude-3.5-sonnet"
     },
     {
-      "timestamp": "2025-02-23T21:57:03.885629",
-      "input_tokens": 27915,
-      "output_tokens": 538,
-      "elapsed": 15.499454975128174,
+      "timestamp": "2025-02-23T22:34:55.958194",
+      "input_tokens": 26556,
+      "output_tokens": 397,
+      "elapsed": 11.123877048492432,
       "retry": 4,
-      "provider": "Google",
+      "provider": "Anthropic",
       "model": "anthropic/claude-3.5-sonnet"
     }
   ],
-  "previous_input_tokens": "134577",
-  "previous_output_tokens": "2541",
-  "previous_time": "73.54240012168884",
-  "previous_continuation_count": "5"
+  "previous_input_tokens": "79075",
+  "previous_output_tokens": "1999",
+  "previous_time": "59.644081830978394",
+  "previous_continuation_count": "3"
 }

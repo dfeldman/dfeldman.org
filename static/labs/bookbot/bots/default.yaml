@@ -3,7 +3,10 @@ type: default
 llm: deepseek/deepseek-r1
 input_price: 8.0
 output_price: 24.0
-provider: Together
+#provider: Together
+# Experimentally changing provider to DeepSeek to save $
+# It does have smaller context and worse reliability.
+provider: DeepSeek
 temperature: 0.7
 expected_length: 3000
 context_window: 128000
