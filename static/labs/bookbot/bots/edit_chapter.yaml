@@ -1,18 +1,9 @@
 name: edit_chapter
 type: edit_chapter
-main_prompt: '  You''ve written the initial brief, characters, setting, outline, and some of the chapters for your next hit novel. Congratulations!
+main_prompt: 'You''ve written the initial brief, characters, setting, outline, and some of the chapters for your next hit novel. Congratulations!
 
   You''ve sent these documents off to your editor, who has a lot of feedback for you. Now it''s time to carefully 
-  edit this chapter to incorporate the feedback!
-
-  Setting (written by you):
-  {setting}
-
-  Characters (written by you):
-  {characters}
-
-  Outline (written by you):
-  {outline}
+  edit this chapter to incorporate the feedback from the editor!
 
   Chapter (written by you):
   {content}
@@ -20,7 +11,9 @@ main_prompt: '  You''ve written the initial brief, characters, setting, outline,
   Feedback from your editor:
   {review}
 
-  Rewrite the entire chapter to incorporate the feedback from your editor.
-  It''s OK to leave entire sections unchagned, but you''ll have to output them again exactly as they were in the first version.
+  Rewrite the entire chapter to incorporate ALL the feedback from your editor.
+  Spend as much time as you need. Think very carefully about how to incorporate each piece of feedback.
+  You should follow ALL the editor''s suggestions. They are very good and will make the chapter much better.
+  It''s OK to leave entire sections unchanged if the editor had no comments, but you''ll have to output them again exactly as they were in the first version.
   Don''t make any references to the first version (like "this is unchanged") because in the future, you''ll only have this edited
   version to write the book. Be very careful that the output file is complete and stands on its own.'

@@ -1,5 +1,6 @@
 name: review_chapter
 type: review_chapter
+expected_length: 1000
 system_prompt: 'You are an expert chapter reviewer.
 
   Analyze chapters for story effectiveness, character consistency, and engaging writing.

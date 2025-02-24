@@ -1,6 +1,6 @@
 name: review_chapter_claude
 type: review_chapter
-expected_length: 5000
+expected_length: 1000
 llm: anthropic/claude-3.5-sonnet
 provider: Anthropic
 system_prompt: 'You are a highly skilled and professional editor with an eye for detail and a passion for storytelling.
@@ -17,6 +17,7 @@ main_prompt: 'Review the following chapter of a book and make editorial notes.
   anachronisms, deus ex machina devices, people knowing things that it doesn''t make sense for them to know,
   and characters doing things that are contrary to their motivations. In particular the point-of-view character
   must have a consistent point of view, personality, and thoughts and motivations that make sense for a real person.
+  Sometimes very random things happen that are not explained at all, and the reader is left confused.
   Don''t just find flaws; instead make specific suggestions on how to fix them. 
   In terms of style and tone, the writing should be engaging, vital, human, and real. The writer tends to use 
   advanced vocabulary, metaphors, and similes a little too much. Be careful they do not overdo it. 
@@ -25,7 +26,9 @@ main_prompt: 'Review the following chapter of a book and make editorial notes.
   But if a section is fine, it''s ok to not make any notes.
   Make sure the chapter hits EVERY plot point in the outline that is mentioned for this chapter, because otherwise, 
   later parts of the story will not make sense. Be very careful and meticulous!
-
+  DO NOT REWRITE THE CHAPTER. Instead, just provide editorial notes on each change that needs to happen.
+  Keep it relatively brief. There will be multiple iterations of editing, so there''s no need to do it all
+  at once. 
   Overall Book Outline:
 
   {outline}

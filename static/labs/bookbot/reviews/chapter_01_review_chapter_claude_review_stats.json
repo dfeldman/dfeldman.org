@@ -1,101 +1,47 @@
 {
-  "input_tokens": 268601,
-  "output_tokens": 5065,
-  "time": 169.2203860282898,
+  "input_tokens": 106018,
+  "output_tokens": 2419,
+  "time": 61.00451111793518,
   "calls": [
     {
-      "timestamp": "2025-02-23T21:27:21.513135",
-      "input_tokens": 24150,
-      "output_tokens": 530,
-      "elapsed": 14.861064910888672,
+      "timestamp": "2025-02-23T21:46:34.903871",
+      "input_tokens": 25317,
+      "output_tokens": 671,
+      "elapsed": 16.599027156829834,
       "retry": 1,
       "provider": "Anthropic",
       "model": "anthropic/claude-3.5-sonnet"
     },
     {
-      "timestamp": "2025-02-23T21:27:40.839434",
-      "input_tokens": 24820,
-      "output_tokens": 740,
-      "elapsed": 19.30570697784424,
+      "timestamp": "2025-02-23T21:46:50.621262",
+      "input_tokens": 26127,
+      "output_tokens": 709,
+      "elapsed": 15.702049016952515,
       "retry": 2,
       "provider": "Anthropic",
       "model": "anthropic/claude-3.5-sonnet"
     },
     {
-      "timestamp": "2025-02-23T21:27:47.207429",
-      "input_tokens": 25700,
-      "output_tokens": 9,
-      "elapsed": 6.35526180267334,
+      "timestamp": "2025-02-23T21:47:05.149812",
+      "input_tokens": 26965,
+      "output_tokens": 504,
+      "elapsed": 14.508080959320068,
       "retry": 3,
-      "provider": "Anthropic",
+      "provider": "Google",
       "model": "anthropic/claude-3.5-sonnet"
     },
     {
-      "timestamp": "2025-02-23T21:27:58.682706",
-      "input_tokens": 25907,
-      "output_tokens": 4,
-      "elapsed": 11.464465856552124,
+      "timestamp": "2025-02-23T21:47:19.366437",
+      "input_tokens": 27609,
+      "output_tokens": 535,
+      "elapsed": 14.195353984832764,
       "retry": 4,
-      "provider": "Anthropic",
-      "model": "anthropic/claude-3.5-sonnet"
-    },
-    {
-      "timestamp": "2025-02-23T21:28:12.324549",
-      "input_tokens": 26295,
-      "output_tokens": 454,
-      "elapsed": 13.628923892974854,
-      "retry": 5,
       "provider": "Google",
-      "model": "anthropic/claude-3.5-sonnet"
-    },
-    {
-      "timestamp": "2025-02-23T21:28:26.530801",
-      "input_tokens": 26889,
-      "output_tokens": 580,
-      "elapsed": 14.19080376625061,
-      "retry": 6,
-      "provider": "Google",
-      "model": "anthropic/claude-3.5-sonnet"
-    },
-    {
-      "timestamp": "2025-02-23T21:28:39.668299",
-      "input_tokens": 27607,
-      "output_tokens": 556,
-      "elapsed": 13.126554012298584,
-      "retry": 7,
-      "provider": "Google",
-      "model": "anthropic/claude-3.5-sonnet"
-    },
-    {
-      "timestamp": "2025-02-23T21:28:57.228767",
-      "input_tokens": 28301,
-      "output_tokens": 561,
-      "elapsed": 17.5483660697937,
-      "retry": 8,
-      "provider": "Google",
-      "model": "anthropic/claude-3.5-sonnet"
-    },
-    {
-      "timestamp": "2025-02-23T21:29:19.349764",
-      "input_tokens": 29002,
-      "output_tokens": 788,
-      "elapsed": 22.106356859207153,
-      "retry": 9,
-      "provider": "Google",
-      "model": "anthropic/claude-3.5-sonnet"
-    },
-    {
-      "timestamp": "2025-02-23T21:29:56.014527",
-      "input_tokens": 29930,
-      "output_tokens": 843,
-      "elapsed": 36.63288187980652,
-      "retry": 10,
-      "provider": "Amazon Bedrock",
       "model": "anthropic/claude-3.5-sonnet"
     }
   ],
-  "previous_input_tokens": "223295",
-  "previous_output_tokens": "7600",
-  "previous_time": "184.52070808410645",
-  "previous_continuation_count": "8"
+  "previous_input_tokens": "268601",
+  "previous_output_tokens": "5065",
+  "previous_time": "169.2203860282898",
+  "previous_continuation_count": "10"
 }
