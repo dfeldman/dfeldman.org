@@ -359,13 +359,14 @@ class BotType(Enum):
     WRITE_CHAPTER = auto()     # chapter_number, outline, setting, characters, previous_chapter
     REVIEW_COMMONS = auto()    # file_type, content, context
     REVIEW_CHAPTER = auto()    # chapter_number, content, outline, setting, characters
-    EDIT_CHAPTER = auto()      # chapter_number, content, edit_notes
+    EDIT_CHAPTER = auto()      # chapter_number, outline, setting, characters, review, content
     REVIEW_WHOLE = auto()      # content
     SELF_EDIT = auto()          # initial, characters, settings, content
     
     @property
     def required_vars(self) -> Set[str]:
         """Get required template variables for this bot type"""
+        # TODO all of these need to be carefully checked. 
         return {
             BotType.DEFAULT: set(),
             BotType.WRITE_OUTLINE: {"initial", "setting", "characters"},
@@ -373,8 +374,8 @@ class BotType(Enum):
             BotType.WRITE_CHARACTERS: {"initial", "setting"},
             BotType.WRITE_CHAPTER: {"chapter_number", "outline", "setting", "characters", "previous_chapter"},
             BotType.REVIEW_COMMONS: {"initial", "setting", "characters", "content"}, # Content is the outline since it is being edited
-            BotType.REVIEW_CHAPTER: {"chapter_number", "content", "outline", "setting", "characters"},
-            BotType.EDIT_CHAPTER: {"chapter_number", "content", "edit_notes"},
+            BotType.REVIEW_CHAPTER: {"content", "outline", "setting", "characters"},
+            BotType.EDIT_CHAPTER: {"outline", "setting", "characters", "review", "content"},
             BotType.REVIEW_WHOLE: {"content"},
             BotType.SELF_EDIT: {"initial", "characters", "setting", "content"}
         }[self]
@@ -398,6 +399,21 @@ class Bot:
     continuation_prompt_initial: str = "Type THE END when finished, or CONTINUE if you need to write more."
     continuation_prompt: str = "You have written {current_words} words out of {expected_words} expected words. Continue the text."
     
+    @classmethod
+    def get_bot_type(cls, bot: str) -> str:
+        """Get the BotType string for a given bot"""
+        # Load the bot yaml
+        bot_path = Path("bots") / f"{bot}.yaml"
+        if not bot_path.exists():
+            raise ValueError(f"Bot {bot} not found in {bot_path}")
+        with bot_path.open('r') as f:
+            config = yaml.safe_load(f)
+        # Get the type from the config
+        bot_type = config.get('type')
+        if not bot_type:
+            raise ValueError(f"Bot {bot} does not have a type defined")
+        return bot_type
+
     @classmethod
     def from_file(cls, file_path: Path, defaults_path: Optional[Path] = None) -> 'Bot':
         """Load bot configuration from a YAML file with defaults"""
@@ -1570,6 +1586,11 @@ class BookBot:
             initial = TextFile(Path("initial.md"), config=self.config)
             setting = TextFile(COMMON_DIR / "setting.md", config=self.config)
             characters = TextFile(COMMON_DIR / "characters.md", config=self.config)
+            outline = TextFile(COMMON_DIR / "outline.md", config=self.config).content
+
+            # Note: Commons review bots do NOT include the outline as a separate template var,
+            # because they are editing the outline. However there's no harm in loading the outline
+            # and passing it in as a template var, which will simply not be used.
 
             # Load the file to be reviewed
             if file.endswith(".md"):
@@ -1588,6 +1609,8 @@ class BookBot:
                 # TODO Add a number in case this file does exist?
                 review_file = self.config["review_dir"] + f"/{file_path.stem}_{reviewer_bot}_review"
             logger.info("REVISING WITH REVIEW BOT "+reviewer_bot)
+
+
             self._call_llm(
                 review_file,
                 reviewer_bot,
@@ -1595,6 +1618,7 @@ class BookBot:
                     "initial": initial.content,
                     "setting": setting.content,
                     "characters": characters.content,
+                    "outline": outline,
                     "content": orig_file.content,
                 },
                 command=f"review_{reviewer_bot}_{editor_bot}"
@@ -1610,6 +1634,7 @@ class BookBot:
                     "setting": setting.content,
                     "characters": characters.content,
                     "content": orig_file.content,
+                    "outline": outline,
                     "review": TextFile(review_file).content
                 },
                 command=f"edit_{reviewer_bot}_{editor_bot}"

@@ -1,28 +1,26 @@
 name: edit_chapter
 type: edit_chapter
-system_prompt: 'You are an expert line editor.
+main_prompt: '  You''ve written the initial brief, characters, setting, outline, and some of the chapters for your next hit novel. Congratulations!
 
-  Provide specific, actionable suggestions for improving prose quality and readability.
+  You''ve sent these documents off to your editor, who has a lot of feedback for you. Now it''s time to carefully 
+  edit this chapter to incorporate the feedback!
 
-  Focus on clarity, style, and impact while maintaining the author''s voice.'
-main_prompt: 'Edit Chapter {chapter_number} focusing on:
+  Setting (written by you):
+  {setting}
 
-  - Sentence structure and variety
+  Characters (written by you):
+  {characters}
 
-  - Word choice and clarity
+  Outline (written by you):
+  {outline}
 
-  - Show vs tell balance
-
-  - Dialogue tags and action beats
-
-  - Paragraph flow and transitions
-
-
-  Original Content:
-
+  Chapter (written by you):
   {content}
 
+  Feedback from your editor:
+  {review}
 
-  Previous Edit Notes:
-
-  {edit_notes}'
+  Rewrite the entire chapter to incorporate the feedback from your editor.
+  It''s OK to leave entire sections unchagned, but you''ll have to output them again exactly as they were in the first version.
+  Don''t make any references to the first version (like "this is unchanged") because in the future, you''ll only have this edited
+  version to write the book. Be very careful that the output file is complete and stands on its own.'

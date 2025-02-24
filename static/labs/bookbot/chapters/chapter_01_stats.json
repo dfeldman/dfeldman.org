@@ -1,29 +1,56 @@
 {
-  "input_tokens": 37156,
-  "output_tokens": 5018,
-  "time": 119.69468903541565,
+  "input_tokens": 120774,
+  "output_tokens": 7834,
+  "time": 155.03053426742554,
   "calls": [
     {
-      "timestamp": "2025-02-23T20:05:16.471110",
-      "input_tokens": 17708,
-      "output_tokens": 1967,
-      "elapsed": 46.38900113105774,
+      "timestamp": "2025-02-23T21:30:21.389619",
+      "input_tokens": 21672,
+      "output_tokens": 1884,
+      "elapsed": 25.34082818031311,
       "retry": 1,
       "provider": "Together",
       "model": "deepseek/deepseek-r1"
     },
     {
-      "timestamp": "2025-02-23T20:06:29.803268",
-      "input_tokens": 19448,
-      "output_tokens": 3051,
-      "elapsed": 73.30568790435791,
+      "timestamp": "2025-02-23T21:30:51.741653",
+      "input_tokens": 23132,
+      "output_tokens": 1574,
+      "elapsed": 30.32091498374939,
       "retry": 2,
+      "provider": "Together",
+      "model": "deepseek/deepseek-r1"
+    },
+    {
+      "timestamp": "2025-02-23T21:31:30.957944",
+      "input_tokens": 24444,
+      "output_tokens": 1494,
+      "elapsed": 39.19344925880432,
+      "retry": 3,
+      "provider": "Together",
+      "model": "deepseek/deepseek-r1"
+    },
+    {
+      "timestamp": "2025-02-23T21:31:55.929528",
+      "input_tokens": 25281,
+      "output_tokens": 1226,
+      "elapsed": 24.941925764083862,
+      "retry": 4,
+      "provider": "Together",
+      "model": "deepseek/deepseek-r1"
+    },
+    {
+      "timestamp": "2025-02-23T21:32:31.185632",
+      "input_tokens": 26245,
+      "output_tokens": 1656,
+      "elapsed": 35.23341608047485,
+      "retry": 5,
       "provider": "Together",
       "model": "deepseek/deepseek-r1"
     }
   ],
-  "previous_input_tokens": "140678",
-  "previous_output_tokens": "12178",
-  "previous_time": "267.36170625686646",
-  "previous_continuation_count": "7"
+  "previous_input_tokens": "17708",
+  "previous_output_tokens": "1967",
+  "previous_time": "46.38900113105774",
+  "previous_continuation_count": "1"
 }
