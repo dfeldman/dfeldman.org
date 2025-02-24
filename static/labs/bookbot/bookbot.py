@@ -1439,7 +1439,7 @@ class BookBot:
             # Generate chapter using write_chapter bot
             self._call_llm(
                 f"chapters/chapter_{chapter_num:02d}",
-                "write_chapter",
+                "write_chapter_simple", #TODO FIXME temporarily set to use the simple writing prompt
                 {
                     "chapter_number": chapter_num,
                     "outline": outline.content,
