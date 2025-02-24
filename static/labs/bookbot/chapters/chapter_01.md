@@ -17,26 +17,34 @@ total_continuation_count: 3
 ---
 # Chapter 1: Dust & Shadows  
 
-I arrived at the Metropolitan Museum on the morning of June 3, 1929, at exactly 10:00 AM. Gallery 17 greeted me with fractured sunlight bleeding through stained glass, dappling the floor in emerald and crimson. The air hung thick with linseed oil and the damp musk of stone—a scent that clung to my throat. At the center of the room, the empty pedestal where the Golden Throne once stood gaped like a missing tooth, its papier‑mâché replacement crude and mocking.  
+I arrived at the Metropolitan Museum on the morning of June 3, 1929, at exactly 10:00 AM. Gallery 17 greeted me with fractured sunlight bleeding through stained glass, dappling the floor in emerald and crimson. The air clung to my throat—linseed oil and the damp musk of stone. At the center of the room, the empty pedestal where the Golden Throne once stood gaped like a missing tooth, its papier‑mâché replacement crude and mocking.  
 
-My press badge swung against my chest as I approached. I traced the pedestal’s carved base, my finger catching on familiar grooves: my father’s initials. A faint aroma lingered—bay rum, sandalwood, gun oil—the ghost of him. My satchel brushed my hip, heavy with his pocket watch. The theft wasn’t just a story; it was a key.  
+My press badge swung against my chest as I approached. My finger traced the pedestal’s carved base, catching on familiar grooves: *J.A.L.* My father’s initials. A faint aroma lingered—bay rum, sandalwood, gun oil—the ghost of him. I adjusted my satchel, heavy with his pocket watch ticking against my hip. The theft wasn’t just a story; it was a key to the silence he’d left behind.  
 
-Guard Joe loomed nearby, hand resting on his holster. Celeste, the docent, adjusted a nearby placard, her smock streaked with vermilion and umber. She moved like a woman accustomed to blending into walls, her presence as forgettable as the exhibit labels she dusted.  
+Guard Joe loomed nearby, hand resting on his holster. His eyes flicked to the service elevator, then away. Celeste, the docent, adjusted a nearby placard, her smock streaked with paint. She moved like a woman accustomed to blending into walls, but today her hands trembled. When our gazes met, she knocked over a can of Prussian blue. The pigment flooded the floor like spilled ink.  
 
-Then I saw it: a shadow shifting behind the Byzantine tapestries. Steel flashed.
+“Clumsy,” she muttered, but her stare lingered a beat too long.  
+
+Then I saw it: a shadow shifting behind the Byzantine tapestries. Steel flashed.  
 I stumbled back as the blade sliced through silk and skin. Blood dripped onto the mosaics, each drop a scarlet punctuation mark.  
 
 “Curiosity kills, Red.”  
 
 The voice came from the doorway. Vito stood silhouetted against the light, a silver lighter flicking open in his palm. His eyes locked on mine as the lighter fell. I caught it midair. *Rosa* danced across its surface in cursive. My mother’s name etched into cold metal—a taunt or a plea? Seventeen years since her coffin lowered into Queens soil, but the wound still breathed.  
 
-Before I could speak, Celeste knocked over a paint can—Prussian blue flooding the floor. The same shade as the tunnel maps in my notes. Not an accident. A breadcrumb. *Follow the blue,* I thought, the phrase thrumming like a second heartbeat.  
+Before I could speak, Celeste vanished. The blue paint pooled around my heels. *Follow the blue,* I thought, the phrase thrumming like a second heartbeat.  
 
 ———  
 
-The walk to the *Daily Sentinel* was a blur of grit and adrenaline. My thighs burned—half from the cut, half from the weight of that goddamned name. By 2:30 PM, I slumped at my desk, the newsroom’s cigar haze sticking to my skin like cheap perfume. My stocking clung to the half-dried wound, fabric grafting to flesh. I fed paper into the typewriter, keys clattering: *Initials. Blood. Lighter. Blue.*  
+The walk to the *Daily Sentinel* stretched twelve blocks. My thigh burned where the blade had kissed it, the cut seeping through my stocking. I pressed a handkerchief to the wound, the linen blooming red. The city’s noise—horns, shouts, the clatter of the Third Avenue El—faded beneath the rhythm of my own pulse.  
+
+By 2:30 PM, I slumped at my desk, the newsroom’s cigar haze sticking to my skin. The lighter sat heavy in my pocket. I fed paper into the typewriter, keys clattering: *Initials. Blood. Lighter. Blue.*  
 
 Fletcher materialized like a storm cloud. He snatched the draft, struck a match, and let flame devour the words. “Chase ghosts, you’ll join them.” Ash floated in the sink, dissolving into gray silt.  
+
+“You’d know all about ghosts,” I said, thinking of the obituaries he’d buried last fall.  
+
+His jaw twitched. “Keep digging that hole, kid. See who fills it.”  
 
 I restarted, wrists rigid. The pain in my leg throbbed in time with the overhead fans. Eleanor’s cart creaked past. Her fingers brushed mine—*Follow the blue. —Madame X*—before she melted into the labyrinth of filing cabinets.  
 
@@ -44,13 +52,15 @@ The train ticket appeared next, slipped between carbon copies. *Midnight. Don’
 
 ———  
 
-The Blind Owl speakeasy stank of gin and regret. Vito found me at a corner table, his hands steady as he cleaned the cut. I kept my gaze on the broken phonograph wailing Bessie Smith. His knuckles grazed my inner thigh when the needle skipped.  
+The Blind Owl speakeasy stank of bathtub gin and regret. Vito found me at a corner table, his hands steady as he cleaned the cut. I kept my gaze on the broken phonograph wailing Bessie Smith. His knuckles grazed my inner thigh when the needle skipped.  
 
 “Why Rosa?” I asked, flipping the lighter between us.  
 
 He daubed iodine, eyes never leaving the wound. “Not my engraving.”  
 
-A drunk lurched into us, fingers groping my collarbone. I shoved him hard, but he grabbed my wrist. Vito’s bottle met his temple. The crunch of bone. The man crumpled, leaving a crumpled manifest in his wake: *Golden Throne → Pier 17. Midnight.*  
+“But you knew her.”  
+
+A muscle jumped in his jaw. A drunk lurched into us, fingers groping my collarbone. I shoved him hard, but he grabbed my wrist. Vito’s bottle met his temple. The crunch of bone. The man crumpled, leaving a crumpled manifest in his wake: *Golden Throne → Pier 17. Midnight.*  
 
 “Why Pier 17?” I asked later, watching Vito wipe bourbon from his sleeves.  
 
@@ -58,19 +68,19 @@ He lit a cigarette. The ember flared. “That throne’s a skeleton key. Opens d
 
 CONTINUE  
 
-**[Word count so far: 622]**  
+**[Word count so far: 998]**  
 
 ———  
 
 The pier loomed at midnight, its planks groaning under my heels. Salt and diesel choked the air. Two men murmured by the cargo crates—*shipment delayed*—*boss wants it buried*. I crouched behind a coil of rope, manifest crumpled in my fist. The throne wasn’t here. Another dead end wrapped in brine.  
 
-Back in my Thompson Street apartment, I spread the clues like tarot cards: lighter, ticket, note, bloodstained stocking. The pocket watch ticked. *Rosa.* Mother’s suicide when I was six. Father’s “accident” last spring. Coincidences were for fools.  
+Back in my Thompson Street apartment, I spread the clues like tarot cards: lighter, ticket, note, bloodstained stocking. The pocket watch ticked. *Rosa.* Mother’s “fall” when I was six. Father’s cracked skull on museum steps. Coincidences were for fools.  
 
 Sleep didn’t come.  
 
 ———  
 
-Dawn crept through cracked blinds as I rewrote the night’s events. Every detail mattered: the bay rum, the lighter’s engraving, the way Vito’s jaw tightened when I prodded about Pier 17. I tucked the notes into a hollowed-out copy of *The Great Gatsby*—Fitzgerald’s prose hiding my own.  
+Dawn crept through cracked blinds as I rewrote the night’s events. Every detail mattered: the bay rum, the lighter’s lie, the way Vito’s jaw tightened when I prodded about the pier. I tucked the notes into a hollowed-out copy of *The Great Gatsby*—Fitzgerald’s prose hiding my own.  
 
 At the Sentinel, Fletcher ignored me. Eleanor left a fresh pot of ink on my desk. The phone rang twice—dead air both times.  
 
@@ -80,7 +90,7 @@ By noon, I stood outside the tailor shop hiding the Blind Owl’s entrance. Cele
 
 Her laugh was a dry rasp. “Honey, I just spill things. Ask your bartender.”  
 
-She vanished into the crowd, but not before I caught the tremor in her hands—the same tremor Father had when lying.  
+She vanished into the crowd, but not before I caught the tremor in her hands—the same tremor Father had when lying about Mother’s “accident.”  
 
 ———  
 
@@ -94,7 +104,8 @@ Tires screeched. Gravel stung my cheeks.
 
 CONTINUE  
 
-**[Word count so far: 869]**
+**[Word count so far: 1,349]**  
+
 ———  
 
 In my bathroom, I peeled the bandage off. The stitches held. *Rosa.* The name echoed through the years. Mother’s suicide when I was six—a “tragic fall” from their bedroom window. Father’s “accident” last spring, skull cracked open on museum steps. Coincidences were for fools, and I’d stopped being one the day I found his bloody notebook hidden in the icebox.  
@@ -145,7 +156,7 @@ I slid off the stool. “So do I.”
 
 CONTINUE  
 
-**[Word count so far: 1,267]**  
+**[Word count so far: 1,739]**  
 
 ———  
 
@@ -173,7 +184,8 @@ The lighter flared in my hand. *Rosa* glowed like a beacon.
 
 CONTINUE  
 
-**[Word count so far: 1,480]**
+**[Word count so far: 1,952]**  
+
 ———  
 
 The vault door groaned open, revealing stacks of gold bars and document boxes. Dust swirled in our flashlight beams. Vito pried open a crate—no throne, just files stamped *CLASSIFIED*.  
@@ -194,7 +206,7 @@ Vito moved first.
 
 CONTINUE  
 
-**[Word count so far: 1,710]**  
+**[Word count so far: 2,182]**  
 
 ———  
 
@@ -216,7 +228,7 @@ The cemetery gates loomed ahead.
 
 CONTINUE  
 
-**[Word count so far: 1,920]**  
+**[Word count so far: 2,386]**  
 
 ———  
 
