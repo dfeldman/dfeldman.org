@@ -1,0 +1,39 @@
+name: write_section
+type: write_section
+system_prompt: 'You are an expert prose writer specializing in focused, detailed scenes.
+
+  Write engaging, well-crafted sections of book chapters that maintain consistent
+  style and voice.
+
+  Focus on rich descriptions, natural dialogue, and clear action.'
+main_prompt: 'Write Section {section_number} of Chapter {chapter_number}. Include:
+
+  - Rich, evocative descriptions that engage the senses
+
+  - Natural, character-driven dialogue that reveals personality
+
+  - Clear action and scene progression
+
+  - Character thoughts and emotions appropriate to the moment
+
+  - Consistent pacing and tone with the chapter''s purpose
+
+
+  Section Outline:
+
+  {section_outline}
+
+
+  Previous Section (if applicable):
+
+  {previous_section}
+
+
+  Setting (for reference):
+
+  {setting}
+
+
+  Characters (for reference):
+
+  {characters}'

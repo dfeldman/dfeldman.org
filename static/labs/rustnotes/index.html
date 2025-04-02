@@ -572,9 +572,9 @@ include_str!("file.txt");</pre>
         <pre>
 <span class="comment">// Builder Pattern</span>
 <span class="keyword">struct</span> <span class="type">RequestBuilder</span> {
-url: String,
-method: String,
-headers: HashMap&lt;String, String&gt;,
+    url: String,
+    method: String,
+    headers: HashMap&lt;String, String&gt;,
 }
 
 <span class="keyword">impl</span> RequestBuilder {
@@ -590,7 +590,7 @@ headers: HashMap&lt;String, String&gt;,
 
 <span class="comment">// Type-State Pattern</span>
 <span class="keyword">struct</span> <span class="type">Connection</span>&lt;State&gt; {
-state: PhantomData&lt;State&gt;,
+    state: PhantomData&lt;State&gt;,
 }
 
 <span class="keyword">impl</span>&lt;State&gt; Connection&lt;State&gt; {
@@ -619,9 +619,9 @@ resource: T,
 <span class="keyword">let</span> (tx, rx) = mpsc::channel();
 
 crossbeam::scope(|scope| {
-scope.spawn(move |_| {
-    tx.send(42).unwrap();
-});
+    scope.spawn(move |_| {
+        tx.send(42).unwrap();
+    });
 });
 
 <span class="comment">// Mutex Pool</span>
@@ -673,10 +673,10 @@ println!("Location: {:?}", ptr);
         <pre>
 <span class="comment">// HTTP Client with reqwest</span>
 <span class="keyword">let</span> response = reqwest::Client::new()
-.get("https://api.example.com")
-.header("Authorization", "Bearer token")
-.send()
-.await?;
+    .get("https://api.example.com")
+    .header("Authorization", "Bearer token")
+    .send()
+    .await?;
 
 <span class="comment">// TCP Server</span>
 <span class="keyword">use</span> tokio::net::TcpListener;
@@ -704,14 +704,14 @@ println!("Location: {:?}", ptr);
         <pre>
 <span class="comment">// SQLx with PostgreSQL</span>
 <span class="keyword">let</span> pool = PgPoolOptions::new()
-.max_connections(5)
-.connect("postgres://user:pass@localhost/db").await?;
+    .max_connections(5)
+    .connect("postgres://user:pass@localhost/db").await?;
 
 <span class="keyword">let</span> row: (i64,) = sqlx::query_as(
-"SELECT $1"
-)
-.bind(150_i64)
-.fetch_one(&pool).await?;
+        "SELECT $1"
+    )
+    .bind(150_i64)
+    .fetch_one(&pool).await?;
 
 <span class="comment">// Diesel ORM</span>
 #[derive(Queryable)]
@@ -722,8 +722,8 @@ body: String,
 }
 
 diesel::insert_into(posts::table)
-.values(&new_post)
-.execute(&mut conn)?;</pre>
+    .values(&new_post)
+    .execute(&mut conn)?;</pre>
     </div>
 
     <div class="section">
@@ -742,9 +742,9 @@ cargo fmt
 <span class="comment">// Cargo.toml</span>
 [workspace]
 members = [
-"core",
-"cli",
-"web",
+    "core",
+    "cli",
+    "web",
 ]
 
 <span class="comment">// Features</span>
@@ -787,18 +787,18 @@ files: Vec&lt;PathBuf&gt;,
 
 <span class="comment">// Subcommand</span>
 #[command(subcommand)]
-command: Option&lt;Commands&gt;,
+    command: Option&lt;Commands&gt;,
 }
 
 #[derive(Subcommand)]
 <span class="keyword">enum</span> <span class="type">Commands</span> {
-Add {
-    name: String,
-},
-Remove {
-    #[arg(short, long)]
-    force: bool,
-},
+    Add {
+        name: String,
+    },
+    Remove {
+        #[arg(short, long)]
+        force: bool,
+    },
 }
 
 <span class="comment">// Usage example</span>
@@ -826,15 +826,15 @@ Remove {
 #[derive(Serialize, Deserialize, Debug)]
 #[serde(rename_all = "camelCase")]
 <span class="keyword">struct</span> <span class="type">User</span> {
-user_id: u64,
-#[serde(rename = "displayName")]
-name: String,
-#[serde(default)]
-active: bool,
-#[serde(skip_serializing_if = "Option::is_none")]
-email: Option&lt;String&gt;,
-#[serde(flatten)]
-metadata: HashMap&lt;String, Value&gt;,
+    user_id: u64,
+    #[serde(rename = "displayName")]
+    name: String,
+    #[serde(default)]
+    active: bool,
+    #[serde(skip_serializing_if = "Option::is_none")]
+    email: Option&lt;String&gt;,
+    #[serde(flatten)]
+    metadata: HashMap&lt;String, Value&gt;,
 }
 
 <span class="comment">// JSON processing</span>
@@ -873,17 +873,17 @@ Ok(())
 <span class="comment">// Comprehensive error type</span>
 #[derive(Debug, thiserror::Error)]
 <span class="keyword">enum</span> <span class="type">AppError</span> {
-#[error("IO error: {0}")]
-Io(#[from] std::io::Error),
+    #[error("IO error: {0}")]
+    Io(#[from] std::io::Error),
 
-#[error("Parse error: {0}")]
-Parse(#[from] std::num::ParseIntError),
+    #[error("Parse error: {0}")]
+    Parse(#[from] std::num::ParseIntError),
 
-#[error("Database error: {0}")]
-Database(#[from] sqlx::Error),
+    #[error("Database error: {0}")]
+    Database(#[from] sqlx::Error),
 
-#[error("Validation error: {msg}")]
-Validation { msg: String, code: u32 },
+    #[error("Validation error: {msg}")]
+    Validation { msg: String, code: u32 },
 }
 
 <span class="comment">// Error context with anyhow</span>

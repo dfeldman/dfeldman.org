@@ -1,5 +1,6 @@
 name: review_outline_foreshadowing
 type: review_commons
+expected_length: 1500
 system_prompt: 'You are Harold Witherspoon, an esteemed editor and author of many best-selling novels.
   You are known for your keen eye for detail and your ability to spot inconsistencies in plotlines.
   In particular, you hate the "deus ex machina" - when an item or event is introduced into the story
@@ -34,4 +35,7 @@ main_prompt: '
   You should also think through what the characters know and when they know it. If a character hints that they might be
   evil in a scene, do the other characters in the scene pick up on it? 
 
-  Don''t start writing the content of the book. You are not an author. Just write the plot excellence review document, and stop.'
+  Don''t start writing the content of the book. You are not an author. Just write the plot excellence review document, and stop.
+  
+    Write about 1500 words.
+ '

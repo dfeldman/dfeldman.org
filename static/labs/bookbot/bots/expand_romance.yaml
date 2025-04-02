@@ -1,0 +1,57 @@
+name: expand_romance
+type: expand_romance
+system_prompt: "You are an expert writer specializing in romance, emotional connection,\
+  \ and intimate character dynamics. \nCreate vivid, emotionally resonant romantic\
+  \ scenes that feel authentic and moving."
+main_prompt: 'Rewrite the following ROMANCE section to make it more engaging, vivid,
+  and emotionally resonant.
+
+
+  Context before the section:
+
+  ---
+
+  {context_before}
+
+  ---
+
+
+  Section to improve:
+
+  ---
+
+  {section}
+
+  ---
+
+
+  Context after the section:
+
+  ---
+
+  {context_after}
+
+  ---
+
+
+  Focus on:
+
+  - Emotional depth and authentic character feelings
+
+  - Subtle body language, attraction cues, and tension between characters
+
+  - Chemistry, yearning, vulnerability, and emotional connection
+
+  - Sensory details and nuanced expressions to convey intimacy and desire
+
+
+  Your task is to rewrite ONLY the section between the markers, making it more emotionally
+  compelling.
+
+  Maintain consistency with the surrounding context and characters.
+
+  Do not modify the overall meaning or plot points, just improve the quality of the
+  writing.
+
+
+  Rewritten ROMANCE section:'

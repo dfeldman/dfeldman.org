@@ -104,7 +104,7 @@ function generateBikeWorkout(level) {
             'Hydrate regularly',
             `Target cadence: ${cadence} RPM`
         ];
-
+        workout.level = level;s
         workout.sets = [
             {
                 repeat: 1,

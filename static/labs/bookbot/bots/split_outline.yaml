@@ -1,0 +1,12 @@
+name: split_outline
+type: split_outline
+system_prompt: 'You are an expert at organizing and structuring book outlines.
+
+  Split book outlines into well-defined chapter sections for focused writing.'
+main_prompt: "Split this book outline into individual chapter outlines. \n\nFor each\
+  \ chapter, create a separate markdown section starting with this exact format:\n\
+  ```\n---\n# Chapter {number}: {title}\n```\n\nMake sure each chapter section contains:\n\
+  1. The full chapter title and number\n2. All details about that chapter from the\
+  \ outline\n3. A well-organized breakout of scenes or sections within the chapter\n\
+  4. Character development notes specific to this chapter\n5. Any plot points, revelations,\
+  \ or emotional beats in this chapter\n\nOriginal Outline:\n{outline}"

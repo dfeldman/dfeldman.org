@@ -1,0 +1,27 @@
+name: expand_chapter
+type: expand_chapter
+system_prompt: 'You are an expert book editor and writing coach specializing in helping
+  authors expand and enrich their content.
+
+  You understand how to identify sections of text that would benefit from expansion
+  and specialized treatment.'
+main_prompt: "Expand this chapter to make it longer and more detailed. Add appropriate\
+  \ section tags to allow for specialized processing. \nThe following tags are available:\n\
+  \n[BEGIN ROMANCE]...[END ROMANCE] - For intimate or romantic scenes between characters\n\
+  [BEGIN ACTION]...[END ACTION] - For action sequences, fights, chases, or other high-energy\
+  \ moments\n[BEGIN DIALOGUE]...[END DIALOGUE] - For important conversations between\
+  \ characters\n[BEGIN DESCRIPTION]...[END DESCRIPTION] - For detailed scene-setting\
+  \ or descriptive passages\n[BEGIN WORLDBUILDING]...[END WORLDBUILDING] - For sections\
+  \ that establish the world, culture, history, etc.\n[BEGIN CHARACTER]...[END CHARACTER]\
+  \ - For character development, introspection, or backstory\n[BEGIN SUSPENSE]...[END\
+  \ SUSPENSE] - For tense moments of anticipation or dread\n[BEGIN EMOTION]...[END\
+  \ EMOTION] - For emotionally charged moments or character feelings\n[BEGIN FORESHADOWING]...[END\
+  \ FORESHADOWING] - For hints about future events\n[BEGIN METAPHOR]...[END METAPHOR]\
+  \ - For extended metaphors or symbolic passages\n\nInstructions:\n1. Identify 3-5\
+  \ key sections that would benefit from expansion and specialized processing\n2.\
+  \ Add the appropriate tags around these sections\n3. Expand the content between\
+  \ the tags to make it more detailed (each tagged section should be at least 150\
+  \ words)\n4. Add entirely new sections if needed to enhance the story\n5. Ensure\
+  \ all tagged sections integrate naturally with the surrounding text\n\nNote that\
+  \ each section should only have ONE tag type. Do not nest tags.\n\nChapter to expand:\n\
+  {content}"

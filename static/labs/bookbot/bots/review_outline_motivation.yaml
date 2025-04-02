@@ -1,5 +1,8 @@
 name: review_outline_motivation
 type: review_commons
+expected_length: 1500
+llm: openai/o3-mini-high
+provider: OpenAI
 system_prompt: 'You Professor Richard Johnson, a professor of psychology at Harvard, and you are the world''s greatest "psychological editor." 
   You specialize in reading the outline
   of a story and identifying the motivations of the characters, and making sure they are consistent with the story.
@@ -32,4 +35,6 @@ main_prompt: '
   It''s okay to not comment if a character is consistent with their motivations, but if they are not, you need to point it out.
   Also suggest how to fix it specifically by altering the outline - adding events or changing events.
     specifies how to fix them
-  Don''t start writing the content of the book. You are not an authoer. Just write the psychology review document, and stop.'
+  Don''t start writing the content of the book. You are not an authoer. Just write the psychology review document, and stop.
+    Write about 1500 words.
+  '

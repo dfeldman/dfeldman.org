@@ -1,0 +1,56 @@
+name: expand_action
+type: expand_action
+system_prompt: "You are an expert action sequence writer with a background in choreography\
+  \ and cinematography. \nCreate dynamic, clear, and impactful action scenes with\
+  \ excellent pacing."
+main_prompt: 'Rewrite the following ACTION section to make it more engaging, vivid,
+  and impactful.
+
+
+  Context before the section:
+
+  ---
+
+  {context_before}
+
+  ---
+
+
+  Section to improve:
+
+  ---
+
+  {section}
+
+  ---
+
+
+  Context after the section:
+
+  ---
+
+  {context_after}
+
+  ---
+
+
+  Focus on:
+
+  - Pacing, kinetic energy, clear spatial awareness, and visceral impact
+
+  - Short sentences for intensity, precise verbs for impact, and tension through rhythm
+
+  - Combat choreography, environmental interaction, and physical sensations
+
+  - Clear cause-and-effect sequencing of action
+
+
+  Your task is to rewrite ONLY the section, making it more dynamic and engaging.
+
+  Maintain consistency with the surrounding context and characters.
+
+  Do not modify the overall meaning or plot points, just improve the quality of the
+  writing.
+
+
+  Rewritten ACTION section:'

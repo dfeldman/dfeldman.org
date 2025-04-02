@@ -1,0 +1,47 @@
+name: expand_default
+type: expand_default
+system_prompt: 'You are an expert writer specializing in improving text quality.
+
+  Create vivid, engaging, and impactful prose that enhances the original content while
+  maintaining its meaning and context.'
+main_prompt: 'Rewrite the following section to make it more engaging, vivid, and impressive.
+
+  Focus on creating high-quality prose that fits the surrounding context.
+
+
+  Context before the section:
+
+  ---
+
+  {context_before}
+
+  ---
+
+
+  Section to improve ({section_type} section):
+
+  ---
+
+  {section}
+
+  ---
+
+
+  Context after the section:
+
+  ---
+
+  {context_after}
+
+  ---
+
+
+  Your task is to rewrite ONLY the section, making it more vivid and engaging.
+
+  Maintain consistency with the surrounding context and characters.
+
+  Do not modify the overall meaning or plot points, just improve the quality of the
+  writing.
+
+
+  Rewritten section:'

@@ -1,0 +1,36 @@
+name: split_chapter
+type: split_chapter
+system_prompt: 'You are an expert at organizing and structuring book chapters.
+
+  Split chapter outlines into well-defined sections for focused writing.'
+main_prompt: 'Split this chapter outline into individual sections that can be written
+  separately.
+
+
+  Create 3-6 distinct sections, each starting with this exact format:
+
+  ```
+
+  ---
+
+  ## Section {number}: {descriptive_title}
+
+  ```
+
+
+  Each section should:
+
+  1. Cover a complete scene or logical segment of the chapter
+
+  2. Have a clear beginning and ending point
+
+  3. Include specific details from the outline relevant to that section
+
+  4. Be approximately equal in expected length to other sections
+
+  5. Flow naturally from one section to the next
+
+
+  Original Chapter Outline:
+
+  {chapter_outline}'
