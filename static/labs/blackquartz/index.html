@@ -3008,9 +3008,9 @@
                             <h1 class="post-title">${title}</h1>
                         </div>` : '';
                     
-                    let content = '<p>Sphinx of black quartz, judge my vow!</p> '; 
+                    let content = ''; 
                     content += !this.p.hero.enabled ? `<h1 class="post-title">${title}</h1>` : '';
-                    
+                    content += "<p>Sphinx of black quartz, judge my vow!</p> ";
                     // Add intro paragraph
                     content += `<p>${extract}</p>\n`;
                     
