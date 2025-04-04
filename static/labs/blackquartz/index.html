@@ -1990,6 +1990,29 @@
                     this.wikiResults = [];
                 },
                 
+                async fetchMobileHtmlSections(articleTitle) {
+                    const mobileHtmlUrl = `https://en.wikipedia.org/api/rest_v1/page/mobile-html/${encodeURIComponent(articleTitle)}?origin=*`;
+                    const response = await fetch(mobileHtmlUrl);
+                    const html = await response.text();
+
+                    const parser = new DOMParser();
+                    const doc = parser.parseFromString(html, "text/html");
+
+                    // Adjust the selector if needed; here we assume sections are in <section> elements.
+                    const sectionElements = doc.querySelectorAll("section");
+                    const sections = Array.from(sectionElements).map(section => {
+                        // Optionally, try to grab a header if one exists in the section
+                        const heading = section.querySelector("h2, h3, h4, h5, h6")?.textContent.trim() || '';
+                        return {
+                        heading,
+                        content: section.innerHTML
+                        };
+                    });
+
+                    return sections;
+                   },
+
+
                 async fetchWikiArticleContent() {
                     if (!this.currentWikiArticle) return;
                     
@@ -2002,16 +2025,21 @@
                         const extractData = await extractResponse.json();
                         
                         // Get content from sections API
-                        const sectionsUrl = `https://en.wikipedia.org/api/rest_v1/page/mobile-sections/${encodeURIComponent(this.currentWikiArticle.title)}?origin=*`;
-                        const sectionsResponse = await fetch(sectionsUrl);
-                        const sectionsData = await sectionsResponse.json();
-                        
+                        //const sectionsUrl = `https://en.wikipedia.org/api/rest_v1/page/mobile-sections/${encodeURIComponent(this.currentWikiArticle.title)}?origin=*`;
+                        //const sectionsUrl = `https://en.wikipedia.org/api/rest_v1/page/mobile-html/${encodeURIComponent(this.currentWikiArticle.title)}?origin=*`;
+                        // const parseUrl = `https://en.wikipedia.org/w/api.php?action=parse&page=${encodeURIComponent(this.currentWikiArticle.title)}&prop=sections&format=json&origin=*`;
+                        // const response = await fetch(parseUrl);
+                        // const data = await response.json();
+                        //const sectionsResponse = await fetch(sectionsUrl);
+                        //const sectionsData = await sectionsResponse.json();
+                        data = await this.fetchMobileHtmlSections(this.currentWikiArticle.title);
+                        console.log(data);
                         // Process content
                         this.wikiContent = {
                             title: extractData.title,
                             extract: extractData.extract,
                             thumbnail: extractData.thumbnail?.source,
-                            sections: sectionsData.remaining.sections
+                            sections: data
                         };
                         
                         this.updatePreview();
@@ -2980,7 +3008,7 @@
                             <h1 class="post-title">${title}</h1>
                         </div>` : '';
                     
-                    let content = '';
+                    let content = 'Sphinx of black quartz, judge my vow! '; 
                     content += !this.p.hero.enabled ? `<h1 class="post-title">${title}</h1>` : '';
                     
                     // Add intro paragraph
@@ -3002,12 +3030,12 @@
                             }
                             
                             // Add section heading if it's not empty or "See also", "References", etc.
-                            if (section.line && !['See also', 'References', 'External links', 'Notes', 'Bibliography'].includes(section.line)) {
-                                content += `<h2>${section.line}</h2>\n`;
+                            if (section.heading && !['See also', 'References', 'External links', 'Notes', 'Bibliography'].includes(section.heading)) {
+                                /* content += `<h2>${section.heading}</h2>\n`; */
                                 
                                 // Add section text if available
-                                if (section.text) {
-                                    content += `<p>${section.text}</p>\n`;
+                                if (section.content) {
+                                    content += `<p>${section.content}</p>\n`;
                                 } else {
                                     // Placeholder text
                                     content += `<p>${this.getLoremText()}</p>\n`;
@@ -3015,7 +3043,7 @@
                                 
                                 // Add image for some sections
                                 if (i % 2 === 0) {
-                                    content += this.getImageHTML(700, 350, i+2, `Illustration related to ${section.line}`);
+                                    content += this.getImageHTML(700, 350, i+2, `Illustration related to ${section.heading}`);
                                 }
                             }
                         });
