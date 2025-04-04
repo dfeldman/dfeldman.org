@@ -1997,12 +1997,12 @@
                     
                     try {
                         // Fetch article extract
-                        const extractUrl = `https://en.wikipedia.org/api/rest_v1/page/summary/${encodeURIComponent(this.currentWikiArticle.title)}&origin=*`;
+                        const extractUrl = `https://en.wikipedia.org/api/rest_v1/page/summary/${encodeURIComponent(this.currentWikiArticle.title)}?origin=*`;
                         const extractResponse = await fetch(extractUrl);
                         const extractData = await extractResponse.json();
                         
                         // Get content from sections API
-                        const sectionsUrl = `https://en.wikipedia.org/api/rest_v1/page/mobile-sections/${encodeURIComponent(this.currentWikiArticle.title)}&origin=*`;
+                        const sectionsUrl = `https://en.wikipedia.org/api/rest_v1/page/mobile-sections/${encodeURIComponent(this.currentWikiArticle.title)}?origin=*`;
                         const sectionsResponse = await fetch(sectionsUrl);
                         const sectionsData = await sectionsResponse.json();
                         
