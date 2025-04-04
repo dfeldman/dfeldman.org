@@ -678,6 +678,55 @@
                             <option value="zigzag">Zigzag</option>
                             <option value="noise">Noise Texture</option>
                             <option value="wave">Wave Pattern</option>
+                            <option value="radialGradient">Radial Gradient</option>
+                            <option value="conicGradient">Conic Gradient</option>
+                            <option value="gradientDouble">Double Gradient</option>
+                            <option value="stripedGradient">Striped Gradient</option>
+                            <option value="multiGradient">Multi Gradient</option>
+                            <option value="diagonalLines">Diagonal Lines</option>
+                            <option value="grid">Grid Pattern</option>
+                            <option value="honeycomb">Honeycomb Pattern</option>
+                            <option value="mesh">Mesh Pattern</option>
+                            <option value="hexagons">Hexagon Pattern</option>
+                            <option value="brushstroke">Brushstroke</option>
+                            <option value="splatter">Splatter</option>
+                            <option value="paper">Paper Texture</option>
+                            <option value="linen">Linen Texture</option>
+                            <option value="wood">Wood Texture</option>
+                            <option value="marble">Marble Texture</option>
+                            <option value="concrete">Concrete Texture</option>
+                            <option value="burlap">Burlap Texture</option>
+                            <option value="watercolor">Watercolor</option>
+                            <option value="galaxy">Galaxy</option>
+                            <option value="stardust">Stardust</option>
+                            <option value="circuit">Circuit Board</option>
+                            <option value="brush">Brush Pattern</option>
+                            <option value="glitter">Glitter</option>
+                            <option value="abstractSplatter">Abstract Splatter</option>
+                            <option value="scatteredDots">Scattered Dots</option>
+                            <option value="squiggles">Squiggles</option>
+                            <option value="camo">Camo</option>
+                            <option value="retroGrid">Retro Grid</option>
+                            <option value="woven">Woven Pattern</option>
+                            <option value="radialNodeGrid">Radial Node Grid</option>
+                            <option value="diagonalFadeStripes">Diagonal Fade Stripes</option>
+                            <option value="cornerGradientCircles">Corner Gradient Circles</option>
+                            <option value="offsetCornerCircles">Offset Corner Circles</option>
+                            <option value="layeredLinearBlend">Layered Linear Blend</option>
+                            <option value="microRadialMesh">Micro Radial Mesh</option>
+                            <option value="quadRadialBursts">Quad Radial Bursts</option>
+                            <option value="symmetryRadials">Symmetry Radials</option>
+                            <option value="edgeRadialLines">Edge Radial Lines</option>
+                            <option value="fullCornerCircles">Full Corner Circles</option>
+                            <option value="vintageStripeGrid">Vintage Stripe Grid</option>
+                            <option value="repeatingRadialDots">Repeating Radial Dots</option>
+                            <option value="modernLinearAccent">Modern Linear Accent</option>
+                            <option value="layeredLinearAccent">Layered Linear Accent</option>
+                            <option value="dualToneAngular">Dual-Tone Angular</option>
+                            <option value="quadLayeredGrid">Quad Layered Grid</option>
+                            <option value="centeredRadialNodes">Centered Radial Nodes</option>
+                            <option value="complexRadialOverlay">Complex Radial Overlay</option>
+                            
                         </select>
                         
                         <div v-if="p.bg.style !== 'solid' && p.bg.style !== 'gradient'">
@@ -2080,12 +2129,401 @@
                         case 'zigzag':
                             css += `  background-color: ${c1};\n  background-image: linear-gradient(135deg, ${c2} 25%, transparent 25%), linear-gradient(225deg, ${c2} 25%, transparent 25%);\n  background-size: ${patternSize}px ${patternSize}px;\n  background-position: 0 0, ${patternSize/2}px 0;\n`;
                             break;
-                        case 'noise':
-                            css += `  background-color: ${c1};\n  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");\n  background-blend-mode: multiply;\n`;
-                            break;
-                        case 'wave':
-                            css += `  background: linear-gradient(135deg, ${c1}, ${c2});\n  background-image: repeating-radial-gradient(ellipse at 50% 100%, transparent, transparent ${patternSize*2}px, rgba(255, 255, 255, 0.1) ${patternSize*2+10}px, rgba(255, 255, 255, 0.1) ${patternSize*3}px);\n`;
-                            break;
+
+// 1. Wood Grain – mimics horizontal wood grains using repeating gradients.
+case 'wood':
+    css += `  background-color: ${c1};\n`;
+    css += `  background-image: repeating-linear-gradient(90deg, ${c2} 0, ${c2} ${patternSize/10}px, ${c1} ${patternSize/10}px, ${c1} ${patternSize/5}px);\n`;
+    css += `  background-size: ${patternSize}px ${patternSize/3}px;\n`;
+    break;
+
+// 2. Marble Swirl – uses a conic gradient to evoke natural marble veins.
+case 'marble':
+    css += `  background: ${c1};\n`;
+    css += `  background-image: conic-gradient(from 90deg, ${c2} 10%, ${c1} 40%, ${c2} 60%, ${c1} 90%, ${c2} 100%);\n`;
+    css += `  background-size: ${patternSize*2}px ${patternSize*2}px;\n`;
+    break;
+
+// 3. Paper Texture – subtle grid lines reminiscent of a sheet of paper.
+case 'paper':
+    css += `  background-color: ${c1};\n`;
+    css += `  background-image: linear-gradient(0deg, rgba(0,0,0,0.04) 1px, transparent 1px), linear-gradient(90deg, rgba(0,0,0,0.04) 1px, transparent 1px);\n`;
+    css += `  background-size: ${patternSize}px ${patternSize}px;\n`;
+    break;
+
+    case 'linen':
+    css += `  background-color: ${c1};\n`;
+    css += `  background-image: linear-gradient(45deg, rgba(255,255,255,0.15) ${patternSize/3}px, transparent ${patternSize/3}px),\n`;
+    css += `                    linear-gradient(-45deg, rgba(255,255,255,0.15) ${patternSize/3}px, transparent ${patternSize/3}px);\n`;
+    css += `  background-size: ${patternSize}px ${patternSize}px;\n`;
+    break;
+
+// 5. Honeycomb Pattern – crafted with overlapping radial gradients to evoke a bee’s honeycomb.
+case 'honeycomb':
+    css += `  background-color: ${c1};\n`;
+    css += `  background-image: radial-gradient(circle, ${c2} 20%, transparent 21%), radial-gradient(circle, ${c2} 20%, transparent 21%);\n`;
+    css += `  background-size: ${patternSize*1.5}px ${patternSize*1.5}px;\n`;
+    css += `  background-position: 0 0, ${patternSize/2}px ${patternSize/2}px;\n`;
+    break;
+
+// 6. Camo – layered radial gradients at offset positions for an organic, camo-inspired effect.
+case 'camo':
+    css += `  background-color: ${c1};\n`;
+    css += `  background-image: radial-gradient(${c2} 15%, transparent 20%),\n`;
+    css += `                    radial-gradient(${c2} 15%, transparent 20%),\n`;
+    css += `                    radial-gradient(${c2} 15%, transparent 20%);\n`;
+    css += `  background-size: ${patternSize*2}px ${patternSize*2}px;\n`;
+    css += `  background-position: 0 0, ${patternSize}px ${patternSize/2}px, ${patternSize/2}px ${patternSize}px;\n`;
+    break;
+
+// 7. Glitter – tiny sparkling dots created with a repeating radial gradient.
+case 'glitter':
+    css += `  background-color: ${c1};\n`;
+    css += `  background-image: radial-gradient(${c2} 1px, transparent 1px);\n`;
+    css += `  background-size: ${patternSize/5}px ${patternSize/5}px;\n`;
+    break;
+
+// 8. Grid – a classic grid pattern using two perpendicular linear gradients.
+case 'grid':
+    css += `  background-color: ${c1};\n`;
+    css += `  background-image: linear-gradient(${c2} 1px, transparent 1px), linear-gradient(90deg, ${c2} 1px, transparent 1px);\n`;
+    css += `  background-size: ${patternSize}px ${patternSize}px;\n`;
+    break;
+
+// 9. Brushstroke – organic, soft strokes created with overlapping elliptical radial gradients.
+case 'brushstroke':
+    css += `  background-color: ${c1};\n`;
+    css += `  background-image: radial-gradient(ellipse at 30% 30%, ${c2} 25%, transparent 26%),\n`;
+    css += `                    radial-gradient(ellipse at 70% 70%, ${c2} 25%, transparent 26%);\n`;
+    css += `  background-size: ${patternSize*2}px ${patternSize*2}px;\n`;
+    break;
+
+// 10. Abstract Splatter – a playful, scattered dot pattern evoking an artistic splatter.
+case 'abstractSplatter':
+    css += `  background-color: ${c1};\n`;
+    css += `  background-image: radial-gradient(circle at 15% 20%, ${c2} 10%, transparent 11%),\n`;
+    css += `                    radial-gradient(circle at 80% 30%, ${c2} 8%, transparent 9%),\n`;
+    css += `                    radial-gradient(circle at 50% 60%, ${c2} 12%, transparent 13%),\n`;
+    css += `                    radial-gradient(circle at 20% 80%, ${c2} 9%, transparent 10%),\n`;
+    css += `                    radial-gradient(circle at 85% 80%, ${c2} 10%, transparent 11%);\n`;
+    css += `  background-size: ${patternSize*2}px ${patternSize*2}px;\n`;
+    break;
+
+// 11. Radial Gradient – a centered spotlight effect with a smooth color transition.
+case 'radialGradient':
+    css += `  background: radial-gradient(circle at center, ${c1} 0%, ${c1} 40%, ${c2} 100%);\n`;
+    css += `  background-size: ${patternSize}px ${patternSize}px;\n`;
+    break;
+
+// 12. Conic Gradient – a vibrant pie-chart style gradient with multiple stops.
+case 'conicGradient':
+    css += `  background: conic-gradient(from 0deg, ${c1} 0%, ${c2} 33%, ${c1} 66%, ${c2} 100%);\n`;
+    css += `  background-size: ${patternSize*2}px ${patternSize*2}px;\n`;
+    break;
+
+// 13. Gradient Double – dual-tone horizontal bands that alternate colors.
+case 'gradientDouble':
+    css += `  background: linear-gradient(90deg, ${c1} 0%, ${c1} 40%, ${c2} 40%, ${c2} 60%, ${c1} 60%, ${c1} 100%);\n`;
+    css += `  background-size: ${patternSize*2}px ${patternSize}px;\n`;
+    break;
+
+// 14. Striped Gradient – dynamic, angled stripes that repeat seamlessly.
+case 'stripedGradient':
+    css += `  background: repeating-linear-gradient(45deg, ${c1}, ${c1} ${patternSize/4}px, ${c2} ${patternSize/4}px, ${c2} ${patternSize/2}px);\n`;
+    break;
+
+// 15. Multi Gradient – layered gradients that blend via multiply for a rich texture.
+case 'multiGradient':
+    css += `  background: linear-gradient(90deg, ${c1} 0%, ${c2} 50%), linear-gradient(90deg, ${c2} 50%, ${c1} 100%);\n`;
+    css += `  background-blend-mode: multiply;\n`;
+    css += `  background-size: ${patternSize*2}px ${patternSize}px;\n`;
+    break;
+
+// 16. Diagonal Lines – crisp, repeating diagonal stripes with clear segmentation.
+case 'diagonalLines':
+    css += `  background-color: ${c1};\n`;
+    css += `  background-image: repeating-linear-gradient(45deg, ${c2}, ${c2} ${patternSize/5}px, transparent ${patternSize/5}px, transparent ${patternSize/2}px);\n`;
+    break;
+
+    case 'mesh':
+    css += `  background-color: ${c1};\n`;
+    css += `  background-image: repeating-linear-gradient(45deg, ${c2} 0, ${c2} ${patternSize/8}px, transparent ${patternSize/8}px, transparent ${patternSize/4}px),\n`;
+    css += `                    repeating-linear-gradient(-45deg, ${c2} 0, ${c2} ${patternSize/8}px, transparent ${patternSize/8}px, transparent ${patternSize/4}px),\n`;
+    css += `                    radial-gradient(circle, ${c2} 1px, transparent 1px);\n`;
+    css += `  background-size: ${patternSize}px ${patternSize}px, ${patternSize}px ${patternSize}px, ${patternSize/2}px ${patternSize/2}px;\n`;
+    break;
+// 18. Hexagons – an angular, honeycomb-inspired look using overlapping linear gradients.
+case 'hexagons':
+    css += `  background-color: ${c1};\n`;
+    css += `  background-image: linear-gradient(60deg, ${c2} 25%, transparent 25%), linear-gradient(120deg, ${c2} 25%, transparent 25%),\n`;
+    css += `                    linear-gradient(60deg, transparent 75%, ${c2} 75%), linear-gradient(120deg, transparent 75%, ${c2} 75%);\n`;
+    css += `  background-size: ${patternSize*2}px ${patternSize*2}px;\n`;
+    break;
+
+// 19. Splatter – artistic splatters formed by varied radial gradients for a dynamic texture.
+case 'splatter':
+    css += `  background-color: ${c1};\n`;
+    css += `  background-image: radial-gradient(circle at 20% 20%, ${c2} 15%, transparent 16%),\n`;
+    css += `                    radial-gradient(circle at 70% 30%, ${c2} 10%, transparent 11%),\n`;
+    css += `                    radial-gradient(circle at 40% 60%, ${c2} 12%, transparent 13%),\n`;
+    css += `                    radial-gradient(circle at 80% 80%, ${c2} 8%, transparent 9%);\n`;
+    css += `  background-size: ${patternSize*2}px ${patternSize*2}px;\n`;
+    break;
+
+// 20. Scattered Dots – playful, randomly placed dots using small radial gradients.
+case 'scatteredDots':
+    css += `  background-color: ${c1};\n`;
+    css += `  background-image: radial-gradient(${c2} 1px, transparent 1px), radial-gradient(${c2} 1px, transparent 1px);\n`;
+    css += `  background-size: ${patternSize/2}px ${patternSize/2}px;\n`;
+    css += `  background-position: 0 0, ${patternSize/3}px ${patternSize/3}px;\n`;
+    break;
+
+// Circuit Board – mimics circuit traces and nodes using angled traces and centered “nodes”
+case 'circuit':
+    css += `  background-color: ${c1};\n`;
+    css += `  /* Diagonal traces */\n`;
+    css += `  background-image: repeating-linear-gradient(45deg, ${c2} 0, ${c2} 1px, transparent 1px, transparent ${patternSize/3}px),\n`;
+    css += `                    repeating-linear-gradient(-45deg, ${c2} 0, ${c2} 1px, transparent 1px, transparent ${patternSize/3}px),\n`;
+    css += `                    /* Node dots at each cell center */\n`;
+    css += `                    radial-gradient(circle at center, ${c2} 15%, transparent 16%);\n`;
+    css += `  background-size: ${patternSize*1.5}px ${patternSize*1.5}px, ${patternSize*1.5}px ${patternSize*1.5}px, ${patternSize}px ${patternSize}px;\n`;
+    break;
+// Retro Grid – a bold, pixelated grid with thicker lines and glowing intersections for a vintage computer vibe
+case 'retroGrid':
+    css += `  background-color: ${c1};\n`;
+    css += `  background-image: \n`;
+    css += `                    /* Horizontal lines */\n`;
+    css += `                    linear-gradient(${c2} 3px, transparent 3px),\n`;
+    css += `                    /* Vertical lines */\n`;
+    css += `                    linear-gradient(90deg, ${c2} 3px, transparent 3px),\n`;
+    css += `                    /* Glowing intersections */\n`;
+    css += `                    radial-gradient(circle at center, ${c2} 3px, transparent 4px);\n`;
+    css += `  background-size: ${patternSize}px ${patternSize}px;\n`;
+    break;
+
+
+// 23. Woven Fabric Pattern – simulates interlaced threads with angled stripes.
+case 'woven':
+    css += `  background-color: ${c1};\n`;
+    css += `  background-image: linear-gradient(135deg, ${c2} 25%, transparent 25%), linear-gradient(225deg, ${c2} 25%, transparent 25%),\n`;
+    css += `                    linear-gradient(45deg, ${c2} 25%, transparent 25%), linear-gradient(315deg, ${c2} 25%, transparent 25%);\n`;
+    css += `  background-size: ${patternSize*2}px ${patternSize*2}px;\n`;
+    break;
+
+// 24. Watercolor Wash – soft, overlapping gradients creating a gentle, artistic wash.
+case 'watercolor':
+    css += `  background: ${c1};\n`;
+    css += `  background-image: linear-gradient(45deg, ${c2}55, ${c1}55), linear-gradient(-45deg, ${c2}33, ${c1}33);\n`;
+    css += `  background-blend-mode: multiply;\n`;
+    break;
+
+// 25. Galaxy Swirl – a deep, swirling effect with a central burst and starry accents.
+case 'galaxy':
+    css += `  background: radial-gradient(ellipse at center, ${c2} 0%, ${c1} 70%);\n`;
+    css += `  background-image: radial-gradient(circle at ${patternSize/2}px ${patternSize/2}px, rgba(255,255,255,0.2), transparent ${patternSize/2}px);\n`;
+    css += `  background-size: ${patternSize*2}px ${patternSize*2}px;\n`;
+    break;
+
+// 26. Stardust Pattern – tiny, scattered star-like dots reminiscent of a starry night.
+case 'stardust':
+    css += `  background-color: ${c1};\n`;
+    css += `  background-image: radial-gradient(${c2} 1px, transparent 1px);\n`;
+    css += `  background-size: ${patternSize/4}px ${patternSize/4}px;\n`;
+    break;
+
+// 27. Concrete Texture – an industrial, mottled look created via an embedded SVG filter.
+case 'concrete':
+    css += `  background-color: ${c1};\n`;
+    css += `  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100'%3E%3Cfilter id='concreteFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23concreteFilter)' fill='%23${c2.replace('#','')}'/%3E%3C/svg%3E");\n`;
+    css += `  background-blend-mode: multiply;\n`;
+    break;
+
+// 28. Burlap Texture – a rough, woven pattern rendered using an embedded SVG pattern.
+case 'burlap':
+    css += `  background-color: ${c1};\n`;
+    css += `  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='40' height='40'%3E%3Cdefs%3E%3Cpattern id='burlapPattern' width='10' height='10' patternUnits='userSpaceOnUse'%3E%3Cpath d='M0 0 L10 10 M10 0 L0 10' stroke='%23${c2.replace('#','')}' stroke-width='0.5'/%3E%3C/pattern%3E%3C/defs%3E%3Crect width='100%25' height='100%25' fill='url(%23burlapPattern)'/%3E%3C/svg%3E");\n`;
+    break;
+
+// 29. Squiggles – a playful pattern of wavy, squiggly lines using repeating gradients.
+case 'squiggles':
+    css += `  background-color: ${c1};\n`;
+    css += `  background-image: repeating-linear-gradient(45deg, ${c2}, ${c2} ${patternSize/8}px, transparent ${patternSize/8}px, transparent ${patternSize/4}px);\n`;
+    css += `  background-size: ${patternSize}px ${patternSize}px;\n`;
+    break;
+
+// 30. Brush Strokes Variation – a softer, artistic rendition of brush strokes with subtle overlaps.
+case 'brush':
+    css += `  background-color: ${c1};\n`;
+    css += `  background-image: radial-gradient(ellipse at 40% 40%, ${c2} 30%, transparent 31%), radial-gradient(ellipse at 60% 60%, ${c2} 30%, transparent 31%);\n`;
+    css += `  background-size: ${patternSize*2}px ${patternSize*2}px;\n`;
+    break;
+
+// Background batch 3: Based on https://superdesigner.co/tools/css-backgrounds
+// 1. Radial Node Grid
+case 'radialNodeGrid':
+    css += `  background: radial-gradient(transparent 34%, ${c2} 35%, ${c2} 45%, transparent 46%), radial-gradient(circle at left, transparent 39%, ${c2}80 40%, ${c2}80 45%, transparent 46%), radial-gradient(circle at right, transparent 39%, ${c2}80 40%, ${c2}80 45%, transparent 46%);\n`;
+    css += `  background-size: ${patternSize}em ${patternSize}em;\n`;
+    css += `  background-color: ${c1};\n`;
+    css += `  opacity: 1;\n`;
+    break;
+
+// 2. Diagonal Fade Stripes
+case 'diagonalFadeStripes':
+    css += `  background: linear-gradient(-45deg, ${c2}99 20%, transparent 20% 80%, ${c2}99 80% 100%), linear-gradient(45deg, ${c2}99 20%, transparent 20% 80%, ${c2}99 80% 100%), linear-gradient(-45deg, ${c1} 33%, transparent 33% 66%, ${c1} 66%), linear-gradient(45deg, transparent 33%, ${c2} 33% 66%, transparent 66%);\n`;
+    css += `  background-size: ${patternSize}em ${patternSize}em;\n`;
+    css += `  background-color: ${c1};\n`;
+    css += `  opacity: 1;\n`;
+    break;
+
+// 3. Corner Gradient Circles
+case 'cornerGradientCircles':
+    css += `  background: radial-gradient(circle at top left, transparent 19%, ${c2} 20%, ${c2} 25%, transparent 21%, transparent 100%), radial-gradient(circle at bottom right, transparent 19%, ${c2} 20%, ${c2} 25%, transparent 26%), radial-gradient(circle at bottom left, ${c2} 25%, transparent 26%), radial-gradient(circle at top right, ${c2} 25%, transparent 26%);\n`;
+    css += `  background-size: ${patternSize}em ${patternSize}em;\n`;
+    css += `  background-color: ${c1};\n`;
+    css += `  opacity: 1;\n`;
+    break;
+
+// 4. Offset Corner Circles
+case 'offsetCornerCircles':
+    css += `  background: radial-gradient(circle at bottom left, transparent 25%, ${c2} 25.5%, ${c2} 36%, transparent 37%, transparent 100%), radial-gradient(circle at top right, transparent 34%, ${c2} 34.5%, ${c2} 45.5%, transparent 46%, transparent 100%);\n`;
+    css += `  background-size: ${patternSize}em ${patternSize}em;\n`;
+    css += `  background-color: ${c1};\n`;
+    css += `  opacity: 1;\n`;
+    break;
+
+// 5. Layered Linear Blend
+case 'layeredLinearBlend':
+    css += `  background: linear-gradient(45deg, ${c2}80 25%, transparent 21%), linear-gradient(315deg, ${c2}80 25%, transparent 21%), linear-gradient(45deg, ${c2} 10%, transparent 11%), linear-gradient(315deg, ${c2} 10%, transparent 11%), linear-gradient(135deg, ${c2}80 25%, transparent 21%), linear-gradient(225deg, ${c2}80 25%, transparent 21%), linear-gradient(135deg, ${c2} 10%, transparent 11%), linear-gradient(225deg, ${c2} 10%, transparent 11%), radial-gradient(${c2} 20%, transparent 21%);\n`;
+    css += `  background-size: ${patternSize}em ${patternSize}em;\n`;
+    css += `  background-color: ${c1};\n`;
+    css += `  opacity: 1;\n`;
+    break;
+
+// 6. Micro Radial Mesh
+case 'microRadialMesh':
+    css += `  background: radial-gradient(${c2} 10%, transparent 10%, transparent 39%, ${c2} 40%, ${c2} 45%, transparent 46%), radial-gradient(circle at top left, ${c2} 4%, transparent 5%, transparent 19%, ${c2} 20%, ${c2} 22%, transparent 23%), radial-gradient(circle at top right, ${c2} 4%, transparent 5%, transparent 19%, ${c2} 20%, ${c2} 22%, transparent 23%), radial-gradient(circle at bottom left, ${c2} 4%, transparent 5%, transparent 19%, ${c2} 20%, ${c2} 22%, transparent 23%), radial-gradient(circle at bottom right, ${c2} 4%, transparent 5%, transparent 19%, ${c2} 20%, ${c2} 22%, transparent 23%);\n`;
+    css += `  background-size: ${patternSize}em ${patternSize}em;\n`;
+    css += `  background-color: ${c1};\n`;
+    css += `  opacity: 1;\n`;
+    break;
+
+// 7. Quad Radial Bursts
+case 'quadRadialBursts':
+    css += `  background: radial-gradient(circle at 50% 100%, ${c2}80 5%, ${c2} 5% 10%, ${c2}80 10% 15%, ${c2} 15% 20%, ${c2}80 20% 25%, ${c2} 25% 30%, ${c2}80 30% 35%, ${c2} 35% 40%, transparent 40%), radial-gradient(circle at 100% 50%, ${c2}80 5%, ${c2} 5% 10%, ${c2}80 10% 15%, ${c2} 15% 20%, ${c2}80 20% 25%, ${c2} 25% 30%, ${c2}80 30% 35%, ${c2} 35% 40%, transparent 40%),\n`;
+    css += `          radial-gradient(circle at 50% 0%, ${c2}80 5%, ${c2} 5% 10%, ${c2}80 10% 15%, ${c2} 15% 20%, ${c2}80 20% 25%, ${c2} 25% 30%, ${c2}80 30% 35%, ${c2} 35% 40%, transparent 40%), radial-gradient(circle at 0 50%, ${c2}80 5%, ${c2} 5% 10%, ${c2}80 10% 15%, ${c2} 15% 20%, ${c2}80 20% 25%, ${c2} 25% 30%, ${c2}80 30% 35%, ${c2} 35% 40%, transparent 40%);\n`;
+    css += `  background-size: ${patternSize}em ${patternSize}em;\n`;
+    css += `  background-color: ${c1};\n`;
+    css += `  opacity: 1;\n`;
+    break;
+
+// 8. Symmetry Radials
+case 'symmetryRadials':
+    css += `  background: radial-gradient(${c2} 15%, transparent 16%, transparent 49%, ${c2} 50%, transparent 51%), radial-gradient(circle at top left, ${c2} 10%, transparent 10%, transparent 39%, ${c2} 40%, transparent 41%), radial-gradient(circle at top right, ${c2} 10%, transparent 10%, transparent 39%, ${c2} 40%, transparent 41%),\n`;
+    css += `          radial-gradient(circle at bottom left, ${c2} 10%, transparent 10%, transparent 39%, ${c2} 40%, transparent 41%), radial-gradient(circle at bottom right, ${c2} 10%, transparent 10%, transparent 39%, ${c2} 40%, transparent 41%);\n`;
+    css += `  background-size: ${patternSize}em ${patternSize}em;\n`;
+    css += `  background-color: ${c1};\n`;
+    css += `  opacity: 1;\n`;
+    break;
+
+// 9. Edge Radial Lines
+case 'edgeRadialLines':
+    css += `  background: radial-gradient(circle at top, transparent 60%, ${c2} 61%, ${c2} 66%, transparent 67%), radial-gradient(circle at bottom, transparent 60%, ${c2} 61%, ${c2} 66%, transparent 67%),\n`;
+    css += `          radial-gradient(circle at left, transparent 60%, ${c2} 61%, ${c2} 66%, transparent 67%), radial-gradient(circle at right, transparent 60%, ${c2} 61%, ${c2} 66%, transparent 67%);\n`;
+    css += `  background-size: ${patternSize}em ${patternSize}em;\n`;
+    css += `  background-color: ${c1};\n`;
+    css += `  opacity: 1;\n`;
+    break;
+
+// 10. Full Corner Circles
+case 'fullCornerCircles':
+    css += `  background: radial-gradient(circle at top left, transparent 14%, ${c2} 15%, ${c2} 20%, transparent 21%), radial-gradient(circle at top right, transparent 14%, ${c2} 15%, ${c2} 20%, transparent 21%),\n`;
+    css += `          radial-gradient(circle at bottom left, transparent 14%, ${c2} 15%, ${c2} 20%, transparent 21%), radial-gradient(circle at bottom right, transparent 14%, ${c2} 15%, ${c2} 20%, transparent 21%),\n`;
+    css += `          radial-gradient(circle at top, ${c2} 20%, transparent 21%), radial-gradient(circle at bottom, ${c2} 20%, transparent 21%),\n`;
+    css += `          radial-gradient(circle at right, ${c2} 20%, transparent 21%), radial-gradient(circle at left, ${c2} 20%, transparent 21%), radial-gradient(circle, ${c2} 20%, transparent 21%);\n`;
+    css += `  background-size: ${patternSize}em ${patternSize}em;\n`;
+    css += `  background-color: ${c1};\n`;
+    css += `  opacity: 1;\n`;
+    break;
+
+// 11. Vintage Stripe Grid
+case 'vintageStripeGrid':
+    css += `  background: linear-gradient(135deg, ${c1} 15%, transparent 16%, transparent 84%, ${c1} 85%), linear-gradient(225deg, ${c1} 15%, transparent 16%, transparent 84%, ${c1} 85%),\n`;
+    css += `          linear-gradient(135deg, ${c2} 25%, transparent 25%), linear-gradient(225deg, ${c2} 25%, transparent 25%), linear-gradient(0deg, ${c2} 45%, transparent 25%);\n`;
+    css += `  background-size: ${patternSize}em ${patternSize}em;\n`;
+    css += `  background-color: ${c1};\n`;
+    css += `  opacity: 1;\n`;
+    break;
+
+// 12. Repeating Radial Dots
+case 'repeatingRadialDots':
+    css += `  background: repeating-radial-gradient(circle, ${c2}, transparent 20%);\n`;
+    css += `  background-size: ${patternSize}em ${patternSize}em;\n`;
+    css += `  background-color: ${c1};\n`;
+    css += `  opacity: 1;\n`;
+    break;
+
+// 13. Modern Linear Accent
+case 'modernLinearAccent':
+    css += `  background: linear-gradient(90deg, ${c2} 25%, transparent 26%, transparent 49%, ${c2}80 50%, ${c2}80 75%, transparent 76%);\n`;
+    css += `  background-size: ${patternSize}em ${patternSize}em;\n`;
+    css += `  background-color: ${c1};\n`;
+    css += `  opacity: 1;\n`;
+    break;
+
+// 14. Layered Linear Accent
+case 'layeredLinearAccent':
+    css += `  background: linear-gradient(45deg, ${c2}80 25%, transparent 21%), linear-gradient(315deg, ${c2}80 25%, transparent 21%), linear-gradient(45deg, ${c2} 10%, transparent 11%), linear-gradient(315deg, ${c2} 10%, transparent 11%),\n`;
+    css += `          linear-gradient(135deg, ${c2}80 25%, transparent 21%), linear-gradient(225deg, ${c2}80 25%, transparent 21%), linear-gradient(135deg, ${c2} 10%, transparent 11%), linear-gradient(225deg, ${c2} 10%, transparent 11%),\n`;
+    css += `          radial-gradient(${c2} 20%, transparent 21%);\n`;
+    css += `  background-size: ${patternSize}em ${patternSize}em;\n`;
+    css += `  background-color: ${c1};\n`;
+    css += `  opacity: 1;\n`;
+    break;
+
+// 15. Dual-Tone Angular
+case 'dualToneAngular':
+    css += `  background: linear-gradient(45deg, ${c2} 10%, transparent 10%, transparent 90%, ${c2} 90%), linear-gradient(135deg, transparent 40%, ${c2}80 40%, ${c2}80 60%, transparent 0), linear-gradient(45deg, transparent 40%, ${c2} 40%, ${c2} 60%, transparent 0);\n`;
+    css += `  background-size: ${patternSize}em ${patternSize}em;\n`;
+    css += `  background-color: ${c1};\n`;
+    css += `  opacity: 1;\n`;
+    break;
+
+// 16. Quad Layered Grid
+case 'quadLayeredGrid':
+    css += `  background: linear-gradient(45deg, ${c2} 20%, transparent 20%, transparent 80%, ${c2} 80%, ${c2} 100%), linear-gradient(135deg, ${c2} 20%, transparent 20%, transparent 80%, ${c2} 80%, ${c2} 100%),\n`;
+    css += `          linear-gradient(45deg, ${c2} 20%, transparent 20%, transparent 80%, ${c2} 80%, ${c2} 100%), linear-gradient(135deg, ${c2} 20%, transparent 20%, transparent 80%, ${c2} 80%, ${c2} 100%),\n`;
+    css += `          radial-gradient(circle at top, transparent 9%, ${c2} 10%, ${c2} 15%, transparent 16%), radial-gradient(circle at bottom, transparent 9%, ${c2} 10%, ${c2} 15%, transparent 16%),\n`;
+    css += `          radial-gradient(circle at right, transparent 9%, ${c2} 10%, ${c2} 15%, transparent 16%), radial-gradient(circle at left, transparent 9%, ${c2} 10%, ${c2} 15%, transparent 16%);\n`;
+    css += `  background-size: ${patternSize}em ${patternSize}em;\n`;
+    css += `  background-color: ${c1};\n`;
+    css += `  opacity: 1;\n`;
+    break;
+
+// 17. Centered Radial Nodes
+case 'centeredRadialNodes':
+    css += `  background: radial-gradient(circle at top, transparent 14%, ${c2} 15%, ${c2} 19%, transparent 20%), radial-gradient(circle at bottom, transparent 14%, ${c2} 15%, ${c2} 19%, transparent 20%),\n`;
+    css += `          radial-gradient(circle at right, transparent 14%, ${c2} 15%, ${c2} 19%, transparent 20%), radial-gradient(circle at left, transparent 14%, ${c2} 15%, ${c2} 19%, transparent 20%),\n`;
+    css += `          radial-gradient(circle at center, ${c2} 25%, transparent 26%), radial-gradient(circle at bottom left, ${c2} 12%, transparent 13%),\n`;
+    css += `          radial-gradient(circle at bottom right, ${c2} 12%, transparent 13%), radial-gradient(circle at top left, ${c2} 12%, transparent 13%),\n`;
+    css += `          radial-gradient(circle at top right, ${c2} 12%, transparent 13%);\n`;
+    css += `  background-size: ${patternSize}em ${patternSize}em;\n`;
+    css += `  background-color: ${c1};\n`;
+    css += `  opacity: 1;\n`;
+    break;
+
+// 18. Complex Radial Overlay
+case 'complexRadialOverlay':
+    css += `  background: linear-gradient(45deg, transparent 34%, ${c2} 35%, ${c2} 40%, transparent 41%, transparent 59%, ${c2} 60%, ${c2} 65%, transparent 66%), linear-gradient(135deg, transparent 34%, ${c2} 35%, ${c2} 40%, transparent 41%, transparent 59%, ${c2} 60%, ${c2} 65%, transparent 66%),\n`;
+    css += `          radial-gradient(${c2} 10%, transparent 11%), radial-gradient(circle at left, ${c2} 5%, transparent 6%), radial-gradient(circle at right, ${c2} 5%, transparent 6%),\n`;
+    css += `          radial-gradient(circle at top, ${c2} 5%, transparent 6%), radial-gradient(circle at bottom, ${c2} 5%, transparent 6%);\n`;
+    css += `  background-size: ${patternSize}em ${patternSize}em;\n`;
+    css += `  background-color: ${c1};\n`;
+    css += `  opacity: 1;\n`;
+    break;
+
+    
+
+
                     }
                     
                     css += '  margin: 0;\n  padding: 0;\n  min-height: 100vh;\n}\n\n';
