@@ -1,0 +1,1860 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chords</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tone/14.8.49/Tone.js"></script>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: linear-gradient(135deg, #1e1e2e 0%, #2d2d44 100%);
+            color: #fff;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 20px;
+        }
+        
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 20px;
+            padding: 30px;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+        }
+        
+        h1 {
+            text-align: center;
+            margin-bottom: 30px;
+            font-size: 2.5em;
+            background: linear-gradient(45deg, #667eea 0%, #764ba2 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        
+        .controls {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+        
+        .control-group {
+            display: flex;
+            flex-direction: column;
+        }
+        
+        label {
+            margin-bottom: 8px;
+            font-weight: 500;
+            color: #b8b8d0;
+            font-size: 0.9em;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        select {
+            padding: 12px 16px;
+            border-radius: 12px;
+            border: 2px solid rgba(255, 255, 255, 0.1);
+            background: rgba(255, 255, 255, 0.1);
+            color: #fff;
+            font-size: 16px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        select:hover {
+            border-color: rgba(255, 255, 255, 0.3);
+            background: rgba(255, 255, 255, 0.15);
+        }
+        
+        select:focus {
+            outline: none;
+            border-color: #667eea;
+            box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.2);
+        }
+        
+        .status-panel {
+            background: rgba(255, 255, 255, 0.08);
+            border-radius: 16px;
+            padding: 20px;
+            margin-bottom: 30px;
+            text-align: center;
+            min-height: 100px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .chord-display {
+            font-size: 3em;
+            font-weight: bold;
+            margin-bottom: 10px;
+            background: linear-gradient(45deg, #f093fb 0%, #f5576c 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        
+        .instructions {
+            font-size: 1.1em;
+            color: #b8b8d0;
+            margin-bottom: 10px;
+        }
+        
+        .timer {
+            font-size: 2em;
+            color: #ffd700;
+            font-weight: bold;
+        }
+        
+        .feedback {
+            font-size: 1.2em;
+            padding: 10px;
+            border-radius: 8px;
+            margin-top: 10px;
+            font-weight: 500;
+        }
+        
+        .feedback.success {
+            background: rgba(76, 175, 80, 0.2);
+            color: #4caf50;
+        }
+        
+        .feedback.error {
+            background: rgba(244, 67, 54, 0.2);
+            color: #f44336;
+        }
+        
+        .piano-container {
+            position: relative;
+            margin: 0 auto;
+            padding: 20px;
+            background: rgba(0, 0, 0, 0.3);
+            border-radius: 16px;
+            overflow-x: auto;
+            user-select: none;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+        }
+        
+        .piano {
+            position: relative;
+            display: flex;
+            margin: 0 auto;
+            width: fit-content;
+            min-height: 200px;
+        }
+        
+        .key {
+            cursor: pointer;
+            transition: all 0.1s ease;
+            position: relative;
+            user-select: none;
+        }
+        
+        .key.white {
+            width: 50px;
+            height: 200px;
+            background: #fff;
+            border: 1px solid #ccc;
+            border-radius: 0 0 8px 8px;
+            z-index: 1;
+        }
+        
+        .key.black {
+            width: 30px;
+            height: 130px;
+            background: #000;
+            border-radius: 0 0 6px 6px;
+            position: absolute;
+            z-index: 2;
+            margin-left: -15px;
+        }
+        
+        .key.active {
+            background: #ffd700 !important;
+            box-shadow: 0 0 20px rgba(255, 215, 0, 0.8);
+        }
+        
+        .key.highlight {
+            background: #667eea !important;
+            box-shadow: 0 0 20px rgba(102, 126, 234, 0.8);
+        }
+        
+        .key.black.highlight {
+            background: #4a5fb8 !important;
+            box-shadow: 0 0 25px rgba(74, 95, 184, 1), inset 0 0 10px rgba(102, 126, 234, 0.6);
+            border: 2px solid #667eea;
+        }
+        
+        .key.pressed {
+            transform: translateY(2px);
+            box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.3);
+        }
+        
+        .key-label {
+            position: absolute;
+            bottom: 10px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 12px;
+            color: #333;
+            font-weight: bold;
+        }
+        
+        .key.black .key-label {
+            color: #fff;
+            bottom: 20px;
+        }
+        
+        .scale-dot {
+            position: absolute;
+            bottom: 8px;
+            right: 8px;
+            width: 8px;
+            height: 8px;
+            background: #ffd700;
+            border-radius: 50%;
+            box-shadow: 0 0 4px rgba(255, 215, 0, 0.6);
+            z-index: 10;
+        }
+        
+        .key.black .scale-dot {
+            bottom: 10px;
+            right: 6px;
+            width: 6px;
+            height: 6px;
+        }
+        
+        .midi-status {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            padding: 10px 20px;
+            border-radius: 20px;
+            font-size: 14px;
+            font-weight: 500;
+            z-index: 1000;
+        }
+        
+        .midi-status.connected {
+            background: rgba(76, 175, 80, 0.2);
+            color: #4caf50;
+        }
+        
+        .midi-status.disconnected {
+            background: rgba(244, 67, 54, 0.2);
+            color: #f44336;
+        }
+        
+        .instrument-toggle {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            padding: 12px 24px;
+            background: linear-gradient(45deg, #667eea 0%, #764ba2 100%);
+            border: none;
+            border-radius: 20px;
+            color: white;
+            font-weight: 500;
+            cursor: pointer;
+            transition: transform 0.2s ease;
+            z-index: 1000;
+        }
+        
+        .instrument-toggle:hover {
+            transform: translateY(-2px);
+        }
+    </style>
+</head>
+<body>
+    <!-- Welcome Modal -->
+    <div id="welcomeModal" style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.8); z-index: 10000; display: flex; align-items: center; justify-content: center;">
+        <div style="background: rgba(255, 255, 255, 0.1); border-radius: 20px; padding: 40px; max-width: 500px; width: 90%; backdrop-filter: blur(10px); box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3); text-align: center;">
+            <h2 style="color: #fff; margin-bottom: 20px; font-size: 2em; background: linear-gradient(45deg, #667eea 0%, #764ba2 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">Welcome to Chords!</h2>
+            <p style="color: #b8b8d0; margin-bottom: 20px; line-height: 1.6;">Learn and practice piano chords with interactive exercises. Connect a MIDI keyboard for the best experience, or use your mouse to click the keys.</p>
+            <div id="modalMidiStatus" style="padding: 15px; border-radius: 10px; margin: 20px 0; background: rgba(244, 67, 54, 0.2); color: #f44336;">
+                <strong>MIDI Status:</strong> No MIDI devices detected. You can still use the app by clicking the piano keys with your mouse.
+            </div>
+            <button id="startButton" style="padding: 15px 30px; background: linear-gradient(45deg, #667eea 0%, #764ba2 100%); border: none; border-radius: 12px; color: white; font-size: 16px; font-weight: 500; cursor: pointer; transition: transform 0.2s ease;">Get Started</button>
+        </div>
+    </div>
+
+    <div class="midi-status disconnected" id="midiStatus">MIDI: Click piano keys</div>
+    <button class="instrument-toggle" id="instrumentToggle">Switch to Synth</button>
+    
+    <div class="container">
+        <h1>Chords</h1>
+        
+        <div class="controls">
+            <div class="control-group">
+                <label for="scaleSelect">Scale</label>
+                <select id="scaleSelect">
+                    <option value="C">C Major</option>
+                    <option value="G">G Major</option>
+                    <option value="D">D Major</option>
+                    <option value="A">A Major</option>
+                    <option value="E">E Major</option>
+                    <option value="B">B Major (C♭ Major)</option>
+                    <option value="F">F Major</option>
+                    <option value="Bb">B♭ Major (A# Major)</option>
+                    <option value="Eb">E♭ Major (D# Major)</option>
+                    <option value="Ab">A♭ Major (G# Major)</option>
+                    <option value="Db">D♭ Major (C# Major)</option>
+                    <option value="Gb">G♭ Major (F# Major)</option>
+                    <option value="Am">A Minor</option>
+                    <option value="Em">E Minor</option>
+                    <option value="Bm">B Minor</option>
+                    <option value="F#m">F# Minor (G♭ Minor)</option>
+                    <option value="C#m">C# Minor (D♭ Minor)</option>
+                    <option value="G#m">G# Minor (A♭ Minor)</option>
+                    <option value="Dm">D Minor</option>
+                    <option value="Gm">G Minor</option>
+                    <option value="Cm">C Minor</option>
+                    <option value="Fm">F Minor</option>
+                    <option value="Bbm">B♭ Minor (A# Minor)</option>
+                    <option value="Ebm">E♭ Minor (D# Minor)</option>
+                </select>
+            </div>
+            
+            <div class="control-group">
+                <label for="modeSelect">Mode</label>
+                <select id="modeSelect">
+                    <option value="learn">Learn</option>
+                    <option value="play-quiz">Play Quiz</option>
+                    <option value="listen-quiz">Listen Quiz</option>
+                    <option value="scale-practice">Scale Practice</option>
+                </select>
+            </div>
+            
+            <div class="control-group">
+                <label for="chordSelect">Chord</label>
+                <select id="chordSelect"></select>
+            </div>
+            
+            <div class="control-group" id="answerGroup" style="display: none;">
+                <label for="answerSelect">Your Answer</label>
+                <select id="answerSelect">
+                    <option value="">Select the chord you heard...</option>
+                </select>
+            </div>
+            
+            <div class="control-group">
+                <label for="progressionSelect">Progression</label>
+                <select id="progressionSelect">
+                    <option value="all">All Chords</option>
+                    <option value="I-IV-V">I - IV - V</option>
+                    <option value="I-V-vi-IV">I - V - vi - IV</option>
+                    <option value="I-vi-IV-V">I - vi - IV - V</option>
+                    <option value="ii-V-I">ii - V - I</option>
+                    <option value="I-IV-I-V">I - IV - I - V (12 Bar Blues)</option>
+                    <option value="vi-IV-I-V">vi - IV - I - V</option>
+                </select>
+            </div>
+            
+            <div class="control-group">
+                <label>
+                    <input type="checkbox" id="showScaleNotes" checked style="margin-right: 8px;">
+                    Show Scale Notes
+                </label>
+            </div>
+            
+            <div class="control-group">
+                <label>&nbsp;</label>
+                <button id="hooktheoryButton" style="padding: 8px 12px; border-radius: 8px; border: 2px solid rgba(255, 255, 255, 0.1); background: rgba(255, 255, 255, 0.1); color: #fff; font-size: 14px; cursor: pointer; transition: all 0.3s ease;">↗</button>
+            </div>
+            
+            <div class="control-group">
+                <label for="volumeSlider">Volume</label>
+                <input type="range" id="volumeSlider" min="0" max="100" value="70" style="width: 100%; height: 8px; border-radius: 4px; background: rgba(255, 255, 255, 0.2); outline: none; -webkit-appearance: none; cursor: pointer;">
+            </div>
+        </div>
+        
+        <div class="status-panel">
+            <div class="chord-display" id="chordDisplay">Welcome!</div>
+            <div class="instructions" id="instructions">Select a scale and mode to begin</div>
+        <div style="font-size: 0.8em; color: #888; margin-top: 5px;">Press ESC or SPACE to stop all notes</div>
+            <div class="timer" id="timer" style="display: none;"></div>
+            <div class="feedback" id="feedback" style="display: none;"></div>
+        </div>
+        
+        <div class="piano-container">
+            <div class="piano" id="piano"></div>
+        </div>
+    </div>
+    
+    <script>
+        // Immediate DOM check - run before anything else
+        document.addEventListener('DOMContentLoaded', function() {
+            console.log('DOM LOADED CHECK - This should appear in console');
+            
+            // Direct DOM test - add a simple colored element to test visibility
+            const container = document.querySelector('.piano-container');
+            const testElement = document.createElement('div');
+            testElement.style.width = '100%';
+            testElement.style.height = '50px';
+            testElement.style.background = 'purple';
+            testElement.style.color = 'white';
+            testElement.style.textAlign = 'center';
+            testElement.style.padding = '15px';
+            testElement.textContent = 'DOM Test Element - Piano Loading...';
+            
+            if (container) {
+                // Insert at beginning of container
+                if (container.firstChild) {
+                    container.insertBefore(testElement, container.firstChild);
+                } else {
+                    container.appendChild(testElement);
+                }
+                console.log('Test element added to piano container');
+            } else {
+                document.body.appendChild(testElement);
+                console.log('Piano container not found, added test to body');
+            }
+        });
+
+        // Music theory data
+        const noteNames = ['C', 'C#', 'D', 'D#', 'E', 'F', 'F#', 'G', 'G#', 'A', 'A#', 'B'];
+        const intervals = {
+            major: [0, 2, 4, 5, 7, 9, 11],
+            minor: [0, 2, 3, 5, 7, 8, 10]
+        };
+        
+        // Chord definitions (intervals from root)
+        const chordTypes = {
+            // Triads
+            'major': [0, 4, 7],
+            'minor': [0, 3, 7],
+            'dim': [0, 3, 6],
+            'aug': [0, 4, 8],
+            
+            // Seventh chords
+            'maj7': [0, 4, 7, 11],
+            'min7': [0, 3, 7, 10],
+            '7': [0, 4, 7, 10],
+            'dim7': [0, 3, 6, 9],
+            'm7b5': [0, 3, 6, 10],
+            
+            // Extended chords
+            'maj9': [0, 4, 7, 11, 14],
+            'min9': [0, 3, 7, 10, 14],
+            '9': [0, 4, 7, 10, 14],
+            
+            // Sus chords
+            'sus2': [0, 2, 7],
+            'sus4': [0, 5, 7],
+            
+            // 6th chords
+            '6': [0, 4, 7, 9],
+            'min6': [0, 3, 7, 9]
+        };
+        
+        // Roman numeral notation
+        const romanNumerals = {
+            major: ['I', 'ii', 'iii', 'IV', 'V', 'vi', 'vii°'],
+            minor: ['i', 'ii°', 'III', 'iv', 'v', 'VI', 'VII']
+        };
+        
+        // Chord progressions
+        const progressions = {
+            'I-IV-V': ['I', 'IV', 'V'],
+            'I-V-vi-IV': ['I', 'V', 'vi', 'IV'],
+            'I-vi-IV-V': ['I', 'vi', 'IV', 'V'],
+            'ii-V-I': ['ii', 'V', 'I'],
+            'I-IV-I-V': ['I', 'I', 'I', 'I', 'IV', 'IV', 'I', 'I', 'V', 'IV', 'I', 'V'],
+            'vi-IV-I-V': ['vi', 'IV', 'I', 'V']
+        };
+        
+        // Global state
+        let sampler = null;
+        let synthSampler = null;
+        let fallbackSynth = null;
+        let currentInstrument = 'piano';
+        let midiAccess = null;
+        let midiInput = null;
+        let activeNotes = new Set();
+        let currentScale = 'C';
+        let currentMode = 'learn';
+        let currentChordIndex = 0;
+        let currentChord = null;
+        let highlightedNotes = new Set();
+        let quizTimer = null;
+        let quizTimeout = null;
+        let isWaitingForChord = false;
+        let clickedNotes = new Set();
+        let clickTimeout = null;
+        let isTouchDevice = false;
+        let showScaleNotes = true;
+        let masterVolume = 0.7; // Default volume (70%)
+        
+        // Function to update volume for all instruments
+        function updateVolume(volumePercent) {
+            masterVolume = volumePercent / 100;
+            const volumeDb = masterVolume === 0 ? -Infinity : 20 * Math.log10(masterVolume) - 10;
+            
+            if (sampler) {
+                sampler.volume.value = volumeDb;
+            }
+            if (synthSampler) {
+                synthSampler.volume.value = volumeDb - 8; // Keep synth offset
+            }
+            if (fallbackSynth) {
+                fallbackSynth.volume.value = volumeDb - 10; // Keep fallback offset
+            }
+        }
+        
+        // Initialize Tone.js samplers - but don't start audio context yet
+        async function initAudio() {
+            try {
+                // Don't call Tone.start() here - wait for user interaction
+                console.log('Audio setup prepared (will start on first interaction)');
+                
+                // Create fallback synth immediately (but don't start context)
+                fallbackSynth = new Tone.PolySynth(Tone.Synth, {
+                    oscillator: { type: 'triangle' },
+                    envelope: { attack: 0.005, decay: 0.1, sustain: 0.3, release: 1 }
+                }).toDestination();
+                
+                // Piano sampler with fallback
+                sampler = new Tone.Sampler({
+                    urls: {
+                        C4: "C4.mp3",
+                        "D#4": "Ds4.mp3",
+                        "F#4": "Fs4.mp3",
+                        A4: "A4.mp3",
+                    },
+                    release: 1,
+                    baseUrl: "https://tonejs.github.io/audio/salamander/",
+                    onload: () => console.log('Piano samples loaded')
+                }).toDestination();
+                
+                // Improved synth for alternative sound - much warmer and richer
+                synthSampler = new Tone.PolySynth(Tone.Synth, {
+                    oscillator: {
+                        type: 'fatsawtooth',
+                        count: 3,
+                        spread: 30
+                    },
+                    envelope: {
+                        attack: 0.01,
+                        decay: 0.1,
+                        sustain: 0.5,
+                        release: 0.4,
+                        attackCurve: 'exponential'
+                    },
+                    filterEnvelope: {
+                        attack: 0.01,
+                        decay: 0.1,
+                        sustain: 0.9,
+                        release: 0.12,
+                        baseFrequency: 200,
+                        octaves: 7,
+                        exponent: 2
+                    },
+                    volume: -8
+                }).chain(
+                    new Tone.Filter({
+                        frequency: 800,
+                        type: 'lowpass',
+                        rolloff: -12
+                    }),
+                    new Tone.Reverb({
+                        roomSize: 0.3,
+                        dampening: 3000
+                    }),
+                    Tone.Destination
+                );
+                
+                console.log('Audio initialized successfully (context will start on user interaction)');
+            } catch (err) {
+                console.error('Error initializing audio:', err);
+            }
+        }
+        
+        // Get current sampler based on instrument selection
+        function getCurrentSampler() {
+            // Return a consistent fallback synth if samplers aren't loaded yet
+            if (!sampler && !synthSampler) {
+                if (!fallbackSynth) {
+                    fallbackSynth = new Tone.PolySynth(Tone.Synth, {
+                        oscillator: {
+                            type: 'triangle'
+                        },
+                        envelope: {
+                            attack: 0.005,
+                            decay: 0.1,
+                            sustain: 0.3,
+                            release: 1
+                        },
+                        volume: -10
+                    }).toDestination();
+                }
+                return fallbackSynth;
+            }
+            
+            if (currentInstrument === 'piano' && sampler) {
+                return sampler;
+            } else if (currentInstrument === 'synth' && synthSampler) {
+                return synthSampler;
+            }
+            
+            // Return whichever is available
+            return sampler || synthSampler || fallbackSynth;
+        }
+        
+        // FIXED: Single, working piano creation function
+        function createPiano() {
+            console.log('Creating piano with black keys and sound');
+            const pianoContainer = document.querySelector('.piano-container');
+            
+            if (!pianoContainer) {
+                console.error('Piano container not found!');
+                return;
+            }
+            
+            // Remove test element if it exists
+            const testElement = pianoContainer.querySelector('div[style*="purple"]');
+            if (testElement) testElement.remove();
+            
+            pianoContainer.innerHTML = '';
+            
+            const piano = document.createElement('div');
+            piano.id = 'piano';
+            piano.className = 'piano';
+            piano.style.display = 'flex';
+            piano.style.position = 'relative';
+            piano.style.height = '200px';
+            
+            pianoContainer.appendChild(piano);
+            
+            // Piano layout: C3 to B5 (3 octaves)
+            const startOctave = 3;
+            const endOctave = 5;
+            const whiteKeys = ['C', 'D', 'E', 'F', 'G', 'A', 'B'];
+            
+            let whiteKeyIndex = 0;
+            
+            // Create white keys first
+            for (let octave = startOctave; octave <= endOctave; octave++) {
+                for (let noteIndex = 0; noteIndex < whiteKeys.length; noteIndex++) {
+                    const note = whiteKeys[noteIndex];
+                    const noteName = note + octave;
+                    const midiNote = (octave + 1) * 12 + noteNames.indexOf(note);
+                    
+                    const whiteKey = document.createElement('div');
+                    whiteKey.className = 'key white';
+                    whiteKey.dataset.note = noteName;
+                    whiteKey.dataset.midi = midiNote;
+                    whiteKey.style.width = '50px';
+                    whiteKey.style.height = '200px';
+                    whiteKey.style.backgroundColor = 'white';
+                    whiteKey.style.border = '1px solid #ccc';
+                    whiteKey.style.position = 'relative';
+                    whiteKey.style.zIndex = '1';
+                    whiteKey.style.cursor = 'pointer';
+                    
+                    const label = document.createElement('div');
+                    label.className = 'key-label';
+                    label.textContent = noteName;
+                    whiteKey.appendChild(label);
+                    
+                    // FIXED: Proper event handlers with audio
+                    whiteKey.addEventListener('mousedown', async (e) => {
+                        e.preventDefault();
+                        await handleKeyClick(noteName, midiNote, true);
+                    });
+                    
+                    whiteKey.addEventListener('mouseup', (e) => {
+                        e.preventDefault();
+                        handleKeyClick(noteName, midiNote, false);
+                    });
+                    
+                    whiteKey.addEventListener('mouseleave', (e) => {
+                        handleKeyClick(noteName, midiNote, false);
+                    });
+                    
+                    piano.appendChild(whiteKey);
+                    whiteKeyIndex++;
+                }
+            }
+            
+            // Create black keys
+            whiteKeyIndex = 0;
+            for (let octave = startOctave; octave <= endOctave; octave++) {
+                for (let noteIndex = 0; noteIndex < whiteKeys.length; noteIndex++) {
+                    const note = whiteKeys[noteIndex];
+                    
+                    // Add black key after C, D, F, G, A (not after E or B)
+                    if (note === 'C' || note === 'D' || note === 'F' || note === 'G' || note === 'A') {
+                        const blackNote = note + '#';
+                        const noteName = blackNote + octave;
+                        const midiNote = (octave + 1) * 12 + noteNames.indexOf(blackNote);
+                        
+                        const blackKey = document.createElement('div');
+                        blackKey.className = 'key black';
+                        blackKey.dataset.note = noteName;
+                        blackKey.dataset.midi = midiNote;
+                        blackKey.style.width = '30px';
+                        blackKey.style.height = '130px';
+                        blackKey.style.backgroundColor = '#000';
+                        blackKey.style.position = 'absolute';
+                        blackKey.style.left = (whiteKeyIndex * 50 + 35) + 'px';
+                        blackKey.style.zIndex = '2';
+                        blackKey.style.cursor = 'pointer';
+                        blackKey.style.borderRadius = '0 0 6px 6px';
+                        
+                        const label = document.createElement('div');
+                        label.className = 'key-label';
+                        label.textContent = noteName;
+                        label.style.color = 'white';
+                        blackKey.appendChild(label);
+                        
+                        // FIXED: Proper event handlers with audio
+                        blackKey.addEventListener('mousedown', async (e) => {
+                            e.preventDefault();
+                            e.stopPropagation();
+                            await handleKeyClick(noteName, midiNote, true);
+                        });
+                        
+                        blackKey.addEventListener('mouseup', (e) => {
+                            e.preventDefault();
+                            e.stopPropagation();
+                            handleKeyClick(noteName, midiNote, false);
+                        });
+                        
+                        blackKey.addEventListener('mouseleave', (e) => {
+                            handleKeyClick(noteName, midiNote, false);
+                        });
+                        
+                        piano.appendChild(blackKey);
+                    }
+                    whiteKeyIndex++;
+                }
+            }
+            
+            console.log('Piano created with', piano.children.length, 'keys');
+        }
+        
+        // REMOVED: Delete duplicate createPiano functions - keep only the one above
+        
+        // FIXED: Proper initialization function
+        async function init() {
+            console.log('Starting initialization...');
+            
+            try {
+                // Initialize audio setup (but don't start audio context)
+                await initAudio();
+                console.log('Audio setup completed');
+                
+                // Create piano immediately - this should work without audio context
+                createPiano();
+                console.log('Piano created successfully');
+                
+                // Initialize UI
+                updateChordDropdown();
+                updateDisplay();
+                console.log('UI initialized');
+                
+                // Initialize MIDI
+                await initMIDI();
+                console.log('MIDI initialized');
+                
+            } catch (err) {
+                console.error('Initialization error:', err);
+            }
+        }
+        
+        // REMOVED: Delete duplicate init functions and emergency functions
+        
+        // Add instrument toggle functionality at DOM ready
+        document.addEventListener('DOMContentLoaded', () => {
+            // Welcome modal functionality
+            const welcomeModal = document.getElementById('welcomeModal');
+            const startButton = document.getElementById('startButton');
+            const modalMidiStatus = document.getElementById('modalMidiStatus');
+            
+            // Function to update modal MIDI status
+            function updateModalMidiStatus() {
+                if (midiInput) {
+                    modalMidiStatus.innerHTML = `<strong>MIDI Status:</strong> ✓ Connected to ${midiInput.name}`;
+                    modalMidiStatus.style.background = 'rgba(76, 175, 80, 0.2)';
+                    modalMidiStatus.style.color = '#4caf50';
+                } else {
+                    modalMidiStatus.innerHTML = '<strong>MIDI Status:</strong> No MIDI devices detected. You can still use the app by clicking the piano keys with your mouse.';
+                    modalMidiStatus.style.background = 'rgba(244, 67, 54, 0.2)';
+                    modalMidiStatus.style.color = '#f44336';
+                }
+            }
+            
+            // Start button click handler
+            if (startButton) {
+                startButton.addEventListener('click', () => {
+                    if (welcomeModal) {
+                        welcomeModal.style.display = 'none';
+                    }
+                });
+            }
+            
+            // Update modal MIDI status after MIDI initialization
+            setTimeout(() => {
+                updateModalMidiStatus();
+            }, 1000);
+            
+            const toggleButton = document.getElementById('instrumentToggle');
+            if (toggleButton) {
+                toggleButton.addEventListener('click', () => {
+                    currentInstrument = currentInstrument === 'piano' ? 'synth' : 'piano';
+                    toggleButton.textContent = currentInstrument === 'piano' ? 'Switch to Synth' : 'Switch to Piano';
+                    console.log('Switched to:', currentInstrument);
+                });
+            }
+            
+            // Add event listeners for controls
+            const scaleSelect = document.getElementById('scaleSelect');
+            const modeSelect = document.getElementById('modeSelect');
+            const chordSelect = document.getElementById('chordSelect');
+            const progressionSelect = document.getElementById('progressionSelect');
+            const answerSelect = document.getElementById('answerSelect');
+            const showScaleNotesCheckbox = document.getElementById('showScaleNotes');
+            
+            if (scaleSelect) {
+                scaleSelect.addEventListener('change', (e) => {
+                    currentScale = e.target.value;
+                    updateChordDropdown();
+                });
+            }
+            
+            if (modeSelect) {
+                modeSelect.addEventListener('change', (e) => {
+                    currentMode = e.target.value;
+                    
+                    // Show/hide controls based on mode
+                    const chordGroup = document.getElementById('chordSelect').parentElement;
+                    const answerGroup = document.getElementById('answerGroup');
+                    const progressionGroup = document.getElementById('progressionSelect').parentElement;
+                    
+                    if (currentMode === 'scale-practice') {
+                        // Hide chord-related controls in scale practice mode
+                        if (chordGroup) chordGroup.style.display = 'none';
+                        if (progressionGroup) progressionGroup.style.display = 'none';
+                        if (answerGroup) answerGroup.style.display = 'none';
+                    } else {
+                        // Show chord-related controls for other modes
+                        if (chordGroup) chordGroup.style.display = 'flex';
+                        if (progressionGroup) progressionGroup.style.display = 'flex';
+                        
+                        // Only show answer group for listen quiz
+                        if (answerGroup) {
+                            answerGroup.style.display = currentMode === 'listen-quiz' ? 'flex' : 'none';
+                        }
+                    }
+                    
+                    updateDisplay();
+                });
+            }
+            
+            if (chordSelect) {
+                chordSelect.addEventListener('change', (e) => {
+                    currentChordIndex = parseInt(e.target.value);
+                    // Don't call handleListenQuizSelection here - it causes conflicts
+                    if (currentMode !== 'listen-quiz') {
+                        updateDisplay();
+                    }
+                });
+            }
+            
+            if (progressionSelect) {
+                progressionSelect.addEventListener('change', () => {
+                    updateChordDropdown();
+                });
+            }
+            
+            if (answerSelect) {
+                answerSelect.addEventListener('change', (e) => {
+                    const selectedIndex = parseInt(e.target.value);
+                    if (currentMode === 'listen-quiz' && isWaitingForChord && selectedIndex !== '') {
+                        if (selectedIndex === currentChordIndex) {
+                            // Correct answer selected
+                            if (quizTimer) clearInterval(quizTimer);
+                            if (quizTimeout) clearTimeout(quizTimeout);
+                            const feedback = document.getElementById('feedback');
+                            if (feedback) {
+                                feedback.textContent = 'Correct! Well done!';
+                                feedback.className = 'feedback success';
+                                feedback.style.display = 'block';
+                            }
+                            isWaitingForChord = false;
+                            setTimeout(nextChord, 1500);
+                        } else {
+                            // Incorrect answer
+                            const feedback = document.getElementById('feedback');
+                            if (feedback) {
+                                feedback.textContent = 'Try again! Listen to the chord again.';
+                                feedback.className = 'feedback error';
+                                feedback.style.display = 'block';
+                            }
+                            // Reset the answer dropdown
+                            setTimeout(() => {
+                                e.target.value = '';
+                                if (feedback) feedback.style.display = 'none';
+                            }, 2000);
+                        }
+                    }
+                });
+            }
+            
+            if (showScaleNotesCheckbox) {
+                showScaleNotesCheckbox.addEventListener('change', (e) => {
+                    showScaleNotes = e.target.checked;
+                    updateScaleIndicators();
+                });
+            }
+            
+            // Add volume slider functionality
+            const volumeSlider = document.getElementById('volumeSlider');
+            if (volumeSlider) {
+                volumeSlider.addEventListener('input', (e) => {
+                    updateVolume(parseInt(e.target.value));
+                });
+                
+                // Set initial volume
+                updateVolume(70);
+            }
+            
+            // Add Hooktheory button functionality
+            const hooktheoryButton = document.getElementById('hooktheoryButton');
+            if (hooktheoryButton) {
+                hooktheoryButton.addEventListener('click', () => {
+                    openHooktheoryPage();
+                });
+            }
+            
+            // Initialize the app
+            init();
+        });
+        
+        // FIXED: Ensure single initialization
+        if (document.readyState === 'loading') {
+            // Will be handled by DOMContentLoaded above
+        } else {
+            // DOM already loaded, initialize immediately
+            const toggleButton = document.getElementById('instrumentToggle');
+            if (toggleButton) {
+                toggleButton.addEventListener('click', () => {
+                    currentInstrument = currentInstrument === 'piano' ? 'synth' : 'piano';
+                    toggleButton.textContent = currentInstrument === 'piano' ? 'Switch to Synth' : 'Switch to Piano';
+                });
+            }
+            init();
+        }
+        
+        // Global mouseup to prevent stuck notes
+        document.addEventListener('mouseup', () => {
+            if (clickedNotes.size > 0) {
+                clickedNotes.forEach(midiNote => {
+                    noteOff(midiNote);
+                });
+                clickedNotes.clear();
+            }
+        });
+        
+        // Also clear on piano container mouse leave
+        document.addEventListener('DOMContentLoaded', () => {
+            const pianoContainer = document.querySelector('.piano-container');
+            if (pianoContainer) {
+                pianoContainer.addEventListener('mouseleave', () => {
+                    if (clickedNotes.size > 0) {
+                        clickedNotes.forEach(midiNote => {
+                            noteOff(midiNote);
+                        });
+                        clickedNotes.clear();
+                    }
+                });
+            }
+        });
+        
+        // Clear all notes when window loses focus
+        window.addEventListener('blur', () => {
+            if (clickedNotes.size > 0) {
+                clickedNotes.forEach(midiNote => {
+                    noteOff(midiNote);
+                });
+                clickedNotes.clear();
+            }
+            if (activeNotes.size > 0) {
+                activeNotes.forEach(midiNote => {
+                    noteOff(midiNote);
+                });
+                activeNotes.clear();
+            }
+        });
+        
+        // Handle keyboard clicks with proper audio and sequential chord detection
+        async function handleKeyClick(note, midiNote, isPressed) {
+            try {
+                // Start audio context on first user interaction
+                if (Tone.context.state !== 'running') {
+                    await Tone.start();
+                    console.log('Audio context started after user interaction');
+                }
+                
+                if (isPressed) {
+                    if (!clickedNotes.has(midiNote)) {
+                        clickedNotes.add(midiNote);
+                        noteOn(midiNote);
+                        
+                        // Clear any existing timeout
+                        if (clickTimeout) {
+                            clearTimeout(clickTimeout);
+                        }
+                        
+                        // Only check for sequential chords if no MIDI keyboard is active
+                        if (isWaitingForChord && (!midiInput || activeNotes.size === 0)) {
+                            // Set timeout to check chord after user stops clicking
+                            clickTimeout = setTimeout(() => {
+                                if (clickedNotes.size > 0) {
+                                    console.log('Checking sequential chord with notes:', Array.from(clickedNotes));
+                                    checkChord();
+                                }
+                            }, 1000); // 1 second delay for sequential input
+                        }
+                    }
+                } else {
+                    if (clickedNotes.has(midiNote)) {
+                        clickedNotes.delete(midiNote);
+                        noteOff(midiNote);
+                        
+                        // If this was the last note and we're waiting for a chord, 
+                        // set a shorter timeout to check immediately
+                        if (isWaitingForChord && clickedNotes.size === 0 && (!midiInput || activeNotes.size === 0)) {
+                            if (clickTimeout) {
+                                clearTimeout(clickTimeout);
+                            }
+                            // Quick check when all notes are released
+                            clickTimeout = setTimeout(() => {
+                                // Don't check if new notes were added
+                                if (clickedNotes.size === 0) {
+                                    console.log('All notes released, checking previous chord');
+                                    // We need to track the last played notes for checking
+                                    checkLastPlayedChord();
+                                }
+                            }, 100);
+                        }
+                    }
+                }
+            } catch (err) {
+                console.error('Error in handleKeyClick:', err);
+            }
+        }
+        
+        // Track the last played notes for sequential chord detection
+        let lastPlayedNotes = new Set();
+        let noteSequence = []; // Track order of notes played
+        let lastNoteTime = 0;
+        
+        // Modified noteOn to track sequential notes with proper ordering
+        function noteOn(midiNote) {
+            activeNotes.add(midiNote);
+            const noteName = midiToNoteName(midiNote);
+            
+            // Track for sequential chord detection (mouse/touch users)
+            if (!midiInput || activeNotes.size <= 1) {
+                const now = Date.now();
+                // If more than 3 seconds have passed, start a new sequence
+                if (now - lastNoteTime > 3000) {
+                    lastPlayedNotes.clear();
+                    noteSequence = [];
+                }
+                
+                // Add note to sequence if not already present
+                if (!lastPlayedNotes.has(midiNote)) {
+                    lastPlayedNotes.add(midiNote);
+                    noteSequence.push(midiNote);
+                    
+                    // Keep only the most recent notes up to a reasonable limit (max 6 for extended chords)
+                    if (noteSequence.length > 6) {
+                        const removedNote = noteSequence.shift();
+                        lastPlayedNotes.delete(removedNote);
+                    }
+                }
+                
+                lastNoteTime = now;
+                
+                console.log('Note sequence:', noteSequence.map(note => midiToNoteName(note)));
+            }
+            
+            try {
+                // Play sound
+                const synth = getCurrentSampler();
+                if (synth) {
+                    synth.triggerAttack(noteName);
+                }
+            } catch (err) {
+                console.error('Error playing note:', err);
+            }
+            
+            // Visual feedback
+            const key = document.querySelector(`[data-midi="${midiNote}"]`);
+            if (key) {
+                key.classList.add('active');
+                key.classList.add('pressed');
+            }
+            
+            // For MIDI keyboard users, check chord immediately
+            if (isWaitingForChord && midiInput && activeNotes.size > 1) {
+                checkChord();
+            }
+        }
+        
+        // Check the last played chord (for sequential input)
+        function checkLastPlayedChord() {
+            if (!currentChord || noteSequence.length === 0) return;
+            
+            const expectedNotes = getChordNotes(currentChord.root, currentChord.type)
+                .map(noteNameToMidi);
+            
+            const expectedSize = expectedNotes.length;
+            
+            // Only check the last N notes where N is the expected chord size
+            const recentNotes = noteSequence.slice(-expectedSize);
+            
+            console.log('Expected chord size:', expectedSize);
+            console.log('Expected notes:', expectedNotes.map(note => midiToNoteName(note)));
+            console.log('Recent notes played:', recentNotes.map(note => midiToNoteName(note)));
+            
+            // Check if the recent notes match the expected chord (order doesn't matter)
+            const isCorrect = recentNotes.length === expectedSize &&
+                expectedNotes.every(note => recentNotes.includes(note)) &&
+                recentNotes.every(note => expectedNotes.includes(note));
+            
+            if (isCorrect) {
+                if (quizTimer) clearInterval(quizTimer);
+                if (quizTimeout) clearTimeout(quizTimeout);
+                
+                const feedback = document.getElementById('feedback');
+                if (feedback) {
+                    feedback.textContent = 'Correct! Well done!';
+                    feedback.className = 'feedback success';
+                    feedback.style.display = 'block';
+                }
+                
+                // Clear the sequence
+                noteSequence = [];
+                lastPlayedNotes.clear();
+                setTimeout(nextChord, 1500);
+            }
+        }
+        
+        // Modified checkChord function to handle both real-time and sequential input
+        function checkChord() {
+            if (!currentChord) return;
+            
+            const expectedNotes = getChordNotes(currentChord.root, currentChord.type)
+                .map(noteNameToMidi);
+            
+            // Use activeNotes if MIDI keyboard is connected and being used
+            // Otherwise use sequential detection for mouse/touch input
+            let playedNotes;
+            let isSequential = false;
+            
+            if (midiInput && activeNotes.size > 1) {
+                playedNotes = Array.from(activeNotes);
+                console.log('MIDI chord check - Expected:', expectedNotes, 'Played:', playedNotes);
+            } else if (clickedNotes.size > 0) {
+                playedNotes = Array.from(clickedNotes);
+                console.log('Click chord check - Expected:', expectedNotes, 'Played:', playedNotes);
+            } else {
+                // No notes currently pressed, check sequential pattern
+                isSequential = true;
+                const expectedSize = expectedNotes.length;
+                playedNotes = noteSequence.slice(-expectedSize);
+                console.log('Sequential chord check - Expected:', expectedNotes, 'Recent sequence:', playedNotes);
+            }
+            
+            let isCorrect;
+            if (isSequential) {
+                // For sequential input, check if recent notes match expected chord
+                isCorrect = playedNotes.length === expectedNotes.length &&
+                    expectedNotes.every(note => playedNotes.includes(note)) &&
+                    playedNotes.every(note => expectedNotes.includes(note));
+            } else {
+                // For simultaneous input, exact match
+                isCorrect = expectedNotes.length === playedNotes.length &&
+                    expectedNotes.every(note => playedNotes.includes(note));
+            }
+            
+            if (isCorrect) {
+                if (quizTimer) clearInterval(quizTimer);
+                if (quizTimeout) clearTimeout(quizTimeout);
+                
+                const feedback = document.getElementById('feedback');
+                if (feedback) {
+                    feedback.textContent = 'Correct! Well done!';
+                    feedback.className = 'feedback success';
+                    feedback.style.display = 'block';
+                }
+                
+                // Clear notes and sequence
+                clickedNotes.clear();
+                noteSequence = [];
+                lastPlayedNotes.clear();
+                setTimeout(nextChord, 1500);
+            }
+        }
+        
+        // Modified nextChord to clear sequence tracking
+        function nextChord() {
+            const progressionSelect = document.getElementById('progressionSelect');
+            if (!progressionSelect) return;
+            
+            const chords = filterChordsByProgression(
+                getChordsForScale(currentScale),
+                progressionSelect.value
+            );
+            
+            currentChordIndex = (currentChordIndex + 1) % chords.length;
+            const chordSelect = document.getElementById('chordSelect');
+            if (chordSelect) chordSelect.value = currentChordIndex;
+            
+            // Clear all note tracking
+            clickedNotes.clear();
+            noteSequence = [];
+            lastPlayedNotes.clear();
+            updateDisplay();
+        }
+        
+        // Modified updateDisplay to clear sequence tracking
+        function updateDisplay() {
+            const chordDisplay = document.getElementById('chordDisplay');
+            const instructions = document.getElementById('instructions');
+            const feedback = document.getElementById('feedback');
+            const timer = document.getElementById('timer');
+            
+            if (!chordDisplay || !instructions) return;
+            
+            // Clear previous state
+            clearHighlights();
+            if (feedback) feedback.style.display = 'none';
+            if (timer) timer.style.display = 'none';
+            isWaitingForChord = false;
+            
+            if (quizTimer) clearInterval(quizTimer);
+            if (quizTimeout) clearTimeout(quizTimeout);
+            
+            const progressionSelect = document.getElementById('progressionSelect');
+            if (!progressionSelect) return;
+            
+            const chords = filterChordsByProgression(
+                getChordsForScale(currentScale),
+                progressionSelect.value
+            );
+            
+            if (chords.length === 0) return;
+            
+            currentChord = chords[currentChordIndex];
+            
+            switch (currentMode) {
+                case 'learn':
+                    chordDisplay.textContent = currentChord.symbol;
+                    // Different instructions based on input method
+                    if (midiInput) {
+                        instructions.textContent = 'Play the highlighted keys together on your MIDI keyboard';
+                    } else {
+                        instructions.textContent = `Click the highlighted keys (last ${getChordNotes(currentChord.root, currentChord.type).length} notes count)`;
+                    }
+                    highlightChord(currentChord);
+                    isWaitingForChord = true;
+                    break;
+                    
+                case 'play-quiz':
+                    chordDisplay.textContent = currentChord.symbol;
+                    if (midiInput) {
+                        instructions.textContent = 'Play this chord on your MIDI keyboard';
+                    } else {
+                        instructions.textContent = `Click the keys for this chord (last ${getChordNotes(currentChord.root, currentChord.type).length} notes count)`;
+                    }
+                    if (timer) timer.style.display = 'block';
+                    startQuizTimer();
+                    isWaitingForChord = true;
+                    break;
+                    
+                case 'listen-quiz':
+                    chordDisplay.textContent = '?';
+                    instructions.textContent = 'Listen and identify the chord';
+                    playChord(currentChord);
+                    if (timer) timer.style.display = 'block';
+                    startQuizTimer();
+                    isWaitingForChord = true;
+                    break;
+                    
+                case 'scale-practice':
+                    const isMinor = currentScale.includes('m');
+                    const scaleDisplayName = currentScale.replace('m', isMinor ? ' Minor' : '');
+                    chordDisplay.textContent = scaleDisplayName + (isMinor ? '' : ' Major');
+                    instructions.innerHTML = `
+                        <div style="margin-bottom: 10px;">Practice the ${scaleDisplayName} scale</div>
+                        <div style="display: flex; gap: 10px; justify-content: center; flex-wrap: wrap;">
+                            <button onclick="playScale(true)" style="padding: 8px 16px; border: none; border-radius: 8px; background: rgba(255,255,255,0.2); color: white; cursor: pointer;">Play Ascending</button>
+                            <button onclick="playScale(false)" style="padding: 8px 16px; border: none; border-radius: 8px; background: rgba(255,255,255,0.2); color: white; cursor: pointer;">Play Descending</button>
+                            <button onclick="highlightScale()" style="padding: 8px 16px; border: none; border-radius: 8px; background: rgba(255,255,255,0.2); color: white; cursor: pointer;">Highlight Scale</button>
+                        </div>
+                    `;
+                    break;
+            }
+            
+            // Clear sequence tracking when switching chords/modes
+            noteSequence = [];
+            lastPlayedNotes.clear();
+        }
+        
+        // Initialize MIDI
+        async function initMIDI() {
+            try {
+                midiAccess = await navigator.requestMIDIAccess();
+                
+                midiAccess.addEventListener('statechange', updateMIDIDevices);
+                updateMIDIDevices();
+            } catch (err) {
+                console.log('MIDI not available:', err);
+                document.getElementById('midiStatus').textContent = 'MIDI: Click piano keys';
+                document.getElementById('midiStatus').className = 'midi-status disconnected';
+            }
+        }
+        
+        function updateMIDIDevices() {
+            const inputs = Array.from(midiAccess.inputs.values());
+            
+            if (inputs.length > 0) {
+                midiInput = inputs[0];
+                midiInput.addEventListener('midimessage', handleMIDIMessage);
+                document.getElementById('midiStatus').textContent = `MIDI: ${midiInput.name}`;
+                document.getElementById('midiStatus').className = 'midi-status connected';
+                clickedNotes.clear();
+            } else {
+                midiInput = null;
+                document.getElementById('midiStatus').textContent = 'MIDI: Click piano keys';
+                document.getElementById('midiStatus').className = 'midi-status disconnected';
+            }
+        }
+        
+        function handleMIDIMessage(event) {
+            const [command, note, velocity] = event.data;
+            
+            if (command === 144 && velocity > 0) { // Note on
+                noteOn(note);
+            } else if (command === 128 || (command === 144 && velocity === 0)) { // Note off
+                noteOff(note);
+            }
+        }
+        
+        function noteOff(midiNote) {
+            activeNotes.delete(midiNote);
+            const noteName = midiToNoteName(midiNote);
+            
+            try {
+                // Stop sound
+                const synth = getCurrentSampler();
+                if (synth) {
+                    synth.triggerRelease(noteName);
+                }
+            } catch (err) {
+                console.error('Error stopping note:', err);
+            }
+            
+            // Remove visual feedback
+            const key = document.querySelector(`[data-midi="${midiNote}"]`);
+            if (key) {
+                key.classList.remove('active');
+                key.classList.remove('pressed');
+            }
+        }
+        
+        // Emergency stop all notes
+        function stopAllNotes() {
+            const synth = getCurrentSampler();
+            if (synth && synth.releaseAll) {
+                synth.releaseAll();
+            }
+            
+            // Clear all active notes
+            clickedNotes.clear();
+            activeNotes.clear();
+            lastPlayedNotes.clear();
+            
+            // Remove all visual feedback
+            document.querySelectorAll('.key.active, .key.pressed').forEach(key => {
+                key.classList.remove('active', 'pressed');
+            });
+        }
+        
+        // Add keyboard shortcut for emergency stop
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' || e.key === ' ') {
+                e.preventDefault();
+                stopAllNotes();
+            }
+        });
+        
+        function midiToNoteName(midiNote) {
+            const octave = Math.floor(midiNote / 12) - 1;
+            const noteIndex = midiNote % 12;
+            return noteNames[noteIndex] + octave;
+        }
+        
+        function noteNameToMidi(noteName) {
+            const noteMatch = noteName.match(/([A-G]#?)(\d)/);
+            if (!noteMatch) return 60; // Default to C4
+            
+            const note = noteMatch[1];
+            const octave = parseInt(noteMatch[2]);
+            const noteIndex = noteNames.indexOf(note);
+            
+            return (octave + 1) * 12 + noteIndex;
+        }
+        
+        // Get scale notes
+        function getScaleNotes(root, scaleType) {
+            // Normalize flat notes to sharp equivalents for calculation
+            const flatToSharp = {
+                'Db': 'C#', 'Eb': 'D#', 'Gb': 'F#', 'Ab': 'G#', 'Bb': 'A#'
+            };
+            
+            const normalizedRoot = flatToSharp[root.replace('m', '')] || root.replace('m', '');
+            const rootIndex = noteNames.indexOf(normalizedRoot);
+            
+            if (rootIndex === -1) {
+                console.error('Invalid root note:', root);
+                return [];
+            }
+            
+            const scaleIntervals = intervals[scaleType];
+            const notes = [];
+            
+            for (let interval of scaleIntervals) {
+                const noteIndex = (rootIndex + interval) % 12;
+                notes.push(noteNames[noteIndex]);
+            }
+            
+            return notes;
+        }
+        
+        // Get chord notes
+        function getChordNotes(root, chordType, octave = 4) {
+            // Normalize flat notes to sharp equivalents for calculation
+            const flatToSharp = {
+                'Db': 'C#', 'Eb': 'D#', 'Gb': 'F#', 'Ab': 'G#', 'Bb': 'A#'
+            };
+            
+            const normalizedRoot = flatToSharp[root] || root;
+            const rootIndex = noteNames.indexOf(normalizedRoot);
+            
+            if (rootIndex === -1) {
+                console.error('Invalid root note:', root);
+                return [];
+            }
+            
+            const chordIntervals = chordTypes[chordType];
+            const notes = [];
+            
+            for (let interval of chordIntervals) {
+                const noteIndex = (rootIndex + interval) % 12;
+                const noteOctave = octave + Math.floor((rootIndex + interval) / 12);
+                notes.push(noteNames[noteIndex] + noteOctave);
+            }
+            
+            return notes;
+        }
+        
+        // Get chords for scale
+        function getChordsForScale(scale) {
+            const isMinor = scale.includes('m');
+            const root = scale.replace('m', '');
+            const scaleType = isMinor ? 'minor' : 'major';
+            const scaleNotes = getScaleNotes(root, scaleType);
+            const numerals = romanNumerals[scaleType];
+            
+            const chords = [];
+            
+            // Basic triads
+            for (let i = 0; i < 7; i++) {
+                const chordRoot = scaleNotes[i];
+                const numeral = numerals[i];
+                let chordType = 'major';
+                
+                if (numeral.toLowerCase() === numeral && !numeral.includes('°')) {
+                    chordType = 'minor';
+                } else if (numeral.includes('°')) {
+                    chordType = 'dim';
+                }
+                
+                chords.push({
+                    name: `${chordRoot} ${chordType}`,
+                    symbol: `${chordRoot}${chordType === 'minor' ? 'm' : chordType === 'dim' ? '°' : ''}`,
+                    root: chordRoot,
+                    type: chordType,
+                    roman: numeral,
+                    difficulty: 1
+                });
+            }
+            
+            return chords;
+        }
+        
+        // Filter chords by progression
+        function filterChordsByProgression(chords, progression) {
+            if (progression === 'all') return chords;
+            
+            const progressionNumerals = progressions[progression];
+            const filtered = [];
+            
+            for (let numeral of progressionNumerals) {
+                const matchingChords = chords.filter(chord => 
+                    chord.roman.toUpperCase().startsWith(numeral.toUpperCase())
+                );
+                filtered.push(...matchingChords);
+            }
+            
+            return filtered;
+        }
+        
+        // Update chord dropdown
+        function updateChordDropdown() {
+            const chordSelect = document.getElementById('chordSelect');
+            const progressionSelect = document.getElementById('progressionSelect');
+            const answerSelect = document.getElementById('answerSelect');
+            
+            if (!chordSelect || !progressionSelect || !answerSelect) return;
+            
+            const allChords = getChordsForScale(currentScale);
+            const filteredChords = filterChordsByProgression(allChords, progressionSelect.value);
+            
+            chordSelect.innerHTML = '';
+            filteredChords.forEach((chord, index) => {
+                const option = document.createElement('option');
+                option.value = index;
+                option.textContent = `${chord.symbol} (${chord.roman})`;
+                chordSelect.appendChild(option);
+            });
+            
+            // Update answer dropdown for listen quiz
+            answerSelect.innerHTML = '';
+            filteredChords.forEach((chord, index) => {
+                const option = document.createElement('option');
+                option.value = index;
+                option.textContent = `${chord.symbol} (${chord.roman})`;
+                answerSelect.appendChild(option);
+            });
+            
+            currentChordIndex = 0;
+            updateDisplay();
+            updateScaleIndicators();
+        }
+        
+        // New function to show/hide scale note indicators
+        function updateScaleIndicators() {
+            // Remove all existing scale dots
+            document.querySelectorAll('.scale-dot').forEach(dot => dot.remove());
+            
+            if (!showScaleNotes) return;
+            
+            const isMinor = currentScale.includes('m');
+            const root = currentScale.replace('m', '');
+            const scaleType = isMinor ? 'minor' : 'major';
+            const scaleNotes = getScaleNotes(root, scaleType);
+            
+            console.log('Scale notes for', currentScale, ':', scaleNotes); // Debug log
+            
+            // Helper function to normalize note names (convert flats to sharps)
+            function normalizeNoteName(noteName) {
+                const flatToSharp = {
+                    'Db': 'C#', 'Eb': 'D#', 'Gb': 'F#', 'Ab': 'G#', 'Bb': 'A#'
+                };
+                return flatToSharp[noteName] || noteName;
+            }
+            
+            // Add dots to all keys that are in the current scale
+            scaleNotes.forEach(scaleName => {
+                const normalizedScaleName = normalizeNoteName(scaleName);
+                console.log('Looking for note:', scaleName, 'normalized to:', normalizedScaleName);
+                
+                // Find all octaves of this note on the keyboard
+                const keys = document.querySelectorAll('.key');
+                keys.forEach(key => {
+                    const keyNote = key.dataset.note;
+                    if (keyNote) {
+                        // Extract just the note name (without octave) from the key
+                        const keyNoteName = keyNote.replace(/\d+$/, ''); // Remove trailing digits
+                        
+                        // Only add dot if the note names match exactly AND no dot already exists
+                        if (keyNoteName === normalizedScaleName && !key.querySelector('.scale-dot')) {
+                            const dot = document.createElement('div');
+                            dot.className = 'scale-dot';
+                            key.appendChild(dot);
+                            console.log('Added dot to key:', keyNote);
+                        }
+                    }
+                });
+            });
+            
+            // Debug: Count total dots after creation
+            const totalDots = document.querySelectorAll('.scale-dot').length;
+            console.log('Total scale dots created:', totalDots, 'Expected:', scaleNotes.length * 3, '(7 notes × 3 octaves)');
+        }
+        
+        // Highlight chord on keyboard
+        function highlightChord(chord) {
+            clearHighlights();
+            const notes = getChordNotes(chord.root, chord.type);
+            
+            notes.forEach(note => {
+                const midiNote = noteNameToMidi(note);
+                highlightedNotes.add(midiNote);
+                const key = document.querySelector(`[data-midi="${midiNote}"]`);
+                if (key) {
+                    key.classList.add('highlight');
+                }
+            });
+        }
+        
+        // Clear highlights
+        function clearHighlights() {
+            highlightedNotes.clear();
+            document.querySelectorAll('.key.highlight').forEach(key => {
+                key.classList.remove('highlight');
+            });
+        }
+        
+        // Play chord - ensure audio context is started
+        function playChord(chord) {
+            const notes = getChordNotes(chord.root, chord.type);
+            const synth = getCurrentSampler();
+            
+            if (synth) {
+                // Start audio context if needed
+                if (Tone.context.state !== 'running') {
+                    Tone.start().then(() => {
+                        notes.forEach((note, index) => {
+                            setTimeout(() => {
+                                synth.triggerAttackRelease(note, '2n');
+                            }, index * 50);
+                        });
+                    });
+                } else {
+                    notes.forEach((note, index) => {
+                        setTimeout(() => {
+                            synth.triggerAttackRelease(note, '2n');
+                        }, index * 50);
+                    });
+                }
+            }
+        }
+        
+        // Start quiz timer
+        function startQuizTimer() {
+            let timeLeft = 10;
+            const timerEl = document.getElementById('timer');
+            if (!timerEl) return;
+            
+            timerEl.textContent = timeLeft;
+            
+            quizTimer = setInterval(() => {
+                timeLeft--;
+                timerEl.textContent = timeLeft;
+                
+                if (timeLeft <= 0) {
+                    clearInterval(quizTimer);
+                    showAnswer();
+                }
+            }, 1000);
+        }
+        
+        // Show answer
+        function showAnswer() {
+            const feedback = document.getElementById('feedback');
+            if (!feedback || !currentChord) return;
+            
+            feedback.textContent = `Time's up! The answer was ${currentChord.symbol}`;
+            feedback.className = 'feedback error';
+            feedback.style.display = 'block';
+            
+            if (currentMode === 'play-quiz') {
+                highlightChord(currentChord);
+            } else if (currentMode === 'listen-quiz') {
+                playChord(currentChord);
+            }
+            
+            setTimeout(nextChord, 3000);
+        }
+        
+        // Play scale ascending or descending
+        function playScale(ascending = true) {
+            const isMinor = currentScale.includes('m');
+            const root = currentScale.replace('m', '');
+            const scaleType = isMinor ? 'minor' : 'major';
+            const scaleNotes = getScaleNotes(root, scaleType);
+            
+            // Build notes with proper octave handling
+            const baseOctave = 4;
+            const rootNote = scaleNotes[0];
+            const rootIndex = noteNames.indexOf(rootNote);
+            
+            const fullNotes = [];
+            
+            // Add each scale note with proper octave
+            scaleNotes.forEach((note, index) => {
+                const noteIndex = noteNames.indexOf(note);
+                // If the note index is less than root index, it's in the next octave
+                const octave = noteIndex < rootIndex ? baseOctave + 1 : baseOctave;
+                fullNotes.push(note + octave);
+            });
+            
+            // Add octave note (root note exactly one octave higher than where it started)
+            const octaveNote = rootNote + (baseOctave + 1);
+            
+            let playbackNotes;
+            if (ascending) {
+                // Ascending: play scale + octave note
+                playbackNotes = [...fullNotes, octaveNote];
+            } else {
+                // Descending: start with octave, then play scale in reverse
+                playbackNotes = [octaveNote, ...fullNotes.slice().reverse()];
+            }
+            
+            console.log('Scale playback for', currentScale, ascending ? 'ascending' : 'descending', ':', playbackNotes);
+            
+            const synth = getCurrentSampler();
+            
+            // Clear any existing highlights first
+            clearHighlights();
+            
+            if (synth) {
+                // Start audio context if needed
+                if (Tone.context.state !== 'running') {
+                    Tone.start().then(() => {
+                        playbackNotes.forEach((note, index) => {
+                            setTimeout(() => {
+                                // Highlight the current note
+                                const midiNote = noteNameToMidi(note);
+                                const key = document.querySelector(`[data-midi="${midiNote}"]`);
+                                if (key) {
+                                    // Remove highlight from previous note
+                                    if (index > 0) {
+                                        const prevMidiNote = noteNameToMidi(playbackNotes[index - 1]);
+                                        const prevKey = document.querySelector(`[data-midi="${prevMidiNote}"]`);
+                                        if (prevKey) {
+                                            prevKey.classList.remove('highlight');
+                                        }
+                                    }
+                                    
+                                    // Highlight current note
+                                    key.classList.add('highlight');
+                                    
+                                    // Remove highlight after note duration
+                                    setTimeout(() => {
+                                        key.classList.remove('highlight');
+                                    }, 400);
+                                }
+                                
+                                synth.triggerAttackRelease(note, '0.5n');
+                            }, index * 300);
+                        });
+                    });
+                } else {
+                    playbackNotes.forEach((note, index) => {
+                        setTimeout(() => {
+                            // Highlight the current note
+                            const midiNote = noteNameToMidi(note);
+                            const key = document.querySelector(`[data-midi="${midiNote}"]`);
+                            if (key) {
+                                // Remove highlight from previous note
+                                if (index > 0) {
+                                    const prevMidiNote = noteNameToMidi(playbackNotes[index - 1]);
+                                    const prevKey = document.querySelector(`[data-midi="${prevMidiNote}"]`);
+                                    if (prevKey) {
+                                        prevKey.classList.remove('highlight');
+                                    }
+                                }
+                                
+                                // Highlight current note
+                                key.classList.add('highlight');
+                                
+                                // Remove highlight after note duration
+                                setTimeout(() => {
+                                    key.classList.remove('highlight');
+                                }, 400);
+                            }
+                            
+                            synth.triggerAttackRelease(note, '0.5n');
+                        }, index * 300);
+                    });
+                }
+            }
+        }
+        
+        // Highlight scale notes on keyboard
+        function highlightScale() {
+            clearHighlights();
+            const isMinor = currentScale.includes('m');
+            const root = currentScale.replace('m', '');
+            const scaleType = isMinor ? 'minor' : 'major';
+            const scaleNotes = getScaleNotes(root, scaleType);
+            
+            // Highlight all octaves of scale notes
+            scaleNotes.forEach(noteName => {
+                [3, 4, 5].forEach(octave => {
+                    const fullNote = noteName + octave;
+                    const midiNote = noteNameToMidi(fullNote);
+                    highlightedNotes.add(midiNote);
+                    const key = document.querySelector(`[data-midi="${midiNote}"]`);
+                    if (key) {
+                        key.classList.add('highlight');
+                    }
+                });
+            });
+        }
+        
+        // Function to open Hooktheory page for current scale
+        function openHooktheoryPage() {
+            const isMinor = currentScale.includes('m');
+            const root = currentScale.replace('m', '');
+            const scaleType = isMinor ? 'minor' : 'major';
+            
+            // Convert scale root to Hooktheory URL format
+            const scaleMapping = {
+                'C': 'c',
+                'C#': 'c-sharp', 'Db': 'd-flat',
+                'D': 'd',
+                'D#': 'd-sharp', 'Eb': 'e-flat',
+                'E': 'e',
+                'F': 'f',
+                'F#': 'f-sharp', 'Gb': 'g-flat',
+                'G': 'g',
+                'G#': 'g-sharp', 'Ab': 'a-flat',
+                'A': 'a',
+                'A#': 'a-sharp', 'Bb': 'b-flat',
+                'B': 'b'
+            };
+            
+            const urlKey = scaleMapping[root];
+            if (urlKey) {
+                const url = `https://www.hooktheory.com/cheat-sheet/key/${urlKey}/${scaleType}`;
+                window.open(url, '_blank');
+            }
+        }
+        
+    </script>
+</body>
+</html>
