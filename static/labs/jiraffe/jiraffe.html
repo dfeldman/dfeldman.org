@@ -1,0 +1,3351 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jiraffe - Project Management</title>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --bg-primary: #ffffff;
+            --bg-secondary: #f8fafc;
+            --bg-tertiary: #f1f5f9;
+            --text-primary: #1e293b;
+            --text-secondary: #64748b;
+            --text-tertiary: #475569;
+            --border-color: #e2e8f0;
+            --border-light: #f1f5f9;
+            --accent-primary: #6366f1;
+            --accent-hover: #5b5ff5;
+            --accent-light: #e0e7ff;
+            --accent-lighter: #f0f4ff;
+            --success: #10b981;
+            --danger: #ef4444;
+            --warning: #f59e0b;
+            --info: #3b82f6;
+            --shadow-sm: 0 1px 2px rgba(0,0,0,0.05);
+            --shadow-md: 0 4px 6px rgba(0,0,0,0.1);
+            --shadow-lg: 0 20px 25px rgba(0,0,0,0.15);
+        }
+
+        body.dark-mode {
+            background: var(--bg-primary);
+            color: var(--text-primary);
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: var(--bg-primary);
+            color: var(--text-primary);
+            line-height: 1.6;
+        }
+
+        .app {
+            display: flex;
+            min-height: 100vh;
+        }
+
+        .sidebar {
+            width: 280px;
+            background: var(--bg-secondary);
+            border-right: 1px solid var(--border-color);
+            padding: 32px 24px;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .logo {
+            font-size: 28px;
+            font-weight: 800;
+            color: var(--accent-primary);
+            margin-bottom: 40px;
+            position: relative;
+        }
+
+        .logo::before {
+            content: '🦒';
+            margin-right: 12px;
+        }
+
+        .nav-item {
+            padding: 12px 16px;
+            margin: 4px 0;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.2s;
+            font-weight: 500;
+        }
+
+        .nav-item:hover {
+            background: var(--accent-light);
+            color: var(--accent-primary);
+        }
+
+        .nav-item.active {
+            background: var(--accent-primary);
+            color: white;
+            box-shadow: var(--shadow-sm);
+        }
+
+        .dark-mode-toggle {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 12px;
+            cursor: pointer;
+            border-radius: 8px;
+            transition: all 0.2s;
+        }
+
+        .dark-mode-toggle:hover {
+            background: var(--accent-light);
+        }
+
+        .toggle-switch {
+            width: 40px;
+            height: 20px;
+            background: var(--border-color);
+            border-radius: 10px;
+            position: relative;
+            transition: all 0.3s;
+        }
+
+        .toggle-switch.active {
+            background: var(--accent-primary);
+        }
+
+        .toggle-switch::after {
+            content: '';
+            position: absolute;
+            width: 16px;
+            height: 16px;
+            background: white;
+            border-radius: 50%;
+            top: 2px;
+            left: 2px;
+            transition: all 0.3s;
+        }
+
+        .toggle-switch.active::after {
+            left: 22px;
+        }
+
+        .main-content {
+            flex: 1;
+            padding: 32px;
+            overflow-y: auto;
+        }
+
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 32px;
+        }
+
+        .page-title {
+            font-size: 32px;
+            font-weight: 700;
+            color: var(--text-primary);
+        }
+
+        .button {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 8px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s;
+            font-size: 14px;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .button-primary {
+            background: var(--accent-primary);
+            color: white;
+        }
+
+        .button-primary:hover {
+            background: var(--accent-hover);
+            transform: translateY(-1px);
+            box-shadow: var(--shadow-md);
+        }
+
+        .button-secondary {
+            background: var(--bg-tertiary);
+            color: var(--text-tertiary);
+            border: 1px solid var(--border-color);
+        }
+
+        .button-secondary:hover {
+            background: var(--bg-secondary);
+            border-color: var(--accent-primary);
+        }
+
+        .button-success {
+            background: var(--success);
+            color: white;
+        }
+
+        .button-danger {
+            background: var(--danger);
+            color: white;
+        }
+
+        .button-small {
+            padding: 6px 12px;
+            font-size: 12px;
+        }
+
+        .card {
+            background: var(--bg-secondary);
+            border-radius: 12px;
+            padding: 24px;
+            margin-bottom: 24px;
+            border: 1px solid var(--border-color);
+            transition: all 0.2s;
+        }
+
+        .card:hover {
+            box-shadow: var(--shadow-md);
+        }
+
+        /* Dashboard specific styles */
+        .dashboard-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 24px;
+            margin-bottom: 32px;
+        }
+
+        .stat-card {
+            background: linear-gradient(135deg, var(--accent-primary), var(--accent-hover));
+            color: white;
+            border-radius: 16px;
+            padding: 24px;
+            position: relative;
+            overflow: hidden;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .stat-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, var(--accent-primary), var(--info));
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+
+        .stat-card:hover::before {
+            opacity: 1;
+        }
+
+        .stat-card:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-md);
+        }
+
+        .stat-value {
+            font-size: 36px;
+            font-weight: 800;
+            color: var(--text-primary);
+            margin: 8px 0;
+        }
+
+        .stat-label {
+            color: var(--text-secondary);
+            font-size: 14px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .stat-icon {
+            font-size: 24px;
+            margin-bottom: 8px;
+        }
+
+        /* Task styles with deadline highlighting */
+        .task-card {
+            background: var(--bg-secondary);
+            border-radius: 12px;
+            padding: 20px;
+            margin-bottom: 16px;
+            border: 2px solid var(--border-color);
+            transition: all 0.3s;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .task-card::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            width: 4px;
+            background: var(--border-color);
+            transition: all 0.3s;
+        }
+
+        .task-card.due-today::before {
+            background: var(--warning);
+            width: 6px;
+        }
+
+        .task-card.due-tomorrow::before {
+            background: var(--info);
+            width: 6px;
+        }
+
+        .task-card.overdue::before {
+            background: var(--danger);
+            width: 6px;
+        }
+
+        .task-card.due-soon::before {
+            background: var(--accent-primary);
+            width: 6px;
+        }
+
+        .task-card:hover {
+            transform: translateX(8px);
+            box-shadow: var(--shadow-md);
+            border-color: var(--accent-primary);
+        }
+
+        .deadline-badge {
+            padding: 4px 10px;
+            border-radius: 6px;
+            font-size: 12px;
+            font-weight: 700;
+            text-transform: uppercase;
+            display: inline-flex;
+            align-items: center;
+            gap: 4px;
+        }
+
+        .deadline-badge.today {
+            background: var(--warning);
+            color: white;
+        }
+
+        .deadline-badge.tomorrow {
+            background: var(--info);
+            color: white;
+        }
+
+        .deadline-badge.overdue {
+            background: var(--danger);
+            color: white;
+            animation: pulse 2s infinite;
+        }
+
+        .deadline-badge.soon {
+            background: var(--accent-light);
+            color: var(--accent-primary);
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.7; }
+        }
+
+        @keyframes slideIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .stat-card {
+            animation: slideIn 0.5s ease-out;
+            animation-fill-mode: both;
+        }
+
+        .stat-card:nth-child(1) { animation-delay: 0.1s; }
+        .stat-card:nth-child(2) { animation-delay: 0.2s; }
+        .stat-card:nth-child(3) { animation-delay: 0.3s; }
+        .stat-card:nth-child(4) { animation-delay: 0.4s; }
+
+        /* Scrollbar styling */
+        ::-webkit-scrollbar {
+            width: 10px;
+            height: 10px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: var(--bg-tertiary);
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: var(--border-color);
+            border-radius: 5px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: var(--text-secondary);
+        }
+
+        /* Focus visible for accessibility */
+        button:focus-visible,
+        input:focus-visible,
+        select:focus-visible,
+        textarea:focus-visible {
+            outline: 2px solid var(--accent-primary);
+            outline-offset: 2px;
+        }
+
+        /* Improved mobile responsiveness */
+        @media (max-width: 768px) {
+            .app {
+                flex-direction: column;
+            }
+            
+            .sidebar {
+                width: 100%;
+                height: auto;
+            }
+            
+            .dashboard-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+            
+            .people-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Activity timeline */
+        .timeline {
+            position: relative;
+            padding-left: 32px;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 8px;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: var(--border-color);
+        }
+
+        .timeline-item {
+            position: relative;
+            margin-bottom: 24px;
+            padding: 16px;
+            background: var(--bg-tertiary);
+            border-radius: 8px;
+            border: 1px solid var(--border-color);
+            transition: all 0.2s;
+        }
+
+        .timeline-item:hover {
+            background: var(--bg-secondary);
+            box-shadow: var(--shadow-sm);
+        }
+
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -28px;
+            top: 24px;
+            width: 12px;
+            height: 12px;
+            background: var(--accent-primary);
+            border-radius: 50%;
+            border: 3px solid var(--bg-primary);
+        }
+
+        .activity-chart {
+            height: 200px;
+            background: var(--bg-tertiary);
+            border-radius: 12px;
+            padding: 20px;
+            display: flex;
+            align-items: flex-end;
+            gap: 8px;
+        }
+
+        .chart-bar {
+            flex: 1;
+            background: var(--accent-primary);
+            border-radius: 4px 4px 0 0;
+            transition: all 0.3s;
+            cursor: pointer;
+            position: relative;
+        }
+
+        .chart-bar:hover {
+            background: var(--accent-hover);
+            transform: scaleY(1.05);
+        }
+
+        .chart-label {
+            position: absolute;
+            bottom: -20px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 11px;
+            color: var(--text-secondary);
+        }
+
+        .team-section {
+            margin-bottom: 32px;
+        }
+
+        .team-header {
+            font-size: 20px;
+            font-weight: 700;
+            color: var(--accent-primary);
+            margin-bottom: 16px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .project-title {
+            font-size: 18px;
+            font-weight: 600;
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            color: var(--text-primary);
+        }
+
+        .status-badge {
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 600;
+            text-transform: uppercase;
+        }
+
+        .status-ongoing {
+            background: #dbeafe;
+            color: #1e40af;
+        }
+
+        .status-complete {
+            background: #d1fae5;
+            color: #065f46;
+        }
+
+        .status-not-started {
+            background: var(--accent-lighter);
+            color: var(--text-secondary);
+        }
+
+        .status-on-hold {
+            background: #fef3c7;
+            color: #92400e;
+        }
+
+        body.dark-mode .status-ongoing {
+            background: #1e3a5f;
+            color: #60a5fa;
+        }
+
+        body.dark-mode .status-complete {
+            background: #064e3b;
+            color: #34d399;
+        }
+
+        body.dark-mode .status-on-hold {
+            background: #78350f;
+            color: #fbbf24;
+        }
+
+        .modal {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0,0,0,0.5);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 1000;
+            backdrop-filter: blur(4px);
+        }
+
+        .modal-content {
+            background: var(--bg-secondary);
+            border-radius: 16px;
+            padding: 32px;
+            max-width: 600px;
+            width: 90%;
+            max-height: 90vh;
+            overflow-y: auto;
+            box-shadow: var(--shadow-lg);
+        }
+
+        .modal-header {
+            font-size: 24px;
+            font-weight: 700;
+            margin-bottom: 24px;
+            color: var(--text-primary);
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-label {
+            display: block;
+            font-weight: 600;
+            margin-bottom: 8px;
+            color: var(--text-tertiary);
+        }
+
+        .form-input, .form-select, .form-textarea {
+            width: 100%;
+            padding: 10px 14px;
+            border: 2px solid var(--border-color);
+            border-radius: 8px;
+            font-size: 15px;
+            transition: all 0.2s;
+            background: var(--bg-tertiary);
+            color: var(--text-primary);
+        }
+
+        .form-input:focus, .form-select:focus, .form-textarea:focus {
+            outline: none;
+            border-color: var(--accent-primary);
+            box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.1);
+        }
+
+        .form-textarea {
+            resize: vertical;
+            min-height: 100px;
+        }
+
+        .interaction-item, .task-item {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 12px;
+            margin: 8px 0;
+            background: var(--bg-tertiary);
+            border-radius: 8px;
+            border: 1px solid var(--border-color);
+            transition: all 0.2s;
+        }
+
+        .interaction-item:hover, .task-item:hover {
+            background: var(--accent-lighter);
+            transform: translateX(4px);
+        }
+
+        .interaction-type {
+            padding: 4px 10px;
+            border-radius: 6px;
+            font-size: 12px;
+            font-weight: 600;
+        }
+
+        .type-meeting {
+            background: #ddd6fe;
+            color: #5b21b6;
+        }
+
+        .type-chat {
+            background: #fce7f3;
+            color: #9f1239;
+        }
+
+        .type-email {
+            background: #cffafe;
+            color: #0e7490;
+        }
+
+        body.dark-mode .type-meeting {
+            background: #4c1d95;
+            color: #ddd6fe;
+        }
+
+        body.dark-mode .type-chat {
+            background: #831843;
+            color: #fce7f3;
+        }
+
+        body.dark-mode .type-email {
+            background: #164e63;
+            color: #cffafe;
+        }
+
+        .last-interaction {
+            font-size: 13px;
+            color: var(--text-secondary);
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .last-interaction-warning {
+            color: var(--danger);
+            font-weight: 600;
+        }
+
+        .people-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 20px;
+        }
+
+        .person-card {
+            background: var(--bg-secondary);
+            border-radius: 10px;
+            padding: 20px;
+            border: 1px solid var(--border-color);
+            transition: all 0.2s;
+        }
+
+        .person-card:hover {
+            box-shadow: var(--shadow-md);
+            transform: translateY(-2px);
+        }
+
+        .person-name {
+            font-size: 18px;
+            font-weight: 600;
+            margin-bottom: 12px;
+            color: var(--text-primary);
+        }
+
+        .team-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-top: 8px;
+        }
+
+        .team-tag {
+            padding: 4px 10px;
+            background: var(--accent-lighter);
+            border-radius: 6px;
+            font-size: 13px;
+            color: var(--text-tertiary);
+        }
+
+        .search-box {
+            width: 100%;
+            padding: 14px 20px;
+            border: 2px solid var(--border-color);
+            border-radius: 10px;
+            font-size: 16px;
+            margin-bottom: 24px;
+            background: var(--bg-tertiary);
+            color: var(--text-primary);
+        }
+
+        .search-box:focus {
+            outline: none;
+            border-color: var(--accent-primary);
+            box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.1);
+        }
+
+        .work-session {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 8px;
+            background: var(--bg-tertiary);
+            border-radius: 6px;
+            margin: 6px 0;
+        }
+
+        .due-date {
+            font-size: 13px;
+            color: var(--text-secondary);
+        }
+
+        .due-date.overdue {
+            color: var(--danger);
+            font-weight: 600;
+        }
+
+        .empty-state {
+            text-align: center;
+            padding: 60px;
+            color: var(--text-secondary);
+        }
+
+        .empty-state-icon {
+            font-size: 48px;
+            margin-bottom: 16px;
+            opacity: 0.3;
+            animation: pulse 3s infinite;
+        }
+
+        body.dark-mode .empty-state-icon {
+            opacity: 0.5;
+        }
+
+        .action-buttons {
+            display: flex;
+            gap: 8px;
+        }
+
+        .icon-button {
+            padding: 6px;
+            border: none;
+            background: transparent;
+            cursor: pointer;
+            border-radius: 6px;
+            transition: all 0.2s;
+            font-size: 18px;
+        }
+
+        .icon-button:hover {
+            background: var(--accent-lighter);
+        }
+
+        .checkbox-wrapper {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin: 16px 0;
+        }
+
+        .checkbox {
+            width: 20px;
+            height: 20px;
+            cursor: pointer;
+            accent-color: var(--accent-primary);
+        }
+
+        .filters {
+            display: flex;
+            gap: 16px;
+            margin-bottom: 24px;
+            flex-wrap: wrap;
+        }
+
+        .url-button {
+            padding: 6px 14px;
+            background: var(--accent-light);
+            color: var(--accent-primary);
+            border: none;
+            border-radius: 6px;
+            font-weight: 600;
+            cursor: pointer;
+            font-size: 13px;
+            transition: all 0.2s;
+            text-decoration: none;
+        }
+
+        .url-button:hover {
+            background: var(--accent-primary);
+            color: white;
+            transform: translateY(-1px);
+            box-shadow: 0 2px 8px rgba(99, 102, 241, 0.3);
+        }
+
+        .time-badge {
+            background: var(--accent-lighter);
+            padding: 4px 10px;
+            border-radius: 6px;
+            font-size: 13px;
+            color: var(--text-tertiary);
+            font-weight: 600;
+        }
+
+
+        .tag {
+            display: inline-block;
+            padding: 4px 8px;
+            background: var(--accent-light);
+            color: var(--accent-primary);
+            border-radius: 4px;
+            font-size: 12px;
+            font-weight: 600;
+            margin: 2px 4px 2px 0;
+        }
+
+        body.dark-mode .tag {
+            background: var(--accent-lighter);
+            color: var(--text-tertiary);
+        }
+
+        .tags-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 4px;
+            margin-top: 8px;
+        }
+
+        .tags-input {
+            width: 100%;
+            padding: 10px 14px;
+            border: 2px solid var(--border-color);
+            border-radius: 8px;
+            font-size: 15px;
+            transition: all 0.2s;
+            background: var(--bg-tertiary);
+            color: var(--text-primary);
+            margin-top: 8px;
+        }
+
+        .tags-input:focus {
+            outline: none;
+            border-color: var(--accent-primary);
+            box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.1);
+        }
+
+        .tags-display {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 6px;
+            margin-top: 8px;
+        }
+
+        .tag-item {
+            display: inline-block;
+            padding: 4px 10px;
+            background: var(--accent-light);
+            color: var(--accent-primary);
+            border-radius: 6px;
+            font-size: 12px;
+            font-weight: 600;
+        }
+
+        body.dark-mode .tag-item {
+            background: var(--accent-lighter);
+            color: var(--text-tertiary);
+        }
+
+        /* Dashboard-specific task card styles */
+        .dashboard-task-card {
+            background: var(--bg-tertiary);
+            border-radius: 8px;
+            padding: 16px;
+            margin-bottom: 12px;
+            border: 1px solid var(--border-color);
+            transition: all 0.2s;
+            position: relative;
+        }
+
+        .dashboard-task-card::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            width: 4px;
+            background: var(--border-color);
+            transition: all 0.3s;
+        }
+
+        .dashboard-task-card.due-today::before {
+            background: var(--warning);
+            width: 6px;
+        }
+
+        .dashboard-task-card.due-tomorrow::before {
+            background: var(--info);
+            width: 6px;
+        }
+
+        .dashboard-task-card.overdue::before {
+            background: var(--danger);
+            width: 6px;
+        }
+
+        .dashboard-task-card.due-soon::before {
+            background: var(--accent-primary);
+            width: 6px;
+        }
+
+        .dashboard-task-card:hover {
+            background: var(--bg-secondary);
+            box-shadow: var(--shadow-sm);
+            transform: translateY(-1px);
+        }
+
+        .dashboard-adr-card {
+            background: var(--bg-tertiary);
+            border-radius: 8px;
+            padding: 16px;
+            margin-bottom: 12px;
+            border: 1px solid var(--border-color);
+            transition: all 0.2s;
+        }
+
+        .dashboard-adr-card:hover {
+            background: var(--bg-secondary);
+            box-shadow: var(--shadow-sm);
+            transform: translateY(-1px);
+        }
+
+        .dashboard-meeting-card {
+            background: var(--bg-tertiary);
+            border-radius: 8px;
+            padding: 16px;
+            margin-bottom: 12px;
+            border: 1px solid var(--border-color);
+            transition: all 0.2s;
+        }
+
+        .dashboard-meeting-card:hover {
+            background: var(--bg-secondary);
+            box-shadow: var(--shadow-sm);
+            transform: translateY(-1px);
+        }
+
+        /* ADR specific styles */
+        .adr-status-not-started {
+            background: var(--accent-lighter);
+            color: var(--text-secondary);
+        }
+
+        .adr-status-waiting-for-me {
+            background: #fef3c7;
+            color: #92400e;
+        }
+
+        .adr-status-waiting-for-others {
+            background: #dbeafe;
+            color: #1e40af;
+        }
+
+        .adr-status-approved {
+            background: #d1fae5;
+            color: #065f46;
+        }
+
+        .adr-status-rejected {
+            background: #fee2e2;
+            color: #991b1b;
+        }
+
+        .adr-status-on-hold {
+            background: #f3f4f6;
+            color: #4b5563;
+        }
+
+        body.dark-mode .adr-status-waiting-for-me {
+            background: #78350f;
+            color: #fbbf24;
+        }
+
+        body.dark-mode .adr-status-waiting-for-others {
+            background: #1e3a5f;
+            color: #60a5fa;
+        }
+
+        body.dark-mode .adr-status-approved {
+            background: #064e3b;
+            color: #34d399;
+        }
+
+        body.dark-mode .adr-status-rejected {
+            background: #7f1d1d;
+            color: #f87171;
+        }
+
+        body.dark-mode .adr-status-on-hold {
+            background: #374151;
+            color: #9ca3af;
+        }
+
+        /* Priority specific styles */
+        .priority-badge {
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 600;
+            text-transform: uppercase;
+        }
+
+        .priority-critical {
+            background: #fee2e2;
+            color: #991b1b;
+            border: 2px solid #dc2626;
+        }
+
+        .priority-urgent {
+            background: #fef3c7;
+            color: #92400e;
+            border: 2px solid #f59e0b;
+        }
+
+        .priority-important {
+            background: #dbeafe;
+            color: #1e40af;
+            border: 2px solid #3b82f6;
+        }
+
+        .priority-enhancement {
+            background: #d1fae5;
+            color: #065f46;
+            border: 2px solid #10b981;
+        }
+
+        body.dark-mode .priority-critical {
+            background: #7f1d1d;
+            color: #f87171;
+            border-color: #dc2626;
+        }
+
+        body.dark-mode .priority-urgent {
+            background: #78350f;
+            color: #fbbf24;
+            border-color: #f59e0b;
+        }
+
+        body.dark-mode .priority-important {
+            background: #1e3a5f;
+            color: #60a5fa;
+            border-color: #3b82f6;
+        }
+
+        body.dark-mode .priority-enhancement {
+            background: #064e3b;
+            color: #34d399;
+            border-color: #10b981;
+        }
+
+        .project-card {
+            position: relative;
+        }
+
+        .project-card.priority-critical::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            width: 6px;
+            background: #dc2626;
+            border-radius: 12px 0 0 12px;
+        }
+
+        .project-card.priority-urgent::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            width: 6px;
+            background: #f59e0b;
+            border-radius: 12px 0 0 12px;
+        }
+
+        .project-card.priority-important::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            width: 6px;
+            background: #3b82f6;
+            border-radius: 12px 0 0 12px;
+        }
+
+        .project-card.priority-enhancement::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            width: 6px;
+            background: #10b981;
+            border-radius: 12px 0 0 12px;
+        }
+
+        /* Dark mode adjustments */
+        body.dark-mode {
+            --bg-primary: #0f1419;
+            --bg-secondary: #1a1f2e;
+            --bg-tertiary: #202937;
+            --text-primary: #e7e9ea;
+            --text-secondary: #8b98a5;
+            --text-tertiary: #a8b3cf;
+            --border-color: #2f3336;
+            --border-light: #38444d;
+            --accent-primary: #7c7ffc;
+            --accent-hover: #8b8eff;
+            --accent-light: #2d2f5f;
+            --accent-lighter: #262a3a;
+            --success: #34d399;
+            --danger: #f87171;
+            --warning: #fbbf24;
+            --info: #60a5fa;
+            --shadow-sm: 0 2px 8px rgba(0,0,0,0.3);
+            --shadow-md: 0 4px 16px rgba(0,0,0,0.4);
+            --shadow-lg: 0 20px 60px rgba(0,0,0,0.5);
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            .app {
+                flex-direction: column;
+            }
+            
+            .sidebar {
+                width: 100%;
+                height: auto;
+            }
+            
+            .dashboard-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+            
+            .people-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Project highlighting */
+        .project-card.highlighted {
+            box-shadow: 0 0 0 3px var(--accent-primary);
+            background: var(--accent-lighter);
+            transition: all 0.3s ease;
+        }
+
+        body.dark-mode .project-card.highlighted {
+            background: var(--accent-light);
+        }
+
+        /* Dashboard item hover effects */
+        .dashboard-task-card:hover,
+        .dashboard-adr-card:hover,
+        .dashboard-meeting-card:hover {
+            background: var(--bg-secondary);
+            box-shadow: var(--shadow-sm);
+            transform: translateY(-2px);
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div id="app">
+        <div class="app">
+            <!-- Sidebar -->
+            <div class="sidebar">
+                <div class="logo">Jiraffe</div>
+                <nav>
+                    <div class="nav-item" :class="{active: currentView === 'dashboard'}" @click="currentView = 'dashboard'">
+                        📈 Dashboard
+                    </div>
+                    <div class="nav-item" :class="{active: currentView === 'projects'}" @click="currentView = 'projects'">
+                        📊 Projects
+                    </div>
+                    <div class="nav-item" :class="{active: currentView === 'tasks'}" @click="currentView = 'tasks'">
+                        ✅ Tasks
+                    </div>
+                    <div class="nav-item" :class="{active: currentView === 'people'}" @click="currentView = 'people'">
+                        👥 People
+                    </div>
+                    <div class="nav-item" :class="{active: currentView === 'oneOnOnes'}" @click="currentView = 'oneOnOnes'">
+                        💬 1-1s
+                    </div>
+                    <div class="nav-item" :class="{active: currentView === 'adrs'}" @click="currentView = 'adrs'">
+                        📋 ADRs
+                    </div>
+                    <div class="nav-item" :class="{active: currentView === 'search'}" @click="currentView = 'search'">
+                        🔍 Search
+                    </div>
+                </nav>
+                <div style="margin-top: 40px;">
+                    <button class="button button-secondary" style="width: 100%; margin-bottom: 12px;" @click="exportMarkdown">
+                        📤 Export Markdown
+                    </button>
+                    <button class="button button-secondary" style="width: 100%; margin-bottom: 12px;" @click="exportHTML">
+                        📊 Export HTML
+                    </button>
+                    <button class="button button-secondary" style="width: 100%;" @click="showImportModal = true">
+                        📥 Import Markdown
+                    </button>
+                </div>
+                <div class="dark-mode-toggle" @click="toggleDarkMode" style="margin-top: 24px;">
+                    <span>{{ darkMode ? '🌙' : '☀️' }}</span>
+                    <span>{{ darkMode ? 'Dark' : 'Light' }} Mode</span>
+                    <div class="toggle-switch" :class="{active: darkMode}"></div>
+                </div>
+            </div>
+
+            <!-- Main Content -->
+            <div class="main-content">
+                <!-- Dashboard View -->
+                <div v-if="currentView === 'dashboard'">
+                    <div class="header">
+                        <h1 class="page-title">Dashboard</h1>
+                        <div style="color: var(--text-secondary);">{{ getCurrentDateString() }}</div>
+                    </div>
+
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-bottom: 32px;">
+                        <div class="card">
+                            <h3 style="font-size: 20px; font-weight: 700; margin-bottom: 20px; color: var(--text-primary);">
+                                📋 My Current Tasks
+                            </h3>
+                            <div v-if="myCurrentTasks.length === 0" style="color: var(--text-secondary); padding: 20px; text-align: center;">
+                                No pending tasks 👍
+                            </div>
+                            <div v-for="task in myCurrentTasks" :key="task.id" 
+                                 class="dashboard-task-card" 
+                                 :class="getTaskUrgencyClass(task)"
+                                 @click="navigateToProject(task.projectId)"
+                                 style="cursor: pointer;">
+                                <div style="display: flex; justify-content: space-between; align-items: start;">
+                                    <div>
+                                        <div style="font-weight: 600;">{{ task.title }}</div>
+                                        <div style="font-size: 13px; color: var(--text-secondary); margin-top: 4px;">
+                                            {{ getProjectName(task.projectId) }} • {{ getTeamName(getProjectTeamId(task.projectId)) }}
+                                        </div>
+                                        <div style="display: flex; align-items: center; gap: 8px; margin-top: 8px;">
+                                            <span v-if="getDeadlineClass(task.dueDate)" 
+                                                  class="deadline-badge" 
+                                                  :class="getDeadlineClass(task.dueDate)"
+                                                  style="font-size: 11px; padding: 2px 8px;">
+                                                {{ getDeadlineText(task.dueDate) }}
+                                            </span>
+                                            <span v-else class="due-date">
+                                                Due: {{ formatDate(task.dueDate) }}
+                                            </span>
+                                        </div>
+                                    </div>
+                                    <div style="display: flex; align-items: center; gap: 8px;">
+                                        <span class="status-badge" :class="'status-' + task.status">{{ task.status }}</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="card">
+                            <h3 style="font-size: 20px; font-weight: 700; margin-bottom: 20px; color: var(--text-primary);">
+                                📝 ADRs Waiting for Me
+                            </h3>
+                            <div v-if="myWaitingADRs.length === 0" style="color: var(--text-secondary); padding: 20px; text-align: center;">
+                                No ADRs waiting 👍
+                            </div>
+                            <div v-for="adr in myWaitingADRs" :key="adr.id" 
+                                 class="dashboard-adr-card"
+                                 @click="navigateToProject(adr.projectId)"
+                                 style="cursor: pointer;">
+                                <div style="display: flex; justify-content: space-between; align-items: start;">
+                                    <div>
+                                        <div style="font-weight: 600;">{{ adr.title }}</div>
+                                        <div style="font-size: 13px; color: var(--text-secondary); margin-top: 4px;">
+                                            {{ getProjectName(adr.projectId) }} • {{ getTeamName(getProjectTeamId(adr.projectId)) }}
+                                        </div>
+                                        <div style="margin-top: 8px;">
+                                            <span class="status-badge" :class="'adr-status-' + adr.adrStatus.replace(/\s+/g, '-')">{{ adr.adrStatus }}</span>
+                                            <span style="font-size: 13px; color: var(--text-secondary); margin-left: 12px;">
+                                                Due: {{ formatDate(adr.dueDate) }}
+                                            </span>
+                                        </div>
+                                    </div>
+                                    <a v-if="adr.artifactUrl" :href="adr.artifactUrl" target="_blank" class="url-button">
+                                        Open
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-bottom: 32px;">
+                        <div class="card">
+                            <h3 style="font-size: 20px; font-weight: 700; margin-bottom: 20px; color: var(--text-primary);">
+                                📅 Upcoming Meetings
+                            </h3>
+                            <div v-if="upcomingMeetings.length === 0" style="color: var(--text-secondary); padding: 20px; text-align: center;">
+                                No upcoming meetings
+                            </div>
+                            <div v-for="meeting in upcomingMeetings" :key="meeting.id" 
+                                 class="dashboard-meeting-card"
+                                 @click="navigateToProject(meeting.projectId)"
+                                 style="cursor: pointer;">
+                                <div style="display: flex; justify-content: space-between; align-items: start;">
+                                    <div>
+                                        <div style="font-weight: 600;">{{ meeting.title }}</div>
+                                        <div style="font-size: 13px; color: var(--text-secondary); margin-top: 4px;">
+                                            {{ getProjectName(meeting.projectId) }} • {{ meeting.duration }} min
+                                        </div>
+                                        <div style="font-size: 13px; color: var(--accent-primary); margin-top: 4px; font-weight: 600;">
+                                            {{ formatDate(meeting.date) }}
+                                        </div>
+                                        <div v-if="meeting.people && meeting.people.length > 0" style="font-size: 13px; color: var(--text-secondary); margin-top: 4px;">
+                                            With: {{ meeting.people.slice(0, 3).join(', ') }}<span v-if="meeting.people.length > 3">...</span>
+                                        </div>
+                                    </div>
+                                    <div style="display: flex; align-items: center; gap: 8px;">
+                                        <span class="interaction-type" :class="'type-' + meeting.interactionType">{{ meeting.interactionType }}</span>
+                                        <a v-if="meeting.artifactUrl" :href="meeting.artifactUrl" target="_blank" class="url-button">
+                                            Open
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="card">
+                            <h3 style="font-size: 20px; font-weight: 700; margin-bottom: 20px; color: var(--text-primary);">
+                                🚨 High Priority Projects
+                            </h3>
+                            <div v-if="highPriorityProjects.length === 0" style="color: var(--text-secondary); padding: 20px; text-align: center;">
+                                No high priority projects 👍
+                            </div>
+                            <div v-for="project in highPriorityProjects" :key="project.id" 
+                                 class="task-card" 
+                                 :class="'priority-' + project.priority"
+                                 @click="navigateToProject(project.id)"
+                                 style="padding: 16px; margin-bottom: 12px; cursor: pointer;">
+                                <div style="display: flex; justify-content: space-between; align-items: start;">
+                                    <div>
+                                        <div style="font-weight: 600;">{{ project.name }}</div>
+                                        <div style="font-size: 13px; color: var(--text-secondary); margin-top: 4px;">
+                                            {{ getTeamName(project.teamId) }}
+                                        </div>
+                                    </div>
+                                    <div style="display: flex; align-items: center; gap: 8px;">
+                                        <span class="priority-badge" :class="'priority-' + project.priority">{{ project.priority }}</span>
+                                        <span class="status-badge" :class="'status-' + project.status">{{ project.status }}</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card">
+                        <h3 style="font-size: 20px; font-weight: 700; margin-bottom: 20px; color: var(--text-primary);">
+                            📊 Weekly Activity
+                        </h3>
+                        <div class="activity-chart">
+                            <div v-for="(hours, index) in weeklyActivityData" 
+                                 :key="index" 
+                                 class="chart-bar" 
+                                 :style="{height: hours + '%'}"
+                                 :title="weekDays[index] + ': ' + Math.round(hours) + ' min'">
+                                <span class="chart-label">{{ weekDays[index] }}</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card" style="margin-top: 24px;">
+                        <h3 style="font-size: 20px; font-weight: 700; margin-bottom: 20px; color: var(--text-primary);">
+                            ⚠️ Teams Needing Attention
+                        </h3>
+                        <div v-if="teamsNeedingAttention.length === 0" style="color: var(--text-secondary); padding: 20px; text-align: center;">
+                            All teams have been contacted recently 👍
+                        </div>
+                        <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: 16px;">
+                            <div v-for="team in teamsNeedingAttention" :key="team.id" 
+                                 style="padding: 16px; background: var(--bg-tertiary); border-radius: 8px; border: 1px solid var(--border-color);">
+                                <div style="font-weight: 600; margin-bottom: 8px;">{{ team.name }}</div>
+                                <div style="font-size: 13px; color: var(--danger);">
+                                    Last interaction: {{ getLastInteractionText(team.id) }}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Projects View -->
+                <div v-if="currentView === 'projects'">
+                    <div class="header">
+                        <h1 class="page-title">Projects</h1>
+                        <div style="display: flex; gap: 12px;">
+                            <button class="button button-primary" @click="showAddProjectModal">
+                                + New Project
+                            </button>
+                            <button class="button button-primary" @click="showAddTeamModal">
+                                + New Team
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="filters">
+                        <div class="checkbox-wrapper">
+                            <input type="checkbox" id="showCompleted" v-model="showCompletedProjects" class="checkbox">
+                            <label for="showCompleted">Show completed projects</label>
+                        </div>
+                        <div class="checkbox-wrapper">
+                            <input type="checkbox" id="showOnHold" v-model="showOnHoldProjects" class="checkbox">
+                            <label for="showOnHold">Show on-hold projects</label>
+                        </div>
+                    </div>
+
+                    <div v-for="team in teamsWithProjects" :key="team.id" class="team-section">
+                        <div class="team-header">
+                            {{ team.name }}
+                            <span class="last-interaction" :class="{'last-interaction-warning': daysSinceLastInteraction(team.id) > 30}">
+                                Last interaction: {{ getLastInteractionText(team.id) }}
+                            </span>
+                        </div>
+                        <div v-if="team.tags && team.tags.length > 0" class="tags-display" style="margin-bottom: 16px;">
+                            <span v-for="tag in team.tags" :key="tag" class="tag-item">{{ tag }}</span>
+                        </div>
+                        <div v-for="project in getTeamProjects(team.id)" :key="project.id" 
+                             class="card project-card" 
+                             :class="['priority-' + project.priority, {highlighted: highlightedProjectId === project.id}]"
+                             :data-project-id="project.id">
+                            <div class="project-title">
+                                <span>{{ project.name }}</span>
+                                <div style="display: flex; align-items: center; gap: 12px;">
+                                    <span class="priority-badge" :class="'priority-' + project.priority">{{ project.priority }}</span>
+                                    <span class="status-badge" :class="'status-' + project.status">{{ project.status }}</span>
+                                    <div class="action-buttons">
+                                        <button class="icon-button" @click="editItem(project)" title="Edit">✏️</button>
+                                        <button class="icon-button" @click="deleteItem(project.id)" title="Delete">🗑️</button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div style="margin-bottom: 16px; color: #6b7280; font-size: 14px;">
+                                {{ formatDate(project.startDate) }} - {{ project.endDate ? formatDate(project.endDate) : 'Ongoing' }}
+                            </div>
+                            <div v-if="project.progress" style="margin-bottom: 16px;">
+                                <strong style="font-size: 14px;">Progress:</strong> {{ project.progress }}
+                            </div>
+                            <div v-if="project.tags && project.tags.length > 0" class="tags-display" style="margin-bottom: 16px;">
+                                <span v-for="tag in project.tags" :key="tag" class="tag-item">{{ tag }}</span>
+                            </div>
+
+                            <!-- Interactions -->
+                            <div style="margin-bottom: 20px;">
+                                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px;">
+                                    <h4 style="font-weight: 600;">Interactions</h4>
+                                    <button class="button button-small button-primary" @click="showAddInteractionModal(project.id)">
+                                        + Add
+                                    </button>
+                                </div>
+                                <div v-if="getProjectInteractions(project.id).length === 0" class="empty-state" style="padding: 20px;">
+                                    <div class="empty-state-icon">💬</div>
+                                    <div>No interactions yet</div>
+                                </div>
+                                <div v-for="interaction in getProjectInteractions(project.id)" :key="interaction.id" class="interaction-item">
+                                    <div>
+                                        <div style="font-weight: 600;">{{ interaction.title }}</div>
+                                        <div style="font-size: 13px; color: #6b7280;">
+                                            {{ formatDate(interaction.date) }} • {{ interaction.duration }} min
+                                        </div>
+                                        <div v-if="interaction.tags && interaction.tags.length > 0" class="tags-display">
+                                            <span v-for="tag in interaction.tags" :key="tag" class="tag-item">{{ tag }}</span>
+                                        </div>
+                                    </div>
+                                    <div style="display: flex; align-items: center; gap: 12px;">
+                                        <span class="interaction-type" :class="'type-' + interaction.interactionType">{{ interaction.interactionType }}</span>
+                                        <a v-if="interaction.artifactUrl" :href="interaction.artifactUrl" target="_blank" class="url-button">
+                                            Open Notes
+                                        </a>
+                                        <div class="action-buttons">
+                                            <button class="icon-button" @click="editItem(interaction)" title="Edit">✏️</button>
+                                            <button class="icon-button" @click="exportMeetingNotes(interaction)" title="Export">📤</button>
+                                            <button class="icon-button" @click="deleteItem(interaction.id)" title="Delete">🗑️</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Tasks -->
+                            <div>
+                                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px;">
+                                    <h4 style="font-weight: 600;">Tasks</h4>
+                                    <button class="button button-small button-primary" @click="showAddTaskModal(project.id)">
+                                        + Add
+                                    </button>
+                                </div>
+                                <div v-if="getProjectTasks(project.id).length === 0" class="empty-state" style="padding: 20px;">
+                                    <div class="empty-state-icon">📋</div>
+                                    <div>No tasks yet</div>
+                                </div>
+                                <div v-for="task in getProjectTasks(project.id)" :key="task.id" class="task-item">
+                                    <div>
+                                        <div style="font-weight: 600;">{{ task.title }}</div>
+                                        <div style="display: flex; align-items: center; gap: 8px; margin-top: 4px;">
+                                            <span v-if="getDeadlineClass(task.dueDate) && task.status !== 'complete'" 
+                                                  class="deadline-badge" 
+                                                  :class="getDeadlineClass(task.dueDate)"
+                                                  style="font-size: 11px; padding: 2px 8px;">
+                                            {{ getDeadlineText(task.dueDate) }}
+                                            </span>
+                                            <span v-else class="due-date" :class="{overdue: isOverdue(task.dueDate) && task.status !== 'complete'}">
+                                                Due: {{ formatDate(task.dueDate) }}
+                                            </span>
+                                        </div>
+                                        <div v-if="task.tags && task.tags.length > 0" class="tags-display">
+                                            <span v-for="tag in task.tags" :key="tag" class="tag-item">{{ tag }}</span>
+                                        </div>
+                                    </div>
+                                    <div style="display: flex; align-items: center; gap: 12px;">
+                                        <span class="status-badge" :class="'status-' + task.status">{{ task.status }}</span>
+                                        <span class="time-badge">{{ getTotalTaskTime(task.id) }} min</span>
+                                        <a v-if="task.artifactUrl" :href="task.artifactUrl" target="_blank" class="url-button">
+                                            Open
+                                        </a>
+                                        <div class="action-buttons">
+                                            <button class="icon-button" @click="editItem(task)" title="Edit">✏️</button>
+                                            <button class="icon-button" @click="deleteItem(task.id)" title="Delete">🗑️</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- ADRs -->
+                            <div style="margin-top: 20px;">
+                                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px;">
+                                    <h4 style="font-weight: 600;">ADRs</h4>
+                                    <button class="button button-small button-primary" @click="showAddADRModal(project.id)">
+                                        + Add
+                                    </button>
+                                </div>
+                                <div v-if="getProjectADRs(project.id).length === 0" class="empty-state" style="padding: 20px;">
+                                    <div class="empty-state-icon">📋</div>
+                                    <div>No ADRs yet</div>
+                                </div>
+                                <div v-for="adr in getProjectADRs(project.id)" :key="adr.id" class="task-item">
+                                    <div>
+                                        <div style="font-weight: 600;">{{ adr.title }}</div>
+                                        <div style="display: flex; align-items: center; gap: 8px; margin-top: 4px;">
+                                        </div>
+                                    </div>
+                                    <div style="display: flex; align-items: center; gap: 12px;">
+                                        <a v-if="adr.artifactUrl" :href="adr.artifactUrl" target="_blank" class="url-button">
+                                            Open
+                                        </a>
+                                        <div class="action-buttons">
+                                            <button class="icon-button" @click="editItem(adr)" title="Edit">✏️</button>
+                                            <button class="icon-button" @click="deleteItem(adr.id)" title="Delete">🗑️</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tasks View -->
+                <div v-if="currentView === 'tasks'">
+                    <div class="header">
+                        <h1 class="page-title">All Tasks</h1>
+                    </div>
+
+                    <div class="filters">
+                        <div class="checkbox-wrapper">
+                            <input type="checkbox" id="showCompletedTasks" v-model="showCompletedTasks" class="checkbox">
+                            <label for="showCompletedTasks">Show completed tasks</label>
+                        </div>
+                        <select class="form-select" style="width: 200px;" v-model="taskSortBy">
+                            <option value="dueDate">Sort by Due Date</option>
+                            <option value="createdDate">Sort by Created Date</option>
+                        </select>
+                    </div>
+
+                    <div v-if="sortedTasks.length === 0" class="empty-state">
+                        <div class="empty-state-icon">📋</div>
+                        <div>No tasks found</div>
+                    </div>
+
+                    <div v-for="task in sortedTasks" :key="task.id" 
+                         class="task-card" 
+                         :class="getTaskUrgencyClass(task)">
+                        <div style="display: flex; justify-content: space-between; align-items: start;">
+                            <div style="flex: 1;">
+                                <h3 style="font-size: 18px; font-weight: 600; margin-bottom: 8px;">{{ task.title }}</h3>
+                                <div style="color: var(--text-secondary); font-size: 14px; margin-bottom: 8px;">
+                                    {{ getProjectName(task.projectId) }} • {{ getTeamName(getProjectTeamId(task.projectId)) }}
+                                </div>
+                                <div style="display: flex; align-items: center; gap: 16px; margin-bottom: 8px;">
+                                    <span class="deadline-badge" :class="getDeadlineClass(task.dueDate)">
+                                        <span v-if="getDeadlineClass(task.dueDate) === 'overdue'">⚠️</span>
+                                        <span v-else-if="getDeadlineClass(task.dueDate) === 'today'">🔥</span>
+                                        <span v-else-if="getDeadlineClass(task.dueDate) === 'tomorrow'">⏰</span>
+                                        {{ getDeadlineText(task.dueDate) }}
+                                    </span>
+                                    <span style="font-size: 13px; color: var(--text-secondary);">
+                                        Due: {{ formatDate(task.dueDate) }}
+                                    </span>
+                                </div>
+                                <div v-if="task.description" style="margin-top: 12px; color: var(--text-tertiary);">
+                                    {{ task.description }}
+                                </div>
+                                <div v-if="task.tags && task.tags.length > 0" class="tags-display">
+                                    <span v-for="tag in task.tags" :key="tag" class="tag-item">{{ tag }}</span>
+                                </div>
+                            </div>
+                            <div style="display: flex; align-items: center; gap: 12px;">
+                                <span class="status-badge" :class="'status-' + task.status">{{ task.status }}</span>
+                                <span class="time-badge">{{ getTotalTaskTime(task.id) }} min</span>
+                                <a v-if="task.artifactUrl" :href="task.artifactUrl" target="_blank" class="url-button">
+                                    Open
+                                </a>
+                                <div class="action-buttons">
+                                    <button class="icon-button" @click="editItem(task)" title="Edit">✏️</button>
+                                    <button class="icon-button" @click="deleteItem(task.id)" title="Delete">🗑️</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Work Sessions -->
+                        <div style="margin-top: 20px;">
+                            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px;">
+                                <h4 style="font-weight: 600;">Work Sessions</h4>
+                                <button class="button button-small button-primary" @click="showAddWorkSessionModal(task.id)">
+                                    + Add Session
+                                </button>
+                            </div>
+                            <div v-if="getTaskWorkSessions(task.id).length === 0" style="color: var(--text-secondary); font-size: 14px;">
+                                No work sessions recorded
+                            </div>
+                            <div v-for="session in getTaskWorkSessions(task.id)" :key="session.id" class="work-session">
+                                <div style="flex: 1;">
+                                    {{ formatDate(session.date) }} • {{ session.duration }} minutes
+                                </div>
+                                <button class="icon-button" @click="deleteItem(session.id)" title="Delete">🗑️</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ADRs View -->
+                <div v-if="currentView === 'adrs'">
+                    <div class="header">
+                        <h1 class="page-title">Architecture Decision Records</h1>
+                    </div>
+
+                    <div class="filters">
+                        <div class="checkbox-wrapper">
+                            <input type="checkbox" id="showCompletedADRs" v-model="showCompletedADRs" class="checkbox">
+                            <label for="showCompletedADRs">Show approved/rejected ADRs</label>
+                        </div>
+                        <select class="form-select" style="width: 200px;" v-model="adrSortBy">
+                            <option value="createdDate">Sort by Created Date</option>
+                            <option value="status">Sort by Status</option>
+                        </select>
+                    </div>
+
+                    <div v-if="sortedADRs.length === 0" class="empty-state">
+                        <div class="empty-state-icon">📋</div>
+                        <div>No ADRs found</div>
+                    </div>
+
+                    <div v-for="adr in sortedADRs" :key="adr.id" class="card">
+                        <div style="display: flex; justify-content: space-between; align-items: start;">
+                            <div>
+                                <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 8px;">
+                                    <h3 style="font-size: 18px; font-weight: 600;">{{ adr.title }}</h3>
+                                    <span class="status-badge" :class="'adr-status-' + adr.adrStatus.replace(/\s+/g, '-')">{{ adr.adrStatus }}</span>
+                                </div>
+                                <div style="color: #6b7280; margin-bottom: 8px;">
+                                    {{ getProjectName(adr.projectId) }} • {{ getTeamName(getProjectTeamId(adr.projectId)) }}
+                                </div>
+                                <div style="color: var(--text-secondary); font-size: 14px; margin-bottom: 8px;">
+                                    Due: {{ formatDate(adr.dueDate) }}
+                                </div>
+                                <div v-if="adr.authors && adr.authors.length > 0" style="font-size: 13px; color: var(--text-secondary); margin-bottom: 8px;">
+                                    Authors: {{ adr.authors.join(', ') }}
+                                </div>
+                                <div v-if="adr.description" style="color: var(--text-tertiary); margin-bottom: 8px;">
+                                    {{ adr.description }}
+                                </div>
+                                <div v-if="adr.tags && adr.tags.length > 0" class="tags-display">
+                                    <span v-for="tag in adr.tags" :key="tag" class="tag-item">{{ tag }}</span>
+                                </div>
+                            </div>
+                            <div style="display: flex; align-items: center; gap: 12px;">
+                                <a v-if="adr.artifactUrl" :href="adr.artifactUrl" target="_blank" class="url-button">
+                                    Open
+                                </a>
+                                <div class="action-buttons">
+                                    <button class="icon-button" @click="editItem(adr)" title="Edit">✏️</button>
+                                    <button class="icon-button" @click="deleteItem(adr.id)" title="Delete">🗑️</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Search View -->
+                <div v-if="currentView === 'search'">
+                    <div class="header">
+                        <h1 class="page-title">Search</h1>
+                    </div>
+
+                    <input 
+                        type="text" 
+                        v-model="searchQuery" 
+                        placeholder="Search projects, tasks, interactions, people..."
+                        class="search-box"
+                    >
+
+                    <div v-if="searchResults.length === 0 && searchQuery" class="empty-state">
+                        <div class="empty-state-icon">🔍</div>
+                        <div>No results found for "{{ searchQuery }}"</div>
+                    </div>
+
+                    <div v-for="result in searchResults" :key="result.id" class="card">
+                        <div style="display: flex; justify-content: space-between; align-items: start;">
+                            <div>
+                                <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 8px;">
+                                    <span class="status-badge">{{ result.type }}</span>
+                                    <h3 style="font-size: 18px; font-weight: 600;">{{ result.title || result.name }}</h3>
+                                </div>
+                                <div style="color: #6b7280;">
+                                    {{ getSearchResultContext(result) }}
+                                </div>
+                                <div v-if="result.tags && result.tags.length > 0" class="tags-display">
+                                    <span v-for="tag in result.tags" :key="tag" class="tag-item">{{ tag }}</span>
+                                </div>
+                            </div>
+                            <div class="action-buttons">
+                                <button class="icon-button" @click="editItem(result)" title="Edit">✏️</button>
+                                <button class="icon-button" @click="deleteItem(result.id)" title="Delete">🗑️</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- People View -->
+                <div v-if="currentView === 'people'">
+                    <div class="header">
+                        <h1 class="page-title">People</h1>
+                        <button class="button button-primary" @click="showAddPersonModal">
+                            + New Person
+                        </button>
+                    </div>
+
+                    <div class="filters">
+                        <div class="checkbox-wrapper">
+                            <input type="checkbox" id="showVIPOnly" v-model="showVIPOnly" class="checkbox">
+                            <label for="showVIPOnly">Show VIPs only</label>
+                        </div>
+                        <select class="form-select" style="width: 200px;" v-model="personSortBy">
+                            <option value="name">Sort by Name</option>
+                            <option value="lastInteraction">Sort by Last Interaction</option>
+                            <option value="vip">Sort by VIP Status</option>
+                        </select>
+                    </div>
+
+                    <div v-if="filteredPeople.length === 0" class="empty-state">
+                        <div class="empty-state-icon">👥</div>
+                        <div>No people found</div>
+                    </div>
+
+                    <div class="people-grid">
+                        <div v-for="person in filteredPeople" :key="person.id" class="person-card">
+                            <div style="display: flex; justify-content: space-between; align-items: start; margin-bottom: 12px;">
+                                <div style="display: flex; align-items: center; gap: 8px;">
+                                    <div class="person-name">{{ person.name }}</div>
+                                    <span v-if="person.isVIP" style="background: #fbbf24; color: white; padding: 2px 8px; border-radius: 12px; font-size: 11px; font-weight: 700;">VIP</span>
+                                </div>
+                                <div class="action-buttons">
+                                    <button class="icon-button" @click="editItem(person)" title="Edit">✏️</button>
+                                    <button class="icon-button" @click="deleteItem(person.id)" title="Delete">🗑️</button>
+                                </div>
+                            </div>
+                            
+                            <div class="last-interaction" :class="{'last-interaction-warning': daysSinceLastPersonInteraction(person.name) > 30}">
+                                Last interaction: {{ getLastPersonInteractionText(person.name) }}
+                            </div>
+                            
+                            <div v-if="getPersonTeams(person.name).length > 0" class="team-list">
+                                <strong style="display: block; margin-bottom: 4px; font-size: 13px;">Teams:</strong>
+                                <span v-for="team in getPersonTeams(person.name)" :key="team.id" class="team-tag">
+                                    {{ team.name }}
+                                </span>
+                            </div>
+                            
+                            <div v-if="person.notes" style="margin: 12px 0; padding: 8px; background: var(--bg-tertiary); border-radius: 6px; font-size: 14px; color: var(--text-secondary);">
+                                {{ person.notes }}
+                            </div>
+                            
+                            <div v-if="person.tags && person.tags.length > 0" class="tags-display">
+                                <span v-for="tag in person.tags" :key="tag" class="tag-item">{{ tag }}</span>
+                            </div>
+
+                            <!-- Person Interactions -->
+                            <div style="margin-top: 16px;">
+                                <h4 style="font-weight: 600; margin-bottom: 8px; font-size: 14px;">Recent Interactions</h4>
+                                <div v-if="getPersonInteractions(person.name).length === 0" style="color: var(--text-secondary); font-size: 13px;">
+                                    No interactions recorded
+                                </div>
+                                <div v-else style="max-height: 200px; overflow-y: auto;">
+                                    <div v-for="interaction in getPersonInteractions(person.name).slice(0, 5)" :key="interaction.id" 
+                                         style="padding: 8px; margin: 4px 0; background: var(--bg-tertiary); border-radius: 6px; font-size: 13px;">
+                                        <div style="font-weight: 600;">{{ interaction.title }}</div>
+                                        <div style="color: var(--text-secondary); margin-top: 2px;">
+                                            {{ formatDate(interaction.date) }} • {{ getProjectName(interaction.projectId) }}
+                                        </div>
+                                    </div>
+                                    <div v-if="getPersonInteractions(person.name).length > 5" 
+                                         style="text-align: center; margin-top: 8px;">
+                                        <button class="button button-small button-secondary" @click="showPersonInteractionsModal(person)">
+                                            View All {{ getPersonInteractions(person.name).length }} Interactions
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 1-1s View -->
+                <div v-if="currentView === 'oneOnOnes'">
+                    <div class="header">
+                        <h1 class="page-title">1-1 Meetings</h1>
+                        <button class="button button-primary" @click="showAdd1on1Modal">
+                            + Schedule 1-1
+                        </button>
+                    </div>
+
+                    <div v-if="oneOnOneInteractions.length === 0" class="empty-state">
+                        <div class="empty-state-icon">💬</div>
+                        <div>No 1-1 meetings scheduled yet</div>
+                    </div>
+
+                    <div v-for="interaction in oneOnOneInteractions" :key="interaction.id" class="card">
+                        <div style="display: flex; justify-content: space-between; align-items: start;">
+                            <div style="flex: 1;">
+                                <h3 style="font-size: 18px; font-weight: 600; margin-bottom: 8px;">{{ interaction.title }}</h3>
+                                <div style="color: var(--text-secondary); font-size: 14px; margin-bottom: 8px;">
+                                    {{ formatDate(interaction.date) }} • {{ interaction.duration }} minutes
+                                </div>
+                                <div v-if="interaction.people && interaction.people.length > 0" style="margin-bottom: 8px;">
+                                    <strong>People:</strong> {{ interaction.people.join(', ') }}
+                                </div>
+                                <div v-if="interaction.notes" style="margin-top: 12px; color: var(--text-tertiary);">
+                                    {{ interaction.notes }}
+                                </div>
+                                <div v-if="interaction.tags && interaction.tags.length > 0" class="tags-display">
+                                    <span v-for="tag in interaction.tags" :key="tag" class="tag-item">{{ tag }}</span>
+                                </div>
+                            </div>
+                            <div style="display: flex; align-items: center; gap: 12px;">
+                                <a v-if="interaction.artifactUrl" :href="interaction.artifactUrl" target="_blank" class="url-button">
+                                    Open Notes
+                                </a>
+                                <div class="action-buttons">
+                                    <button class="icon-button" @click="editItem(interaction)" title="Edit">✏️</button>
+                                    <button class="icon-button" @click="exportMeetingNotes(interaction)" title="Export">📤</button>
+                                    <button class="icon-button" @click="deleteItem(interaction.id)" title="Delete">🗑️</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Modal -->
+        <div v-if="showModal" class="modal" @click.self="closeModal">
+            <div class="modal-content">
+                <h2 class="modal-header">{{ modalTitle }}</h2>
+                
+                <!-- Team Form -->
+                <div v-if="currentForm.type === 'team'">
+                    <div class="form-group">
+                        <label class="form-label">Team Name</label>
+                        <input v-model="currentForm.name" class="form-input" placeholder="Engineering Team">
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">People (comma-separated)</label>
+                        <input v-model="currentForm.peopleString" class="form-input" placeholder="John Doe, Jane Smith">
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Tags (comma-separated)</label>
+                        <input v-model="currentForm.tagsString" class="form-input" placeholder="engineering, backend, api">
+                    </div>
+                </div>
+
+                <!-- Project Form -->
+                <div v-if="currentForm.type === 'project'">
+                    <div class="form-group">
+                        <label class="form-label">Project Name</label>
+                        <input v-model="currentForm.name" class="form-input" placeholder="Security Audit">
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Team</label>
+                        <select v-model="currentForm.teamId" class="form-select">
+                            <option value="">Select a team...</option>
+                            <option v-for="team in teams" :key="team.id" :value="team.id">
+                                {{ team.name }}
+                            </option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Priority</label>
+                        <select v-model="currentForm.priority" class="form-select">
+                            <option value="critical">Critical</option>
+                            <option value="urgent">Urgent</option>
+                            <option value="important">Important</option>
+                            <option value="enhancement">Enhancement</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Status</label>
+                        <select v-model="currentForm.status" class="form-select">
+                            <option value="not-started">Not Started</option>
+                            <option value="ongoing">Ongoing</option>
+                            <option value="complete">Complete</option>
+                            <option value="on-hold">On Hold</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Start Date</label>
+                        <input v-model="currentForm.startDate" type="date" class="form-input">
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">End Date (optional)</label>
+                        <input v-model="currentForm.endDate" type="date" class="form-input">
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Progress (optional)</label>
+                        <textarea v-model="currentForm.progress" class="form-textarea" placeholder="Current status, blockers, next steps..." style="min-height: 120px;"></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Tags (comma-separated)</label>
+                        <input v-model="currentForm.tagsString" class="form-input" placeholder="security, audit, compliance">
+                    </div>
+                </div>
+
+                <!-- Interaction Form -->
+                <div v-if="currentForm.type === 'interaction'">
+                    <div class="form-group">
+                        <label class="form-label">Title</label>
+                        <input v-model="currentForm.title" class="form-input" placeholder="Weekly Standup">
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Type</label>
+                        <select v-model="currentForm.interactionType" class="form-select">
+                            <option value="meeting">Meeting</option>
+                            <option value="chat">Chat</option>
+                            <option value="email">Email</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Date</label>
+                        <input v-model="currentForm.date" type="date" class="form-input">
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Duration (minutes)</label>
+                        <input v-model.number="currentForm.duration" type="number" class="form-input" placeholder="30">
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">People (comma-separated)</label>
+                        <input v-model="currentForm.peopleString" class="form-input" placeholder="John Doe, Jane Smith">
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Artifact URL (optional)</label>
+                        <input v-model="currentForm.artifactUrl" class="form-input" placeholder="https://obsidian.local/notes/...">
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Notes (optional)</label>
+                        <textarea v-model="currentForm.notes" class="form-textarea" placeholder="Additional notes..."></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Tags (comma-separated)</label>
+                        <input v-model="currentForm.tagsString" class="form-input" placeholder="standup, planning, review">
+                    </div>
+                </div>
+
+                <!-- Task Form -->
+                <div v-if="currentForm.type === 'task'">
+                    <div class="form-group">
+                        <label class="form-label">Title</label>
+                        <input v-model="currentForm.title" class="form-input" placeholder="Write security report">
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Description</label>
+                        <textarea v-model="currentForm.description" class="form-textarea" placeholder="Task details..."></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Due Date</label>
+                        <input v-model="currentForm.dueDate" type="date" class="form-input">
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Status</label>
+                        <select v-model="currentForm.status" class="form-select">
+                            <option value="not-started">Not Started</option>
+                            <option value="ongoing">Ongoing</option>
+                            <option value="complete">Complete</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Artifact URL (optional)</label>
+                        <input v-model="currentForm.artifactUrl" class="form-input" placeholder="https://...">
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Tags (comma-separated)</label>
+                        <input v-model="currentForm.tagsString" class="form-input" placeholder="urgent, documentation, review">
+                    </div>
+                </div>
+
+                <!-- ADR Form -->
+                <div v-if="currentForm.type === 'adr'">
+                    <div class="form-group">
+                        <label class="form-label">Title</label>
+                        <input v-model="currentForm.title" class="form-input" placeholder="API Authentication Strategy">
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Description</label>
+                        <textarea v-model="currentForm.description" class="form-textarea" placeholder="ADR details..."></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Due Date</label>
+                        <input v-model="currentForm.dueDate" type="date" class="form-input">
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">ADR Status</label>
+                        <select v-model="currentForm.adrStatus" class="form-select">
+                            <option value="not-started">Not Started</option>
+                            <option value="waiting-for-me">Waiting for Me</option>
+                            <option value="waiting-for-others">Waiting for Others</option>
+                            <option value="approved">Approved</option>
+                            <option value="rejected">Rejected</option>
+                            <option value="on-hold">On Hold</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Authors (comma-separated)</label>
+                        <input v-model="currentForm.authorsString" class="form-input" placeholder="John Doe, Jane Smith">
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Artifact URL (optional)</label>
+                        <input v-model="currentForm.artifactUrl" class="form-input" placeholder="https://...">
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Tags (comma-separated)</label>
+                        <input v-model="currentForm.tagsString" class="form-input" placeholder="architecture, security, performance">
+                    </div>
+                </div>
+
+                <!-- Work Session Form -->
+                <div v-if="currentForm.type === 'workSession'">
+                    <div class="form-group">
+                        <label class="form-label">Date</label>
+                        <input v-model="currentForm.date" type="date" class="form-input">
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Duration (minutes)</label>
+                        <input v-model.number="currentForm.duration" type="number" class="form-input" placeholder="45">
+                    </div>
+                </div>
+
+                <!-- Person Form -->
+                <div v-if="currentForm.type === 'person'">
+                    <div class="form-group">
+                        <label class="form-label">Name</label>
+                        <input v-model="currentForm.name" class="form-input" placeholder="John Doe">
+                    </div>
+                    <div class="form-group">
+                        <div class="checkbox-wrapper">
+                            <input type="checkbox" id="isVIP" v-model="currentForm.isVIP" class="checkbox">
+                            <label for="isVIP">VIP</label>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Notes</label>
+                        <textarea v-model="currentForm.notes" class="form-textarea" placeholder="Personal notes about this person..."></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Tags (comma-separated)</label>
+                        <input v-model="currentForm.tagsString" class="form-input" placeholder="manager, developer, designer">
+                    </div>
+                </div>
+
+                <div style="display: flex; gap: 12px; justify-content: flex-end; margin-top: 32px;">
+                    <button class="button button-secondary" @click="closeModal">Cancel</button>
+                    <button class="button button-success" @click="saveForm">Save</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Import Modal -->
+        <div v-if="showImportModal" class="modal" @click.self="showImportModal = false">
+            <div class="modal-content">
+                <h2 class="modal-header">Import Markdown</h2>
+                <div class="form-group">
+                    <label class="form-label">Paste your markdown content here:</label>
+                    <textarea v-model="importContent" class="form-textarea" style="min-height: 400px;" placeholder="Paste your exported markdown..."></textarea>
+                </div>
+                <div style="display: flex; gap: 12px; justify-content: flex-end; margin-top: 32px;">
+                    <button class="button button-secondary" @click="showImportModal = false">Cancel</button>
+                    <button class="button button-success" @click="importMarkdown">Import</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Person Interactions Modal -->
+        <div v-if="showPersonInteractionsModalFlag" class="modal" @click.self="showPersonInteractionsModalFlag = false">
+            <div class="modal-content">
+                <h2 class="modal-header">Interactions with {{ selectedPerson?.name }}</h2>
+                <div style="max-height: 60vh; overflow-y: auto;">
+                    <div v-for="interaction in getPersonInteractions(selectedPerson?.name)" :key="interaction.id" 
+                         style="padding: 16px; margin: 8px 0; background: var(--bg-tertiary); border-radius: 8px;">
+                        <div style="display: flex; justify-content: space-between; align-items: start;">
+                            <div>
+                                <div style="font-weight: 600; margin-bottom: 4px;">{{ interaction.title }}</div>
+                                <div style="color: var(--text-secondary); font-size: 14px; margin-bottom: 8px;">
+                                    {{ formatDate(interaction.date) }} • {{ interaction.duration }} min • {{ getProjectName(interaction.projectId) }}
+                                </div>
+                                <div v-if="interaction.notes" style="color: var(--text-tertiary); font-size: 14px;">
+                                    {{ interaction.notes }}
+                                </div>
+                            </div>
+                            <div style="display: flex; align-items: center; gap: 8px;">
+                                <span class="interaction-type" :class="'type-' + interaction.interactionType">{{ interaction.interactionType }}</span>
+                                <a v-if="interaction.artifactUrl" :href="interaction.artifactUrl" target="_blank" class="url-button">
+                                    Open
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div style="display: flex; justify-content: flex-end; margin-top: 24px;">
+                    <button class="button button-secondary" @click="showPersonInteractionsModalFlag = false">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const { createApp } = Vue;
+
+        createApp({
+            data() {
+                return {
+                    items: [],
+                    currentView: 'dashboard',
+                    showModal: false,
+                    modalTitle: '',
+                    currentForm: {},
+                    showCompletedProjects: false,
+                    showOnHoldProjects: false,
+                    showCompletedTasks: false,
+                    showCompletedADRs: false,
+                    showVIPOnly: false,
+                    taskSortBy: 'dueDate',
+                    adrSortBy: 'createdDate',
+                    personSortBy: 'name',
+                    searchQuery: '',
+                    showImportModal: false,
+                    importContent: '',
+                    oneOnOneTeamId: null,
+                    oneOnOneProjectId: null,
+                    darkMode: false,
+                    weekDays: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'],
+                    showPersonInteractionsModalFlag: false,
+                    selectedPerson: null,
+                    highlightedProjectId: null
+                }
+            },
+            computed: {
+                teams() {
+                    if (!Array.isArray(this.items)) return [];
+                    return this.items.filter(item => item.type === 'team');
+                },
+                projects() {
+                    if (!Array.isArray(this.items)) return [];
+                    return this.items.filter(item => item.type === 'project' && item.teamId !== this.oneOnOneTeamId);
+                },
+                tasks() {
+                    if (!Array.isArray(this.items)) return [];
+                    return this.items.filter(item => item.type === 'task');
+                },
+                adrs() {
+                    if (!Array.isArray(this.items)) return [];
+                    return this.items.filter(item => item && item.type === 'adr');
+                },
+                people() {
+                    if (!Array.isArray(this.items)) return [];
+                    return this.items.filter(item => item.type === 'person');
+                },
+                filteredPeople() {
+                    let filtered = this.people;
+                    
+                    if (this.showVIPOnly) {
+                        filtered = filtered.filter(person => person.isVIP);
+                    }
+                    
+                    return filtered.sort((a, b) => {
+                        if (this.personSortBy === 'name') {
+                            return a.name.localeCompare(b.name);
+                        } else if (this.personSortBy === 'lastInteraction') {
+                            const daysA = this.daysSinceLastPersonInteraction(a.name);
+                            const daysB = this.daysSinceLastPersonInteraction(b.name);
+                            return daysA - daysB;
+                        } else if (this.personSortBy === 'vip') {
+                            if (a.isVIP && !b.isVIP) return -1;
+                            if (!a.isVIP && b.isVIP) return 1;
+                            return a.name.localeCompare(b.name);
+                        }
+                        return 0;
+                    });
+                },
+                teamsWithProjects() {
+                    return this.teams.filter(team => 
+                        team.id !== this.oneOnOneTeamId && 
+                        this.getTeamProjects(team.id).length > 0
+                    );
+                },
+                sortedTasks() {
+                    const tasks = this.tasks || [];
+                    const filteredTasks = tasks.filter(task => {
+                        if (!this.showCompletedTasks && task.status === 'complete') return false;
+                        if (!Array.isArray(this.items)) return false;
+                        const project = this.items.find(p => p.id === task.projectId);
+                        return project && project.teamId !== this.oneOnOneTeamId;
+                    });
+                    
+                    return filteredTasks.sort((a, b) => {
+                        if (this.taskSortBy === 'dueDate') {
+                            return new Date(a.dueDate) - new Date(b.dueDate);
+                        } else {
+                            return new Date(b.createdDate) - new Date(a.createdDate);
+                        }
+                    });
+                },
+                sortedADRs() {
+                    if (!Array.isArray(this.items)) return [];
+                    const adrs = this.items.filter(item => item && item.type === 'adr') || [];
+                    const filteredADRs = adrs.filter(adr => {
+                        if (!adr) return false;
+                        if (!this.showCompletedADRs && (adr.adrStatus === 'approved' || adr.adrStatus === 'rejected')) return false;
+                        const project = this.items.find(p => p && p.id === adr.projectId);
+                        return project && project.teamId !== this.oneOnOneTeamId;
+                    });
+                    
+                    return filteredADRs.sort((a, b) => {
+                        if (!a || !b) return 0;
+                        if (this.adrSortBy === 'status') {
+                            return (a.adrStatus || '').localeCompare(b.adrStatus || '');
+                        } else {
+                            const dateA = new Date(a.createdDate || 0);
+                            const dateB = new Date(b.createdDate || 0);
+                            return dateB - dateA;
+                        }
+                    });
+                },
+                oneOnOneInteractions() {
+                    if (!this.oneOnOneProjectId || !Array.isArray(this.items)) return [];
+                    return this.items.filter(item => 
+                        item.type === 'interaction' && 
+                        item.projectId === this.oneOnOneProjectId
+                    ).sort((a, b) => new Date(b.date) - new Date(a.date));
+                },
+                searchResults() {
+                    if (!this.searchQuery || !Array.isArray(this.items)) return [];
+                    const query = this.searchQuery.toLowerCase();
+                    return this.items.filter(item => {
+                        if (!item || !item.type || item.type === 'workSession') return false;
+                        const searchableText = [
+                            item.name,
+                            item.title,
+                            item.description,
+                            item.notes,
+                            item.people?.join(' '),
+                            item.tags?.join(' ')
+                        ].filter(Boolean).join(' ').toLowerCase();
+                        return searchableText.includes(query);
+                    });
+                },
+                activeProjectsCount() {
+                    return this.projects.filter(p => p.status === 'ongoing').length;
+                },
+                criticalProjectsCount() {
+                    return this.projects.filter(p => p.priority === 'critical' && p.status !== 'complete').length;
+                },
+                highPriorityProjects() {
+                    return this.projects.filter(p => 
+                        (p.priority === 'critical' || p.priority === 'urgent') && 
+                        p.status !== 'complete'
+                    ).sort((a, b) => {
+                        const priorityOrder = { critical: 1, urgent: 2, important: 3, enhancement: 4 };
+                        return priorityOrder[a.priority] - priorityOrder[b.priority];
+                    }).slice(0, 5);
+                },
+                pendingTasksCount() {
+                    return this.tasks.filter(t => t.status !== 'complete').length;
+                },
+                myCurrentTasks() {
+                    const today = new Date();
+                    return this.tasks.filter(t => {
+                        if (t.status === 'complete') return false;
+                        const project = this.items.find(p => p.id === t.projectId);
+                        if (!project || project.teamId === this.oneOnOneTeamId) return false;
+                        return true;
+                    }).sort((a, b) => {
+                        // Sort by deadline urgency first
+                        const urgencyA = this.getTaskUrgencyPriority(a);
+                        const urgencyB = this.getTaskUrgencyPriority(b);
+                        if (urgencyA !== urgencyB) return urgencyA - urgencyB;
+                        return new Date(a.dueDate) - new Date(b.dueDate);
+                    }).slice(0, 8); // Show top 8 most urgent tasks
+                },
+                myWaitingADRs() {
+                    return this.adrs.filter(adr => {
+                        if (adr.adrStatus !== 'waiting-for-me' && adr.adrStatus !== 'not-started') return false;
+                        const project = this.items.find(p => p.id === adr.projectId);
+                        if (!project || project.teamId === this.oneOnOneTeamId) return false;
+                        return true;
+                    }).sort((a, b) => new Date(a.dueDate) - new Date(b.dueDate)).slice(0, 6);
+                },
+                upcomingMeetings() {
+                    const today = new Date();
+                    const nextWeek = new Date(today.getTime() + 7 * 24 * 60 * 60 * 1000);
+                    
+                    return this.items.filter(item => {
+                        if (item.type !== 'interaction') return false;
+                        const meetingDate = new Date(item.date);
+                        return meetingDate >= today && meetingDate <= nextWeek;
+                    }).sort((a, b) => new Date(a.date) - new Date(b.date)).slice(0, 6);
+                },
+                dueThisWeekCount() {
+                    const today = new Date();
+                    const nextWeek = new Date(today.getTime() + 7 * 24 * 60 * 60 * 1000);
+                    return this.tasks.filter(t => {
+                        if (t.status === 'complete') return false;
+                        const dueDate = new Date(t.dueDate);
+                        return dueDate >= today && dueDate <= nextWeek;
+                    }).length;
+                },
+                weeklyHours() {
+                    const today = new Date();
+                    const weekAgo = new Date(today.getTime() - 7 * 24 * 60 * 60 * 1000);
+                    
+                    const weeklyMinutes = this.items.filter(item => {
+                        if (item.type === 'interaction') {
+                            const date = new Date(item.date);
+                            return date >= weekAgo && date <= today;
+                        } else if (item.type === 'workSession') {
+                            const date = new Date(item.date);
+                            return date >= weekAgo && date <= today;
+                        }
+                        return false;
+                    }).reduce((total, item) => total + (item.duration || 0), 0);
+                    
+                    return Math.round(weeklyMinutes / 60);
+                },
+                urgentTasks() {
+                    const today = new Date();
+                    const threeDaysFromNow = new Date(today.getTime() + 3 * 24 * 60 * 60 * 1000);
+                    
+                    return this.tasks.filter(t => {
+                        if (t.status === 'complete') return false;
+                        const dueDate = new Date(t.dueDate);
+                        return dueDate <= threeDaysFromNow;
+                    }).sort((a, b) => new Date(a.dueDate) - new Date(b.dueDate)).slice(0, 5);
+                },
+                recentActivities() {
+                    return this.items.filter(item => 
+                        item.type === 'interaction' || item.type === 'task'
+                    ).sort((a, b) => {
+                        const dateA = new Date(a.date || a.createdDate);
+                        const dateB = new Date(b.date || b.createdDate);
+                        return dateB - dateA;
+                    }).slice(0, 5);
+                },
+                teamsNeedingAttention() {
+                    return this.teams.filter(team => {
+                        if (team.id === this.oneOnOneTeamId) return false;
+                        const days = this.daysSinceLastInteraction(team.id);
+                        return days > 30;
+                    });
+                },
+                weeklyActivityData() {
+                    const data = new Array(7).fill(0);
+                    const today = new Date();
+                    
+                    // Get the Monday of current week
+                    const monday = new Date(today);
+                    const day = monday.getDay();
+                    const diff = monday.getDate() - day + (day === 0 ? -6 : 1);
+                    monday.setDate(diff);
+                    monday.setHours(0, 0, 0, 0);
+                    
+                    this.items.forEach(item => {
+                        if (item.type === 'interaction' || item.type === 'workSession') {
+                            const itemDate = new Date(item.date);
+                            const dayDiff = Math.floor((itemDate - monday) / (24 * 60 * 60 * 1000));
+                            
+                            if (dayDiff >= 0 && dayDiff < 7) {
+                                data[dayDiff] += item.duration || 0;
+                            }
+                        }
+                    });
+                    
+                    const maxMinutes = Math.max(...data) || 1;
+                    return data.map(minutes => (minutes / maxMinutes) * 100);
+                }
+            },
+            methods: {
+                generateId() {
+                    return Date.now().toString(36) + Math.random().toString(36).substr(2);
+                },
+                formatDate(date) {
+                    if (!date) return '';
+                    return new Date(date).toLocaleDateString('en-US', {
+                        year: 'numeric',
+                        month: 'short',
+                        day: 'numeric'
+                    });
+                },
+                isOverdue(date) {
+                    return new Date(date) < new Date();
+                },
+                getTeamProjects(teamId) {
+                    return this.projects.filter(p => {
+                        if (p.teamId !== teamId) return false;
+                        if (!this.showCompletedProjects && p.status === 'complete') return false;
+                        if (!this.showOnHoldProjects && p.status === 'on-hold') return false;
+                        return true;
+                    });
+                },
+                getProjectInteractions(projectId) {
+                    if (!Array.isArray(this.items)) return [];
+                    return this.items.filter(item => 
+                        item.type === 'interaction' && 
+                        item.projectId === projectId
+                    ).sort((a, b) => new Date(b.date) - new Date(a.date));
+                },
+                getProjectTasks(projectId) {
+                    if (!Array.isArray(this.items)) return [];
+                    return this.items.filter(item => 
+                        item.type === 'task' && 
+                        item.projectId === projectId
+                    ).sort((a, b) => new Date(a.dueDate) - new Date(b.dueDate));
+                },
+                getProjectADRs(projectId) {
+                    if (!Array.isArray(this.items)) return [];
+                    return this.items.filter(item => 
+                        item.type === 'adr' && 
+                        item.projectId === projectId
+                    ).sort((a, b) => new Date(b.createdDate) - new Date(a.createdDate));
+                },
+                getTaskWorkSessions(taskId) {
+                    if (!Array.isArray(this.items)) return [];
+                    return this.items.filter(item => 
+                        item.type === 'workSession' && 
+                        item.taskId === taskId
+                    ).sort((a, b) => new Date(b.date) - new Date(a.date));
+                },
+                getTotalTaskTime(taskId) {
+                    const sessions = this.getTaskWorkSessions(taskId);
+                    return sessions.reduce((total, session) => total + (session.duration || 0), 0);
+                },
+                getProjectName(projectId) {
+                    if (!Array.isArray(this.items)) return '';
+                    const project = this.items.find(p => p.id === projectId);
+                    return project ? project.name : '';
+                },
+                getTeamName(teamId) {
+                    if (!Array.isArray(this.items)) return '';
+                    const team = this.items.find(t => t.id === teamId);
+                    return team ? team.name : '';
+                },
+                getProjectTeamId(projectId) {
+                    if (!Array.isArray(this.items)) return null;
+                    const project = this.items.find(p => p.id === projectId);
+                    return project ? project.teamId : null;
+                },
+                getPersonTeams(personName) {
+                    return this.teams.filter(team => 
+                        team.id !== this.oneOnOneTeamId &&
+                        team.people && team.people.includes(personName)
+                    );
+                },
+                getPersonInteractions(personName) {
+                    if (!Array.isArray(this.items) || !personName) return [];
+                    return this.items.filter(item => 
+                        item.type === 'interaction' && 
+                        item.people && 
+                        item.people.includes(personName)
+                    ).sort((a, b) => new Date(b.date) - new Date(a.date));
+                },
+                daysSinceLastInteraction(teamId) {
+                    if (!Array.isArray(this.items)) return Infinity;
+                    const interactions = this.items.filter(item => {
+                        if (item.type !== 'interaction') return false;
+                        const project = this.items.find(p => p.id === item.projectId);
+                        return project && project.teamId === teamId && new Date(item.date) <= new Date();
+                    });
+                    
+                    if (interactions.length === 0) return Infinity;
+                    
+                    const lastDate = Math.max(...interactions.map(i => new Date(i.date).getTime()));
+                    const daysDiff = (new Date() - lastDate) / (1000 * 60 * 60 * 24);
+                    return Math.floor(daysDiff);
+                },
+                daysSinceLastPersonInteraction(personName) {
+                    if (!Array.isArray(this.items)) return Infinity;
+                    const interactions = this.items.filter(item => 
+                        item.type === 'interaction' && 
+                        item.people && 
+                        item.people.includes(personName) &&
+                        new Date(item.date) <= new Date()
+                    );
+                    
+                    if (interactions.length === 0) return Infinity;
+                    
+                    const lastDate = Math.max(...interactions.map(i => new Date(i.date).getTime()));
+                    const daysDiff = (new Date() - lastDate) / (1000 * 60 * 60 * 24);
+                    return Math.floor(daysDiff);
+                },
+                getLastInteractionText(teamId) {
+                    const days = this.daysSinceLastInteraction(teamId);
+                    if (days === Infinity) return 'Never';
+                    if (days === 0) return 'Today';
+                    if (days === 1) return 'Yesterday';
+                    return `${days} days ago`;
+                },
+                getLastPersonInteractionText(personName) {
+                    const days = this.daysSinceLastPersonInteraction(personName);
+                    if (days === Infinity) return 'Never';
+                    if (days === 0) return 'Today';
+                    if (days === 1) return 'Yesterday';
+                    return `${days} days ago`;
+                },
+                getSearchResultContext(result) {
+                    if (result.type === 'team') {
+                        return `Team • ${result.people?.length || 0} people`;
+                    } else if (result.type === 'project') {
+                        return `Project • ${this.getTeamName(result.teamId)} • ${result.status}`;
+                    } else if (result.type === 'task') {
+                        return `Task • ${this.getProjectName(result.projectId)} • Due ${this.formatDate(result.dueDate)}`;
+                    } else if (result.type === 'interaction') {
+                        return `${result.type} • ${this.getProjectName(result.projectId)} • ${this.formatDate(result.date)}`;
+                    } else if (result.type === 'person') {
+                        const teams = this.getPersonTeams(result.name);
+                        return `Person • ${teams.length} teams`;
+                    }
+                    return '';
+                },
+                showAddTeamModal() {
+                    this.modalTitle = 'New Team';
+                    this.currentForm = {
+                        type: 'team',
+                        id: null,
+                        name: '',
+                        peopleString: ''
+                    };
+                    this.showModal = true;
+                },
+                showAddProjectModal() {
+                    this.modalTitle = 'New Project';
+                    this.currentForm = {
+                        type: 'project',
+                        id: null,
+                        name: '',
+                        teamId: '',
+                        priority: 'important',
+                        status: 'not-started',
+                        startDate: new Date().toISOString().split('T')[0],
+                        endDate: ''
+                    };
+                    this.showModal = true;
+                },
+                showAddInteractionModal(projectId) {
+                    this.modalTitle = 'New Interaction';
+                    this.currentForm = {
+                        type: 'interaction',
+                        id: null,
+                        title: '',
+                        interactionType: 'meeting',
+                        projectId: projectId,
+                        date: new Date().toISOString().split('T')[0],
+                        duration: 30,
+                        peopleString: '',
+                        artifactUrl: '',
+                        notes: ''
+                    };
+                    this.showModal = true;
+                },
+                showAddTaskModal(projectId) {
+                    this.modalTitle = 'New Task';
+                    this.currentForm = {
+                        type: 'task',
+                        id: null,
+                        title: '',
+                        description: '',
+                        projectId: projectId,
+                        dueDate: '',
+                        status: 'not-started',
+                        artifactUrl: '',
+                        createdDate: new Date().toISOString()
+                    };
+                    this.showModal = true;
+                },
+                showAddWorkSessionModal(taskId) {
+                    this.modalTitle = 'New Work Session';
+                    this.currentForm = {
+                        type: 'workSession',
+                        id: null,
+                        taskId: taskId,
+                        date: new Date().toISOString().split('T')[0],
+                        duration: 30
+                    };
+                    this.showModal = true;
+                },
+                showAddPersonModal() {
+                    this.modalTitle = 'New Person';
+                    this.currentForm = {
+                        type: 'person',
+                        id: null,
+                        name: '',
+                        isVIP: false,
+                        notes: ''
+                    };
+                    this.showModal = true;
+                },
+                showAddADRModal(projectId) {
+                    this.modalTitle = 'New ADR';
+                    this.currentForm = {
+                        type: 'adr',
+                        id: null,
+                        title: '',
+                        description: '',
+                        projectId: projectId,
+                        adrStatus: 'not-started',
+                        dueDate: '',
+                        authorsString: '',
+                        artifactUrl: '',
+                        tagsString: '',
+                        createdDate: new Date().toISOString()
+                    };
+                    this.showModal = true;
+                },
+                showPersonInteractionsModal(person) {
+                    this.selectedPerson = person;
+                    this.showPersonInteractionsModalFlag = true;
+                },
+                editItem(item) {
+                    if (!item || !item.type) {
+                        console.error('Invalid item to edit:', item);
+                        return;
+                    }
+                    this.modalTitle = `Edit ${item.type.charAt(0).toUpperCase() + item.type.slice(1)}`;
+                    this.currentForm = {
+                        ...item,
+                        peopleString: item.people ? item.people.join(', ') : '',
+                        authorsString: item.authors ? item.authors.join(', ') : '',
+                        tagsString: item.tags ? item.tags.join(', ') : '',
+                        interactionType: item.type === 'interaction' ? item.interactionType || 'meeting' : undefined
+                    };
+                    this.showModal = true;
+                },
+                deleteItem(id) {
+                    if (confirm('Are you sure you want to delete this item?')) {
+                        // Ensure items is an array
+                        if (!Array.isArray(this.items)) {
+                            console.error('Items is not an array, reinitializing');
+                            this.items = [];
+                            return;
+                        }
+                        this.items = this.items.filter(item => item.id !== id);
+                        this.saveToLocalStorage();
+                    }
+                },
+                saveForm() {
+                    // Ensure items is an array before proceeding
+                    if (!Array.isArray(this.items)) {
+                        console.error('Items is not an array, reinitializing');
+                        this.items = [];
+                    }
+                    
+                    const form = this.currentForm;
+                    
+                    // Parse people string
+                    if (form.peopleString !== undefined) {
+                        form.people = form.peopleString
+                            .split(',')
+                            .map(p => p.trim())
+                            .filter(p => p);
+                        delete form.peopleString;
+                    }
+                    
+                    // Parse authors string
+                    if (form.authorsString !== undefined) {
+                        form.authors = form.authorsString
+                            .split(',')
+                            .map(a => a.trim())
+                            .filter(a => a);
+                        delete form.authorsString;
+                    }
+                    
+                    // Parse tags string
+                    if (form.tagsString !== undefined) {
+                        form.tags = form.tagsString
+                            .split(',')
+                            .map(t => t.trim())
+                            .filter(t => t);
+                        delete form.tagsString;
+                    }
+                    
+                    // Set interaction type
+                    if (form.type === 'interaction' && form.interactionType) {
+                        form.type = 'interaction';
+                        // Keep interactionType as a separate field
+                    }
+                    
+                    if (form.id) {
+                        // Update existing
+                        const index = this.items.findIndex(item => item.id === form.id);
+                        if (index !== -1) {
+                            this.items[index] = { ...form };
+                        }
+                    } else {
+                        // Create new
+                        form.id = this.generateId();
+                        this.items.push({ ...form });
+                    }
+                    
+                    this.saveToLocalStorage();
+                    this.closeModal();
+                },
+                closeModal() {
+                    this.showModal = false;
+                    this.currentForm = {};
+                },
+                exportMarkdown() {
+                    // Ensure items is an array
+                    if (!Array.isArray(this.items)) {
+                        alert('Cannot export: data is corrupted. Please refresh the page.');
+                        return;
+                    }
+                    
+                    let markdown = '# Jiraffe Project Management\n\n';
+                    markdown += `Generated: ${new Date().toLocaleString()}\n\n`;
+                    
+                    // Export teams and their projects
+                    this.teams.forEach(team => {
+                        if (team.id === this.oneOnOneTeamId) return; // Skip 1-1s team
+                        
+                        markdown += `## Team: ${team.name}\n\n`;
+                        
+                        if (team.people && team.people.length > 0) {
+                            markdown += `**Members:** ${team.people.join(', ')}\n\n`;
+                        }
+                        
+                        if (team.tags && team.tags.length > 0) {
+                            markdown += `**Tags:** ${team.tags.join(', ')}\n\n`;
+                        }
+                        
+                        const teamProjects = this.getTeamProjects(team.id);
+                        if (teamProjects.length > 0) {
+                            markdown += `### Projects\n\n`;
+                            
+                            teamProjects.forEach(project => {
+                                markdown += `#### ${project.name}\n\n`;
+                                markdown += `- **Priority:** ${project.priority}\n`;
+                                markdown += `- **Status:** ${project.status}\n`;
+                                markdown += `- **Start Date:** ${this.formatDate(project.startDate)}\n`;
+                                if (project.endDate) {
+                                    markdown += `- **End Date:** ${this.formatDate(project.endDate)}\n`;
+                                }
+                                if (project.progress) {
+                                    markdown += `- **Progress:** ${project.progress}\n`;
+                                }
+                                if (project.tags && project.tags.length > 0) {
+                                    markdown += `- **Tags:** ${project.tags.join(', ')}\n`;
+                                }
+                                markdown += '\n';
+                                
+                                // Export tasks
+                                const tasks = this.getProjectTasks(project.id);
+                                if (tasks.length > 0) {
+                                    markdown += `**Tasks:**\n\n`;
+                                    tasks.forEach(task => {
+                                        const status = task.status === 'complete' ? '✅' : '⏳';
+                                        markdown += `- ${status} ${task.title} (Due: ${this.formatDate(task.dueDate)}) - ${task.status}\n`;
+                                    });
+                                    markdown += '\n';
+                                }
+                                
+                                // Export interactions
+                                const interactions = this.getProjectInteractions(project.id);
+                                if (interactions.length > 0) {
+                                    markdown += `**Recent Interactions:**\n\n`;
+                                    interactions.slice(0, 5).forEach(interaction => {
+                                        markdown += `- ${interaction.title} (${this.formatDate(interaction.date)}) - ${interaction.interactionType}\n`;
+                                    });
+                                    markdown += '\n';
+                                }
+                                
+                                // Export ADRs
+                                const adrs = this.getProjectADRs(project.id);
+                                if (adrs.length > 0) {
+                                    markdown += `**ADRs:**\n\n`;
+                                    adrs.forEach(adr => {
+                                        markdown += `- ${adr.title} - ${adr.adrStatus} (Due: ${this.formatDate(adr.dueDate)})\n`;
+                                    });
+                                    markdown += '\n';
+                                }
+                            });
+                        }
+                        
+                        markdown += `---\n\n`;
+                    });
+                    
+                    this.downloadFile(markdown, 'jiraffe-export.md');
+                },
+                exportHTML() {
+                    // Ensure items is an array
+                    if (!Array.isArray(this.items)) {
+                        alert('Cannot export: data is corrupted. Please refresh the page.');
+                        return;
+                    }
+                    
+                    // Get all projects except 1-1s and sort by priority
+                    const projectsWithTeams = this.projects.map(project => {
+                        const team = this.teams.find(t => t.id === project.teamId);
+                        return {
+                            ...project,
+                            teamName: team ? team.name : 'Unknown Team'
+                        };
+                    }).sort((a, b) => {
+                        const priorityOrder = { critical: 1, urgent: 2, important: 3, enhancement: 4 };
+                        const priorityA = priorityOrder[a.priority] || 5;
+                        const priorityB = priorityOrder[b.priority] || 5;
+                        if (priorityA !== priorityB) return priorityA - priorityB;
+                        return a.teamName.localeCompare(b.teamName);
+                    });
+                    
+                    let html = `<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jiraffe Projects Export - ${new Date().toLocaleDateString()}</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            margin: 40px;
+            background: #f8fafc;
+            color: #1e293b;
+            line-height: 1.6;
+        }
+        h1 {
+            color: #334155;
+            border-bottom: 3px solid #6366f1;
+            padding-bottom: 16px;
+            margin-bottom: 32px;
+        }
+        h2 {
+            color: #475569;
+            margin-top: 40px;
+            margin-bottom: 20px;
+            font-size: 24px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+            margin-bottom: 32px;
+        }
+        th {
+            background: #6366f1;
+            color: white;
+            padding: 16px;
+            text-align: left;
+            font-weight: 600;
+            font-size: 14px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        td {
+            padding: 16px;
+            border-bottom: 1px solid #e2e8f0;
+            vertical-align: top;
+        }
+        tr:hover {
+            background: #f1f5f9;
+        }
+        .priority-critical { border-left: 6px solid #dc2626; }
+        .priority-urgent { border-left: 6px solid #f59e0b; }
+        .priority-important { border-left: 6px solid #3b82f6; }
+        .priority-enhancement { border-left: 6px solid #10b981; }
+        
+        .priority-badge {
+            padding: 6px 12px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 600;
+            text-transform: uppercase;
+        }
+        .priority-critical-badge { background: #fee2e2; color: #991b1b; }
+        .priority-urgent-badge { background: #fef3c7; color: #92400e; }
+        .priority-important-badge { background: #dbeafe; color: #1e40af; }
+        .priority-enhancement-badge { background: #d1fae5; color: #065f46; }
+        
+        .status-badge {
+            padding: 4px 12px;
+            border-radius: 16px;
+            font-size: 12px;
+            font-weight: 600;
+            text-transform: uppercase;
+        }
+        .status-ongoing { background: #dbeafe; color: #1e40af; }
+        .status-complete { background: #d1fae5; color: #065f46; }
+        .status-not-started { background: #f3f4f6; color: #4b5563; }
+        .status-on-hold { background: #fef3c7; color: #92400e; }
+        
+        .tasks-list {
+            margin: 0;
+            padding-left: 20px;
+            font-size: 14px;
+        }
+        .tasks-list li {
+            margin-bottom: 4px;
+        }
+        .task-complete { text-decoration: line-through; color: #6b7280; }
+        .task-overdue { color: #dc2626; font-weight: 600; }
+        
+        .progress-text {
+            max-width: 250px;
+            font-size: 14px;
+            color: #4b5563;
+        }
+        
+        .export-info {
+            text-align: center;
+            color: #6b7280;
+            font-size: 14px;
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 1px solid #e2e8f0;
+        }
+        
+        @media (max-width: 768px) {
+            body { margin: 20px; }
+            table { font-size: 14px; }
+            th, td { padding: 12px 8px; }
+            .progress-text { max-width: 150px; }
+        }
+    </style>
+</head>
+<body>
+    <h1>📊 Jiraffe Projects Export</h1>
+    <p><strong>Generated:</strong> ${new Date().toLocaleString()}</p>
+    <p><strong>Total Projects:</strong> ${projectsWithTeams.length}</p>
+`;
+                    
+                    // Group projects by team
+                    const projectsByTeam = {};
+                    projectsWithTeams.forEach(project => {
+                        if (!projectsByTeam[project.teamName]) {
+                            projectsByTeam[project.teamName] = [];
+                        }
+                        projectsByTeam[project.teamName].push(project);
+                    });
+                    
+                    // Generate table for each team
+                    Object.keys(projectsByTeam).sort().forEach(teamName => {
+                        const teamProjects = projectsByTeam[teamName];
+                        
+                        html += `
+    <h2>Team: ${teamName}</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Project</th>
+                <th>Priority</th>
+                <th>Status</th>
+                <th>Start Date</th>
+                <th>End Date</th>
+                <th>Progress</th>
+                <th>Current Tasks</th>
+            </tr>
+        </thead>
+        <tbody>`;
+                        
+                        teamProjects.forEach(project => {
+                            const tasks = this.getProjectTasks(project.id);
+                            const tasksList = tasks.length > 0 ? 
+                                tasks.map(task => {
+                                    let className = '';
+                                    if (task.status === 'complete') className = 'task-complete';
+                                    else if (this.isOverdue(task.dueDate)) className = 'task-overdue';
+                                    
+                                    return `<li class="${className}">${task.title} (${task.status})</li>`;
+                                }).join('') : '<li>No tasks</li>';
+                            
+                            html += `
+            <tr class="priority-${project.priority}">
+                <td><strong>${project.name}</strong></td>
+                <td><span class="priority-badge priority-${project.priority}-badge">${project.priority}</span></td>
+                <td><span class="status-badge status-${project.status}">${project.status}</span></td>
+                <td>${this.formatDate(project.startDate)}</td>
+                <td>${project.endDate ? this.formatDate(project.endDate) : 'Ongoing'}</td>
+                <td class="progress-text">${project.progress || 'No progress notes'}</td>
+                <td><ul class="tasks-list">${tasksList}</ul></td>
+            </tr>`;
+                        });
+                        
+                        html += `
+        </tbody>
+    </table>`;
+                    });
+                    
+                    html += `
+    <div class="export-info">
+        <p>Exported from Jiraffe Project Management</p>
+        <p>Priority order: Critical (1) → Urgent (2) → Important (3) → Enhancement (4)</p>
+    </div>
+</body>
+</html>`;
+                    
+                    const filename = `jiraffe-projects-${new Date().toISOString().split('T')[0]}.html`;
+                    this.downloadFile(html, filename);
+                },
+                downloadFile(content, filename) {
+                    const blob = new Blob([content], { type: 'text/plain' });
+                    const url = URL.createObjectURL(blob);
+                    const a = document.createElement('a');
+                    a.href = url;
+                    a.download = filename;
+                    document.body.appendChild(a);
+                    a.click();
+                    document.body.removeChild(a);
+                    URL.revokeObjectURL(url);
+                },
+                showAdd1on1Modal() {
+                    this.modalTitle = 'Schedule 1-1';
+                    this.currentForm = {
+                        type: 'interaction',
+                        id: null,
+                        title: '',
+                        interactionType: 'meeting',
+                        projectId: this.oneOnOneProjectId,
+                        date: new Date().toISOString().split('T')[0],
+                        duration: 30,
+                        peopleString: '',
+                        artifactUrl: '',
+                        notes: '',
+                        tagsString: ''
+                    };
+                    this.showModal = true;
+                },
+                exportMeetingNotes(interaction) {
+                    let markdown = `# ${interaction.title}\n\n`;
+                    markdown += `**Date:** ${this.formatDate(interaction.date)}\n\n`;
+                    
+                    if (interaction.people && interaction.people.length > 0) {
+                        markdown += `**Attendees:**\n`;
+                        interaction.people.forEach(person => {
+                            markdown += `- ${person}\n`;
+                        });
+                        markdown += '\n';
+                    }
+                    
+                    markdown += `**Duration:** ${interaction.duration} minutes\n\n`;
+                    
+                    if (interaction.notes) {
+                        markdown += `**Notes:**\n${interaction.notes}\n\n`;
+                    }
+                    
+                    if (interaction.artifactUrl) {
+                        markdown += `**Related Document:** ${interaction.artifactUrl}\n`;
+                    }
+                    
+                    const filename = `${interaction.title.replace(/[^a-z0-9]/gi, '-').toLowerCase()}-${interaction.date}.md`;
+                    this.downloadFile(markdown, filename);
+                },
+                getCurrentDateString() {
+                    return new Date().toLocaleDateString('en-US', {
+                        weekday: 'long',
+                        year: 'numeric',
+                        month: 'long',
+                        day: 'numeric'
+                    });
+                },
+                getTaskUrgencyClass(task) {
+                    const deadlineClass = this.getDeadlineClass(task.dueDate);
+                    if (deadlineClass) return deadlineClass;
+                    return '';
+                },
+                getTaskUrgencyPriority(task) {
+                    const deadlineClass = this.getDeadlineClass(task.dueDate);
+                    if (deadlineClass === 'overdue') return 0;
+                    if (deadlineClass === 'today') return 1;
+                    if (deadlineClass === 'tomorrow') return 2;
+                    if (deadlineClass === 'soon') return 3;
+                    return 4;
+                },
+                getDeadlineClass(dueDate) {
+                    if (!dueDate) return '';
+                    const today = new Date();
+                    const due = new Date(dueDate);
+                    const diffDays = Math.ceil((due - today) / (1000 * 60 * 60 * 24));
+                    
+                    if (diffDays < 0) return 'overdue';
+                    if (diffDays === 0) return 'today';
+                    if (diffDays === 1) return 'tomorrow';
+                    if (diffDays <= 3) return 'soon';
+                    return '';
+                },
+                getDeadlineText(dueDate) {
+                    if (!dueDate) return '';
+                    const today = new Date();
+                    const due = new Date(dueDate);
+                    const diffDays = Math.ceil((due - today) / (1000 * 60 * 60 * 24));
+                    
+                    if (diffDays < 0) return 'Overdue';
+                    if (diffDays === 0) return 'Due Today';
+                    if (diffDays === 1) return 'Due Tomorrow';
+                    if (diffDays <= 3) return `Due in ${diffDays} days`;
+                    return '';
+                },
+                toggleDarkMode() {
+                    this.darkMode = !this.darkMode;
+                    document.body.classList.toggle('dark-mode', this.darkMode);
+                    localStorage.setItem('jiraffe-dark-mode', this.darkMode);
+                },
+                saveToLocalStorage() {
+                    // Ensure we're saving an array
+                    if (!Array.isArray(this.items)) {
+                        console.error('Attempting to save non-array items, skipping save');
+                        return;
+                    }
+                    localStorage.setItem('jiraffe-data', JSON.stringify(this.items));
+                },
+                loadFromLocalStorage() {
+                    const data = localStorage.getItem('jiraffe-data');
+                    if (data) {
+                        try {
+                            const parsedData = JSON.parse(data);
+                            // Ensure parsed data is an array
+                            if (Array.isArray(parsedData)) {
+                                this.items = parsedData;
+                            } else {
+                                console.warn('Stored data is not an array, initializing default data');
+                                this.initializeDefaultData();
+                            }
+                        } catch (e) {
+                            console.error('Error loading data:', e);
+                            this.initializeDefaultData();
+                        }
+                    } else {
+                        this.initializeDefaultData();
+                    }
+                    
+                    // Ensure 1-1s team and project exist
+                    this.ensureOneOnOnes();
+                    
+                    // Load dark mode preference
+                    const savedDarkMode = localStorage.getItem('jiraffe-dark-mode');
+                    if (savedDarkMode === 'true') {
+                        this.darkMode = true;
+                        document.body.classList.add('dark-mode');
+                    }
+                },
+                ensureOneOnOnes() {
+                    // Safety check to ensure items is an array
+                    if (!Array.isArray(this.items)) {
+                        this.items = [];
+                    }
+                    
+                    let oneOnOneTeam = this.items.find(item => 
+                        item.type === 'team' && item.name === '1-1 Meetings'
+                    );
+                    
+                    if (!oneOnOneTeam) {
+                        oneOnOneTeam = {
+                            id: this.generateId(),
+                            type: 'team',
+                            name: '1-1 Meetings',
+                            people: []
+                        };
+                        this.items.push(oneOnOneTeam);
+                    }
+                    
+                    this.oneOnOneTeamId = oneOnOneTeam.id;
+                    
+                    let oneOnOneProject = this.items.find(item => 
+                        item.type === 'project' && 
+                        item.teamId === this.oneOnOneTeamId &&
+                        item.name === '1-1 Meetings'
+                    );
+                    
+                    if (!oneOnOneProject) {
+                        oneOnOneProject = {
+                            id: this.generateId(),
+                            type: 'project',
+                            name: '1-1 Meetings',
+                            teamId: this.oneOnOneTeamId,
+                            status: 'ongoing',
+                            priority: 'important',
+                            startDate: new Date().toISOString()
+                        };
+                        this.items.push(oneOnOneProject);
+                    }
+                    
+                    this.oneOnOneProjectId = oneOnOneProject.id;
+                    this.saveToLocalStorage();
+                },
+                initializeDefaultData() {
+                    this.items = [];
+                    // Clear any corrupted localStorage data
+                    localStorage.removeItem('jiraffe-data');
+                    this.ensureOneOnOnes();
+                },
+                importMarkdown() {
+                    try {
+                        if (!this.importContent.trim()) {
+                            alert('Please paste some content to import.');
+                            return;
+                        }
+
+                        // Simple markdown import - this is a placeholder implementation
+                        // For now, just show a success message
+                        alert('Markdown import feature is under development. This is a placeholder.');
+                        
+                        this.showImportModal = false;
+                        this.importContent = '';
+                    } catch (error) {
+                        console.error('Import failed:', error);
+                        alert('Import failed. Please check the format.');
+                    }
+                },
+                navigateToProject(projectId) {
+                    this.currentView = 'projects';
+                    this.highlightedProjectId = projectId;
+                    
+                    // Clear highlight after animation
+                    setTimeout(() => {
+                        this.highlightedProjectId = null;
+                    }, 3000);
+                    
+                    // Scroll to project if needed
+                    this.$nextTick(() => {
+                        const projectElement = document.querySelector(`[data-project-id="${projectId}"]`);
+                        if (projectElement) {
+                            projectElement.scrollIntoView({ 
+                                behavior: 'smooth', 
+                                block: 'center' 
+                            });
+                        }
+                    });
+                }
+            },
+            mounted() {
+                this.loadFromLocalStorage();
+            }
+        }).mount('#app');
+    </script>
+</body>
+</html>
