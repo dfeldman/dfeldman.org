@@ -1,0 +1,1136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>Paddleboard Stability Simulator</title>
+<style>
+* { margin:0; padding:0; box-sizing:border-box; }
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  background: #e8ecf1; color:#1a202c;
+  display:flex; justify-content:center; padding:20px;
+}
+.container {
+  display:flex; gap:20px; background:#fff; border-radius:14px;
+  padding:20px; box-shadow:0 4px 24px rgba(0,0,0,0.08);
+  max-width:1120px; width:100%;
+}
+.canvas-wrap { flex:0 0 640px; border-radius:10px; overflow:hidden; background:#e2e8f0; }
+#sim { display:block; width:640px; height:520px; }
+.panel { flex:0 0 280px; display:flex; flex-direction:column; gap:6px; }
+.panel h2 { font-size:11px; font-weight:700; color:#2d3748; border-bottom:1px solid #e2e8f0; padding-bottom:2px; margin-bottom:2px; text-transform:uppercase; letter-spacing:0.5px; }
+.sec { display:flex; flex-direction:column; gap:2px; }
+.row { display:flex; align-items:center; gap:4px; }
+.row label { font-size:11px; font-weight:500; color:#4a5568; min-width:50px; }
+.row input[type=range] { flex:1; accent-color:#4299e1; height:8px; cursor:pointer; }
+.row .val { font-size:11px; color:#2d3748; min-width:48px; text-align:right; font-variant-numeric:tabular-nums; }
+.barow { display:flex; gap:5px; align-items:center; flex-wrap:wrap; }
+.btn { padding:4px 12px; border:none; border-radius:5px; font-size:13px; font-weight:600; cursor:pointer; background:#e2e8f0; color:#2d3748; }
+.btn:hover { background:#cbd5e0; }
+.btn-r { background:#3182ce; color:#fff; }
+.btn-r:hover { background:#2b6cb0; }
+.bw-btn { padding:6px 16px; font-size:13px; font-weight:600; }
+
+.panel select {
+  width:100%; padding:4px 6px; border:1px solid #cbd5e0; border-radius:5px;
+  font-size:11px; font-weight:500; color:#2d3748; background:#fff;
+  cursor:pointer; appearance:auto;
+}
+
+.stability-small {
+  font-size:9px; color:#718096; display:flex; gap:8px; margin-bottom:3px;
+  font-variant-numeric:tabular-nums;
+}
+.stability-small span { white-space:nowrap; }
+
+.status-box {
+  padding:8px 10px; border-radius:7px; text-align:center;
+  min-height:80px; display:flex; flex-direction:column; justify-content:center;
+}
+.status-stable { background:#c6f6d5; color:#22543d; }
+.status-danger { background:#fed7d7; color:#742a2a; }
+.status-warn { background:#fefcbf; color:#744210; }
+.status-mid { background:#bee3f8; color:#2a4365; }
+.status-msg { font-size:15px; font-weight:700; }
+.status-action { font-size:10px; font-style:italic; margin-top:2px; opacity:0.8; }
+
+.math-panel {
+  display:none;
+  position:fixed; top:0; right:0; bottom:0; width:460px;
+  background:#1a202c; color:#e2e8f0;
+  font-family:'SF Mono','Menlo','Monaco','Courier New',monospace;
+  font-size:11px; line-height:1.5;
+  overflow-y:auto; padding:16px 20px;
+  z-index:100; box-shadow:-4px 0 20px rgba(0,0,0,0.3);
+}
+.math-panel.open { display:block; }
+.math-panel .mh { font-size:14px; font-weight:600; color:#90cdf4; margin-bottom:10px; }
+.math-panel .ms { color:#a0aec0; font-size:10px; margin-top:8px; margin-bottom:2px; text-transform:uppercase; letter-spacing:1px; }
+.math-panel .eq { color:#f6e05e; }
+.math-panel .in { color:#68d391; }
+.math-panel .out { color:#90cdf4; font-weight:600; }
+.math-panel .cmt { color:#718096; font-style:italic; }
+.math-panel .sep { border-top:1px solid #2d3748; margin:6px 0; }
+.math-panel .close-btn { position:sticky; top:8px; float:right; background:transparent; border:1px solid #4a5568; color:#a0aec0; border-radius:4px; padding:2px 8px; cursor:pointer; font-size:12px; }
+.math-panel .close-btn:hover { background:#2d3748; color:#fff; }
+.math-panel .copy-btn { position:sticky; top:8px; float:right; background:#2d3748; border:1px solid #4a5568; color:#a0aec0; border-radius:4px; padding:2px 10px; cursor:pointer; font-size:11px; margin-right:6px; }
+.math-panel .copy-btn:hover { background:#4a5568; color:#fff; }
+.toast { position:fixed; bottom:30px; right:200px; background:#38a169; color:#fff; padding:8px 18px; border-radius:8px; font-size:13px; font-weight:500; opacity:0; transition:opacity 0.3s; pointer-events:none; z-index:200; }
+.toast.show { opacity:1; }
+.overlay { display:none; position:fixed; inset:0; background:rgba(0,0,0,0.3); z-index:99; }
+.overlay.open { display:block; }
+.mode-ind { font-size:10px; color:#718096; margin-left:4px; }
+
+.mobile-only, .mobile-close { display:none; }
+
+@media (max-width: 820px) {
+  body { padding:0; margin:0; }
+  .container {
+    flex-direction:column; gap:0; padding:0; border-radius:0;
+    max-width:100%; height:100dvh;
+  }
+  .canvas-wrap { flex:0 0 auto; height:50%; width:100%; border-radius:0; }
+  #sim { width:100%; height:100%; }
+  .panel {
+    flex:1 1 auto; width:100%; overflow-y:auto;
+    -webkit-overflow-scrolling:touch; padding:10px 14px 20px;
+    gap:10px;
+  }
+  .sec-ctrl { display:flex; flex-direction:column; gap:8px; }
+  .mobile-only, .mobile-close { display:none; }
+  .panel .row { padding:6px 0; }
+  .panel .row input[type=range] { height:16px; }
+  .panel .row label { font-size:14px; min-width:80px; }
+  .panel .row .val { font-size:14px; min-width:70px; }
+  .panel select { padding:10px; font-size:15px; }
+  .panel h2 { font-size:14px; }
+  .panel .btn { font-size:16px; padding:10px 18px; }
+  .panel .bw-btn { font-size:16px; padding:12px 28px; }
+  .stability-small { font-size:11px !important; gap:12px !important; }
+  .status-msg { font-size:18px; }
+  .status-action { font-size:12px; }
+  .math-panel { width:100%; left:0; font-size:12px; }
+}
+</style>
+</head>
+<body>
+<div class="container">
+  <div class="canvas-wrap">
+    <svg id="sim" viewBox="0 0 640 520"></svg>
+  </div>
+  <div class="panel">
+    <div>
+      <div class="stability-small">
+        <span>GM: <span id="dGM">—</span></span>
+        <span>KG: <span id="dKG">—</span></span>
+        <span>BR: <span id="dBR">—</span></span>
+      </div>
+      <div class="status-box status-stable" id="statusBox">
+        <div class="status-msg" id="statusMsg">INITIALIZING</div>
+        <div class="status-action" id="statusAction"></div>
+        <button class="btn btn-r" id="rstBtn" style="display:none;margin:6px auto 0;padding:6px 20px;">Reset</button>
+      </div>
+      <div class="barow" style="justify-content:center;gap:6px;flex-wrap:wrap;">
+        <button class="btn btn-r bw-btn" id="bwBtn">🌊 Big Wave</button>
+        <button class="btn" id="mathBtn">Math</button>
+        <button class="btn btn-r mobile-only" id="ctrlBtn">Controls</button>
+      </div>
+    </div>
+    <div class="sec-ctrl">
+    <div class="row">
+      <label style="min-width:30px;text-transform:uppercase;font-weight:700;color:#2d3748;font-size:10px;letter-spacing:0.5px;">Units</label>
+      <select id="unitSelect" style="flex:1;">
+        <option value="si" selected>SI (cm, kg)</option>
+        <option value="us">US (in, lb)</option>
+        <option value="uk">UK (in, st)</option>
+      </select>
+    </div>
+    <div>
+      <h2>Board Type</h2>
+      <select id="boardType">
+        <option value="twopiece" selected>Two-piece (paddleboard-like)</option>
+        <option value="onepiece">One-piece (boat-like)</option>
+      </select>
+    </div>
+    <div>
+      <h2>Board</h2>
+      <div class="sec">
+        <div class="row"><label>Width</label><input type="range" id="sW" min="18" max="42" value="33" step="0.5"><span class="val" id="vW">33.0</span></div>
+        <div class="row"><label>Thickness</label><input type="range" id="sH" min="3" max="10" value="6" step="0.25"><span class="val" id="vH">6.00</span></div>
+        <div class="row"><label>Length</label><input type="range" id="sL" min="72" max="168" value="120" step="1"><span class="val" id="vL">120</span></div>
+      </div>
+    </div>
+    <div>
+      <h2>Person</h2>
+      <div class="sec">
+        <div class="row"><label>Weight</label><input type="range" id="sPW" min="80" max="300" value="175" step="5"><span class="val" id="vPW">175</span></div>
+        <div class="row"><label>Height</label><input type="range" id="sPH" min="48" max="80" value="68" step="1"><span class="val" id="vPH">68</span></div>
+        <div class="row"><label>CG</label>
+          <select id="cgSelect" style="flex:1;">
+            <option value="low">Low</option>
+            <option value="medium" selected>Medium</option>
+            <option value="high">High</option>
+          </select>
+        </div>
+      </div>
+    </div>
+    <div>
+      <h2>Waves</h2>
+      <div class="sec">
+        <div class="row"><label>Freq</label><input type="range" id="sFr" min="0" max="2.0" value="0.4" step="0.05"><span class="val" id="vFr">0.40</span></div>
+        <div class="row"><label>Tilt</label><input type="range" id="sTi" min="0" max="8" value="3" step="0.5"><span class="val" id="vTi">3.0</span></div>
+        <div class="row"><label>Random</label><input type="range" id="sRd" min="0" max="1.0" value="0" step="0.05"><span class="val" id="vRd">0.00</span></div>
+      </div>
+    </div>
+    <div>
+      <h2>Balance Ability</h2>
+      <select id="balSelect">
+        <option value="none">None</option>
+        <option value="low">Low</option>
+        <option value="medium" selected>Medium</option>
+        <option value="high">High</option>
+      </select>
+    </div>
+    </div>
+    <button class="mobile-only mobile-close" id="ctrlClose">&times;</button>
+  </div>
+</div>
+
+<div class="overlay" id="overlay"></div>
+<div class="math-panel" id="mathPanel">
+  <button class="close-btn" id="closeMath">&times;</button>
+  <button class="copy-btn" id="copyMath">Copy</button>
+  <div class="mh">Stability Calculations</div>
+  <div id="mathContent"></div>
+  <div id="copyToast" class="toast">Copied!</div>
+</div>
+
+<script>
+(function(){
+const SVG = 'http://www.w3.org/2000/svg';
+const svg = document.getElementById('sim');
+const mathContent = document.getElementById('mathContent');
+
+const RHO = 0.03613;
+const BW = 28;
+const G = 386;
+
+const S = {
+  W:33, H:6, L:120, PW:175, PH:68,
+  wF:0.4, wA:3, wR:0,
+  aC:true, rM:false, cgM:0.55,
+  kp:8000, kd:3000, ki:3000,
+  bA:0, bV:0, wAng:0,
+  tR:0, oR:0, sumR:0,
+  t:0, cap:false, fal:false,
+  lastU:0,
+  bwT:-999,
+  leanHist:[]
+};
+S.leanHist._lastIdx = -1;
+
+const CX=320, CY=270;
+
+const $ = id => document.getElementById(id);
+const sW=$('sW'),sH=$('sH'),sL=$('sL'),sPW=$('sPW'),sPH=$('sPH'),sFr=$('sFr'),sTi=$('sTi'),sRd=$('sRd');
+const vW=$('vW'),vH=$('vH'),vL=$('vL'),vPW=$('vPW'),vPH=$('vPH'),vFr=$('vFr'),vTi=$('vTi'),vRd=$('vRd');
+const dGM=$('dGM'),dKG=$('dKG'),dBR=$('dBR');
+const statusMsg=$('statusMsg'),statusBox=$('statusBox'),statusAction=$('statusAction');
+const rstBtn=$('rstBtn'),bwBtn=$('bwBtn');
+const mathBtn=$('mathBtn'),closeMath=$('closeMath'),overlay=$('overlay'),copyMath=$('copyMath'),copyToast=$('copyToast');
+const boardType=$('boardType'),cgSelect=$('cgSelect'),balSelect=$('balSelect'),unitSelect=$('unitSelect');
+let unit = 'si';
+
+function fLen(v, d) {
+  if (unit === 'si') return (v*2.54).toFixed(d) + ' cm';
+  return v.toFixed(d) + ' in';
+}
+function fHt(v) {
+  if (unit === 'si') return (v*2.54).toFixed(0) + ' cm';
+  const ft = Math.floor(v/12), inn = Math.round(v%12);
+  return ft + '\u2019' + inn + '\u201D';
+}
+function fWt(v) {
+  if (unit === 'si') return (v/2.205).toFixed(0) + ' kg';
+  if (unit === 'uk') {
+    const st = Math.floor(v/14), rem = Math.round(v%14);
+    return st + '\u2019' + rem + ' st';
+  }
+  return v.toFixed(0) + ' lb';
+}
+function refreshUnits() {
+  vW.textContent = fLen(S.W, 1);
+  vH.textContent = fLen(S.H, 1);
+  vL.textContent = fLen(S.L, 0);
+  vPW.textContent = fWt(S.PW);
+  vPH.textContent = fHt(S.PH);
+}
+
+function phys() {
+  const {W,H,L,PW,PH,cgM,rM} = S;
+  const WT = BW + PW;
+  const dV = WT / RHO;
+  const dr = dV / (L * W);
+  if (dr > H) return null;
+  const KB = dr/2;
+  const I = L * W*W*W / 12;
+  const BM = I / dV;
+  const KM = KB + BM;
+  const bCG = H/2;
+  const pCG = H + PH * cgM;
+  const KG = (BW*bCG + PW*pCG) / WT;
+  const GM = KM - KG;
+  const BR = PW * pCG / (WT * GM);
+  return {W,H,L,PW,PH,WT,dV,dr,KB,I,BM,KM,bCG,pCG,KG,GM,BR,rM};
+}
+
+function sc(W) { return Math.min(200 / Math.max(W, 18), 3.2); }
+
+function render() {
+  while (svg.firstChild) svg.removeChild(svg.firstChild);
+
+  const Sf = sc(S.W);
+  const {W,H,PW,PH,rM} = S;
+  const bA = S.bA, wa = S.wAng;
+  const tR = S.tR, fal = S.fal;
+  const P = phys();
+  const draft = P ? P.dr : 0;
+  const hw = W/2*Sf, hh = H/2*Sf;
+
+  const cx=CX, cy=CY;
+  const bcy = cy - (H/2 - draft) * Sf;
+
+  const defs = document.createElementNS(SVG, 'defs');
+  const gg = document.createElementNS(SVG, 'linearGradient');
+  gg.setAttribute('id','gg'); gg.setAttribute('x1','0'); gg.setAttribute('y1','0'); gg.setAttribute('x2','0'); gg.setAttribute('y2','1');
+  let st=gg.appendChild(document.createElementNS(SVG, 'stop'));
+  st.setAttribute('offset','0%'); st.setAttribute('stop-color','#a0c4e8'); st.setAttribute('stop-opacity','0.12');
+  st=gg.appendChild(document.createElementNS(SVG, 'stop'));
+  st.setAttribute('offset','100%'); st.setAttribute('stop-color','#2b6cb0'); st.setAttribute('stop-opacity','0.35');
+  defs.appendChild(gg);
+  svg.appendChild(defs);
+
+  const back = document.createElementNS(SVG, 'rect');
+  back.setAttribute('x','0'); back.setAttribute('y','0');
+  back.setAttribute('width','640'); back.setAttribute('height','520');
+  back.setAttribute('fill','url(#gg)');
+  svg.appendChild(back);
+
+  const wg = document.createElementNS(SVG, 'g');
+  const wl = 800;
+  const wx1 = cx - wl*Math.cos(wa), wy1 = cy + wl*Math.sin(wa);
+  const wx2 = cx + wl*Math.cos(wa), wy2 = cy - wl*Math.sin(wa);
+
+  const wf = document.createElementNS(SVG, 'polygon');
+  const sd = 1200;
+  wf.setAttribute('points', `${wx1},${wy1} ${wx2},${wy2} ${wx2+sd*Math.sin(wa)},${wy2+sd*Math.cos(wa)} ${wx1+sd*Math.sin(wa)},${wy1+sd*Math.cos(wa)}`);
+  wf.setAttribute('fill','#bee3f8');
+  wf.setAttribute('opacity','0.5');
+  wg.appendChild(wf);
+
+  const wln = document.createElementNS(SVG, 'line');
+  wln.setAttribute('x1',wx1); wln.setAttribute('y1',wy1);
+  wln.setAttribute('x2',wx2); wln.setAttribute('y2',wy2);
+  wln.setAttribute('stroke','#2b6cb0');
+  wln.setAttribute('stroke-width','2.5');
+  wg.appendChild(wln);
+  svg.appendChild(wg);
+
+  if (S.t >= 60) {
+    const decorG = document.createElementNS(SVG, 'g');
+    const decorItems = [
+      {e:'🐟', yo:28, spd:35, ph:0},
+      {e:'🐠', yo:58, spd:27, ph:2.1},
+      {e:'🐡', yo:78, spd:21, ph:4.3},
+      {e:'🐙', yo:42, spd:16, ph:0.7},
+      {e:'🦀', yo:68, spd:29, ph:3.5},
+      {e:'🐦', yo:-55, spd:-31, ph:1.2},
+      {e:'🕊️', yo:-88, spd:-24, ph:3.8},
+      {e:'🦅', yo:-120, spd:-37, ph:5.4},
+    ];
+    for (const d of decorItems) {
+      const dx = ((S.t * d.spd + d.ph * 80) % 720) - 40;
+      const gate = Math.sin(S.t * 0.04 + d.ph * 4.3);
+      if (gate > 0.75) {
+        const dt = document.createElementNS(SVG, 'text');
+        dt.setAttribute('x', dx); dt.setAttribute('y', cy + d.yo);
+        dt.setAttribute('font-size', '22');
+        dt.textContent = d.e;
+        decorG.appendChild(dt);
+      }
+    }
+    svg.appendChild(decorG);
+  }
+
+  const bg = document.createElementNS(SVG, 'g');
+  bg.setAttribute('transform', `translate(${cx},${bcy}) rotate(${-bA*180/Math.PI})`);
+
+  const br = document.createElementNS(SVG, 'rect');
+  br.setAttribute('x',-hw); br.setAttribute('y',-hh);
+  br.setAttribute('width',hw*2); br.setAttribute('height',hh*2);
+  br.setAttribute('rx','5');
+  br.setAttribute('fill','#c05621');
+  br.setAttribute('stroke','#9c4221');
+  br.setAttribute('stroke-width','1.5');
+  bg.appendChild(br);
+
+  if (P && P.dr > 0) {
+    const wetY = hh - P.dr * Sf;
+    const wr = document.createElementNS(SVG, 'rect');
+    wr.setAttribute('x',-hw+1); wr.setAttribute('y',wetY);
+    wr.setAttribute('width',hw*2-2); wr.setAttribute('height',P.dr*Sf);
+    wr.setAttribute('fill','#7c3a1e');
+    wr.setAttribute('opacity','0.35');
+    bg.appendChild(wr);
+    const wl2 = document.createElementNS(SVG, 'line');
+    wl2.setAttribute('x1',-hw); wl2.setAttribute('y1',wetY);
+    wl2.setAttribute('x2',hw); wl2.setAttribute('y2',wetY);
+    wl2.setAttribute('stroke','#2b6cb0');
+    wl2.setAttribute('stroke-width','1');
+    wl2.setAttribute('opacity','0.5');
+    bg.appendChild(wl2);
+  }
+
+  const pg = document.createElementNS(SVG, 'g');
+  pg.setAttribute('transform', `translate(${cx},${bcy}) rotate(${-bA*180/Math.PI})`);
+
+  const pAng = rM ? 0 : tR;
+  const pH = PH * Sf * 1.15;
+
+  const pgRot = document.createElementNS(SVG, 'g');
+  pgRot.setAttribute('transform', `rotate(${-pAng*180/Math.PI})`);
+
+  const fY = -hh;
+  const hipY = fY - pH * 0.14;
+  const shY = fY - pH * 0.46;
+  const hR = Math.max(18, pH * 0.22);
+  const hY = shY - hR + 2;
+  const aY = shY + 2;
+
+  const torso = document.createElementNS(SVG, 'line');
+  torso.setAttribute('x1','0'); torso.setAttribute('y1',hipY);
+  torso.setAttribute('x2','0'); torso.setAttribute('y2',shY);
+  torso.setAttribute('stroke','#2d3748'); torso.setAttribute('stroke-width','5');
+  torso.setAttribute('stroke-linecap','round');
+  pgRot.appendChild(torso);
+
+  const legSp = pH * 0.07;
+  const legL = document.createElementNS(SVG, 'line');
+  legL.setAttribute('x1','0'); legL.setAttribute('y1',hipY);
+  legL.setAttribute('x2',-legSp); legL.setAttribute('y2',fY);
+  legL.setAttribute('stroke','#2d3748'); legL.setAttribute('stroke-width','4');
+  legL.setAttribute('stroke-linecap','round');
+  pgRot.appendChild(legL);
+  const legR = document.createElementNS(SVG, 'line');
+  legR.setAttribute('x1','0'); legR.setAttribute('y1',hipY);
+  legR.setAttribute('x2',legSp); legR.setAttribute('y2',fY);
+  legR.setAttribute('stroke','#2d3748'); legR.setAttribute('stroke-width','4');
+  legR.setAttribute('stroke-linecap','round');
+  pgRot.appendChild(legR);
+
+  const armLen = pH * 0.26;
+  const elbX = 0.7 * armLen;
+  const elbY = 0.3 * armLen;
+  const hndX = 0.5 * armLen;
+  const hndY = 1.0 * armLen;
+  const armL = document.createElementNS(SVG, 'polyline');
+  armL.setAttribute('points', `0,${aY} ${-elbX},${aY+elbY} ${-hndX},${aY+hndY}`);
+  armL.setAttribute('stroke','#2d3748'); armL.setAttribute('stroke-width','4');
+  armL.setAttribute('fill','none'); armL.setAttribute('stroke-linecap','round'); armL.setAttribute('stroke-linejoin','round');
+  pgRot.appendChild(armL);
+  const armR = document.createElementNS(SVG, 'polyline');
+  armR.setAttribute('points', `0,${aY} ${elbX},${aY+elbY} ${hndX},${aY+hndY}`);
+  armR.setAttribute('stroke','#2d3748'); armR.setAttribute('stroke-width','4');
+  armR.setAttribute('fill','none'); armR.setAttribute('stroke-linecap','round'); armR.setAttribute('stroke-linejoin','round');
+  pgRot.appendChild(armR);
+
+  const hd = document.createElementNS(SVG, 'circle');
+  hd.setAttribute('cx','0'); hd.setAttribute('cy',hY);
+  hd.setAttribute('r',hR.toString());
+  hd.setAttribute('fill','#ffebd6'); hd.setAttribute('stroke','#2d3748');
+  hd.setAttribute('stroke-width','2.5');
+  pgRot.appendChild(hd);
+
+  const effort = S.cap || S.fal ? 1 : Math.min(1, Math.abs(S.lastU) / (PW * PH * 0.25));
+  const eY = hY - hR * 0.07;
+  const mY = hY + hR * 0.28;
+
+  if (S.cap || S.fal) {
+    const xs = hR * 0.2;
+    const ys = hR * 0.08;
+    const eL1 = document.createElementNS(SVG, 'line');
+    eL1.setAttribute('x1',-xs-2); eL1.setAttribute('y1',eY-ys);
+    eL1.setAttribute('x2',-xs+2); eL1.setAttribute('y2',eY+ys);
+    eL1.setAttribute('stroke','#e53e3e'); eL1.setAttribute('stroke-width','2.5');
+    eL1.setAttribute('stroke-linecap','round');
+    pgRot.appendChild(eL1);
+    const eL2 = document.createElementNS(SVG, 'line');
+    eL2.setAttribute('x1',-xs+2); eL2.setAttribute('y1',eY-ys);
+    eL2.setAttribute('x2',-xs-2); eL2.setAttribute('y2',eY+ys);
+    eL2.setAttribute('stroke','#e53e3e'); eL2.setAttribute('stroke-width','2.5');
+    eL2.setAttribute('stroke-linecap','round');
+    pgRot.appendChild(eL2);
+    const eR1 = document.createElementNS(SVG, 'line');
+    eR1.setAttribute('x1',xs-2); eR1.setAttribute('y1',eY-ys);
+    eR1.setAttribute('x2',xs+2); eR1.setAttribute('y2',eY+ys);
+    eR1.setAttribute('stroke','#e53e3e'); eR1.setAttribute('stroke-width','2.5');
+    eR1.setAttribute('stroke-linecap','round');
+    pgRot.appendChild(eR1);
+    const eR2 = document.createElementNS(SVG, 'line');
+    eR2.setAttribute('x1',xs+2); eR2.setAttribute('y1',eY-ys);
+    eR2.setAttribute('x2',xs-2); eR2.setAttribute('y2',eY+ys);
+    eR2.setAttribute('stroke','#e53e3e'); eR2.setAttribute('stroke-width','2.5');
+    eR2.setAttribute('stroke-linecap','round');
+    pgRot.appendChild(eR2);
+    const mt = document.createElementNS(SVG, 'path');
+    mt.setAttribute('d',`M -${hR*0.28},${mY+1} Q -${hR*0.12},${mY-hR*0.22} 0,${mY+1} Q ${hR*0.12},${mY-hR*0.22} ${hR*0.28},${mY+1}`);
+    mt.setAttribute('stroke','#e53e3e'); mt.setAttribute('stroke-width','2.5');
+    mt.setAttribute('fill','none'); mt.setAttribute('stroke-linecap','round');
+    pgRot.appendChild(mt);
+  } else {
+    const eyeR = hR * 0.08;
+    const ed = hR * 0.22;
+    const eyeLc = document.createElementNS(SVG, 'circle');
+    eyeLc.setAttribute('cx',-ed); eyeLc.setAttribute('cy',eY);
+    eyeLc.setAttribute('r',eyeR.toString()); eyeLc.setAttribute('fill','#2d3748');
+    pgRot.appendChild(eyeLc);
+    const eyeRc = document.createElementNS(SVG, 'circle');
+    eyeRc.setAttribute('cx',ed); eyeRc.setAttribute('cy',eY);
+    eyeRc.setAttribute('r',eyeR.toString()); eyeRc.setAttribute('fill','#2d3748');
+    pgRot.appendChild(eyeRc);
+    if (effort > 0.6) {
+      const bw = hR * 0.18;
+      const bh = hR * 0.08;
+      const browL = document.createElementNS(SVG, 'line');
+      browL.setAttribute('x1',-ed-bw); browL.setAttribute('y1',eY-bh-hR*0.06);
+      browL.setAttribute('x2',-ed+bw); browL.setAttribute('y2',eY-bh+hR*0.02);
+      browL.setAttribute('stroke','#2d3748'); browL.setAttribute('stroke-width','2.5');
+      browL.setAttribute('stroke-linecap','round');
+      pgRot.appendChild(browL);
+      const browR = document.createElementNS(SVG, 'line');
+      browR.setAttribute('x1',ed-bw); browR.setAttribute('y1',eY-bh+hR*0.02);
+      browR.setAttribute('x2',ed+bw); browR.setAttribute('y2',eY-bh-hR*0.06);
+      browR.setAttribute('stroke','#2d3748'); browR.setAttribute('stroke-width','2.5');
+      browR.setAttribute('stroke-linecap','round');
+      pgRot.appendChild(browR);
+    }
+    const mouth = document.createElementNS(SVG, 'path');
+    if (effort > 0.6) {
+      mouth.setAttribute('d',`M -${hR*0.22},${mY} L ${hR*0.22},${mY}`);
+    } else {
+      mouth.setAttribute('d',`M -${hR*0.22},${mY-hR*0.04} Q 0,${mY+hR*0.18} ${hR*0.22},${mY-hR*0.04}`);
+    }
+    mouth.setAttribute('stroke','#2d3748'); mouth.setAttribute('stroke-width','2.5');
+    mouth.setAttribute('fill','none'); mouth.setAttribute('stroke-linecap','round');
+    pgRot.appendChild(mouth);
+  }
+
+  pg.appendChild(pgRot);
+
+  if (P && (rM || !fal)) {
+    const {KG,GM,KB,KM,BM} = P;
+    let cgY = 0;
+
+    if (rM) {
+      cgY = hh - KG * Sf;
+      const cgD = document.createElementNS(SVG, 'circle');
+      cgD.setAttribute('cx',0); cgD.setAttribute('cy',cgY);
+      cgD.setAttribute('r','7');
+      cgD.setAttribute('fill','#38a169');
+      cgD.setAttribute('stroke','#22543d');
+      cgD.setAttribute('stroke-width','2');
+      const cgL = document.createElementNS(SVG, 'text');
+      cgL.setAttribute('x',12); cgL.setAttribute('y',cgY+3);
+      cgL.setAttribute('font-size','11'); cgL.setAttribute('fill','#22543d');
+      cgL.setAttribute('font-weight','600');
+      cgL.textContent = 'CG';
+      pg.appendChild(cgD);
+      pg.appendChild(cgL);
+    } else {
+      const pCgY = -hh - PH * S.cgM * Sf;
+      const pCgD = document.createElementNS(SVG, 'circle');
+      pCgD.setAttribute('cx','0'); pCgD.setAttribute('cy',pCgY);
+      pCgD.setAttribute('r','7');
+      pCgD.setAttribute('fill','#38a169');
+      pCgD.setAttribute('stroke','#22543d');
+      pCgD.setAttribute('stroke-width','2');
+      const pCgL = document.createElementNS(SVG, 'text');
+      pCgL.setAttribute('x','12'); pCgL.setAttribute('y',pCgY-9);
+      pCgL.setAttribute('font-size','10'); pCgL.setAttribute('fill','#22543d');
+      pCgL.setAttribute('font-weight','600');
+      pCgL.textContent = 'CGp';
+      pgRot.appendChild(pCgD);
+      pgRot.appendChild(pCgL);
+
+      const bCgY = hh - (H/2) * Sf;
+      const bCgD = document.createElementNS(SVG, 'circle');
+      bCgD.setAttribute('cx','0'); bCgD.setAttribute('cy',bCgY);
+      bCgD.setAttribute('r','6');
+      bCgD.setAttribute('fill','#d69e2e');
+      bCgD.setAttribute('stroke','#975a16');
+      bCgD.setAttribute('stroke-width','2');
+      const bCgL = document.createElementNS(SVG, 'text');
+      bCgL.setAttribute('x','12'); bCgL.setAttribute('y',bCgY+3);
+      bCgL.setAttribute('font-size','10'); bCgL.setAttribute('fill','#975a16');
+      bCgL.setAttribute('font-weight','600');
+      bCgL.textContent = 'CGb';
+      bg.appendChild(bCgD);
+      bg.appendChild(bCgL);
+    }
+
+    const kbY = hh - KB * Sf;
+    const kbD = document.createElementNS(SVG, 'circle');
+    kbD.setAttribute('cx','0'); kbD.setAttribute('cy',kbY);
+    kbD.setAttribute('r','6');
+    kbD.setAttribute('fill','#e53e3e');
+    kbD.setAttribute('stroke','#9b2c2c');
+    kbD.setAttribute('stroke-width','2');
+    const kbL = document.createElementNS(SVG, 'text');
+    kbL.setAttribute('x','14'); kbL.setAttribute('y',kbY+3);
+    kbL.setAttribute('font-size','11'); kbL.setAttribute('fill','#9b2c2c');
+    kbL.setAttribute('font-weight','600');
+    kbL.textContent = 'CB';
+    bg.appendChild(kbD);
+    bg.appendChild(kbL);
+
+    const mY = hh - KM * Sf;
+    if (KM * Sf < hh + 120) {
+      const mD = document.createElementNS(SVG, 'circle');
+      mD.setAttribute('cx','0'); mD.setAttribute('cy',mY);
+      mD.setAttribute('r','7');
+      mD.setAttribute('fill','#3182ce');
+      mD.setAttribute('stroke','#2a4365');
+      mD.setAttribute('stroke-width','2');
+      const mL = document.createElementNS(SVG, 'text');
+      mL.setAttribute('x','14'); mL.setAttribute('y',mY+3);
+      mL.setAttribute('font-size','11'); mL.setAttribute('fill','#2a4365');
+      mL.setAttribute('font-weight','600');
+      mL.textContent = 'M';
+      bg.appendChild(mD);
+      bg.appendChild(mL);
+
+      if (Math.abs(KM - KG) < 8 && Math.abs(KM - KG) > 0.01) {
+        const gml = document.createElementNS(SVG, 'line');
+        gml.setAttribute('x1','0'); gml.setAttribute('y1',cgY);
+        gml.setAttribute('x2','0'); gml.setAttribute('y2',mY);
+        gml.setAttribute('stroke','#a0aec0'); gml.setAttribute('stroke-width','1.5');
+        gml.setAttribute('stroke-dasharray','4,4'); gml.setAttribute('opacity','0.6');
+        bg.insertBefore(gml, bg.firstChild);
+      }
+    }
+
+    const infoBg = document.createElementNS(SVG, 'rect');
+    infoBg.setAttribute('x','440'); infoBg.setAttribute('y','10');
+    infoBg.setAttribute('width','190'); infoBg.setAttribute('height','32');
+    infoBg.setAttribute('fill','#1a202c'); infoBg.setAttribute('opacity','0.4');
+    infoBg.setAttribute('rx','3');
+    svg.appendChild(infoBg);
+
+    const angTxt = document.createElementNS(SVG, 'text');
+    angTxt.setAttribute('x','446'); angTxt.setAttribute('y','20');
+    angTxt.setAttribute('font-size','11'); angTxt.setAttribute('fill','#e2e8f0');
+    angTxt.setAttribute('font-family','monospace');
+    const modeL = rM ? '' : ' P:' + (tR*180/Math.PI).toFixed(1) + '\u00B0';
+    angTxt.textContent = 'Board: ' + (bA*180/Math.PI).toFixed(1) + '\u00B0' + modeL;
+    svg.appendChild(angTxt);
+
+    const modeTxt = document.createElementNS(SVG, 'text');
+    modeTxt.setAttribute('x','446'); modeTxt.setAttribute('y','34');
+    modeTxt.setAttribute('font-size','11'); modeTxt.setAttribute('fill','#a0aec0');
+    modeTxt.setAttribute('font-family','monospace');
+    modeTxt.textContent = rM ? 'One-piece (boat-like)' : 'Two-piece (paddleboard-like)' + (S.fal ? ' FALLEN' : '');
+    svg.appendChild(modeTxt);
+  }
+
+  svg.appendChild(bg);
+  svg.appendChild(pg);
+
+  const chX = 30, chY = 430, chW = 580, chH = 68;
+  const chBg = document.createElementNS(SVG, 'rect');
+  chBg.setAttribute('x',chX); chBg.setAttribute('y',chY);
+  chBg.setAttribute('width',chW); chBg.setAttribute('height',chH);
+  chBg.setAttribute('fill','#1a202c'); chBg.setAttribute('opacity','0.55');
+  chBg.setAttribute('rx','4');
+  svg.appendChild(chBg);
+
+  const barY = chY + 4, barH = 14, barX = chX + 20, barW = chW - 40;
+  const barBg = document.createElementNS(SVG, 'rect');
+  barBg.setAttribute('x',barX); barBg.setAttribute('y',barY);
+  barBg.setAttribute('width',barW); barBg.setAttribute('height',barH);
+  barBg.setAttribute('fill','#2d3748'); barBg.setAttribute('rx','3');
+  svg.appendChild(barBg);
+
+  const barMid = document.createElementNS(SVG, 'line');
+  barMid.setAttribute('x1',barX+barW/2); barMid.setAttribute('y1',barY);
+  barMid.setAttribute('x2',barX+barW/2); barMid.setAttribute('y2',barY+barH);
+  barMid.setAttribute('stroke','#4a5568'); barMid.setAttribute('stroke-width','1');
+  svg.appendChild(barMid);
+
+  const curLean = S.tR * 180 / Math.PI;
+  const normLean = Math.max(-1, Math.min(1, curLean / 80));
+  const dotX = barX + barW/2 + normLean * barW/2;
+  const dotY = barY + barH/2;
+  const absL = Math.abs(curLean);
+  let dotCol;
+  if (S.cap || S.fal) dotCol = '#3182ce';
+  else if (absL > 60) dotCol = '#e53e3e';
+  else if (absL > 40) dotCol = '#dd6b20';
+  else if (absL > 20) dotCol = '#d69e2e';
+  else dotCol = '#38a169';
+  const dot = document.createElementNS(SVG, 'circle');
+  dot.setAttribute('cx',dotX); dot.setAttribute('cy',dotY);
+  dot.setAttribute('r','6');
+  dot.setAttribute('fill',dotCol);
+  dot.setAttribute('stroke','#e2e8f0'); dot.setAttribute('stroke-width','1.5');
+  svg.appendChild(dot);
+
+  const hist = S.leanHist;
+  if (hist.length > 1) {
+    const yMin = -90, yMax = 90;
+    const plotW = chW - 30, plotH = chH - 20;
+    const plotX = chX + 25, plotY = chY + 14;
+    const tStart = S.t - 10;
+    const tEnd = S.t;
+
+    const first = hist[0];
+    const last = hist[hist.length - 1];
+    const tRange = Math.max(tEnd - tStart, 5);
+
+    for (let i = 1; i < hist.length; i++) {
+      const p = hist[i-1];
+      const q = hist[i];
+      if (q.t < tStart) continue;
+      if (p.t > tEnd) break;
+
+      const x1 = plotX + (p.t - tStart) / tRange * plotW;
+      const x2 = plotX + (q.t - tStart) / tRange * plotW;
+
+      const yb1 = plotY + plotH / 2 - (Math.max(yMin, Math.min(yMax, p.board || 0)) / yMax) * (plotH / 2);
+      const yb2 = plotY + plotH / 2 - (Math.max(yMin, Math.min(yMax, q.board || 0)) / yMax) * (plotH / 2);
+      const bSeg = document.createElementNS(SVG, 'line');
+      bSeg.setAttribute('x1',x1); bSeg.setAttribute('y1',yb1);
+      bSeg.setAttribute('x2',x2); bSeg.setAttribute('y2',yb2);
+      bSeg.setAttribute('stroke','#63b3ed'); bSeg.setAttribute('stroke-width','1');
+      bSeg.setAttribute('opacity','0.5');
+      svg.appendChild(bSeg);
+
+      const y1 = plotY + plotH / 2 - (Math.max(yMin, Math.min(yMax, p.lean)) / yMax) * (plotH / 2);
+      const y2 = plotY + plotH / 2 - (Math.max(yMin, Math.min(yMax, q.lean)) / yMax) * (plotH / 2);
+
+      const absL = Math.abs(q.lean);
+      let col;
+      if (q.under) col = '#3182ce';
+      else if (absL > 60) col = '#e53e3e';
+      else if (absL > 40) col = '#dd6b20';
+      else if (absL > 20) col = '#d69e2e';
+      else if (absL > 10) col = '#68d391';
+      else col = '#38a169';
+
+      const seg = document.createElementNS(SVG, 'line');
+      seg.setAttribute('x1',x1); seg.setAttribute('y1',y1);
+      seg.setAttribute('x2',x2); seg.setAttribute('y2',y2);
+      seg.setAttribute('stroke',col); seg.setAttribute('stroke-width','2');
+      seg.setAttribute('stroke-linecap','round');
+      svg.appendChild(seg);
+    }
+
+    const zeroLine = document.createElementNS(SVG, 'line');
+    const zy = plotY + plotH / 2;
+    zeroLine.setAttribute('x1',plotX); zeroLine.setAttribute('y1',zy);
+    zeroLine.setAttribute('x2',plotX+plotW); zeroLine.setAttribute('y2',zy);
+    zeroLine.setAttribute('stroke','#4a5568'); zeroLine.setAttribute('stroke-width','0.5');
+    svg.appendChild(zeroLine);
+  }
+}
+
+function buildMath(P) {
+  if (!P) {
+    mathContent.innerHTML = '<div class="cmt">OVERLOADED: draft exceeds board height.</div>';
+    return;
+  }
+  const {W,H,L,PW,PH,WT,dV,dr,KB,I,BM,KM,bCG,pCG,KG,GM,BR,rM} = P;
+  const cm = GM * 2.54;
+  const sta = GM > 0.5 ? 'STABLE' : GM > 0 ? 'MARGINAL' : 'UNSTABLE';
+  const phi = S.bA - S.wAng;
+  const gz = GM * Math.sin(phi);
+
+  const hCG = PH * S.cgM;
+  const mp_h2 = PW * hCG * hCG / G;
+  const I_eff = WT * W * W / 12;
+  const Kspring = G * dV * RHO * GM;
+  const thP = S.bA + S.tR;
+  const oP = S.bV + S.oR;
+  const alphap = (PW * hCG * Math.sin(thP) - 0.6 * oP) / mp_h2;
+  const alphab = (-Kspring * (S.bA - S.wAng) - (dr < H * 0.85 ? 0.8 : 2.0) * S.bV - PW * hCG * Math.sin(thP)) / I_eff;
+  const n1 = S.wR > 0 ? Math.sin(S.t * 0.25 * (1 + S.wR * 0.5) + 1.7) : 0;
+  const n2 = S.wR > 0 ? Math.sin(S.t * 0.15 * (1 + S.wR * 0.5) + 4.3) : 0;
+  const dtBW = S.t - S.bwT;
+  let bigAmp = 0;
+  if (dtBW > 0 && dtBW < 3.5) {
+    if (dtBW < 1.0) { const f = dtBW / 1.0; bigAmp = 12 * f * f * (3 - 2 * f); }
+    else if (dtBW < 2.0) { bigAmp = 12; }
+    else { const f = (dtBW - 2.0) / 1.5; bigAmp = 12 * (1 - f * f * (3 - 2 * f)); }
+  }
+  const wDeg = S.wA * (1 + S.wR * n1 * 0.5) * Math.sin(2 * Math.PI * S.wF * (1 + S.wR * n2 * 0.3) * S.t + S.wR * n1 * 0.3) + bigAmp;
+  const pAng = rM ? 0 : S.tR;
+  const pAngD = pAng * 180 / Math.PI;
+
+  const h = [
+    '<div class="ms">Inputs</div>',
+    'W = ' + W + '<span class="cmt"> in (board width)</span>',
+    'H = ' + H + '<span class="cmt"> in (board height)</span>',
+    'L = ' + L + '<span class="cmt"> in (board length)</span>',
+    'Wb = ' + BW + '<span class="cmt"> lb (board weight)</span>',
+    'Wp = ' + PW + '<span class="cmt"> lb (person weight)</span>',
+    'hp = ' + PH + '<span class="cmt"> in (person height)</span>',
+    '\u03C1 = ' + RHO + '<span class="cmt"> lb/in\u00B3 (water)</span>',
+    '<div class="sep"></div>',
+
+    '<div class="ms">Step 1: Total Weight</div>',
+    '\u0394 = Wb + Wp = ' + WT + '<span class="cmt"> lb</span>',
+    '<div class="sep"></div>',
+
+    '<div class="ms">Step 2: Displaced Volume</div>',
+    '\u2207 = \u0394 / \u03C1 = ' + WT.toFixed(0) + ' / ' + RHO + ' = <span class="out">' + dV.toFixed(0) + ' in\u00B3</span>',
+    '<div class="sep"></div>',
+
+    '<div class="ms">Step 3: Draft</div>',
+    'd = \u2207 / (L\u00D7W) = ' + dV.toFixed(0) + ' / (' + L + '\u00D7' + W + ') = <span class="out">' + dr.toFixed(2) + ' in</span>',
+    '<div class="sep"></div>',
+
+    '<div class="ms">Step 4: KB (CB from keel)</div>',
+    'KB = d/2 = <span class="out">' + KB.toFixed(2) + ' in</span>',
+    '<div class="sep"></div>',
+
+    '<div class="ms">Step 5: Waterplane I</div>',
+    'I = L\u00D7W\u00B3/12 = ' + L + '\u00D7' + W + '\u00B3/12 = <span class="out">' + I.toFixed(0) + ' in\u2074</span>',
+    '<div class="sep"></div>',
+
+    '<div class="ms">Step 6: BM (metacentric radius)</div>',
+    'BM = I/\u2207 = ' + I.toFixed(0) + '/' + dV.toFixed(0) + ' = <span class="out">' + BM.toFixed(2) + ' in</span>',
+    '<div class="cmt">Quick check: BM \u2248 W\u00B2/(12\u00D7d) = ' + (W*W/(12*dr)).toFixed(2) + ' in</div>',
+    '<div class="sep"></div>',
+
+    '<div class="ms">Step 7: KM (metacenter from keel)</div>',
+    'KM = KB + BM = ' + KB.toFixed(2) + ' + ' + BM.toFixed(2) + ' = <span class="out">' + KM.toFixed(2) + ' in</span>',
+    '<div class="sep"></div>',
+
+    '<div class="ms">Step 8: KG (CG from keel)</div>',
+    'KGb = H/2 = ' + bCG.toFixed(2) + '<span class="cmt"> in (board CG)</span>',
+    'KGp = H + hp\u00D7cgM = ' + H + ' + ' + PH + '\u00D7' + S.cgM + ' = ' + pCG.toFixed(2) + '<span class="cmt"> in (person CG)</span>',
+    'KG = (Wb\u00B7KGb + Wp\u00B7KGp) / \u0394',
+    'KG = (' + BW + '\u00B7' + bCG.toFixed(2) + ' + ' + PW + '\u00B7' + pCG.toFixed(2) + ') / ' + WT,
+    'KG = <span class="out">' + KG.toFixed(2) + ' in = ' + (KG*2.54).toFixed(1) + ' cm</span>',
+    '<div class="sep"></div>',
+
+    '<div class="ms">Step 9: Metacentric Height</div>',
+    'GM = KM \u2212 KG = ' + KM.toFixed(2) + ' \u2212 ' + KG.toFixed(2) + ' = <span class="out">' + GM.toFixed(2) + ' in</span>',
+    'GM = <span class="out">' + cm.toFixed(2) + ' cm</span>',
+    '<span class="cmt">' + (GM > 0 ? 'GM > 0: ' + sta : GM < 0 ? 'GM < 0: ' + sta : 'GM = 0: neutral') + '</span>',
+    '<div class="sep"></div>',
+
+    '<div class="ms">Step 10: Burden Ratio (BR)</div>',
+    'BR = (Wp \u00D7 KGp) / (\u0394 \u00D7 GM)',
+    'BR = (' + PW + ' \u00D7 ' + pCG.toFixed(1) + ') / (' + WT + ' \u00D7 ' + GM.toFixed(2) + ')',
+    'BR = <span class="out">' + BR.toFixed(3) + '</span>',
+    '<span class="cmt">' + (BR < 1 ? 'BR < 1: self-damping, easy to balance' : 'BR > 1: unstable open-loop, hard to balance') + '</span>',
+    '<div class="sep"></div>',
+
+    '<div class="ms">Step 11: Righting Arm GZ</div>',
+    '\u03C6 = \u03B8b \u2212 \u03B8w = ' + (S.bA*180/Math.PI).toFixed(1) + '\u00B0 \u2212 ' + wDeg.toFixed(1) + '\u00B0 = ' + (phi*180/Math.PI).toFixed(1) + '\u00B0',
+    'GZ = GM \u00D7 sin(\u03C6) = <span class="out">' + gz.toFixed(3) + ' in = ' + (gz*2.54).toFixed(2) + ' cm</span>',
+    '<div class="sep"></div>',
+
+    '<div class="ms">Physics Mode</div>',
+    (rM ? 'One-piece (boat-like) — rigid body' : 'Two-piece (paddleboard-like) — two-body dynamics'),
+    (rM ? '' : [
+      '<div class="sep"></div>',
+      '<div class="ms">Body 1: Paddleboard</div>',
+      'I<sub>b</sub> = \u0394\u00D7W\u00B2/12 = ' + I_eff.toFixed(0) + '<span class="cmt"> lb\u00B7in\u00B2</span>',
+      'M<sub>b</sub> = ' + WT.toFixed(0) + '<span class="cmt"> lb</span>',
+      '\u03B1<sub>b</sub> = [\u2212K<sub>\u03C6</sub>\u00B7(\u03B8<sub>b</sub>\u2212\u03B8<sub>w</sub>) \u2212 c<sub>b</sub>\u00B7\u03C9<sub>b</sub> \u2212 W<sub>p</sub>\u00B7h<sub>CG</sub>\u00B7sin(\u03B8<sub>b</sub>+\u03B8<sub>r</sub>) \u2212 u] / I<sub>b</sub>',
+      '\u03B1<sub>b</sub> = <span class="out">' + alphab.toFixed(2) + '</span> rad/s\u00B2',
+      '\u03C9<sub>b</sub> = <span class="out">' + (S.bV*180/Math.PI).toFixed(1) + '</span> \u00B0/s',
+      '\u03B8<sub>b</sub> = <span class="out">' + (S.bA*180/Math.PI).toFixed(1) + '</span> \u00B0',
+      '<div class="sep"></div>',
+      '<div class="ms">Body 2: Person (inverted pendulum)</div>',
+      'I<sub>p</sub> = W<sub>p</sub>\u00D7h<sub>CG</sub>\u00B2/g = ' + mp_h2.toFixed(0) + '<span class="cmt"> lb\u00B7in\u00B2</span>',
+      'h<sub>CG</sub> = PH\u00D7cgM = ' + PH + '\u00D7' + S.cgM + ' = ' + hCG.toFixed(1) + '<span class="cmt"> in</span>',
+      '\u03B1<sub>p</sub> = [W<sub>p</sub>\u00B7h<sub>CG</sub>\u00B7sin(\u03B8<sub>b</sub>+\u03B8<sub>r</sub>) \u2212 c<sub>p</sub>\u00B7\u03C9<sub>p</sub> + u] / I<sub>p</sub>',
+      '\u03B1<sub>p</sub> = <span class="out">' + alphap.toFixed(2) + '</span> rad/s\u00B2',
+      '\u03C9<sub>p</sub> = <span class="out">' + (S.oR*180/Math.PI).toFixed(1) + '</span> \u00B0/s (relative)',
+      '\u03B8<sub>r</sub> = <span class="out">' + (S.tR*180/Math.PI).toFixed(1) + '</span> \u00B0',
+      '<div class="sep"></div>',
+      '<div class="ms">Coupling</div>',
+      'Person weight on board: W<sub>p</sub>\u00B7h<sub>CG</sub>\u00B7sin(\u03B8<sub>b</sub>+\u03B8<sub>r</sub>) = ' + (PW * hCG * Math.sin(thP)).toFixed(1) + '<span class="cmt"> lb\u00B7in</span>',
+      'K<sub>\u03C6</sub> = \u03C1\u00B7g\u00B7\u2207\u00B7GM = ' + Kspring.toFixed(0) + '<span class="cmt"> lb\u00B7in/rad</span>',
+    ].join('<br>')),
+    'Person lean: ' + pAngD.toFixed(1) + '\u00B0' + (S.fal ? ' <span class="cmt">FALLEN</span>' : ''),
+    '<div class="sep"></div>',
+
+    '<div class="ms">Stability Summary</div>',
+    'GM = ' + cm.toFixed(2) + ' cm <span class="cmt">\u2192 ' + sta + '</span>',
+    'BR = ' + BR.toFixed(3) + '<span class="cmt"> \u2192 ' + (BR < 1 ? 'easy balance' : 'hard balance') + '</span>',
+    'BM/KG = ' + (BM/KG).toFixed(2) + '<span class="cmt"> \u2192 ' + (BM/KG > 1 ? 'safe' : 'at risk') + '</span>',
+    'Draft/Height = ' + (dr/H*100).toFixed(1) + '%<span class="cmt"> \u2192 ' + (dr/H*100 < 85 ? 'OK' : 'OVERLOADED') + '</span>',
+  ].join('<br>');
+  mathContent.innerHTML = h;
+}
+
+function upd(dt) {
+  S.t += dt;
+
+  const n1 = S.wR > 0 ? Math.sin(S.t * 0.25 * (1 + S.wR * 0.5) + 1.7) : 0;
+  const n2 = S.wR > 0 ? Math.sin(S.t * 0.15 * (1 + S.wR * 0.5) + 4.3) : 0;
+  const effA = S.wA * (1 + S.wR * n1 * 0.5);
+  const effF = S.wF * (1 + S.wR * n2 * 0.3);
+  let wDeg = effA * Math.sin(2 * Math.PI * effF * S.t + S.wR * n1 * 0.3);
+
+  const dtBW = S.t - S.bwT;
+  let bigAmp = 0;
+  if (dtBW > 0 && dtBW < 3.5) {
+    if (dtBW < 1.0) {
+      const f = dtBW / 1.0;
+      bigAmp = 12 * f * f * (3 - 2 * f);
+    } else if (dtBW < 2.0) {
+      bigAmp = 12;
+    } else {
+      const f = (dtBW - 2.0) / 1.5;
+      bigAmp = 12 * (1 - f * f * (3 - 2 * f));
+    }
+  }
+  wDeg += bigAmp;
+
+  S.wAng = wDeg * Math.PI / 180;
+
+  const P = phys();
+  if (!P) {
+    S.bV *= 0.95;
+    S.bA += S.bV * dt;
+    uUI(null); render();
+    if (document.getElementById('mathPanel').classList.contains('open')) buildMath(null);
+    return;
+  }
+
+  const {GM,KG,WT,dV,dr,H,W,PW,PH,BR,pCG,rM} = P;
+
+  const waveMom = S.wAng * 0.005;
+  const Kspring = G * dV * RHO * GM;
+  const I_eff = WT * W * W / 12;
+
+  if (S.cap) {
+    const target = Math.sign(S.bA) * Math.PI;
+    S.bA += (target - S.bA) * Math.pow(0.92, dt * 60);
+    S.bV = 0;
+    S.tR *= Math.pow(0.9, dt * 60);
+    S.oR *= Math.pow(0.9, dt * 60);
+  } else if (rM) {
+    const damp = dr < H * 0.85 ? 0.8 : 2.0;
+    const thR = S.bA - S.wAng;
+    const acc = -Kspring / I_eff * thR - damp * S.bV + waveMom;
+    S.bV += acc * dt;
+    S.bV *= Math.pow(0.45, dt);
+    S.bA += S.bV * dt;
+    S.tR = 0;
+    S.oR = 0;
+
+    if (Math.abs(S.bA) > Math.PI * 0.9) { S.cap = true; S.bV = 0; }
+  } else {
+    const hCG = PH * S.cgM;
+    const mp_h2 = PW * hCG * hCG / G;
+    const damp_b = dr < H * 0.85 ? 0.8 : 2.0;
+    const damp_p = 0.6;
+
+    const thP = S.bA + S.tR;
+    const oP = S.bV + S.oR;
+
+    let u = 0;
+    if (S.aC && !S.fal) {
+      S.sumR += (S.bA + S.tR) * dt;
+      S.sumR = Math.max(-3, Math.min(3, S.sumR));
+      const brScale = BR <= 1 ? 1.0 : Math.max(0.2, 1.0 / BR);
+      const kp = S.kp * brScale;
+      const kd = S.kd * brScale;
+      const ki = S.ki * brScale;
+      u = -kp * (S.bA + S.tR) - kd * (S.bV + S.oR) - ki * S.sumR;
+    }
+
+    const maxTq = PW * hCG * 0.5;
+    u = Math.max(-maxTq, Math.min(maxTq, u));
+    S.lastU = u;
+
+    const pNoise = (Math.random() - 0.5) * 0.05;
+    const alpha_p = (PW * hCG * Math.sin(thP) - damp_p * oP + u + pNoise) / mp_h2;
+    const alpha_b = (-Kspring * (S.bA - S.wAng) - damp_b * S.bV - PW * hCG * Math.sin(thP) - u) / I_eff;
+
+    S.bV += alpha_b * dt;
+    S.bV *= Math.pow(0.4, dt);
+    S.bA += S.bV * dt;
+
+    S.oR += (alpha_p - alpha_b) * dt;
+    S.oR *= Math.pow(0.4, dt);
+    S.tR += S.oR * dt;
+
+    if (Math.abs(S.bA) > Math.PI * 0.9) { S.cap = true; S.bV = 0; S.oR = 0; }
+
+    if (Math.abs(S.tR) > 80 * Math.PI / 180 && !S.fal) {
+      S.fal = true;
+      S.oR = 0;
+    }
+  }
+
+  const sampIdx = Math.floor(S.t * 10);
+  if (sampIdx > S.leanHist._lastIdx || !S.leanHist._lastIdx) {
+    S.leanHist._lastIdx = sampIdx;
+    S.leanHist.push({t: S.t, lean: S.tR * 180 / Math.PI, board: S.bA * 180 / Math.PI, under: S.cap || S.fal});
+    if (S.leanHist.length > 500) S.leanHist.shift();
+  }
+
+  uUI(P); render();
+  if (document.getElementById('mathPanel').classList.contains('open')) buildMath(P);
+}
+
+function uUI(P) {
+  const showRst = S.cap || S.fal;
+  rstBtn.style.display = showRst ? 'block' : 'none';
+  if (!P) {
+    dGM.textContent = '\u2014'; dKG.textContent = '\u2014'; dBR.textContent = '\u2014';
+    statusMsg.textContent = 'Too Heavy';
+    statusBox.className = 'status-box status-danger';
+    statusAction.textContent = 'Make Board Bigger or Person Smaller';
+    return;
+  }
+  const {GM,KG,BR} = P;
+
+  dGM.textContent = (GM*2.54).toFixed(2) + ' cm';
+  dKG.textContent = (KG*2.54).toFixed(1) + ' cm';
+  dBR.textContent = BR.toFixed(3);
+
+  let msg, cls, act;
+
+  if (S.cap) {
+    msg = 'Capsized';
+    cls = 'status-danger';
+    act = 'Make Board Bigger or Person Smaller';
+  } else if (S.fal) {
+    msg = 'Fell Off';
+    cls = 'status-danger';
+    act = 'Make Board Bigger or Person Smaller';
+  } else if (GM <= 0) {
+    msg = 'Unstable Boat';
+    cls = 'status-danger';
+    act = 'Make Board Bigger or Person Smaller';
+  } else if (BR > 1.5) {
+    msg = 'Unstable';
+    cls = 'status-warn';
+    act = 'Make Board Bigger or Person Smaller';
+  } else if (BR > 1) {
+    msg = 'Marginally Stable';
+    cls = 'status-mid';
+    act = 'You can balance for a while';
+  } else {
+    msg = 'Stable';
+    cls = 'status-stable';
+    act = '';
+  }
+
+  statusMsg.textContent = msg;
+  statusBox.className = 'status-box ' + cls;
+  statusAction.textContent = act;
+}
+
+function resetSim() {
+  S.bA = 0; S.bV = 0; S.t = 0; S.cap = false; S.wAng = 0; S.fal = false; S.oR = 0; S.sumR = 0;
+  S.tR = (Math.random() - 0.5) * 0.005;
+  S.bwT = -999;
+  S.lastU = 0;
+  S.leanHist = []; S.leanHist._lastIdx = -1;
+  refreshUnits();
+  const P = phys(); uUI(P); render();
+  if (document.getElementById('mathPanel').classList.contains('open')) buildMath(P);
+}
+
+let lT = null;
+function lp(t) {
+  if (lT === null) lT = t;
+  let dt = (t - lT) / 1000;
+  if (dt > 0.05) dt = 0.05;
+  lT = t;
+  upd(dt);
+refreshUnits();
+requestAnimationFrame(lp);
+}
+
+sW.addEventListener('input',()=>{S.W=+sW.value;vW.textContent=fLen(S.W,1);});
+sH.addEventListener('input',()=>{S.H=+sH.value;vH.textContent=fLen(S.H,1);});
+sL.addEventListener('input',()=>{S.L=+sL.value;vL.textContent=fLen(S.L,0);});
+sPW.addEventListener('input',()=>{S.PW=+sPW.value;vPW.textContent=fWt(S.PW);});
+sPH.addEventListener('input',()=>{S.PH=+sPH.value;vPH.textContent=fHt(S.PH);});
+sFr.addEventListener('input',()=>{S.wF=+sFr.value;vFr.textContent=S.wF.toFixed(2);});
+sTi.addEventListener('input',()=>{S.wA=+sTi.value;vTi.textContent=S.wA.toFixed(1);});
+sRd.addEventListener('input',()=>{S.wR=+sRd.value;vRd.textContent=S.wR.toFixed(2);});
+
+boardType.addEventListener('change',()=>{
+  S.rM = boardType.value === 'onepiece';
+  S.bA=0; S.bV=0; S.tR=0; S.oR=0; S.fal=false;
+});
+
+cgSelect.addEventListener('change',()=>{
+  const v = cgSelect.value;
+  S.cgM = v === 'low' ? 0.5 : v === 'medium' ? 0.55 : 0.6;
+});
+
+balSelect.addEventListener('change',()=>{
+  const v = balSelect.value;
+  if (v === 'none') {
+    S.aC = false;
+  } else {
+    S.aC = true;
+    S.kd = 3000;
+    S.ki = 3000;
+    if (v === 'low') S.kp = 4000;
+    else if (v === 'medium') S.kp = 8000;
+    else S.kp = 15000;
+  }
+});
+
+unitSelect.addEventListener('change',()=>{ unit = unitSelect.value; refreshUnits(); });
+
+rstBtn.addEventListener('click', resetSim);
+bwBtn.addEventListener('click', ()=>{ S.bwT = S.t; });
+
+mathBtn.addEventListener('click',()=>{
+  document.getElementById('mathPanel').classList.add('open');
+  overlay.classList.add('open');
+  const P = phys(); buildMath(P);
+});
+function closeM() { document.getElementById('mathPanel').classList.remove('open'); overlay.classList.remove('open'); }
+closeMath.addEventListener('click', closeM);
+overlay.addEventListener('click', closeM);
+
+copyMath.addEventListener('click', () => {
+  const txt = document.getElementById('mathContent').innerText;
+  navigator.clipboard.writeText(txt).then(() => {
+    copyToast.classList.add('show');
+    setTimeout(() => copyToast.classList.remove('show'), 1500);
+  }).catch(() => {
+    const ta = document.createElement('textarea');
+    ta.value = txt; ta.style.position = 'fixed'; ta.style.left = '-9999px';
+    document.body.appendChild(ta); ta.select(); document.execCommand('copy');
+    document.body.removeChild(ta);
+    copyToast.classList.add('show');
+    setTimeout(() => copyToast.classList.remove('show'), 1500);
+  });
+});
+
+document.addEventListener('keydown',e=>{
+  if(e.key==='Escape') closeM();
+});
+
+refreshUnits();
+requestAnimationFrame(lp);
+})();
+</script>
+</body>
+</html>
